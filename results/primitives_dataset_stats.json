@@ -1,0 +1,481 @@
+{
+  "config": {
+    "seed": 20261101,
+    "out_dir": "experiments/krun_one/data/primitives_v1",
+    "krunbench_dir": "benchmarks/krunbench/data/v0",
+    "krun_one_v0_dir": "experiments/krun_one/data/v0",
+    "sources": {
+      "helpsteer2": {
+        "hf_id": "nvidia/HelpSteer2",
+        "revision": "990b2711a36180dd19d9c94b8627844866f8982a",
+        "license": "CC-BY-4.0"
+      },
+      "mhs": {
+        "hf_id": "ucberkeley-dlab/measuring-hate-speech",
+        "revision": "5468f6e118396646b02a2f691e771f6b6d9502ea",
+        "license": "CC-BY-4.0"
+      },
+      "civil_comments": {
+        "hf_id": "google/civil_comments",
+        "revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+        "license": "CC0-1.0"
+      },
+      "boolq": {
+        "hf_id": "google/boolq",
+        "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+        "license": "CC-BY-SA-3.0",
+        "use": "eval_only"
+      },
+      "sst5": {
+        "hf_id": "SetFit/sst5",
+        "revision": "e51bdcd8cd3a30da231967c1a249ba59361279a3",
+        "license": "unknown (SST)",
+        "use": "eval_only"
+      }
+    },
+    "noul": {
+      "intent": {
+        "propositions": "configs/noul_propositions.yaml",
+        "neighbours": 8,
+        "per_context": {
+          "positive": 1,
+          "hard_negative": 1,
+          "cross_domain": 0.5
+        },
+        "cap": {
+          "train": 30000,
+          "val": 3000,
+          "test": 3000
+        }
+      },
+      "tool": {
+        "per_query": {
+          "positive": 1,
+          "hard_negative": 1
+        },
+        "irrelevance_per_query": 1,
+        "cap": {
+          "train": 24000,
+          "val": 2000,
+          "test": 2000
+        }
+      },
+      "civil_comments": {
+        "threshold": 0.5,
+        "hard_negative_max": 0.3,
+        "per_proposition": {
+          "positive": 2000,
+          "hard_negative": 2000,
+          "cross_domain": 1000
+        },
+        "eval_per_proposition": {
+          "positive": 200,
+          "hard_negative": 200,
+          "cross_domain": 100
+        },
+        "unseen_propositions": [
+          "identity_attack"
+        ]
+      },
+      "mhs_hatespeech": {
+        "yes_if_mean_ge": 1.5,
+        "no_if_mean_le": 0.5,
+        "cap": {
+          "train": 6000,
+          "val": 1000,
+          "test": 1000
+        }
+      },
+      "criteria_fraction": 0.3,
+      "boolq_test_cap": 3270
+    },
+    "score": {
+      "helpsteer2": {
+        "attributes": [
+          "helpfulness",
+          "correctness",
+          "coherence",
+          "complexity",
+          "verbosity"
+        ],
+        "val_fraction": 0.1,
+        "prompt_chars": 1500,
+        "response_chars": 2500,
+        "cap": {
+          "train": 30000,
+          "val": 3000,
+          "test": 3000
+        }
+      },
+      "mhs": {
+        "items": [
+          "sentiment",
+          "respect",
+          "insult",
+          "humiliate",
+          "status",
+          "dehumanize",
+          "violence",
+          "genocide",
+          "attack_defend"
+        ],
+        "label": "median_of_annotators",
+        "cap": {
+          "train": 30000,
+          "val": 3000,
+          "test": 3000
+        }
+      },
+      "sst5_test": "all"
+    },
+    "mhs_split": {
+      "train": 0.8,
+      "val": 0.1
+    },
+    "civil_val_cap_rows": 97320
+  },
+  "files": {
+    "noul_train.jsonl": {
+      "n": 85000,
+      "sha256": "646dd1b127969287cf9f2dc3f826aa8575db9f0fce9e509cfb514174f9419820",
+      "by_source": {
+        "banking77": 7171,
+        "massive": 22829,
+        "toolace": 3730,
+        "xlam": 19812,
+        "xlam_irrelevance": 458,
+        "civil_comments": 25000,
+        "mhs": 6000
+      },
+      "by_target": {
+        "1": 34867,
+        "0": 50133
+      },
+      "by_suite": {
+        "banking77:positive": 2923,
+        "banking77:cross_domain": 1439,
+        "banking77:hard_negative": 2809,
+        "massive:positive": 8666,
+        "massive:hard_negative": 9430,
+        "massive:cross_domain": 4733,
+        "toolace:positive": 1894,
+        "toolace:hard_negative": 1836,
+        "xlam:hard_negative": 9837,
+        "xlam:positive": 9975,
+        "xlam_irrelevance:hard_negative_irrelevance": 458,
+        "civil_comments:positive": 10000,
+        "civil_comments:hard_negative": 10000,
+        "civil_comments:cross_domain": 5000,
+        "mhs:negative": 4591,
+        "mhs:positive": 1409
+      }
+    },
+    "noul_val.jsonl": {
+      "n": 9000,
+      "sha256": "0c7f43df1e64385ca0f0081b0bb5fde525ce1a6f0cd9d3a62e788497954f90e2",
+      "by_source": {
+        "banking77": 446,
+        "massive": 2554,
+        "toolace": 323,
+        "xlam": 1603,
+        "xlam_irrelevance": 74,
+        "civil_comments": 3000,
+        "mhs": 1000
+      },
+      "by_target": {
+        "1": 3485,
+        "0": 5515
+      },
+      "by_suite": {
+        "banking77:positive": 172,
+        "banking77:hard_negative": 180,
+        "banking77:cross_domain": 94,
+        "massive:positive": 934,
+        "massive:hard_negative": 1064,
+        "massive:cross_domain": 556,
+        "toolace:hard_negative": 170,
+        "toolace:positive": 153,
+        "xlam:hard_negative": 799,
+        "xlam:positive": 804,
+        "xlam_irrelevance:hard_negative_irrelevance": 74,
+        "civil_comments:positive": 1200,
+        "civil_comments:hard_negative": 1200,
+        "civil_comments:cross_domain": 600,
+        "mhs:negative": 778,
+        "mhs:positive": 222
+      }
+    },
+    "noul_test.jsonl": {
+      "n": 12270,
+      "sha256": "993712045d3f25d1e304fb9a1614b7c9bc93440df4cab9aced391267ee45ba3f",
+      "by_source": {
+        "banking77": 789,
+        "massive": 2211,
+        "toolace": 309,
+        "xlam": 1625,
+        "xlam_irrelevance": 66,
+        "civil_comments": 3000,
+        "mhs": 1000,
+        "boolq": 3270
+      },
+      "by_target": {
+        "1": 5588,
+        "0": 6682
+      },
+      "by_suite": {
+        "banking77:positive": 306,
+        "banking77:cross_domain": 161,
+        "banking77:hard_negative": 322,
+        "massive:positive": 831,
+        "massive:cross_domain": 469,
+        "massive:hard_negative": 911,
+        "toolace:positive": 161,
+        "toolace:hard_negative": 148,
+        "xlam:positive": 820,
+        "xlam:hard_negative": 805,
+        "xlam_irrelevance:hard_negative_irrelevance": 66,
+        "civil_comments:positive": 1200,
+        "civil_comments:hard_negative": 1200,
+        "civil_comments:cross_domain": 600,
+        "mhs:negative": 763,
+        "mhs:positive": 237,
+        "boolq:external": 3270
+      }
+    },
+    "score_train.jsonl": {
+      "n": 60000,
+      "sha256": "1d9bf6521c9ecc5565608a7a2d6d3ac278a3aa0ce6e75b90bcf9a0b16b74fb2d",
+      "by_source": {
+        "mhs": 30000,
+        "helpsteer2": 30000
+      },
+      "by_target": {
+        "3": 13946,
+        "2": 15092,
+        "4": 15393,
+        "1": 8583,
+        "0": 6986
+      },
+      "by_suite": {
+        "mhs:humiliate": 3346,
+        "mhs:sentiment": 3345,
+        "mhs:respect": 3258,
+        "mhs:dehumanize": 3322,
+        "mhs:status": 3313,
+        "mhs:attack_defend": 3324,
+        "mhs:insult": 3304,
+        "mhs:genocide": 3417,
+        "mhs:violence": 3371,
+        "helpsteer2:coherence": 6007,
+        "helpsteer2:correctness": 6040,
+        "helpsteer2:complexity": 6028,
+        "helpsteer2:verbosity": 5963,
+        "helpsteer2:helpfulness": 5962
+      }
+    },
+    "score_val.jsonl": {
+      "n": 6000,
+      "sha256": "738c66d113af5475b5333abe38aa65eca3e26f0f7d9345ee6816fb9f68e3540d",
+      "by_source": {
+        "mhs": 3000,
+        "helpsteer2": 3000
+      },
+      "by_target": {
+        "3": 1393,
+        "4": 1557,
+        "1": 841,
+        "2": 1509,
+        "0": 700
+      },
+      "by_suite": {
+        "mhs:humiliate": 307,
+        "mhs:dehumanize": 332,
+        "mhs:respect": 358,
+        "mhs:violence": 335,
+        "mhs:genocide": 339,
+        "mhs:attack_defend": 320,
+        "mhs:sentiment": 336,
+        "mhs:status": 291,
+        "mhs:insult": 382,
+        "helpsteer2:verbosity": 606,
+        "helpsteer2:coherence": 624,
+        "helpsteer2:complexity": 629,
+        "helpsteer2:correctness": 567,
+        "helpsteer2:helpfulness": 574
+      }
+    },
+    "score_test.jsonl": {
+      "n": 8210,
+      "sha256": "1225b96e6b0c405ea2c1bb2140fa5f9facbe6f8dc1c6551aae9384eaf4dd0608",
+      "by_source": {
+        "mhs": 3000,
+        "helpsteer2": 3000,
+        "sst5": 2210
+      },
+      "by_target": {
+        "1": 1449,
+        "3": 1886,
+        "2": 1917,
+        "4": 1974,
+        "0": 984
+      },
+      "by_suite": {
+        "mhs:genocide": 335,
+        "mhs:sentiment": 324,
+        "mhs:humiliate": 343,
+        "mhs:attack_defend": 342,
+        "mhs:dehumanize": 332,
+        "mhs:insult": 325,
+        "mhs:status": 340,
+        "mhs:violence": 306,
+        "mhs:respect": 353,
+        "helpsteer2:helpfulness": 603,
+        "helpsteer2:correctness": 605,
+        "helpsteer2:coherence": 582,
+        "helpsteer2:verbosity": 581,
+        "helpsteer2:complexity": 629,
+        "sst5:external": 2210
+      }
+    },
+    "mixed_test.jsonl": {
+      "n": 1000,
+      "sha256": "20a8937ae576b59e8d4c1e46095b37c86875dbff15fd492af0d5c0e82fb696e0"
+    }
+  },
+  "stats": {
+    "noul/intent/train": {
+      "positive": 11589,
+      "cross_domain": 6172,
+      "hard_negative": 12239
+    },
+    "noul/intent/val": {
+      "positive": 1106,
+      "hard_negative": 1244,
+      "cross_domain": 650
+    },
+    "noul/intent/test": {
+      "positive": 1137,
+      "cross_domain": 630,
+      "hard_negative": 1233
+    },
+    "noul/tool/train": {
+      "positive": 11869,
+      "hard_negative": 11673,
+      "hard_negative_irrelevance": 458
+    },
+    "noul/tool/val": {
+      "hard_negative": 969,
+      "positive": 957,
+      "hard_negative_irrelevance": 74
+    },
+    "noul/tool/test": {
+      "positive": 981,
+      "hard_negative": 953,
+      "hard_negative_irrelevance": 66
+    },
+    "noul/civil_comments/train": {
+      "positive": 10000,
+      "hard_negative": 10000,
+      "cross_domain": 5000
+    },
+    "noul/civil_comments/val": {
+      "positive": 1200,
+      "hard_negative": 1200,
+      "cross_domain": 600
+    },
+    "noul/civil_comments/test": {
+      "positive": 1200,
+      "hard_negative": 1200,
+      "cross_domain": 600
+    },
+    "noul/mhs/val": {
+      "0": 778,
+      "1": 222
+    },
+    "noul/mhs/train": {
+      "0": 4591,
+      "1": 1409
+    },
+    "noul/mhs/test": {
+      "0": 763,
+      "1": 237
+    },
+    "score/mhs/val": {
+      "n": 3000,
+      "targets": {
+        "3": 797,
+        "4": 576,
+        "1": 428,
+        "2": 617,
+        "0": 582
+      }
+    },
+    "score/mhs/train": {
+      "n": 30000,
+      "targets": {
+        "3": 7819,
+        "2": 6548,
+        "4": 5473,
+        "1": 4485,
+        "0": 5675
+      }
+    },
+    "score/mhs/test": {
+      "n": 3000,
+      "targets": {
+        "1": 413,
+        "3": 759,
+        "2": 675,
+        "4": 594,
+        "0": 559
+      }
+    },
+    "score/helpsteer2/train/dropped_prompt_overlap_with_test": 0,
+    "score/helpsteer2/val/dropped_prompt_overlap_with_test": 0,
+    "score/helpsteer2/train": {
+      "n": 30000,
+      "by_attribute": {
+        "coherence": 6007,
+        "correctness": 6040,
+        "complexity": 6028,
+        "verbosity": 5963,
+        "helpfulness": 5962
+      }
+    },
+    "score/helpsteer2/val": {
+      "n": 3000,
+      "by_attribute": {
+        "verbosity": 606,
+        "coherence": 624,
+        "complexity": 629,
+        "correctness": 567,
+        "helpfulness": 574
+      }
+    },
+    "score/helpsteer2/test": {
+      "n": 3000,
+      "by_attribute": {
+        "helpfulness": 603,
+        "correctness": 605,
+        "coherence": 582,
+        "verbosity": 581,
+        "complexity": 629
+      }
+    },
+    "score/sst5/test": {
+      "n": 2210,
+      "targets": {
+        "1": 633,
+        "0": 279,
+        "2": 389,
+        "4": 399,
+        "3": 510
+      }
+    },
+    "noul/boolq/test": {
+      "0": 1237,
+      "1": 2033
+    },
+    "mixed/test": 1000
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "tag": "krun_one_v0",
+  "model": "artifacts/krun-one-v0",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "load_seconds": 28.94,
+  "torch_threads": 6,
+  "n_request_pool": 64,
+  "parameters": 421293827,
+  "gpu": null,
+  "batches": {
+    "1": {
+      "p50_ms": 355.678016487218,
+      "p95_ms": 1147.6246131038351,
+      "mean_ms": 472.61570183278917,
+      "decisions_per_s": 2.1158839964944685,
+      "runs": 30,
+      "rss_mib": 2565
+    },
+    "8": {
+      "p50_ms": 8388.500722998288,
+      "p95_ms": 12648.433371707506,
+      "mean_ms": 8499.546235934637,
+      "decisions_per_s": 0.9412267170425358,
+      "runs": 30,
+      "rss_mib": 2566
+    }
+  },
+  "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+  "rss_mib_model_loaded_delta": 2074,
+  "timestamp_utc": "2026-09-24T04:15:24Z"
+}

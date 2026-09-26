@@ -1,0 +1,69 @@
+# KRUN-011 — Krun One v0.2 candidate: multi-primitive (choice + noul + score) continued fine-tuning of Krun One v0.
+# Registered BEFORE any training run. Architecture unchanged (Laya DecisionModel, 421,293,827 params).
+name: krun-one-v0.2-candidate
+seed: 20261102
+init:
+  checkpoint: experiments/krun_one/artifacts/krun-one-v0/model.safetensors   # Krun One v0 (NOT Laya, not from scratch)
+data:
+  choice_file: experiments/krun_one/data/v0/train.jsonl          # replay pool (v0 training decisions, all suites)
+  primitives_dir: experiments/krun_one/data/primitives_v1        # noul_train.jsonl / score_train.jsonl
+sequence: {max_len: 1024, head_max_len: 896}
+objective:
+  loss: cross_entropy                 # choice CE (uniform target for unanswerable, weight 0.5) | noul 2-way CE (= BCE)
+  unanswerable_weight: 0.5
+  score_rps_weight: 0.0               # per variant: 0 = categorical CE, 1 = CE + RPS (ordinal-aware)
+batching: {max_tokens: 8192, max_seqs: 64}
+optimizer:                            # identical to v0 (validated); one epoch over the mixture
+  name: adamw
+  weight_decay: 0.01
+  lr_encoder: 2.0e-5
+  lr_head: 1.0e-4
+  warmup_ratio: 0.05
+  schedule: linear
+  max_grad_norm: 1.0
+  amp: bf16
+epochs: 1
+checkpoint: {save_every: 100, keep_last: 2}
+total_decisions: 170000               # ≈ v0's 172,430 (same compute budget, ~20 min on an RTX 4090)
+configs:
+  M50_CE:
+    description: 50% choice replay / 30% noul / 20% score, categorical CE for score
+    train_top_encoder_layers: all
+    mixture: {choice: 0.50, noul: 0.30, score: 0.20}
+    score_rps_weight: 0.0
+  M40_CE:
+    description: 40% choice replay / 30% noul / 30% score, categorical CE for score
+    train_top_encoder_layers: all
+    mixture: {choice: 0.40, noul: 0.30, score: 0.30}
+    score_rps_weight: 0.0
+  M50_RPS:
+    description: M50 mixture, CE + RPS (ordinal-aware) for score
+    train_top_encoder_layers: all
+    mixture: {choice: 0.50, noul: 0.30, score: 0.20}
+    score_rps_weight: 1.0
+# Within each primitive the pool is sampled uniformly (seeded) — noul/score pools already encode the source and
+# positive / hard-negative / cross-domain composition (results/noul_dataset_audit.md, score_dataset_audit.md).
+
+# ---- decision rules, registered BEFORE any training run -------------------------------------------------------
+decision_rules:
+  gates_on_validation: >-
+    A variant is ELIGIBLE only if, on validation (val_eval halves, temperatures fitted on val_fit):
+    CHOICE vs Krun One v0: intent accuracy (kb_val core), val_hard accuracy and val_tools accuracy each drop by
+    <= 0.5 pp; OOD AUROC (top1_top2_margin, kb_val and val_tools) drops by <= 0.01; ECE rises by <= 0.005.
+    NOUL (in_domain, calibrated) vs the better Laya budget (512/192 or 1024/896) and vs Krun One v0: ROC-AUC higher,
+    Brier lower, ECE not higher.
+    SCORE (in_domain, calibrated) vs the better Laya budget and vs v0: MAE lower, Spearman higher, ECE and NLL not higher.
+  selection: >-
+    Among eligible variants choose the highest mean of (noul in_domain ROC-AUC, score in_domain Spearman,
+    mean choice accuracy over kb_val intents and val_tools). Differences < 0.003 on that mean -> the variant with the
+    smaller choice regression; still tied -> M50_CE (simplest). If no variant is eligible: STOP, no candidate is
+    promoted and noul/score stay private (MODEL_PRIMITIVES_READY=false).
+  score_confidence: >-
+    See results/primitives_architecture_audit.md §7 (Spearman of confidence vs -|score - y| on score val_eval;
+    normalized entropy kept unless another candidate beats it by > 0.02).
+  final: >-
+    After results/primitives_decisions.json freezes the choice, the selected candidate is evaluated ONCE on the test
+    sets: choice (KrunBench test intents, BFCL, holdout_tools — gate <= 0.5 pp drop vs v0 each), noul/score test
+    (incl. external BoolQ / SST-5, eval-only), mixed requests. Nothing is tuned afterwards. The promotion gate
+    (MODEL_PRIMITIVES_READY) requires every validation gate AND the final choice gate AND
+    noul/score test in_domain better than Laya on the same metrics.

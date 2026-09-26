@@ -1,0 +1,157 @@
+{
+  "artifact": "artifacts/krun-one-v0.3-candidate",
+  "device": "cpu",
+  "load_seconds": 31.1,
+  "primitives": [
+    "choice",
+    "noul",
+    "score"
+  ],
+  "laya_modules_loaded": [],
+  "sys_path_has_laya": false,
+  "cases": {
+    "choice": {
+      "answers": {
+        "q": {
+          "type": "choice",
+          "choice": "transaction_charged_twice",
+          "top_option": "transaction_charged_twice",
+          "abstain": false,
+          "confidence": 0.999496,
+          "confidence_score": "top1_top2_margin",
+          "threshold": 0.8194959711550742,
+          "probabilities": {
+            "transaction_charged_twice": 0.99968,
+            "card_payment_not_recognised": 0.000184,
+            "pending_card_payment": 0.000136
+          },
+          "task": "intent"
+        }
+      },
+      "pass": true
+    },
+    "noul_true": {
+      "answers": {
+        "q": {
+          "type": "noul",
+          "noul": 0.997533
+        }
+      },
+      "pass": true
+    },
+    "noul_false": {
+      "answers": {
+        "q": {
+          "type": "noul",
+          "noul": 0.157824
+        }
+      },
+      "pass": true
+    },
+    "noul_criteria": {
+      "answers": {
+        "q": {
+          "type": "noul",
+          "noul": 0.049441
+        }
+      },
+      "pass": true
+    },
+    "score_high": {
+      "answers": {
+        "q": {
+          "type": "score",
+          "score": 1.927542,
+          "confidence": 0.925527,
+          "legend": {
+            "0": "Cosmetic issue; no functionality affected",
+            "1": "Feature degraded; workaround available",
+            "2": "Critical functionality blocked; no workaround"
+          },
+          "probabilities": {
+            "0": 0.003633,
+            "1": 0.065192,
+            "2": 0.931175
+          }
+        }
+      },
+      "pass": true
+    },
+    "score_low": {
+      "answers": {
+        "q": {
+          "type": "score",
+          "score": 0.268871,
+          "confidence": 0.765667,
+          "legend": {
+            "0": "Cosmetic issue; no functionality affected",
+            "1": "Feature degraded; workaround available",
+            "2": "Critical functionality blocked; no workaround"
+          },
+          "probabilities": {
+            "0": 0.750005,
+            "1": 0.231118,
+            "2": 0.018877
+          }
+        }
+      },
+      "pass": true
+    },
+    "mixed": {
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": null,
+          "top_option": "support",
+          "abstain": true,
+          "confidence": 0.654203,
+          "confidence_score": "top1_top2_margin",
+          "threshold": 0.8194959711550742,
+          "probabilities": {
+            "billing": 0.046865,
+            "support": 0.803669,
+            "sales": 0.149466
+          },
+          "task": "intent"
+        },
+        "needs_human": {
+          "type": "noul",
+          "noul": 0.989989
+        },
+        "severity": {
+          "type": "score",
+          "score": 1.407632,
+          "confidence": 0.454257,
+          "legend": {
+            "0": "Minor issue",
+            "1": "Feature degraded",
+            "2": "Blocking issue"
+          },
+          "probabilities": {
+            "0": 0.152138,
+            "1": 0.288093,
+            "2": 0.559769
+          }
+        }
+      },
+      "pass": true
+    },
+    "legacy_decide": {
+      "answers": {
+        "choice": "calendar_search",
+        "top_option": "calendar_search",
+        "abstain": false,
+        "confidence": 0.961679,
+        "confidence_score": "top1_top2_margin",
+        "threshold": 0.7049367711877292,
+        "probabilities": {
+          "calendar_search": 0.98084,
+          "send_email": 0.01916
+        },
+        "task": "tool"
+      },
+      "pass": true
+    }
+  },
+  "all_pass": true
+}

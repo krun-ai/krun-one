@@ -1,0 +1,19 @@
+# Generated / large (never versioned): regenerate with scripts/, fetch weights from the artifact store
+data/
+runs/
+artifacts/
+results/_scratch/
+*.safetensors
+*.pt
+*.bin
+*.ckpt
+*.npz
+*.parquet
+*.onnx
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/

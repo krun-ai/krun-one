@@ -1,0 +1,45 @@
+{
+  "tag": "krun_one_v0",
+  "model": "artifacts/krun-one-v0",
+  "device": "cuda",
+  "dtype": "torch.bfloat16",
+  "load_seconds": 94.96,
+  "torch_threads": 24,
+  "n_request_pool": 64,
+  "parameters": 421293827,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "batches": {
+    "1": {
+      "p50_ms": 10.925685055553913,
+      "p95_ms": 11.781552713364363,
+      "mean_ms": 10.830121226608753,
+      "decisions_per_s": 92.33506985527355,
+      "runs": 50,
+      "peak_vram_allocated_mib": 2338,
+      "peak_vram_reserved_mib": 2540,
+      "rss_mib": 1621
+    },
+    "8": {
+      "p50_ms": 33.487447537481785,
+      "p95_ms": 47.67667464911938,
+      "mean_ms": 34.26942475140095,
+      "decisions_per_s": 233.4442453596469,
+      "runs": 50,
+      "peak_vram_allocated_mib": 2466,
+      "peak_vram_reserved_mib": 2788,
+      "rss_mib": 1640
+    },
+    "32": {
+      "p50_ms": 202.15715561062098,
+      "p95_ms": 228.47502855584025,
+      "mean_ms": 201.91574450582266,
+      "decisions_per_s": 158.48194541895774,
+      "runs": 50,
+      "peak_vram_allocated_mib": 3002,
+      "peak_vram_reserved_mib": 3816,
+      "rss_mib": 1641
+    }
+  },
+  "rss_mib_model_loaded_delta": 1155,
+  "timestamp_utc": "2026-09-24T03:57:14Z"
+}

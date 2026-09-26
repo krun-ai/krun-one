@@ -1,0 +1,54 @@
+# KRUN-011 — noul / score data (scripts/prepare_primitives_data.py). Explicit caps, seeded, reproducible.
+# Priority order followed: real datasets > deterministic transformations of real datasets > hard examples derived
+# from real data. NO synthetic / LLM-generated examples. Licenses + revisions: results/*_dataset_audit.md.
+seed: 20261101
+out_dir: experiments/krun_one/data/primitives_v1
+krunbench_dir: benchmarks/krunbench/data/v0
+krun_one_v0_dir: experiments/krun_one/data/v0          # choice data of v0: its splits are reused for every derived item
+
+sources:
+  helpsteer2: {hf_id: nvidia/HelpSteer2, revision: 990b2711a36180dd19d9c94b8627844866f8982a, license: CC-BY-4.0}
+  mhs: {hf_id: ucberkeley-dlab/measuring-hate-speech, revision: 5468f6e118396646b02a2f691e771f6b6d9502ea, license: CC-BY-4.0}
+  civil_comments: {hf_id: google/civil_comments, revision: f2970eb3a55777454c94069077cc8d9b5866312d, license: CC0-1.0}
+  boolq: {hf_id: google/boolq, revision: 35b264d03638db9f4ce671b711558bf7ff0f80d5, license: CC-BY-SA-3.0, use: eval_only}
+  sst5: {hf_id: SetFit/sst5, revision: e51bdcd8cd3a30da231967c1a249ba59361279a3, license: unknown (SST), use: eval_only}
+
+noul:
+  intent:
+    propositions: configs/noul_propositions.yaml
+    neighbours: 8                   # hard-negative propositions = top-8 hard_v1 co-negatives of the gold in v0 train
+    per_context: {positive: 1, hard_negative: 1, cross_domain: 0.5}
+    cap: {train: 30000, val: 3000, test: 3000}
+  tool:
+    per_query: {positive: 1, hard_negative: 1}  # hard negative = another option of the same v0 decision (native first)
+    irrelevance_per_query: 1                    # xlam-irrelevance: one of its tools (native), target 0
+    cap: {train: 24000, val: 2000, test: 2000}
+  civil_comments:
+    threshold: 0.5                  # label = mean rater score >= 0.5 (dataset's own majority convention)
+    hard_negative_max: 0.3          # hard negatives: toxic comments (toxicity >= 0.5) whose property score < 0.3,
+                                    # and for `toxicity` itself comments with 0 < toxicity <= 0.3
+    per_proposition: {positive: 2000, hard_negative: 2000, cross_domain: 1000}
+    eval_per_proposition: {positive: 200, hard_negative: 200, cross_domain: 100}
+    unseen_propositions: [identity_attack]      # never trained on -> "unseen proposition" slice
+  mhs_hatespeech:
+    yes_if_mean_ge: 1.5             # item hatespeech: 0 no / 1 unsure / 2 yes (per annotator)
+    no_if_mean_le: 0.5              # comments in between are ambiguous and NOT used (no artificial 0.5 targets)
+    cap: {train: 6000, val: 1000, test: 1000}
+  criteria_fraction: 0.3            # items that also carry explicit true/false criteria texts (exercise the criteria path)
+  boolq_test_cap: 3270
+
+score:
+  helpsteer2:
+    attributes: [helpfulness, correctness, coherence, complexity, verbosity]
+    val_fraction: 0.1               # of the official train split, by prompt; the official validation split = test
+    prompt_chars: 1500              # keep the prompt tail / response head so the response is always visible
+    response_chars: 2500
+    cap: {train: 30000, val: 3000, test: 3000}
+  mhs:
+    items: [sentiment, respect, insult, humiliate, status, dehumanize, violence, genocide, attack_defend]
+    label: median_of_annotators     # rounded half-up; soft annotator distributions kept in metadata
+    cap: {train: 30000, val: 3000, test: 3000}
+  sst5_test: all                    # external, eval only
+
+mhs_split: {train: 0.8, val: 0.1}   # by comment_id; rest = test
+civil_val_cap_rows: 97320

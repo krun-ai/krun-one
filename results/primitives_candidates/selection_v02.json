@@ -1,0 +1,365 @@
+{
+  "round": "v02",
+  "rule": "configs/krun_one_v0_2.yaml decision_rules",
+  "variants": {
+    "M50_CE": {
+      "available": true,
+      "eligible": false,
+      "primary": 0.9106784006420453,
+      "choice_mean": 0.9549217883648711,
+      "choice_regression": 0.00797057020232983,
+      "gates": {
+        "choice:intent_acc_kb_val drop<=0.5pp": {
+          "pass": true,
+          "candidate": 0.9567749846719804,
+          "reference": 0.9601471489883507
+        },
+        "choice:intent_hard_acc drop<=0.5pp": {
+          "pass": false,
+          "candidate": 0.9049662783568363,
+          "reference": 0.9129368485591661
+        },
+        "choice:tool_acc drop<=0.5pp": {
+          "pass": true,
+          "candidate": 0.9530685920577617,
+          "reference": 0.9485559566787004
+        },
+        "choice:kb_val_ood_auroc drop<=0.01": {
+          "pass": true,
+          "candidate": 0.9593943466136385,
+          "reference": 0.9536337649626757
+        },
+        "choice:val_tools_ood_auroc drop<=0.01": {
+          "pass": true,
+          "candidate": 0.9898034952412209,
+          "reference": 0.9900988677387594
+        },
+        "choice:kb_val_ece rise<=0.005": {
+          "pass": true,
+          "candidate": 0.012806992514446204,
+          "reference": 0.008740331011251072
+        },
+        "choice:val_hard_ece rise<=0.005": {
+          "pass": true,
+          "candidate": 0.023188366007868402,
+          "reference": 0.02118595118808877
+        },
+        "choice:val_tools_ece rise<=0.005": {
+          "pass": true,
+          "candidate": 0.019741855189707554,
+          "reference": 0.016991665764749548
+        },
+        "noul:roc_auc vs laya_best": {
+          "pass": true,
+          "candidate": 0.9744119863209808,
+          "reference": 0.8497533541487545
+        },
+        "noul:roc_auc vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.9744119863209808,
+          "reference": 0.9038142975495671
+        },
+        "noul:brier vs laya_best": {
+          "pass": true,
+          "candidate": 0.05843460357577272,
+          "reference": 0.15149461961096594
+        },
+        "noul:brier vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.05843460357577272,
+          "reference": 0.12239811753984887
+        },
+        "noul:ece vs laya_best": {
+          "pass": true,
+          "candidate": 0.016007691141670385,
+          "reference": 0.027392428909328626
+        },
+        "noul:ece vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.016007691141670385,
+          "reference": 0.04848054928241166
+        },
+        "score:mae vs laya_best": {
+          "pass": true,
+          "candidate": 0.5885271437213124,
+          "reference": 0.8910155121794288
+        },
+        "score:mae vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.5885271437213124,
+          "reference": 0.8468767481023062
+        },
+        "score:spearman vs laya_best": {
+          "pass": true,
+          "candidate": 0.8027014272402841,
+          "reference": 0.5352662576546993
+        },
+        "score:spearman vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.8027014272402841,
+          "reference": 0.6019645583151166
+        },
+        "score:ece vs laya_best": {
+          "pass": true,
+          "candidate": 0.01946944500872983,
+          "reference": 0.031036445861191357
+        },
+        "score:ece vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.01946944500872983,
+          "reference": 0.019631890045419813
+        },
+        "score:nll vs laya_best": {
+          "pass": true,
+          "candidate": 0.9705160504401588,
+          "reference": 1.3321681954695737
+        },
+        "score:nll vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.9705160504401588,
+          "reference": 1.3006916906579578
+        }
+      }
+    },
+    "M40_CE": {
+      "available": true,
+      "eligible": false,
+      "primary": 0.9112859452077086,
+      "choice_mean": 0.9520695039919254,
+      "choice_regression": 0.003065603923973037,
+      "gates": {
+        "choice:intent_acc_kb_val drop<=0.5pp": {
+          "pass": true,
+          "candidate": 0.957388105456775,
+          "reference": 0.9601471489883507
+        },
+        "choice:intent_hard_acc drop<=0.5pp": {
+          "pass": true,
+          "candidate": 0.9098712446351931,
+          "reference": 0.9129368485591661
+        },
+        "choice:tool_acc drop<=0.5pp": {
+          "pass": true,
+          "candidate": 0.9467509025270758,
+          "reference": 0.9485559566787004
+        },
+        "choice:kb_val_ood_auroc drop<=0.01": {
+          "pass": true,
+          "candidate": 0.9590915975982041,
+          "reference": 0.9536337649626757
+        },
+        "choice:val_tools_ood_auroc drop<=0.01": {
+          "pass": true,
+          "candidate": 0.9883809894978669,
+          "reference": 0.9900988677387594
+        },
+        "choice:kb_val_ece rise<=0.005": {
+          "pass": false,
+          "candidate": 0.013769815191523566,
+          "reference": 0.008740331011251072
+        },
+        "choice:val_hard_ece rise<=0.005": {
+          "pass": true,
+          "candidate": 0.02146804033616215,
+          "reference": 0.02118595118808877
+        },
+        "choice:val_tools_ece rise<=0.005": {
+          "pass": true,
+          "candidate": 0.01292794278121044,
+          "reference": 0.016991665764749548
+        },
+        "noul:roc_auc vs laya_best": {
+          "pass": true,
+          "candidate": 0.9714806207713955,
+          "reference": 0.8497533541487545
+        },
+        "noul:roc_auc vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.9714806207713955,
+          "reference": 0.9038142975495671
+        },
+        "noul:brier vs laya_best": {
+          "pass": true,
+          "candidate": 0.06204572601178056,
+          "reference": 0.15149461961096594
+        },
+        "noul:brier vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.06204572601178056,
+          "reference": 0.12239811753984887
+        },
+        "noul:ece vs laya_best": {
+          "pass": true,
+          "candidate": 0.020886104129446473,
+          "reference": 0.027392428909328626
+        },
+        "noul:ece vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.020886104129446473,
+          "reference": 0.04848054928241166
+        },
+        "score:mae vs laya_best": {
+          "pass": true,
+          "candidate": 0.5788606412270876,
+          "reference": 0.8910155121794288
+        },
+        "score:mae vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.5788606412270876,
+          "reference": 0.8468767481023062
+        },
+        "score:spearman vs laya_best": {
+          "pass": true,
+          "candidate": 0.8103077108598049,
+          "reference": 0.5352662576546993
+        },
+        "score:spearman vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.8103077108598049,
+          "reference": 0.6019645583151166
+        },
+        "score:ece vs laya_best": {
+          "pass": true,
+          "candidate": 0.027274805386820658,
+          "reference": 0.031036445861191357
+        },
+        "score:ece vs krun_one_v0": {
+          "pass": false,
+          "candidate": 0.027274805386820658,
+          "reference": 0.019631890045419813
+        },
+        "score:nll vs laya_best": {
+          "pass": true,
+          "candidate": 0.955701700606751,
+          "reference": 1.3321681954695737
+        },
+        "score:nll vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.955701700606751,
+          "reference": 1.3006916906579578
+        }
+      }
+    },
+    "M50_RPS": {
+      "available": true,
+      "eligible": false,
+      "primary": 0.9097574630765308,
+      "choice_mean": 0.9532957455615146,
+      "choice_regression": 0.008277130594727122,
+      "gates": {
+        "choice:intent_acc_kb_val drop<=0.5pp": {
+          "pass": true,
+          "candidate": 0.9598405885959534,
+          "reference": 0.9601471489883507
+        },
+        "choice:intent_hard_acc drop<=0.5pp": {
+          "pass": false,
+          "candidate": 0.904659717964439,
+          "reference": 0.9129368485591661
+        },
+        "choice:tool_acc drop<=0.5pp": {
+          "pass": true,
+          "candidate": 0.9467509025270758,
+          "reference": 0.9485559566787004
+        },
+        "choice:kb_val_ood_auroc drop<=0.01": {
+          "pass": true,
+          "candidate": 0.9593683245686944,
+          "reference": 0.9536337649626757
+        },
+        "choice:val_tools_ood_auroc drop<=0.01": {
+          "pass": true,
+          "candidate": 0.988658926813259,
+          "reference": 0.9900988677387594
+        },
+        "choice:kb_val_ece rise<=0.005": {
+          "pass": false,
+          "candidate": 0.014359698005674106,
+          "reference": 0.008740331011251072
+        },
+        "choice:val_hard_ece rise<=0.005": {
+          "pass": true,
+          "candidate": 0.02186060239834807,
+          "reference": 0.02118595118808877
+        },
+        "choice:val_tools_ece rise<=0.005": {
+          "pass": false,
+          "candidate": 0.027711587659237324,
+          "reference": 0.016991665764749548
+        },
+        "noul:roc_auc vs laya_best": {
+          "pass": true,
+          "candidate": 0.9717147221660343,
+          "reference": 0.8497533541487545
+        },
+        "noul:roc_auc vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.9717147221660343,
+          "reference": 0.9038142975495671
+        },
+        "noul:brier vs laya_best": {
+          "pass": true,
+          "candidate": 0.06166859832764293,
+          "reference": 0.15149461961096594
+        },
+        "noul:brier vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.06166859832764293,
+          "reference": 0.12239811753984887
+        },
+        "noul:ece vs laya_best": {
+          "pass": true,
+          "candidate": 0.01918959412515343,
+          "reference": 0.027392428909328626
+        },
+        "noul:ece vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.01918959412515343,
+          "reference": 0.04848054928241166
+        },
+        "score:mae vs laya_best": {
+          "pass": true,
+          "candidate": 0.5873036449672647,
+          "reference": 0.8910155121794288
+        },
+        "score:mae vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.5873036449672647,
+          "reference": 0.8468767481023062
+        },
+        "score:spearman vs laya_best": {
+          "pass": true,
+          "candidate": 0.8042619215020438,
+          "reference": 0.5352662576546993
+        },
+        "score:spearman vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.8042619215020438,
+          "reference": 0.6019645583151166
+        },
+        "score:ece vs laya_best": {
+          "pass": true,
+          "candidate": 0.016682063007314712,
+          "reference": 0.031036445861191357
+        },
+        "score:ece vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.016682063007314712,
+          "reference": 0.019631890045419813
+        },
+        "score:nll vs laya_best": {
+          "pass": true,
+          "candidate": 0.9707787936836058,
+          "reference": 1.3321681954695737
+        },
+        "score:nll vs krun_one_v0": {
+          "pass": true,
+          "candidate": 0.9707787936836058,
+          "reference": 1.3006916906579578
+        }
+      }
+    }
+  },
+  "eligible": [],
+  "selected": null
+}

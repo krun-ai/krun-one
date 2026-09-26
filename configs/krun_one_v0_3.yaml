@@ -1,0 +1,72 @@
+# KRUN-011 round 2 — Krun One v0.3 candidate. Registered BEFORE any v0.3 training run (2026-09-24), after the
+# v0.2 round failed its choice gates (results/PRIMITIVES_REPORT.md). Architecture unchanged.
+# Changes vs v0.2, each tied to a v0.2 failure:
+#   * bigger mixture (220k) so choice replay stays at 50% while the primitives keep M40's absolute share
+#     -> val_hard regression of M50 (-0.8 pp) / ECE regressions;
+#   * every intent core hard_v1 decision of v0 (62,265) is replayed -> val_hard regression;
+#   * noul data v2: +MHS item propositions, +HelpSteer2 quality propositions, 19 held-out propositions over 4 sources
+#     -> unseen-proposition regression (0.815 -> 0.71-0.75);
+#   * plain CE for score (RPS gave no ranking/MAE gain in v0.2);
+#   * variant B halves the learning rates (less drift from v0).
+name: krun-one-v0.3-candidate
+run_prefix: v03
+seed: 20261103
+init:
+  checkpoint: experiments/krun_one/artifacts/krun-one-v0/model.safetensors   # Krun One v0
+data:
+  choice_file: experiments/krun_one/data/v0/train.jsonl
+  choice_include_all: {task: intent_routing, suite: core, negatives: hard_v1}  # 62,265 always replayed; rest uniform
+  primitives_dir: experiments/krun_one/data/primitives_v2
+sequence: {max_len: 1024, head_max_len: 896}
+objective:
+  loss: cross_entropy
+  unanswerable_weight: 0.5
+  score_rps_weight: 0.0
+batching: {max_tokens: 8192, max_seqs: 64}
+optimizer:
+  name: adamw
+  weight_decay: 0.01
+  lr_encoder: 2.0e-5
+  lr_head: 1.0e-4
+  warmup_ratio: 0.05
+  schedule: linear
+  max_grad_norm: 1.0
+  amp: bf16
+epochs: 1
+checkpoint: {save_every: 200, keep_last: 1}   # volume quota: one ~5 GB checkpoint per run
+total_decisions: 220000
+configs:
+  A:
+    description: 50% choice (110k, all hard intents) / 27.3% noul (60k) / 22.7% score (50k), v0 learning rates
+    train_top_encoder_layers: all
+    mixture: {choice: 0.5, noul: 0.2727273, score: 0.2272727}
+    score_rps_weight: 0.0
+  B:
+    description: same mixture, learning rates halved (encoder 1e-5, head 5e-5)
+    train_top_encoder_layers: all
+    mixture: {choice: 0.5, noul: 0.2727273, score: 0.2272727}
+    score_rps_weight: 0.0
+    lr_encoder: 1.0e-5
+    lr_head: 5.0e-5
+
+decision_rules:
+  gates_on_validation: >-
+    IDENTICAL to v0.2 (configs/krun_one_v0_2.yaml) — nothing relaxed: CHOICE vs Krun One v0 (kb_val intents, val_hard,
+    val_tools accuracy drop <= 0.5 pp each; OOD AUROC kb_val / val_tools drop <= 0.01; ECE kb_val / val_hard / val_tools
+    rise <= 0.005); NOUL in_domain (seen propositions) vs best Laya budget and vs v0: ROC-AUC higher, Brier lower,
+    ECE not higher; SCORE in_domain vs best Laya and vs v0: MAE lower, Spearman higher, ECE and NLL not higher.
+    All noul/score references are re-measured on data v2 (Laya 1024/896, Laya 512/192, v0).
+    NEW gate: noul ROC-AUC on the pooled UNSEEN propositions (never trained) >= the best of Laya (either budget) and v0.
+  selection: >-
+    Among eligible variants: highest mean of (noul in_domain ROC-AUC, noul unseen ROC-AUC, score in_domain Spearman,
+    mean choice accuracy over kb_val intents and val_tools). Differences < 0.003 -> smaller choice regression; still
+    tied -> A. No eligible variant -> STOP (MODEL_PRIMITIVES_READY=false), noul/score stay private.
+  score_confidence: >-
+    Public score confidence = ordinal dispersion 1 - Var_p(level) / ((K-1)/2)^2 (results/primitives_baseline/
+    score_confidence.md: never worse than normalized entropy, best on untrained models, penalises bimodal splits).
+    Registered now; not re-selected on v0.3 results.
+  final: >-
+    Unchanged: after results/primitives_decisions.json freezes the choice, the selected candidate is evaluated ONCE on the
+    test sets (choice KrunBench test intents / BFCL / holdout_tools with the <= 0.5 pp gate vs v0; noul/score test incl.
+    BoolQ / SST-5; mixed requests). MODEL_PRIMITIVES_READY requires every validation gate AND the final choice gate AND
+    noul/score test in_domain better than Laya.

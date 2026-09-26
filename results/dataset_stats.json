@@ -1,0 +1,782 @@
+{
+  "config": {
+    "seed": 20260925,
+    "krunbench_dir": "benchmarks/krunbench/data/v0",
+    "out_dir": "experiments/krun_one/data/v0",
+    "intents": {
+      "train_datasets": [
+        "banking77",
+        "massive"
+      ],
+      "hard_eval_datasets": [
+        "banking77",
+        "massive"
+      ],
+      "decisions_per_item": {
+        "banking77": 4,
+        "massive": 2
+      },
+      "option_counts": {
+        "2": 0.15,
+        "4": 0.25,
+        "8": 0.3,
+        "16": 0.25,
+        "32": 0.05
+      },
+      "negative_strategies": {
+        "hard_v1": 0.65,
+        "random": 0.35
+      },
+      "ood": {
+        "label_removed": 0.12,
+        "cross_dataset": 0.04,
+        "cross_task": 0.03
+      },
+      "ood_option_counts": {
+        "2": 0.15,
+        "4": 0.3,
+        "8": 0.3,
+        "16": 0.25
+      }
+    },
+    "tools": {
+      "sources": [
+        "xlam",
+        "toolace",
+        "xlam_irrelevance"
+      ],
+      "unseen_tool_fraction": 0.06,
+      "seen_eval_fraction": {
+        "validation": 0.025,
+        "holdout": 0.025
+      },
+      "irrelevance_eval_fraction": {
+        "validation": 0.075,
+        "holdout": 0.075
+      },
+      "second_decision_fraction": 0.25,
+      "option_counts": {
+        "2": 0.1,
+        "4": 0.25,
+        "8": 0.3,
+        "16": 0.25,
+        "32": 0.1
+      },
+      "negative_strategies": {
+        "hard_v1": 0.65,
+        "random": 0.35
+      },
+      "near_duplicate_cosine": 0.95,
+      "ood": {
+        "tool_removed": 0.12,
+        "cross_task": 0.03
+      },
+      "ood_option_counts": {
+        "2": 0.15,
+        "4": 0.3,
+        "8": 0.3,
+        "16": 0.25
+      }
+    },
+    "permutation": {
+      "train_copy_fraction": 0.06,
+      "eval_fraction": 0.05,
+      "eval_option_count": 4
+    },
+    "cross_task_similarity_quantile": 0.5,
+    "eval": {
+      "intent_hard_option_counts": [
+        4,
+        8,
+        16,
+        32
+      ],
+      "tool_option_counts": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "intent_label_removed_fraction": 0.15,
+      "tool_removed_fraction": 0.2,
+      "cross_task_fraction": 0.05
+    },
+    "ood_cross_dataset_pairs": [
+      {
+        "source": "banking77",
+        "target": "massive",
+        "exclude_target_labels": [
+          "qa_currency",
+          "qa_stock",
+          "qa_factoid",
+          "qa_definition",
+          "qa_maths",
+          "general_quirky"
+        ]
+      },
+      {
+        "source": "massive",
+        "target": "banking77",
+        "exclude_source_labels": [
+          "qa_currency",
+          "qa_stock",
+          "qa_factoid",
+          "general_quirky"
+        ]
+      }
+    ]
+  },
+  "seed": 20260925,
+  "sources": {
+    "tools": {
+      "xlam": {
+        "hf_id": "argilla/apigen-function-calling",
+        "revision": "170a8a7e0832101f2495a00c9ad9ba1821d3a9b0",
+        "file": "data/train-00000-of-00001.parquet",
+        "license": "CC-BY-4.0",
+        "upstream": "Salesforce/xlam-function-calling-60k"
+      },
+      "toolace": {
+        "hf_id": "Team-ACE/ToolACE",
+        "revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+        "file": "data.json",
+        "license": "Apache-2.0",
+        "upstream": "Team-ACE/ToolACE"
+      },
+      "xlam_irrelevance": {
+        "hf_id": "MadeAgents/xlam-irrelevance-7.5k",
+        "revision": "34323bf09efc7e4a394998a0fa91ff997617c369",
+        "file": "xlam-7.5k-irrelevancek.json",
+        "license": "CC-BY-4.0",
+        "upstream": "MadeAgents/xlam-irrelevance-7.5k"
+      }
+    }
+  },
+  "skipped": {
+    "xlam": {
+      "kept": 39391,
+      "not exactly one distinct function": 20349,
+      "bad tool list": 260
+    },
+    "toolace": {
+      "kept": 7036,
+      "first assistant turn is not a call list": 1355,
+      "called names not parseable / not available": 103,
+      "not exactly one distinct function": 2040,
+      "tool list not found": 518,
+      "bad tool list": 248
+    },
+    "xlam_irrelevance": {
+      "kept": 6034,
+      "bad record": 1466
+    },
+    "tool_dedup_decontamination": {
+      "duplicate query (first kept)": 1931,
+      "duplicate irrelevance query (first kept)": 91,
+      "same query, conflicting gold": 197,
+      "query occurs in KrunBench v0 (incl. BFCL)": 3
+    }
+  },
+  "notes": [],
+  "tool_splits": {
+    "holdout|toolace|True": 369,
+    "holdout|xlam|True": 2010,
+    "holdout|xlam_irrelevance|False": 347,
+    "train|toolace|True": 6258,
+    "train|xlam|True": 33462,
+    "train|xlam_irrelevance|False": 5231,
+    "validation|toolace|True": 373,
+    "validation|xlam|True": 1824,
+    "validation|xlam_irrelevance|False": 365
+  },
+  "unseen_gold_tools": 570,
+  "confusion_examples": {
+    "banking77": {
+      "Refund_not_showing_up": [
+        [
+          "request_refund",
+          0.07006802721088422
+        ],
+        [
+          "pending_card_payment",
+          0.013605442176870751
+        ],
+        [
+          "reverted_card_payment?",
+          0.012925170068027216
+        ]
+      ],
+      "activate_my_card": [
+        [
+          "card_not_working",
+          0.046258503401360486
+        ],
+        [
+          "card_delivery_estimate",
+          0.009523809523809525
+        ],
+        [
+          "card_linking",
+          0.008163265306122448
+        ]
+      ],
+      "age_limit": [
+        [
+          "balance_not_updated_after_cheque_or_cash_deposit",
+          0.006999999999999999
+        ],
+        [
+          "getting_spare_card",
+          0.006
+        ],
+        [
+          "top_up_by_cash_or_cheque",
+          0.002
+        ]
+      ],
+      "apple_pay_or_google_pay": [
+        [
+          "supported_cards_and_currencies",
+          0.012727272727272728
+        ],
+        [
+          "topping_up_by_card",
+          0.011818181818181818
+        ],
+        [
+          "top_up_by_cash_or_cheque",
+          0.004545454545454545
+        ]
+      ],
+      "atm_support": [
+        [
+          "declined_cash_withdrawal",
+          0.03846153846153848
+        ],
+        [
+          "card_acceptance",
+          0.016666666666666666
+        ],
+        [
+          "change_pin",
+          0.010256410256410256
+        ]
+      ],
+      "automatic_top_up": [
+        [
+          "top_up_limits",
+          0.04690265486725661
+        ],
+        [
+          "top_up_by_cash_or_cheque",
+          0.009734513274336281
+        ],
+        [
+          "topping_up_by_card",
+          0.007964601769911504
+        ]
+      ],
+      "balance_not_updated_after_bank_transfer": [
+        [
+          "transfer_timing",
+          0.0797385620915031
+        ],
+        [
+          "pending_transfer",
+          0.06862745098039202
+        ],
+        [
+          "transfer_not_received_by_recipient",
+          0.06666666666666654
+        ]
+      ],
+      "balance_not_updated_after_cheque_or_cash_deposit": [
+        [
+          "balance_not_updated_after_bank_transfer",
+          0.053048780487804786
+        ],
+        [
+          "pending_card_payment",
+          0.01951219512195123
+        ],
+        [
+          "transfer_not_received_by_recipient",
+          0.01951219512195123
+        ]
+      ],
+      "beneficiary_not_allowed": [
+        [
+          "failed_transfer",
+          0.07659574468085091
+        ],
+        [
+          "balance_not_updated_after_bank_transfer",
+          0.034042553191489355
+        ],
+        [
+          "declined_transfer",
+          0.024822695035461004
+        ]
+      ],
+      "cancel_transfer": [
+        [
+          "request_refund",
+          0.016546762589928064
+        ],
+        [
+          "beneficiary_not_allowed",
+          0.012949640287769787
+        ],
+        [
+          "failed_transfer",
+          0.0079136690647482
+        ]
+      ]
+    },
+    "massive": {
+      "alarm_query": [
+        [
+          "alarm_set",
+          0.14126984126984243
+        ],
+        [
+          "alarm_remove",
+          0.029206349206349153
+        ],
+        [
+          "calendar_query",
+          0.010476190476190481
+        ]
+      ],
+      "alarm_remove": [
+        [
+          "alarm_set",
+          0.20512820512820665
+        ],
+        [
+          "alarm_query",
+          0.08717948717948704
+        ],
+        [
+          "calendar_remove",
+          0.028717948717948697
+        ]
+      ],
+      "alarm_set": [
+        [
+          "alarm_query",
+          0.11413502109704747
+        ],
+        [
+          "calendar_set",
+          0.05886075949367115
+        ],
+        [
+          "alarm_remove",
+          0.03924050632911391
+        ]
+      ],
+      "audio_volume_down": [
+        [
+          "audio_volume_up",
+          0.21250000000000022
+        ],
+        [
+          "audio_volume_mute",
+          0.15208333333333296
+        ],
+        [
+          "audio_volume_other",
+          0.03437500000000002
+        ]
+      ],
+      "audio_volume_mute": [
+        [
+          "audio_volume_up",
+          0.05874999999999986
+        ],
+        [
+          "audio_volume_down",
+          0.05666666666666653
+        ],
+        [
+          "audio_volume_other",
+          0.03458333333333328
+        ]
+      ],
+      "audio_volume_other": [
+        [
+          "audio_volume_up",
+          0.2843137254901954
+        ],
+        [
+          "audio_volume_mute",
+          0.1196078431372548
+        ],
+        [
+          "audio_volume_down",
+          0.07254901960784317
+        ]
+      ],
+      "audio_volume_up": [
+        [
+          "audio_volume_down",
+          0.10190476190476207
+        ],
+        [
+          "audio_volume_mute",
+          0.08857142857142855
+        ],
+        [
+          "audio_volume_other",
+          0.06285714285714271
+        ]
+      ],
+      "calendar_query": [
+        [
+          "calendar_set",
+          0.13841387856257223
+        ],
+        [
+          "datetime_query",
+          0.04752168525402721
+        ],
+        [
+          "recommendation_events",
+          0.035625774473358456
+        ]
+      ],
+      "calendar_remove": [
+        [
+          "calendar_query",
+          0.04987373737373774
+        ],
+        [
+          "calendar_set",
+          0.04785353535353569
+        ],
+        [
+          "lists_remove",
+          0.01843434343434339
+        ]
+      ],
+      "calendar_set": [
+        [
+          "calendar_query",
+          0.12325680272108734
+        ],
+        [
+          "calendar_remove",
+          0.02874149659863964
+        ],
+        [
+          "alarm_set",
+          0.019302721088435535
+        ]
+      ]
+    }
+  },
+  "train_generation_failures": {
+    "intent cross_dataset": 137,
+    "tool answerable (pool too small)": 98
+  },
+  "val_hard_items_with_label_unseen_in_train": 0,
+  "eval_generation_failures": {
+    "val_tools": {
+      "answerable": 3
+    },
+    "holdout_tools": {
+      "answerable": 6
+    }
+  },
+  "stats": {
+    "train": {
+      "n": 172430,
+      "answerable": 154065,
+      "unanswerable": 18365,
+      "by_task": {
+        "intent_routing": 108812,
+        "tool_routing": 63618
+      },
+      "by_suite": {
+        "core": 145344,
+        "ood_cross_dataset": 3778,
+        "ood_label_removed": 9434,
+        "ood_native": 5153,
+        "permutation": 8721
+      },
+      "by_dataset": {
+        "banking77": 39852,
+        "massive": 68935,
+        "toolace": 9270,
+        "xlam": 49220,
+        "xlam_irrelevance": 5153
+      },
+      "by_language": {
+        "None": 63643,
+        "en": 39852,
+        "en-US": 22990,
+        "es-ES": 22941,
+        "pt-PT": 23004
+      },
+      "by_option_count": {
+        "16": 43148,
+        "2": 23220,
+        "32": 10343,
+        "4": 44024,
+        "8": 51695
+      },
+      "by_negative_strategy": {
+        "hard": 105692,
+        "native": 3804,
+        "random": 62934
+      },
+      "by_negatives_detail": {
+        "hard_v1": 79673,
+        "hard_v1(gold removed)": 4668,
+        "native+hard_v1": 20472,
+        "native+random": 11046,
+        "native+safe_random": 5153,
+        "native_others+safe_random(gold removed)": 4766,
+        "random": 42874,
+        "random(other taxonomy)": 1419,
+        "safe_random(intent labels)": 1192,
+        "safe_random(tool pool)": 1167
+      },
+      "by_ood_kind": {
+        "-": 154065,
+        "cross_dataset": 1419,
+        "cross_task": 2359,
+        "label_removed": 4668,
+        "native_irrelevance": 5153,
+        "tool_removed": 4766
+      },
+      "answerable_by_option_count": {
+        "16": 38557,
+        "2": 20463,
+        "32": 10343,
+        "4": 38514,
+        "8": 46188,
+        "ood": 18365
+      }
+    },
+    "val_hard": {
+      "n": 9339,
+      "answerable": 8051,
+      "unanswerable": 1288,
+      "by_task": {
+        "intent_routing": 9015,
+        "tool_routing": 324
+      },
+      "by_suite": {
+        "core": 6607,
+        "ood_cross_dataset": 324,
+        "ood_label_removed": 964,
+        "permutation": 1444
+      },
+      "by_dataset": {
+        "banking77": 1364,
+        "massive": 7975
+      },
+      "by_language": {
+        "en": 1364,
+        "en-US": 2659,
+        "es-ES": 2689,
+        "pt-PT": 2627
+      },
+      "by_option_count": {
+        "16": 2062,
+        "32": 1651,
+        "4": 3546,
+        "8": 2080
+      },
+      "by_negative_strategy": {
+        "hard": 9015,
+        "random": 324
+      },
+      "by_negatives_detail": {
+        "hard_v1": 8051,
+        "hard_v1(gold removed)": 964,
+        "safe_random(tool pool)": 324
+      },
+      "by_ood_kind": {
+        "-": 8051,
+        "cross_task": 324,
+        "label_removed": 964
+      },
+      "answerable_by_option_count": {
+        "16": 1652,
+        "32": 1651,
+        "4": 3096,
+        "8": 1652,
+        "ood": 1288
+      }
+    },
+    "val_tools": {
+      "n": 3466,
+      "answerable": 2602,
+      "unanswerable": 864,
+      "by_task": {
+        "intent_routing": 93,
+        "tool_routing": 3373
+      },
+      "by_suite": {
+        "core": 2194,
+        "ood_cross_dataset": 93,
+        "ood_label_removed": 406,
+        "ood_native": 365,
+        "permutation": 408
+      },
+      "by_dataset": {
+        "toolace": 530,
+        "xlam": 2571,
+        "xlam_irrelevance": 365
+      },
+      "by_language": {
+        "None": 3466
+      },
+      "by_option_count": {
+        "16": 612,
+        "2": 440,
+        "32": 439,
+        "4": 1012,
+        "8": 963
+      },
+      "by_negative_strategy": {
+        "hard": 1901,
+        "native": 215,
+        "random": 1350
+      },
+      "by_negatives_detail": {
+        "hard_v1": 675,
+        "native+hard_v1": 1158,
+        "native+random": 482,
+        "native+safe_random": 365,
+        "native_others+safe_random(gold removed)": 406,
+        "random": 287,
+        "safe_random(intent labels)": 93
+      },
+      "by_ood_kind": {
+        "-": 2602,
+        "cross_task": 93,
+        "native_irrelevance": 365,
+        "tool_removed": 406
+      },
+      "answerable_by_option_count": {
+        "16": 438,
+        "2": 440,
+        "32": 439,
+        "4": 847,
+        "8": 438,
+        "ood": 864
+      }
+    },
+    "holdout_tools": {
+      "n": 3828,
+      "answerable": 2921,
+      "unanswerable": 907,
+      "by_task": {
+        "intent_routing": 131,
+        "tool_routing": 3697
+      },
+      "by_suite": {
+        "core": 2373,
+        "ood_cross_dataset": 131,
+        "ood_label_removed": 429,
+        "ood_native": 347,
+        "permutation": 548
+      },
+      "by_dataset": {
+        "toolace": 502,
+        "xlam": 2979,
+        "xlam_irrelevance": 347
+      },
+      "by_language": {
+        "None": 3828
+      },
+      "by_option_count": {
+        "16": 660,
+        "2": 476,
+        "32": 475,
+        "4": 1200,
+        "8": 1017
+      },
+      "by_negative_strategy": {
+        "hard": 2128,
+        "native": 276,
+        "random": 1424
+      },
+      "by_negatives_detail": {
+        "hard_v1": 828,
+        "native+hard_v1": 1260,
+        "native+random": 507,
+        "native+safe_random": 347,
+        "native_others+safe_random(gold removed)": 429,
+        "random": 326,
+        "safe_random(intent labels)": 131
+      },
+      "by_ood_kind": {
+        "-": 2921,
+        "cross_task": 131,
+        "native_irrelevance": 347,
+        "tool_removed": 429
+      },
+      "answerable_by_option_count": {
+        "16": 475,
+        "2": 476,
+        "32": 475,
+        "4": 1022,
+        "8": 473,
+        "ood": 907
+      }
+    }
+  },
+  "krunbench_validation": {
+    "train": {
+      "examples": 172430,
+      "ok": true,
+      "errors": {},
+      "warnings": {
+        "conflicting_labels": 21,
+        "duplicate_example": 293
+      }
+    },
+    "val_hard": {
+      "examples": 9339,
+      "ok": true,
+      "errors": {},
+      "warnings": {}
+    },
+    "val_tools": {
+      "examples": 3466,
+      "ok": true,
+      "errors": {},
+      "warnings": {}
+    },
+    "holdout_tools": {
+      "examples": 3828,
+      "ok": true,
+      "errors": {},
+      "warnings": {}
+    }
+  },
+  "files": {
+    "train": {
+      "path": "experiments/krun_one/data/v0/train.jsonl",
+      "sha256": "a2293757603415a70be0a53f46543516d5e34c43a2b0fcaf6dd8cafdde03efc1"
+    },
+    "val_hard": {
+      "path": "experiments/krun_one/data/v0/val_hard.jsonl",
+      "sha256": "a204a8c3394aa9352f2693a490abf7cfa9dfc41d37bc545a34be1f0094a9ef77"
+    },
+    "val_tools": {
+      "path": "experiments/krun_one/data/v0/val_tools.jsonl",
+      "sha256": "e53b288c3dd3be220e750518980dda955270b3df356edf3739d82be0ecd91361"
+    },
+    "holdout_tools": {
+      "path": "experiments/krun_one/data/v0/holdout_tools.jsonl",
+      "sha256": "ff36cead2f2480ef3f72cf8779bb2f66ed46382c933b0465ca62377305f7203c"
+    }
+  }
+}

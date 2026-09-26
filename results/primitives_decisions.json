@@ -1,0 +1,12 @@
+{
+  "round": "v03",
+  "selected_variant": "B",
+  "selected_tag": "v03_B",
+  "frozen_utc": "2026-09-24T23:28:31Z",
+  "rule": "configs/krun_one_v0_3.yaml decision_rules (registered before training)",
+  "selection_file": "results/primitives_candidates/selection_v03.json",
+  "selection_sha256": "79d4e18b5f891d6cf3eeabdcea1188c58129f78858d8a5bdfc5b648a997431df",
+  "score_confidence": "ordinal_dispersion",
+  "previous_round": "v02: no eligible variant (results/primitives_candidates/selection_v02.md)",
+  "note": "Test sets (choice final sets, noul/score test, mixed) are opened ONCE for v03_B after this file exists; nothing is tuned afterwards."
+}

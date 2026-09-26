@@ -1,0 +1,1361 @@
+{
+ "model": {
+  "tag": "krun_one_B",
+  "score": "top1_top2_margin",
+  "target": "0.98",
+  "sets": {
+   "kb_val": {
+    "errors": {
+     "option_count": {
+      "intent:k8": 67,
+      "intent:k16": 86,
+      "intent:k4": 37,
+      "intent:k2": 28
+     },
+     "multilingual": {
+      "en": 58,
+      "en-US": 34,
+      "pt-PT": 61,
+      "es-ES": 65
+     },
+     "semantic_confusion": {
+      "intent:banking77": 18,
+      "intent:massive": 160,
+      "intent:hwu64": 40
+     },
+     "ood_false_accept": {
+      "ood_label_removed": 54,
+      "ood_cross_dataset": 2
+     },
+     "ambiguous": {
+      "intent": 36
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 2
+     }
+    },
+    "totals": {
+     "option_count": {
+      "intent:k8": 1341,
+      "intent:k16": 1221,
+      "intent:k4": 1290,
+      "intent:k2": 1218
+     },
+     "multilingual": {
+      "en": 1368,
+      "en-US": 1234,
+      "pt-PT": 1234,
+      "es-ES": 1234
+     },
+     "ood_false_accept": {
+      "ood_label_removed": 544,
+      "ood_cross_dataset": 150
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 183
+     }
+    },
+    "top_confusions": [
+     [
+      "qa_maths -> qa_factoid",
+      9
+     ],
+     [
+      "recommendation_events -> recommendation_movies",
+      8
+     ],
+     [
+      "play_music -> play_audiobook",
+      7
+     ],
+     [
+      "calendar_set -> calendar_query",
+      6
+     ],
+     [
+      "takeaway order -> takeaway query",
+      6
+     ],
+     [
+      "general_greet -> general_quirky",
+      5
+     ],
+     [
+      "general affirm -> general confirm",
+      5
+     ],
+     [
+      "play_music -> qa_factoid",
+      4
+     ],
+     [
+      "recommendation_events -> calendar_query",
+      4
+     ],
+     [
+      "general explain -> general repeat",
+      4
+     ],
+     [
+      "music_query -> play_music",
+      3
+     ],
+     [
+      "news_query -> general_quirky",
+      3
+     ],
+     [
+      "alarm_query -> music_settings",
+      3
+     ],
+     [
+      "calendar_query -> news_query",
+      3
+     ],
+     [
+      "play_game -> play_music",
+      3
+     ]
+    ],
+    "examples": {
+     "wrong:intent": [
+      {
+       "context": "How long does it take for a new card to ship?",
+       "gold": "card_arrival",
+       "pred": "card_delivery_estimate",
+       "k": 16,
+       "p_pred": 0.967,
+       "language": "en"
+      },
+      {
+       "context": "How long does it take for me to get my new card?",
+       "gold": "card_arrival",
+       "pred": "card_delivery_estimate",
+       "k": 16,
+       "p_pred": 0.603,
+       "language": "en"
+      },
+      {
+       "context": "Am I charged if I make a top-up?",
+       "gold": "top_up_by_bank_transfer_charge",
+       "pred": "top_up_by_card_charge",
+       "k": 2,
+       "p_pred": 0.993,
+       "language": "en"
+      },
+      {
+       "context": "why isn't my top-up going through?",
+       "gold": "pending_top_up",
+       "pred": "top_up_reverted",
+       "k": 4,
+       "p_pred": 0.525,
+       "language": "en"
+      },
+      {
+       "context": "How can I get my money that I didn't get from the ATM?",
+       "gold": "wrong_amount_of_cash_received",
+       "pred": "cash_withdrawal_not_recognised",
+       "k": 16,
+       "p_pred": 0.81,
+       "language": "en"
+      },
+      {
+       "context": "i disagree with a charge",
+       "gold": "card_payment_not_recognised",
+       "pred": "direct_debit_payment_not_recognised",
+       "k": 4,
+       "p_pred": 0.658,
+       "language": "en"
+      },
+      {
+       "context": "I cannot tell what my top up currently is.",
+       "gold": "topping_up_by_card",
+       "pred": "pending_top_up",
+       "k": 16,
+       "p_pred": 0.424,
+       "language": "en"
+      },
+      {
+       "context": "Purchases I did not make are appearing in my bank statement?",
+       "gold": "direct_debit_payment_not_recognised",
+       "pred": "card_payment_not_recognised",
+       "k": 4,
+       "p_pred": 0.73,
+       "language": "en"
+      }
+     ],
+     "ood:ood_label_removed": [
+      {
+       "context": "When will I receive my card?",
+       "accepted": "card_arrival",
+       "conf": 0.999,
+       "options": [
+        "verify_source_of_funds",
+        "unable_to_verify_identity",
+        "visa_or_mastercard",
+        "card_arrival",
+        "top_up_failed",
+        "Refund_not_showing_up"
+       ]
+      },
+      {
+       "context": "My card gets rejected when I try to use it",
+       "accepted": "contactless_not_working",
+       "conf": 0.955,
+       "options": [
+        "virtual_card_not_working",
+        "contactless_not_working"
+       ]
+      },
+      {
+       "context": "Where can I get my currencies exchanged?",
+       "accepted": "exchange_rate",
+       "conf": 0.962,
+       "options": [
+        "request_refund",
+        "exchange_rate",
+        "pending_card_payment",
+        "card_not_working"
+       ]
+      },
+      {
+       "context": "There are some charges that I don't recognize.  It happened days ago.  Can I get these charges back?  Should I cancel my card?",
+       "accepted": "direct_debit_payment_not_recognised",
+       "conf": 0.971,
+       "options": [
+        "Refund_not_showing_up",
+        "compromised_card",
+        "declined_card_payment",
+        "balance_not_updated_after_cheque_or_cash_deposit",
+        "card_not_working",
+        "virtual_card_not_working"
+       ]
+      }
+     ],
+     "ood:ood_cross_dataset": [
+      {
+       "context": "if it's ten p. m. in california what time is it in alabama",
+       "accepted": "exchange_via_app",
+       "conf": 0.999,
+       "options": [
+        "declined_cash_withdrawal",
+        "compromised_card",
+        "wrong_exchange_rate_for_cash_withdrawal",
+        "card_payment_wrong_exchange_rate",
+        "Refund_not_showing_up",
+        "disposable_card_limits"
+       ]
+      },
+      {
+       "context": "se são vinte e duas horas na califórnia que horas são no alabama",
+       "accepted": "exchange_via_app",
+       "conf": 0.917,
+       "options": [
+        "declined_cash_withdrawal",
+        "compromised_card",
+        "wrong_exchange_rate_for_cash_withdrawal",
+        "card_payment_wrong_exchange_rate",
+        "Refund_not_showing_up",
+        "disposable_card_limits"
+       ]
+      }
+     ]
+    }
+   },
+   "val_hard": {
+    "errors": {
+     "option_count": {
+      "intent:k16": 73,
+      "intent:k4": 49,
+      "intent:k8": 57,
+      "intent:k32": 105
+     },
+     "multilingual": {
+      "en": 34,
+      "en-US": 78,
+      "es-ES": 87,
+      "pt-PT": 85
+     },
+     "semantic_confusion": {
+      "intent:banking77": 34,
+      "intent:massive": 250
+     },
+     "ood_false_accept": {
+      "label_removed": 48,
+      "cross_task": 1
+     },
+     "ambiguous": {
+      "intent": 34
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 4
+     }
+    },
+    "totals": {
+     "option_count": {
+      "intent:k16": 849,
+      "intent:k4": 806,
+      "intent:k8": 803,
+      "intent:k32": 804
+     },
+     "multilingual": {
+      "en": 520,
+      "en-US": 914,
+      "es-ES": 914,
+      "pt-PT": 914
+     },
+     "ood_false_accept": {
+      "label_removed": 473,
+      "cross_task": 152
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 164
+     }
+    },
+    "top_confusions": [
+     [
+      "general_quirky -> weather_query",
+      11
+     ],
+     [
+      "takeaway_order -> takeaway_query",
+      9
+     ],
+     [
+      "calendar_set -> calendar_query",
+      9
+     ],
+     [
+      "general_quirky -> calendar_query",
+      7
+     ],
+     [
+      "qa_factoid -> general_quirky",
+      6
+     ],
+     [
+      "general_quirky -> news_query",
+      6
+     ],
+     [
+      "general_quirky -> qa_factoid",
+      6
+     ],
+     [
+      "play_radio -> play_music",
+      6
+     ],
+     [
+      "general_greet -> general_quirky",
+      5
+     ],
+     [
+      "general_quirky -> qa_definition",
+      5
+     ],
+     [
+      "play_radio -> play_podcasts",
+      5
+     ],
+     [
+      "qa_maths -> qa_factoid",
+      4
+     ],
+     [
+      "qa_definition -> general_quirky",
+      4
+     ],
+     [
+      "weather_query -> general_quirky",
+      4
+     ],
+     [
+      "calendar_query -> datetime_query",
+      4
+     ]
+    ],
+    "examples": {
+     "wrong:intent": [
+      {
+       "context": "How long does it take for a new card to ship?",
+       "gold": "card_arrival",
+       "pred": "card_delivery_estimate",
+       "k": 8,
+       "p_pred": 0.869,
+       "language": "en"
+      },
+      {
+       "context": "If I find a card I lost do I need to dispose of it? Or can I re-active the card and continue to use it?",
+       "gold": "card_linking",
+       "pred": "lost_or_stolen_card",
+       "k": 8,
+       "p_pred": 0.397,
+       "language": "en"
+      },
+      {
+       "context": "I would like to re-activate my card, it was previously reported  lost but I found it this morning.",
+       "gold": "card_linking",
+       "pred": "activate_my_card",
+       "k": 16,
+       "p_pred": 0.994,
+       "language": "en"
+      },
+      {
+       "context": "Which flat currencies can I use from you?",
+       "gold": "fiat_currency_support",
+       "pred": "supported_cards_and_currencies",
+       "k": 16,
+       "p_pred": 0.706,
+       "language": "en"
+      },
+      {
+       "context": "Is there a way to make my money usable in another country?",
+       "gold": "exchange_via_app",
+       "pred": "fiat_currency_support",
+       "k": 16,
+       "p_pred": 0.549,
+       "language": "en"
+      },
+      {
+       "context": "Can you send me a new card and block my current one. I'm in Spain and my wallet was stolen.",
+       "gold": "lost_or_stolen_card",
+       "pred": "compromised_card",
+       "k": 32,
+       "p_pred": 0.691,
+       "language": "en"
+      },
+      {
+       "context": "Am I charged if I make a top-up?",
+       "gold": "top_up_by_bank_transfer_charge",
+       "pred": "top_up_by_card_charge",
+       "k": 8,
+       "p_pred": 0.611,
+       "language": "en"
+      },
+      {
+       "context": "My account is  new  why can I  not top up",
+       "gold": "pending_top_up",
+       "pred": "top_up_failed",
+       "k": 4,
+       "p_pred": 0.858,
+       "language": "en"
+      }
+     ],
+     "ood:label_removed": [
+      {
+       "context": "How long does it take for a new card to ship?",
+       "accepted": "card_delivery_estimate",
+       "conf": 0.898,
+       "options": [
+        "activate_my_card",
+        "order_physical_card",
+        "card_delivery_estimate",
+        "card_about_to_expire"
+       ]
+      },
+      {
+       "context": "Can I choose when my card is delivered?",
+       "accepted": "card_arrival",
+       "conf": 0.987,
+       "options": [
+        "getting_spare_card",
+        "card_acceptance",
+        "lost_or_stolen_card",
+        "card_arrival",
+        "top_up_by_card_charge",
+        "card_about_to_expire"
+       ]
+      },
+      {
+       "context": "What do I do if my card was stolen.",
+       "accepted": "lost_or_stolen_phone",
+       "conf": 0.847,
+       "options": [
+        "card_swallowed",
+        "card_about_to_expire",
+        "getting_spare_card",
+        "disposable_card_limits",
+        "visa_or_mastercard",
+        "declined_cash_withdrawal"
+       ]
+      },
+      {
+       "context": "Should i uninstall the app before i try it again?",
+       "accepted": "lost_or_stolen_phone",
+       "conf": 0.834,
+       "options": [
+        "passcode_forgotten",
+        "cash_withdrawal_not_recognised",
+        "declined_cash_withdrawal",
+        "Refund_not_showing_up",
+        "direct_debit_payment_not_recognised",
+        "card_not_working"
+       ]
+      }
+     ],
+     "ood:cross_task": [
+      {
+       "context": "puedes mostrar una receta de espaguetis",
+       "accepted": "is_perfect_square",
+       "conf": 0.867,
+       "options": [
+        "is_perfect_square",
+        "Get All Motivational Pictures",
+        "DynamicScaleVisualizer",
+        "user_follower_list",
+        "robotic_arm_operation_schedule",
+        "getCustomerServiceNumber"
+       ]
+      }
+     ]
+    }
+   },
+   "val_tools": {
+    "errors": {
+     "option_count": {
+      "tool:k2": 4,
+      "tool:k4": 5,
+      "tool:k16": 15,
+      "tool:k8": 12,
+      "tool:k32": 21
+     },
+     "tool_slices": {
+      "toolset_small(<=4)": 9,
+      "no_near_duplicate": 34,
+      "name_matches_query": 38,
+      "unseen_tool": 41,
+      "seen_tool": 16,
+      "toolset_large(k>=16)": 36,
+      "near_duplicate_distractor": 23,
+      "toolset_medium(5-15)": 12,
+      "description_dependent": 19
+     },
+     "tool_description": {
+      "description_dependent": 19
+     },
+     "ood_false_accept": {
+      "tool_removed": 8,
+      "native_irrelevance": 7
+     },
+     "semantic_confusion": {
+      "tool:near_duplicate": 23
+     },
+     "ambiguous": {
+      "tool": 5
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 4
+     }
+    },
+    "totals": {
+     "option_count": {
+      "tool:k2": 235,
+      "tool:k4": 220,
+      "tool:k16": 197,
+      "tool:k8": 227,
+      "tool:k32": 229
+     },
+     "tool_slices": {
+      "toolset_small(<=4)": 455,
+      "no_near_duplicate": 829,
+      "name_matches_query": 817,
+      "unseen_tool": 581,
+      "seen_tool": 527,
+      "toolset_large(k>=16)": 426,
+      "near_duplicate_distractor": 279,
+      "toolset_medium(5-15)": 227,
+      "description_dependent": 291
+     },
+     "ood_false_accept": {
+      "tool_removed": 198,
+      "cross_task": 47,
+      "native_irrelevance": 195
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 48
+     }
+    },
+    "top_confusions": [],
+    "examples": {
+     "wrong:tool": [
+      {
+       "context": "I am trying to log my workouts and calculate the total calories I've burned today. I weighed myself this morning, and I'm currently at 70kg. My activities inclu",
+       "gold": "weightmanagement.activity_tracker",
+       "pred": "calculate_calories_burned",
+       "k": 4,
+       "p_pred": 0.676,
+       "language": null
+      },
+      {
+       "context": "I have gathered a set of customer reviews and I need to understand the overall sentiment. Can you analyze it using a sentiment analysis algorithm for me?",
+       "gold": "applyDataMiningAlgorithm",
+       "pred": "runAlgorithm",
+       "k": 8,
+       "p_pred": 0.893,
+       "language": null
+      },
+      {
+       "context": "Who were the top new artists last year?",
+       "gold": "Year End Top New Artists",
+       "pred": "Top New Artists",
+       "k": 16,
+       "p_pred": 0.537,
+       "language": null
+      },
+      {
+       "context": "I need a list of restaurants near Av. Corrientes 348, Buenos Aires, Argentina.",
+       "gold": "Get Restaurants by Address",
+       "pred": "restaurants_v2_list",
+       "k": 32,
+       "p_pred": 0.445,
+       "language": null
+      },
+      {
+       "context": "Can you retrieve the height of the building with ID 101 on the 'buildings' layer? Also, I need the type of the road with ID 45 on the 'roads' layer.",
+       "gold": "getLayerAttribute",
+       "pred": "getBuildingDimensions",
+       "k": 8,
+       "p_pred": 0.442,
+       "language": null
+      },
+      {
+       "context": "Could you give me the current standings and points for NBA teams this season?",
+       "gold": "Basketballv3Rankings",
+       "pred": "Basketball Team Standings Seasons",
+       "k": 16,
+       "p_pred": 0.697,
+       "language": null
+      },
+      {
+       "context": "Could you please help me find the latitude and longitude of two places, one is the Eiffel Tower in Paris and the other is the Statue of Liberty in New York?",
+       "gold": "navitime_geocoding",
+       "pred": "reversegeocoding",
+       "k": 32,
+       "p_pred": 0.373,
+       "language": null
+      },
+      {
+       "context": "Could you find the latest news articles related to major developments in artificial intelligence in Indonesia for me?",
+       "gold": "vivanews-search",
+       "pred": "GetNewsByTopic",
+       "k": 16,
+       "p_pred": 0.774,
+       "language": null
+      }
+     ],
+     "ood:tool_removed": [
+      {
+       "context": "I need to compare two branches named 'feature' and 'development' from the repository at 'https://github.com/user/project'. Can you do that for me?",
+       "accepted": "gitRepoDataFetcher",
+       "conf": 0.739,
+       "options": [
+        "team_streaks",
+        "Search Books",
+        "options_prices",
+        "ethnic_food_stalls",
+        "Flight Prices for a Week",
+        "Flight Integration API"
+       ]
+      },
+      {
+       "context": "Could you find the latest news articles related to major developments in artificial intelligence in Indonesia for me?",
+       "accepted": "Get Articles",
+       "conf": 0.93,
+       "options": [
+        "Get Articles",
+        "podcast.distribution_analytics",
+        "video_post_metadata",
+        "Get All Categories",
+        "GetPeopleByTopic",
+        "Get All Videos of Actor/Actress"
+       ]
+      },
+      {
+       "context": "I need to control the movement of my robot 'robot123' to move forward for 5 seconds. However, before that, can you check its current status?",
+       "accepted": "controlRobotMovement",
+       "conf": 0.97,
+       "options": [
+        "get_car_models",
+        "GetNewsByTopic",
+        "Get User Tweets",
+        "PolicyImpactAnalysis.retrieveImpact",
+        "EmailVerifications",
+        "getpeoplebytopic"
+       ]
+      },
+      {
+       "context": "Role definition: Inquirer: A user who raises an inquiry. Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialo",
+       "accepted": "Skyscanner Flights Results",
+       "conf": 0.89,
+       "options": [
+        "Get Venue Details",
+        "Convert Number To Speech",
+        "products_v2_list_recommended",
+        "Country Data API",
+        "us_az",
+        "Skyscanner Flights Results"
+       ]
+      }
+     ],
+     "ood:native_irrelevance": [
+      {
+       "context": "Find the latitude and longitude coordinates for IP addresses '8.8.8.8', '1.1.1.1', and '74.125.24.100' using the ip-api.com API.",
+       "accepted": "is_valid_ip_address",
+       "conf": 0.831,
+       "options": [
+        "get_city_from_zipcode",
+        "E-Sports Categories",
+        "is_valid_ip_address",
+        "project_population",
+        "get_dna_sequence",
+        "is_valid_email"
+       ]
+      },
+      {
+       "context": "Fetch the order details for ID '67890' and list all categories from AliExpress for the German locale.",
+       "accepted": "listoforders",
+       "conf": 0.825,
+       "options": [
+        "Get News from Sri Lanka",
+        "list_of_room_facility_types",
+        "Get Block Timestamp",
+        "listoforders",
+        "posts",
+        "Greatest of All Time Mainstream Rock Songs"
+       ]
+      },
+      {
+       "context": "I'm planning a trip to Europe and Asia. Can you list the webcams available in Europe and Asia in English, showing images and locations?",
+       "accepted": "webcams_list_country_country_country",
+       "conf": 0.992,
+       "options": [
+        "influencer_campaign_create",
+        "users.password.reset",
+        "Warzone User Info",
+        "webcams_list_country_country_country",
+        "Get Contract Info",
+        "getWindDirection"
+       ]
+      },
+      {
+       "context": "Search for images of classic literature book covers and also find images of modern science fiction book covers.",
+       "accepted": "images_search",
+       "conf": 0.953,
+       "options": [
+        "Retrieve Blur Events",
+        "images_search",
+        "Tours",
+        "Abandoned Baby Indicator",
+        "Canadian Gas Prices Locations",
+        "deployApplication"
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "baseline": {
+  "tag": "laya",
+  "score": "top1_top2_margin",
+  "target": "0.98",
+  "sets": {
+   "kb_val": {
+    "errors": {
+     "option_count": {
+      "intent:k8": 494,
+      "intent:k16": 535,
+      "intent:k4": 378,
+      "intent:k2": 304
+     },
+     "multilingual": {
+      "en": 303,
+      "en-US": 313,
+      "pt-PT": 549,
+      "es-ES": 546
+     },
+     "semantic_confusion": {
+      "intent:banking77": 149,
+      "intent:massive": 1408,
+      "intent:hwu64": 154
+     },
+     "ambiguous": {
+      "intent": 642
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 59
+     }
+    },
+    "totals": {
+     "option_count": {
+      "intent:k8": 1341,
+      "intent:k16": 1221,
+      "intent:k4": 1290,
+      "intent:k2": 1218
+     },
+     "multilingual": {
+      "en": 1368,
+      "en-US": 1234,
+      "pt-PT": 1234,
+      "es-ES": 1234
+     },
+     "ood_false_accept": {
+      "ood_label_removed": 544,
+      "ood_cross_dataset": 150
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 183
+     }
+    },
+    "top_confusions": [
+     [
+      "general_quirky -> general_greet",
+      70
+     ],
+     [
+      "weather_query -> calendar_query",
+      49
+     ],
+     [
+      "play_music -> music_query",
+      44
+     ],
+     [
+      "email_query -> email_sendemail",
+      31
+     ],
+     [
+      "calendar_query -> calendar_set",
+      26
+     ],
+     [
+      "qa_factoid -> qa_stock",
+      26
+     ],
+     [
+      "music_likeness -> music_query",
+      20
+     ],
+     [
+      "calendar_set -> calendar_query",
+      19
+     ],
+     [
+      "general_quirky -> social_query",
+      17
+     ],
+     [
+      "datetime_query -> calendar_query",
+      14
+     ],
+     [
+      "lists_query -> lists_remove",
+      14
+     ],
+     [
+      "email_query -> email_querycontact",
+      14
+     ],
+     [
+      "calendar_set -> alarm_set",
+      13
+     ],
+     [
+      "cooking_recipe -> cooking_query",
+      13
+     ],
+     [
+      "iot_cleaning -> iot_wemo_on",
+      12
+     ]
+    ],
+    "examples": {
+     "wrong:intent": [
+      {
+       "context": "How long does it take for a new card to ship?",
+       "gold": "card_arrival",
+       "pred": "order_physical_card",
+       "k": 16,
+       "p_pred": 0.497,
+       "language": "en"
+      },
+      {
+       "context": "How long does it take for me to get my new card?",
+       "gold": "card_arrival",
+       "pred": "order_physical_card",
+       "k": 8,
+       "p_pred": 0.483,
+       "language": "en"
+      },
+      {
+       "context": "How long does it take for me to get my new card?",
+       "gold": "card_arrival",
+       "pred": "order_physical_card",
+       "k": 16,
+       "p_pred": 0.314,
+       "language": "en"
+      },
+      {
+       "context": "How long will it be to get this new card?",
+       "gold": "card_arrival",
+       "pred": "disposable_card_limits",
+       "k": 8,
+       "p_pred": 0.837,
+       "language": "en"
+      },
+      {
+       "context": "If I find a card I lost do I need to dispose of it? Or can I re-active the card and continue to use it?",
+       "gold": "card_linking",
+       "pred": "fiat_currency_support",
+       "k": 8,
+       "p_pred": 0.206,
+       "language": "en"
+      },
+      {
+       "context": "I would like to re-activate my card, it was previously reported  lost but I found it this morning.",
+       "gold": "card_linking",
+       "pred": "card_arrival",
+       "k": 4,
+       "p_pred": 0.44,
+       "language": "en"
+      },
+      {
+       "context": "I need to find the card I received in the app.",
+       "gold": "card_linking",
+       "pred": "get_physical_card",
+       "k": 16,
+       "p_pred": 0.175,
+       "language": "en"
+      },
+      {
+       "context": "I don't see my card anywhere in the app.",
+       "gold": "card_linking",
+       "pred": "card_not_working",
+       "k": 8,
+       "p_pred": 0.572,
+       "language": "en"
+      }
+     ]
+    }
+   },
+   "val_hard": {
+    "errors": {
+     "option_count": {
+      "intent:k16": 463,
+      "intent:k4": 353,
+      "intent:k8": 373,
+      "intent:k32": 460
+     },
+     "multilingual": {
+      "en": 200,
+      "en-US": 355,
+      "es-ES": 537,
+      "pt-PT": 557
+     },
+     "semantic_confusion": {
+      "intent:banking77": 200,
+      "intent:massive": 1449
+     },
+     "ambiguous": {
+      "intent": 769
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 86
+     }
+    },
+    "totals": {
+     "option_count": {
+      "intent:k16": 849,
+      "intent:k4": 806,
+      "intent:k8": 803,
+      "intent:k32": 804
+     },
+     "multilingual": {
+      "en": 520,
+      "en-US": 914,
+      "es-ES": 914,
+      "pt-PT": 914
+     },
+     "ood_false_accept": {
+      "label_removed": 473,
+      "cross_task": 152
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 164
+     }
+    },
+    "top_confusions": [
+     [
+      "calendar_query -> calendar_set",
+      43
+     ],
+     [
+      "email_query -> email_sendemail",
+      42
+     ],
+     [
+      "general_quirky -> general_greet",
+      36
+     ],
+     [
+      "weather_query -> calendar_query",
+      34
+     ],
+     [
+      "play_music -> music_query",
+      30
+     ],
+     [
+      "email_query -> email_querycontact",
+      23
+     ],
+     [
+      "calendar_set -> recommendation_events",
+      23
+     ],
+     [
+      "calendar_set -> calendar_query",
+      23
+     ],
+     [
+      "datetime_query -> calendar_query",
+      21
+     ],
+     [
+      "general_quirky -> calendar_query",
+      18
+     ],
+     [
+      "general_quirky -> qa_factoid",
+      17
+     ],
+     [
+      "takeaway_query -> takeaway_order",
+      17
+     ],
+     [
+      "qa_factoid -> general_quirky",
+      16
+     ],
+     [
+      "general_quirky -> news_query",
+      16
+     ],
+     [
+      "qa_factoid -> news_query",
+      15
+     ]
+    ],
+    "examples": {
+     "wrong:intent": [
+      {
+       "context": "I ordered my card but it still isn't here",
+       "gold": "card_arrival",
+       "pred": "lost_or_stolen_card",
+       "k": 4,
+       "p_pred": 0.935,
+       "language": "en"
+      },
+      {
+       "context": "How long does it take for a new card to ship?",
+       "gold": "card_arrival",
+       "pred": "order_physical_card",
+       "k": 8,
+       "p_pred": 0.711,
+       "language": "en"
+      },
+      {
+       "context": "How long does it take for me to get my new card?",
+       "gold": "card_arrival",
+       "pred": "order_physical_card",
+       "k": 8,
+       "p_pred": 0.436,
+       "language": "en"
+      },
+      {
+       "context": "Will I have to wait much longer for my new card to arrive?",
+       "gold": "card_arrival",
+       "pred": "card_delivery_estimate",
+       "k": 8,
+       "p_pred": 0.439,
+       "language": "en"
+      },
+      {
+       "context": "How long will it be to get this new card?",
+       "gold": "card_arrival",
+       "pred": "getting_spare_card",
+       "k": 8,
+       "p_pred": 0.802,
+       "language": "en"
+      },
+      {
+       "context": "If I find a card I lost do I need to dispose of it? Or can I re-active the card and continue to use it?",
+       "gold": "card_linking",
+       "pred": "lost_or_stolen_card",
+       "k": 8,
+       "p_pred": 0.778,
+       "language": "en"
+      },
+      {
+       "context": "I would like to re-activate my card, it was previously reported  lost but I found it this morning.",
+       "gold": "card_linking",
+       "pred": "lost_or_stolen_card",
+       "k": 16,
+       "p_pred": 0.559,
+       "language": "en"
+      },
+      {
+       "context": "Now that I have my card, how do I connect it to the app?",
+       "gold": "card_linking",
+       "pred": "order_physical_card",
+       "k": 32,
+       "p_pred": 0.167,
+       "language": "en"
+      }
+     ]
+    }
+   },
+   "val_tools": {
+    "errors": {
+     "option_count": {
+      "tool:k2": 21,
+      "tool:k4": 52,
+      "tool:k16": 89,
+      "tool:k8": 70,
+      "tool:k32": 138
+     },
+     "tool_slices": {
+      "toolset_small(<=4)": 73,
+      "no_near_duplicate": 194,
+      "name_matches_query": 231,
+      "unseen_tool": 218,
+      "seen_tool": 152,
+      "toolset_large(k>=16)": 227,
+      "near_duplicate_distractor": 176,
+      "toolset_medium(5-15)": 70,
+      "description_dependent": 139
+     },
+     "ambiguous": {
+      "tool": 197
+     },
+     "tool_description": {
+      "description_dependent": 139
+     },
+     "semantic_confusion": {
+      "tool:near_duplicate": 176
+     },
+     "ood_false_accept": {
+      "tool_removed": 6,
+      "native_irrelevance": 13
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 17
+     }
+    },
+    "totals": {
+     "option_count": {
+      "tool:k2": 235,
+      "tool:k4": 220,
+      "tool:k16": 197,
+      "tool:k8": 227,
+      "tool:k32": 229
+     },
+     "tool_slices": {
+      "toolset_small(<=4)": 455,
+      "no_near_duplicate": 829,
+      "name_matches_query": 817,
+      "unseen_tool": 581,
+      "seen_tool": 527,
+      "toolset_large(k>=16)": 426,
+      "near_duplicate_distractor": 279,
+      "toolset_medium(5-15)": 227,
+      "description_dependent": 291
+     },
+     "ood_false_accept": {
+      "tool_removed": 198,
+      "cross_task": 47,
+      "native_irrelevance": 195
+     },
+     "permutation_flip": {
+      "groups_disagreeing": 48
+     }
+    },
+    "top_confusions": [],
+    "examples": {
+     "wrong:tool": [
+      {
+       "context": "Could you calculate the boiling point of water if the pressure is 2 atmospheres?",
+       "gold": "PhaseTransitionCalculator.calculateBoilingPoint",
+       "pred": "PressureCalculationService.calculateGasPressure",
+       "k": 16,
+       "p_pred": 0.234,
+       "language": null
+      },
+      {
+       "context": "I am trying to log my workouts and calculate the total calories I've burned today. I weighed myself this morning, and I'm currently at 70kg. My activities inclu",
+       "gold": "weightmanagement.activity_tracker",
+       "pred": "/v1/caloriesburned",
+       "k": 4,
+       "p_pred": 0.608,
+       "language": null
+      },
+      {
+       "context": "Role definition: Inquirer: A user who raises an inquiry. Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialo",
+       "gold": "Golf Course Finder",
+       "pred": "Get Premier League Clubs",
+       "k": 2,
+       "p_pred": 0.524,
+       "language": null
+      },
+      {
+       "context": "Role definition: Inquirer: A user who raises an inquiry. Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialo",
+       "gold": "createSubnet",
+       "pred": "createVPC",
+       "k": 16,
+       "p_pred": 0.634,
+       "language": null
+      },
+      {
+       "context": "As part of my project management duties, I need to verify software deployments across three environments: development, staging, and production. The software ver",
+       "gold": "software.versionControl",
+       "pred": "Get Daily Influencer Posts by Coin Name",
+       "k": 32,
+       "p_pred": 0.172,
+       "language": null
+      },
+      {
+       "context": "I have gathered a set of customer reviews and I need to understand the overall sentiment. Can you analyze it using a sentiment analysis algorithm for me?",
+       "gold": "applyDataMiningAlgorithm",
+       "pred": "sentimentAnalysis.analyze",
+       "k": 8,
+       "p_pred": 0.93,
+       "language": null
+      },
+      {
+       "context": "Role definition: Inquirer: A user who raises an inquiry. Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialo",
+       "gold": "sendCommunityNewsletter",
+       "pred": "Get Dialogue Response",
+       "k": 32,
+       "p_pred": 1.0,
+       "language": null
+      },
+      {
+       "context": "Who were the top new artists last year?",
+       "gold": "Year End Top New Artists",
+       "pred": "Top New Artists",
+       "k": 16,
+       "p_pred": 0.157,
+       "language": null
+      }
+     ],
+     "ood:tool_removed": [
+      {
+       "context": "I need to control the movement of my robot 'robot123' to move forward for 5 seconds. However, before that, can you check its current status?",
+       "accepted": "controlRobotMovement",
+       "conf": 0.998,
+       "options": [
+        "get_car_models",
+        "GetNewsByTopic",
+        "Get User Tweets",
+        "PolicyImpactAnalysis.retrieveImpact",
+        "EmailVerifications",
+        "getpeoplebytopic"
+       ]
+      },
+      {
+       "context": "Can you check if the email address 'john.doe@example.com' is deliverable using the email bounce detection API?",
+       "accepted": "validate_email",
+       "conf": 0.996,
+       "options": [
+        "Get Fear and Greed Index",
+        "Retrieve Listings by Market",
+        "Build Word Ladders",
+        "Get Biden Articles",
+        "generatePersonalEssay",
+        "Latest Symbol Information"
+       ]
+      },
+      {
+       "context": "Get information for tracks with IDs '0c6xIDDpzE81m2q797ordA, 11dFghVXANMlKmJXsNCbNl'.",
+       "accepted": "get_artist_albums",
+       "conf": 0.979,
+       "options": [
+        "get_radio_playlist",
+        "Currency Exchange",
+        "get_weather_updates",
+        "Username to ID",
+        "search_nearby_restaurants",
+        "Standings"
+       ]
+      },
+      {
+       "context": "Integrate the function 'x^3 + 2x^2 - x + 1' from -2 to 2 using the Simpson's rule.",
+       "accepted": "trapezoidal_integration",
+       "conf": 0.999,
+       "options": [
+        "find_peak_element",
+        "trapezoidal_integration",
+        "fibonacci_numbers",
+        "State by id"
+       ]
+      }
+     ],
+     "ood:native_irrelevance": [
+      {
+       "context": "I want to add 1101 and 1010 in binary. Also, is 16 a power of 4?",
+       "accepted": "fibonacci_numbers",
+       "conf": 0.99,
+       "options": [
+        "Backlink Checker API",
+        "Get Hotel Reviews",
+        "getProcessEfficiency",
+        "Get News for a Movie Title",
+        "Season Wins Leaderboard MW 2",
+        "fibonacci_numbers"
+       ]
+      },
+      {
+       "context": "Find the latitude and longitude coordinates for IP addresses '8.8.8.8', '1.1.1.1', and '74.125.24.100' using the ip-api.com API.",
+       "accepted": "is_valid_ip_address",
+       "conf": 0.995,
+       "options": [
+        "get_city_from_zipcode",
+        "E-Sports Categories",
+        "is_valid_ip_address",
+        "project_population",
+        "get_dna_sequence",
+        "is_valid_email"
+       ]
+      },
+      {
+       "context": "Get an overview of Drake's music and the top 20 positions from the Artist 100 chart on March 15, 2023.",
+       "accepted": "artist_albums",
+       "conf": 0.989,
+       "options": [
+        "proofreadCopy",
+        "get_addresses",
+        "Mensajes",
+        "Data Provider",
+        "calculateReynoldsNumber",
+        "search_database"
+       ]
+      },
+      {
+       "context": "Retrieve information about the IP address 8.8.8.8. Additionally, get the chat code for UASG 123456 and process number 789.",
+       "accepted": "logs",
+       "conf": 0.969,
+       "options": [
+        "user_login",
+        "video_search",
+        "Groundhog Day API",
+        "postalcode",
+        "getResidentialDesignStyle",
+        "Media Watch"
+       ]
+      }
+     ]
+    }
+   }
+  }
+ }
+}

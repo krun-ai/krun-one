@@ -1,0 +1,13 @@
+Krun One
+Copyright 2026 Krun
+
+This repository contains code derived from Laya (Convai Innovations), licensed under the Apache License,
+Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0):
+
+  * src/krun_one/model.py — DecisionModel, option rendering and build_sequence are ported from upstream Laya
+    rl_common.py and kept numerically identical (tests/test_laya_equivalence.py).
+  * Krun One weights are fine-tuned from the Laya checkpoint.
+
+Upstream: https://huggingface.co/convaiinnovations/laya (revision 1c5edc17a7acd8701df6fc341c0d179f1c62c982)
+
+Third-party datasets used for training/evaluation and their licenses are listed in README.md ("Data").

@@ -1,0 +1,190 @@
+# KRUN-011 — noul propositions for intent labels (hand-written, deterministic; one yes/no question per label).
+# Written by the Krun team from the label names of BANKING77 / MASSIVE (no model generated these). Each
+# proposition describes the label's meaning in plain language so that noul training is NOT "Is label X?".
+# Labels without a precise proposition are omitted: MASSIVE general_quirky (catch-all), qa_factoid and cooking_query
+# (their propositions would be true for many other labels), audio_volume_other (undefined).
+banking77:
+  Refund_not_showing_up: Is the customer saying that a refund they expected has not appeared in their account yet?
+  activate_my_card: Is the customer asking how to activate their card?
+  age_limit: Is the customer asking about the minimum age required to open or use an account?
+  apple_pay_or_google_pay: Is the customer asking about using Apple Pay or Google Pay?
+  atm_support: Is the customer asking which ATMs they can use or whether ATMs are supported?
+  automatic_top_up: Is the customer asking about automatic top-ups of their balance?
+  balance_not_updated_after_bank_transfer: Is the customer saying their balance did not update after a bank transfer?
+  balance_not_updated_after_cheque_or_cash_deposit: Is the customer saying their balance did not update after depositing cash or a cheque?
+  beneficiary_not_allowed: Is the customer reporting that they cannot add or pay a beneficiary?
+  cancel_transfer: Does the customer want to cancel a transfer?
+  card_about_to_expire: Is the customer asking what to do because their card is about to expire?
+  card_acceptance: Is the customer asking where their card is accepted?
+  card_arrival: Is the customer waiting for a card that has not arrived yet?
+  card_delivery_estimate: Is the customer asking how long card delivery takes?
+  card_linking: Is the customer asking how to link a card to their account or app?
+  card_not_working: Is the customer reporting that their card does not work?
+  card_payment_fee_charged: Is the customer complaining about a fee charged on a card payment?
+  card_payment_not_recognised: Is the customer reporting a card payment they do not recognise?
+  card_payment_wrong_exchange_rate: Does the customer think a card payment used the wrong exchange rate?
+  card_swallowed: Did an ATM keep or swallow the customer's card?
+  cash_withdrawal_charge: Is the customer asking about a charge for withdrawing cash?
+  cash_withdrawal_not_recognised: Is the customer reporting a cash withdrawal they did not make?
+  change_pin: Does the customer want to change their PIN?
+  compromised_card: Does the customer believe their card details have been compromised or used by someone else?
+  contactless_not_working: Is the customer reporting that contactless payments are not working?
+  country_support: Is the customer asking whether the service is available in a particular country?
+  declined_card_payment: Is the customer reporting that a card payment was declined?
+  declined_cash_withdrawal: Is the customer reporting that a cash withdrawal was declined?
+  declined_transfer: Is the customer reporting that a transfer was declined?
+  direct_debit_payment_not_recognised: Is the customer reporting a direct debit they do not recognise?
+  disposable_card_limits: Is the customer asking about the limits of disposable virtual cards?
+  edit_personal_details: Does the customer want to change their personal details?
+  exchange_charge: Is the customer asking about fees for currency exchange?
+  exchange_rate: Is the customer asking what exchange rate is used?
+  exchange_via_app: Is the customer asking how to exchange currencies in the app?
+  extra_charge_on_statement: Is the customer asking about an unexpected extra charge on their statement?
+  failed_transfer: Is the customer reporting that a transfer failed?
+  fiat_currency_support: Is the customer asking which fiat currencies are supported?
+  get_disposable_virtual_card: Does the customer want to get a disposable virtual card?
+  get_physical_card: Is the customer asking how to get a physical card?
+  getting_spare_card: Does the customer want an additional or spare card?
+  getting_virtual_card: Does the customer want to get a virtual card?
+  lost_or_stolen_card: Is the customer reporting a lost or stolen card?
+  lost_or_stolen_phone: Is the customer reporting that their phone was lost or stolen?
+  order_physical_card: Does the customer want to order a physical card?
+  passcode_forgotten: Has the customer forgotten their passcode?
+  pending_card_payment: Is the customer asking about a card payment that is still pending?
+  pending_cash_withdrawal: Is the customer asking about a cash withdrawal that is still pending?
+  pending_top_up: Is the customer asking about a top-up that is still pending?
+  pending_transfer: Is the customer asking about a transfer that is still pending?
+  pin_blocked: Is the customer's PIN blocked?
+  receiving_money: Is the customer asking how to receive money into their account?
+  request_refund: Does the customer want to request a refund?
+  reverted_card_payment?: Is the customer asking why a card payment was reverted?
+  supported_cards_and_currencies: Is the customer asking which cards or currencies are supported?
+  terminate_account: Does the customer want to close their account?
+  top_up_by_bank_transfer_charge: Is the customer asking about a fee for topping up by bank transfer?
+  top_up_by_card_charge: Is the customer asking about a fee for topping up with a card?
+  top_up_by_cash_or_cheque: Is the customer asking whether they can top up with cash or a cheque?
+  top_up_failed: Is the customer reporting that a top-up failed?
+  top_up_limits: Is the customer asking about top-up limits?
+  top_up_reverted: Is the customer reporting that a top-up was reverted?
+  topping_up_by_card: Is the customer asking about topping up their account with a card?
+  transaction_charged_twice: Is the customer reporting that they were charged twice for the same transaction?
+  transfer_fee_charged: Is the customer complaining about a fee charged on a transfer?
+  transfer_into_account: Is the customer asking how to transfer money into their account?
+  transfer_not_received_by_recipient: Is the customer saying the recipient has not received a transfer?
+  transfer_timing: Is the customer asking how long a transfer takes?
+  unable_to_verify_identity: Is the customer having trouble verifying their identity?
+  verify_my_identity: Is the customer asking how to verify their identity?
+  verify_source_of_funds: Is the customer asking about verifying the source of their funds?
+  verify_top_up: Is the customer asking about verifying a top-up?
+  virtual_card_not_working: Is the customer reporting that their virtual card does not work?
+  visa_or_mastercard: Is the customer asking whether the card is Visa or Mastercard?
+  why_verify_identity: Is the customer asking why identity verification is required?
+  wrong_amount_of_cash_received: Did the customer receive the wrong amount of cash from an ATM?
+  wrong_exchange_rate_for_cash_withdrawal: Does the customer think a cash withdrawal used the wrong exchange rate?
+massive:
+  alarm_query: Is the user asking about alarms that are already set?
+  alarm_remove: Does the user want to remove or turn off an alarm?
+  alarm_set: Does the user want to set an alarm?
+  audio_volume_down: Does the user want to lower the volume?
+  audio_volume_mute: Does the user want to mute the audio?
+  audio_volume_up: Does the user want to raise the volume?
+  calendar_query: Is the user asking what is on their calendar?
+  calendar_remove: Does the user want to delete a calendar event?
+  calendar_set: Does the user want to add an event or reminder to their calendar?
+  cooking_recipe: Is the user asking for a recipe?
+  datetime_convert: Does the user want to convert a time or date between time zones or formats?
+  datetime_query: Is the user asking for the current date or time?
+  email_addcontact: Does the user want to add an email contact?
+  email_query: Is the user asking about their emails?
+  email_querycontact: Is the user asking for a contact's details?
+  email_sendemail: Does the user want to send an email?
+  general_greet: Is the user greeting the assistant?
+  general_joke: Does the user want to hear a joke?
+  iot_cleaning: Does the user want to start a cleaning device such as a robot vacuum?
+  iot_coffee: Does the user want a smart device to make coffee?
+  iot_hue_lightchange: Does the user want to change the color of the lights?
+  iot_hue_lightdim: Does the user want to dim the lights?
+  iot_hue_lightoff: Does the user want to turn the lights off?
+  iot_hue_lighton: Does the user want to turn the lights on?
+  iot_hue_lightup: Does the user want to make the lights brighter?
+  iot_wemo_off: Does the user want to switch off a smart plug?
+  iot_wemo_on: Does the user want to switch on a smart plug?
+  lists_createoradd: Does the user want to create a list or add an item to a list?
+  lists_query: Is the user asking what is on one of their lists?
+  lists_remove: Does the user want to remove a list or an item from a list?
+  music_dislikeness: Is the user saying they dislike a song or music?
+  music_likeness: Is the user saying they like a song or music?
+  music_query: Is the user asking about the music that is playing?
+  music_settings: Does the user want to change music playback settings such as shuffle or repeat?
+  news_query: Is the user asking for news?
+  play_audiobook: Does the user want to play an audiobook?
+  play_game: Does the user want to play a game?
+  play_music: Does the user want to play music?
+  play_podcasts: Does the user want to play a podcast?
+  play_radio: Does the user want to play a radio station?
+  qa_currency: Is the user asking about currency exchange rates?
+  qa_definition: Is the user asking for the definition of a word?
+  qa_maths: Is the user asking a math question?
+  qa_stock: Is the user asking about stock prices?
+  recommendation_events: Is the user asking for event recommendations?
+  recommendation_locations: Is the user asking for place recommendations such as restaurants or shops?
+  recommendation_movies: Is the user asking for movie recommendations?
+  social_post: Does the user want to post something on social media?
+  social_query: Is the user asking about social media updates?
+  takeaway_order: Does the user want to order takeaway food?
+  takeaway_query: Is the user asking about a takeaway order or restaurant delivery options?
+  transport_query: Is the user asking about transport schedules or routes?
+  transport_taxi: Does the user want to book a taxi?
+  transport_ticket: Does the user want to book a train or travel ticket?
+  transport_traffic: Is the user asking about traffic conditions?
+  weather_query: Is the user asking about the weather?
+# Overlaps: contexts of these labels are NEVER used as negatives for the proposition of the key label, because the
+# proposition can legitimately be true for them (hand-checked against the label definitions and KRUN-005's confusion
+# analysis). Residual label noise from other overlaps is possible and documented in noul_dataset_audit.md.
+overlaps:
+  card_arrival: [card_delivery_estimate]
+  card_delivery_estimate: [card_arrival]
+  topping_up_by_card: [top_up_by_card_charge, top_up_failed, pending_top_up, top_up_reverted, verify_top_up, top_up_limits, automatic_top_up]
+  top_up_by_card_charge: [topping_up_by_card]
+  get_physical_card: [order_physical_card, card_arrival, card_delivery_estimate]
+  order_physical_card: [get_physical_card]
+  getting_virtual_card: [get_disposable_virtual_card]
+  verify_my_identity: [why_verify_identity, unable_to_verify_identity, verify_source_of_funds]
+  why_verify_identity: [verify_my_identity]
+  unable_to_verify_identity: [verify_my_identity]
+  compromised_card: [card_payment_not_recognised, cash_withdrawal_not_recognised, direct_debit_payment_not_recognised, lost_or_stolen_card]
+  request_refund: [Refund_not_showing_up]
+  Refund_not_showing_up: [request_refund]
+  exchange_rate: [card_payment_wrong_exchange_rate, wrong_exchange_rate_for_cash_withdrawal, exchange_via_app, exchange_charge]
+  supported_cards_and_currencies: [fiat_currency_support, visa_or_mastercard, card_acceptance]
+  fiat_currency_support: [supported_cards_and_currencies]
+  card_acceptance: [supported_cards_and_currencies, atm_support]
+  card_not_working: [declined_card_payment, contactless_not_working, virtual_card_not_working]
+  declined_card_payment: [card_not_working]
+  extra_charge_on_statement: [card_payment_fee_charged, transfer_fee_charged, cash_withdrawal_charge, exchange_charge, transaction_charged_twice, direct_debit_payment_not_recognised, card_payment_not_recognised, top_up_by_card_charge, top_up_by_bank_transfer_charge]
+  card_payment_fee_charged: [extra_charge_on_statement]
+  transfer_fee_charged: [extra_charge_on_statement]
+  pending_transfer: [balance_not_updated_after_bank_transfer, transfer_timing, transfer_not_received_by_recipient]
+  transfer_timing: [pending_transfer, transfer_not_received_by_recipient, balance_not_updated_after_bank_transfer]
+  transfer_not_received_by_recipient: [pending_transfer, transfer_timing]
+  balance_not_updated_after_bank_transfer: [pending_transfer, transfer_timing, transfer_into_account]
+  failed_transfer: [declined_transfer]
+  declined_transfer: [failed_transfer]
+  activate_my_card: [card_linking]
+  card_linking: [activate_my_card]
+  pending_card_payment: [card_payment_not_recognised]
+  cash_withdrawal_charge: [extra_charge_on_statement]
+  takeaway_order: [takeaway_query]
+  takeaway_query: [takeaway_order]
+  play_music: [play_radio, music_query, music_settings]
+  play_radio: [play_music]
+  iot_hue_lightup: [iot_hue_lighton]
+  iot_hue_lighton: [iot_hue_lightup]
+  iot_hue_lightdim: [iot_hue_lightoff]
+  iot_hue_lightoff: [iot_hue_lightdim]
+  email_query: [email_querycontact]
+  email_querycontact: [email_query]
+  transport_query: [transport_traffic, transport_ticket, transport_taxi]
+  calendar_set: [alarm_set]
+  calendar_query: [alarm_query]
+  recommendation_locations: [recommendation_events]

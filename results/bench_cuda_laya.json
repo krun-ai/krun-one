@@ -1,0 +1,45 @@
+{
+  "tag": "laya",
+  "model": "laya",
+  "device": "cuda",
+  "dtype": "torch.bfloat16",
+  "load_seconds": 98.36,
+  "torch_threads": 24,
+  "n_request_pool": 64,
+  "parameters": 421293827,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "batches": {
+    "1": {
+      "p50_ms": 10.430006310343742,
+      "p95_ms": 10.841501411050558,
+      "mean_ms": 10.295708291232586,
+      "decisions_per_s": 97.1278489748549,
+      "runs": 50,
+      "peak_vram_allocated_mib": 2338,
+      "peak_vram_reserved_mib": 2540,
+      "rss_mib": 1622
+    },
+    "8": {
+      "p50_ms": 33.37128087878227,
+      "p95_ms": 47.48988766223192,
+      "mean_ms": 34.143531918525696,
+      "decisions_per_s": 234.3049927901377,
+      "runs": 50,
+      "peak_vram_allocated_mib": 2466,
+      "peak_vram_reserved_mib": 2788,
+      "rss_mib": 1641
+    },
+    "32": {
+      "p50_ms": 201.7513792961836,
+      "p95_ms": 227.5678487494588,
+      "mean_ms": 201.35845832526684,
+      "decisions_per_s": 158.92056517590342,
+      "runs": 50,
+      "peak_vram_allocated_mib": 3002,
+      "peak_vram_reserved_mib": 3816,
+      "rss_mib": 1642
+    }
+  },
+  "rss_mib_model_loaded_delta": 1156,
+  "timestamp_utc": "2026-09-24T03:59:31Z"
+}

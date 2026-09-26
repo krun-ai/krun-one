@@ -1,0 +1,75 @@
+{
+  "artifact": "artifacts/krun-one-v0",
+  "device": "cuda",
+  "load_seconds": 123.03,
+  "laya_modules_loaded": [],
+  "sys_path_has_laya": false,
+  "cases": {
+    "intent": {
+      "expect": "transaction_charged_twice",
+      "result": {
+        "choice": "transaction_charged_twice",
+        "top_option": "transaction_charged_twice",
+        "abstain": false,
+        "confidence": 0.999417,
+        "confidence_score": "top1_top2_margin",
+        "threshold": 0.8312384896494216,
+        "probabilities": {
+          "transaction_charged_twice": 0.999564,
+          "card_payment_not_recognised": 0.000123,
+          "pending_card_payment": 6.1e-05,
+          "reverted_card_payment?": 0.000104,
+          "extra_charge_on_statement": 0.000147
+        },
+        "task": "intent"
+      },
+      "pass": true
+    },
+    "tool": {
+      "expect": "calendar_search",
+      "result": {
+        "choice": "calendar_search",
+        "top_option": "calendar_search",
+        "abstain": false,
+        "confidence": 0.98334,
+        "confidence_score": "top1_top2_margin",
+        "threshold": 0.7297394428124958,
+        "probabilities": {
+          "calendar_search": 0.987639,
+          "send_email": 0.004031,
+          "web_search": 0.004299,
+          "create_invoice": 0.004031
+        },
+        "task": "tool"
+      },
+      "pass": true
+    },
+    "ood": {
+      "expect": "abstain",
+      "result": {
+        "choice": null,
+        "top_option": "search_database",
+        "abstain": true,
+        "confidence": 0.152121,
+        "confidence_score": "top1_top2_margin",
+        "threshold": 0.7297394428124958,
+        "probabilities": {
+          "send_email": 0.282626,
+          "create_invoice": 0.282626,
+          "search_database": 0.434747
+        },
+        "task": "tool"
+      },
+      "pass": true
+    }
+  },
+  "fidelity": {
+    "n": 64,
+    "max_abs_logit_diff": 0.10150146484375,
+    "mean_abs_logit_diff": 0.015326499938964844,
+    "argmax_agreement": 1.0,
+    "eval_device": "cuda",
+    "eval_dtype": "torch.bfloat16"
+  },
+  "all_pass": true
+}

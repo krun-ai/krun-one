@@ -1,0 +1,41 @@
+{
+  "frozen_utc": "2026-09-24T03:40:30Z",
+  "rules": {
+    "config_choice": "Compare A and B on val_eval only (KrunBench validation + val_hard + val_tools). Primary: mean of intent core accuracy (KrunBench val) and tool core accuracy (val_tools). Choose B only if it beats A by >= 0.5 pp on that mean; otherwise the cheaper A. Ties within 0.5 pp -> A.",
+    "abstention_score": "Among the three scores (after per-family temperature), choose the one with the highest mean OOD AUROC over {KrunBench val intents, val_tools} on val_eval; if within 0.005, the lower mean AURC wins.",
+    "final_report": "holdout_tools and KrunBench v0 test (incl. BFCL) are evaluated once for Laya and the chosen Krun One after the choices above are frozen in results/krun_one_decisions.json; nothing is tuned afterwards."
+  },
+  "config_choice": {
+    "A": {
+      "intent_core_acc_kb_val": 0.8675659104843654,
+      "tool_core_acc_val_tools": 0.8745487364620939,
+      "mean": 0.8710573234732296
+    },
+    "B": {
+      "intent_core_acc_kb_val": 0.9601471489883507,
+      "tool_core_acc_val_tools": 0.9485559566787004,
+      "mean": 0.9543515528335256
+    },
+    "delta_B_minus_A_pp": 8.329422936029596,
+    "chosen": "B"
+  },
+  "chosen_config": "B",
+  "chosen_eval": "eval_krun_one_B",
+  "abstention_candidates": {
+    "top1_probability": {
+      "mean_ood_auroc": 0.972794147670912,
+      "mean_aurc": 0.005194624419309949
+    },
+    "top1_top2_margin": {
+      "mean_ood_auroc": 0.9718663163507175,
+      "mean_aurc": 0.005163757821240733
+    },
+    "neg_normalized_entropy": {
+      "mean_ood_auroc": 0.9761147487423565,
+      "mean_aurc": 0.006901455756001238
+    }
+  },
+  "abstention_score": "top1_top2_margin",
+  "operating_point_target": "0.98",
+  "note": "decided on validation val_eval only; final sets (holdout_tools, kb_test) not yet opened"
+}

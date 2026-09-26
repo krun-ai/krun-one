@@ -1,0 +1,64 @@
+# KRUN-011 round 2 (v0.3) — noul/score data v2. Same sources and construction as primitives_data.yaml (v1) plus:
+#  * noul from the 9 MHS Likert items (median >= 3 -> true, <= 1 -> false, neutral 2 -> not used) and from
+#    HelpSteer2 ratings (5 quality propositions; middle ratings not used) — deterministic transformations of real labels;
+#  * held-out ("unseen") propositions across four sources, never trained: Civil identity_attack, MHS dehumanize +
+#    status, HelpSteer2 coherence, and ~10% of intent propositions (stable hash of the label).
+# Score data is identical to v1 (same caps/seeds -> same records).
+seed: 20261101
+out_dir: experiments/krun_one/data/primitives_v2
+stats_file: primitives_dataset_stats_v2.json
+krunbench_dir: benchmarks/krunbench/data/v0
+krun_one_v0_dir: experiments/krun_one/data/v0
+
+sources:
+  helpsteer2: {hf_id: nvidia/HelpSteer2, revision: 990b2711a36180dd19d9c94b8627844866f8982a, license: CC-BY-4.0}
+  mhs: {hf_id: ucberkeley-dlab/measuring-hate-speech, revision: 5468f6e118396646b02a2f691e771f6b6d9502ea, license: CC-BY-4.0}
+  civil_comments: {hf_id: google/civil_comments, revision: f2970eb3a55777454c94069077cc8d9b5866312d, license: CC0-1.0}
+  boolq: {hf_id: google/boolq, revision: 35b264d03638db9f4ce671b711558bf7ff0f80d5, license: CC-BY-SA-3.0, use: eval_only}
+  sst5: {hf_id: SetFit/sst5, revision: e51bdcd8cd3a30da231967c1a249ba59361279a3, license: unknown (SST), use: eval_only}
+
+noul:
+  intent:
+    propositions: configs/noul_propositions.yaml
+    neighbours: 8
+    per_context: {positive: 1, hard_negative: 1, cross_domain: 0.5}
+    unseen_fraction: 0.1
+    cap: {train: 30000, val: 3000, test: 3000}
+  tool:
+    per_query: {positive: 1, hard_negative: 1}
+    irrelevance_per_query: 1
+    cap: {train: 24000, val: 2000, test: 2000}
+  civil_comments:
+    threshold: 0.5
+    hard_negative_max: 0.3
+    per_proposition: {positive: 2000, hard_negative: 2000, cross_domain: 1000}
+    eval_per_proposition: {positive: 200, hard_negative: 200, cross_domain: 100}
+    unseen_propositions: [identity_attack]
+  mhs_hatespeech:
+    yes_if_mean_ge: 1.5
+    no_if_mean_le: 0.5
+    cap: {train: 6000, val: 1000, test: 1000}
+  mhs_items:
+    unseen_propositions: [dehumanize, status]
+    cap: {train: 16000, val: 2000, test: 2000}
+  helpsteer2:
+    unseen_propositions: [coherence]
+    cap: {train: 12000, val: 2000, test: 2000}
+  criteria_fraction: 0.3
+  boolq_test_cap: 3270
+
+score:
+  helpsteer2:
+    attributes: [helpfulness, correctness, coherence, complexity, verbosity]
+    val_fraction: 0.1
+    prompt_chars: 1500
+    response_chars: 2500
+    cap: {train: 30000, val: 3000, test: 3000}
+  mhs:
+    items: [sentiment, respect, insult, humiliate, status, dehumanize, violence, genocide, attack_defend]
+    label: median_of_annotators
+    cap: {train: 30000, val: 3000, test: 3000}
+  sst5_test: all
+
+mhs_split: {train: 0.8, val: 0.1}
+civil_val_cap_rows: 97320

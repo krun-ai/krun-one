@@ -1,0 +1,173 @@
+{
+  "artifact": "artifacts/krun-one-v0.3-candidate",
+  "device": "cuda",
+  "load_seconds": 108.92,
+  "primitives": [
+    "choice",
+    "noul",
+    "score"
+  ],
+  "laya_modules_loaded": [],
+  "sys_path_has_laya": false,
+  "cases": {
+    "choice": {
+      "answers": {
+        "q": {
+          "type": "choice",
+          "choice": "transaction_charged_twice",
+          "top_option": "transaction_charged_twice",
+          "abstain": false,
+          "confidence": 0.99949,
+          "confidence_score": "top1_top2_margin",
+          "threshold": 0.8194959711550742,
+          "probabilities": {
+            "transaction_charged_twice": 0.999676,
+            "card_payment_not_recognised": 0.000187,
+            "pending_card_payment": 0.000137
+          },
+          "task": "intent"
+        }
+      },
+      "pass": true
+    },
+    "noul_true": {
+      "answers": {
+        "q": {
+          "type": "noul",
+          "noul": 0.997524
+        }
+      },
+      "pass": true
+    },
+    "noul_false": {
+      "answers": {
+        "q": {
+          "type": "noul",
+          "noul": 0.150805
+        }
+      },
+      "pass": true
+    },
+    "noul_criteria": {
+      "answers": {
+        "q": {
+          "type": "noul",
+          "noul": 0.049822
+        }
+      },
+      "pass": true
+    },
+    "score_high": {
+      "answers": {
+        "q": {
+          "type": "score",
+          "score": 1.926507,
+          "confidence": 0.92437,
+          "legend": {
+            "0": "Cosmetic issue; no functionality affected",
+            "1": "Feature degraded; workaround available",
+            "2": "Critical functionality blocked; no workaround"
+          },
+          "probabilities": {
+            "0": 0.003769,
+            "1": 0.065955,
+            "2": 0.930276
+          }
+        }
+      },
+      "pass": true
+    },
+    "score_low": {
+      "answers": {
+        "q": {
+          "type": "score",
+          "score": 0.279147,
+          "confidence": 0.758966,
+          "legend": {
+            "0": "Cosmetic issue; no functionality affected",
+            "1": "Feature degraded; workaround available",
+            "2": "Critical functionality blocked; no workaround"
+          },
+          "probabilities": {
+            "0": 0.740758,
+            "1": 0.239337,
+            "2": 0.019905
+          }
+        }
+      },
+      "pass": true
+    },
+    "mixed": {
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": null,
+          "top_option": "support",
+          "abstain": true,
+          "confidence": 0.636669,
+          "confidence_score": "top1_top2_margin",
+          "threshold": 0.8194959711550742,
+          "probabilities": {
+            "billing": 0.048907,
+            "support": 0.793881,
+            "sales": 0.157212
+          },
+          "task": "intent"
+        },
+        "needs_human": {
+          "type": "noul",
+          "noul": 0.990155
+        },
+        "severity": {
+          "type": "score",
+          "score": 1.406165,
+          "confidence": 0.451785,
+          "legend": {
+            "0": "Minor issue",
+            "1": "Feature degraded",
+            "2": "Blocking issue"
+          },
+          "probabilities": {
+            "0": 0.15351,
+            "1": 0.286814,
+            "2": 0.559676
+          }
+        }
+      },
+      "pass": true
+    },
+    "legacy_decide": {
+      "answers": {
+        "choice": "calendar_search",
+        "top_option": "calendar_search",
+        "abstain": false,
+        "confidence": 0.9631,
+        "confidence_score": "top1_top2_margin",
+        "threshold": 0.7049367711877292,
+        "probabilities": {
+          "calendar_search": 0.98155,
+          "send_email": 0.01845
+        },
+        "task": "tool"
+      },
+      "pass": true
+    }
+  },
+  "fidelity": {
+    "noul_val": {
+      "n": 64,
+      "max_abs_logit_diff": 0.107421875,
+      "mean_abs_logit_diff": 0.018932342529296875,
+      "argmax_agreement": 1.0,
+      "eval_dtype": "torch.bfloat16"
+    },
+    "score_val": {
+      "n": 64,
+      "max_abs_logit_diff": 0.0625,
+      "mean_abs_logit_diff": 0.01906263828277588,
+      "argmax_agreement": 1.0,
+      "eval_dtype": "torch.bfloat16"
+    }
+  },
+  "all_pass": true
+}

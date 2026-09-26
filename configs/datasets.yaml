@@ -1,0 +1,53 @@
+# KRUN-005 / Krun One v0 — training + evaluation data (scripts/prepare_training_data.py).
+# Every distribution below is explicit and applied with exact counts (largest remainder), never left to data frequency.
+seed: 20260925
+krunbench_dir: benchmarks/krunbench/data/v0            # relative to project root (KRUN-003 output, byte-reproducible)
+out_dir: experiments/krun_one/data/v0
+
+intents:
+  train_datasets: [banking77, massive]                 # HWU64 NEVER in training (mirror license unconfirmed)
+  hard_eval_datasets: [banking77, massive]             # items of KrunBench *validation* -> val_hard suite
+  decisions_per_item: {banking77: 4, massive: 2}       # answerable decisions per original item (massive: per locale)
+  option_counts: {2: 0.15, 4: 0.25, 8: 0.30, 16: 0.25, 32: 0.05}
+  negative_strategies: {hard_v1: 0.65, random: 0.35}
+  ood:                                                 # extra UNANSWERABLE decisions, as a fraction of answerable items
+    label_removed: 0.12                                # near-OOD: gold removed, options = hard_v1 neighbours of gold
+    cross_dataset: 0.04                                # far-OOD: banking77 <-> massive (KrunBench exclusion lists)
+    cross_task: 0.03                                   # far-OOD: intent context vs tool options (similarity-filtered)
+  ood_option_counts: {2: 0.15, 4: 0.30, 8: 0.30, 16: 0.25}
+
+tools:
+  sources: [xlam, toolace, xlam_irrelevance]           # see src/krun_one/sources.py (licenses, revisions)
+  unseen_tool_fraction: 0.06                           # gold tools held out entirely (never in train pool) -> val/holdout
+  seen_eval_fraction: {validation: 0.025, holdout: 0.025}
+  irrelevance_eval_fraction: {validation: 0.075, holdout: 0.075}
+  second_decision_fraction: 0.25                       # train tool items that get a 2nd decision (other k/strategy)
+  option_counts: {2: 0.10, 4: 0.25, 8: 0.30, 16: 0.25, 32: 0.10}
+  negative_strategies: {hard_v1: 0.65, random: 0.35}   # applied to pool distractors; native tools always come first
+  near_duplicate_cosine: 0.95                          # e5 doc cosine >= this with the gold -> never a negative
+  ood:
+    tool_removed: 0.12                                 # gold removed; native others + hard neighbours (near-dups excluded)
+    cross_task: 0.03                                   # tool query vs intent labels (similarity-filtered)
+  ood_option_counts: {2: 0.15, 4: 0.30, 8: 0.30, 16: 0.25}
+
+permutation:
+  train_copy_fraction: 0.06                            # answerable train decisions duplicated once in a rotated order
+  eval_fraction: 0.05                                  # eval items with a 4-rotation (Latin square) consistency group
+  eval_option_count: 4
+
+cross_task_similarity_quantile: 0.5                    # far-OOD options drawn only from the least-similar half (e5)
+
+eval:
+  intent_hard_option_counts: [4, 8, 16, 32]            # val_hard cycles through these
+  tool_option_counts: [2, 4, 8, 16, 32]
+  intent_label_removed_fraction: 0.15
+  tool_removed_fraction: 0.20
+  cross_task_fraction: 0.05
+
+ood_cross_dataset_pairs:                               # copied from KrunBench v0 configs/datasets.yaml (training pairs only)
+  - source: banking77
+    target: massive
+    exclude_target_labels: [qa_currency, qa_stock, qa_factoid, qa_definition, qa_maths, general_quirky]
+  - source: massive
+    target: banking77
+    exclude_source_labels: [qa_currency, qa_stock, qa_factoid, general_quirky]

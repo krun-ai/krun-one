@@ -1,0 +1,60 @@
+# KRUN-005 — Krun One v0. Supervised fine-tuning of the public Laya checkpoint on Krun data.
+# Two controlled configurations (A: partial, B: full); everything else is identical. No sweep.
+name: krun-one-v0
+seed: 20260925
+init:
+  checkpoint: laya                      # ./laya repo-root checkpoint (ModernBERT-large, 421,293,827 params), read-only
+data:
+  dir: experiments/krun_one/data/v0     # relative to project root; built by scripts/prepare_training_data.py
+  train_file: train.jsonl
+sequence:                               # Laya serialization, unchanged; only the budgets are raised
+  max_len: 1024                         # Laya default 512 (ModernBERT-large supports 8192 positions)
+  head_max_len: 896                     # Laya default 192: 16 tools x (48 tokens + marker) = 784 must fit
+objective:
+  loss: cross_entropy                   # soft-target CE over the decision's options
+  answerable_target: one_hot
+  unanswerable_target: uniform          # answerable=false -> CE against the uniform distribution (outlier exposure)
+  unanswerable_weight: 0.5              # per-decision weight of unanswerable decisions (Hendrycks et al. 2019 default)
+batching:
+  max_tokens: 8192                      # padded tokens per step (length-bucketed batches, Laya-style)
+  max_seqs: 64
+optimizer:
+  name: adamw
+  weight_decay: 0.01
+  lr_encoder: 2.0e-5
+  lr_head: 1.0e-4                       # decision head, scorer, type embedding
+  warmup_ratio: 0.05
+  schedule: linear
+  max_grad_norm: 1.0
+  amp: bf16                             # RTX 4090 (sm_89); GradScaler disabled for bf16 but its state is persisted
+epochs: 1
+checkpoint:
+  save_every: 100
+  keep_last: 2
+configs:
+  A:
+    description: decision head + scorer + type embeddings + top 8 of 28 encoder layers (+ final norm)
+    train_top_encoder_layers: 8
+  B:
+    description: full fine-tuning (encoder + decision head + scorer + type embeddings)
+    train_top_encoder_layers: all
+# act_head is frozen and unused in both configurations (upstream act_probability saturates at ~1.0).
+evaluation:
+  val_fit_seed: 20260923                # = KRUN-004 seed -> identical val_fit/val_eval split of KrunBench validation
+  val_fit_fraction: 0.5
+  temperature: per_task_family          # one scalar T for intent decisions, one for tool decisions (fit on val_fit)
+  abstention_scores: [top1_probability, top1_top2_margin, neg_normalized_entropy]
+  target_selective_accuracy: [0.98, 0.99, 0.95]   # first = primary operating point (threshold chosen on val_fit)
+  coverage_grid: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+# ---- decision rules, registered BEFORE any training run -------------------------------------------------
+decision_rules:
+  config_choice: >-
+    Compare A and B on val_eval only (KrunBench validation + val_hard + val_tools). Primary: mean of intent core
+    accuracy (KrunBench val) and tool core accuracy (val_tools). Choose B only if it beats A by >= 0.5 pp on that
+    mean; otherwise the cheaper A. Ties within 0.5 pp -> A.
+  abstention_score: >-
+    Among the three scores (after per-family temperature), choose the one with the highest mean OOD AUROC over
+    {KrunBench val intents, val_tools} on val_eval; if within 0.005, the lower mean AURC wins.
+  final_report: >-
+    holdout_tools and KrunBench v0 test (incl. BFCL) are evaluated once for Laya and the chosen Krun One after the
+    choices above are frozen in results/krun_one_decisions.json; nothing is tuned afterwards.
