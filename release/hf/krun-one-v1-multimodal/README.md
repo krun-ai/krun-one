@@ -3,18 +3,18 @@ license: apache-2.0
 language: [en, pt, es, fr]
 library_name: pytorch
 tags: [decision-model, multimodal, document-understanding, speech, image-classification, abstention]
-base_model: krun-ai/krun-one-v1
+base_model: ferreslabs/krun-one-v1
 ---
 
 # Krun One v1 — multimodal (M1.5c)
 
-The frozen [Krun One v1](https://huggingface.co/krun-ai/krun-one-v1) text model plus the **M1.5c fusion**: images,
+The frozen [Krun One v1](https://huggingface.co/ferreslabs/krun-one-v1) text model plus the **M1.5c fusion**: images,
 documents (scans, screenshots, PDFs / DOCX with or without a text layer) and audio become evidence for the same typed
 decisions (`choice`, `noul`, `score`, `multi`). Output is always a structured decision — no generation of any kind.
 
 | component | parameters | |
 |---|---:|---|
-| Krun One v1 text core (frozen) | 879,356,931 | `krun-ai/krun-one-v1` |
+| Krun One v1 text core (frozen) | 879,356,931 | `ferreslabs/krun-one-v1` |
 | SigLIP2 base NaFlex vision tower (frozen) | 92,930,304 | `google/siglip2-base-patch16-naflex`, pinned revision |
 | Whisper-small (frozen; ASR + acoustic branch) | 241,734,912 | `openai/whisper-small`, pinned revision |
 | RapidOCR PP-OCRv5 mobile det + latin rec (ONNX) | 3,121,400 | included in `ocr/` |
@@ -24,8 +24,8 @@ decisions (`choice`, `noul`, `score`, `multi`). Output is always a structured de
 
 ```bash
 git clone https://github.com/krun-ai/krun-one && cd krun-one && uv sync --group m1 --group m15
-hf download krun-ai/krun-one-v1 --local-dir models
-hf download krun-ai/krun-one-v1-multimodal --local-dir models
+hf download ferreslabs/krun-one-v1 --local-dir models
+hf download ferreslabs/krun-one-v1-multimodal --local-dir models
 ```
 
 The package folder is `models/krun-one-v1-multimodal-candidate/`; its `runtime_config.json` references the text core at

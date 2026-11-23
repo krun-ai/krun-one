@@ -1,11 +1,11 @@
 #!/bin/bash
 # Publish Krun One weights and benchmarks to the Hugging Face Hub (needs `hf auth login` with write access to $ORG).
-#   ORG=krun-ai bash scripts/release_hf.sh stage     # build release/stage/* (hard links, no copies of big files)
-#   ORG=krun-ai bash scripts/release_hf.sh check     # verify every artifact checksum inside the staging folders
-#   ORG=krun-ai bash scripts/release_hf.sh upload    # create the repos (public) and upload
+#   ORG=ferreslabs bash scripts/release_hf.sh stage     # build release/stage/* (hard links, no copies of big files)
+#   ORG=ferreslabs bash scripts/release_hf.sh check     # verify every artifact checksum inside the staging folders
+#   ORG=ferreslabs bash scripts/release_hf.sh upload    # create the repos (public) and upload
 set -eu
 cd "$(dirname "$0")/.."
-ORG=${ORG:-krun-ai}
+ORG=${ORG:-ferreslabs}
 ST=release/stage
 stage() {
   rm -rf $ST; mkdir -p $ST/{krun-one-v1,krun-one-v1-multimodal,krunbench-v1,kruntechbench}

@@ -9,10 +9,10 @@ evaluation, export, the research rounds and their reports. Weights and datasets 
 
 | release | what | where |
 |---|---|---|
-| **Krun One v1** (text) | 879,356,931 parameters, K1-W1536-L22 (ModernBERT / mmBERT architecture, 22 layers, hidden 1536), 256k Gemma-2 vocabulary, 1,024-token sequence | `krun-ai/krun-one-v1` |
-| Krun One v1 multimodal | the frozen v1 text core + M1.5c fusion (26.7M trained parameters) over SigLIP2 (images, documents), Whisper-small (speech) and RapidOCR | `krun-ai/krun-one-v1-multimodal` |
-| KrunBench v1 | the decision benchmark used to build and gate v1 (incl. the former protected split) | `krun-ai/krunbench-v1` |
-| KrunTechBench v1 (+ R3 extension) | technical / state-action decisions, counterfactual families, capability tracks | `krun-ai/kruntechbench` |
+| **Krun One v1** (text) | 879,356,931 parameters, K1-W1536-L22 (ModernBERT / mmBERT architecture, 22 layers, hidden 1536), 256k Gemma-2 vocabulary, 1,024-token sequence | `ferreslabs/krun-one-v1` |
+| Krun One v1 multimodal | the frozen v1 text core + M1.5c fusion (26.7M trained parameters) over SigLIP2 (images, documents), Whisper-small (speech) and RapidOCR | `ferreslabs/krun-one-v1-multimodal` |
+| KrunBench v1 | the decision benchmark used to build and gate v1 (incl. the former protected split) | `ferreslabs/krunbench-v1` |
+| KrunTechBench v1 (+ R3 extension) | technical / state-action decisions, counterfactual families, capability tracks | `ferreslabs/kruntechbench` |
 | Krun One v0 | Laya-based predecessor (421M) | `docs/KRUN_ONE_V0_README.md` |
 
 License: **Apache-2.0** for code and weights (see `LICENSE`, `NOTICE` and the data notices below).
@@ -21,7 +21,7 @@ License: **Apache-2.0** for code and weights (see `LICENSE`, `NOTICE` and the da
 
 ```bash
 uv sync                                   # Python 3.12; torch 2.14 cu126; add --group m1 --group m15 for multimodal
-hf download krun-ai/krun-one-v1 --local-dir artifacts/krun-one-v1-text-final
+hf download ferreslabs/krun-one-v1 --local-dir artifacts/krun-one-v1-text-final
 ```
 
 ```python
@@ -33,7 +33,7 @@ a.decide({"context": "quero cancelar minha assinatura",
                               "options": [{"id": "cancel_subscription"}, {"id": "check_balance"}]}}})
 ```
 
-Multimodal: `krun_one.v1.multimodal.runtime` (see the model card of `krun-ai/krun-one-v1-multimodal`).
+Multimodal: `krun_one.v1.multimodal.runtime` (see the model card of `ferreslabs/krun-one-v1-multimodal`).
 
 ## Krun One v1 at a glance (RTX 4090)
 

@@ -4,7 +4,7 @@ language: [en, pt, es, fr]
 library_name: pytorch
 pipeline_tag: text-classification
 tags: [decision-model, intent-classification, tool-routing, function-calling, abstention, calibration, encoder, modernbert, mmbert]
-datasets: [krun-ai/krunbench-v1]
+datasets: [ferreslabs/krunbench-v1]
 ---
 
 # Krun One v1 (text)
@@ -37,7 +37,7 @@ The checkpoint is the frozen artifact folder `krun-one-v1-text-final/` (checksum
 
 ```bash
 git clone https://github.com/krun-ai/krun-one && cd krun-one && uv sync
-hf download krun-ai/krun-one-v1 --local-dir models
+hf download ferreslabs/krun-one-v1 --local-dir models
 ```
 
 ```python

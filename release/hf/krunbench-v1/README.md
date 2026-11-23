@@ -15,7 +15,7 @@ configs:
 
 # KrunBench v1
 
-The decision benchmark used to build, calibrate and gate [Krun One v1](https://huggingface.co/krun-ai/krun-one-v1).
+The decision benchmark used to build, calibrate and gate [Krun One v1](https://huggingface.co/ferreslabs/krun-one-v1).
 Records follow the `krun.decision.v1` schema (context, typed question, candidates, gold labels, answerability, slices).
 
 | split | records | role during v1 development |
