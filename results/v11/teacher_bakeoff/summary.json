@@ -1,0 +1,5355 @@
+{
+ "sample": {
+  "n": 240,
+  "subset60": 60,
+  "seed": 20261010
+ },
+ "models_full240": {
+  "deepseek-v4-pro_cloud": {
+   "n": 240,
+   "n_expected": 240,
+   "n_request_errors": 0,
+   "acc": 0.6417,
+   "acc_ci95": [
+    0.5833,
+    0.7042
+   ],
+   "acc_answerable": 0.685,
+   "n_answerable": 200,
+   "acc_unanswerable": 0.425,
+   "n_unanswerable": 40,
+   "said_none_rate": 0.0792,
+   "false_none_rate_on_answerable": 0.01,
+   "valid_json_rate": 1.0,
+   "per_track": {
+    "api": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "backend": {
+     "acc": 0.7917,
+     "n": 24
+    },
+    "cloud": {
+     "acc": 0.9167,
+     "n": 24
+    },
+    "database": {
+     "acc": 0.5,
+     "n": 24
+    },
+    "devops": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "distributed": {
+     "acc": 0.4583,
+     "n": 24
+    },
+    "mlinfra": {
+     "acc": 0.375,
+     "n": 24
+    },
+    "security": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "software_repair": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "state_action": {
+     "acc": 0.375,
+     "n": 24
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.8015,
+     "n": 131
+    },
+    "simulator": {
+     "acc": 0.411,
+     "n": 73
+    },
+    "swe": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "tetris": {
+     "acc": 0.1667,
+     "n": 12
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "batching": {
+     "acc": 0.0,
+     "n": 11
+    },
+    "datastore": {
+     "acc": 0.5833,
+     "n": 12
+    },
+    "deploystrategy": {
+     "acc": 0.5,
+     "n": 12
+    },
+    "indexing": {
+     "acc": 0.4167,
+     "n": 12
+    },
+    "messaging": {
+     "acc": 0.9,
+     "n": 10
+    },
+    "mlserving": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "netcomponent": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "quorum": {
+     "acc": 0.1429,
+     "n": 14
+    },
+    "retry": {
+     "acc": 0.2857,
+     "n": 7
+    },
+    "rollout": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "routing": {
+     "acc": 0.6,
+     "n": 5
+    },
+    "scaling": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "scheduling": {
+     "acc": 0.5833,
+     "n": 12
+    },
+    "security": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "sizing": {
+     "acc": 0.9167,
+     "n": 24
+    },
+    "structure": {
+     "acc": 0.75,
+     "n": 12
+    },
+    "swe_file": {
+     "acc": 0.8,
+     "n": 5
+    },
+    "swe_file_ood": {
+     "acc": 0.2,
+     "n": 5
+    },
+    "swe_function": {
+     "acc": 0.8,
+     "n": 5
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_tests": {
+     "acc": 0.75,
+     "n": 4
+    },
+    "tetris": {
+     "acc": 0.1667,
+     "n": 12
+    },
+    "vectorindex": {
+     "acc": 0.7273,
+     "n": 11
+    }
+   },
+   "flip_pairs": 30,
+   "flip_both_correct": 0.3667,
+   "flip_same_choice_both": 0.3,
+   "latency_median_s": 3.6,
+   "latency_p95_s": 8.511,
+   "latency_mean_s": 4.2931,
+   "prompt_tokens_mean": 284.6375,
+   "completion_tokens_mean": 7,
+   "completion_tokens_p95": 7,
+   "prompt_tokens_max": 907,
+   "truncated_rate": 0.0,
+   "per_10k": {
+    "sequential_hours": 1.8464,
+    "prompt_tokens_M": 2.8464,
+    "completion_tokens_M": 0.07,
+    "usd": 4.0344,
+    "usd_per_Mtok_in_out": [
+     1.32,
+     3.96
+    ],
+    "hours_at_pro_concurrency3": 0.6155,
+    "latency_basis": "clean sequential probe (8 req)"
+   },
+   "latency_clean_sequential": {
+    "n": 8,
+    "median_s": 0.616,
+    "mean_s": 0.6647,
+    "max_s": 1.022
+   }
+  },
+  "deepseek-v4.1-flash_cloud": {
+   "n": 240,
+   "n_expected": 240,
+   "n_request_errors": 0,
+   "acc": 0.7083,
+   "acc_ci95": [
+    0.65,
+    0.7667
+   ],
+   "acc_answerable": 0.7,
+   "n_answerable": 200,
+   "acc_unanswerable": 0.75,
+   "n_unanswerable": 40,
+   "said_none_rate": 0.1333,
+   "false_none_rate_on_answerable": 0.01,
+   "valid_json_rate": 0.95,
+   "per_track": {
+    "api": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "backend": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "cloud": {
+     "acc": 0.7917,
+     "n": 24
+    },
+    "database": {
+     "acc": 0.6667,
+     "n": 24
+    },
+    "devops": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "distributed": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "mlinfra": {
+     "acc": 0.375,
+     "n": 24
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "software_repair": {
+     "acc": 0.8333,
+     "n": 24
+    },
+    "state_action": {
+     "acc": 0.5,
+     "n": 24
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.8321,
+     "n": 131
+    },
+    "simulator": {
+     "acc": 0.5342,
+     "n": 73
+    },
+    "swe": {
+     "acc": 0.8333,
+     "n": 24
+    },
+    "tetris": {
+     "acc": 0.1667,
+     "n": 12
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "batching": {
+     "acc": 0.1818,
+     "n": 11
+    },
+    "datastore": {
+     "acc": 0.6667,
+     "n": 12
+    },
+    "deploystrategy": {
+     "acc": 0.6667,
+     "n": 12
+    },
+    "indexing": {
+     "acc": 0.6667,
+     "n": 12
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 10
+    },
+    "mlserving": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "netcomponent": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "quorum": {
+     "acc": 0.3571,
+     "n": 14
+    },
+    "retry": {
+     "acc": 0.2857,
+     "n": 7
+    },
+    "rollout": {
+     "acc": 0.75,
+     "n": 12
+    },
+    "routing": {
+     "acc": 0.6,
+     "n": 5
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "scheduling": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "sizing": {
+     "acc": 0.7917,
+     "n": 24
+    },
+    "structure": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_file_ood": {
+     "acc": 0.4,
+     "n": 5
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_tests": {
+     "acc": 0.75,
+     "n": 4
+    },
+    "tetris": {
+     "acc": 0.1667,
+     "n": 12
+    },
+    "vectorindex": {
+     "acc": 0.5455,
+     "n": 11
+    }
+   },
+   "flip_pairs": 30,
+   "flip_both_correct": 0.2667,
+   "flip_same_choice_both": 0.2667,
+   "latency_median_s": 3.5795,
+   "latency_p95_s": 8.511,
+   "latency_mean_s": 4.2326,
+   "prompt_tokens_mean": 285.6375,
+   "completion_tokens_mean": 12.1667,
+   "completion_tokens_p95": 7,
+   "prompt_tokens_max": 908,
+   "truncated_rate": 0.0167,
+   "per_10k": {
+    "sequential_hours": 1.2456,
+    "prompt_tokens_M": 2.8564,
+    "completion_tokens_M": 0.1217,
+    "usd": 1.0029,
+    "usd_per_Mtok_in_out": [
+     0.3,
+     1.2
+    ],
+    "hours_at_pro_concurrency3": 0.4152,
+    "latency_basis": "clean sequential probe (8 req)"
+   },
+   "latency_clean_sequential": {
+    "n": 8,
+    "median_s": 0.4255,
+    "mean_s": 0.4484,
+    "max_s": 0.512
+   }
+  },
+  "glm-5.3_cloud__think": {
+   "n": 240,
+   "n_expected": 240,
+   "n_request_errors": 0,
+   "acc": 0.8042,
+   "acc_ci95": [
+    0.7542,
+    0.8542
+   ],
+   "acc_answerable": 0.825,
+   "n_answerable": 200,
+   "acc_unanswerable": 0.7,
+   "n_unanswerable": 40,
+   "said_none_rate": 0.1167,
+   "false_none_rate_on_answerable": 0.0,
+   "valid_json_rate": 0.8375,
+   "per_track": {
+    "api": {
+     "acc": 0.875,
+     "n": 24
+    },
+    "backend": {
+     "acc": 0.75,
+     "n": 24
+    },
+    "cloud": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "database": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "devops": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "distributed": {
+     "acc": 0.875,
+     "n": 24
+    },
+    "mlinfra": {
+     "acc": 0.5,
+     "n": 24
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "software_repair": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "state_action": {
+     "acc": 0.5,
+     "n": 24
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.8397,
+     "n": 131
+    },
+    "simulator": {
+     "acc": 0.9315,
+     "n": 73
+    },
+    "swe": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 12
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "batching": {
+     "acc": 0.8182,
+     "n": 11
+    },
+    "datastore": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "deploystrategy": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "indexing": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 10
+    },
+    "mlserving": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "netcomponent": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "quorum": {
+     "acc": 0.7857,
+     "n": 14
+    },
+    "retry": {
+     "acc": 1.0,
+     "n": 7
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "scaling": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "sizing": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "structure": {
+     "acc": 0.6667,
+     "n": 12
+    },
+    "swe_file": {
+     "acc": 0.8,
+     "n": 5
+    },
+    "swe_file_ood": {
+     "acc": 0.4,
+     "n": 5
+    },
+    "swe_function": {
+     "acc": 0.4,
+     "n": 5
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_tests": {
+     "acc": 0.5,
+     "n": 4
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 12
+    },
+    "vectorindex": {
+     "acc": 0.1818,
+     "n": 11
+    }
+   },
+   "flip_pairs": 30,
+   "flip_both_correct": 0.8,
+   "flip_same_choice_both": 0.0333,
+   "latency_median_s": 2.5285,
+   "latency_p95_s": 27.195,
+   "latency_mean_s": 7.4286,
+   "prompt_tokens_mean": 285.4583,
+   "completion_tokens_mean": 1101.2167,
+   "completion_tokens_p95": 4000,
+   "prompt_tokens_max": 863,
+   "truncated_rate": 0.1542,
+   "per_10k": {
+    "sequential_hours": 20.635,
+    "prompt_tokens_M": 2.8546,
+    "completion_tokens_M": 11.0122,
+    "usd": 52.45,
+    "usd_per_Mtok_in_out": [
+     1.4,
+     4.4
+    ],
+    "hours_at_pro_concurrency3": 6.8783,
+    "latency_basis": "run latency (run had the 3 cloud slots to itself)"
+   }
+  },
+  "gpt-oss_120b-cloud": {
+   "n": 240,
+   "n_expected": 240,
+   "n_request_errors": 0,
+   "acc": 0.825,
+   "acc_ci95": [
+    0.775,
+    0.8708
+   ],
+   "acc_answerable": 0.845,
+   "n_answerable": 200,
+   "acc_unanswerable": 0.725,
+   "n_unanswerable": 40,
+   "said_none_rate": 0.1708,
+   "false_none_rate_on_answerable": 0.06,
+   "valid_json_rate": 0.9917,
+   "per_track": {
+    "api": {
+     "acc": 0.9167,
+     "n": 24
+    },
+    "backend": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "cloud": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "database": {
+     "acc": 0.875,
+     "n": 24
+    },
+    "devops": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "distributed": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "mlinfra": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "security": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "software_repair": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "state_action": {
+     "acc": 0.5417,
+     "n": 24
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.855,
+     "n": 131
+    },
+    "simulator": {
+     "acc": 0.9315,
+     "n": 73
+    },
+    "swe": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "tetris": {
+     "acc": 0.0833,
+     "n": 12
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "batching": {
+     "acc": 0.8182,
+     "n": 11
+    },
+    "datastore": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "deploystrategy": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "indexing": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 10
+    },
+    "mlserving": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "quorum": {
+     "acc": 0.9286,
+     "n": 14
+    },
+    "retry": {
+     "acc": 1.0,
+     "n": 7
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "scaling": {
+     "acc": 0.5833,
+     "n": 12
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "security": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "sizing": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "structure": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "swe_file": {
+     "acc": 0.8,
+     "n": 5
+    },
+    "swe_file_ood": {
+     "acc": 0.0,
+     "n": 5
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_tests": {
+     "acc": 0.75,
+     "n": 4
+    },
+    "tetris": {
+     "acc": 0.0833,
+     "n": 12
+    },
+    "vectorindex": {
+     "acc": 0.4545,
+     "n": 11
+    }
+   },
+   "flip_pairs": 30,
+   "flip_both_correct": 0.8333,
+   "flip_same_choice_both": 0.0667,
+   "latency_median_s": 4.054,
+   "latency_p95_s": 8.961,
+   "latency_mean_s": 4.6454,
+   "prompt_tokens_mean": 344.825,
+   "completion_tokens_mean": 201.975,
+   "completion_tokens_p95": 721,
+   "prompt_tokens_max": 876,
+   "truncated_rate": 0.0083,
+   "per_10k": {
+    "sequential_hours": 3.4447,
+    "prompt_tokens_M": 3.4482,
+    "completion_tokens_M": 2.0198,
+    "usd": 1.7291,
+    "usd_per_Mtok_in_out": [
+     0.15,
+     0.6
+    ],
+    "hours_at_pro_concurrency3": 1.1482,
+    "latency_basis": "clean sequential probe (8 req)"
+   },
+   "latency_clean_sequential": {
+    "n": 8,
+    "median_s": 0.9975,
+    "mean_s": 1.2401,
+    "max_s": 2.318
+   }
+  },
+  "kimi-k3_cloud": {
+   "n": 240,
+   "n_expected": 240,
+   "n_request_errors": 0,
+   "acc": 0.7417,
+   "acc_ci95": [
+    0.6833,
+    0.7958
+   ],
+   "acc_answerable": 0.745,
+   "n_answerable": 200,
+   "acc_unanswerable": 0.725,
+   "n_unanswerable": 40,
+   "said_none_rate": 0.1333,
+   "false_none_rate_on_answerable": 0.015,
+   "valid_json_rate": 1.0,
+   "per_track": {
+    "api": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "backend": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "cloud": {
+     "acc": 0.9167,
+     "n": 24
+    },
+    "database": {
+     "acc": 0.4583,
+     "n": 24
+    },
+    "devops": {
+     "acc": 0.875,
+     "n": 24
+    },
+    "distributed": {
+     "acc": 0.5417,
+     "n": 24
+    },
+    "mlinfra": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "software_repair": {
+     "acc": 0.8333,
+     "n": 24
+    },
+    "state_action": {
+     "acc": 0.5,
+     "n": 24
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.9542,
+     "n": 131
+    },
+    "simulator": {
+     "acc": 0.4247,
+     "n": 73
+    },
+    "swe": {
+     "acc": 0.8333,
+     "n": 24
+    },
+    "tetris": {
+     "acc": 0.1667,
+     "n": 12
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "batching": {
+     "acc": 0.1818,
+     "n": 11
+    },
+    "datastore": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "deploystrategy": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "indexing": {
+     "acc": 0.0,
+     "n": 12
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 10
+    },
+    "mlserving": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "quorum": {
+     "acc": 0.2143,
+     "n": 14
+    },
+    "retry": {
+     "acc": 0.2857,
+     "n": 7
+    },
+    "rollout": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "routing": {
+     "acc": 0.6,
+     "n": 5
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "scheduling": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "sizing": {
+     "acc": 0.9167,
+     "n": 24
+    },
+    "structure": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_file_ood": {
+     "acc": 0.4,
+     "n": 5
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_tests": {
+     "acc": 0.75,
+     "n": 4
+    },
+    "tetris": {
+     "acc": 0.1667,
+     "n": 12
+    },
+    "vectorindex": {
+     "acc": 1.0,
+     "n": 11
+    }
+   },
+   "flip_pairs": 30,
+   "flip_both_correct": 0.4667,
+   "flip_same_choice_both": 0.3,
+   "latency_median_s": 4.0695,
+   "latency_p95_s": 8.903,
+   "latency_mean_s": 4.5745,
+   "prompt_tokens_mean": 356.4958,
+   "completion_tokens_mean": 13,
+   "completion_tokens_p95": 13,
+   "prompt_tokens_max": 918,
+   "truncated_rate": 0.0,
+   "per_10k": {
+    "sequential_hours": 4.4417,
+    "prompt_tokens_M": 3.565,
+    "completion_tokens_M": 0.13,
+    "usd": 12.6449,
+    "usd_per_Mtok_in_out": [
+     3.0,
+     15.0
+    ],
+    "hours_at_pro_concurrency3": 1.4806,
+    "latency_basis": "clean sequential probe (8 req)"
+   },
+   "latency_clean_sequential": {
+    "n": 8,
+    "median_s": 1.125,
+    "mean_s": 1.599,
+    "max_s": 4.708
+   }
+  },
+  "qwen3_4b": {
+   "n": 240,
+   "n_expected": 240,
+   "n_request_errors": 0,
+   "acc": 0.3083,
+   "acc_ci95": [
+    0.25,
+    0.3667
+   ],
+   "acc_answerable": 0.19,
+   "n_answerable": 200,
+   "acc_unanswerable": 0.9,
+   "n_unanswerable": 40,
+   "said_none_rate": 0.7958,
+   "false_none_rate_on_answerable": 0.775,
+   "valid_json_rate": 1.0,
+   "per_track": {
+    "api": {
+     "acc": 0.25,
+     "n": 24
+    },
+    "backend": {
+     "acc": 0.6667,
+     "n": 24
+    },
+    "cloud": {
+     "acc": 0.25,
+     "n": 24
+    },
+    "database": {
+     "acc": 0.2917,
+     "n": 24
+    },
+    "devops": {
+     "acc": 0.125,
+     "n": 24
+    },
+    "distributed": {
+     "acc": 0.1667,
+     "n": 24
+    },
+    "mlinfra": {
+     "acc": 0.1667,
+     "n": 24
+    },
+    "security": {
+     "acc": 0.5417,
+     "n": 24
+    },
+    "software_repair": {
+     "acc": 0.4583,
+     "n": 24
+    },
+    "state_action": {
+     "acc": 0.1667,
+     "n": 24
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.3893,
+     "n": 131
+    },
+    "simulator": {
+     "acc": 0.1644,
+     "n": 73
+    },
+    "swe": {
+     "acc": 0.4583,
+     "n": 24
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 12
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "authn": {
+     "acc": 0.5,
+     "n": 12
+    },
+    "batching": {
+     "acc": 0.2727,
+     "n": 11
+    },
+    "datastore": {
+     "acc": 0.5833,
+     "n": 12
+    },
+    "deploystrategy": {
+     "acc": 0.25,
+     "n": 12
+    },
+    "indexing": {
+     "acc": 0.0,
+     "n": 12
+    },
+    "messaging": {
+     "acc": 0.0,
+     "n": 10
+    },
+    "mlserving": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "netcomponent": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "quorum": {
+     "acc": 0.2857,
+     "n": 14
+    },
+    "retry": {
+     "acc": 0.1429,
+     "n": 7
+    },
+    "rollout": {
+     "acc": 0.0,
+     "n": 12
+    },
+    "routing": {
+     "acc": 0.0,
+     "n": 5
+    },
+    "scaling": {
+     "acc": 0.75,
+     "n": 12
+    },
+    "scheduling": {
+     "acc": 0.3333,
+     "n": 12
+    },
+    "security": {
+     "acc": 0.5833,
+     "n": 12
+    },
+    "sizing": {
+     "acc": 0.25,
+     "n": 24
+    },
+    "structure": {
+     "acc": 0.5833,
+     "n": 12
+    },
+    "swe_file": {
+     "acc": 0.2,
+     "n": 5
+    },
+    "swe_file_ood": {
+     "acc": 0.8,
+     "n": 5
+    },
+    "swe_function": {
+     "acc": 0.6,
+     "n": 5
+    },
+    "swe_subsystem": {
+     "acc": 0.6,
+     "n": 5
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 4
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 12
+    },
+    "vectorindex": {
+     "acc": 0.0,
+     "n": 11
+    }
+   },
+   "flip_pairs": 30,
+   "flip_both_correct": 0.0333,
+   "flip_same_choice_both": 0.7333,
+   "latency_median_s": 1.5835,
+   "latency_p95_s": 2.368,
+   "latency_mean_s": 1.5574,
+   "prompt_tokens_mean": 295.3042,
+   "completion_tokens_mean": 9.625,
+   "completion_tokens_p95": 10,
+   "prompt_tokens_max": 986,
+   "truncated_rate": 0.0,
+   "per_10k": {
+    "sequential_hours": 4.3262,
+    "prompt_tokens_M": 2.953,
+    "completion_tokens_M": 0.0963,
+    "usd": 0.0
+   }
+  },
+  "qwen3_8b": {
+   "n": 239,
+   "n_expected": 240,
+   "n_request_errors": 0,
+   "acc": 0.5272,
+   "acc_ci95": [
+    0.4644,
+    0.5941
+   ],
+   "acc_answerable": 0.5879,
+   "n_answerable": 199,
+   "acc_unanswerable": 0.225,
+   "n_unanswerable": 40,
+   "said_none_rate": 0.046,
+   "false_none_rate_on_answerable": 0.0101,
+   "valid_json_rate": 1.0,
+   "per_track": {
+    "api": {
+     "acc": 0.4583,
+     "n": 24
+    },
+    "backend": {
+     "acc": 0.8333,
+     "n": 24
+    },
+    "cloud": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "database": {
+     "acc": 0.3333,
+     "n": 24
+    },
+    "devops": {
+     "acc": 0.6667,
+     "n": 24
+    },
+    "distributed": {
+     "acc": 0.3333,
+     "n": 24
+    },
+    "mlinfra": {
+     "acc": 0.3333,
+     "n": 24
+    },
+    "security": {
+     "acc": 0.875,
+     "n": 24
+    },
+    "software_repair": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "state_action": {
+     "acc": 0.1739,
+     "n": 23
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.7023,
+     "n": 131
+    },
+    "simulator": {
+     "acc": 0.2466,
+     "n": 73
+    },
+    "swe": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "tetris": {
+     "acc": 0.0909,
+     "n": 11
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "authn": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "batching": {
+     "acc": 0.0,
+     "n": 11
+    },
+    "datastore": {
+     "acc": 0.5,
+     "n": 12
+    },
+    "deploystrategy": {
+     "acc": 0.5833,
+     "n": 12
+    },
+    "indexing": {
+     "acc": 0.1667,
+     "n": 12
+    },
+    "messaging": {
+     "acc": 0.7,
+     "n": 10
+    },
+    "mlserving": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "netcomponent": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "quorum": {
+     "acc": 0.0714,
+     "n": 14
+    },
+    "retry": {
+     "acc": 0.2857,
+     "n": 7
+    },
+    "rollout": {
+     "acc": 0.75,
+     "n": 12
+    },
+    "routing": {
+     "acc": 0.2,
+     "n": 5
+    },
+    "scaling": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "scheduling": {
+     "acc": 0.25,
+     "n": 12
+    },
+    "security": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "sizing": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "structure": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "swe_file": {
+     "acc": 0.6,
+     "n": 5
+    },
+    "swe_file_ood": {
+     "acc": 0.0,
+     "n": 5
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_tests": {
+     "acc": 0.5,
+     "n": 4
+    },
+    "tetris": {
+     "acc": 0.0909,
+     "n": 11
+    },
+    "vectorindex": {
+     "acc": 0.6364,
+     "n": 11
+    }
+   },
+   "flip_pairs": 30,
+   "flip_both_correct": 0.1667,
+   "flip_same_choice_both": 0.5,
+   "latency_median_s": 3.401,
+   "latency_p95_s": 4.598,
+   "latency_mean_s": 3.4469,
+   "prompt_tokens_mean": 300.2552,
+   "completion_tokens_mean": 7.0502,
+   "completion_tokens_p95": 7,
+   "prompt_tokens_max": 992,
+   "truncated_rate": 0.0,
+   "per_10k": {
+    "sequential_hours": 9.5747,
+    "prompt_tokens_M": 3.0026,
+    "completion_tokens_M": 0.0705,
+    "usd": 0.0
+   }
+  },
+  "glm-5.3_cloud__think_plus16k_retry": {
+   "n": 240,
+   "n_expected": 240,
+   "n_request_errors": 0,
+   "acc": 0.8792,
+   "acc_ci95": [
+    0.8375,
+    0.9208
+   ],
+   "acc_answerable": 0.87,
+   "n_answerable": 200,
+   "acc_unanswerable": 0.925,
+   "n_unanswerable": 40,
+   "said_none_rate": 0.1542,
+   "false_none_rate_on_answerable": 0.0,
+   "valid_json_rate": 0.9333,
+   "per_track": {
+    "api": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "backend": {
+     "acc": 0.9167,
+     "n": 24
+    },
+    "cloud": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "database": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "devops": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "distributed": {
+     "acc": 0.9583,
+     "n": 24
+    },
+    "mlinfra": {
+     "acc": 0.625,
+     "n": 24
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "software_repair": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "state_action": {
+     "acc": 0.625,
+     "n": 24
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.916,
+     "n": 131
+    },
+    "simulator": {
+     "acc": 0.9726,
+     "n": 73
+    },
+    "swe": {
+     "acc": 0.7083,
+     "n": 24
+    },
+    "tetris": {
+     "acc": 0.25,
+     "n": 12
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "batching": {
+     "acc": 0.9091,
+     "n": 11
+    },
+    "datastore": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "deploystrategy": {
+     "acc": 0.9167,
+     "n": 12
+    },
+    "indexing": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 10
+    },
+    "mlserving": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "quorum": {
+     "acc": 0.9286,
+     "n": 14
+    },
+    "retry": {
+     "acc": 1.0,
+     "n": 7
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 12
+    },
+    "sizing": {
+     "acc": 1.0,
+     "n": 24
+    },
+    "structure": {
+     "acc": 0.8333,
+     "n": 12
+    },
+    "swe_file": {
+     "acc": 0.8,
+     "n": 5
+    },
+    "swe_file_ood": {
+     "acc": 0.6,
+     "n": 5
+    },
+    "swe_function": {
+     "acc": 0.6,
+     "n": 5
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 5
+    },
+    "swe_tests": {
+     "acc": 0.5,
+     "n": 4
+    },
+    "tetris": {
+     "acc": 0.25,
+     "n": 12
+    },
+    "vectorindex": {
+     "acc": 0.3636,
+     "n": 11
+    }
+   },
+   "flip_pairs": 30,
+   "flip_both_correct": 0.8667,
+   "flip_same_choice_both": 0.0667,
+   "latency_median_s": 2.5285,
+   "latency_p95_s": 85.433,
+   "latency_mean_s": 13.6666,
+   "prompt_tokens_mean": 329.6042,
+   "completion_tokens_mean": 2313.4417,
+   "completion_tokens_p95": 16246,
+   "prompt_tokens_max": 1194,
+   "truncated_rate": 0.0667,
+   "per_10k": {
+    "sequential_hours": 37.9628,
+    "prompt_tokens_M": 3.296,
+    "completion_tokens_M": 23.1344,
+    "usd": 106.4059,
+    "usd_per_Mtok_in_out": [
+     1.4,
+     4.4
+    ],
+    "hours_at_pro_concurrency3": 12.6543,
+    "latency_basis": "run latency (run had the 3 cloud slots to itself)"
+   }
+  }
+ },
+ "models_subset60": {
+  "deepseek-v4-pro_cloud": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.6833,
+   "acc_ci95": [
+    0.5667,
+    0.8
+   ],
+   "acc_answerable": 0.7059,
+   "n_answerable": 51,
+   "acc_unanswerable": 0.5556,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.0833,
+   "false_none_rate_on_answerable": 0.0,
+   "valid_json_rate": 1.0,
+   "per_track": {
+    "api": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "backend": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "database": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "devops": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.5,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.8485,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.3889,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.3333,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "retry": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "structure": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 0.6667,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.4286,
+   "flip_same_choice_both": 0.1429,
+   "latency_median_s": 3.433,
+   "latency_p95_s": 8.272,
+   "latency_mean_s": 4.1383,
+   "prompt_tokens_mean": 283.85,
+   "completion_tokens_mean": 7,
+   "completion_tokens_p95": 7,
+   "prompt_tokens_max": 638,
+   "truncated_rate": 0.0,
+   "per_10k": {
+    "sequential_hours": 1.8464,
+    "prompt_tokens_M": 2.8385,
+    "completion_tokens_M": 0.07,
+    "usd": 4.024,
+    "usd_per_Mtok_in_out": [
+     1.32,
+     3.96
+    ],
+    "hours_at_pro_concurrency3": 0.6155,
+    "latency_basis": "clean sequential probe (8 req)"
+   },
+   "latency_clean_sequential": {
+    "n": 8,
+    "median_s": 0.616,
+    "mean_s": 0.6647,
+    "max_s": 1.022
+   }
+  },
+  "deepseek-v4.1-flash_cloud": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.6333,
+   "acc_ci95": [
+    0.5167,
+    0.75
+   ],
+   "acc_answerable": 0.5882,
+   "n_answerable": 51,
+   "acc_unanswerable": 0.8889,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.1333,
+   "false_none_rate_on_answerable": 0.0,
+   "valid_json_rate": 0.9,
+   "per_track": {
+    "api": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "backend": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "database": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "devops": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.1667,
+     "n": 6
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.3333,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.8182,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.3333,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "retry": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "structure": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 0.3333,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.1429,
+   "flip_same_choice_both": 0.4286,
+   "latency_median_s": 3.9705,
+   "latency_p95_s": 11.404,
+   "latency_mean_s": 4.9944,
+   "prompt_tokens_mean": 284.85,
+   "completion_tokens_mean": 19.3667,
+   "completion_tokens_p95": 7,
+   "prompt_tokens_max": 639,
+   "truncated_rate": 0.0333,
+   "per_10k": {
+    "sequential_hours": 1.2456,
+    "prompt_tokens_M": 2.8485,
+    "completion_tokens_M": 0.1937,
+    "usd": 1.087,
+    "usd_per_Mtok_in_out": [
+     0.3,
+     1.2
+    ],
+    "hours_at_pro_concurrency3": 0.4152,
+    "latency_basis": "clean sequential probe (8 req)"
+   },
+   "latency_clean_sequential": {
+    "n": 8,
+    "median_s": 0.4255,
+    "mean_s": 0.4484,
+    "max_s": 0.512
+   }
+  },
+  "glm-5.3_cloud__think": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.8167,
+   "acc_ci95": [
+    0.7167,
+    0.9
+   ],
+   "acc_answerable": 0.8235,
+   "n_answerable": 51,
+   "acc_unanswerable": 0.7778,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.1167,
+   "false_none_rate_on_answerable": 0.0,
+   "valid_json_rate": 0.8667,
+   "per_track": {
+    "api": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "backend": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "database": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "devops": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.5,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.8485,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.8889,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "retry": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "structure": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 0.3333,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.7143,
+   "flip_same_choice_both": 0.0,
+   "latency_median_s": 2.6725,
+   "latency_p95_s": 27.447,
+   "latency_mean_s": 7.2157,
+   "prompt_tokens_mean": 284.5333,
+   "completion_tokens_mean": 1035.1667,
+   "completion_tokens_p95": 4000,
+   "prompt_tokens_max": 606,
+   "truncated_rate": 0.1333,
+   "per_10k": {
+    "sequential_hours": 20.0436,
+    "prompt_tokens_M": 2.8453,
+    "completion_tokens_M": 10.3517,
+    "usd": 49.5308,
+    "usd_per_Mtok_in_out": [
+     1.4,
+     4.4
+    ],
+    "hours_at_pro_concurrency3": 6.6812,
+    "latency_basis": "run latency (run had the 3 cloud slots to itself)"
+   }
+  },
+  "gpt-oss_120b-cloud": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.8333,
+   "acc_ci95": [
+    0.7333,
+    0.9167
+   ],
+   "acc_answerable": 0.8431,
+   "n_answerable": 51,
+   "acc_unanswerable": 0.7778,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.1667,
+   "false_none_rate_on_answerable": 0.0588,
+   "valid_json_rate": 1.0,
+   "per_track": {
+    "api": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "backend": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "database": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "devops": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.5,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.9394,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.8333,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "retry": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "structure": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 1.0,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.5714,
+   "flip_same_choice_both": 0.1429,
+   "latency_median_s": 4.352,
+   "latency_p95_s": 9.011,
+   "latency_mean_s": 5.0193,
+   "prompt_tokens_mean": 344.4667,
+   "completion_tokens_mean": 196.4167,
+   "completion_tokens_p95": 588,
+   "prompt_tokens_max": 673,
+   "truncated_rate": 0.0,
+   "per_10k": {
+    "sequential_hours": 3.4447,
+    "prompt_tokens_M": 3.4447,
+    "completion_tokens_M": 1.9642,
+    "usd": 1.6952,
+    "usd_per_Mtok_in_out": [
+     0.15,
+     0.6
+    ],
+    "hours_at_pro_concurrency3": 1.1482,
+    "latency_basis": "clean sequential probe (8 req)"
+   },
+   "latency_clean_sequential": {
+    "n": 8,
+    "median_s": 0.9975,
+    "mean_s": 1.2401,
+    "max_s": 2.318
+   }
+  },
+  "gpt-oss_120b-cloud__think_high": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.8333,
+   "acc_ci95": [
+    0.7333,
+    0.9167
+   ],
+   "acc_answerable": 0.8431,
+   "n_answerable": 51,
+   "acc_unanswerable": 0.7778,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.1333,
+   "false_none_rate_on_answerable": 0.0196,
+   "valid_json_rate": 0.8833,
+   "per_track": {
+    "api": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "backend": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "database": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "devops": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "security": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.5,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.9394,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.8333,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "retry": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "routing": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "security": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "structure": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 1.0,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 1.0,
+   "flip_same_choice_both": 0.0,
+   "latency_median_s": 4.0985,
+   "latency_p95_s": 21.953,
+   "latency_mean_s": 7.3674,
+   "prompt_tokens_mean": 344.4667,
+   "completion_tokens_mean": 1980.7833,
+   "completion_tokens_p95": 6000,
+   "prompt_tokens_max": 673,
+   "truncated_rate": 0.1167,
+   "per_10k": {
+    "sequential_hours": 20.465,
+    "prompt_tokens_M": 3.4447,
+    "completion_tokens_M": 19.8078,
+    "usd": 12.4014,
+    "usd_per_Mtok_in_out": [
+     0.15,
+     0.6
+    ],
+    "hours_at_pro_concurrency3": 6.8217,
+    "latency_basis": "run latency (run had the 3 cloud slots to itself)"
+   }
+  },
+  "gpt-oss_20b": {
+   "n": 59,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.7797,
+   "acc_ci95": [
+    0.678,
+    0.8814
+   ],
+   "acc_answerable": 0.76,
+   "n_answerable": 50,
+   "acc_unanswerable": 0.8889,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.1695,
+   "false_none_rate_on_answerable": 0.04,
+   "valid_json_rate": 0.9661,
+   "per_track": {
+    "api": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "backend": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "database": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "devops": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.6,
+     "n": 5
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.8182,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.7778,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 2
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "retry": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "structure": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "vectorindex": {
+     "acc": 0.6667,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.5714,
+   "flip_same_choice_both": 0.2857,
+   "latency_median_s": 9.266,
+   "latency_p95_s": 67.643,
+   "latency_mean_s": 21.8012,
+   "prompt_tokens_mean": 341.9492,
+   "completion_tokens_mean": 187.678,
+   "completion_tokens_p95": 602,
+   "prompt_tokens_max": 673,
+   "truncated_rate": 0.0339,
+   "per_10k": {
+    "sequential_hours": 60.5588,
+    "prompt_tokens_M": 3.4195,
+    "completion_tokens_M": 1.8768,
+    "usd": 0.0
+   }
+  },
+  "kimi-k3_cloud": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.75,
+   "acc_ci95": [
+    0.6333,
+    0.85
+   ],
+   "acc_answerable": 0.7451,
+   "n_answerable": 51,
+   "acc_unanswerable": 0.7778,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.1167,
+   "false_none_rate_on_answerable": 0.0,
+   "valid_json_rate": 1.0,
+   "per_track": {
+    "api": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "backend": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "database": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "devops": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.5,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.9394,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.5,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "retry": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "structure": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 1.0,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.5714,
+   "flip_same_choice_both": 0.2857,
+   "latency_median_s": 4.3465,
+   "latency_p95_s": 9.022,
+   "latency_mean_s": 4.8963,
+   "prompt_tokens_mean": 355.5667,
+   "completion_tokens_mean": 13,
+   "completion_tokens_p95": 13,
+   "prompt_tokens_max": 680,
+   "truncated_rate": 0.0,
+   "per_10k": {
+    "sequential_hours": 4.4417,
+    "prompt_tokens_M": 3.5557,
+    "completion_tokens_M": 0.13,
+    "usd": 12.617,
+    "usd_per_Mtok_in_out": [
+     3.0,
+     15.0
+    ],
+    "hours_at_pro_concurrency3": 1.4806,
+    "latency_basis": "clean sequential probe (8 req)"
+   },
+   "latency_clean_sequential": {
+    "n": 8,
+    "median_s": 1.125,
+    "mean_s": 1.599,
+    "max_s": 4.708
+   }
+  },
+  "kimi-k3_cloud__think": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.9,
+   "acc_ci95": [
+    0.8167,
+    0.9667
+   ],
+   "acc_answerable": 0.8824,
+   "n_answerable": 51,
+   "acc_unanswerable": 1.0,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.15,
+   "false_none_rate_on_answerable": 0.0,
+   "valid_json_rate": 0.9333,
+   "per_track": {
+    "api": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "backend": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "database": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "devops": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.5,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.9394,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.9444,
+     "n": 18
+    },
+    "swe": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "retry": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "structure": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 0.3333,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.8571,
+   "flip_same_choice_both": 0.0,
+   "latency_median_s": 3.4785,
+   "latency_p95_s": 43.155,
+   "latency_mean_s": 8.3454,
+   "prompt_tokens_mean": 422.5667,
+   "completion_tokens_mean": 640.0333,
+   "completion_tokens_p95": 4000,
+   "prompt_tokens_max": 747,
+   "truncated_rate": 0.0667,
+   "per_10k": {
+    "sequential_hours": 23.1817,
+    "prompt_tokens_M": 4.2257,
+    "completion_tokens_M": 6.4003,
+    "usd": 108.682,
+    "usd_per_Mtok_in_out": [
+     3.0,
+     15.0
+    ],
+    "hours_at_pro_concurrency3": 7.7272,
+    "latency_basis": "run latency (run had the 3 cloud slots to itself)"
+   }
+  },
+  "qwen3_4b": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.3167,
+   "acc_ci95": [
+    0.2,
+    0.4333
+   ],
+   "acc_answerable": 0.1961,
+   "n_answerable": 51,
+   "acc_unanswerable": 1.0,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.7833,
+   "false_none_rate_on_answerable": 0.7451,
+   "valid_json_rate": 1.0,
+   "per_track": {
+    "api": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "backend": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "database": {
+     "acc": 0.1667,
+     "n": 6
+    },
+    "devops": {
+     "acc": 0.1667,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 0.1667,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.1667,
+     "n": 6
+    },
+    "security": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.1667,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.4242,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.1667,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "authn": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "batching": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "retry": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "routing": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "structure": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 0.0,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.0,
+   "flip_same_choice_both": 0.8571,
+   "latency_median_s": 1.5845,
+   "latency_p95_s": 2.35,
+   "latency_mean_s": 1.606,
+   "prompt_tokens_mean": 293.7333,
+   "completion_tokens_mean": 9.5833,
+   "completion_tokens_p95": 10,
+   "prompt_tokens_max": 608,
+   "truncated_rate": 0.0,
+   "per_10k": {
+    "sequential_hours": 4.4611,
+    "prompt_tokens_M": 2.9373,
+    "completion_tokens_M": 0.0958,
+    "usd": 0.0
+   }
+  },
+  "qwen3_8b": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.5167,
+   "acc_ci95": [
+    0.4,
+    0.65
+   ],
+   "acc_answerable": 0.549,
+   "n_answerable": 51,
+   "acc_unanswerable": 0.3333,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.0667,
+   "false_none_rate_on_answerable": 0.0196,
+   "valid_json_rate": 1.0,
+   "per_track": {
+    "api": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "backend": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "database": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "devops": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 0.3333,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.1667,
+     "n": 6
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.3333,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.697,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 0.2222,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 0.5,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 0.3333,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "retry": {
+     "acc": 0.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "routing": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 0.5,
+     "n": 6
+    },
+    "structure": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.0,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 0.3333,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.2857,
+   "flip_same_choice_both": 0.4286,
+   "latency_median_s": 3.42,
+   "latency_p95_s": 4.573,
+   "latency_mean_s": 3.6998,
+   "prompt_tokens_mean": 299.7333,
+   "completion_tokens_mean": 7.05,
+   "completion_tokens_p95": 7,
+   "prompt_tokens_max": 614,
+   "truncated_rate": 0.0,
+   "per_10k": {
+    "sequential_hours": 10.2773,
+    "prompt_tokens_M": 2.9973,
+    "completion_tokens_M": 0.0705,
+    "usd": 0.0
+   }
+  },
+  "glm-5.3_cloud__think_plus16k_retry": {
+   "n": 60,
+   "n_expected": 60,
+   "n_request_errors": 0,
+   "acc": 0.9,
+   "acc_ci95": [
+    0.8167,
+    0.9667
+   ],
+   "acc_answerable": 0.8824,
+   "n_answerable": 51,
+   "acc_unanswerable": 1.0,
+   "n_unanswerable": 9,
+   "said_none_rate": 0.15,
+   "false_none_rate_on_answerable": 0.0,
+   "valid_json_rate": 0.9667,
+   "per_track": {
+    "api": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "backend": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "cloud": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "database": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "devops": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "distributed": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "mlinfra": {
+     "acc": 0.6667,
+     "n": 6
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "software_repair": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "state_action": {
+     "acc": 0.8333,
+     "n": 6
+    }
+   },
+   "per_family": {
+    "rule_table": {
+     "acc": 0.8788,
+     "n": 33
+    },
+    "simulator": {
+     "acc": 1.0,
+     "n": 18
+    },
+    "swe": {
+     "acc": 0.8333,
+     "n": 6
+    },
+    "tetris": {
+     "acc": 0.6667,
+     "n": 3
+    }
+   },
+   "per_slice": {
+    "apistyle": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "authn": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "batching": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "datastore": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "deploystrategy": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "indexing": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "messaging": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "netcomponent": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "quorum": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "retry": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "rollout": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "routing": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "scaling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "scheduling": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "security": {
+     "acc": 1.0,
+     "n": 3
+    },
+    "sizing": {
+     "acc": 1.0,
+     "n": 6
+    },
+    "structure": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "swe_file": {
+     "acc": 1.0,
+     "n": 2
+    },
+    "swe_file_ood": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_function": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_subsystem": {
+     "acc": 1.0,
+     "n": 1
+    },
+    "swe_tests": {
+     "acc": 0.0,
+     "n": 1
+    },
+    "tetris": {
+     "acc": 0.6667,
+     "n": 3
+    },
+    "vectorindex": {
+     "acc": 0.3333,
+     "n": 3
+    }
+   },
+   "flip_pairs": 7,
+   "flip_both_correct": 0.8571,
+   "flip_same_choice_both": 0.0,
+   "latency_median_s": 2.6725,
+   "latency_p95_s": 81.102,
+   "latency_mean_s": 13.3833,
+   "prompt_tokens_mean": 327.0333,
+   "completion_tokens_mean": 2182.1167,
+   "completion_tokens_p95": 12676,
+   "prompt_tokens_max": 1050,
+   "truncated_rate": 0.0333,
+   "per_10k": {
+    "sequential_hours": 37.1759,
+    "prompt_tokens_M": 3.2703,
+    "completion_tokens_M": 21.8212,
+    "usd": 100.5916,
+    "usd_per_Mtok_in_out": [
+     1.4,
+     4.4
+    ],
+    "hours_at_pro_concurrency3": 12.3919,
+    "latency_basis": "run latency (run had the 3 cloud slots to itself)"
+   }
+  }
+ },
+ "ranking_full240": [
+  "glm-5.3_cloud__think_plus16k_retry",
+  "gpt-oss_120b-cloud",
+  "glm-5.3_cloud__think",
+  "kimi-k3_cloud",
+  "deepseek-v4.1-flash_cloud",
+  "deepseek-v4-pro_cloud",
+  "qwen3_8b",
+  "qwen3_4b"
+ ],
+ "agreement": {
+  "gpt-oss_120b-cloud|glm-5.3_cloud__think": {
+   "n": 240,
+   "agreement_rate": 0.7667,
+   "n_agree": 184,
+   "acc_when_agree": 0.9728,
+   "acc_when_agree_ci95": [
+    0.9457,
+    0.9946
+   ],
+   "n_disagree": 56,
+   "either_correct_when_disagree": 0.5893,
+   "acc_a_when_disagree": 0.3393,
+   "acc_b_when_disagree": 0.25,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 20,
+     "acc_when_agree": 1.0
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 24,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 1.0
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 20,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 0.7143
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 23,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 0.9286
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.9688,
+   "agree_acc_unanswerable": 1.0,
+   "n_agree_unanswerable": 24
+  },
+  "gpt-oss_120b-cloud|kimi-k3_cloud": {
+   "n": 240,
+   "agreement_rate": 0.6667,
+   "n_agree": 160,
+   "acc_when_agree": 0.975,
+   "acc_when_agree_ci95": [
+    0.95,
+    0.9938
+   ],
+   "n_disagree": 80,
+   "either_correct_when_disagree": 0.8,
+   "acc_a_when_disagree": 0.525,
+   "acc_b_when_disagree": 0.275,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 1.0
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 0.9545
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 1.0
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 23,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 20,
+     "acc_when_agree": 0.85
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.9853,
+   "agree_acc_unanswerable": 0.9167,
+   "n_agree_unanswerable": 24
+  },
+  "gpt-oss_120b-cloud|deepseek-v4.1-flash_cloud": {
+   "n": 240,
+   "agreement_rate": 0.6792,
+   "n_agree": 163,
+   "acc_when_agree": 0.9387,
+   "acc_when_agree_ci95": [
+    0.9018,
+    0.9755
+   ],
+   "n_disagree": 77,
+   "either_correct_when_disagree": 0.8052,
+   "acc_a_when_disagree": 0.5844,
+   "acc_b_when_disagree": 0.2208,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 0.9333
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 19,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 0.9375
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 0.9444
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 9,
+     "acc_when_agree": 0.6667
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 23,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 0.8095
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.9552,
+   "agree_acc_unanswerable": 0.8621,
+   "n_agree_unanswerable": 29
+  },
+  "gpt-oss_120b-cloud|deepseek-v4-pro_cloud": {
+   "n": 240,
+   "agreement_rate": 0.6417,
+   "n_agree": 154,
+   "acc_when_agree": 0.9091,
+   "acc_when_agree_ci95": [
+    0.8636,
+    0.9545
+   ],
+   "n_disagree": 86,
+   "either_correct_when_disagree": 0.8372,
+   "acc_a_when_disagree": 0.6744,
+   "acc_b_when_disagree": 0.1628,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 0.9333
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 0.9231
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 0.9444
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 0.9167
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 0.7143
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 24,
+     "acc_when_agree": 0.9583
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 0.7619
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 9,
+     "acc_when_agree": 0.7778
+    }
+   },
+   "agree_acc_answerable": 0.9398,
+   "agree_acc_unanswerable": 0.7143,
+   "n_agree_unanswerable": 21
+  },
+  "gpt-oss_120b-cloud|qwen3_8b": {
+   "n": 239,
+   "agreement_rate": 0.5314,
+   "n_agree": 127,
+   "acc_when_agree": 0.9055,
+   "acc_when_agree_ci95": [
+    0.8504,
+    0.9528
+   ],
+   "n_disagree": 112,
+   "either_correct_when_disagree": 0.8393,
+   "acc_a_when_disagree": 0.7411,
+   "acc_b_when_disagree": 0.0982,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 0.8462
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 8,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 17,
+     "acc_when_agree": 0.9412
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 8,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 0.6667
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 0.9545
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 19,
+     "acc_when_agree": 0.7895
+    },
+    "state_action": {
+     "n": 23,
+     "n_agree": 5,
+     "acc_when_agree": 0.6
+    }
+   },
+   "agree_acc_answerable": 0.9464,
+   "agree_acc_unanswerable": 0.6,
+   "n_agree_unanswerable": 15
+  },
+  "gpt-oss_120b-cloud|qwen3_4b": {
+   "n": 240,
+   "agreement_rate": 0.3208,
+   "n_agree": 77,
+   "acc_when_agree": 0.8312,
+   "acc_when_agree_ci95": [
+    0.7403,
+    0.9091
+   ],
+   "n_disagree": 163,
+   "either_correct_when_disagree": 0.8834,
+   "acc_a_when_disagree": 0.8221,
+   "acc_b_when_disagree": 0.0613,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 0.8333
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 0.8667
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 3,
+     "acc_when_agree": 1.0
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 4,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 4,
+     "acc_when_agree": 0.75
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 0.9286
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 8,
+     "acc_when_agree": 0.875
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 0.3636
+    }
+   },
+   "agree_acc_answerable": 0.7826,
+   "agree_acc_unanswerable": 0.9032,
+   "n_agree_unanswerable": 31
+  },
+  "glm-5.3_cloud__think|kimi-k3_cloud": {
+   "n": 240,
+   "agreement_rate": 0.6375,
+   "n_agree": 153,
+   "acc_when_agree": 0.9869,
+   "acc_when_agree_ci95": [
+    0.9673,
+    1.0
+   ],
+   "n_disagree": 87,
+   "either_correct_when_disagree": 0.7931,
+   "acc_a_when_disagree": 0.4828,
+   "acc_b_when_disagree": 0.3103,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 1.0
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 20,
+     "acc_when_agree": 1.0
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 0.9231
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 5,
+     "acc_when_agree": 1.0
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 24,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 0.9375
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 10,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.9846,
+   "agree_acc_unanswerable": 1.0,
+   "n_agree_unanswerable": 23
+  },
+  "glm-5.3_cloud__think|deepseek-v4.1-flash_cloud": {
+   "n": 240,
+   "agreement_rate": 0.6417,
+   "n_agree": 154,
+   "acc_when_agree": 0.974,
+   "acc_when_agree_ci95": [
+    0.9481,
+    0.9935
+   ],
+   "n_disagree": 86,
+   "either_correct_when_disagree": 0.7326,
+   "acc_a_when_disagree": 0.5,
+   "acc_b_when_disagree": 0.2326,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 1.0
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 17,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 19,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 1.0
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 0.5714
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 24,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 0.9375
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 10,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.9688,
+   "agree_acc_unanswerable": 1.0,
+   "n_agree_unanswerable": 26
+  },
+  "glm-5.3_cloud__think|deepseek-v4-pro_cloud": {
+   "n": 240,
+   "agreement_rate": 0.6,
+   "n_agree": 144,
+   "acc_when_agree": 0.9722,
+   "acc_when_agree_ci95": [
+    0.9444,
+    0.9931
+   ],
+   "n_disagree": 96,
+   "either_correct_when_disagree": 0.6979,
+   "acc_a_when_disagree": 0.5521,
+   "acc_b_when_disagree": 0.1458,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 1.0
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 17,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 0.9444
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 5,
+     "acc_when_agree": 0.6
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 23,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 0.9333
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.9688,
+   "agree_acc_unanswerable": 1.0,
+   "n_agree_unanswerable": 16
+  },
+  "glm-5.3_cloud__think|qwen3_8b": {
+   "n": 239,
+   "agreement_rate": 0.4854,
+   "n_agree": 116,
+   "acc_when_agree": 0.9569,
+   "acc_when_agree_ci95": [
+    0.9138,
+    0.9914
+   ],
+   "n_disagree": 123,
+   "either_correct_when_disagree": 0.7886,
+   "acc_a_when_disagree": 0.6667,
+   "acc_b_when_disagree": 0.122,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 1.0
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 8,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 17,
+     "acc_when_agree": 0.9412
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 0.5
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 0.9167
+    },
+    "state_action": {
+     "n": 23,
+     "n_agree": 3,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.9537,
+   "agree_acc_unanswerable": 1.0,
+   "n_agree_unanswerable": 8
+  },
+  "glm-5.3_cloud__think|qwen3_4b": {
+   "n": 240,
+   "agreement_rate": 0.2583,
+   "n_agree": 62,
+   "acc_when_agree": 0.9839,
+   "acc_when_agree_ci95": [
+    0.9516,
+    1.0
+   ],
+   "n_disagree": 178,
+   "either_correct_when_disagree": 0.8146,
+   "acc_a_when_disagree": 0.7416,
+   "acc_b_when_disagree": 0.073,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 4,
+     "acc_when_agree": 1.0
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 4,
+     "acc_when_agree": 0.75
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 4,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 2,
+     "acc_when_agree": 1.0
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 1.0
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 4,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.9722,
+   "agree_acc_unanswerable": 1.0,
+   "n_agree_unanswerable": 26
+  },
+  "kimi-k3_cloud|deepseek-v4.1-flash_cloud": {
+   "n": 240,
+   "agreement_rate": 0.7,
+   "n_agree": 168,
+   "acc_when_agree": 0.8988,
+   "acc_when_agree_ci95": [
+    0.8512,
+    0.9405
+   ],
+   "n_disagree": 72,
+   "either_correct_when_disagree": 0.6389,
+   "acc_a_when_disagree": 0.375,
+   "acc_b_when_disagree": 0.2639,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 0.7143
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 0.9048
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 10,
+     "acc_when_agree": 0.8
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 0.8889
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 10,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 8,
+     "acc_when_agree": 1.0
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 24,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 23,
+     "acc_when_agree": 0.8696
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 0.8182
+    }
+   },
+   "agree_acc_answerable": 0.9,
+   "agree_acc_unanswerable": 0.8929,
+   "n_agree_unanswerable": 28
+  },
+  "kimi-k3_cloud|deepseek-v4-pro_cloud": {
+   "n": 240,
+   "agreement_rate": 0.6875,
+   "n_agree": 165,
+   "acc_when_agree": 0.8545,
+   "acc_when_agree_ci95": [
+    0.8,
+    0.903
+   ],
+   "n_disagree": 75,
+   "either_correct_when_disagree": 0.6667,
+   "acc_a_when_disagree": 0.4933,
+   "acc_b_when_disagree": 0.1733,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 19,
+     "acc_when_agree": 0.7368
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 20,
+     "acc_when_agree": 0.95
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 0.9545
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 10,
+     "acc_when_agree": 0.7
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 0.8889
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 0.7692
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 0.6429
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 23,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 20,
+     "acc_when_agree": 0.85
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 0.8333
+    }
+   },
+   "agree_acc_answerable": 0.8671,
+   "agree_acc_unanswerable": 0.7727,
+   "n_agree_unanswerable": 22
+  },
+  "kimi-k3_cloud|qwen3_8b": {
+   "n": 239,
+   "agreement_rate": 0.59,
+   "n_agree": 141,
+   "acc_when_agree": 0.844,
+   "acc_when_agree_ci95": [
+    0.7872,
+    0.9007
+   ],
+   "n_disagree": 98,
+   "either_correct_when_disagree": 0.6735,
+   "acc_a_when_disagree": 0.602,
+   "acc_b_when_disagree": 0.0714,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 0.7692
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 0.9524
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 0.5455
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 17,
+     "acc_when_agree": 0.8824
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 9,
+     "acc_when_agree": 0.7778
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 0.6667
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 0.8333
+    },
+    "state_action": {
+     "n": 23,
+     "n_agree": 4,
+     "acc_when_agree": 0.5
+    }
+   },
+   "agree_acc_answerable": 0.873,
+   "agree_acc_unanswerable": 0.6,
+   "n_agree_unanswerable": 15
+  },
+  "kimi-k3_cloud|qwen3_4b": {
+   "n": 240,
+   "agreement_rate": 0.2917,
+   "n_agree": 70,
+   "acc_when_agree": 0.9143,
+   "acc_when_agree_ci95": [
+    0.8429,
+    0.9714
+   ],
+   "n_disagree": 170,
+   "either_correct_when_disagree": 0.7294,
+   "acc_a_when_disagree": 0.6706,
+   "acc_b_when_disagree": 0.0588,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 1.0
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 0.8571
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 8,
+     "acc_when_agree": 0.75
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 4,
+     "acc_when_agree": 0.75
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 0,
+     "acc_when_agree": null
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 2,
+     "acc_when_agree": 1.0
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 10,
+     "acc_when_agree": 0.9
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 5,
+     "acc_when_agree": 0.8
+    }
+   },
+   "agree_acc_answerable": 0.8837,
+   "agree_acc_unanswerable": 0.963,
+   "n_agree_unanswerable": 27
+  },
+  "deepseek-v4.1-flash_cloud|deepseek-v4-pro_cloud": {
+   "n": 240,
+   "agreement_rate": 0.6875,
+   "n_agree": 165,
+   "acc_when_agree": 0.8485,
+   "acc_when_agree_ci95": [
+    0.7939,
+    0.903
+   ],
+   "n_disagree": 75,
+   "either_correct_when_disagree": 0.5867,
+   "acc_a_when_disagree": 0.4,
+   "acc_b_when_disagree": 0.1867,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 20,
+     "acc_when_agree": 0.7
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 0.9048
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 0.7857
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 19,
+     "acc_when_agree": 0.7895
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 0.8333
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 0.5833
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 23,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 20,
+     "acc_when_agree": 0.85
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.8723,
+   "agree_acc_unanswerable": 0.7083,
+   "n_agree_unanswerable": 24
+  },
+  "deepseek-v4.1-flash_cloud|qwen3_8b": {
+   "n": 239,
+   "agreement_rate": 0.6067,
+   "n_agree": 145,
+   "acc_when_agree": 0.8069,
+   "acc_when_agree_ci95": [
+    0.7448,
+    0.869
+   ],
+   "n_disagree": 94,
+   "either_correct_when_disagree": 0.6596,
+   "acc_a_when_disagree": 0.5638,
+   "acc_b_when_disagree": 0.0957,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 0.6667
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 19,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 0.875
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 0.6154
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 0.7778
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 10,
+     "acc_when_agree": 0.7
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 0.5833
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 0.8333
+    },
+    "state_action": {
+     "n": 23,
+     "n_agree": 3,
+     "acc_when_agree": 0.6667
+    }
+   },
+   "agree_acc_answerable": 0.8438,
+   "agree_acc_unanswerable": 0.5294,
+   "n_agree_unanswerable": 17
+  },
+  "deepseek-v4.1-flash_cloud|qwen3_4b": {
+   "n": 240,
+   "agreement_rate": 0.2917,
+   "n_agree": 70,
+   "acc_when_agree": 0.9286,
+   "acc_when_agree_ci95": [
+    0.8571,
+    0.9857
+   ],
+   "n_disagree": 170,
+   "either_correct_when_disagree": 0.6706,
+   "acc_a_when_disagree": 0.6176,
+   "acc_b_when_disagree": 0.0529,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 0.8333
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 8,
+     "acc_when_agree": 0.75
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 0.8333
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 3,
+     "acc_when_agree": 1.0
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 3,
+     "acc_when_agree": 1.0
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 2,
+     "acc_when_agree": 1.0
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 1.0
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 10,
+     "acc_when_agree": 0.9
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 4,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.925,
+   "agree_acc_unanswerable": 0.9333,
+   "n_agree_unanswerable": 30
+  },
+  "deepseek-v4-pro_cloud|qwen3_8b": {
+   "n": 239,
+   "agreement_rate": 0.6653,
+   "n_agree": 159,
+   "acc_when_agree": 0.7358,
+   "acc_when_agree_ci95": [
+    0.6667,
+    0.805
+   ],
+   "n_disagree": 80,
+   "either_correct_when_disagree": 0.575,
+   "acc_a_when_disagree": 0.4625,
+   "acc_b_when_disagree": 0.1125,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 0.6667
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 21,
+     "acc_when_agree": 0.8571
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 1.0
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 15,
+     "acc_when_agree": 0.5333
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 19,
+     "acc_when_agree": 0.7368
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 0.6364
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 16,
+     "acc_when_agree": 0.5
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 22,
+     "acc_when_agree": 0.9545
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 18,
+     "acc_when_agree": 0.7778
+    },
+    "state_action": {
+     "n": 23,
+     "n_agree": 8,
+     "acc_when_agree": 0.375
+    }
+   },
+   "agree_acc_answerable": 0.8015,
+   "agree_acc_unanswerable": 0.3478,
+   "n_agree_unanswerable": 23
+  },
+  "deepseek-v4-pro_cloud|qwen3_4b": {
+   "n": 240,
+   "agreement_rate": 0.2458,
+   "n_agree": 59,
+   "acc_when_agree": 0.8983,
+   "acc_when_agree_ci95": [
+    0.8136,
+    0.9661
+   ],
+   "n_disagree": 181,
+   "either_correct_when_disagree": 0.674,
+   "acc_a_when_disagree": 0.558,
+   "acc_b_when_disagree": 0.116,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 6,
+     "acc_when_agree": 0.8333
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 11,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 0.8571
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 5,
+     "acc_when_agree": 1.0
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 5,
+     "acc_when_agree": 0.6
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 0,
+     "acc_when_agree": null
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 0,
+     "acc_when_agree": null
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 14,
+     "acc_when_agree": 0.9286
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 9,
+     "acc_when_agree": 0.8889
+    },
+    "state_action": {
+     "n": 24,
+     "n_agree": 2,
+     "acc_when_agree": 1.0
+    }
+   },
+   "agree_acc_answerable": 0.925,
+   "agree_acc_unanswerable": 0.8421,
+   "n_agree_unanswerable": 19
+  },
+  "qwen3_8b|qwen3_4b": {
+   "n": 239,
+   "agreement_rate": 0.2259,
+   "n_agree": 54,
+   "acc_when_agree": 0.8519,
+   "acc_when_agree_ci95": [
+    0.7593,
+    0.9444
+   ],
+   "n_disagree": 185,
+   "either_correct_when_disagree": 0.5838,
+   "acc_a_when_disagree": 0.4324,
+   "acc_b_when_disagree": 0.1514,
+   "per_track": {
+    "api": {
+     "n": 24,
+     "n_agree": 3,
+     "acc_when_agree": 0.6667
+    },
+    "backend": {
+     "n": 24,
+     "n_agree": 13,
+     "acc_when_agree": 1.0
+    },
+    "cloud": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 0.7143
+    },
+    "database": {
+     "n": 24,
+     "n_agree": 7,
+     "acc_when_agree": 0.7143
+    },
+    "devops": {
+     "n": 24,
+     "n_agree": 4,
+     "acc_when_agree": 0.75
+    },
+    "distributed": {
+     "n": 24,
+     "n_agree": 0,
+     "acc_when_agree": null
+    },
+    "mlinfra": {
+     "n": 24,
+     "n_agree": 0,
+     "acc_when_agree": null
+    },
+    "security": {
+     "n": 24,
+     "n_agree": 12,
+     "acc_when_agree": 0.9167
+    },
+    "software_repair": {
+     "n": 24,
+     "n_agree": 8,
+     "acc_when_agree": 0.875
+    },
+    "state_action": {
+     "n": 23,
+     "n_agree": 0,
+     "acc_when_agree": null
+    }
+   },
+   "agree_acc_answerable": 0.8837,
+   "agree_acc_unanswerable": 0.7273,
+   "n_agree_unanswerable": 11
+  }
+ },
+ "top2_full240": [
+  "gpt-oss_120b-cloud",
+  "glm-5.3_cloud__think"
+ ],
+ "agreement_top3_unanimous": {
+  "models": [
+   "gpt-oss_120b-cloud",
+   "glm-5.3_cloud__think",
+   "kimi-k3_cloud"
+  ],
+  "n": 240,
+  "n_agree": 142,
+  "agreement_rate": 0.5917,
+  "acc_when_agree": 0.993,
+  "acc_when_agree_ci95": [
+   0.9789,
+   1.0
+  ]
+ },
+ "thinking_effect_subset60": [
+  {
+   "a": "kimi-k3_cloud",
+   "b": "kimi-k3_cloud__think",
+   "n": 60,
+   "acc_a": 0.75,
+   "acc_b": 0.9,
+   "a_wrong_b_right": 12,
+   "a_right_b_wrong": 3,
+   "b_truncated": 4,
+   "acc_b_on_valid": 0.9643,
+   "n_b_valid": 56
+  },
+  {
+   "a": "gpt-oss_120b-cloud",
+   "b": "gpt-oss_120b-cloud__think_high",
+   "n": 60,
+   "acc_a": 0.8333,
+   "acc_b": 0.8333,
+   "a_wrong_b_right": 4,
+   "a_right_b_wrong": 4,
+   "b_truncated": 7,
+   "acc_b_on_valid": 0.9434,
+   "n_b_valid": 53
+  }
+ ],
+ "latency_probe_clean": {
+  "deepseek-v4-pro_cloud": {
+   "n": 8,
+   "median_s": 0.616,
+   "mean_s": 0.6647,
+   "max_s": 1.022
+  },
+  "deepseek-v4.1-flash_cloud": {
+   "n": 8,
+   "median_s": 0.4255,
+   "mean_s": 0.4484,
+   "max_s": 0.512
+  },
+  "gpt-oss_120b-cloud": {
+   "n": 8,
+   "median_s": 0.9975,
+   "mean_s": 1.2401,
+   "max_s": 2.318
+  },
+  "kimi-k3_cloud": {
+   "n": 8,
+   "median_s": 1.125,
+   "mean_s": 1.599,
+   "max_s": 4.708
+  }
+ }
+}

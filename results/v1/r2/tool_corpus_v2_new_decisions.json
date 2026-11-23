@@ -1,0 +1,203 @@
+{
+ "n": 286516,
+ "approx_tokens": 126509648,
+ "category": {
+  "tool_routing": 207849,
+  "ood": 46153,
+  "noul": 18922,
+  "multi_label": 13592
+ },
+ "origin": {
+  "derived": 109221,
+  "mt": 106104,
+  "real": 71191
+ },
+ "lang": {
+  "EN": 180412,
+  "PT-BR": 41092,
+  "FR": 32513,
+  "ES": 32499
+ },
+ "locale": {
+  "en-US": 180412,
+  "pt-BR": 41092,
+  "fr-FR": 32513,
+  "es-419": 32499
+ },
+ "stage": {
+  "D3": 125022,
+  "D1": 91521,
+  "D2": 69973
+ },
+ "type": {
+  "choice": 254002,
+  "noul": 18922,
+  "multi": 13592
+ },
+ "cat_origin": {
+  "tool_routing|mt": 75362,
+  "tool_routing|derived": 68044,
+  "tool_routing|real": 64443,
+  "ood|derived": 25337,
+  "ood|mt": 19700,
+  "noul|derived": 11380,
+  "noul|mt": 7542,
+  "multi_label|real": 5632,
+  "multi_label|derived": 4460,
+  "multi_label|mt": 3500,
+  "ood|real": 1116
+ },
+ "cat_lang": {
+  "tool_routing|EN": 132487,
+  "tool_routing|PT-BR": 29202,
+  "ood|EN": 26453,
+  "tool_routing|FR": 23086,
+  "tool_routing|ES": 23074,
+  "noul|EN": 11380,
+  "multi_label|EN": 10092,
+  "ood|PT-BR": 7415,
+  "ood|ES": 6143,
+  "ood|FR": 6142,
+  "noul|PT-BR": 2975,
+  "noul|FR": 2285,
+  "noul|ES": 2282,
+  "multi_label|PT-BR": 1500,
+  "multi_label|FR": 1000,
+  "multi_label|ES": 1000
+ },
+ "source": {
+  "xlam": 120143,
+  "toolmind": 66518,
+  "apibench": 54000,
+  "when2call": 38999,
+  "johin": 3000,
+  "xlam_irrelevance": 2064,
+  "hermes": 1792
+ },
+ "tool_source_all": {
+  "xlam": 120143,
+  "toolmind": 66518,
+  "apibench": 54000,
+  "when2call": 38999,
+  "johin": 3000,
+  "xlam_irrelevance": 2064,
+  "hermes": 1792
+ },
+ "difficulty": {
+  "hard": 266071,
+  "medium": 20445
+ },
+ "answerable": {
+  "True": 240363,
+  "False": 46153
+ },
+ "k_bucket": {
+  "<=4": 77648,
+  "<=8": 62387,
+  "<=16": 51210,
+  "<=2": 29012,
+  "<=32": 28113,
+  "<=64": 15924,
+  "<=128": 3300
+ },
+ "slices": {
+  "same_language": 180412,
+  "near_duplicate": 145986,
+  "cross_language": 106104,
+  "gold_removed": 38140,
+  "ood_near": 38140,
+  "native_irrelevance": 12333
+ },
+ "pair": {
+  "EN->en": 180412,
+  "PT-BR->en": 41092,
+  "FR->en": 32513,
+  "ES->en": 32499
+ },
+ "tool_source": {
+  "xlam": 104232,
+  "toolmind": 66518,
+  "apibench": 54000,
+  "when2call": 11223,
+  "johin": 3000,
+  "xlam_irrelevance": 2064,
+  "hermes": 1792
+ },
+ "tool_source_origin": {
+  "xlam|mt": 41393,
+  "xlam|derived": 40896,
+  "toolmind|real": 23538,
+  "toolmind|derived": 22711,
+  "xlam|real": 21943,
+  "apibench|derived": 21232,
+  "toolmind|mt": 20269,
+  "apibench|mt": 19000,
+  "apibench|real": 13768,
+  "when2call|mt": 6492,
+  "when2call|derived": 4731,
+  "johin|real": 3000,
+  "hermes|derived": 1344,
+  "xlam_irrelevance|real": 1044,
+  "xlam_irrelevance|derived": 1020,
+  "hermes|real": 448
+ },
+ "tool_lang": {
+  "EN": 155675,
+  "PT-BR": 33662,
+  "FR": 26749,
+  "ES": 26743
+ },
+ "tool_flags": {
+  "near_duplicate": 145986,
+  "description_dependent": 75520,
+  "ood": 46153
+ },
+ "tool_action": {
+  "ask_clarification": 25291,
+  "call_tool": 15911,
+  "no_available_tool": 7759
+ },
+ "non_en_schema": {
+  "en": 106104
+ },
+ "non_en_cross": {
+  "True": 106104
+ },
+ "ood_type": {
+  "gold_removed": 38140,
+  "no_available_tool": 5949,
+  "native_irrelevance": 2064
+ },
+ "minimal_pair_sets": 0,
+ "toolace": {
+  "unique_query_groups": 0,
+  "unique_gold_tools": 0,
+  "unique_candidate_tools": 0
+ },
+ "val_ml": {
+  "eval|EN|proposition": 567,
+  "eval|EN|tool": 7701,
+  "eval|EN|tool_action": 668,
+  "eval|ES|proposition": 117,
+  "eval|ES|tool": 1347,
+  "eval|ES|tool_action": 191,
+  "eval|FR|proposition": 130,
+  "eval|FR|tool": 1328,
+  "eval|FR|tool_action": 195,
+  "eval|PT-BR|proposition": 146,
+  "eval|PT-BR|tool": 1696,
+  "eval|PT-BR|tool_action": 239,
+  "fit|EN|proposition": 554,
+  "fit|EN|tool": 7879,
+  "fit|EN|tool_action": 653,
+  "fit|ES|proposition": 113,
+  "fit|ES|tool": 1353,
+  "fit|ES|tool_action": 159,
+  "fit|FR|proposition": 100,
+  "fit|FR|tool": 1372,
+  "fit|FR|tool_action": 155,
+  "fit|PT-BR|proposition": 154,
+  "fit|PT-BR|tool": 1704,
+  "fit|PT-BR|tool_action": 211
+ }
+}

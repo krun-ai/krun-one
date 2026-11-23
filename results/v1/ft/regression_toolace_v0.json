@@ -1,0 +1,20 @@
+{
+ "all/ans": {
+  "n": 861,
+  "acc_v03": 91.5,
+  "acc_v1": 88.5
+ },
+ "holdout_tools/ans": {
+  "n": 416,
+  "acc_v03": 91.8,
+  "acc_v1": 84.1
+ },
+ "val_tools/ans": {
+  "n": 445,
+  "acc_v03": 91.2,
+  "acc_v1": 92.6
+ },
+ "auroc_v03": 0.971,
+ "auroc_v1": 0.978,
+ "n_unans": 171
+}

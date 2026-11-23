@@ -1,0 +1,42 @@
+# 1B -> 3B continuation gate for the budgeted continued MLM. REGISTERED 2026-09-26 BEFORE ANY MLM TRAINING.
+# Evaluated by scripts/v1/probe_compare.py. The outcome is STOP_AT_1B or CONTINUE_TO_3B; nothing else is tuned
+# after seeing results.
+compare: {baseline: "0B = HyperClone(mmBERT-base) + 1e-3 noise, no continued MLM", candidate: "1B = milestone-1000000000"}
+
+mlm_eval:
+  data: data/v1_mlm/<lang>/heldout.npy (never trained; decontaminated), 256 fixed windows x 1024 tokens per language,
+        fixed masks (15%), same for both checkpoints
+decision_probe:
+  data: data/v1_probe (xLAM-free, leakage 0, unseen-tool invariants)            # probe train / validation
+  recipe: >
+    scripts/v1/train_proxy.py --spec k1 --variant A_margin --lr-encoder 2e-5 --lr-head 1e-4 (1 epoch, max 16,384
+    tokens/step, gradient checkpointing), identical for both inits
+  seeds: [20260926, 20260927]
+  analysis: >
+    val_fit / val_eval split and temperatures as in the answerability bakeoff; public abstention = margin; all numbers
+    on val_eval; mean over seeds
+  aggregate_score: >
+    100 x mean of [intent accuracy, tool accuracy, noul ROC-AUC, score Spearman, multi micro-F1,
+    cross-language accuracy, unseen-tool accuracy, hard-negative (difficulty=hard) accuracy]
+
+forbidden_eval_data: [data/krunbench_v1/final_protected.jsonl, BFCL protected slices, KrunBench v0 test]   # never read by the probe
+gates:                                    # ALL must pass to CONTINUE to 3B
+  G1_mlm: "held-out MLM loss at 1B is lower than at 0B by >= 3% relative in EACH of en, pt, es, fr"
+  G2_decision: "aggregate_score(1B) - aggregate_score(0B) >= +1.0 point (mean over seeds) AND > 0 in each seed pair"
+  G3_multilingual: "choice accuracy per language (en, pt, es, fr): 1B >= 0B - 1.0 pp (mean over seeds)"
+  G4_calibration_ood: "ECE(1B) <= ECE(0B) + 0.01 AND macro OOD FA@0.98(1B) <= FA(0B) + 1.5 pp AND OOD AUROC(1B) >= AUROC(0B) - 0.01"
+  G5_tool_crosslang_permutation: "tool accuracy(1B) >= 0B - 0.5 pp AND cross-language accuracy(1B) >= 0B - 0.5 pp AND permutation consistency(1B) >= 0B - 1.0 pp (means over seeds)"
+thresholds:
+  mlm_rel_gain_min: 0.03
+  aggregate_gain_min: 1.0
+  lang_drop_max_pp: 1.0
+  ece_rise_max: 0.01
+  fa_rise_max_pp: 1.5
+  auroc_drop_max: 0.01
+  tool_drop_max_pp: 0.5
+  crosslang_drop_max_pp: 0.5
+  permutation_drop_max_pp: 1.0
+outcome:
+  CONTINUE_TO_3B: all gates pass -> resume from the pre-decay 800M checkpoint for +2.2B tokens (3B total), after owner OK
+  STOP_AT_1B: any gate fails -> no more MLM. The v1 decision training starts from whichever init had the higher
+              aggregate_score (1B if G2 passed, else 0B), reported as such.

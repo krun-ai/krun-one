@@ -1,0 +1,515 @@
+{
+ "device": "cpu",
+ "torch": "2.14.0+cu126",
+ "cases": {
+  "text_intent_pt": {
+   "known_hard": null,
+   "answers": {
+    "intent": {
+     "type": "choice",
+     "decision": "cancel_subscription",
+     "top_option": "cancel_subscription",
+     "probabilities": {
+      "cancel_subscription": 0.999985,
+      "check_balance": 3e-06,
+      "book_flight": 3e-06,
+      "report_fraud": 3e-06,
+      "play_music": 3e-06,
+      "set_alarm": 3e-06
+     },
+     "abstain": false,
+     "abstention_status": "calibrated"
+    },
+    "refund": {
+     "type": "noul",
+     "noul": 0.182168
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "text"
+    ],
+    "path": "text",
+    "ocr_used": false,
+    "asr_used": false,
+    "vision_used": false,
+    "document_pages": 0,
+    "document_text_layer": 0,
+    "document_visual": 0,
+    "audio_duration_ms": 0,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 93
+   }
+  },
+  "image_elephant": {
+   "known_hard": null,
+   "answers": {
+    "main": {
+     "type": "choice",
+     "decision": null,
+     "top_option": "elephant",
+     "probabilities": {
+      "elephant": 0.942046,
+      "bus": 0.011562,
+      "pizza": 0.005332,
+      "train": 0.009393,
+      "laptop": 0.007082,
+      "couch": 0.024585
+     },
+     "abstain": true,
+     "abstention_status": "advisory"
+    },
+    "has_elephant": {
+     "type": "noul",
+     "noul": 0.712153
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "image"
+    ],
+    "path": "multimodal",
+    "ocr_used": false,
+    "asr_used": false,
+    "vision_used": true,
+    "document_pages": 0,
+    "document_text_layer": 0,
+    "document_visual": 0,
+    "audio_duration_ms": 0,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 64
+   }
+  },
+  "image_elephant_hard": {
+   "known_hard": "same-supercategory distractors (animals): hard visual negatives, M1.5c ~0.49",
+   "answers": {
+    "main": {
+     "type": "choice",
+     "decision": null,
+     "top_option": "dog",
+     "probabilities": {
+      "elephant": 0.225213,
+      "giraffe": 0.373681,
+      "dog": 0.379889,
+      "bus": 0.0087,
+      "pizza": 0.004404,
+      "train": 0.008112
+     },
+     "abstain": true,
+     "abstention_status": "advisory"
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "image"
+    ],
+    "path": "multimodal",
+    "ocr_used": false,
+    "asr_used": false,
+    "vision_used": true,
+    "document_pages": 0,
+    "document_text_layer": 0,
+    "document_visual": 0,
+    "audio_duration_ms": 0,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 30
+   }
+  },
+  "image_giraffe_multi": {
+   "known_hard": null,
+   "answers": {
+    "objects": {
+     "type": "multi",
+     "selected": [
+      "giraffe",
+      "elephant"
+     ],
+     "scores": {
+      "giraffe": 0.441415,
+      "elephant": 0.501174,
+      "pizza": 0.000975,
+      "laptop": 0.00128,
+      "bus": 0.002959,
+      "toilet": 0.002373
+     }
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "image"
+    ],
+    "path": "multimodal",
+    "ocr_used": false,
+    "asr_used": false,
+    "vision_used": true,
+    "document_pages": 0,
+    "document_text_layer": 0,
+    "document_visual": 0,
+    "audio_duration_ms": 0,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 29
+   }
+  },
+  "doc_text_layer_pdf": {
+   "known_hard": null,
+   "answers": {
+    "doctype": {
+     "type": "choice",
+     "decision": null,
+     "top_option": "invoice",
+     "probabilities": {
+      "invoice": 0.594052,
+      "receipt": 0.226797,
+      "payslip": 0.07553,
+      "boarding_pass": 0.050284,
+      "rental_agreement": 0.053336
+     },
+     "abstain": true,
+     "abstention_status": "calibrated"
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "document"
+    ],
+    "path": "text_fast_path",
+    "ocr_used": false,
+    "asr_used": false,
+    "vision_used": false,
+    "document_pages": 1,
+    "document_text_layer": 1,
+    "document_visual": 0,
+    "audio_duration_ms": 0,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 287
+   }
+  },
+  "doc_docx_letter": {
+   "known_hard": null,
+   "answers": {
+    "intent": {
+     "type": "choice",
+     "decision": "cancel_subscription",
+     "top_option": "cancel_subscription",
+     "probabilities": {
+      "cancel_subscription": 0.999915,
+      "check_balance": 1.7e-05,
+      "book_flight": 1.6e-05,
+      "report_fraud": 1.8e-05,
+      "play_music": 1.7e-05,
+      "set_alarm": 1.7e-05
+     },
+     "abstain": false,
+     "abstention_status": "calibrated"
+    },
+    "refund": {
+     "type": "noul",
+     "noul": 0.38136
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "document"
+    ],
+    "path": "text_fast_path",
+    "ocr_used": false,
+    "asr_used": false,
+    "vision_used": false,
+    "document_pages": 1,
+    "document_text_layer": 1,
+    "document_visual": 0,
+    "audio_duration_ms": 0,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 225
+   }
+  },
+  "doc_scan_jpg": {
+   "known_hard": null,
+   "answers": {
+    "doctype": {
+     "type": "choice",
+     "decision": null,
+     "top_option": "invoice",
+     "probabilities": {
+      "invoice": 0.66434,
+      "receipt": 0.1414,
+      "payslip": 0.0806,
+      "boarding_pass": 0.061715,
+      "rental_agreement": 0.051945
+     },
+     "abstain": true,
+     "abstention_status": "advisory"
+    },
+    "fields": {
+     "type": "multi",
+     "selected": [
+      "due_date",
+      "tax_id",
+      "bank_details",
+      "item_table",
+      "logo"
+     ],
+     "scores": {
+      "signature": 0.051445,
+      "due_date": 0.643636,
+      "tax_id": 0.503373,
+      "bank_details": 0.972233,
+      "item_table": 0.726495,
+      "barcode": 0.206273,
+      "logo": 0.843464,
+      "paid_stamp": 0.346136
+     }
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "document"
+    ],
+    "path": "multimodal",
+    "ocr_used": true,
+    "asr_used": false,
+    "vision_used": true,
+    "document_pages": 1,
+    "document_text_layer": 0,
+    "document_visual": 1,
+    "audio_duration_ms": 0,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 583
+   }
+  },
+  "doc_scan_pdf": {
+   "known_hard": null,
+   "answers": {
+    "doctype": {
+     "type": "choice",
+     "decision": null,
+     "top_option": "invoice",
+     "probabilities": {
+      "invoice": 0.615232,
+      "receipt": 0.159878,
+      "payslip": 0.093799,
+      "boarding_pass": 0.071224,
+      "rental_agreement": 0.059867
+     },
+     "abstain": true,
+     "abstention_status": "advisory"
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "document"
+    ],
+    "path": "multimodal",
+    "ocr_used": true,
+    "asr_used": false,
+    "vision_used": true,
+    "document_pages": 1,
+    "document_text_layer": 0,
+    "document_visual": 1,
+    "audio_duration_ms": 0,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 288
+   }
+  },
+  "audio_en": {
+   "known_hard": null,
+   "answers": {
+    "intent": {
+     "type": "choice",
+     "decision": "cancel_subscription",
+     "top_option": "cancel_subscription",
+     "probabilities": {
+      "cancel_subscription": 0.999857,
+      "check_balance": 2.9e-05,
+      "book_flight": 2.5e-05,
+      "report_fraud": 2.4e-05,
+      "play_music": 3.6e-05,
+      "set_alarm": 3e-05
+     },
+     "abstain": false,
+     "abstention_status": "advisory"
+    },
+    "urgency": {
+     "type": "score",
+     "score": 0.418306,
+     "probabilities": {
+      "0": 0.696138,
+      "1": 0.189418,
+      "2": 0.114444
+     }
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "audio"
+    ],
+    "path": "multimodal",
+    "ocr_used": false,
+    "asr_used": true,
+    "vision_used": false,
+    "document_pages": 0,
+    "document_text_layer": 0,
+    "document_visual": 0,
+    "audio_duration_ms": 3775,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 94
+   }
+  },
+  "audio_pt": {
+   "known_hard": null,
+   "answers": {
+    "intent": {
+     "type": "choice",
+     "decision": "cancel_subscription",
+     "top_option": "cancel_subscription",
+     "probabilities": {
+      "cancel_subscription": 0.999749,
+      "check_balance": 5.5e-05,
+      "book_flight": 4.1e-05,
+      "report_fraud": 3.8e-05,
+      "play_music": 6.7e-05,
+      "set_alarm": 4.9e-05
+     },
+     "abstain": false,
+     "abstention_status": "advisory"
+    },
+    "urgency": {
+     "type": "score",
+     "score": 0.327121,
+     "probabilities": {
+      "0": 0.755192,
+      "1": 0.162496,
+      "2": 0.082312
+     }
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "audio"
+    ],
+    "path": "multimodal",
+    "ocr_used": false,
+    "asr_used": true,
+    "vision_used": false,
+    "document_pages": 0,
+    "document_text_layer": 0,
+    "document_visual": 0,
+    "audio_duration_ms": 3275,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 90
+   }
+  },
+  "audio_es": {
+   "known_hard": null,
+   "answers": {
+    "intent": {
+     "type": "choice",
+     "decision": null,
+     "top_option": "check_balance",
+     "probabilities": {
+      "cancel_subscription": 0.005276,
+      "check_balance": 0.97403,
+      "book_flight": 0.00487,
+      "report_fraud": 0.004992,
+      "play_music": 0.005625,
+      "set_alarm": 0.005207
+     },
+     "abstain": true,
+     "abstention_status": "advisory"
+    },
+    "urgency": {
+     "type": "score",
+     "score": 0.521051,
+     "probabilities": {
+      "0": 0.572459,
+      "1": 0.334031,
+      "2": 0.09351
+     }
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "audio"
+    ],
+    "path": "multimodal",
+    "ocr_used": false,
+    "asr_used": true,
+    "vision_used": false,
+    "document_pages": 0,
+    "document_text_layer": 0,
+    "document_visual": 0,
+    "audio_duration_ms": 2475,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 90
+   }
+  },
+  "audio_fr": {
+   "known_hard": null,
+   "answers": {
+    "intent": {
+     "type": "choice",
+     "decision": "book_flight",
+     "top_option": "book_flight",
+     "probabilities": {
+      "cancel_subscription": 0.00012,
+      "check_balance": 0.000121,
+      "book_flight": 0.999346,
+      "report_fraud": 0.000118,
+      "play_music": 0.000118,
+      "set_alarm": 0.000176
+     },
+     "abstain": false,
+     "abstention_status": "advisory"
+    },
+    "urgency": {
+     "type": "score",
+     "score": 0.879335,
+     "probabilities": {
+      "0": 0.34452,
+      "1": 0.431625,
+      "2": 0.223855
+     }
+    }
+   },
+   "metadata": {
+    "modalities_used": [
+     "audio"
+    ],
+    "path": "multimodal",
+    "ocr_used": false,
+    "asr_used": true,
+    "vision_used": false,
+    "document_pages": 0,
+    "document_text_layer": 0,
+    "document_visual": 0,
+    "audio_duration_ms": 3425,
+    "asr_truncation_risk": false
+   },
+   "usage": {
+    "input_tokens": 90
+   }
+  }
+ }
+}

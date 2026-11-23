@@ -1,0 +1,121 @@
+{
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "dtype": "bf16",
+ "iters": 40,
+ "config": "krun-one-v11-r3-m15c",
+ "ocr": "rapidocr:v5-latin",
+ "ocr_exec_options": {
+  "rec_batch_num": 32,
+  "cudnn_conv_algo_search": "HEURISTIC"
+ },
+ "parallel_ocr": true,
+ "gate": false,
+ "multimodal": {
+  "image": {
+   "preprocess_ms_p50": 2.529701218008995,
+   "tower_ms_p50": 3.4095384180545807,
+   "projector_ms_p50": 0.38881972432136536,
+   "fusion_decision_ms_p50": 6.87655434012413,
+   "total_ms_p50": 13.335175812244415,
+   "total_ms_p95": 13.83598018437624,
+   "sum_of_component_p50": 13.204613700509071,
+   "parallel_ocr": false
+  },
+  "document_scanned": {
+   "decode_ms_p50": 11.6010382771492,
+   "preprocess_ms_p50": 11.690530925989151,
+   "tower_ms_p50": 5.459276959300041,
+   "ocr_ms_p50": 56.51870369911194,
+   "ocr_wait_after_tower_ms_p50": 40.77010974287987,
+   "projector_ms_p50": 0.6883349269628525,
+   "fusion_decision_ms_p50": 7.777901366353035,
+   "total_ms_p50": 78.59309390187263,
+   "total_ms_p95": 91.17271807044744,
+   "sum_of_component_p50": 77.98719219863415,
+   "parallel_ocr": true
+  },
+  "screenshot": {
+   "decode_ms_p50": 8.791668340563774,
+   "preprocess_ms_p50": 8.107034489512444,
+   "tower_ms_p50": 5.645131692290306,
+   "ocr_ms_p50": 47.87399806082249,
+   "ocr_wait_after_tower_ms_p50": 33.2823246717453,
+   "projector_ms_p50": 0.6851609796285629,
+   "fusion_decision_ms_p50": 7.248833775520325,
+   "total_ms_p50": 66.45186804234982,
+   "total_ms_p95": 87.71522864699362,
+   "sum_of_component_p50": 63.76015394926071,
+   "parallel_ocr": true
+  },
+  "document_text_layer": {
+   "extract_ms_p50": 0.8137468248605728,
+   "krun_text_decision_ms_p50": 7.069643586874008,
+   "total_ms_p50": 7.886059582233429,
+   "total_ms_p95": 8.197913318872448,
+   "sum_of_component_p50": 7.883390411734581,
+   "parallel_ocr": false,
+   "route": "text"
+  },
+  "audio_5s": {
+   "decode_ms_p50": 0.6824787706136703,
+   "resample_ms_p50": 0.00430084764957428,
+   "padding_ms_p50": 0.11212751269340515,
+   "logmel_ms_p50": 1.0322649031877518,
+   "asr_encoder_ms_p50": 4.848742857575417,
+   "asr_decoder_ms_p50": 64.350800588727,
+   "audio_projector_ms_p50": 0.4238039255142212,
+   "fusion_decision_ms_p50": 6.710059940814972,
+   "total_ms_p50": 78.41400429606438,
+   "transcript_chars_p50": 75.0,
+   "total_ms_p95": 83.30797385424374,
+   "sum_of_component_p50": 78.16457934677601,
+   "parallel_ocr": false
+  },
+  "audio_15s": {
+   "decode_ms_p50": 1.6744006425142288,
+   "resample_ms_p50": 0.004407018423080444,
+   "padding_ms_p50": 0.11252425611019135,
+   "logmel_ms_p50": 0.9766556322574615,
+   "asr_encoder_ms_p50": 4.904367029666901,
+   "asr_decoder_ms_p50": 94.55748461186886,
+   "audio_projector_ms_p50": 0.4162956029176712,
+   "fusion_decision_ms_p50": 6.744330748915672,
+   "total_ms_p50": 110.38290895521641,
+   "transcript_chars_p50": 121.0,
+   "total_ms_p95": 113.5678958147764,
+   "sum_of_component_p50": 109.39046554267406,
+   "parallel_ocr": false
+  },
+  "audio_30s": {
+   "decode_ms_p50": 3.3779162913560867,
+   "resample_ms_p50": 0.0046510249376297,
+   "padding_ms_p50": 0.11422671377658844,
+   "logmel_ms_p50": 1.1227522045373917,
+   "asr_encoder_ms_p50": 4.7652460634708405,
+   "asr_decoder_ms_p50": 94.61022354662418,
+   "audio_projector_ms_p50": 0.5061402916908264,
+   "fusion_decision_ms_p50": 6.741376593708992,
+   "total_ms_p50": 111.60791665315628,
+   "transcript_chars_p50": 121.0,
+   "total_ms_p95": 114.32287953794003,
+   "sum_of_component_p50": 111.24253273010254,
+   "parallel_ocr": false
+  }
+ },
+ "text_only": {
+  "typical_1q_k4_ctx48": {
+   "frozen_artifact_p50_ms": 7.09000788629055,
+   "m15_stack_p50_ms": 7.086466997861862,
+   "delta_pct": -0.04994195331622375,
+   "answers_identical": false
+  },
+  "k_128_tools_ctx64": {
+   "frozen_artifact_p50_ms": 43.75346004962921,
+   "m15_stack_p50_ms": 43.763549998402596,
+   "delta_pct": 0.023060916238248907,
+   "answers_identical": false
+  }
+ },
+ "GL_pass": true,
+ "audio_5s_soft_target_200ms": true
+}

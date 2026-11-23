@@ -1,0 +1,88 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.14.0+cu126",
+  "dtype": "bf16",
+  "results": {
+    "typical_1q_k4": {
+      "pre": {
+        "p50_ms": 15.03323670476675,
+        "p95_ms": 16.084675444290042
+      },
+      "core": {
+        "p50_ms": 14.969175215810537,
+        "p95_ms": 15.948032820597291
+      },
+      "wrapper": {
+        "p50_ms": 15.047781867906451,
+        "p95_ms": 16.196373174898326
+      },
+      "delta_core_vs_pre_p50_pct": -0.42613237730700915,
+      "delta_wrapper_vs_pre_p50_pct": 0.09675337005163875,
+      "outputs_bitwise_equal": true,
+      "sequences": 1,
+      "padded_len": 89
+    },
+    "typical_4q_mixed": {
+      "pre": {
+        "p50_ms": 15.557752922177315,
+        "p95_ms": 16.78459791000932
+      },
+      "core": {
+        "p50_ms": 15.515857608988881,
+        "p95_ms": 16.326134582050145
+      },
+      "wrapper": {
+        "p50_ms": 15.561847947537899,
+        "p95_ms": 16.00838357117027
+      },
+      "delta_core_vs_pre_p50_pct": -0.2692889737869075,
+      "delta_wrapper_vs_pre_p50_pct": 0.02632144488390331,
+      "outputs_bitwise_equal": true,
+      "sequences": 4,
+      "padded_len": 285
+    },
+    "tools_32": {
+      "pre": {
+        "p50_ms": 14.599186601117253,
+        "p95_ms": 15.606340882368382
+      },
+      "core": {
+        "p50_ms": 14.569630846381187,
+        "p95_ms": 15.351606043986974
+      },
+      "wrapper": {
+        "p50_ms": 14.582301722839475,
+        "p95_ms": 15.542450384236872
+      },
+      "delta_core_vs_pre_p50_pct": -0.20244795510596658,
+      "delta_wrapper_vs_pre_p50_pct": -0.11565629469032501,
+      "outputs_bitwise_equal": true,
+      "sequences": 1,
+      "padded_len": 680
+    },
+    "tools_128": {
+      "pre": {
+        "p50_ms": 34.51878181658685,
+        "p95_ms": 34.90087341051549
+      },
+      "core": {
+        "p50_ms": 34.5627274364233,
+        "p95_ms": 34.89618357270956
+      },
+      "wrapper": {
+        "p50_ms": 34.53994705341756,
+        "p95_ms": 34.92043330334127
+      },
+      "delta_core_vs_pre_p50_pct": 0.12730930097692994,
+      "delta_wrapper_vs_pre_p50_pct": 0.06131513256513177,
+      "outputs_bitwise_equal": true,
+      "sequences": 3,
+      "padded_len": 972
+    }
+  },
+  "towers_loaded_after_text_traffic": {
+    "vision": false,
+    "audio": false
+  },
+  "peak_vram_mib": 1988
+}

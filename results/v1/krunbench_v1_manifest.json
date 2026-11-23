@@ -1,0 +1,179 @@
+{
+  "val_fit": {
+    "n": 2844,
+    "by_type": {
+      "choice": 2304,
+      "multi": 114,
+      "noul": 244,
+      "score": 182
+    },
+    "by_source": {
+      "clinc150": 1548,
+      "bitext": 688,
+      "toolace": 182,
+      "civil_comments": 426
+    },
+    "slices": {
+      "gold_removed": 352,
+      "near_duplicate": 1274,
+      "ood_near": 352,
+      "same_language": 2844,
+      "native_irrelevance": 123,
+      "ood_far": 55,
+      "unseen_label": 688,
+      "unseen_tool": 177,
+      "typo": 240
+    },
+    "k": {
+      "2": 679,
+      "3": 35,
+      "4": 403,
+      "5": 207,
+      "6": 25,
+      "7": 30,
+      "8": 386,
+      "9": 1,
+      "16": 400,
+      "32": 216,
+      "64": 206,
+      "128": 256
+    },
+    "answerable": 2369
+  },
+  "val_eval": {
+    "n": 2905,
+    "by_type": {
+      "choice": 2325,
+      "multi": 112,
+      "noul": 281,
+      "score": 187
+    },
+    "by_source": {
+      "clinc150": 1515,
+      "bitext": 727,
+      "toolace": 195,
+      "civil_comments": 468
+    },
+    "slices": {
+      "near_duplicate": 1277,
+      "same_language": 2905,
+      "gold_removed": 344,
+      "ood_near": 344,
+      "native_irrelevance": 124,
+      "ood_far": 41,
+      "unseen_label": 727,
+      "unseen_tool": 175,
+      "typo": 222
+    },
+    "k": {
+      "2": 731,
+      "3": 33,
+      "4": 408,
+      "5": 216,
+      "6": 24,
+      "7": 29,
+      "8": 407,
+      "9": 3,
+      "16": 383,
+      "32": 224,
+      "64": 212,
+      "128": 235
+    },
+    "answerable": 2437
+  },
+  "dev": {
+    "n": 695,
+    "by_type": {
+      "choice": 544,
+      "multi": 32,
+      "noul": 77,
+      "score": 42
+    },
+    "by_source": {
+      "clinc150": 350,
+      "bitext": 172,
+      "toolace": 54,
+      "civil_comments": 119
+    },
+    "slices": {
+      "gold_removed": 79,
+      "ood_near": 79,
+      "same_language": 695,
+      "near_duplicate": 302,
+      "native_irrelevance": 35,
+      "ood_far": 13,
+      "unseen_label": 172,
+      "unseen_tool": 51,
+      "typo": 52
+    },
+    "k": {
+      "2": 169,
+      "3": 9,
+      "4": 101,
+      "5": 51,
+      "6": 6,
+      "7": 5,
+      "8": 98,
+      "9": 4,
+      "16": 82,
+      "32": 55,
+      "64": 64,
+      "128": 51
+    },
+    "answerable": 581
+  },
+  "final_protected": {
+    "n": 11715,
+    "by_type": {
+      "choice": 9717,
+      "multi": 511,
+      "noul": 898,
+      "score": 589
+    },
+    "by_source": {
+      "clinc150": 6072,
+      "snips": 1556,
+      "bitext": 1712,
+      "toolace": 888,
+      "civil_comments": 1487
+    },
+    "slices": {
+      "near_duplicate": 4913,
+      "same_language": 11715,
+      "gold_removed": 1263,
+      "ood_near": 1263,
+      "native_irrelevance": 1469,
+      "ood_far": 1092,
+      "unseen_label": 1712,
+      "unseen_tool": 809,
+      "typo": 986
+    },
+    "k": {
+      "2": 3084,
+      "3": 180,
+      "4": 2119,
+      "5": 700,
+      "6": 117,
+      "7": 103,
+      "8": 1441,
+      "9": 15,
+      "16": 1305,
+      "32": 902,
+      "64": 897,
+      "128": 852
+    },
+    "answerable": 8983
+  },
+  "pending_translation_jobs": 12000,
+  "dropped_overlapping_training_side": 30,
+  "toolace_train_pool_items": 813,
+  "unseen_tools_protected": 1695,
+  "sha256": {
+    "dev.jsonl": "05da26d35671172698ff9c18b19d6bb9614179065833f567e8b14f8e7affeafe",
+    "final_protected.jsonl": "c44d2efedcd9d6c92f66ddf033f20f61866002e70976d690bf348a9da1154117",
+    "pending_translation.jsonl": "39f3b5d0b48bdfccaa7ef42032503070dea32fbc274c6c3e3f18c442c984e694",
+    "train_pool_toolace_unused.jsonl": "cf788f81aa3766ca8ec1bf45867eff8e5c202febd1e38917eed50aecd8aa8283",
+    "val_eval.jsonl": "fb83b8fb821b96cfd6131038714abe36cbfdb086addd332f90373b9ebec8425c",
+    "val_fit.jsonl": "f0fe621ea79064e9732450a5fee51ec51928266f1003b0a6ff64c3fe2107c356"
+  }
+}

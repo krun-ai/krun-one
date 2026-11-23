@@ -1,0 +1,28 @@
+{
+ "config": "vision",
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "loaded": {
+  "vision": true,
+  "asr": false,
+  "ocr": true,
+  "fusion": true
+ },
+ "load_seconds": {
+  "text_core": 96.67419248726219,
+  "vision": 1.822764904703945,
+  "fusion": 0.21227948181331158,
+  "ocr": 1.6876732329837978
+ },
+ "artifact_load_total_s_incl_sha": 96.78163101617247,
+ "first_request_ms_incl_lazy_load": {
+  "text": 379.0248637087643,
+  "image": 2140.6133458949625,
+  "scanned_page": 2394.386249128729
+ },
+ "rss_mib": 2737,
+ "torch_allocated_mib": 3718,
+ "torch_reserved_mib": 3780,
+ "torch_peak_allocated_mib": 3747,
+ "nvidia_smi_used_mib": 4848,
+ "nvidia_smi_used_before_mib": 1
+}

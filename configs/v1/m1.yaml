@@ -1,0 +1,50 @@
+# Krun One v1 — M1 multimodal alignment. Registered 2026-09-28/29 BEFORE the M1 dataset build and BEFORE any M1
+# training step. Nothing below may be changed after an M1 result is seen. M2/M3 are out of scope; final_protected
+# (text) is never opened; the M1 `protected` split is written and hashed but never read.
+name: krun-one-v1-m1
+seed: 20260929
+base_artifact: artifacts/krun-one-v1-text-final             # FROZEN text base (FREEZE_TEXTUAL_BASE = true)
+base_sha256: 781e5c7b7006da630d6b77693de26bd886839b0f8f96673774f9ace136dc18b6
+towers:                                                      # frozen, not trained in M1
+  vision: google/siglip2-base-patch16-naflex                 # images + visual documents + screenshots (one tower)
+  audio: openai/whisper-small                                # ENCODER only (no decoder / ASR), truncated to clip length
+  patches: {image: 256, document: 1024}
+fusion:                                                      # the only trainable parameters
+  tokens: 32                                                 # learned-query pooled tokens per modality -> hidden 1536
+  heads: 8
+  lora_r: 16                                                 # decision-head LoRA, active only on the multimodal forward
+  lora_alpha: 32.0
+loss:                                                        # decision loss = the text objective (stage2.yaml), unchanged
+  unanswerable_mode: oe
+  w_oe: 0.5
+  w_ans: 0.0
+  w_apply: 0.25
+  w_multi: 1.0
+  w_rps: 0.0
+  score_sigma: 0.0
+consistency_weight: 1.0                                      # KL(frozen text teacher on paired text || multimodal student)
+optimizer:
+  lr_adapters: 3.0e-4
+  lr_lora: 2.0e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  max_grad_norm: 1.0
+  epochs: 2                                                  # fixed; never extended after seeing a result
+batching:
+  batch_size: {image: 64, document: 24, audio: 48}           # single-modality batches, shuffled across modalities
+  workers: 10
+milestones: [0.25, 0.5, 0.75, 1.0]                           # fusion weights saved + quick val_fit eval
+checkpoint_selection: "max mean val_fit accuracy over (modality x primitive) cells; ties -> later checkpoint"
+evaluation:
+  report_on: val_eval (calibration / temperatures fitted on val_fit only)
+  baselines:
+    trivial: "choice/noul/score: majority gold label of the train split per (source, task) when present among candidates, else first; multi: majority per-candidate decision"
+    blind: "the frozen text model with the media removed (question + candidates only) — shows the media is used"
+    teacher: "the frozen text model on the paired text (caption / transcript / document text) — the text-path reference"
+  cross_modal_consistency: "same kd1 decision as text (teacher), speech (TTS) and screenshot: argmax agreement per pair"
+gates:                                                       # M1 PASS = all of G1..G5
+  G1_above_trivial: "per modality (image, document, audio): val_eval mean accuracy over primitives >= trivial + 10 pp AND >= blind + 10 pp"
+  G2_text_only_unchanged: "core digest identical before/after training AND full V signal dumps (val_fit, val_eval, val_ml, val_tools_v2) bitwise identical with M1 loaded vs the frozen artifact alone"
+  G3_frozen_towers: "health check: no gradient reaches the text core or the towers; only fusion parameters train"
+  G4_latency: "RTX 4090 bf16, batch 1: total p50 <= 150 ms for image, document page, 5 s audio and 15 s audio (M1 SLO, separate from text); text-only p50 within +5% of the frozen artifact"
+  G5_no_leakage: "group-disjoint splits, no media sha shared across splits, no train paired text equal to an eval/protected one, KrunBench v1 --check LEAKAGE = 0 on every non-protected text view"

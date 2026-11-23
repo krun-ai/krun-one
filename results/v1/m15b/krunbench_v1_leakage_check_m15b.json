@@ -1,0 +1,9 @@
+{
+  "training_side_files": [
+    "data/m15b/textview_train.jsonl"
+  ],
+  "n_training_side": 105361,
+  "n_protected": 11715,
+  "violations": {},
+  "LEAKAGE": 0
+}

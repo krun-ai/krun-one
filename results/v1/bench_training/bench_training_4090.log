@@ -1,0 +1,91 @@
+{"oom": false, "step_s": 0.20570678170770407, "tokens_per_s": 19911.83745132987, "peak_vram_gib": 17.628058910369873, "trainable_params": 837090304, "micro_batch": 4, "grad_ckpt": false, "freeze_embeddings": false}
+[W926 11:44:09.256616731 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1572864000 bytes (free: 1104936960, total: 25252724736).
+[W926 11:44:10.805869249 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1283457024 bytes (free: 1201405952, total: 25252724736).
+[W926 11:44:10.815128091 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1283457024 bytes (free: 1251737600, total: 25252724736).
+{"oom": true, "micro_batch": 8, "grad_ckpt": false, "freeze_embeddings": false}
+{"oom": false, "step_s": 0.245420902967453, "tokens_per_s": 16689.694930114405, "peak_vram_gib": 14.055267333984375, "trainable_params": 837090304, "micro_batch": 4, "grad_ckpt": true, "freeze_embeddings": false}
+{"oom": false, "step_s": 0.47673241421580315, "tokens_per_s": 17183.64381300852, "peak_vram_gib": 15.225380897521973, "trainable_params": 837090304, "micro_batch": 8, "grad_ckpt": true, "freeze_embeddings": false}
+[W926 11:47:12.501058302 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2537553920 bytes (free: 1835008, total: 25252724736).
+[W926 11:47:12.640161945 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2537553920 bytes (free: 2463891456, total: 25252724736).
+[W926 11:47:13.562168854 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2545942528 bytes (free: 274464768, total: 25252724736).
+[W926 11:47:14.624230731 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2548039680 bytes (free: 249298944, total: 25252724736).
+[W926 11:47:15.688106183 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2554331136 bytes (free: 243007488, total: 25252724736).
+{"oom": false, "step_s": 1.0615552831441164, "tokens_per_s": 15433.958325254469, "peak_vram_gib": 19.577600955963135, "trainable_params": 837090304, "micro_batch": 16, "grad_ckpt": true, "freeze_embeddings": false}
+[W926 11:48:13.286781920 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 4934598656 bytes (free: 846987264, total: 25252724736).
+[W926 11:48:15.157677935 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5010096128 bytes (free: 412876800, total: 25252724736).
+[W926 11:48:15.157804052 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5010096128 bytes (free: 412876800, total: 25252724736).
+{"oom": true, "micro_batch": 32, "grad_ckpt": true, "freeze_embeddings": false}
+{"oom": false, "step_s": 0.17563740722835064, "tokens_per_s": 23320.772406271557, "peak_vram_gib": 14.68740177154541, "trainable_params": 443874304, "micro_batch": 4, "grad_ckpt": false, "freeze_embeddings": true}
+[W926 11:50:12.717090791 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1283457024 bytes (free: 1048313856, total: 25252724736).
+[W926 11:50:12.079763317 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1298137088 bytes (free: 454819840, total: 25252724736).
+[W926 11:50:12.133548503 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1298137088 bytes (free: 482082816, total: 25252724736).
+[W926 11:50:13.851078638 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1302331392 bytes (free: 467402752, total: 25252724736).
+[W926 11:50:13.906975292 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1302331392 bytes (free: 509345792, total: 25252724736).
+{"oom": false, "step_s": 0.35161274624988437, "tokens_per_s": 23298.3590252957, "peak_vram_gib": 21.29643726348877, "trainable_params": 443874304, "micro_batch": 8, "grad_ckpt": false, "freeze_embeddings": true}
+[W926 11:51:12.698766076 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 100663296 bytes (free: 100401152, total: 25252724736).
+[W926 11:51:12.698888148 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 100663296 bytes (free: 100401152, total: 25252724736).
+{"oom": true, "micro_batch": 16, "grad_ckpt": false, "freeze_embeddings": true}
+[W926 11:52:09.285357766 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 786432000 bytes (free: 201064448, total: 25252724736).
+{"oom": false, "step_s": 0.21637962572276592, "tokens_per_s": 18929.693525063936, "peak_vram_gib": 10.267045021057129, "trainable_params": 443874304, "micro_batch": 4, "grad_ckpt": true, "freeze_embeddings": true}
+{"oom": false, "step_s": 0.4439202821813524, "tokens_per_s": 18453.763724752196, "peak_vram_gib": 12.38588285446167, "trainable_params": 443874304, "micro_batch": 8, "grad_ckpt": true, "freeze_embeddings": true}
+[W926 11:54:13.066425879 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2537553920 bytes (free: 1835008, total: 25252724736).
+[W926 11:54:14.057435132 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2545942528 bytes (free: 425459712, total: 25252724736).
+[W926 11:54:15.045288134 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2548039680 bytes (free: 708575232, total: 25252724736).
+[W926 11:54:16.036780015 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2554331136 bytes (free: 695992320, total: 25252724736).
+{"oom": false, "step_s": 0.990412896964699, "tokens_per_s": 16542.59556818349, "peak_vram_gib": 16.640780448913574, "trainable_params": 443874304, "micro_batch": 16, "grad_ckpt": true, "freeze_embeddings": true}
+[W926 11:55:15.688564934 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 4934598656 bytes (free: 746323968, total: 25252724736).
+[W926 11:55:17.507122653 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5010096128 bytes (free: 391905280, total: 25252724736).
+[W926 11:55:17.623569750 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5010096128 bytes (free: 316407808, total: 25252724736).
+[W926 11:55:17.623846121 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5010096128 bytes (free: 316407808, total: 25252724736).
+{"oom": true, "micro_batch": 32, "grad_ckpt": true, "freeze_embeddings": true}
+[W926 11:55:56.529147141 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 100663296 bytes (free: 45875200, total: 25252724736).
+[W926 11:55:56.529242873 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 100663296 bytes (free: 45875200, total: 25252724736).
+{"oom": true, "sequences": 64, "seq_len": 256, "grad_ckpt": false}
+[W926 11:56:35.606133916 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 100663296 bytes (free: 45875200, total: 25252724736).
+[W926 11:56:35.606227465 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 100663296 bytes (free: 45875200, total: 25252724736).
+{"oom": true, "sequences": 32, "seq_len": 512, "grad_ckpt": false}
+[W926 11:57:14.812194655 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 100663296 bytes (free: 71041024, total: 25252724736).
+[W926 11:57:14.812301514 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 100663296 bytes (free: 71041024, total: 25252724736).
+{"oom": true, "sequences": 16, "seq_len": 1024, "grad_ckpt": false}
+{"oom": false, "step_s": 0.8550387867726386, "padded_tokens_per_s": 19161.703835497035, "real_tokens_per_s": 13380.679539912206, "questions_per_s": 74.8504056074103, "peak_vram_gib": 13.73221206665039, "sequences": 64, "seq_len": 256, "grad_ckpt": true}
+{"oom": false, "step_s": 0.8855645009316504, "padded_tokens_per_s": 18501.19328717824, "real_tokens_per_s": 12505.01797254711, "questions_per_s": 36.13514313902, "peak_vram_gib": 13.764952659606934, "sequences": 32, "seq_len": 512, "grad_ckpt": true}
+{"oom": false, "step_s": 0.9498598491773009, "padded_tokens_per_s": 17248.860465247184, "real_tokens_per_s": 12053.35714517914, "questions_per_s": 16.844590298092953, "peak_vram_gib": 13.785839557647705, "sequences": 16, "seq_len": 1024, "grad_ckpt": true}
+{
+  "mlm_best_full": {
+    "oom": false,
+    "step_s": 0.20570678170770407,
+    "tokens_per_s": 19911.83745132987,
+    "peak_vram_gib": 17.628058910369873,
+    "trainable_params": 837090304,
+    "micro_batch": 4,
+    "grad_ckpt": false,
+    "freeze_embeddings": false
+  },
+  "mlm_best_frozen_emb": {
+    "oom": false,
+    "step_s": 0.17563740722835064,
+    "tokens_per_s": 23320.772406271557,
+    "peak_vram_gib": 14.68740177154541,
+    "trainable_params": 443874304,
+    "micro_batch": 4,
+    "grad_ckpt": false,
+    "freeze_embeddings": true
+  },
+  "decision_best": {
+    "oom": false,
+    "step_s": 0.8550387867726386,
+    "padded_tokens_per_s": 19161.703835497035,
+    "real_tokens_per_s": 13380.679539912206,
+    "questions_per_s": 74.8504056074103,
+    "peak_vram_gib": 13.73221206665039,
+    "sequences": 64,
+    "seq_len": 256,
+    "grad_ckpt": true
+  },
+  "usd_per_1B_tokens_mlm_full": 10.323284129754029,
+  "hours_per_1B_tokens_mlm_full": 13.950383959127066,
+  "usd_per_1B_tokens_mlm_frozen_emb": 8.81426875467797,
+  "hours_per_1B_tokens_mlm_frozen_emb": 11.911173992808067,
+  "usd_per_1B_tokens_decision": 15.362116321702468,
+  "hours_per_1B_tokens_decision": 20.75961665094928
+}

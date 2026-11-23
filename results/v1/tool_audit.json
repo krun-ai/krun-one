@@ -1,0 +1,122 @@
+{
+  "toolace": {
+    "license": "Apache-2.0",
+    "origin": "LLM-synthetic (generator undisclosed)",
+    "raw_dialogues": 11300,
+    "single_call_queries": 7036,
+    "skipped": {
+      "first assistant turn is not a call list": 1355,
+      "called names not parseable / not available": 103,
+      "not exactly one distinct function": 2040,
+      "tool list not found": 518,
+      "bad tool list": 248
+    },
+    "no_call_first_turn": 1993,
+    "unique_tools": 13403,
+    "near_duplicate_tools": 256,
+    "description_dependent_decisions": 287,
+    "tools_overlapping_bfcl": 6,
+    "languages": {
+      "en": 11277,
+      "zh": 23
+    },
+    "native_toolset_size": {
+      "1": 2253,
+      "2": 750,
+      "3": 1167,
+      "4": 1052,
+      "5": 951,
+      "6": 845,
+      "7": 14,
+      "8": 3,
+      "9": 1
+    },
+    "contexts": 7036,
+    "unique_contexts": 7001,
+    "leakage_vs_protected": {
+      "exact": 704
+    }
+  },
+  "clinc150": {
+    "license": "CC-BY-3.0",
+    "origin": "REAL (crowdsourced)",
+    "by_split": {
+      "train": 15250,
+      "validation": 3100,
+      "test": 5500
+    },
+    "intents": 150,
+    "out_of_scope_queries": 1350,
+    "domains": 10,
+    "languages": {
+      "en": 23850
+    },
+    "contexts": 23850,
+    "unique_contexts": 23783,
+    "leakage_vs_protected": {
+      "exact": 67,
+      "near": 2
+    }
+  },
+  "snips": {
+    "license": "Apache-2.0 (mirror) / CC0 (upstream sonos)",
+    "origin": "REAL",
+    "intents": 7,
+    "domains": 1,
+    "languages": {
+      "en": 14484
+    },
+    "contexts": 14484,
+    "unique_contexts": 14211,
+    "leakage_vs_protected": {
+      "exact": 1
+    }
+  },
+  "bitext": {
+    "license": "CDLA-Sharing-1.0",
+    "origin": "HYBRID (template/synthetic + linguist curation)",
+    "intents": 27,
+    "domains": 11,
+    "languages": {
+      "en": 26872
+    },
+    "flags": {
+      "B": 26872,
+      "Q": 8968,
+      "Z": 5286,
+      "L": 24115,
+      "C": 2646,
+      "E": 1882,
+      "N": 463,
+      "I": 7839,
+      "M": 4920,
+      "P": 1329,
+      "K": 2227,
+      "V": 77,
+      "W": 1288,
+      "S": 417
+    },
+    "contexts": 26872,
+    "unique_contexts": 24072,
+    "leakage_vs_protected": {
+      "exact": 1
+    }
+  },
+  "api_bank_eval": {
+    "license": "MIT",
+    "origin": "REAL (human-annotated dialogues, runnable APIs)",
+    "items": 534,
+    "distinct_apis_seen": 0,
+    "use": "eval-only"
+  },
+  "sgd": {
+    "license": "CC-BY-SA-4.0",
+    "origin": "REAL (crowd paraphrased dialogues; human-written schemas)",
+    "services": 45,
+    "service_intents": 88,
+    "intents_with_description": 121,
+    "domains": 20,
+    "queries": "~20k dialogues (README; user turns not counted here)",
+    "use": "REVIEW (share-alike) \u2014 eval/validation only until the owner decides"
+  }
+}

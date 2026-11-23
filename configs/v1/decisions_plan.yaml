@@ -1,0 +1,53 @@
+# Krun Decisions v1 — executable, CAPACITY-AWARE plan (1M / 2M / 3M). Read by scripts/v1/plan_decisions.py.
+# Counts of real contexts are MEASURED (results/v1/tool_audit.json, v0 source stats); xLAM + derived are EXCLUDED;
+# KrunBench v1 validation/final items are removed from every training pool.
+#
+# origins (never mix labels: derived/MT/rules/LLM are NOT called real):
+#   REAL        original licensed text, unchanged
+#   DERIVED     same real context, new decision (candidate set, k, hard negatives, gold removed, noul proposition,
+#               permutation, concatenation for multi-label)                                    cost ~0
+#   MT          machine translation of a real context by a local open model (opus-mt, CC-BY-4.0) + round trip
+#   RULES       rule noise (typos, accents, abbreviations)                                        cost 0
+#   LLM         local Apache-2.0 generator + independent blind verifier (pilot-measured acceptance)
+
+capacity:                       # real TRAIN contexts available (after exclusions and protected removal)
+  intent:
+    banking77: 8993             # en
+    massive: 45880              # 11,470 x {en-US, pt-PT, es-ES, fr-FR} (parallel: 11,470 semantic groups)
+    clinc150_train: 15250       # en (validation/test are KrunBench v1)
+    snips_train: 13784          # en
+    bitext: 23600               # en, 24 intents (3 intents held out for KrunBench v1 unseen labels)
+  tool:
+    toolace_single_call: 6332   # 7,036 minus 704 reserved as validation/holdout -> ~13.4k unique tools in the pool
+  noul_contexts: 250000         # Civil Comments (dedup, CC0) + MHS + HelpSteer2 + intent/tool propositions
+  score_contexts: 70000         # MHS items/comments + HelpSteer2 attributes
+caps:                           # anti-overuse: max decisions per real context, per origin
+  derived_per_context: {intent: 6, tool: 20, noul: 3, score: 3}
+  mt_locales: 6                 # pt-BR, pt-PT, es-ES, es-419, fr-FR, fr-CA (only for EN-origin contexts)
+  mt_contexts_share: {intent: 0.5, tool: 1.0}     # fraction of EN real contexts that get translated
+  derived_per_mt_context: {intent: 2, tool: 6}
+  llm_max_share: {intent: 0.15, tool: 0.35, noul: 0.10, score: 0.10, multi: 0.30, ood: 0.30, minimal_pairs: 1.0}
+  rules_share: 0.06             # of each category, rule-noised copies (same semantic group)
+
+# category mix of each scale (fractions of the target); the plan never exceeds capacity x caps — if a category
+# cannot be filled cleanly it is reported SHORT and the total shrinks (quality over count, owner rule)
+mix: {choice_intent: 0.24, tool_routing: 0.22, noul: 0.16, score: 0.10, multi_label: 0.08, ood: 0.12, minimal_pairs: 0.08}
+overlays:                        # properties inside categories (not extra rows)
+  hard_negative_share: {choice_intent: 0.65, tool_routing: 0.70, ood: 0.60}
+  cross_language_share_of_non_en: 0.45           # PT/ES/FR context -> EN schema
+  translated_schema_share_of_non_en: 0.15        # PT/ES/FR context -> PT/ES/FR schema (same language)
+languages: {en: 0.30, pt-BR: 0.16, pt-PT: 0.08, es-ES: 0.09, es-419: 0.12, fr-FR: 0.20, fr-CA: 0.05}
+scales:
+  S1M: {decisions: 1_000_000, epochs: 2}
+  S2M: {decisions: 2_000_000, epochs: 1.5}
+  S3M: {decisions: 3_000_000, epochs: 1}
+
+measured:
+  bytes_per_record: 2331
+  tokens_per_decision: {choice_intent: 65.6, tool_routing: 269.5, noul: 116.9, score: 309.3, multi_label: 57.7,
+                        ood: 200.0, minimal_pairs: 65.6}
+  padding_efficiency: 0.8
+llm_generation:                  # replaced by pilot measurements when results/v1/synthetic_pilot/report.json exists
+  cost_per_100k_accepted_usd: 1.1
+mt_generation:
+  cost_per_100k_usd: 0.15

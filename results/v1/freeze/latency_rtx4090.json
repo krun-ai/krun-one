@@ -1,0 +1,39 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.14.0+cu126",
+  "dtype": "bf16",
+  "iters": 60,
+  "results": {
+    "typical_1q_k4_ctx48": {
+      "e2e_p50_ms": 16.875275410711765,
+      "e2e_p95_ms": 20.984018431045115,
+      "forward_p50_ms": 16.81524352170527,
+      "forward_p95_ms": 20.86016598623246
+    },
+    "typical_4q_mixed_ctx96": {
+      "e2e_p50_ms": 20.098083885386586,
+      "e2e_p95_ms": 22.943041869439185,
+      "forward_p50_ms": 19.754327135160565,
+      "forward_p95_ms": 22.471560421399772
+    },
+    "k_32_tools_ctx64": {
+      "e2e_p50_ms": 16.6597634088248,
+      "e2e_p95_ms": 18.778667272999883,
+      "forward_p50_ms": 16.4538212120533,
+      "forward_p95_ms": 18.087987671606243
+    },
+    "k_128_tools_ctx64": {
+      "e2e_p50_ms": 47.1988080535084,
+      "e2e_p95_ms": 48.347288253717124,
+      "forward_p50_ms": 46.6184567194432,
+      "forward_p95_ms": 47.0810805214569
+    }
+  },
+  "reference_stage2_p50_ms": {
+    "typical_1q_k4_ctx48": 16.923,
+    "typical_4q_mixed_ctx96": 18.584,
+    "k_32_tools_ctx64": 18.771,
+    "k_128_tools_ctx64": 43.887
+  },
+  "PASS": true
+}

@@ -1,0 +1,21 @@
+{
+  "gates": {
+    "gain:non_en": true,
+    "gain:tool": true,
+    "gain:cross_language": true,
+    "gain:hard": true,
+    "unseen_tool:false_acceptance": false,
+    "unseen_tool:multi_f1": true,
+    "ood_auroc": true,
+    "ood_false_acceptance": false,
+    "calibration_ece": true,
+    "choice_core_en_intent": true,
+    "latency_typical_ms": true,
+    "latency_typical_ratio": true
+  },
+  "verdict": "CANDIDATE_REJECTED",
+  "latency_worst_typical": {
+    "max_typical_ms": 16.638,
+    "max_typical_ratio": 0.8634284721820181
+  }
+}

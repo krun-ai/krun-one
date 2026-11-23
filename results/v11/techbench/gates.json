@@ -1,0 +1,512 @@
+{
+ "baseline": {
+  "macro_top1": 0.3090179034099195,
+  "by_track": {
+   "api": 0.26256281407035176,
+   "backend": 0.2635135135135135,
+   "cloud": 0.25229960578186594,
+   "database": 0.2832512315270936,
+   "devops": 0.043478260869565216,
+   "distributed": 0.41264559068219636,
+   "mlinfra": 0.40700808625336926,
+   "security": 0.47878787878787876,
+   "software_repair": 0.5962616822429907,
+   "state_action": 0.09037037037037036
+  },
+  "gold_vs_hardest": 0.6688091986585345,
+  "margin_logit": 1.1176607126713065,
+  "hn_median_margin": 0.8125,
+  "flip_both": 0.02702702702702703,
+  "flip_stuck": 0.125,
+  "unseen_combination": 0.5212121212121212,
+  "seen_combination": 0.39492753623188404,
+  "unseen_technology": 0.39,
+  "unseen_family": 0.12692307692307692,
+  "ood_fa": 0.0037735849056603774
+ },
+ "variants": {
+  "R1": {
+   "seeds": {
+    "r1_s1": {
+     "facts": {
+      "macro_top1": 0.5234182167849256,
+      "by_track": {
+       "api": 0.4108040201005025,
+       "backend": 0.5912162162162162,
+       "cloud": 0.3193166885676741,
+       "database": 0.5566502463054187,
+       "devops": 0.6273291925465838,
+       "distributed": 0.7803660565723793,
+       "mlinfra": 0.49595687331536387,
+       "security": 0.5575757575757576,
+       "software_repair": 0.7364485981308411,
+       "state_action": 0.15851851851851853
+      },
+      "gold_vs_hardest": 0.7519586543956253,
+      "margin_logit": 2.698911600035312,
+      "hn_median_margin": 2.1621,
+      "flip_both": 0.25675675675675674,
+      "flip_stuck": 0.21283783783783783,
+      "unseen_combination": 0.5191919191919192,
+      "seen_combination": 0.9764492753623188,
+      "unseen_technology": 0.63,
+      "unseen_family": 0.11923076923076924,
+      "ood_fa": 0.0037735849056603774
+     },
+     "gates": {
+      "top1_macro_gain_pp": {
+       "value": 21.44003133750061,
+       "pass": true
+      },
+      "pairwise_gold_vs_hardest_gain_pp": {
+       "value": 8.314945573709076,
+       "pass": true
+      },
+      "hard_negative_margin_gain_logit": {
+       "value": 1.5812508873640054,
+       "pass": true
+      },
+      "constraint_flip_both_gain_pp": {
+       "value": 22.972972972972972,
+       "pass": true
+      },
+      "flip_stuck_does_not_rise_pp": {
+       "value": 8.783783783783782,
+       "pass": false
+      },
+      "unseen_combination_gain_pp": {
+       "value": -0.20202020202020332,
+       "pass": false
+      },
+      "worst_track_delta_pp": {
+       "value": 6.701708278580814,
+       "pass": true
+      },
+      "ood_false_acceptance": {
+       "value": 0.0037735849056603774,
+       "pass": true
+      }
+     }
+    },
+    "r1_s2": {
+     "facts": {
+      "macro_top1": 0.5372889859335289,
+      "by_track": {
+       "api": 0.42839195979899497,
+       "backend": 0.625,
+       "cloud": 0.36268068331143233,
+       "database": 0.5665024630541872,
+       "devops": 0.6583850931677019,
+       "distributed": 0.7537437603993344,
+       "mlinfra": 0.477088948787062,
+       "security": 0.6060606060606061,
+       "software_repair": 0.7439252336448599,
+       "state_action": 0.1511111111111111
+      },
+      "gold_vs_hardest": 0.7626320094343396,
+      "margin_logit": 2.799059939966601,
+      "hn_median_margin": 1.92969,
+      "flip_both": 0.2702702702702703,
+      "flip_stuck": 0.23310810810810811,
+      "unseen_combination": 0.5484848484848485,
+      "seen_combination": 0.9818840579710145,
+      "unseen_technology": 0.685,
+      "unseen_family": 0.13653846153846153,
+      "ood_fa": 0.0
+     },
+     "gates": {
+      "top1_macro_gain_pp": {
+       "value": 22.82710825236094,
+       "pass": true
+      },
+      "pairwise_gold_vs_hardest_gain_pp": {
+       "value": 9.382281077580512,
+       "pass": true
+      },
+      "hard_negative_margin_gain_logit": {
+       "value": 1.6813992272952947,
+       "pass": true
+      },
+      "constraint_flip_both_gain_pp": {
+       "value": 24.324324324324326,
+       "pass": true
+      },
+      "flip_stuck_does_not_rise_pp": {
+       "value": 10.81081081081081,
+       "pass": false
+      },
+      "unseen_combination_gain_pp": {
+       "value": 2.7272727272727226,
+       "pass": false
+      },
+      "worst_track_delta_pp": {
+       "value": 6.074074074074074,
+       "pass": true
+      },
+      "ood_false_acceptance": {
+       "value": 0.0,
+       "pass": true
+      }
+     }
+    }
+   },
+   "mean": {
+    "top1_macro_gain_pp": {
+     "value": 22.133569794930775,
+     "pass": true
+    },
+    "pairwise_gold_vs_hardest_gain_pp": {
+     "value": 8.848613325644795,
+     "pass": true
+    },
+    "hard_negative_margin_gain_logit": {
+     "value": 1.63132505732965,
+     "pass": true
+    },
+    "constraint_flip_both_gain_pp": {
+     "value": 23.64864864864865,
+     "pass": true
+    },
+    "flip_stuck_does_not_rise_pp": {
+     "value": 9.797297297297296,
+     "pass": false
+    },
+    "unseen_combination_gain_pp": {
+     "value": 1.2626262626262597,
+     "pass": false
+    },
+    "worst_track_delta_pp": {
+     "value": 6.387891176327445,
+     "pass": true
+    },
+    "ood_false_acceptance": {
+     "value": 0.0018867924528301887,
+     "pass": true
+    }
+   },
+   "ALL_PASS": false
+  },
+  "R2_last4": {
+   "seeds": {
+    "r2l4_s1": {
+     "facts": {
+      "macro_top1": 0.6278670765762023,
+      "by_track": {
+       "api": 0.5100502512562815,
+       "backend": 0.7331081081081081,
+       "cloud": 0.5059132720105125,
+       "database": 0.6798029556650246,
+       "devops": 0.8819875776397516,
+       "distributed": 0.9467554076539102,
+       "mlinfra": 0.5471698113207547,
+       "security": 0.5393939393939394,
+       "software_repair": 0.7448598130841122,
+       "state_action": 0.18962962962962962
+      },
+      "gold_vs_hardest": 0.7977501201943026,
+      "margin_logit": 4.201045796738048,
+      "hn_median_margin": 4.0,
+      "flip_both": 0.4594594594594595,
+      "flip_stuck": 0.16216216216216217,
+      "unseen_combination": 0.5858585858585859,
+      "seen_combination": 1.0,
+      "unseen_technology": 0.765,
+      "unseen_family": 0.09038461538461538,
+      "ood_fa": 0.005660377358490566
+     },
+     "gates": {
+      "top1_macro_gain_pp": {
+       "value": 31.884917316628282,
+       "pass": true
+      },
+      "pairwise_gold_vs_hardest_gain_pp": {
+       "value": 12.894092153576809,
+       "pass": true
+      },
+      "hard_negative_margin_gain_logit": {
+       "value": 3.083385084066741,
+       "pass": true
+      },
+      "constraint_flip_both_gain_pp": {
+       "value": 43.24324324324324,
+       "pass": true
+      },
+      "flip_stuck_does_not_rise_pp": {
+       "value": 3.716216216216217,
+       "pass": false
+      },
+      "unseen_combination_gain_pp": {
+       "value": 6.464646464646462,
+       "pass": false
+      },
+      "worst_track_delta_pp": {
+       "value": 6.060606060606066,
+       "pass": true
+      },
+      "ood_false_acceptance": {
+       "value": 0.005660377358490566,
+       "pass": true
+      }
+     }
+    },
+    "r2l4_s2": {
+     "facts": {
+      "macro_top1": 0.6341331681556232,
+      "by_track": {
+       "api": 0.5665829145728644,
+       "backend": 0.6385135135135135,
+       "cloud": 0.45466491458607095,
+       "database": 0.6748768472906403,
+       "devops": 0.9006211180124224,
+       "distributed": 0.940099833610649,
+       "mlinfra": 0.6495956873315364,
+       "security": 0.5818181818181818,
+       "software_repair": 0.7523364485981309,
+       "state_action": 0.18222222222222223
+      },
+      "gold_vs_hardest": 0.8012017794303079,
+      "margin_logit": 4.114189626871633,
+      "hn_median_margin": 3.6562400000000004,
+      "flip_both": 0.4797297297297297,
+      "flip_stuck": 0.13513513513513514,
+      "unseen_combination": 0.5909090909090909,
+      "seen_combination": 1.0,
+      "unseen_technology": 0.755,
+      "unseen_family": 0.09615384615384616,
+      "ood_fa": 0.01509433962264151
+     },
+     "gates": {
+      "top1_macro_gain_pp": {
+       "value": 32.51152647457036,
+       "pass": true
+      },
+      "pairwise_gold_vs_hardest_gain_pp": {
+       "value": 13.23925807717734,
+       "pass": true
+      },
+      "hard_negative_margin_gain_logit": {
+       "value": 2.9965289142003266,
+       "pass": true
+      },
+      "constraint_flip_both_gain_pp": {
+       "value": 45.27027027027027,
+       "pass": true
+      },
+      "flip_stuck_does_not_rise_pp": {
+       "value": 1.0135135135135143,
+       "pass": false
+      },
+      "unseen_combination_gain_pp": {
+       "value": 6.969696969696971,
+       "pass": false
+      },
+      "worst_track_delta_pp": {
+       "value": 9.185185185185187,
+       "pass": true
+      },
+      "ood_false_acceptance": {
+       "value": 0.01509433962264151,
+       "pass": true
+      }
+     }
+    }
+   },
+   "mean": {
+    "top1_macro_gain_pp": {
+     "value": 32.19822189559932,
+     "pass": true
+    },
+    "pairwise_gold_vs_hardest_gain_pp": {
+     "value": 13.066675115377073,
+     "pass": true
+    },
+    "hard_negative_margin_gain_logit": {
+     "value": 3.039956999133534,
+     "pass": true
+    },
+    "constraint_flip_both_gain_pp": {
+     "value": 44.25675675675676,
+     "pass": true
+    },
+    "flip_stuck_does_not_rise_pp": {
+     "value": 2.364864864864866,
+     "pass": false
+    },
+    "unseen_combination_gain_pp": {
+     "value": 6.717171717171716,
+     "pass": false
+    },
+    "worst_track_delta_pp": {
+     "value": 7.622895622895626,
+     "pass": true
+    },
+    "ood_false_acceptance": {
+     "value": 0.010377358490566037,
+     "pass": true
+    }
+   },
+   "ALL_PASS": false
+  },
+  "R2_last4_noadapter": {
+   "seeds": {
+    "r2l4na_s1": {
+     "facts": {
+      "macro_top1": 0.6169462506126392,
+      "by_track": {
+       "api": 0.5527638190954773,
+       "backend": 0.7297297297297297,
+       "cloud": 0.4651773981603154,
+       "database": 0.6970443349753694,
+       "devops": 0.8695652173913043,
+       "distributed": 0.9484193011647255,
+       "mlinfra": 0.4743935309973046,
+       "security": 0.503030303030303,
+       "software_repair": 0.7485981308411215,
+       "state_action": 0.18074074074074073
+      },
+      "gold_vs_hardest": 0.7940333743147864,
+      "margin_logit": 4.209732238837011,
+      "hn_median_margin": 3.75781,
+      "flip_both": 0.4560810810810811,
+      "flip_stuck": 0.16554054054054054,
+      "unseen_combination": 0.598989898989899,
+      "seen_combination": 0.9981884057971014,
+      "unseen_technology": 0.76,
+      "unseen_family": 0.09807692307692308,
+      "ood_fa": 0.0018867924528301887
+     },
+     "gates": {
+      "top1_macro_gain_pp": {
+       "value": 30.792834720271966,
+       "pass": true
+      },
+      "pairwise_gold_vs_hardest_gain_pp": {
+       "value": 12.522417565625188,
+       "pass": true
+      },
+      "hard_negative_margin_gain_logit": {
+       "value": 3.0920715261657046,
+       "pass": true
+      },
+      "constraint_flip_both_gain_pp": {
+       "value": 42.9054054054054,
+       "pass": true
+      },
+      "flip_stuck_does_not_rise_pp": {
+       "value": 4.054054054054054,
+       "pass": false
+      },
+      "unseen_combination_gain_pp": {
+       "value": 7.777777777777772,
+       "pass": false
+      },
+      "worst_track_delta_pp": {
+       "value": 2.4242424242424288,
+       "pass": true
+      },
+      "ood_false_acceptance": {
+       "value": 0.0018867924528301887,
+       "pass": true
+      }
+     }
+    },
+    "r2l4na_s2": {
+     "facts": {
+      "macro_top1": 0.6370212210117631,
+      "by_track": {
+       "api": 0.5728643216080402,
+       "backend": 0.7736486486486487,
+       "cloud": 0.4507227332457293,
+       "database": 0.6773399014778325,
+       "devops": 0.8819875776397516,
+       "distributed": 0.9467554076539102,
+       "mlinfra": 0.5902964959568733,
+       "security": 0.5393939393939394,
+       "software_repair": 0.7579439252336448,
+       "state_action": 0.17925925925925926
+      },
+      "gold_vs_hardest": 0.7959757166707557,
+      "margin_logit": 4.361625981451476,
+      "hn_median_margin": 4.04492,
+      "flip_both": 0.5033783783783784,
+      "flip_stuck": 0.13851351351351351,
+      "unseen_combination": 0.6242424242424243,
+      "seen_combination": 1.0,
+      "unseen_technology": 0.73,
+      "unseen_family": 0.10961538461538461,
+      "ood_fa": 0.0
+     },
+     "gates": {
+      "top1_macro_gain_pp": {
+       "value": 32.800331760184356,
+       "pass": true
+      },
+      "pairwise_gold_vs_hardest_gain_pp": {
+       "value": 12.716651801222124,
+       "pass": true
+      },
+      "hard_negative_margin_gain_logit": {
+       "value": 3.243965268780169,
+       "pass": true
+      },
+      "constraint_flip_both_gain_pp": {
+       "value": 47.63513513513514,
+       "pass": true
+      },
+      "flip_stuck_does_not_rise_pp": {
+       "value": 1.3513513513513513,
+       "pass": false
+      },
+      "unseen_combination_gain_pp": {
+       "value": 10.303030303030303,
+       "pass": true
+      },
+      "worst_track_delta_pp": {
+       "value": 6.060606060606066,
+       "pass": true
+      },
+      "ood_false_acceptance": {
+       "value": 0.0,
+       "pass": true
+      }
+     }
+    }
+   },
+   "mean": {
+    "top1_macro_gain_pp": {
+     "value": 31.79658324022816,
+     "pass": true
+    },
+    "pairwise_gold_vs_hardest_gain_pp": {
+     "value": 12.619534683423655,
+     "pass": true
+    },
+    "hard_negative_margin_gain_logit": {
+     "value": 3.168018397472937,
+     "pass": true
+    },
+    "constraint_flip_both_gain_pp": {
+     "value": 45.270270270270274,
+     "pass": true
+    },
+    "flip_stuck_does_not_rise_pp": {
+     "value": 2.7027027027027026,
+     "pass": false
+    },
+    "unseen_combination_gain_pp": {
+     "value": 9.040404040404038,
+     "pass": false
+    },
+    "worst_track_delta_pp": {
+     "value": 4.2424242424242475,
+     "pass": true
+    },
+    "ood_false_acceptance": {
+     "value": 0.0009433962264150943,
+     "pass": true
+    }
+   },
+   "ALL_PASS": false
+  }
+ }
+}

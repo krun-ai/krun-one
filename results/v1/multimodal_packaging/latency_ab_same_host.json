@@ -1,0 +1,78 @@
+{
+ "scan parallel + opt(rec32,HEUR)": [
+  146.1,
+  {
+   "decode_ms": 3.4,
+   "vision_ms": 22.4,
+   "ocr_ms": 119.4,
+   "fusion_ms": 1.4,
+   "decision_ms": 19.3,
+   "total_inference_ms": 146.0
+  }
+ ],
+ "scan sequential + opt": [
+  166.5,
+  {
+   "decode_ms": 3.2,
+   "vision_ms": 20.8,
+   "ocr_ms": 140.4,
+   "fusion_ms": 1.0,
+   "decision_ms": 18.8,
+   "total_inference_ms": 166.4
+  }
+ ],
+ "scan parallel + default(rec6,EXH)": [
+  194.6,
+  {
+   "decode_ms": 4.8,
+   "vision_ms": 43.1,
+   "ocr_ms": 152.3,
+   "fusion_ms": 2.0,
+   "decision_ms": 30.7,
+   "total_inference_ms": 194.4
+  }
+ ],
+ "scan sequential + default": [
+  203.8,
+  {
+   "decode_ms": 3.0,
+   "vision_ms": 23.9,
+   "ocr_ms": 177.3,
+   "fusion_ms": 1.0,
+   "decision_ms": 20.6,
+   "total_inference_ms": 203.6
+  }
+ ],
+ "ocr alone default": 149.6,
+ "ocr alone opt": 113.4,
+ "audio EN-only 5s": [
+  188.4,
+  {
+   "decode_ms": 0.5,
+   "asr_ms": 167.6,
+   "fusion_ms": 1.1,
+   "decision_ms": 18.3,
+   "total_inference_ms": 188.4
+  }
+ ],
+ "audio EN-only 15s": [
+  155.1,
+  {
+   "decode_ms": 1.0,
+   "asr_ms": 134.0,
+   "fusion_ms": 1.1,
+   "decision_ms": 18.0,
+   "total_inference_ms": 155.1
+  }
+ ],
+ "audio EN-only 30s": [
+  840.8,
+  {
+   "decode_ms": 1.8,
+   "asr_ms": 817.2,
+   "fusion_ms": 1.1,
+   "decision_ms": 19.2,
+   "total_inference_ms": 840.7
+  }
+ ]
+}

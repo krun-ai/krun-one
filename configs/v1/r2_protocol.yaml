@@ -1,0 +1,50 @@
+# Krun One v1 — correction round R2 (tool routing / LR / OOD operating point).
+# Registered 2026-09-28, BEFORE the LR-1e-5 run and before any tool-corpus-v2 result. The round-1 gate
+# (configs/v1/ft_gates.yaml) is NOT changed retroactively: it stays the record of candidate 1.
+# All thresholds come from V fit (KrunBench v1 val_fit + val_ml fit); reported numbers come from V eval.
+# final_protected is never opened in this round.
+
+evaluation_sets:
+  V: [data/krunbench_v1/val_fit.jsonl, data/krunbench_v1/val_eval.jsonl, data/kd1/val_ml.jsonl]
+  toolace_regression:            # KrunBench v0 (regression only), ToolACE items of val_tools + holdout_tools, no xLAM rows;
+                                 # excluded from every training corpus of this round (checked by the leakage step)
+    - data/v0/val_tools.jsonl
+    - data/v0/holdout_tools.jsonl
+  tool_benchmark_target: {holdout_tools_accuracy: 0.918}   # v0.3 on the same 416 answerable holdout decisions
+
+lr_selection:                    # v1-2e-5 (candidate 1) vs v1-1e-5 (identical in everything else)
+  prefer_1e-5_if_any:
+    - holdout_tools_gain_pp: 2.0          # paired group bootstrap, 95% CI lower bound > 0
+    - unseen_tool_fa_drop_pp_at_cov70: 3.0 # V eval, tool family, both models at 70% coverage (fit-calibrated)
+    - ood_fa_drop_pp_at_cov70: 2.0         # V eval, all choice families at 70% coverage
+  and_no_material_regression:
+    native_non_en_accuracy_drop_pp: 1.0
+    cross_language_accuracy_drop_pp: 1.0
+    k64_128_accuracy_drop_pp: 1.5
+    ece_rise: 0.01
+    permutation_consistency_drop_pp: 1.0
+  otherwise: keep 2e-5
+  never_by: training loss
+
+ood_operating_point:             # prospective protocol (replaces own-threshold FA comparisons from now on)
+  coverages: [0.5, 0.6, 0.7, 0.8, 0.9]
+  threshold: >
+    per family (intent, tool): margin threshold = the (1 - coverage) quantile of the temperature-scaled top1-top2 margin
+    of ANSWERABLE fit decisions (temperature per family fitted on fit).
+  report_on_eval_at_each_coverage: [selective_accuracy, ood_false_acceptance, tool_false_acceptance,
+                                    unseen_tool_false_acceptance, aurc]
+  serving_point_rule: >
+    per family, the LARGEST coverage in the grid whose FIT metrics satisfy selective accuracy >= 0.97 and OOD false
+    acceptance <= 0.05 (intent) / <= 0.08 (tool). If none: 0.5. Chosen on fit, reported on eval.
+
+tool_data_candidate_gates:       # candidate 2 (best LR + Krun Tool Corpus v2) vs candidate 1 and v0.3
+  must:
+    - holdout_tools_accuracy >= 0.918 OR (paired CI vs v0.3 lower bound > -1.0 pp AND the cleaner-protocol unseen slices improve)
+    - native_non_en_accuracy_drop_vs_candidate1_pp <= 1.0
+    - cross_language_accuracy_drop_vs_candidate1_pp <= 1.0
+    - k64_128_accuracy_drop_vs_candidate1_pp <= 1.5
+    - unseen_tool_fa_at_cov70 <= candidate1 value
+    - ece <= 0.05
+    - permutation_consistency >= 0.96
+    - latency_128_tools_p50_ms <= 50        # RTX 4090 bf16, same harness
+  text_base_freeze_requires: all must gates

@@ -1,0 +1,83 @@
+# Krun One v1.1 R3 — multimodal re-alignment. Registered 2026-10-01 before any R3 training step.
+# This is configs/v1/m15c.yaml (the regime that passed) with TWO changes: (1) the text core is the frozen R3 candidate
+# (scripts/v11/mm_realign.py swaps it in), (2) training starts from the registered M1.5c fusion weights instead of M1.5.
+# Trained: fusion adapters / projectors, modality embeddings, head LoRA (26.7M parameters). Frozen: the R3 text core,
+# SigLIP2, Whisper, OCR. Data, layout share (22%), loss, optimizer, schedule, batch sizes: unchanged.
+# Not valid here: base_sha256 (the core is the R3 candidate), checkpoint_selection and the P-relative gate terms — the
+# R3 versions are in configs/v11/r3_protocol.yaml (multimodal).
+# Krun One v1 — M1.5c: the M1.5b recipe with a SMALLER layout share (owner decision after the M1.5b report: option 1).
+# Registered 2026-09-29 BEFORE the M1.5c data build and any M1.5c training step. Nothing below may be changed after an
+# M1.5c result is seen. Differences from configs/v1/m15b.yaml are marked "M1.5c:". Gates, references, selection rule,
+# REMOVE_GATE and every frozen part are unchanged. M2 not started; final_protected never opened.
+name: krun-one-v11-r3-m15c
+seed: 20260932
+base_artifact: artifacts/krun-one-v1-text-final
+base_sha256: 781e5c7b7006da630d6b77693de26bd886839b0f8f96673774f9ace136dc18b6
+m1_init: runs/v1/m1/krun-one-v1-m1/step_009370/fusion.safetensors          # system A (M1) in the evaluation
+m1_init_sha256: c744488c000ac5883927f0c7c5c31370a53e8cd0f47d657fe572ea16014550e2
+m15_init: runs/v1/m15c/krun-one-v1-m15c/step_001169/m15.safetensors      # R3: the registered M1.5c fusion (= system P in the dumps: "new core + old fusion")
+towers: {vision: google/siglip2-base-patch16-naflex, asr: openai/whisper-small, patches: {image: 256, document: 1024}}
+
+gate:
+  REMOVE_GATE: true
+  evidence: >
+    ablation on the M1.5 selected checkpoint (runs/v1/m15/krun-one-v1-m15 dumps, computed before this registration):
+    fused path without gate vs gated M1.5 on val_fit + val_eval (29,061 decisions): alpha min 0.996 / mean 1.000,
+    max |dlogit| 0.008, p99 0.0, argmax agreement 100%, all 30 task cells identical. The gate adds nothing.
+  consequence: "M1.5b = the fused path only (z_fused); the 1,586,178 gate parameters and the z_text head pass are removed"
+
+data:                                   # the M1.5 dataset reused; only replay / oversampling added (data/m15b)
+  preservation_replay_caps: {coco: 6000, synthdoc: 9000, kd1_screen: 7000, doclaynet_category: 2000, cord: 2300,
+                             fleurs: 3000, crema: 2000, minds14: 2000, kd1_tts: 2500}      # M1.5c: synthdoc / kd1_screen / cord raised
+  layout_share: 0.22                    # M1.5c: DocLayNet layout decisions = 22% of the train decisions (M1.5b: 46%)
+  layout_mix: "sampled from the M1.5b layout pool (M1 layout replay first, then new full / small-region / confusable-pair decisions)
+               to reach layout_share; each layout decision appears at most once"
+  layout_replay: "the 4,593 DocLayNet layout decisions of the M1 train split, x1 (M1.5b: x2)"
+  layout_new: >
+    per DocLayNet page of the TRAIN split (same group split; val / protected pages untouched): (1) full-candidate layout
+    multi (all 8 classes), (2) small-region multi (pages where a present class only occurs as regions < 1.5% of the page;
+    slice small_region), (3) confusable-class noul ("the page contains a <x>") over pairs Caption/Footnote,
+    Title/Section-header, Picture/Table, List-item/Formula, balanced true/false
+  context: "OCR text (RapidOCR PP-OCRv5 latin, M1.5 pass; pages without OCR text get it from the same frozen OCR)"
+  task_class: visual_only
+loss:
+  base: {unanswerable_mode: oe, w_oe: 0.5, w_ans: 0.0, w_apply: 0.25, w_multi: 1.0, w_rps: 0.0, score_sigma: 0.0}
+  layout_sample_weight: 1.5             # M1.5c (M1.5b: 2.0); layout ~30% of the loss mass (M1.5b ~63%)
+consistency_weight: 1.0
+optimizer: {lr_adapters: 5.0e-5, lr_lora: 3.0e-5, weight_decay: 0.01, warmup_ratio: 0.03, max_grad_norm: 1.0, epochs: 1}
+batching: {batch_size: {image: 64, document: 24, audio: 48}, workers: 10}
+milestones: [0.25, 0.5, 0.75, 1.0]
+checkpoint_selection: >
+  val_fit only. Eligible = every preservation cell within tolerance of the M1.5 selected checkpoint evaluated on the same
+  val_fit at step 0: (audio/text_dependent, document/text_dependent, document/hybrid, image/visual_only) mean accuracy
+  >= M1.5 - 1.0 pp. Among eligible: max document/visual_only/multi (DocLayNet layout); ties within 0.5 pp -> max
+  document/visual_only mean -> later checkpoint. If none eligible: report FAIL with the least-regressing checkpoint.
+
+ocr_optimization:                       # M1.5c: NOT re-run; the M1.5b choice is reused (results/v1/m15b/ocr_optimization.json:
+                                        # rec_batch_num 32, cudnn HEURISTIC, OCR concurrent with SigLIP2)
+  profile_stages: [decode, load_img, preprocess_img (bounds resize), det_preprocess, det_session, det_postprocess,
+                   crop, rec_preprocess, rec_session, rec_postprocess, final_output, total]
+  candidates: "cudnn_conv_algo_search in {EXHAUSTIVE (current), HEURISTIC, DEFAULT} x rec_batch_num in {6 (current), 16, 32}"
+  pipeline: "scanned page: OCR runs concurrently with SigLIP2 preprocessing + tower (thread), text joins before the decision"
+  quality_guard: >
+    on the M1.5 OCR benchmark samples (300 synthetic pages + 300 screenshots + CORD, val_fit): downstream frozen-Krun
+    screenshot accuracy >= baseline - 0.5 pp AND mean CER (synthetic, screenshot) <= baseline + 0.002
+  rule: "the fastest page p50 configuration passing the quality guard (current config always eligible)"
+
+evaluation:
+  split: val_eval (multi thresholds fitted on val_fit per modality, as M1.5)
+  systems: {C: M1.5c, P: M1.5 selected (gated), A: M1, B: frozen text on OCR/ASR, O: oracle ground-truth text}
+  also_reported: "M1.5b (runs/v1/m15b) on the same val_eval, from its own dumps (not a gate input)"
+  doclaynet_breakdown: per layout class precision / recall / F1 (C vs P vs A), small_region slice
+
+gates:                                  # M1_5B_PASS = every hard gate; references are the M1.5 report numbers (val_eval)
+  G1_document_visual_only: "document visual_only mean (task cells) >= 0.679 (M1) AND DocLayNet layout multi C >= P + 5 pp
+                            (M1.5 = 0.270); ideal >= 0.35"
+  G2_screenshot_text: "kd1 screenshot choice >= 0.979 (0.989 - 1 pp) AND document text_dependent mean >= M1.5 - 1 pp"
+  G3_real_speech: "real speech mean (MInDS-14 + FLEURS) >= 0.841 AND MInDS-14 intent >= 0.890"
+  G4_image: "image visual_only mean >= 0.633 (0.643 - 1 pp)"
+  G4b_document_hybrid: "synthetic doc type >= 0.953, DocLayNet category >= 0.935, CORD type >= 0.95"
+  G5_text_only: "core digest identical + full V dumps bitwise identical with the M1.5b serving stack loaded (freeze_core=False)"
+  G6_scanned_page_latency: "p50 <= 150 ms (operational target <= 145 ms), same host, same harness as the M1.5 measurement rerun"
+  G7_leakage: "KrunBench v1 --check LEAKAGE = 0 on every non-protected M1.5b text view"
+  regression_only: "audio 5 s / 15 s latency and quality reported vs M1.5 on the same host; not trained on differently"

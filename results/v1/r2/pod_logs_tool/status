@@ -1,0 +1,7 @@
+start run=krun-one-v1-tool lr_enc=1e-5 lr_head=5e-5 train=data/kd1_r2/train.jsonl 2026-09-28T12:10:57Z
+gpu_preflight(image) ok 2026-09-28T12:11:02Z
+inputs verified 2026-09-28T12:12:37Z
+train start resume='' 2026-09-28T12:12:37Z
+train rc=0 2026-09-28T18:47:28Z
+toolace_regression rc=0 2026-09-28T18:49:04Z
+DONE 2026-09-28T18:49:07Z

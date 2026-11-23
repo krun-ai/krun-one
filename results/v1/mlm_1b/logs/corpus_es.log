@@ -1,0 +1,7 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (8374 > 8192). Running this sequence through the model will result in indexing errors
+es web {'tokens': 150004006, 'docs': 196432, 'dropped_decontamination': 163, 'quota': 150000000} 284s
+es technical {'tokens': 20207408, 'docs': 2984, 'dropped_decontamination': 69, 'quota': 20000000} 329s
+es forums {'tokens': 10000240, 'docs': 13967, 'dropped_decontamination': 14, 'quota': 10000000} 383s
+es support {'tokens': 5000060, 'docs': 33493, 'dropped_decontamination': 53, 'quota': 5000000} 396s
+{"windows_checked": 500, "protected_hits": 0, "examples": []}

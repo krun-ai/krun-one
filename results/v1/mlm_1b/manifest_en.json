@@ -1,0 +1,64 @@
+{
+  "tokenizer": "/workspace/hfcache/models--jhu-clsp--mmBERT-small/snapshots/abc32620dd4f6ab06f5fbe905dc25f310618e09f",
+  "protected": {
+    "n": 55848,
+    "sha256": "e421ebf84b78e38676348de27a614ddbee46693117e62bb89078c54b1c40544f"
+  },
+  "revisions": {
+    "HuggingFaceFW/fineweb-edu": "87f09149ef",
+    "epfml/FineWeb2-HQ": "c0c06e94fd",
+    "HuggingFaceFW/finepdfs-edu": "9cfabe2127",
+    "HuggingFaceFW/fineweb-2": "af9c13333e",
+    "bitext/Bitext-customer-support-llm-chatbot-training-dataset": "430d1a89bd",
+    "OpenAssistant/oasst1": "fdf72ae082",
+    "OpenAssistant/oasst2": "179dd21fc5",
+    "Team-ACE/ToolACE": "6bda777c88"
+  },
+  "excluded": {
+    "finewiki": "excluded_for_v1_initial_training (share-alike review)"
+  },
+  "languages": {
+    "en": {
+      "slices": {
+        "web": {
+          "tokens": 250001475,
+          "docs": 255262,
+          "dropped_decontamination": 7481,
+          "quota": 250000000
+        },
+        "technical": {
+          "tokens": 40003505,
+          "docs": 10716,
+          "dropped_decontamination": 797,
+          "quota": 40000000
+        },
+        "support": {
+          "tokens": 13175953,
+          "docs": 95418,
+          "dropped_decontamination": 21366,
+          "quota": 25000000
+        },
+        "tools": {
+          "tokens": 7779771,
+          "docs": 31427,
+          "dropped_decontamination": 5087,
+          "quota": 10000000
+        }
+      },
+      "train_tokens": 310960704,
+      "heldout_tokens": 2008008,
+      "shards": {
+        "train-00000.npy": "36227d98494329a1e2280fae57a3a9815562295a3cc2201f3bbf6fdd3027a1e1",
+        "train-00001.npy": "1a2f992814792d178b2abce360dd32c59d5773ea85aa96a0498b4ef14ffb493f",
+        "train-00002.npy": "9fbf7fdf769144d180932889dda903255b6f04996048f2030024180eb19903ef",
+        "train-00003.npy": "a7da4ff00da370629d79580214b035bfaef4ed0f23cf9eb3d86344a6d73c82d7"
+      },
+      "seconds": 560
+    }
+  },
+  "verification": {
+    "windows_checked": 500,
+    "protected_hits": 0,
+    "examples": []
+  }
+}

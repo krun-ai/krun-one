@@ -1,0 +1,85 @@
+# Krun One v1 proxy (mmBERT-small encoder + v1 decision stack). Mechanics validation, NOT a product model.
+# Variants, metrics and the selection rule below are registered BEFORE any bakeoff training run (2026-09-26).
+# Comparison uses data/v1_proxy/validation.jsonl only (val_fit / val_eval by split_group_id); protected sets are never read.
+name: krun-one-v1-proxy
+seed: 20260926
+spec: proxy                        # krun_one.v1.arch.PROXY
+init:
+  encoder: jhu-clsp/mmBERT-small   # HF cache, revision 461475a7 (safetensors); license MIT per model card (re-verify)
+data:
+  train: data/v1_proxy/train.jsonl
+  validation: data/v1_proxy/validation.jsonl
+sequence:
+  max_len: 1024
+  head_max_len: 896
+  max_candidates_per_chunk: 64
+batching:
+  max_tokens: 16384
+  max_questions: 64
+optimizer:
+  lr_encoder: 5.0e-5
+  lr_head: 2.0e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  max_grad_norm: 1.0
+epochs: 1
+checkpoint:
+  save_every: 500
+  keep_last: 1
+loss:                              # defaults; each variant overrides
+  unanswerable_mode: head
+  w_oe: 0.5
+  w_ans: 0.5
+  w_apply: 0.25
+  w_multi: 1.0
+  w_rps: 0.0
+  score_sigma: 0.0
+
+# ------------------------------------------------------------------------------------ Answerability Bakeoff
+# Signal read from each trained model (all models also emit the softmax-only signals top1/margin/entropy):
+#   A  margin                     v0.3 recipe: CE + outlier exposure (uniform CE x0.5) on unanswerable
+#   B  1 - p_null                 [NULL] slot inside the softmax (K+1 CE; target = NULL when unanswerable)
+#   C  sigmoid(ans)               dedicated answerability head (BCE); rank loss only on answerable
+#   D  max_c sigmoid(apply_c)     per-candidate applicability (BCE, all-zero target when unanswerable)
+#   J  (joint training of B + C + D objectives: needed so E has every signal trained)
+#   E  fusion calibrator on J     logistic regression over [top1, margin, neg. normalized entropy, p_null,
+#                                 ans logit, max applicability logit, log K, family] -> P(decision correct);
+#                                 fitted on val_fit only. E[A] (same calibrator on A's softmax-only features) is
+#                                 also reported to separate "fusion" from "new heads".
+variants:
+  A_margin: {unanswerable_mode: oe, w_oe: 0.5, w_ans: 0.0, w_apply: 0.0}
+  B_null: {unanswerable_mode: null, w_ans: 0.0, w_apply: 0.0}
+  C_ans_head: {unanswerable_mode: head, w_ans: 0.5, w_apply: 0.0}
+  D_apply: {unanswerable_mode: head, w_ans: 0.0, w_apply: 1.0}
+  J_joint: {unanswerable_mode: null, w_ans: 0.5, w_apply: 0.25}
+  # kept from the first proxy draft (smoke only)
+  C_ans_head_apply: {unanswerable_mode: head, w_ans: 0.5, w_apply: 0.25}
+seeds: [20260926, 20260927, 20260928]
+native_signal: {A_margin: margin, B_null: null_softmax, C_ans_head: ans_head, D_apply: max_apply, J_joint: E}
+
+bakeoff:
+  val_split: {salt: krun-v1-valfit, fit_fraction: 0.5}     # val_fit / val_eval by split_group_id hash
+  temperature: per family (intent, tool) fitted on val_fit answerable choice decisions
+  operating_point: >
+    Per family, tau = lowest threshold such that selective accuracy on val_fit >= 0.98, where selective
+    accuracy counts every accepted decision: accepted unanswerable = error, accepted wrong argmax = error.
+  primary_metric: >
+    OOD false acceptance on val_eval at the operating point (accepted unanswerable / unanswerable), macro-averaged
+    over the OOD buckets tool_irrelevance (native_irrelevance), tool_gold_removed, intent_near_ood (label removed);
+    reported also for cross_task, and for answerable buckets unseen_tool and hard (difficulty=hard) as selective
+    risk (accepted-and-wrong / accepted) and coverage.
+  secondary: [ood_auroc, aurc, coverage, ece, nll]
+  gates_vs_A:                                       # mean over seeds
+    choice_intent_accuracy_drop_pp: 0.5
+    choice_tool_accuracy_drop_pp: 0.5
+    permutation_consistency_drop_pp: 1.0
+    ece_rise: 0.005
+    nll_rise_relative: 0.02
+    coverage_drop_pp: 2.0                           # answerable coverage at the operating point
+  win_rule: >
+    A candidate replaces the margin only if it passes every gate AND its macro OOD false acceptance is lower than
+    A's by >= 3 pp absolute and >= 25% relative (mean over seeds), is lower than A's in EVERY seed, and the paired
+    group-bootstrap 95% CI of (A - candidate) on pooled seeds excludes 0. Among winners: lowest macro FA; ties
+    (< 1 pp) -> simpler mechanism (C < D < B < E). AUROC alone never selects a mechanism. No winner -> keep margin
+    as the public abstention mechanism; the extra outputs stay internal/experimental.
+decision_rule: see bakeoff.win_rule

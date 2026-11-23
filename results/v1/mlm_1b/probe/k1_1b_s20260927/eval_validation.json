@@ -1,0 +1,25 @@
+{
+  "n": 9557,
+  "choice_accuracy": 0.9232477006026008,
+  "choice_ece": 0.035693909879567075,
+  "choice_accuracy_by_lang": {
+    "en": 0.9362,
+    "en-US": 0.9276,
+    "es-ES": 0.9198,
+    "fr-FR": 0.918,
+    "pt-PT": 0.9186
+  },
+  "ood_auroc": {
+    "margin": 0.9574975697425862,
+    "top1": 0.9612996011025762,
+    "null_softmax": 0.9478590528055614,
+    "ans_head": 0.5221694914380162,
+    "max_apply": 0.9732671684471365
+  },
+  "noul_auroc": 0.9299535311876721,
+  "noul_accuracy": 0.8432007400555042,
+  "score_mae": 0.6649298849581741,
+  "score_spearman": 0.7386180533862012,
+  "multi_micro_f1": 0.8425905598243688,
+  "multi_empty_set_rate_on_unanswerable": 0.6258992805755396
+}

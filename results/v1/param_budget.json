@@ -1,0 +1,443 @@
+[
+  {
+    "name": "krun-one-v0.3 (reference)",
+    "notes": "ModernBERT-large + Laya head; includes the unused act head in the real artifact (+263,170 params)",
+    "spec": {
+      "name": "krun-one-v0.3 (reference)",
+      "encoder": {
+        "vocab_size": 50368,
+        "hidden_size": 1024,
+        "num_layers": 28,
+        "num_heads": 16,
+        "intermediate_size": 2624,
+        "global_every": 3,
+        "local_window": 128,
+        "rope_theta_global": 160000.0,
+        "rope_theta_local": 10000.0,
+        "max_position": 8192,
+        "pad_token_id": 50283,
+        "bos_token_id": 50281,
+        "eos_token_id": 50282,
+        "mask_token_id": 50284
+      },
+      "decision": {
+        "head_layers": 2,
+        "head_ffn_mult": 4,
+        "n_qtypes": 3,
+        "scorer_outputs": 1,
+        "answerability_head": false
+      },
+      "notes": "ModernBERT-large + Laya head; includes the unused act head in the real artifact (+263,170 params)"
+    },
+    "params": {
+      "encoder_embeddings": 51577856,
+      "encoder_body": 343203840,
+      "encoder_total": 394781696,
+      "decision_head": 25192448,
+      "decision_other": 1055745,
+      "decision_total": 26248193,
+      "total": 421029889,
+      "non_embedding": 369452033
+    },
+    "params_instantiated": 421029889,
+    "layers": 28,
+    "hidden": 1024,
+    "heads": 16,
+    "head_dim": 64,
+    "ffn": 2624,
+    "vocab": 50368,
+    "gflops_per_token": {
+      "128": 0.752,
+      "256": 0.759,
+      "512": 0.771,
+      "1024": 0.796
+    },
+    "flops_vs_v03": {
+      "128": 1.0,
+      "256": 1.0,
+      "512": 1.0,
+      "1024": 1.0
+    },
+    "weights_gb_bf16": 0.84,
+    "weights_gb_fp32": 1.68,
+    "train_state_gb_adamw": 6.7
+  },
+  {
+    "name": "K1-W1536-L22",
+    "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)",
+    "spec": {
+      "name": "K1-W1536-L22",
+      "encoder": {
+        "vocab_size": 256000,
+        "hidden_size": 1536,
+        "num_layers": 22,
+        "num_heads": 24,
+        "intermediate_size": 2304,
+        "global_every": 3,
+        "local_window": 128,
+        "rope_theta_global": 160000.0,
+        "rope_theta_local": 160000.0,
+        "max_position": 8192,
+        "pad_token_id": 0,
+        "bos_token_id": 2,
+        "eos_token_id": 1,
+        "mask_token_id": 4
+      },
+      "decision": {
+        "head_layers": 2,
+        "head_ffn_mult": 2,
+        "n_qtypes": 4,
+        "scorer_outputs": 2,
+        "answerability_head": true
+      },
+      "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)"
+    },
+    "params": {
+      "encoder_embeddings": 393217536,
+      "encoder_body": 441255936,
+      "encoder_total": 834473472,
+      "decision_head": 37782528,
+      "decision_other": 7100931,
+      "decision_total": 44883459,
+      "total": 879356931,
+      "non_embedding": 486139395
+    },
+    "params_instantiated": 879356931,
+    "layers": 22,
+    "hidden": 1536,
+    "heads": 24,
+    "head_dim": 64,
+    "ffn": 2304,
+    "vocab": 256000,
+    "gflops_per_token": {
+      "128": 0.977,
+      "256": 0.985,
+      "512": 1.0,
+      "1024": 1.032
+    },
+    "flops_vs_v03": {
+      "128": 1.298,
+      "256": 1.298,
+      "512": 1.297,
+      "1024": 1.296
+    },
+    "weights_gb_bf16": 1.76,
+    "weights_gb_fp32": 3.52,
+    "train_state_gb_adamw": 14.1
+  },
+  {
+    "name": "K1-W1536-L22-H1",
+    "notes": "same encoder, 1-layer Laya head",
+    "spec": {
+      "name": "K1-W1536-L22-H1",
+      "encoder": {
+        "vocab_size": 256000,
+        "hidden_size": 1536,
+        "num_layers": 22,
+        "num_heads": 24,
+        "intermediate_size": 2304,
+        "global_every": 3,
+        "local_window": 128,
+        "rope_theta_global": 160000.0,
+        "rope_theta_local": 160000.0,
+        "max_position": 8192,
+        "pad_token_id": 0,
+        "bos_token_id": 2,
+        "eos_token_id": 1,
+        "mask_token_id": 4
+      },
+      "decision": {
+        "head_layers": 1,
+        "head_ffn_mult": 4,
+        "n_qtypes": 4,
+        "scorer_outputs": 2,
+        "answerability_head": true
+      },
+      "notes": "same encoder, 1-layer Laya head"
+    },
+    "params": {
+      "encoder_embeddings": 393217536,
+      "encoder_body": 441255936,
+      "encoder_total": 834473472,
+      "decision_head": 28331520,
+      "decision_other": 7100931,
+      "decision_total": 35432451,
+      "total": 869905923,
+      "non_embedding": 476688387
+    },
+    "params_instantiated": 869905923,
+    "layers": 22,
+    "hidden": 1536,
+    "heads": 24,
+    "head_dim": 64,
+    "ffn": 2304,
+    "vocab": 256000,
+    "gflops_per_token": {
+      "128": 0.957,
+      "256": 0.964,
+      "512": 0.978,
+      "1024": 1.007
+    },
+    "flops_vs_v03": {
+      "128": 1.272,
+      "256": 1.271,
+      "512": 1.269,
+      "1024": 1.264
+    },
+    "weights_gb_bf16": 1.74,
+    "weights_gb_fp32": 3.48,
+    "train_state_gb_adamw": 13.9
+  },
+  {
+    "name": "K1-W1280-L28",
+    "notes": "ModernBERT-large depth, 1.25x width; no pretrained source of this shape (scratch or depth/width growth)",
+    "spec": {
+      "name": "K1-W1280-L28",
+      "encoder": {
+        "vocab_size": 256000,
+        "hidden_size": 1280,
+        "num_layers": 28,
+        "num_heads": 20,
+        "intermediate_size": 2560,
+        "global_every": 3,
+        "local_window": 128,
+        "rope_theta_global": 160000.0,
+        "rope_theta_local": 160000.0,
+        "max_position": 8192,
+        "pad_token_id": 0,
+        "bos_token_id": 2,
+        "eos_token_id": 1,
+        "mask_token_id": 4
+      },
+      "decision": {
+        "head_layers": 2,
+        "head_ffn_mult": 2,
+        "n_qtypes": 4,
+        "scorer_outputs": 2,
+        "answerability_head": true
+      },
+      "notes": "ModernBERT-large depth, 1.25x width; no pretrained source of this shape (scratch or depth/width growth)"
+    },
+    "params": {
+      "encoder_embeddings": 327681280,
+      "encoder_body": 458823680,
+      "encoder_total": 786504960,
+      "decision_head": 26242560,
+      "decision_other": 4934403,
+      "decision_total": 31176963,
+      "total": 817681923,
+      "non_embedding": 490000643
+    },
+    "params_instantiated": 817681923,
+    "layers": 28,
+    "hidden": 1280,
+    "heads": 20,
+    "head_dim": 64,
+    "ffn": 2560,
+    "vocab": 256000,
+    "gflops_per_token": {
+      "128": 0.99,
+      "256": 0.998,
+      "512": 1.013,
+      "1024": 1.045
+    },
+    "flops_vs_v03": {
+      "128": 1.315,
+      "256": 1.315,
+      "512": 1.314,
+      "1024": 1.312
+    },
+    "weights_gb_bf16": 1.64,
+    "weights_gb_fp32": 3.27,
+    "train_state_gb_adamw": 13.1
+  },
+  {
+    "name": "K1-W1792-L18",
+    "notes": "wide & shallow (18 layers): fewer sequential kernels at batch 1",
+    "spec": {
+      "name": "K1-W1792-L18",
+      "encoder": {
+        "vocab_size": 256000,
+        "hidden_size": 1792,
+        "num_layers": 18,
+        "num_heads": 28,
+        "intermediate_size": 2688,
+        "global_every": 3,
+        "local_window": 128,
+        "rope_theta_global": 160000.0,
+        "rope_theta_local": 160000.0,
+        "max_position": 8192,
+        "pad_token_id": 0,
+        "bos_token_id": 2,
+        "eos_token_id": 1,
+        "mask_token_id": 4
+      },
+      "decision": {
+        "head_layers": 2,
+        "head_ffn_mult": 2,
+        "n_qtypes": 4,
+        "scorer_outputs": 2,
+        "answerability_head": true
+      },
+      "notes": "wide & shallow (18 layers): fewer sequential kernels at batch 1"
+    },
+    "params": {
+      "encoder_embeddings": 458753792,
+      "encoder_body": 491387904,
+      "encoder_total": 950141696,
+      "decision_head": 51419648,
+      "decision_other": 9660675,
+      "decision_total": 61080323,
+      "total": 1011222019,
+      "non_embedding": 552468227
+    },
+    "params_instantiated": 1011222019,
+    "layers": 18,
+    "hidden": 1792,
+    "heads": 28,
+    "head_dim": 64,
+    "ffn": 2688,
+    "vocab": 256000,
+    "gflops_per_token": {
+      "128": 1.104,
+      "256": 1.111,
+      "512": 1.126,
+      "1024": 1.155
+    },
+    "flops_vs_v03": {
+      "128": 1.467,
+      "256": 1.465,
+      "512": 1.46,
+      "1024": 1.45
+    },
+    "weights_gb_bf16": 2.02,
+    "weights_gb_fp32": 4.04,
+    "train_state_gb_adamw": 16.2
+  },
+  {
+    "name": "K1-W1536-L22-hd128",
+    "notes": "same shape as K1-W1536-L22 with head_dim 128 (fewer, larger heads)",
+    "spec": {
+      "name": "K1-W1536-L22-hd128",
+      "encoder": {
+        "vocab_size": 256000,
+        "hidden_size": 1536,
+        "num_layers": 22,
+        "num_heads": 12,
+        "intermediate_size": 2304,
+        "global_every": 3,
+        "local_window": 128,
+        "rope_theta_global": 160000.0,
+        "rope_theta_local": 160000.0,
+        "max_position": 8192,
+        "pad_token_id": 0,
+        "bos_token_id": 2,
+        "eos_token_id": 1,
+        "mask_token_id": 4
+      },
+      "decision": {
+        "head_layers": 2,
+        "head_ffn_mult": 2,
+        "n_qtypes": 4,
+        "scorer_outputs": 2,
+        "answerability_head": true
+      },
+      "notes": "same shape as K1-W1536-L22 with head_dim 128 (fewer, larger heads)"
+    },
+    "params": {
+      "encoder_embeddings": 393217536,
+      "encoder_body": 441255936,
+      "encoder_total": 834473472,
+      "decision_head": 37782528,
+      "decision_other": 7100931,
+      "decision_total": 44883459,
+      "total": 879356931,
+      "non_embedding": 486139395
+    },
+    "params_instantiated": 879356931,
+    "layers": 22,
+    "hidden": 1536,
+    "heads": 12,
+    "head_dim": 128,
+    "ffn": 2304,
+    "vocab": 256000,
+    "gflops_per_token": {
+      "128": 0.977,
+      "256": 0.985,
+      "512": 1.0,
+      "1024": 1.032
+    },
+    "flops_vs_v03": {
+      "128": 1.298,
+      "256": 1.298,
+      "512": 1.297,
+      "1024": 1.296
+    },
+    "weights_gb_bf16": 1.76,
+    "weights_gb_fp32": 3.52,
+    "train_state_gb_adamw": 14.1
+  },
+  {
+    "name": "K1-proxy (mmBERT-small)",
+    "notes": "initialized from jhu-clsp/mmBERT-small; ~42M non-embedding encoder params",
+    "spec": {
+      "name": "K1-proxy (mmBERT-small)",
+      "encoder": {
+        "vocab_size": 256000,
+        "hidden_size": 384,
+        "num_layers": 22,
+        "num_heads": 6,
+        "intermediate_size": 1152,
+        "global_every": 3,
+        "local_window": 128,
+        "rope_theta_global": 160000.0,
+        "rope_theta_local": 160000.0,
+        "max_position": 8192,
+        "pad_token_id": 0,
+        "bos_token_id": 2,
+        "eos_token_id": 1,
+        "mask_token_id": 4
+      },
+      "decision": {
+        "head_layers": 2,
+        "head_ffn_mult": 4,
+        "n_qtypes": 4,
+        "scorer_outputs": 2,
+        "answerability_head": true
+      },
+      "notes": "initialized from jhu-clsp/mmBERT-small; ~42M non-embedding encoder params"
+    },
+    "params": {
+      "encoder_embeddings": 98304384,
+      "encoder_body": 42189312,
+      "encoder_total": 140493696,
+      "decision_head": 3548928,
+      "decision_other": 448131,
+      "decision_total": 3997059,
+      "total": 144490755,
+      "non_embedding": 46186371
+    },
+    "params_instantiated": 144490755,
+    "layers": 22,
+    "hidden": 384,
+    "heads": 6,
+    "head_dim": 64,
+    "ffn": 1152,
+    "vocab": 256000,
+    "gflops_per_token": {
+      "128": 0.096,
+      "256": 0.098,
+      "512": 0.102,
+      "1024": 0.11
+    },
+    "flops_vs_v03": {
+      "128": 0.128,
+      "256": 0.129,
+      "512": 0.132,
+      "1024": 0.138
+    },
+    "weights_gb_bf16": 0.29,
+    "weights_gb_fp32": 0.58,
+    "train_state_gb_adamw": 2.3
+  }
+]

@@ -1,0 +1,39 @@
+# Krun One v1.1 — promotion gates. Registered 2026-09-30, BEFORE any v1.1 training. A candidate is promoted only if
+# EVERY technical gate and EVERY preservation gate holds on the selected checkpoint. Baseline = the frozen v1
+# (artifacts/krun-one-v1-text-final, sha 781e5c7b…) evaluated with the same harness on the same host.
+# "meaningful improvement" and "no material regression" are the numbers below; they are not renegotiated after a result.
+baseline: krun-one-v1-text-final
+technical:                               # KrunTechBench v1, raw condition, protected set (opened once per decision)
+  top1: {min_gain_pp: 10, and: "lower bound of the paired 95% CI > 0"}
+  pairwise_gold_vs_hardest: {min_gain_pp: 8}
+  hard_negative_margin_logit: {min_gain: 1.0, and: "median margin > 0 on the hard_negative slice"}
+  constraint_flip_both_correct: {min_gain_pp: 10, and: "stuck_on_base_answer does not rise"}
+  per_track: "no track below the baseline by more than 2 pp"
+  ood_false_acceptance_at_serving_threshold: {max: 0.08}
+preservation:                            # existing regression suite; limits = the v1 Stage 2 registry (configs/v1/stage2_protocol.yaml)
+  krunbench_v1_choice_accuracy_drop_pp: 1.0
+  native_non_en_accuracy_drop_pp: 1.0
+  pt_br_accuracy_drop_pp: 1.0
+  cross_language_accuracy_drop_pp: 1.0
+  intent_accuracy_drop_pp: 1.0
+  toolace_holdout_drop_pp: 1.0
+  unseen_tool_accuracy_drop_pp: 1.0
+  large_k_k128_accuracy_drop_pp: 2.0
+  ood_auroc_drop: 0.010
+  ood_false_acceptance_at_cov80_rise_pp: 1.0
+  tool_unseen_fa_at_cov70_max: 0.05
+  selective_coverage_at_target_drop_pp: 2.0
+  aurc_rise: 0.005
+  permutation_consistency_drop_pp: 1.0
+  score_mae_rise: 0.03
+  score_spearman_drop: 0.01
+  noul_auroc_drop: 0.010
+  multi_micro_f1_drop_pp: 1.0
+  ece_rise: 0.010
+  multimodal_m15c_suite: "every M1.5c gate cell within its registered tolerance; text path bitwise unchanged when the text core is unchanged"
+latency:                                 # RTX 4090, bf16, same harness and host as the baseline run
+  if_core_stays_879M: {typical_p50_ms_max: 20, k128_p50_ms_max: 50}        # v1 limits
+  if_core_grows: {typical_p50_ms_max: 30, k128_p50_ms_max: 70}             # owner's preferred v1.1 targets (upper end)
+memory: {vram_bf16_serving_max_gb: 8, note: "must keep running on 24 GB cards with the multimodal towers loaded"}
+protected_sets: "final_protected / KrunTechBench are opened only for the promotion decision of a registered candidate"
+naming: "Krun One v1.1 (same API, primitives, runtime contract); v2 is reserved for breaking architecture changes"

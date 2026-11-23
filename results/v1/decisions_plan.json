@@ -1,0 +1,366 @@
+{
+  "llm_cost_per_100k_accepted": 3.8874042859659514,
+  "llm_cost_source": "pilot",
+  "scales": {
+    "S1M": {
+      "rows": {
+        "choice_intent": {
+          "demand": 240000,
+          "real": 107507,
+          "derived": 132493,
+          "mt": 0,
+          "rules": 0,
+          "llm": 0,
+          "short": 0,
+          "supplied": 240000
+        },
+        "tool_routing": {
+          "demand": 220000,
+          "real": 6332,
+          "derived": 120308,
+          "mt": 93360,
+          "rules": 0,
+          "llm": 0,
+          "short": 0,
+          "supplied": 220000
+        },
+        "noul": {
+          "demand": 160000,
+          "real": 160000,
+          "derived": 0,
+          "mt": 0,
+          "rules": 0,
+          "llm": 0,
+          "short": 0,
+          "supplied": 160000
+        },
+        "score": {
+          "demand": 100000,
+          "real": 70000,
+          "derived": 30000,
+          "mt": 0,
+          "rules": 0,
+          "llm": 0,
+          "short": 0,
+          "supplied": 100000
+        },
+        "multi_label": {
+          "demand": 80000,
+          "real": 0,
+          "derived": 56000,
+          "mt": 0,
+          "rules": 4800,
+          "llm": 19200,
+          "short": 0,
+          "supplied": 80000
+        },
+        "ood": {
+          "demand": 120000,
+          "real": 0,
+          "derived": 84000,
+          "mt": 0,
+          "rules": 7200,
+          "llm": 28800,
+          "short": 0,
+          "supplied": 120000
+        },
+        "minimal_pairs": {
+          "demand": 80000,
+          "real": 0,
+          "derived": 0,
+          "mt": 0,
+          "rules": 0,
+          "llm": 80000,
+          "short": 0,
+          "supplied": 80000
+        }
+      },
+      "total": {
+        "demand": 1000000,
+        "real": 343839,
+        "derived": 422801,
+        "mt": 93360,
+        "rules": 12000,
+        "llm": 128000,
+        "short": 0,
+        "supplied": 1000000
+      },
+      "hard_negatives": {
+        "choice_intent": 156000,
+        "tool_routing": 154000,
+        "noul": 0,
+        "score": 0,
+        "multi_label": 0,
+        "ood": 72000,
+        "minimal_pairs": 0
+      },
+      "language_pairs": {
+        "en->en": 300000,
+        "pt-BR->en (cross-language)": 72000,
+        "pt-BR->pt-BR (translated schema)": 24000,
+        "pt-BR->en-labels (humanized EN labels)": 64000,
+        "pt-PT->en (cross-language)": 36000,
+        "pt-PT->pt-PT (translated schema)": 12000,
+        "pt-PT->en-labels (humanized EN labels)": 32000,
+        "es-ES->en (cross-language)": 40500,
+        "es-ES->es-ES (translated schema)": 13500,
+        "es-ES->en-labels (humanized EN labels)": 36000,
+        "es-419->en (cross-language)": 54000,
+        "es-419->es-419 (translated schema)": 18000,
+        "es-419->en-labels (humanized EN labels)": 48000,
+        "fr-FR->en (cross-language)": 90000,
+        "fr-FR->fr-FR (translated schema)": 30000,
+        "fr-FR->en-labels (humanized EN labels)": 80000,
+        "fr-CA->en (cross-language)": 22500,
+        "fr-CA->fr-CA (translated schema)": 7500,
+        "fr-CA->en-labels (humanized EN labels)": 20000
+      },
+      "storage_gb": 2.33,
+      "padded_training_tokens": 396330000,
+      "train_hours_4090": 6.6,
+      "train_usd": 2.24,
+      "llm_usd": 4.98,
+      "mt_usd": 0.14
+    },
+    "S2M": {
+      "rows": {
+        "choice_intent": {
+          "demand": 480000,
+          "real": 107507,
+          "derived": 372493,
+          "mt": 0,
+          "rules": 0,
+          "llm": 0,
+          "short": 0,
+          "supplied": 480000
+        },
+        "tool_routing": {
+          "demand": 440000,
+          "real": 6332,
+          "derived": 120308,
+          "mt": 227952,
+          "rules": 26400,
+          "llm": 59008,
+          "short": 0,
+          "supplied": 440000
+        },
+        "noul": {
+          "demand": 320000,
+          "real": 250000,
+          "derived": 70000,
+          "mt": 0,
+          "rules": 0,
+          "llm": 0,
+          "short": 0,
+          "supplied": 320000
+        },
+        "score": {
+          "demand": 200000,
+          "real": 70000,
+          "derived": 130000,
+          "mt": 0,
+          "rules": 0,
+          "llm": 0,
+          "short": 0,
+          "supplied": 200000
+        },
+        "multi_label": {
+          "demand": 160000,
+          "real": 0,
+          "derived": 112000,
+          "mt": 0,
+          "rules": 9600,
+          "llm": 38400,
+          "short": 0,
+          "supplied": 160000
+        },
+        "ood": {
+          "demand": 240000,
+          "real": 0,
+          "derived": 168000,
+          "mt": 0,
+          "rules": 14400,
+          "llm": 57600,
+          "short": 0,
+          "supplied": 240000
+        },
+        "minimal_pairs": {
+          "demand": 160000,
+          "real": 0,
+          "derived": 0,
+          "mt": 0,
+          "rules": 0,
+          "llm": 160000,
+          "short": 0,
+          "supplied": 160000
+        }
+      },
+      "total": {
+        "demand": 2000000,
+        "real": 433839,
+        "derived": 972801,
+        "mt": 227952,
+        "rules": 50400,
+        "llm": 315008,
+        "short": 0,
+        "supplied": 2000000
+      },
+      "hard_negatives": {
+        "choice_intent": 312000,
+        "tool_routing": 308000,
+        "noul": 0,
+        "score": 0,
+        "multi_label": 0,
+        "ood": 144000,
+        "minimal_pairs": 0
+      },
+      "language_pairs": {
+        "en->en": 600000,
+        "pt-BR->en (cross-language)": 144000,
+        "pt-BR->pt-BR (translated schema)": 48000,
+        "pt-BR->en-labels (humanized EN labels)": 128000,
+        "pt-PT->en (cross-language)": 72000,
+        "pt-PT->pt-PT (translated schema)": 24000,
+        "pt-PT->en-labels (humanized EN labels)": 64000,
+        "es-ES->en (cross-language)": 81000,
+        "es-ES->es-ES (translated schema)": 27000,
+        "es-ES->en-labels (humanized EN labels)": 72000,
+        "es-419->en (cross-language)": 108000,
+        "es-419->es-419 (translated schema)": 36000,
+        "es-419->en-labels (humanized EN labels)": 96000,
+        "fr-FR->en (cross-language)": 180000,
+        "fr-FR->fr-FR (translated schema)": 60000,
+        "fr-FR->en-labels (humanized EN labels)": 160000,
+        "fr-CA->en (cross-language)": 45000,
+        "fr-CA->fr-CA (translated schema)": 15000,
+        "fr-CA->en-labels (humanized EN labels)": 40000
+      },
+      "storage_gb": 4.66,
+      "padded_training_tokens": 594495000,
+      "train_hours_4090": 9.9,
+      "train_usd": 3.36,
+      "llm_usd": 12.25,
+      "mt_usd": 0.34
+    },
+    "S3M": {
+      "rows": {
+        "choice_intent": {
+          "demand": 720000,
+          "real": 107507,
+          "derived": 537535,
+          "mt": 74958,
+          "rules": 0,
+          "llm": 0,
+          "short": 0,
+          "supplied": 720000
+        },
+        "tool_routing": {
+          "demand": 660000,
+          "real": 6332,
+          "derived": 120308,
+          "mt": 227952,
+          "rules": 39600,
+          "llm": 230999,
+          "short": 34809,
+          "supplied": 625191
+        },
+        "noul": {
+          "demand": 480000,
+          "real": 250000,
+          "derived": 230000,
+          "mt": 0,
+          "rules": 0,
+          "llm": 0,
+          "short": 0,
+          "supplied": 480000
+        },
+        "score": {
+          "demand": 300000,
+          "real": 70000,
+          "derived": 140000,
+          "mt": 0,
+          "rules": 18000,
+          "llm": 30000,
+          "short": 42000,
+          "supplied": 258000
+        },
+        "multi_label": {
+          "demand": 240000,
+          "real": 0,
+          "derived": 168000,
+          "mt": 0,
+          "rules": 14400,
+          "llm": 57600,
+          "short": 0,
+          "supplied": 240000
+        },
+        "ood": {
+          "demand": 360000,
+          "real": 0,
+          "derived": 251999,
+          "mt": 0,
+          "rules": 21600,
+          "llm": 86401,
+          "short": 0,
+          "supplied": 360000
+        },
+        "minimal_pairs": {
+          "demand": 240000,
+          "real": 0,
+          "derived": 0,
+          "mt": 0,
+          "rules": 0,
+          "llm": 240000,
+          "short": 0,
+          "supplied": 240000
+        }
+      },
+      "total": {
+        "demand": 3000000,
+        "real": 433839,
+        "derived": 1447842,
+        "mt": 302910,
+        "rules": 93600,
+        "llm": 645000,
+        "short": 76809,
+        "supplied": 2923191
+      },
+      "hard_negatives": {
+        "choice_intent": 468000,
+        "tool_routing": 437633,
+        "noul": 0,
+        "score": 0,
+        "multi_label": 0,
+        "ood": 216000,
+        "minimal_pairs": 0
+      },
+      "language_pairs": {
+        "en->en": 876957,
+        "pt-BR->en (cross-language)": 210469,
+        "pt-BR->pt-BR (translated schema)": 70156,
+        "pt-BR->en-labels (humanized EN labels)": 187084,
+        "pt-PT->en (cross-language)": 105234,
+        "pt-PT->pt-PT (translated schema)": 35078,
+        "pt-PT->en-labels (humanized EN labels)": 93542,
+        "es-ES->en (cross-language)": 118389,
+        "es-ES->es-ES (translated schema)": 39463,
+        "es-ES->en-labels (humanized EN labels)": 105234,
+        "es-419->en (cross-language)": 157852,
+        "es-419->es-419 (translated schema)": 52617,
+        "es-419->en-labels (humanized EN labels)": 140313,
+        "fr-FR->en (cross-language)": 263087,
+        "fr-FR->fr-FR (translated schema)": 87695,
+        "fr-FR->en-labels (humanized EN labels)": 233855,
+        "fr-CA->en (cross-language)": 65771,
+        "fr-CA->fr-CA (translated schema)": 21923,
+        "fr-CA->en-labels (humanized EN labels)": 58463
+      },
+      "storage_gb": 6.81,
+      "padded_training_tokens": 566530468,
+      "train_hours_4090": 9.4,
+      "train_usd": 3.2,
+      "llm_usd": 25.07,
+      "mt_usd": 0.45
+    }
+  }
+}

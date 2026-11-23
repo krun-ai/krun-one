@@ -1,0 +1,63 @@
+# Author review (2026-09-27) of the Qwen3-8B intent descriptions (data/kd1/gpu_out/describe.part-000.jsonl).
+# All 318 were read; these are wrong, too narrow, or describe the assistant instead of the user need. Overrides win in
+# build_decisions_v1.py, and the machine translations of the ORIGINAL texts of these labels are discarded.
+banking77:
+  age_limit: Check the minimum age required to open or use an account.
+  apple_pay_or_google_pay: Ask about using Apple Pay or Google Pay with the card or to top up.
+  card_not_working: Report that the card is not working.
+  fiat_currency_support: Check which fiat currencies can be held and exchanged in the account.
+  supported_cards_and_currencies: Check which cards and currencies are supported for payments and top-ups.
+  top_up_by_bank_transfer_charge: Check the fee for topping up the account by bank transfer.
+  top_up_reverted: Report a top-up that was reverted and whose money disappeared from the account.
+  transfer_timing: Check how long a transfer takes to arrive.
+  verify_source_of_funds: Ask how to verify or prove the source of funds.
+  visa_or_mastercard: Ask whether the card is a Visa or a Mastercard, or choose between them.
+  verify_top_up: Ask about the verification code or check needed to confirm a card top-up.
+  activate_my_card: Activate a newly received card.
+  card_about_to_expire: Ask what to do about a card that is about to expire.
+  terminate_account: Close the account permanently.
+  verify_my_identity: Ask how to complete identity verification.
+  transfer_into_account: Ask how to transfer money into the account.
+  topping_up_by_card: Top up the account with a card.
+clinc150:
+  application_status: Check the status of a credit card application.
+  bill_balance: Check how much is owed on a bill.
+  directions: Get directions to a place.
+  distance: Check how far a destination is or how long it takes to get there.
+  find_phone: Help the user find their lost phone.
+  flight_status: Check the status or arrival time of a flight.
+  repeat: Ask the assistant to repeat what it just said.
+  sync_device: Connect or sync the assistant with the user's phone or device.
+  transactions: List recent transactions on an account or card.
+  reminder_update: Create or change a reminder.
+  how_old_are_you: Ask the assistant how old it is.
+  where_are_you_from: Ask the assistant where it is from.
+  are_you_a_bot: Ask whether the assistant is a bot or a human.
+  do_you_have_pets: Ask the assistant whether it has pets.
+  what_is_your_name: Ask the assistant for its name.
+  who_made_you: Ask who created the assistant.
+  who_do_you_work_for: Ask who the assistant works for.
+  what_are_your_hobbies: Ask the assistant about its hobbies.
+  gas: Check how much fuel is left in the car.
+  mpg: Check the fuel efficiency (miles per gallon) of the car.
+massive:
+  music_likeness: Tell the assistant the user likes a song or kind of music, to save the preference.
+  music_query: Ask about the current song or about music (artist, album, genre).
+  qa_factoid: Ask a factual question that needs a short answer.
+  transport_ticket: Book a train or other transport ticket.
+  lists_createoradd: Create a new list or add an item to a list.
+  datetime_query: Check the current date or time, possibly in another location.
+  audio_volume_other: Change or ask about the volume in a way that is not up, down or mute.
+  general_greet: Greet the assistant or ask how it is doing.
+  iot_cleaning: Start or control the robot vacuum cleaner.
+bitext:
+  recover_password: Recover or reset a forgotten account password.
+  contact_customer_service: Ask how to contact customer service (hours, channels).
+  create_account: Create a new account.
+  delete_account: Delete or close an account.
+  complaint: File a complaint about the service or a product.
+  get_refund: Request a refund for an order.
+  check_invoice: Check or view an invoice.
+  cancel_order: Cancel an order.
+  place_order: Place an order for products.
+  check_cancellation_fee: Check the fee for cancelling an order or a contract.

@@ -1,0 +1,28 @@
+{
+  "device": "cuda",
+  "dtype": "bf16",
+  "load_seconds_incl_sha_verification": 91.91279890621081,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.14.0+cu126",
+  "api_cases": 16,
+  "api_vs_reference_cpu_fp32": {
+    "decisions_identical": true,
+    "max_abs_prob_or_value_diff": 0.006014999999999993,
+    "differences": []
+  },
+  "api_repeat_identical": true,
+  "v_sample": {
+    "n": 384,
+    "token_ids_identical": true,
+    "artifact_vs_original_path_max_abs_logit_diff": 0.0,
+    "argmax_agreement": 1.0
+  },
+  "v_sample_vs_stage2_signals_4090_bf16": {
+    "n": 384,
+    "max_abs_logit_diff": 0.125,
+    "p99_abs_logit_diff": 0.09050903750000011,
+    "argmax_agreement": 0.9947916666666666,
+    "abstention_agreement": 1.0
+  },
+  "PASS": true
+}

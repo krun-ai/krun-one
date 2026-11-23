@@ -1,0 +1,85 @@
+# Krun One v1 — M1.5 hybrid multimodal (ASR transcript + acoustic; OCR text + visual). Registered 2026-09-29 BEFORE
+# the M1.5 dataset build, before the OCR benchmark result and before any M1.5 training step. Nothing below may be
+# changed after an M1.5 result is seen. M2/M3 are out of scope; final_protected (text) is never opened; the M1/M1.5
+# `protected` splits are written and hashed but never read. Text base and M1 artifacts stay frozen/preserved.
+name: krun-one-v1-m15
+seed: 20260930
+base_artifact: artifacts/krun-one-v1-text-final
+base_sha256: 781e5c7b7006da630d6b77693de26bd886839b0f8f96673774f9ace136dc18b6
+m1_init: runs/v1/m1/krun-one-v1-m1/step_009370/fusion.safetensors      # sha c744488c…; M1.5 starts from these weights
+m1_init_sha256: c744488c000ac5883927f0c7c5c31370a53e8cd0f47d657fe572ea16014550e2
+
+io_contract: >
+  ALL modalities (audio, image, visual document, screenshot) are INPUT-ONLY. The output is ALWAYS the existing structured
+  textual decision response (choice / noul / score, plus internal multi) with the krun-worker v0.3 answer schema and the
+  frozen text calibration semantics. No generated audio, images or free text; ASR transcripts and OCR text are internal
+  intermediate inputs to the text path, never a model output (at most a debug / provenance field, off by default).
+frozen: [text core (encoder, embeddings, head, scorer, calibration, text thresholds), SigLIP2 vision tower,
+         Whisper-small encoder AND decoder (ASR), OCR model]
+towers:
+  vision: google/siglip2-base-patch16-naflex
+  asr: openai/whisper-small            # checkpoint as released; greedy decoding, language auto-detected, no fine-tuning
+  audio_features: "the ASR encoder pass (30 s padded log-mel, computed on GPU) sliced to the clip's valid frames;
+                   ONE encoder pass per clip is shared by the ASR decoder and the acoustic branch"
+  ocr: "chosen by ocr_selection below (benchmark on the pod BEFORE the dataset OCR pass; recorded in results/v1/m15/ocr_benchmark.json)"
+  patches: {image: 256, document: 1024}
+
+routing:                                # the text core stays the semantic centre
+  audio:    "context = ASR transcript (or caller transcript); + acoustic tokens"
+  document: "text layer present (PDF/DOCX/HTML/text) -> extracted text, text fast path, NO OCR, no tower;
+             otherwise (scan / photo / screenshot / page image) -> context = OCR text; + visual tokens"
+  image:    "no OCR (natural images); context = caller text or empty; + visual tokens"
+
+fusion:                                 # explicit, light: late gated residual over the frozen text decision
+  z_text:  "frozen head on [question + candidates + transcript/OCR context] (the exact text representation)"
+  z_fused: "same encoder output + 32 media tokens (M1 adapters) through the head with the M1 LoRA"
+  gate:    "alpha = sigmoid(MLP([h_CLS ; masked mean of media tokens])) per sequence and per modality group
+            (audio | visual), 3072 -> 256 -> 1, bias init -1.0"
+  output:  "z = z_text + alpha * (z_fused - z_text) for rank / apply / null logits"
+  trainable: [gates (new), M1 image adapter, M1 audio adapter, modality embeddings, head LoRA]
+
+loss: {unanswerable_mode: oe, w_oe: 0.5, w_ans: 0.0, w_apply: 0.25, w_multi: 1.0, w_rps: 0.0, score_sigma: 0.0}
+consistency_weight: 1.0                 # KL to the frozen text teacher on the GROUND-TRUTH text (same rules as M1)
+optimizer: {lr_adapters: 1.0e-4, lr_lora: 5.0e-5, lr_gate: 1.0e-3, weight_decay: 0.01, warmup_ratio: 0.03,
+            max_grad_norm: 1.0, epochs: 2}
+batching: {batch_size: {image: 64, document: 24, audio: 48}, workers: 10}
+milestones: [0.25, 0.5, 0.75, 1.0]
+checkpoint_selection: "max mean val_fit accuracy over (modality x task_class x primitive) cells; ties -> later"
+
+data:
+  sampling: "real speech must dominate synthetic speech in the audio training mix (synthetic <= 40% of audio decisions)"
+  task_class: [visual_only, text_dependent, hybrid, acoustic_only]
+  semantic_group_id: "same semantic example across text / audio / image-document (kd1 decision id; FLoRes sentence id)"
+  minds14: "M1 splits kept (train part may train; val_eval / protected never train)"
+
+ocr_selection:                          # applied automatically to the benchmark, before the dataset OCR pass
+  candidates: "the audit shortlist (docs/KRUN_ONE_V1_M15_SOURCES_AUDIT.md), commercial-friendly code AND weights only"
+  benchmark: "300 synthetic document pages + 300 app screenshots (val_fit renders, ground-truth text known) + 100 CORD
+              receipts (ground-truth lines); metrics: CER, word recall, downstream frozen-Krun accuracy on kd1
+              screenshot choice with OCR text, p50 latency per page on the RTX 4090 (GPU if supported), peak VRAM/RAM"
+  rule: "among candidates with page p50 <= 150 ms: the best downstream screenshot accuracy; ties within 1 pp -> lower
+         CER, then lower latency, then fewer params. If none meets 150 ms: the fastest with downstream >= 0.9"
+
+evaluation:
+  split: val_eval (temperatures / thresholds fitted on val_fit)
+  ablations:
+    audio:  {A: "acoustic only = the M1 model on the clip (empty context)", B: "ASR transcript only = frozen text path",
+             C: "M1.5 transcript + acoustic", oracle: "frozen text path on the ground-truth transcript"}
+    visual: {A: "vision only = the M1 model (empty context)", B: "OCR only = frozen text path on OCR text",
+             C: "M1.5 OCR + vision", oracle: "frozen text path on the ground-truth text"}
+  breakdowns: [real vs synthetic speech, language, source, task_class, primitive]
+
+gates:                                  # M1_5_PASS = every hard gate
+  GA1_real_speech_vs_m1: "real speech (MInDS-14 + FLEURS/SIB) mean accuracy over tasks: C >= A + 20 pp"
+  GA2_real_speech_vs_transcript: "real speech text-dependent mean accuracy: C >= B - 1.0 pp (report where C > B)"
+  GS1_text_visual_vs_vision: "text_dependent document/screenshot mean accuracy: C >= A + 20 pp"
+  GS2_text_visual_gap: "text_dependent document/screenshot: (C - A) >= 0.6 * (oracle - A)"
+  GP_preserve_perception: "visual_only cells (image and document): C >= M1 (A) - 2 pp in mean, per modality"
+  GT_text_only: "core digest identical; full V dumps (val_fit, val_eval, val_ml, val_tools_v2) bitwise identical between
+                 the frozen artifact alone and the M1.5 serving stack (freeze_core=False) after multimodal traffic"
+  GL_latency: "text-only p50 delta <= +5% (typical, 128 tools); image and scanned document page p50 <= 150 ms"
+  G_leakage: "group-disjoint splits, no media sha across splits, KrunBench v1 --check LEAKAGE = 0 on every non-protected
+              text view (incl. ASR / OCR text and new sources)"
+  soft_reported: ["audio 5 s p50 <= 200 ms (target, not blocking)", "acoustic_only (CREMA-D emotion): C > B (value of
+                  the acoustic branch)", "hybrid cells: C >= max(A, B)"]
+streaming_interface_note: "not implemented; see docs/KRUN_ONE_V1_M15_SPEC.md (audio chunks -> partial ASR -> incremental decision)"

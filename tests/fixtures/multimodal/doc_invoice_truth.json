@@ -1,0 +1,18 @@
+{
+ "text": "Moreira\nDistrito Luiza da Costa, 257, Santa Sofia, 48996778 Rocha de\nFATURA\nNº 467925 Data: 14/09/2024\nVencimento: 01/10/2026\nCNPJ: 74.558.788/3168\nCliente: Ryan Lopes\nDescrição | Qtd | Preço\nDebitis ea | 2 | R$ 2,94\nFacere tempora | 2 | R$ 1,75\nIpsam possimus | 3 | R$ 2,97\nDignissimos accusamus | 2 | R$ 4,29\nDelectus provident | 2 | R$ 3,01\nQuisquam numquam | 5 | R$ 2,78\nOdit voluptate | 4 | R$ 3,78\nTOTAL: R$ 61,91\nDados bancários: BR2554367309506489356773022WV",
+ "truth": {
+  "fields": {
+   "item_table": true,
+   "due_date": true,
+   "tax_id": true,
+   "bank_details": true,
+   "signature": false,
+   "barcode": false,
+   "logo": false,
+   "paid_stamp": false
+  },
+  "total": 61.91,
+  "paid": false,
+  "signed": false
+ }
+}

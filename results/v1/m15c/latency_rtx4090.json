@@ -1,0 +1,121 @@
+{
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "dtype": "bf16",
+ "iters": 40,
+ "config": "krun-one-v1-m15c",
+ "ocr": "rapidocr:v5-latin",
+ "ocr_exec_options": {
+  "rec_batch_num": 32,
+  "cudnn_conv_algo_search": "HEURISTIC"
+ },
+ "parallel_ocr": true,
+ "gate": false,
+ "multimodal": {
+  "image": {
+   "preprocess_ms_p50": 2.4994313716888428,
+   "tower_ms_p50": 3.4138616174459457,
+   "projector_ms_p50": 0.387825071811676,
+   "fusion_decision_ms_p50": 6.909534335136414,
+   "total_ms_p50": 13.378908857703209,
+   "total_ms_p95": 13.763942942023277,
+   "sum_of_component_p50": 13.210652396082878,
+   "parallel_ocr": false
+  },
+  "document_scanned": {
+   "decode_ms_p50": 19.068602472543716,
+   "preprocess_ms_p50": 9.062783792614937,
+   "tower_ms_p50": 4.972586408257484,
+   "ocr_ms_p50": 55.47330528497696,
+   "ocr_wait_after_tower_ms_p50": 41.960494592785835,
+   "projector_ms_p50": 0.660354271531105,
+   "fusion_decision_ms_p50": 7.831428200006485,
+   "total_ms_p50": 84.08856950700283,
+   "total_ms_p95": 95.98143864423035,
+   "sum_of_component_p50": 83.55624973773956,
+   "parallel_ocr": true
+  },
+  "screenshot": {
+   "decode_ms_p50": 12.838009744882584,
+   "preprocess_ms_p50": 7.866291329264641,
+   "tower_ms_p50": 5.567414686083794,
+   "ocr_ms_p50": 47.39941284060478,
+   "ocr_wait_after_tower_ms_p50": 34.53234024345875,
+   "projector_ms_p50": 0.6557032465934753,
+   "fusion_decision_ms_p50": 7.251737639307976,
+   "total_ms_p50": 69.33828443288803,
+   "total_ms_p95": 91.29429236054419,
+   "sum_of_component_p50": 68.71149688959122,
+   "parallel_ocr": true
+  },
+  "document_text_layer": {
+   "extract_ms_p50": 0.8201729506254196,
+   "krun_text_decision_ms_p50": 6.987288594245911,
+   "total_ms_p50": 7.807036861777306,
+   "total_ms_p95": 8.011731505393982,
+   "sum_of_component_p50": 7.80746154487133,
+   "parallel_ocr": false,
+   "route": "text"
+  },
+  "audio_5s": {
+   "decode_ms_p50": 0.6838757544755936,
+   "resample_ms_p50": 0.004347413778305054,
+   "padding_ms_p50": 0.10352768003940582,
+   "logmel_ms_p50": 0.9215120226144791,
+   "asr_encoder_ms_p50": 4.8278942704200745,
+   "asr_decoder_ms_p50": 62.59923055768013,
+   "audio_projector_ms_p50": 0.42732246220111847,
+   "fusion_decision_ms_p50": 6.683357059955597,
+   "total_ms_p50": 76.67703740298748,
+   "transcript_chars_p50": 75.0,
+   "total_ms_p95": 78.42169906944036,
+   "sum_of_component_p50": 76.2510672211647,
+   "parallel_ocr": false
+  },
+  "audio_15s": {
+   "decode_ms_p50": 1.6875285655260086,
+   "resample_ms_p50": 0.004386529326438904,
+   "padding_ms_p50": 0.08931010961532593,
+   "logmel_ms_p50": 0.8259285241365433,
+   "asr_encoder_ms_p50": 4.814969375729561,
+   "asr_decoder_ms_p50": 94.02059763669968,
+   "audio_projector_ms_p50": 0.4292000085115433,
+   "fusion_decision_ms_p50": 6.763944402337074,
+   "total_ms_p50": 108.98390598595142,
+   "transcript_chars_p50": 121.0,
+   "total_ms_p95": 110.50012037158012,
+   "sum_of_component_p50": 108.63586515188217,
+   "parallel_ocr": false
+  },
+  "audio_30s": {
+   "decode_ms_p50": 3.4073814749717712,
+   "resample_ms_p50": 0.004634261131286621,
+   "padding_ms_p50": 0.10935403406620026,
+   "logmel_ms_p50": 0.8566007018089294,
+   "asr_encoder_ms_p50": 4.788585007190704,
+   "asr_decoder_ms_p50": 93.98203156888485,
+   "audio_projector_ms_p50": 0.5087405443191528,
+   "fusion_decision_ms_p50": 6.780009716749191,
+   "total_ms_p50": 110.84374040365219,
+   "transcript_chars_p50": 121.0,
+   "total_ms_p95": 111.75645180046558,
+   "sum_of_component_p50": 110.43733730912209,
+   "parallel_ocr": false
+  }
+ },
+ "text_only": {
+  "typical_1q_k4_ctx48": {
+   "frozen_artifact_p50_ms": 7.11655430495739,
+   "m15_stack_p50_ms": 7.124077528715134,
+   "delta_pct": 0.10571441508573365,
+   "answers_identical": true
+  },
+  "k_128_tools_ctx64": {
+   "frozen_artifact_p50_ms": 44.757166877388954,
+   "m15_stack_p50_ms": 44.77214999496937,
+   "delta_pct": 0.033476465616022466,
+   "answers_identical": true
+  }
+ },
+ "GL_pass": true,
+ "audio_5s_soft_target_200ms": true
+}

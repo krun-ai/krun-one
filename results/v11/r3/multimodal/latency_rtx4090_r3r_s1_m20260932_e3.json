@@ -1,0 +1,121 @@
+{
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "dtype": "bf16",
+ "iters": 40,
+ "config": "krun-one-v11-r3-m15c",
+ "ocr": "rapidocr:v5-latin",
+ "ocr_exec_options": {
+  "rec_batch_num": 32,
+  "cudnn_conv_algo_search": "HEURISTIC"
+ },
+ "parallel_ocr": true,
+ "gate": false,
+ "multimodal": {
+  "image": {
+   "preprocess_ms_p50": 2.523208037018776,
+   "tower_ms_p50": 3.436066210269928,
+   "projector_ms_p50": 0.3885570913553238,
+   "fusion_decision_ms_p50": 6.948435679078102,
+   "total_ms_p50": 13.479871675372124,
+   "total_ms_p95": 14.206118322908871,
+   "sum_of_component_p50": 13.29626701772213,
+   "parallel_ocr": false
+  },
+  "document_scanned": {
+   "decode_ms_p50": 11.85896061360836,
+   "preprocess_ms_p50": 9.213190525770187,
+   "tower_ms_p50": 5.0339475274086,
+   "ocr_ms_p50": 56.03673681616783,
+   "ocr_wait_after_tower_ms_p50": 42.348457500338554,
+   "projector_ms_p50": 0.6953831762075424,
+   "fusion_decision_ms_p50": 7.89523683488369,
+   "total_ms_p50": 80.26099391281605,
+   "total_ms_p95": 95.24022806435822,
+   "sum_of_component_p50": 77.04517617821693,
+   "parallel_ocr": true
+  },
+  "screenshot": {
+   "decode_ms_p50": 10.937880724668503,
+   "preprocess_ms_p50": 8.040742948651314,
+   "tower_ms_p50": 5.659451708197594,
+   "ocr_ms_p50": 47.380633652210236,
+   "ocr_wait_after_tower_ms_p50": 34.13059003651142,
+   "projector_ms_p50": 0.6594285368919373,
+   "fusion_decision_ms_p50": 7.338743656873703,
+   "total_ms_p50": 66.99050217866898,
+   "total_ms_p95": 85.90168636292219,
+   "sum_of_component_p50": 66.76683761179447,
+   "parallel_ocr": true
+  },
+  "document_text_layer": {
+   "extract_ms_p50": 0.8255857974290848,
+   "krun_text_decision_ms_p50": 7.104953750967979,
+   "total_ms_p50": 7.929645478725433,
+   "total_ms_p95": 8.812982402741909,
+   "sum_of_component_p50": 7.930539548397064,
+   "parallel_ocr": false,
+   "route": "text"
+  },
+  "audio_5s": {
+   "decode_ms_p50": 0.6824471056461334,
+   "resample_ms_p50": 0.004349276423454285,
+   "padding_ms_p50": 0.11170469224452972,
+   "logmel_ms_p50": 1.0303817689418793,
+   "asr_encoder_ms_p50": 4.931246861815453,
+   "asr_decoder_ms_p50": 63.52321617305279,
+   "audio_projector_ms_p50": 0.4165284335613251,
+   "fusion_decision_ms_p50": 6.74586184322834,
+   "total_ms_p50": 77.6292271912098,
+   "transcript_chars_p50": 75.0,
+   "total_ms_p95": 79.02306523174046,
+   "sum_of_component_p50": 77.4457361549139,
+   "parallel_ocr": false
+  },
+  "audio_15s": {
+   "decode_ms_p50": 1.6675647348165512,
+   "resample_ms_p50": 0.004334375262260437,
+   "padding_ms_p50": 0.1099221408367157,
+   "logmel_ms_p50": 0.9090211242437363,
+   "asr_encoder_ms_p50": 4.884591326117516,
+   "asr_decoder_ms_p50": 94.75779347121716,
+   "audio_projector_ms_p50": 0.4176385700702667,
+   "fusion_decision_ms_p50": 6.77490234375,
+   "total_ms_p50": 109.63157564401627,
+   "transcript_chars_p50": 121.0,
+   "total_ms_p95": 113.05697448551655,
+   "sum_of_component_p50": 109.5257680863142,
+   "parallel_ocr": false
+  },
+  "audio_30s": {
+   "decode_ms_p50": 3.3685099333524704,
+   "resample_ms_p50": 0.004647299647331238,
+   "padding_ms_p50": 0.11292658746242523,
+   "logmel_ms_p50": 0.8633621037006378,
+   "asr_encoder_ms_p50": 4.725942388176918,
+   "asr_decoder_ms_p50": 94.81360763311386,
+   "audio_projector_ms_p50": 0.4963204264640808,
+   "fusion_decision_ms_p50": 6.78703747689724,
+   "total_ms_p50": 111.56309209764004,
+   "transcript_chars_p50": 121.0,
+   "total_ms_p95": 117.14476253837346,
+   "sum_of_component_p50": 111.17235384881496,
+   "parallel_ocr": false
+  }
+ },
+ "text_only": {
+  "typical_1q_k4_ctx48": {
+   "frozen_artifact_p50_ms": 7.180141285061836,
+   "m15_stack_p50_ms": 7.174091413617134,
+   "delta_pct": -0.0842583899747007,
+   "answers_identical": false
+  },
+  "k_128_tools_ctx64": {
+   "frozen_artifact_p50_ms": 43.70245896279812,
+   "m15_stack_p50_ms": 43.703651055693626,
+   "delta_pct": 0.002727747874597952,
+   "answers_identical": false
+  }
+ },
+ "GL_pass": true,
+ "audio_5s_soft_target_200ms": true
+}

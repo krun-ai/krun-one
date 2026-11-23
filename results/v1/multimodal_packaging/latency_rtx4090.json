@@ -1,0 +1,127 @@
+{
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "dtype": "bf16",
+ "iters": 40,
+ "results": {
+  "text_typical": {
+   "wall_p50_ms": 17.41722784936428,
+   "wall_p95_ms": 18.683318444527686,
+   "stages_p50_ms": {
+    "decision_ms": 17.370726447552443,
+    "total_inference_ms": 17.398682655766606
+   },
+   "path": "text",
+   "audio_duration_ms": 0,
+   "asr_truncation_risk": false
+  },
+  "text_128_tools": {
+   "wall_p50_ms": 47.75764956139028,
+   "wall_p95_ms": 47.94191881082952,
+   "stages_p50_ms": {
+    "decision_ms": 47.706757904961705,
+    "total_inference_ms": 47.735318541526794
+   },
+   "path": "text",
+   "audio_duration_ms": 0,
+   "asr_truncation_risk": false
+  },
+  "image": {
+   "wall_p50_ms": 32.52120106481016,
+   "wall_p95_ms": 33.963212789967656,
+   "stages_p50_ms": {
+    "decode_ms": 3.42158111743629,
+    "vision_ms": 10.575491702184081,
+    "fusion_ms": 0.937954057008028,
+    "decision_ms": 17.07535539753735,
+    "total_inference_ms": 32.405491918325424
+   },
+   "path": "multimodal",
+   "audio_duration_ms": 0,
+   "asr_truncation_risk": false
+  },
+  "screenshot": {
+   "wall_p50_ms": 79.39535798504949,
+   "wall_p95_ms": 86.27140878234057,
+   "stages_p50_ms": {
+    "decode_ms": 4.5941979624331,
+    "vision_ms": 20.968808326870203,
+    "ocr_ms": 46.72743659466505,
+    "fusion_ms": 1.0415131691843271,
+    "decision_ms": 25.736137991771102,
+    "total_inference_ms": 79.3085650075227
+   },
+   "path": "multimodal",
+   "audio_duration_ms": 0,
+   "asr_truncation_risk": false
+  },
+  "pdf_text_layer": {
+   "wall_p50_ms": 19.14528151974082,
+   "wall_p95_ms": 19.532583630643785,
+   "stages_p50_ms": {
+    "decode_ms": 1.9737270195037127,
+    "decision_ms": 17.04108389094472,
+    "total_inference_ms": 19.094269489869475
+   },
+   "path": "text_fast_path",
+   "audio_duration_ms": 0,
+   "asr_truncation_risk": false
+  },
+  "scanned_page": {
+   "wall_p50_ms": 172.01414029113948,
+   "wall_p95_ms": 184.6005538245663,
+   "stages_p50_ms": {
+    "decode_ms": 7.4211719911545515,
+    "vision_ms": 39.577564457431436,
+    "ocr_ms": 129.78392909280956,
+    "fusion_ms": 1.535370945930481,
+    "decision_ms": 27.984924614429474,
+    "total_inference_ms": 171.8421841505915
+   },
+   "path": "multimodal",
+   "audio_duration_ms": 0,
+   "asr_truncation_risk": false
+  },
+  "audio_5s": {
+   "wall_p50_ms": 83.27829535119236,
+   "wall_p95_ms": 87.35910463146865,
+   "stages_p50_ms": {
+    "decode_ms": 0.4621718544512987,
+    "asr_ms": 64.06644149683416,
+    "fusion_ms": 1.0055918246507645,
+    "decision_ms": 17.040139064192772,
+    "total_inference_ms": 83.21919292211533
+   },
+   "path": "multimodal",
+   "audio_duration_ms": 5000,
+   "asr_truncation_risk": false
+  },
+  "audio_15s": {
+   "wall_p50_ms": 787.353465333581,
+   "wall_p95_ms": 805.151673220098,
+   "stages_p50_ms": {
+    "decode_ms": 1.0150722227990627,
+    "asr_ms": 765.8889295998961,
+    "fusion_ms": 1.0692041832953691,
+    "decision_ms": 18.46543583087623,
+    "total_inference_ms": 787.2908674180508
+   },
+   "path": "multimodal",
+   "audio_duration_ms": 15000,
+   "asr_truncation_risk": false
+  },
+  "audio_30s": {
+   "wall_p50_ms": 238.72350389137864,
+   "wall_p95_ms": 243.0873222183436,
+   "stages_p50_ms": {
+    "decode_ms": 1.820296049118042,
+    "asr_ms": 218.20161794312298,
+    "fusion_ms": 1.0280979331582785,
+    "decision_ms": 17.059769947081804,
+    "total_inference_ms": 238.65821701474488
+   },
+   "path": "multimodal",
+   "audio_duration_ms": 30000,
+   "asr_truncation_risk": true
+  }
+ }
+}

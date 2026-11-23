@@ -1,0 +1,11 @@
+{
+  "training_side_files": [
+    "data/m1/textview_train.jsonl",
+    "data/m1/textview_val_fit.jsonl",
+    "data/m1/textview_val_eval.jsonl"
+  ],
+  "n_training_side": 185755,
+  "n_protected": 11715,
+  "violations": {},
+  "LEAKAGE": 0
+}

@@ -1,0 +1,116 @@
+{
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "dtype": "bf16",
+ "iters": 40,
+ "config": "krun-one-v1-m15",
+ "ocr": "rapidocr:v5-latin",
+ "ocr_exec_options": "rapidocr defaults (EXHAUSTIVE, rec 6)",
+ "parallel_ocr": false,
+ "gate": true,
+ "multimodal": {
+  "image": {
+   "preprocess_ms_p50": 2.558194100856781,
+   "tower_ms_p50": 3.4822914749383926,
+   "projector_ms_p50": 0.392034649848938,
+   "fusion_decision_ms_p50": 7.7645741403102875,
+   "total_ms_p50": 14.36365582048893,
+   "total_ms_p95": 14.566362090408802,
+   "sum_of_component_p50": 14.197094365954399,
+   "parallel_ocr": false
+  },
+  "document_scanned": {
+   "decode_ms_p50": 13.542357832193375,
+   "ocr_ms_p50": 71.3031031191349,
+   "preprocess_ms_p50": 7.558193057775497,
+   "tower_ms_p50": 4.471976310014725,
+   "projector_ms_p50": 0.47143734991550446,
+   "fusion_decision_ms_p50": 8.549662306904793,
+   "total_ms_p50": 105.13714887201786,
+   "total_ms_p95": 116.31070692092179,
+   "sum_of_component_p50": 105.8967299759388,
+   "parallel_ocr": false
+  },
+  "screenshot": {
+   "decode_ms_p50": 6.935359910130501,
+   "ocr_ms_p50": 48.64107072353363,
+   "preprocess_ms_p50": 6.458781659603119,
+   "tower_ms_p50": 4.471816122531891,
+   "projector_ms_p50": 0.4717651754617691,
+   "fusion_decision_ms_p50": 8.07403028011322,
+   "total_ms_p50": 75.47267526388168,
+   "total_ms_p95": 78.44546716660261,
+   "sum_of_component_p50": 75.05282387137413,
+   "parallel_ocr": false
+  },
+  "document_text_layer": {
+   "extract_ms_p50": 0.8326247334480286,
+   "krun_text_decision_ms_p50": 7.10151344537735,
+   "total_ms_p50": 7.926013320684433,
+   "total_ms_p95": 8.392501249909401,
+   "sum_of_component_p50": 7.934138178825378,
+   "parallel_ocr": false,
+   "route": "text"
+  },
+  "audio_5s": {
+   "decode_ms_p50": 0.692225992679596,
+   "resample_ms_p50": 0.004334375262260437,
+   "padding_ms_p50": 0.09744241833686829,
+   "logmel_ms_p50": 0.8867029100656509,
+   "asr_encoder_ms_p50": 4.833556711673737,
+   "asr_decoder_ms_p50": 64.26354497671127,
+   "audio_projector_ms_p50": 0.4360061138868332,
+   "fusion_decision_ms_p50": 7.711231708526611,
+   "total_ms_p50": 79.19476553797722,
+   "transcript_chars_p50": 75.0,
+   "total_ms_p95": 80.53476065397263,
+   "sum_of_component_p50": 78.92504520714283,
+   "parallel_ocr": false
+  },
+  "audio_15s": {
+   "decode_ms_p50": 1.7157290130853653,
+   "resample_ms_p50": 0.004334375262260437,
+   "padding_ms_p50": 0.1295860856771469,
+   "logmel_ms_p50": 0.8705556392669678,
+   "asr_encoder_ms_p50": 4.78864461183548,
+   "asr_decoder_ms_p50": 96.46040387451649,
+   "audio_projector_ms_p50": 0.43855421245098114,
+   "fusion_decision_ms_p50": 7.736312225461006,
+   "total_ms_p50": 112.57610842585564,
+   "transcript_chars_p50": 121.0,
+   "total_ms_p95": 114.32679612189531,
+   "sum_of_component_p50": 112.1441200375557,
+   "parallel_ocr": false
+  },
+  "audio_30s": {
+   "decode_ms_p50": 3.4275315701961517,
+   "resample_ms_p50": 0.004557892680168152,
+   "padding_ms_p50": 0.10056793689727783,
+   "logmel_ms_p50": 0.8264295756816864,
+   "asr_encoder_ms_p50": 4.792004823684692,
+   "asr_decoder_ms_p50": 96.49146720767021,
+   "audio_projector_ms_p50": 0.5171541124582291,
+   "fusion_decision_ms_p50": 7.803702726960182,
+   "total_ms_p50": 114.42194506525993,
+   "transcript_chars_p50": 121.0,
+   "total_ms_p95": 115.80407731235027,
+   "sum_of_component_p50": 113.9634158462286,
+   "parallel_ocr": false
+  }
+ },
+ "text_only": {
+  "typical_1q_k4_ctx48": {
+   "frozen_artifact_p50_ms": 7.253121584653854,
+   "m15_stack_p50_ms": 7.246783003211021,
+   "delta_pct": -0.08739108215480851,
+   "answers_identical": true
+  },
+  "k_128_tools_ctx64": {
+   "frozen_artifact_p50_ms": 44.671837240457535,
+   "m15_stack_p50_ms": 44.71386596560478,
+   "delta_pct": 0.09408326978139758,
+   "answers_identical": true
+  }
+ },
+ "GL_pass": true,
+ "audio_5s_soft_target_200ms": true
+}

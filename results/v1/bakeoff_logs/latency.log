@@ -1,0 +1,57 @@
+krun-one-v0.3 (reference)    bf16     typical_1q_k4_ctx48          pt-PT seqs=  1 len=  93 fwd p50    7.37 total p50    7.91 p95    7.96
+krun-one-v0.3 (reference)    bf16     typical_1q_tools8_ctx48      pt-PT seqs=  1 len= 259 fwd p50    7.50 total p50    8.29 p95    8.37
+krun-one-v0.3 (reference)    bf16     typical_4q_mixed_ctx96       pt-PT seqs=  4 len= 303 fwd p50   11.09 total p50   12.28 p95   12.32
+krun-one-v0.3 (reference)    bf16     len_128_k4                   pt-PT seqs=  1 len= 137 fwd p50    7.38 total p50    7.95 p95    8.14
+krun-one-v0.3 (reference)    bf16     len_256_k4                   pt-PT seqs=  1 len= 256 fwd p50    7.09 total p50    7.75 p95    7.82
+krun-one-v0.3 (reference)    bf16     len_512_k4                   pt-PT seqs=  1 len= 519 fwd p50    7.40 total p50    8.24 p95    8.33
+krun-one-v0.3 (reference)    bf16     len_1024_k4                  pt-PT seqs=  1 len=1024 fwd p50   10.00 total p50   11.21 p95   11.33
+krun-one-v0.3 (reference)    bf16     k_2_tools_ctx64              pt-PT seqs=  1 len= 141 fwd p50    7.40 total p50    7.94 p95    8.00
+krun-one-v0.3 (reference)    bf16     k_4_tools_ctx64              pt-PT seqs=  1 len= 205 fwd p50    7.44 total p50    8.07 p95    8.18
+krun-one-v0.3 (reference)    bf16     k_8_tools_ctx64              pt-PT seqs=  1 len= 274 fwd p50    7.41 total p50    8.17 p95    8.24
+krun-one-v0.3 (reference)    bf16     k_16_tools_ctx64             pt-PT seqs=  1 len= 430 fwd p50    7.24 total p50    8.23 p95    8.31
+krun-one-v0.3 (reference)    bf16     k_32_tools_ctx64             pt-PT seqs=  1 len= 745 fwd p50    8.32 total p50    9.81 p95    9.86
+krun-one-v0.3 (reference)    bf16     k_64_tools_ctx64             pt-PT seqs=  2 len= 964 fwd p50   17.47 total p50   20.06 p95   20.14
+krun-one-v0.3 (reference)    bf16     k_128_tools_ctx64            pt-PT seqs=  4 len= 973 fwd p50   34.71 total p50   39.30 p95   39.37
+krun-one-v0.3 (reference)    bf16     q_1_tools8_ctx256            pt-PT seqs=  1 len= 461 fwd p50    7.24 total p50    8.12 p95    8.17
+krun-one-v0.3 (reference)    bf16     q_4_tools8_ctx256            pt-PT seqs=  4 len= 461 fwd p50   15.96 total p50   17.75 p95   17.78
+krun-one-v0.3 (reference)    bf16     q_16_tools8_ctx256           pt-PT seqs= 16 len= 478 fwd p50   68.54 total p50   73.95 p95   74.12
+krun-one-v0.3 (reference)    bf16     stress_16q_tools32_ctx512    pt-PT seqs= 16 len=1024 fwd p50  171.22 total p50  181.03 p95  181.30
+krun-one-v0.3 (reference)    bf16     throughput_32req_k4_ctx48    pt-PT seqs= 32 len= 101 fwd p50   24.88 total p50   28.14 p95   28.34
+K1-W1536-L22                 bf16     typical_1q_k4_ctx48          pt-PT seqs=  1 len=  89 fwd p50    6.04 total p50    6.58 p95    6.86
+K1-W1536-L22                 bf16     typical_1q_tools8_ctx48      pt-PT seqs=  1 len= 240 fwd p50    5.93 total p50    6.65 p95    6.73
+K1-W1536-L22                 bf16     typical_4q_mixed_ctx96       pt-PT seqs=  4 len= 285 fwd p50   11.94 total p50   13.04 p95   13.07
+K1-W1536-L22                 bf16     len_128_k4                   pt-PT seqs=  1 len= 128 fwd p50    5.97 total p50    6.55 p95    6.63
+K1-W1536-L22                 bf16     len_256_k4                   pt-PT seqs=  1 len= 257 fwd p50    5.98 total p50    6.66 p95    6.78
+K1-W1536-L22                 bf16     len_512_k4                   pt-PT seqs=  1 len= 510 fwd p50    7.01 total p50    7.85 p95    7.87
+K1-W1536-L22                 bf16     len_1024_k4                  pt-PT seqs=  1 len=1024 fwd p50   12.00 total p50   13.19 p95   13.22
+K1-W1536-L22                 bf16     k_2_tools_ctx64              pt-PT seqs=  1 len= 133 fwd p50    5.96 total p50    6.50 p95    6.72
+K1-W1536-L22                 bf16     k_4_tools_ctx64              pt-PT seqs=  1 len= 191 fwd p50    6.02 total p50    6.64 p95    6.74
+K1-W1536-L22                 bf16     k_8_tools_ctx64              pt-PT seqs=  1 len= 255 fwd p50    6.20 total p50    6.93 p95    6.99
+K1-W1536-L22                 bf16     k_16_tools_ctx64             pt-PT seqs=  1 len= 397 fwd p50    6.19 total p50    7.11 p95    7.16
+K1-W1536-L22                 bf16     k_32_tools_ctx64             pt-PT seqs=  1 len= 680 fwd p50    8.92 total p50   10.26 p95   10.29
+K1-W1536-L22                 bf16     k_64_tools_ctx64             pt-PT seqs=  2 len= 972 fwd p50   21.45 total p50   23.64 p95   23.75
+K1-W1536-L22                 bf16     k_128_tools_ctx64            pt-PT seqs=  3 len= 972 fwd p50   32.19 total p50   36.07 p95   36.20
+K1-W1536-L22                 bf16     q_1_tools8_ctx256            pt-PT seqs=  1 len= 448 fwd p50    6.18 total p50    7.04 p95    7.06
+K1-W1536-L22                 bf16     q_4_tools8_ctx256            pt-PT seqs=  4 len= 448 fwd p50   17.40 total p50   19.04 p95   19.09
+K1-W1536-L22                 bf16     q_16_tools8_ctx256           pt-PT seqs= 16 len= 472 fwd p50   86.12 total p50   90.82 p95   92.08
+K1-W1536-L22                 bf16     stress_16q_tools32_ctx512    pt-PT seqs= 16 len=1024 fwd p50  208.98 total p50  217.50 p95  218.06
+K1-W1536-L22                 bf16     throughput_32req_k4_ctx48    pt-PT seqs= 32 len=  96 fwd p50   28.64 total p50   31.81 p95   32.16
+K1-W1536-L22-plain           bf16     typical_1q_k4_ctx48          pt-PT seqs=  1 len=  88 fwd p50    5.90 total p50    6.41 p95    6.45
+K1-W1536-L22-plain           bf16     typical_1q_tools8_ctx48      pt-PT seqs=  1 len= 239 fwd p50    6.05 total p50    6.72 p95    6.76
+K1-W1536-L22-plain           bf16     typical_4q_mixed_ctx96       pt-PT seqs=  4 len= 284 fwd p50   11.88 total p50   12.95 p95   12.96
+K1-W1536-L22-plain           bf16     len_128_k4                   pt-PT seqs=  1 len= 127 fwd p50    6.14 total p50    6.69 p95    6.74
+K1-W1536-L22-plain           bf16     len_256_k4                   pt-PT seqs=  1 len= 256 fwd p50    5.97 total p50    6.61 p95    6.66
+K1-W1536-L22-plain           bf16     len_512_k4                   pt-PT seqs=  1 len= 509 fwd p50    6.98 total p50    7.78 p95    7.81
+K1-W1536-L22-plain           bf16     len_1024_k4                  pt-PT seqs=  1 len=1024 fwd p50   12.16 total p50   13.35 p95   13.47
+K1-W1536-L22-plain           bf16     k_2_tools_ctx64              pt-PT seqs=  1 len= 132 fwd p50    5.89 total p50    6.39 p95    6.45
+K1-W1536-L22-plain           bf16     k_4_tools_ctx64              pt-PT seqs=  1 len= 190 fwd p50    5.90 total p50    6.47 p95    6.71
+K1-W1536-L22-plain           bf16     k_8_tools_ctx64              pt-PT seqs=  1 len= 254 fwd p50    6.13 total p50    6.81 p95    6.88
+K1-W1536-L22-plain           bf16     k_16_tools_ctx64             pt-PT seqs=  1 len= 396 fwd p50    6.12 total p50    6.99 p95    7.03
+K1-W1536-L22-plain           bf16     k_32_tools_ctx64             pt-PT seqs=  1 len= 679 fwd p50    8.95 total p50   10.24 p95   10.27
+K1-W1536-L22-plain           bf16     k_64_tools_ctx64             pt-PT seqs=  2 len= 971 fwd p50   21.42 total p50   23.55 p95   23.64
+K1-W1536-L22-plain           bf16     k_128_tools_ctx64            pt-PT seqs=  3 len= 971 fwd p50   32.18 total p50   35.97 p95   36.09
+K1-W1536-L22-plain           bf16     q_1_tools8_ctx256            pt-PT seqs=  1 len= 447 fwd p50    6.23 total p50    7.05 p95    7.08
+K1-W1536-L22-plain           bf16     q_4_tools8_ctx256            pt-PT seqs=  4 len= 447 fwd p50   17.45 total p50   19.04 p95   19.06
+K1-W1536-L22-plain           bf16     q_16_tools8_ctx256           pt-PT seqs= 16 len= 471 fwd p50   86.17 total p50   90.67 p95   90.74
+K1-W1536-L22-plain           bf16     stress_16q_tools32_ctx512    pt-PT seqs= 16 len=1024 fwd p50  208.90 total p50  217.26 p95  217.85
+K1-W1536-L22-plain           bf16     throughput_32req_k4_ctx48    pt-PT seqs= 32 len=  95 fwd p50   28.15 total p50   31.25 p95   31.45

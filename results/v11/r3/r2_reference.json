@@ -1,0 +1,167 @@
+{
+ "note": "R1/R2 dumps re-scored with the R3 definitions (scripts/v11/r3_report.py) BEFORE any R3 result; KrunTechBench v1 protected, raw rendering",
+ "models": {
+  "v1": {
+   "v1_macro_top1": 0.3090179034099195,
+   "unseen_combination": 0.5212121212121212,
+   "unseen_combination_by_size": {
+    "1": {
+     "n": 350,
+     "top1": 0.4657142857142857
+    },
+    "2": {
+     "n": 597,
+     "top1": 0.5510887772194305
+    },
+    "3": {
+     "n": 43,
+     "top1": 0.5581395348837209
+    }
+   },
+   "flips": {
+    "pairs": 286,
+    "base_acc": 0.15034965034965034,
+    "variant_acc": 0.21678321678321677,
+    "both_correct": 0.027972027972027972,
+    "stuck_rate": 0.6511627906976745,
+    "stuck_unconditional": 0.0979020979020979
+   },
+   "margin_logit": 1.1176607126713065,
+   "gold_vs_hardest": 0.6688091986585345,
+   "swe_involved_noul": 0.6083333333333333,
+   "hard_negative": 0.39232736572890026,
+   "ood_false_acceptance": 0.0037735849056603774
+  },
+  "r2l4na_s1": {
+   "v1_macro_top1": 0.6169462506126392,
+   "unseen_combination": 0.598989898989899,
+   "unseen_combination_by_size": {
+    "1": {
+     "n": 350,
+     "top1": 0.37142857142857144
+    },
+    "2": {
+     "n": 597,
+     "top1": 0.7051926298157454
+    },
+    "3": {
+     "n": 43,
+     "top1": 0.9767441860465116
+    }
+   },
+   "flips": {
+    "pairs": 286,
+    "base_acc": 0.6398601398601399,
+    "variant_acc": 0.6398601398601399,
+    "both_correct": 0.46503496503496505,
+    "stuck_rate": 0.20765027322404372,
+    "stuck_unconditional": 0.13286713286713286
+   },
+   "margin_logit": 4.209732238837012,
+   "gold_vs_hardest": 0.7940333743147864,
+   "swe_involved_noul": 0.49166666666666664,
+   "hard_negative": 0.6572890025575447,
+   "ood_false_acceptance": 0.0018867924528301887
+  },
+  "r2l4na_s2": {
+   "v1_macro_top1": 0.6370212210117631,
+   "unseen_combination": 0.6242424242424243,
+   "unseen_combination_by_size": {
+    "1": {
+     "n": 350,
+     "top1": 0.44
+    },
+    "2": {
+     "n": 597,
+     "top1": 0.7068676716917923
+    },
+    "3": {
+     "n": 43,
+     "top1": 0.9767441860465116
+    }
+   },
+   "flips": {
+    "pairs": 286,
+    "base_acc": 0.6713286713286714,
+    "variant_acc": 0.6713286713286714,
+    "both_correct": 0.5,
+    "stuck_rate": 0.16666666666666666,
+    "stuck_unconditional": 0.11188811188811189
+   },
+   "margin_logit": 4.361625981451476,
+   "gold_vs_hardest": 0.7959757166707557,
+   "swe_involved_noul": 0.525,
+   "hard_negative": 0.6695652173913044,
+   "ood_false_acceptance": 0.0
+  },
+  "r2l4_s1": {
+   "v1_macro_top1": 0.6278670765762023,
+   "unseen_combination": 0.5858585858585859,
+   "unseen_combination_by_size": {
+    "1": {
+     "n": 350,
+     "top1": 0.3942857142857143
+    },
+    "2": {
+     "n": 597,
+     "top1": 0.6683417085427136
+    },
+    "3": {
+     "n": 43,
+     "top1": 1.0
+    }
+   },
+   "flips": {
+    "pairs": 286,
+    "base_acc": 0.6538461538461539,
+    "variant_acc": 0.6363636363636364,
+    "both_correct": 0.46503496503496505,
+    "stuck_rate": 0.18716577540106952,
+    "stuck_unconditional": 0.12237762237762238
+   },
+   "margin_logit": 4.201045796738048,
+   "gold_vs_hardest": 0.7977501201943026,
+   "swe_involved_noul": 0.5416666666666666,
+   "hard_negative": 0.6547314578005116,
+   "ood_false_acceptance": 0.005660377358490566
+  },
+  "r2l4_s2": {
+   "v1_macro_top1": 0.6341331681556232,
+   "unseen_combination": 0.5909090909090909,
+   "unseen_combination_by_size": {
+    "1": {
+     "n": 350,
+     "top1": 0.3514285714285714
+    },
+    "2": {
+     "n": 597,
+     "top1": 0.7035175879396985
+    },
+    "3": {
+     "n": 43,
+     "top1": 0.9767441860465116
+    }
+   },
+   "flips": {
+    "pairs": 286,
+    "base_acc": 0.6678321678321678,
+    "variant_acc": 0.6538461538461539,
+    "both_correct": 0.479020979020979,
+    "stuck_rate": 0.14659685863874344,
+    "stuck_unconditional": 0.0979020979020979
+   },
+   "margin_logit": 4.114189626871633,
+   "gold_vs_hardest": 0.8012017794303079,
+   "swe_involved_noul": 0.5666666666666667,
+   "hard_negative": 0.6629156010230179,
+   "ood_false_acceptance": 0.01509433962264151
+  }
+ },
+ "r2_no_adapter_mean": {
+  "v1_macro_top1": 0.6269837358122011,
+  "unseen_combination": 0.6116161616161616,
+  "flips_both": 0.4825174825174825,
+  "stuck_rate": 0.18715846994535518,
+  "margin_logit": 4.285679110144244
+ }
+}

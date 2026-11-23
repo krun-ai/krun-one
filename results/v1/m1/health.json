@@ -1,0 +1,35 @@
+{
+ "cuda": true,
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "tiny_forward": true,
+ "vision_forward": [
+  2,
+  256,
+  768
+ ],
+ "audio_forward": [
+  2,
+  250,
+  768
+ ],
+ "fusion_forward": [
+  2,
+  32,
+  1536
+ ],
+ "backward_only_trainable": true,
+ "core_digest_unchanged": true,
+ "trainable_params": {
+  "image_adapter": 13042176,
+  "audio_adapter": 13042176,
+  "modality_emb": 7680,
+  "head_lora": 589824,
+  "total": 26681856
+ },
+ "frozen_params": {
+  "text_core": 879356931,
+  "vision_tower": 92930304,
+  "audio_tower": 88154112
+ },
+ "PASS": true
+}

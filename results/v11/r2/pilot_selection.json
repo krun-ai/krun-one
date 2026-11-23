@@ -1,0 +1,142 @@
+{
+ "v1": {
+  "macro_raw": 0.22840908939507557,
+  "macro_feat": 0.380246477911814,
+  "by_track_raw": {
+   "api": 0.19718309859154928,
+   "backend": 0.17117117117117117,
+   "cloud": 0.1590909090909091,
+   "database": 0.23636363636363636,
+   "devops": 0.09259259259259259,
+   "distributed": 0.16216216216216217,
+   "mlinfra": 0.22297297297297297,
+   "security": 0.32894736842105265,
+   "software_repair": 0.6299065420560748,
+   "state_action": 0.08370044052863436
+  },
+  "flip_both_raw": 0.02142857142857143,
+  "gold_vs_hardest_raw": 0.6057730306983109,
+  "margin_raw": 0.6340558908125454,
+  "val_fit": 0.9546200109349371
+ },
+ "objectives": {
+  "O0": {
+   "macro_raw": 0.31511550045912917,
+   "macro_feat": 0.7313336811121468,
+   "by_track_raw": {
+    "api": 0.447887323943662,
+    "backend": 0.22522522522522523,
+    "cloud": 0.29545454545454547,
+    "database": 0.36363636363636365,
+    "devops": 0.1574074074074074,
+    "distributed": 0.4486486486486487,
+    "mlinfra": 0.22972972972972974,
+    "security": 0.14473684210526316,
+    "software_repair": 0.6710280373831776,
+    "state_action": 0.16740088105726872
+   },
+   "flip_both_raw": 0.07857142857142857,
+   "gold_vs_hardest_raw": 0.6416264679726578,
+   "margin_raw": 0.7619052606546741,
+   "val_fit": 0.9442318206670312,
+   "val_fit_drop_pp": 1.038819026790594,
+   "meets_constraint": false
+  },
+  "O1": {
+   "macro_raw": 0.288907265777178,
+   "macro_feat": 0.707453060039465,
+   "by_track_raw": {
+    "api": 0.428169014084507,
+    "backend": 0.22522522522522523,
+    "cloud": 0.23484848484848486,
+    "database": 0.3393939393939394,
+    "devops": 0.19444444444444445,
+    "distributed": 0.2972972972972973,
+    "mlinfra": 0.22297297297297297,
+    "security": 0.14473684210526316,
+    "software_repair": 0.6654205607476635,
+    "state_action": 0.13656387665198239
+   },
+   "flip_both_raw": 0.05,
+   "gold_vs_hardest_raw": 0.6235666876308394,
+   "margin_raw": 0.8782257434751376,
+   "val_fit": 0.9458720612356479,
+   "val_fit_drop_pp": 0.8747949699289159,
+   "meets_constraint": true
+  },
+  "O2": {
+   "macro_raw": 0.3119666380166562,
+   "macro_feat": 0.7203327947287052,
+   "by_track_raw": {
+    "api": 0.4309859154929577,
+    "backend": 0.27927927927927926,
+    "cloud": 0.32575757575757575,
+    "database": 0.36363636363636365,
+    "devops": 0.16666666666666666,
+    "distributed": 0.43783783783783786,
+    "mlinfra": 0.18243243243243243,
+    "security": 0.09210526315789473,
+    "software_repair": 0.6691588785046729,
+    "state_action": 0.17180616740088106
+   },
+   "flip_both_raw": 0.06428571428571428,
+   "gold_vs_hardest_raw": 0.6368889314900682,
+   "margin_raw": 0.6550127158862556,
+   "val_fit": 0.946965554948059,
+   "val_fit_drop_pp": 0.7654455986878084,
+   "meets_constraint": true
+  },
+  "O3": {
+   "macro_raw": 0.3047457108706003,
+   "macro_feat": 0.7139676930844008,
+   "by_track_raw": {
+    "api": 0.4140845070422535,
+    "backend": 0.3063063063063063,
+    "cloud": 0.25757575757575757,
+    "database": 0.32727272727272727,
+    "devops": 0.17592592592592593,
+    "distributed": 0.3567567567567568,
+    "mlinfra": 0.18243243243243243,
+    "security": 0.17105263157894737,
+    "software_repair": 0.6710280373831776,
+    "state_action": 0.18502202643171806
+   },
+   "flip_both_raw": 0.03571428571428571,
+   "gold_vs_hardest_raw": 0.6484763587241116,
+   "margin_raw": 0.9628692830736473,
+   "val_fit": 0.9491525423728814,
+   "val_fit_drop_pp": 0.5467468562055711,
+   "meets_constraint": true
+  },
+  "O4": {
+   "macro_raw": 0.29334035175828954,
+   "macro_feat": 0.717427474630468,
+   "by_track_raw": {
+    "api": 0.4056338028169014,
+    "backend": 0.25225225225225223,
+    "cloud": 0.25,
+    "database": 0.32727272727272727,
+    "devops": 0.19444444444444445,
+    "distributed": 0.2972972972972973,
+    "mlinfra": 0.20270270270270271,
+    "security": 0.15789473684210525,
+    "software_repair": 0.6785046728971963,
+    "state_action": 0.16740088105726872
+   },
+   "flip_both_raw": 0.03571428571428571,
+   "gold_vs_hardest_raw": 0.6344638649073798,
+   "margin_raw": 0.9403569086270244,
+   "val_fit": 0.950792782941498,
+   "val_fit_drop_pp": 0.3827227993439042,
+   "meets_constraint": true
+  }
+ },
+ "eligible": [
+  "O1",
+  "O2",
+  "O3",
+  "O4"
+ ],
+ "chosen": "O2",
+ "rule": "configs/v11/r1_r2_protocol.yaml training.pilot.rule"
+}

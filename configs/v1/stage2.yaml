@@ -1,0 +1,50 @@
+# Stage 2 (tool-focused continuation of v1-tool). Registered 2026-09-28 before training; protocol + gates:
+# configs/v1/stage2_protocol.yaml. Same objective / batching / optimizer as R2; differences: init (full v1-tool model via
+# --init-full), data (data/kd1_s2), curriculum phases, milestone checkpoints.
+# Krun One v1 — full fine-tune of K1-W1536-L22 (879M) on Krun Decisions v1 (~1M). Registered 2026-09-27, before training.
+name: krun-one-v1-stage2
+seed: 20260927
+spec: k1                                   # krun_one.v1.arch.SPECS["k1"] — architecture frozen (no changes this round)
+init:                                      # full model, passed as --init-full (not the 0B tar, not the 1B MLM)
+  full: artifacts/krun-one-v1-tool-candidate/model.safetensors
+data:
+  train: data/kd1_s2/train.jsonl        # Stage 2 mixture (70% tool / 30% replay), scripts/v1/build_stage2.py
+  validation:                              # model selection / calibration: V only (final_protected is never read)
+    - data/krunbench_v1/val_fit.jsonl
+    - data/krunbench_v1/val_eval.jsonl
+    - data/kd1/val_ml.jsonl
+    - data/kd1_r2/val_tools_v2.jsonl      # in-distribution tool V of the new sources (8% held-out groups)
+sequence:
+  max_len: 1024
+  head_max_len: 896
+  max_candidates_per_chunk: 64
+batching:                                  # dynamic token batching (padded-token budget)
+  max_tokens: 16384
+  max_questions: 64
+optimizer:                                 # AdamW, discriminative LRs (encoder low, decision stack higher)
+  lr_encoder: 1.0e-5                       # fixed (no sweep)
+  lr_head: 5.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  max_grad_norm: 1.0
+epochs: 1                                  # one pass over the Stage 2 mixture (~6k steps); never extended
+gradient_checkpointing: true
+curriculum:                                # item position keys ~ U(range) of its phase (metadata.stage)
+  ranges:
+    S2P1: [0.00, 0.40]                     # tool core
+    S2P2: [0.40, 0.75]                     # hard / near-duplicate / description-dependent / cross-language / unseen schemas
+    S2P3: [0.75, 1.00]                     # small-k hard, tool OOD, none-applicable, adversarial confusion
+    S2R:  [0.00, 1.00]                     # replay (30%), uniform
+checkpoint:
+  save_every: 1000000000                   # step-based saving off; time-based below bounds preemption loss
+  save_every_minutes: 30
+  keep_last: 1                             # resume state only
+  milestones: [0.25, 0.50, 0.75]           # weights kept (final = 100%); pruned only after evaluation
+loss:                                      # the objective validated so far (A_margin); no loss redesign this round
+  unanswerable_mode: oe                    # choice: softmax CE; unanswerable: outlier exposure (public abstention = margin)
+  w_oe: 0.5
+  w_ans: 0.0
+  w_apply: 0.25                            # applicability sigmoid on choice (aux) — the multi-label output
+  w_multi: 1.0                             # multi: sigmoid BCE over candidates
+  w_rps: 0.0                               # score: CE baseline (RPS not reopened)
+  score_sigma: 0.0

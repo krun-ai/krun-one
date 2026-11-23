@@ -1,0 +1,68 @@
+{"oom": false, "step_s": 0.16681617684662342, "tokens_per_s": 24553.973585943073, "peak_vram_gib": 17.628058910369873, "trainable_params": 837090304, "micro_batch": 4, "grad_ckpt": false, "freeze_embeddings": false}
+{"oom": false, "step_s": 0.2901905905455351, "tokens_per_s": 28229.72304029464, "peak_vram_gib": 24.229197025299072, "trainable_params": 837090304, "micro_batch": 8, "grad_ckpt": false, "freeze_embeddings": false}
+{"oom": false, "step_s": 0.5352964727208018, "tokens_per_s": 30607.33786778661, "peak_vram_gib": 37.306137561798096, "trainable_params": 837090304, "micro_batch": 16, "grad_ckpt": false, "freeze_embeddings": false}
+[W926 11:48:11.147815271 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5016387584 bytes (free: 308150272, total: 85094825984).
+[W926 11:48:13.690274404 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5062524928 bytes (free: 316538880, total: 85094825984).
+[W926 11:48:14.989960624 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5140119552 bytes (free: 224264192, total: 85094825984).
+{"oom": false, "step_s": 1.2972535640001297, "tokens_per_s": 25259.518192386884, "peak_vram_gib": 63.68989419937134, "trainable_params": 837090304, "micro_batch": 32, "grad_ckpt": false, "freeze_embeddings": false}
+{"oom": false, "step_s": 0.20974398963153362, "tokens_per_s": 19528.569124653444, "peak_vram_gib": 14.057607650756836, "trainable_params": 837090304, "micro_batch": 4, "grad_ckpt": true, "freeze_embeddings": false}
+{"oom": false, "step_s": 0.3679987983778119, "tokens_per_s": 22260.94225337538, "peak_vram_gib": 15.227334022521973, "trainable_params": 837090304, "micro_batch": 8, "grad_ckpt": true, "freeze_embeddings": false}
+{"oom": false, "step_s": 0.6849957974627614, "tokens_per_s": 23918.394916708505, "peak_vram_gib": 19.577600955963135, "trainable_params": 837090304, "micro_batch": 16, "grad_ckpt": true, "freeze_embeddings": false}
+[W926 11:55:22.604842455 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5140119552 bytes (free: 150863872, total: 85094825984).
+{"oom": false, "step_s": 1.3116488307714462, "tokens_per_s": 24982.29650441384, "peak_vram_gib": 29.094170093536377, "trainable_params": 837090304, "micro_batch": 32, "grad_ckpt": true, "freeze_embeddings": false}
+{"oom": false, "step_s": 0.1501703578978777, "tokens_per_s": 27275.689139566788, "peak_vram_gib": 14.690276145935059, "trainable_params": 443874304, "micro_batch": 4, "grad_ckpt": false, "freeze_embeddings": true}
+{"oom": false, "step_s": 0.27191771753132343, "tokens_per_s": 30126.760677359416, "peak_vram_gib": 21.29741382598877, "trainable_params": 443874304, "micro_batch": 8, "grad_ckpt": false, "freeze_embeddings": true}
+{"oom": false, "step_s": 0.5133443344384432, "tokens_per_s": 31916.19912962078, "peak_vram_gib": 34.369317054748535, "trainable_params": 443874304, "micro_batch": 16, "grad_ckpt": false, "freeze_embeddings": true}
+[W926 12:02:25.778458839 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5016387584 bytes (free: 308150272, total: 85094825984).
+[W926 12:02:26.292056146 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5062524928 bytes (free: 316538880, total: 85094825984).
+{"oom": false, "step_s": 0.989454978145659, "tokens_per_s": 33117.22182793059, "peak_vram_gib": 60.74633502960205, "trainable_params": 443874304, "micro_batch": 32, "grad_ckpt": false, "freeze_embeddings": true}
+{"oom": false, "step_s": 0.19293703883886337, "tokens_per_s": 21229.72356500654, "peak_vram_gib": 10.260872840881348, "trainable_params": 443874304, "micro_batch": 4, "grad_ckpt": true, "freeze_embeddings": true}
+{"oom": false, "step_s": 0.3500584801658988, "tokens_per_s": 23401.804167457016, "peak_vram_gib": 12.38930082321167, "trainable_params": 443874304, "micro_batch": 8, "grad_ckpt": true, "freeze_embeddings": true}
+{"oom": false, "step_s": 0.6627307236194611, "tokens_per_s": 24721.95631812547, "peak_vram_gib": 16.640780448913574, "trainable_params": 443874304, "micro_batch": 16, "grad_ckpt": true, "freeze_embeddings": true}
+[W926 12:09:28.718687328 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 5140119552 bytes (free: 5018353664, total: 85094825984).
+{"oom": false, "step_s": 1.2791702458634973, "tokens_per_s": 25616.60584739456, "peak_vram_gib": 26.14914608001709, "trainable_params": 443874304, "micro_batch": 32, "grad_ckpt": true, "freeze_embeddings": true}
+{"oom": false, "step_s": 0.4557750290259719, "padded_tokens_per_s": 35947.55955589303, "real_tokens_per_s": 25102.29668450758, "questions_per_s": 140.42015451520714, "peak_vram_gib": 31.677220821380615, "sequences": 64, "seq_len": 256, "grad_ckpt": false}
+{"oom": false, "step_s": 0.4935799250379205, "padded_tokens_per_s": 33194.21874530505, "real_tokens_per_s": 22436.08266513111, "questions_per_s": 64.83245848692393, "peak_vram_gib": 31.857910633087158, "sequences": 32, "seq_len": 512, "grad_ckpt": false}
+{"oom": false, "step_s": 0.5710738198831677, "padded_tokens_per_s": 28689.811070925814, "real_tokens_per_s": 20048.19622503843, "questions_per_s": 28.01739362395099, "peak_vram_gib": 32.20789909362793, "sequences": 16, "seq_len": 1024, "grad_ckpt": false}
+{"oom": false, "step_s": 0.5972895696759224, "padded_tokens_per_s": 27430.581131509858, "real_tokens_per_s": 19154.86320346706, "questions_per_s": 107.15070754496038, "peak_vram_gib": 13.79007339477539, "sequences": 64, "seq_len": 256, "grad_ckpt": true}
+{"oom": false, "step_s": 0.6475942702963948, "padded_tokens_per_s": 25299.791476693073, "real_tokens_per_s": 17100.213062310737, "questions_per_s": 49.41365522791616, "peak_vram_gib": 13.790099143981934, "sequences": 32, "seq_len": 512, "grad_ckpt": true}
+{"oom": false, "step_s": 0.7453856784850359, "padded_tokens_per_s": 21980.567205556956, "real_tokens_per_s": 15359.833614283543, "questions_per_s": 21.465397661676715, "peak_vram_gib": 13.808544635772705, "sequences": 16, "seq_len": 1024, "grad_ckpt": true}
+{
+  "mlm_best_full": {
+    "oom": false,
+    "step_s": 0.5352964727208018,
+    "tokens_per_s": 30607.33786778661,
+    "peak_vram_gib": 37.306137561798096,
+    "trainable_params": 837090304,
+    "micro_batch": 16,
+    "grad_ckpt": false,
+    "freeze_embeddings": false
+  },
+  "mlm_best_frozen_emb": {
+    "oom": false,
+    "step_s": 0.989454978145659,
+    "tokens_per_s": 33117.22182793059,
+    "peak_vram_gib": 60.74633502960205,
+    "trainable_params": 443874304,
+    "micro_batch": 32,
+    "grad_ckpt": false,
+    "freeze_embeddings": true
+  },
+  "decision_best": {
+    "oom": false,
+    "step_s": 0.4557750290259719,
+    "padded_tokens_per_s": 35947.55955589303,
+    "real_tokens_per_s": 25102.29668450758,
+    "questions_per_s": 140.42015451520714,
+    "peak_vram_gib": 31.677220821380615,
+    "sequences": 64,
+    "seq_len": 256,
+    "grad_ckpt": false
+  },
+  "usd_per_1B_tokens_mlm_full": 12.614985098638146,
+  "hours_per_1B_tokens_mlm_full": 9.075528847941111,
+  "usd_per_1B_tokens_mlm_frozen_emb": 11.65892214984865,
+  "hours_per_1B_tokens_mlm_frozen_emb": 8.387713776869532,
+  "usd_per_1B_tokens_decision": 15.381505364383965,
+  "hours_per_1B_tokens_decision": 11.065831197398536
+}

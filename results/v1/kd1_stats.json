@@ -1,0 +1,269 @@
+{
+ "n": 1042946,
+ "approx_tokens": 195865473,
+ "category": {
+  "tool_routing": 316901,
+  "choice_intent": 282980,
+  "ood": 197339,
+  "noul": 99854,
+  "score": 79998,
+  "multi_label": 65874
+ },
+ "origin": {
+  "mt": 435701,
+  "derived": 337458,
+  "real": 236123,
+  "rules": 33043,
+  "llm": 621
+ },
+ "lang": {
+  "EN": 452006,
+  "PT-BR": 196640,
+  "ES": 181991,
+  "FR": 176597,
+  "PT-PT": 35712
+ },
+ "locale": {
+  "en-US": 447014,
+  "pt-BR": 196640,
+  "fr-FR": 176553,
+  "es-419": 144989,
+  "es-ES": 36965,
+  "pt-PT": 35712,
+  "en": 4992,
+  "fr": 44,
+  "es": 37
+ },
+ "stage": {
+  "D2": 424330,
+  "D3": 313730,
+  "D1": 304886
+ },
+ "type": {
+  "choice": 791236,
+  "noul": 99854,
+  "score": 79998,
+  "multi": 71858
+ },
+ "cat_origin": {
+  "tool_routing|mt": 155979,
+  "choice_intent|mt": 140082,
+  "tool_routing|derived": 119082,
+  "choice_intent|real": 108082,
+  "ood|derived": 103309,
+  "ood|mt": 92358,
+  "score|real": 60000,
+  "noul|real": 41343,
+  "multi_label|derived": 39828,
+  "noul|derived": 36638,
+  "multi_label|mt": 25409,
+  "tool_routing|real": 24554,
+  "noul|mt": 21873,
+  "score|derived": 19998,
+  "choice_intent|derived": 18603,
+  "tool_routing|rules": 17170,
+  "choice_intent|rules": 15873,
+  "ood|real": 1507,
+  "multi_label|real": 637,
+  "choice_intent|llm": 340,
+  "ood|llm": 165,
+  "tool_routing|llm": 116
+ },
+ "cat_lang": {
+  "tool_routing|EN": 121066,
+  "choice_intent|EN": 80412,
+  "score|EN": 79998,
+  "ood|EN": 73561,
+  "tool_routing|PT-BR": 71537,
+  "choice_intent|PT-BR": 65605,
+  "choice_intent|ES": 62118,
+  "choice_intent|FR": 62084,
+  "noul|EN": 59363,
+  "tool_routing|ES": 58257,
+  "tool_routing|FR": 58199,
+  "ood|PT-BR": 40628,
+  "ood|ES": 37945,
+  "ood|FR": 37935,
+  "multi_label|EN": 37606,
+  "noul|ES": 14247,
+  "choice_intent|PT-PT": 12761,
+  "noul|PT-BR": 9967,
+  "multi_label|ES": 9424,
+  "multi_label|FR": 9416,
+  "noul|FR": 8963,
+  "multi_label|PT-BR": 8903,
+  "tool_routing|PT-PT": 7842,
+  "noul|PT-PT": 7314,
+  "ood|PT-PT": 7270,
+  "multi_label|PT-PT": 525
+ },
+ "source": {
+  "toolace": 195281,
+  "clinc150": 181802,
+  "massive": 167464,
+  "bitext": 119542,
+  "banking77": 90047,
+  "snips": 65305,
+  "civil_comments": 55712,
+  "mhs": 44165,
+  "multiwoz": 38737,
+  "helpsteer2": 38339,
+  "banking77_pt_br": 35427,
+  "mhs_items": 11125
+ },
+ "difficulty": {
+  "hard": 665824,
+  "easy": 229103,
+  "medium": 148019
+ },
+ "answerable": {
+  "True": 842426,
+  "False": 200520
+ },
+ "k_bucket": {
+  "<=8": 264852,
+  "<=4": 196872,
+  "<=16": 184125,
+  "<=2": 93041,
+  "<=32": 80749,
+  "<=64": 36437,
+  "<=128": 7018
+ },
+ "slices": {
+  "cross_language": 585668,
+  "same_language": 457278,
+  "ood_near": 133887,
+  "gold_removed": 133722,
+  "near_duplicate": 126364,
+  "ood_far": 58484,
+  "typo": 33043,
+  "cross_task": 19964,
+  "minimal_pair": 18684,
+  "native_irrelevance": 8500,
+  "counterfactual": 116,
+  "slang": 113
+ },
+ "non_en_schema": {
+  "en": 544578,
+  "mul": 35822,
+  "pt": 4091,
+  "fr": 3309,
+  "es": 3140
+ },
+ "non_en_cross": {
+  "True": 580754,
+  "False": 10186
+ },
+ "pair": {
+  "EN->en": 447092,
+  "PT-BR->en": 178557,
+  "ES->en": 169048,
+  "FR->en": 163371,
+  "PT-PT->en": 33602,
+  "PT-BR->mul": 14398,
+  "ES->mul": 10157,
+  "FR->mul": 9917,
+  "EN->mul": 4602,
+  "PT-BR->pt": 3394,
+  "FR->fr": 3309,
+  "ES->es": 2786,
+  "PT-PT->mul": 1350,
+  "PT-PT->pt": 697,
+  "EN->pt": 312,
+  "PT-BR->es": 291,
+  "PT-PT->es": 63
+ },
+ "tool_source": {
+  "toolace": 192471,
+  "intent_as_function": 137419,
+  "multiwoz": 40411,
+  "?": 20139,
+  "toolace_pool": 19964
+ },
+ "tool_source_origin": {
+  "toolace|mt": 100431,
+  "toolace|derived": 76147,
+  "intent_as_function|mt": 75979,
+  "intent_as_function|derived": 52724,
+  "multiwoz|derived": 18938,
+  "multiwoz|real": 17549,
+  "toolace_pool|derived": 11091,
+  "?|mt": 10959,
+  "?|derived": 8884,
+  "toolace|rules": 8797,
+  "toolace_pool|mt": 8757,
+  "intent_as_function|rules": 7804,
+  "toolace|real": 7096,
+  "multiwoz|mt": 3355,
+  "intent_as_function|real": 912,
+  "multiwoz|rules": 569,
+  "?|llm": 196,
+  "toolace_pool|real": 116,
+  "?|real": 100
+ },
+ "tool_lang": {
+  "EN": 162151,
+  "PT-BR": 89194,
+  "FR": 74729,
+  "ES": 74673,
+  "PT-PT": 9657
+ },
+ "ood_type": {
+  "gold_removed": 127738,
+  "cross_domain": 34988,
+  "cross_task": 19964,
+  "native_irrelevance": 8500,
+  "gold_removed_multi": 5984,
+  "near_ood_synthetic": 165
+ },
+ "tool_flags": {
+  "description_dependent": 132269,
+  "near_duplicate": 111495,
+  "ood": 89629,
+  "translated_schema": 46573
+ },
+ "minimal_pair_relation": {
+  "natural_contrast_mined": 18457,
+  "label_flip_minimal_edit": 227
+ },
+ "synthetic_transformation": {
+  "minimal_pair": 227,
+  "near_ood": 165,
+  "counterfactual": 116,
+  "slang": 113
+ },
+ "minimal_pair_sets": 4376,
+ "toolace": {
+  "unique_query_groups": 7063,
+  "unique_gold_tools": 6763,
+  "unique_candidate_tools": 21424
+ },
+ "val_ml": {
+  "dev|ES|intent": 166,
+  "dev|ES|tool": 47,
+  "dev|FR|intent": 167,
+  "dev|FR|tool": 45,
+  "dev|PT-BR|intent": 163,
+  "dev|PT-BR|tool": 47,
+  "eval|EN|intent": 1565,
+  "eval|EN|tool": 827,
+  "eval|ES|intent": 1589,
+  "eval|ES|tool": 449,
+  "eval|FR|intent": 1515,
+  "eval|FR|tool": 417,
+  "eval|PT-BR|intent": 1344,
+  "eval|PT-BR|tool": 389,
+  "eval|PT-PT|intent": 678,
+  "eval|PT-PT|tool": 229,
+  "fit|EN|intent": 1541,
+  "fit|EN|tool": 799,
+  "fit|ES|intent": 1608,
+  "fit|ES|tool": 430,
+  "fit|FR|intent": 1456,
+  "fit|FR|tool": 417,
+  "fit|PT-BR|intent": 1418,
+  "fit|PT-BR|tool": 355,
+  "fit|PT-PT|intent": 659,
+  "fit|PT-PT|tool": 229
+ }
+}

@@ -1,0 +1,475 @@
+{
+  "reviewed_cells": 588,
+  "disputes": [
+    {
+      "table": "datastore",
+      "option": "influxdb",
+      "property": "joins",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "wrong",
+      "reason": "InfluxDB 3 (Core/Enterprise/Cloud Dedicated/Serverless, the current product line) documents a SQL JOIN clause with INNER/LEFT/RIGHT/FULL joins between tables; only InfluxQL (v1/v2) lacks joins. 'Clearly no' is false for the current version, so the cell is version-dependent. Label impact: R={joins,tsdb} with influxdb in S yields a none-of-the-above or another gold although InfluxDB 3 arguably satisfies both.",
+      "source_url": "https://docs.influxdata.com/influxdb3/enterprise/reference/sql/join/"
+    },
+    {
+      "table": "datastore",
+      "option": "cockroachdb",
+      "property": "fulltext",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "wrong",
+      "reason": "CockroachDB ships built-in full-text search (TSVECTOR/TSQUERY, @@, full-text GIN indexes) with ts_rank() relevance ranking, plus trigram indexes for fuzzy matching. It is the same feature class that earned postgresql a P; N is inconsistent and not 'clearly no'. (Typo tolerance of phrasing 2 is only via trigrams, hence P not Y.)",
+      "source_url": "https://www.cockroachlabs.com/docs/stable/full-text-search"
+    },
+    {
+      "table": "datastore",
+      "option": "cassandra",
+      "property": "acid",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Phrasing 2 ('all-or-nothing transactions that span several rows') only asks for atomicity: logged BATCH is documented as all-or-nothing across partitions (no isolation), and lightweight transactions give linearizable single-partition CAS. Cassandra 6.0 (alpha April 2026) adds Accord general-purpose ACID transactions with BEGIN TRANSACTION. Clear N only under phrasing 1 on <=5.x.",
+      "source_url": "https://docs.datastax.com/en/cql/cassandra/docs/developing/batch/batch.html"
+    },
+    {
+      "table": "datastore",
+      "option": "sqlite",
+      "property": "inmem",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "SQLite has first-class in-memory databases (':memory:', shared-cache memory URIs) and is in-process, so reads are microsecond-level with no network hop; an engineer can defend it for 'in-memory access with microsecond latency'. Matters because sqlite has overhead 0 and would beat redis/memcached if it were Y, so the N is load-bearing. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://www.sqlite.org/inmemorydb.html"
+    },
+    {
+      "table": "datastore",
+      "option": "postgresql",
+      "property": "horiz",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "The row gives P for tsdb and graph on the strength of extensions (TimescaleDB, recursive CTE/AGE) but a hard N for write scale-out, which the Citus extension provides (distributed tables, writes across worker nodes). Either extensions count (P) or they do not; N is inconsistent. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://docs.citusdata.com/en/stable/get_started/what_is_citus.html"
+    },
+    {
+      "table": "datastore",
+      "option": "mysql",
+      "property": "horiz",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "MySQL NDB Cluster is an official MySQL product with automatic sharding and multi-node writes; Vitess is the common sharding layer. Plain InnoDB is N, so the cell depends on edition/configuration. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://dev.mysql.com/doc/refman/8.4/en/mysql-cluster.html"
+    },
+    {
+      "table": "datastore",
+      "option": "neo4j",
+      "property": "horiz",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Classic Neo4j clustering has a single writer per database (N), but composite databases (Fabric) allow manual sharding and Infinigraph (GA, Enterprise) adds automatic property sharding marketed as horizontal scaling. Version/edition dependent.",
+      "source_url": "https://neo4j.com/docs/operations-manual/current/scalability/scaling-with-neo4j/"
+    },
+    {
+      "table": "datastore",
+      "option": "sqlite",
+      "property": "graph",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Phrasing 2 ('queries that walk many hops across connected entities') is satisfied by WITH RECURSIVE, which SQLite supports; only phrasing 1 ('first-class') excludes it. postgresql got P for exactly this reason. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://www.sqlite.org/lang_with.html"
+    },
+    {
+      "table": "datastore",
+      "option": "mysql",
+      "property": "graph",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "MySQL 8 supports recursive CTEs, the same capability that gives postgresql a P; N is inconsistent under phrasing 2. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://dev.mysql.com/doc/refman/8.4/en/with.html"
+    },
+    {
+      "table": "datastore",
+      "option": "cockroachdb",
+      "property": "graph",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "CockroachDB supports recursive CTEs (WITH RECURSIVE), same capability that gives postgresql a P; N is inconsistent under phrasing 2. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://www.cockroachlabs.com/docs/stable/common-table-expressions"
+    },
+    {
+      "table": "datastore",
+      "option": "dynamodb",
+      "property": "inmem",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "DynamoDB Accelerator (DAX) is the AWS-documented in-memory cache for DynamoDB with microsecond read latency. It is a separately provisioned cluster, so not Y, but 'clearly no' is arguable. Low priority. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.html"
+    },
+    {
+      "table": "storagekind",
+      "option": "local nvme disk",
+      "property": "dbdisk",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Phrasing 2 ('a persistent disk attached to a single machine for a database') has no survive-replacement clause; a local NVMe disk in a dedicated/bare-metal server is persistent across reboots and is a classic database disk. N holds only under phrasing 1 or for cloud instance-store semantics.",
+      "source_url": ""
+    },
+    {
+      "table": "storagekind",
+      "option": "object storage",
+      "property": "posix",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Amazon S3 Files (launched April 2026) mounts any general-purpose bucket as a shared NFS v4.1 file system on many machines; Mountpoint/gcsfuse offer partial POSIX. The generic category is still non-POSIX, so low priority, but phrasing 2 ('a shared directory that several servers read and write concurrently') is now arguably met by the dominant product.",
+      "source_url": "https://builder.aws.com/content/2tZQHSCSnjZG8jJVl6ADEGKgVBC/getting-started-with-amazon-s3-files-mounting-s3-buckets-as-file-systems"
+    },
+    {
+      "table": "messaging",
+      "option": "amazon kinesis",
+      "property": "replay",
+      "file_value": "Y",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Default retention is 24 hours, so 're-read messages from days ago' is false by default and needs IncreaseStreamRetentionPeriod (extra cost); the maximum is 8760 h (365 days), so 'replaying the full event history' is impossible past one year, unlike Kafka with unlimited retention/tiered storage. Depends on configuration -> P. This is a load-bearing Y: with overhead 0 kinesis beats kafka on every replay item.",
+      "source_url": "https://docs.aws.amazon.com/streams/latest/dev/kinesis-extended-retention.html"
+    },
+    {
+      "table": "messaging",
+      "option": "nats core",
+      "property": "ordered",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Core NATS is very high throughput and guarantees ordering of messages from a single publisher on a subject, and supports deterministic subject-token partitioning; with one publisher per key, phrasing 1 ('strict per-key ordering at very high throughput') is arguably met. Phrasing 2 (ordered partitions) is not. Low priority. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://docs.nats.io/nats-concepts/core-nats"
+    },
+    {
+      "table": "replication",
+      "option": "multi leader replication",
+      "property": "noloss",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "True for asynchronous multi-leader with last-write-wins, but synchronous/certification-based multi-primary systems (Galera, MySQL Group Replication multi-primary) do not lose acknowledged writes when a node fails. The option name does not say asynchronous. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://galeracluster.com/library/documentation/tech-desc-introduction.html"
+    },
+    {
+      "table": "structure",
+      "option": "binary heap",
+      "property": "insert",
+      "file_value": "Y",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "A heap gives O(log n) insert and O(log n) removal of the minimum only; removing an arbitrary element needs an O(n) search (or an auxiliary index). 'Cheap insertion and removal as the data changes constantly' read as general deletes is not met. CAVEAT: this Y only decides labels together with minpop, where heap is the textbook answer; downgrading to P would make balanced search tree the gold for insert+minpop, which is worse. Recommend keeping Y or rewording the phrasing rather than a blind P.",
+      "source_url": ""
+    },
+    {
+      "table": "compute",
+      "option": "static site on a cdn",
+      "property": "zero",
+      "file_value": "Y",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "A static site has no compute to scale, so 'scaling to zero when idle' is a category stretch, and storage/hosting is still billed with no traffic (as is true of the others, but here it is the whole bill). Defensible as Y in spirit; a strict reader would call it not applicable.",
+      "source_url": ""
+    },
+    {
+      "table": "compute",
+      "option": "kubernetes cluster",
+      "property": "zero",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Phrasing 2 ('scaling to zero when idle') is met at workload level by KEDA and Knative, and node pools can autoscale to zero; phrasing 1 ('paying nothing') is not met because of the control plane and system nodes. The two phrasings split here. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://keda.sh/docs/latest/concepts/scaling-deployments/"
+    },
+    {
+      "table": "compute",
+      "option": "managed container service",
+      "property": "kernel",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "The category spans Fargate/Cloud Run (no host access) and ECS on EC2 / self-managed node groups (you own the host). Even Fargate exposes a subset of sysctls via systemControls (net.*, kernel.shm*, fs.mqueue.*). 'Tuning sysctl' is partially possible; 'installing kernel modules' is not. The other three capability cells in this row are already P for the same category ambiguity.",
+      "source_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html"
+    },
+    {
+      "table": "apistyle",
+      "option": "grpc",
+      "property": "fields",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "gRPC APIs commonly implement partial responses with google.protobuf.FieldMask read masks (Google AIP-157), a caller-defined field selection in one request. It is a convention rather than a protocol feature, the same reason 'rest over http' has P here (sparse fieldsets). N is inconsistent with that P. Low priority. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://google.aip.dev/157"
+    },
+    {
+      "table": "deploystrategy",
+      "option": "feature flags",
+      "property": "nodown",
+      "file_value": "Y",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "A feature flag is a release toggle, not a deployment mechanism: the code carrying the flag must still be deployed by some strategy that may or may not have downtime. Load-bearing: because rolling update and canary are P on 'spare', R={nodown,spare} yields gold = feature flags, and R={nodown,percent} yields feature flags over canary release (overhead 1 vs 2). Both labels would be disputed by many engineers.",
+      "source_url": "https://martinfowler.com/articles/feature-toggles.html"
+    },
+    {
+      "table": "deploystrategy",
+      "option": "blue green deployment",
+      "property": "percent",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Textbook blue/green is an all-at-once switch (N), but mainstream tooling calls gradual shifting 'blue/green': AWS CodeDeploy blue/green deployments for ECS/Lambda offer canary and linear traffic-shifting configurations (e.g. ECSCanary10Percent5Minutes).",
+      "source_url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html"
+    },
+    {
+      "table": "deploystrategy",
+      "option": "traffic shadowing",
+      "property": "single",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Under phrasing 1 ('never having two versions serving at the same time') only the old version serves users during shadowing, so the requirement is arguably met; under phrasing 2 ('must not run side by side') it clearly is not. blue green already has P for the same split.",
+      "source_url": ""
+    },
+    {
+      "table": "deploystrategy",
+      "option": "traffic shadowing",
+      "property": "spare",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Shadowing needs a second deployment of the service, but it can be a small instance receiving sampled mirrored traffic rather than a duplicate fleet; canary has P for the same reason. Low priority.",
+      "source_url": ""
+    },
+    {
+      "table": "deploystrategy",
+      "option": "feature flags",
+      "property": "mirror",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Dark launching behind a flag (run the new code path on live requests, discard or compare its result, e.g. GitHub Scientist-style experiments) is an established feature-flag technique that matches 'comparing the new version against live traffic without affecting any user'. Low priority. [URL cited from memory, not fetched in this session]",
+      "source_url": "https://martinfowler.com/bliki/DarkLaunching.html"
+    },
+    {
+      "table": "mlserving",
+      "option": "precomputed lookup table",
+      "property": "offline",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "A precomputed table can be bundled in the app and read on the device with no network; nothing in the option name says it lives on a server. Low priority.",
+      "source_url": ""
+    },
+    {
+      "table": "vectorindex",
+      "option": "hnsw index",
+      "property": "compress",
+      "file_value": "N",
+      "your_value": "P",
+      "severity": "debatable",
+      "reason": "Plain HNSW stores full vectors (N), but quantized HNSW variants are standard: Faiss IndexHNSWSQ / IndexHNSWPQ, and quantized HNSW is the default or a first-class option in Lucene/Elasticsearch, Qdrant and Weaviate. 'hnsw index' does not exclude them. Low priority.",
+      "source_url": "https://github.com/facebookresearch/faiss/wiki/Faiss-indexes"
+    }
+  ],
+  "overhead_disputes": [
+    {
+      "table": "deploystrategy",
+      "option": "canary release",
+      "file_value": 2,
+      "your_value": 1,
+      "reason": "Canary needs weighted routing plus metrics, comparable to blue/green (1) and to running a feature-flag service with code branches and flag cleanup (1); it is not 'a cluster to operate'. As written, every item requiring 'percent' (the textbook definition of a canary release) resolves to feature flags whenever both are candidates. With 1 the pair ties and is discarded, which is safer."
+    },
+    {
+      "table": "deploystrategy",
+      "option": "feature flags",
+      "file_value": 1,
+      "your_value": "1 (keep) but see nodown dispute",
+      "reason": "Overhead itself is fine; the problem is the combination with nodown=Y and canary=2 described above."
+    },
+    {
+      "table": "messaging",
+      "option": "amazon kinesis",
+      "file_value": 0,
+      "your_value": "0 (keep, flag)",
+      "reason": "Reasonable for on-demand mode, but provisioned mode needs shard capacity management. Because it is 0 versus kafka 2, kinesis is gold on every durable/replay/ordered item where both appear; make sure that is intended."
+    },
+    {
+      "table": "mlserving",
+      "option": "on-device inference",
+      "file_value": 2,
+      "your_value": "1-2",
+      "reason": "There is no cluster to operate; 2 is only justified as 'complex' (model conversion, app releases). Effect: fast+open always resolves to the online endpoint when both are candidates, which is acceptable."
+    }
+  ],
+  "phrasing_issues": [
+    {
+      "table": "datastore",
+      "property": "acid",
+      "issue": "Phrasing 2 ('all-or-nothing ... several rows') asks only for atomicity; phrasing 1 asks for full ACID. Cassandra logged batches and Redis MULTI/EXEC are atomic but not isolated/rollback-capable."
+    },
+    {
+      "table": "datastore",
+      "property": "inmem",
+      "issue": "Phrasing 1 ('sub-millisecond reads served from memory') is met by any database with a warm buffer cache on a fast network (PostgreSQL, MySQL point reads) and by Redis over the network; phrasing 2 ('microsecond latency') is stricter and really only in-process or DAX/Redis-class."
+    },
+    {
+      "table": "datastore",
+      "property": "fulltext",
+      "issue": "Phrasing 2 adds typo tolerance (fuzzy matching), which phrasing 1 does not require; SQL FTS implementations rank but are not typo-tolerant without trigram extensions."
+    },
+    {
+      "table": "datastore",
+      "property": "graph",
+      "issue": "Phrasing 1 requires traversals 'as first-class queries'; phrasing 2 only requires multi-hop queries, which any SQL engine with recursive CTEs can run."
+    },
+    {
+      "table": "datastore",
+      "property": "columnar",
+      "issue": "Phrasing 1 is an outcome (billions of rows in seconds, also achievable by Elasticsearch aggregations or MPP row stores); phrasing 2 names the architecture (columnar)."
+    },
+    {
+      "table": "storagekind",
+      "property": "dbdisk",
+      "issue": "Phrasing 1 requires surviving replacement of the server (network-attached volume); phrasing 2 only says 'persistent disk attached to a single machine', which a local disk satisfies."
+    },
+    {
+      "table": "storagekind",
+      "property": "archive",
+      "issue": "Phrasing 1 demands the lowest price and tolerates hours of retrieval; phrasing 2 ('long-term retention of backups almost never read') is also satisfied by ordinary object storage (already P)."
+    },
+    {
+      "table": "messaging",
+      "property": "durable",
+      "issue": "'Until they are consumed' is not what Kafka/Kinesis/SQS do (time-based retention: Kinesis 24 h default, SQS 4 days default/14 max); and 'broker restart' (phrasing 1) is weaker than 'broker crashes before delivery' (phrasing 2), which needs replication or fsync/publisher confirms (RabbitMQ durable+persistent without confirms can still lose messages)."
+    },
+    {
+      "table": "messaging",
+      "property": "replay",
+      "issue": "'From days ago' (bounded) versus 'the full event history' (unbounded retention). Kinesis caps at 365 days; Kafka needs retention configured."
+    },
+    {
+      "table": "messaging",
+      "property": "routing",
+      "issue": "Phrasing 2 uses RabbitMQ vocabulary ('exchange-style ... to different queues'), which leaks the answer; phrasing 1 (topic pattern and headers) is partially met by MQTT/NATS wildcards."
+    },
+    {
+      "table": "replication",
+      "property": "readcopies",
+      "issue": "Phrasing 2 presupposes a primary ('offload the primary'), which does not exist in multi-leader replication; phrasing 1 is topology-neutral."
+    },
+    {
+      "table": "structure",
+      "property": "lookup",
+      "issue": "'Constant-time' (worst case) versus 'O(1) average'; a hash table is only expected/amortized O(1)."
+    },
+    {
+      "table": "structure",
+      "property": "minpop",
+      "issue": "'Lowest-priority item next' is ambiguous: in a priority queue the lowest-priority item is normally served last, so it can be read as extract-max."
+    },
+    {
+      "table": "structure",
+      "property": "insert",
+      "issue": "'Deletes'/'removal' does not say whether arbitrary elements or only the head/min; decides binary heap, fifo queue, bloom filter."
+    },
+    {
+      "table": "compute",
+      "property": "zero",
+      "issue": "'Paying nothing while there is no traffic' (billing) versus 'scaling to zero when idle' (replica count). Kubernetes with KEDA/Knative meets the second but not the first; a static site meets the first but the second is not applicable."
+    },
+    {
+      "table": "apistyle",
+      "property": "push",
+      "issue": "Phrasing 1 requires a continuous stream to a waiting (connected) client; phrasing 2 ('live updates delivered without the client asking again') is also met by webhooks (already P)."
+    },
+    {
+      "table": "netcomponent",
+      "property": "tcp",
+      "issue": "Phrasing 1 requires TCP or UDP and 'not only http'; phrasing 2 only raw TCP. Affects proxies that do TCP but not UDP."
+    },
+    {
+      "table": "netcomponent",
+      "property": "mesh",
+      "issue": "Phrasing 2 names the implementation ('sidecars'), leaking the answer and excluding sidecar-less (ambient) meshes."
+    },
+    {
+      "table": "authn",
+      "property": "phish",
+      "issue": "Phrasing 2 says 'bound to the device', but passkeys as defined by the FIDO Alliance are usually synced multi-device credentials; device-bound describes security keys and also client certificates (mutual tls, already P). Passkeys is Y under phrasing 1, only debatable under phrasing 2."
+    },
+    {
+      "table": "deploystrategy",
+      "property": "single",
+      "issue": "'Two versions serving' versus 'run side by side': blue/green idle environment and traffic shadowing run both versions but only one serves users."
+    },
+    {
+      "table": "mlserving",
+      "property": "fast",
+      "issue": "'Within tens of milliseconds' is a hard latency bound; 'an interactive feature that needs a prediction right away' tolerates a few hundred ms (large on-device or streaming models)."
+    },
+    {
+      "table": "vectorindex",
+      "property": "online",
+      "issue": "Phrasing 1 forbids a training step; phrasing 2 only forbids rebuilding. IVF-PQ needs training once but then accepts single inserts (already P)."
+    },
+    {
+      "table": "vectorindex",
+      "property": "sublinear",
+      "issue": "'Stays low at hundreds of millions of vectors' (outcome) versus 'does not scan every vector' (mechanism); IVF with fixed nlist/nprobe still grows linearly with n."
+    }
+  ],
+  "indistinguishable_pairs": [
+    {
+      "table": "datastore",
+      "options": [
+        "postgresql",
+        "mysql"
+      ],
+      "note": "Y on joins/acid/network, overhead 1; mysql is bench_only"
+    },
+    {
+      "table": "datastore",
+      "options": [
+        "redis",
+        "memcached"
+      ],
+      "note": "Y on network/inmem, overhead 1; memcached is bench_only"
+    },
+    {
+      "table": "structure",
+      "options": [
+        "balanced search tree",
+        "skip list"
+      ],
+      "note": "Y on range/insert/minpop, overhead 1; skip list is bench_only"
+    },
+    {
+      "table": "security",
+      "options": [
+        "argon2id password hashing",
+        "bcrypt password hashing"
+      ],
+      "note": "Y on pw only, overhead 1; bcrypt is bench_only"
+    },
+    {
+      "table": "messaging",
+      "options": [
+        "nats core",
+        "redis pub sub"
+      ],
+      "note": "no Y cell at all, overhead 1: neither can ever be gold"
+    }
+  ],
+  "notes": "588 cells reviewed (14 tables). Own judgement formed per cell from both phrasings before comparing; product-specific claims checked by web search against vendor docs where uncertain (InfluxDB 3 SQL JOIN, CockroachDB full-text search, Kinesis retention 24 h..365 d, Cassandra BATCH atomicity and Cassandra 6.0 Accord, Fargate systemControls, Amazon S3 Files, CodeDeploy blue/green canary/linear, FIDO synced vs device-bound passkeys, gRPC-Web proxy requirement, Elasticsearch SQL has no JOIN, Neo4j Infinigraph, Faiss HNSW variants). Disputes whose reason ends with '[URL cited from memory, not fetched in this session]' rest on my own knowledge; the URL is a pointer, not a verified citation. Search results were summaries, I did not open every primary page. Only two cells are 'wrong' and both are N that should be P (no wrong Y found). All other disputes are downgrade-to-P suggestions; several are marked low priority in the reason. Checked and kept as-is (no dispute): grpc/browser N (gRPC-Web needs a proxy or server shim); elasticsearch/joins N (Elasticsearch SQL has no JOIN; ES|QL LOOKUP JOIN is not SQL and is single-field enrichment); amazon sqs/replay N; kafka/routing N; influxdb/tsdb Y (retention + downsampling are built in on v1/v2, on v3 downsampling is via the processing engine, still the canonical answer); rabbitmq/durable Y (requires durable or quorum queues plus persistent messages, which is configuration-dependent by the letter of the P definition, but it is the standard capability and kafka/sqs have analogous caveats; downgrade only if you want zero configuration-dependent Y cells); single leader with a synchronous replica/noloss Y (holds for strictly synchronous commit; MySQL semi-sync can fall back to async on timeout); oauth2 pkce/idp Y (strictly OAuth2 is authorization and login is OIDC, which uses this flow); multi leader/readcopies Y. Options with no Y cell (pure distractors): nats core, redis pub sub, single node with nightly backups, fifo queue, dns round robin, static api key. The tables.py docstring already states that this review happened and that disputed cells were changed to P; before this run results/v11/techbench/ did not exist, so that statement is only true once these disputes are applied. Structural observation: because sqlite (0) and dynamodb (0) have the lowest overhead, joins/acid items without 'network' always resolve to sqlite and horiz+network items to dynamodb; and in deploystrategy the feature-flags Y on nodown/percent/spare makes it gold for requirement sets where rolling update or canary release is the conventional answer (see disputes and overhead_disputes)."
+}

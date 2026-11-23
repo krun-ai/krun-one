@@ -1,0 +1,156 @@
+# Krun One v1.1 — R3 round. Registered 2026-10-01 BEFORE any R3 training step and before any model was evaluated on the
+# R3 benchmark extension or re-evaluated on JevBench. Nothing below may be changed after a result is seen; deviations are
+# appended at the end as deviations. The frozen v1 (artifacts/krun-one-v1-text-final, sha 781e5c7b…) is only READ.
+# Not reopened in this round (owner): 1.5B / growth, new architecture, new tokenizer, RL / RLCD, M2 / M3, worker / API,
+# deploy, context extension. Closed conclusions (R0, R1 / R2): size is not the bottleneck; the head is not the
+# bottleneck; encoder adaptation matters; pairwise / margin terms and the hard-negative mini-round did not help.
+
+line: "Krun One v1 -> last 4 encoder blocks unfrozen -> no adapter -> same architecture, parameters, runtime, latency"
+
+training_base:
+  choice: "retrain from the frozen v1 on the R3 corpus (NOT continued from the R2 checkpoint)"
+  why: >
+    the R2 checkpoints were trained on a corpus with 6,000 unlabeled decisions (degenerate targets that drove the
+    swe_involved true / false decision to chance: v1 60.8%, R2 49-52%); one stage from v1 keeps a single, reproducible
+    recipe and makes R3 vs R2 a comparison of DATA + BATCHING with everything else equal (same trainable set,
+    objective, optimizer, schedule, seeds).
+  trainable: "last 4 encoder blocks + final norm (80,229,888), decision head / scorer / type embedding / answer head (44,883,459)"
+  training_only: "Q(state, action) / V(state) heads, 13,833 parameters, dropped at export (the served model is the v1 architecture)"
+  no: [adapter, candidate-interaction block, tokenizer change, sequence-length change]
+
+data:
+  builder: "scripts/v11/build_r3.py (manifest with hashes, counts and separation checks: data/v11/r3/manifest.json)"
+  supersedes: "data/v11/corpus (R1 / R2) — kept untouched; not reused"
+  fixes: "swe_involved (noul) examples carry their label; the trainer raises on an answerable item without a gold index"
+  sources_approved_only:
+    swe_smith: "SWE-bench/SWE-smith @ ea6d7173, allowlisted repositories only, split by repository (unchanged)"
+    rule_tables: "src/krun_one/v11/tables.py + R3 additions in tech.py (fact probes, families, invented-product catalogs, sets one property larger)"
+    simulators: "src/krun_one/v11/sims.py (unchanged)"
+    capability: "src/krun_one/v11/capability.py — numeric, temporal, multi-hop, long-policy, trade-off, mixed; labels computed, never model-written"
+    replay: "data/kd1_r2/train.jsonl (the data v1 was trained on), sqrt-balanced strata"
+  not_used: "Themis (EXCLUDED_PENDING_REVIEW), Nemotron-SFT-SWE-v2, software-strategist-v1, OpenSWE, Stack Overflow; Johin only inside v1's own replay"
+  jevbench: "EVAL_ONLY. No item, paraphrase, mutation, label or answer in any builder; 8-gram overlap check in the manifest must be 0"
+  ollama: "reviewer only (scripts/v11/ollama_review.py: disagreement with the computed label -> a person looks at the GENERATOR); no model-written or model-labelled training example"
+  mixture_target: {replay: "40-45%", technical_incl_hard_negatives: "30-35%", capability: "10-15%", ood: "~10%"}
+  capability_shares_target: {long_policy: 0.20, multi_hop: 0.20, numeric: 0.20, temporal: 0.15, tradeoff: 0.15, mixed: 0.10}
+  tetris_cap: "<= 2% of the training examples (diagnostic only)"
+  language: "technical and capability examples are English only (replay keeps v1's languages); stated as a limit"
+
+benchmark:
+  kruntechbench_v1: "data/v11/techbench/protected_v1_labeled.jsonl — the R1 / R2 file, byte-identical except the 120 restored swe_involved labels; macro top-1 keeps its definition (choice items, 10 tracks)"
+  extension_r3: "data/v11/techbench/protected_r3.jsonl — capability tracks (benchmark-only scenarios tagged unseen_scenario), table families and invented-product catalogs on BENCH-split requirement sets; own seeds; never trained on"
+  validation: "data/v11/techbench/val_v1_labeled.jsonl + val_r3.jsonl — every selection below uses these only"
+  protected_is_opened_for: "v1, R2 (r2l4na_s1, the one seed whose weights were kept), and the selected R3 variant (both seeds)"
+  known_limits: "English only; rule tables reviewed by a model, not by a person; the capability tracks are generated — the external check is JevBench"
+
+metrics:
+  stuck_rate: "P(variant answered with the BASE's correct answer | base answered correctly), over (base, variant) pairs whose correct decisions differ; raw rendering"
+  flips_both: "share of those pairs with both members right"
+  unseen_combination: "KrunTechBench v1 items tagged unseen_combination, raw top-1; also reported by set size (1 / 2 / 3 requirements) and on catalogs"
+  r2_reference: "recomputed from the kept R2 dumps with these exact definitions BEFORE R3 results (results/v11/r3/r2_reference.json)"
+
+runs:                              # 4 text runs, one pass each, seeds 20261001 / 20261002
+  r3f_s1 / r3f_s2: "family-aware batching (all members of a counterfactual family in the same batch)"
+  r3r_s1 / r3r_s2: "random batching (the R2 batcher) — the control of the batching experiment"
+  objective: "O2 (v1's loss on every item + 0.25 x value loss), unchanged from R2; no loss search"
+  optimizer: "unchanged from R2 (lr encoder 2e-5, head 5e-5, new 2e-4, wd 0.01, warm-up 3%, clip 1.0, 16,384 tokens / 64 questions per step)"
+
+training:                          # read by scripts/v11/train_v11.py --config
+  optimizer: {lr_encoder: 2.0e-5, lr_head: 5.0e-5, lr_new: 2.0e-4, weight_decay: 0.01, warmup_ratio: 0.03, max_grad_norm: 1.0}
+  batching: {max_tokens: 16384, max_questions: 64}
+  objective_constants: {margin: 3.0, hard_negatives: 3, easy_neg_weight: 0.25}
+  objectives:
+    O2: {l_value: 0.25}
+  pilot_subset_seed: 20261007
+
+batching_selection:                # on validation only
+  score: "mean of (a) KrunTechVal v1 macro raw top-1 and (b) macro raw top-1 over the 6 capability tracks of val_r3 (all question types)"
+  eligible: "KrunBench v1 val_fit choice accuracy within 1.0 pp of v1 (mean of seeds)"
+  rule: >
+    higher score (mean of the two seeds). If the two batching modes are within 1.0 pp, the one with the lower stuck rate on
+    the validation families (all pairs, raw) wins when the difference is at least 2.0 pp; otherwise random batching (the
+    simpler recipe) wins. The selected mode's two seeds go to the final evaluation; the candidate seed (multimodal,
+    artifact) is the one with the higher validation score.
+
+multimodal:
+  config: configs/v11/r3_m15c_realign.yaml
+  script: scripts/v11/mm_realign.py
+  core: "the candidate R3 seed, frozen (digest checked before / after)"
+  frozen: [SigLIP2, Whisper, OCR, text core]
+  trained: "M1.5c fusion adapters / projectors, modality embeddings, head LoRA (26.7M), starting from the registered M1.5c weights"
+  data: "the M1.5c training set, unchanged (layout share 22%), teacher = the R3 core's own answers on the ground-truth text"
+  schedule: "the registered M1.5c schedule: 1 epoch (1,559 steps), same learning rates"
+  fallback: "ONLY if a gate fails after 1 epoch: one more run with 3 epochs from the same init (same data, same rates). Nothing else is tuned."
+  seeds: "2 fusion seeds (20260932 = the M1.5c seed, 20260933) on the candidate core, if the first passes; both reported"
+  checkpoint_selection: >
+    val_fit only, against the M1.5c checkpoint on the v1 core (runs/v1/m15c train_result): eligible = every preservation
+    group (audio / document text-dependent, document hybrid, image visual-only) >= that reference - 1.0 pp; among eligible the
+    best DocLayNet layout; none eligible -> the checkpoint with the smallest worst shortfall (reported as such).
+  compared: "R3 core + old fusion (system P of the dump) vs R3 core + re-aligned fusion (system C) vs v1 core + M1.5c on the same host"
+  gates:                           # the registered M1.5c thresholds; terms that were relative to P use the v1-core values of this host
+    G1_document_visual_only: "visual-only mean >= 0.679 AND DocLayNet layout >= (M1.5 reference measured on the v1 core, this host) + 5 pp"
+    G2_screenshot_text: "kd1 screenshot choice >= 0.979 AND document text-dependent mean >= (same reference) - 1 pp"
+    G3_real_speech: "real speech mean >= 0.841 AND MInDS-14 intent >= 0.890"
+    G4_image: "image visual-only mean >= 0.633"
+    G4b_document_hybrid: "synthetic doc type >= 0.953, DocLayNet category >= 0.935, CORD type >= 0.95"
+  also_reported: "candidate - (v1 core + M1.5c, same host) per gated cell; multimodal latency (image, scanned document, audio 5 s) vs the v1 stack on the same host"
+
+jevbench:
+  when: "only after training; never during data generation"
+  script: "scripts/v11/jevbench_eval.py (unchanged mapping) + scripts/v11/jevbench_lengths.py + scripts/v11/jevbench_report_r3.py"
+  reported: [all 231, easy, standard, hard, "by length bucket 0-512 / 513-1024 / 1025-2048 / 2049-4096", "<= 1024 vs > 1024", by hard family, by question type,
+             "truncated share, lost tokens, accuracy by lost tokens"]
+  context_length: "unchanged (1,024). If <= 1,024 improves and > 1,024 does not: context extension is recommended as a separate round."
+
+evaluation:
+  technical: "scripts/v11/r3_report.py (protected and val)"
+  regression: "scripts/v11/regression_v11.py — the 19 registered text gates, v1 re-dumped on the same host; final_protected is not opened"
+  latency: "eval_v11.py --latency: typical, 8 tools, 4 questions, k = 8 / 32 / 128; p50 / p95; peak VRAM; process RSS; v1 on the same host"
+  tetris: "the three views on the held-out states (diagnostic; no target)"
+  seeds_reported: "mean, std and both seeds"
+
+promotion_gates:                   # all must hold for a 'Krun One v1.1 candidate' recommendation (never a deploy)
+  kruntechbench_v1_macro: "mean of seeds >= 61.7 (R2 no-adapter mean 62.7 minus its seed std 1.0), raw"
+  unseen_combination: "mean of seeds >= R2 (61.2) + 10 pp, each seed >= + 5 pp"
+  constraint_flips_both: "mean of seeds >= R2 (48.2 with the exact pair definition) + 5 pp"
+  stuck_rate: "mean of seeds <= R2 (18.8%) - 5 pp"
+  hard_negative_margin: "mean of seeds >= R2 (4.29 logit) - 0.3"
+  text_preservation: "19 / 19 registered gates on every seed (limits unchanged; k128 limit stays -2.0 pp)"
+  multimodal: "5 / 5 gates above with the re-aligned fusion on the candidate seed"
+  jevbench: "candidate seed: paired bootstrap 95% CI of (candidate - v1) on all 231 items excludes 0, AND the other seed is above v1"
+  latency_vram: "p50 within 1 ms (typical) / 2 ms (k128) of the same-host v1; peak VRAM within 50 MiB"
+
+decision_tree:
+  A: "technical >= R2, generalization up, stuck down, multimodal 5/5, JevBench up -> recommend a Krun One v1.1 candidate (no deploy)"
+  B: "technical good, multimodal fails -> no promotion; investigate fusion re-alignment / training mix / latent shift only"
+  C: "internal benchmarks up, JevBench flat -> no promotion as a general decision improvement; classify as domain specialization"
+  D: "unseen stays ~60% and stuck stays high -> dataset / generalization not solved; do not grow the model"
+  E: "<= 1,024 improves strongly, > 1,024 does not -> context length becomes the next isolated research track"
+stop: "after R3 text, generalization, JevBench, multimodal recovery, full regression, latency / VRAM, cost, pods terminated. No R4, context extension, RL, RLCD, 1.5B or deploy."
+
+cost_estimate:                     # delivered before training; actuals in the final report
+  gpu: "RTX 4090 Secure, ~US$ 0.74/h; two pods only while both have work"
+  text_training: "4 runs x ~50 min (~9,000 steps, last 4 blocks) + setup / upload ~40 min = ~4.0 GPU-hours"
+  evaluation: "validation dumps 4 x 8 min; v1 + R2 baselines on the new sets; final evaluation of 2 seeds (protected, regression, latency, JevBench) = ~1.6 GPU-hours"
+  multimodal: "media rebuild incl. synthetic speech ~1.0 h; v1 reference dump 0.3 h; teacher 0.1 h; 2 x (train 0.4 h + dump 0.3 h); latency 0.2 h = ~3.0 GPU-hours (+1.2 h if the 3-epoch fallback runs)"
+  total: "~8.5-10 GPU-hours, ~US$ 6.5-7.5; upper bound US$ 12 (fallback, a host replaced, a step rerun)"
+  ollama: "< US$ 1 of cloud credits (quality review of a few hundred generated items)"
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Recorded AFTER results (2026-10-02). Nothing above was edited.
+selection_result: {mode: random, why: "tie on score (48.1 vs 47.3) and on stuck rate (65.4 vs 63.5) -> the simpler recipe", candidate_seed: r3r_s1}
+outcome: "no candidate: KrunTechBench preserved (62.2), 19/19 text gates, latency unchanged; unseen combinations / flips / stuck unchanged; JevBench not significant; multimodal 2/5 after the 3-epoch fallback. Cases C + D (+ B for multimodal)."
+deviations:
+  - "post-registration diagnostics (not candidates, no gate uses them): diag_cap_l4, diag_cap_full (capability-only, 3,000 steps, last 4 vs all 22 blocks) and diag_cap_full_b (the all-blocks run repeated and evaluated on JevBench / val_fit)."
+  - "multimodal: second fusion seed not run (registered 'if the first passes'); the 1-epoch run failed its gates, so the registered 3-epoch fallback ran instead. No checkpoint was eligible on val_fit; the least-regressing one was taken, as registered."
+  - "multimodal dump wrapper fixed after a first failed dump (comparison system built without gates); same checkpoint re-dumped."
+  - "speech synthesis shared the GPU with text training and skipped clips; re-run one shard at a time; the media check (0 missing of 74,956 records) passed before any multimodal step."
+  - "mixture: capability 9.7% answerable-only (10.7% with its none-of-the-above items), technical + hard negatives 40.3% (band 30-35%)."
+  - "latency gate applied one-sided (not slower): seed 1 measured 1.08 ms faster than the same-host v1 on a noisy host."
+  - "the R2 reference on the new files is one seed (r2l4na_s1), the only R2 weights kept."
+cost_actual:
+  pod_a: "krun-v11-r3-a 5jpjn77fxor5bh, RTX 4090 Secure EU-RO-1, 22:28-03:19 UTC = 4.85 h, ~US$ 3.7"
+  pod_b: "krun-v11-r3-b a8ncqfeuq3luu5, RTX 4090 Secure EUR-NO-1, 22:40-03:41 UTC = 5.0 h, ~US$ 3.8"
+  total: "9.9 GPU-hours, ~US$ 7.5 (estimate 8.5-10 GPU-hours, US$ 6.5-7.5; upper bound US$ 12); both pods terminated, list-pods empty"
+  split_approx: {text_training: "3.7 h", evaluation: "1.1 h", multimodal: "2.7 h incl. the fallback", diagnostics: "2.0 h (not in the estimate)", setup: "0.4 h"}
+  ollama_cloud_credits_usd: "< 1 (539 reviewed items)"

@@ -1,0 +1,62 @@
+{
+  "tokenizer": "/workspace/hfcache/models--jhu-clsp--mmBERT-small/snapshots/abc32620dd4f6ab06f5fbe905dc25f310618e09f",
+  "protected": {
+    "n": 55848,
+    "sha256": "e421ebf84b78e38676348de27a614ddbee46693117e62bb89078c54b1c40544f"
+  },
+  "revisions": {
+    "HuggingFaceFW/fineweb-edu": "87f09149ef",
+    "epfml/FineWeb2-HQ": "c0c06e94fd",
+    "HuggingFaceFW/finepdfs-edu": "9cfabe2127",
+    "HuggingFaceFW/fineweb-2": "af9c13333e",
+    "bitext/Bitext-customer-support-llm-chatbot-training-dataset": "430d1a89bd",
+    "OpenAssistant/oasst1": "fdf72ae082",
+    "OpenAssistant/oasst2": "179dd21fc5",
+    "Team-ACE/ToolACE": "6bda777c88"
+  },
+  "excluded": {
+    "finewiki": "excluded_for_v1_initial_training (share-alike review)"
+  },
+  "languages": {
+    "fr": {
+      "slices": {
+        "web": {
+          "tokens": 150001791,
+          "docs": 152935,
+          "dropped_decontamination": 159,
+          "quota": 150000000
+        },
+        "technical": {
+          "tokens": 20000746,
+          "docs": 4099,
+          "dropped_decontamination": 61,
+          "quota": 20000000
+        },
+        "forums": {
+          "tokens": 10000326,
+          "docs": 13760,
+          "dropped_decontamination": 12,
+          "quota": 10000000
+        },
+        "support": {
+          "tokens": 604420,
+          "docs": 5295,
+          "dropped_decontamination": 15,
+          "quota": 5000000
+        }
+      },
+      "train_tokens": 180607283,
+      "heldout_tokens": 2002841,
+      "shards": {
+        "train-00000.npy": "98a78e64c365ba7d3af93bb2fe7d05b88bc808aac2c0ec53f4f08414479a216d",
+        "train-00001.npy": "7a85edf13de64a51a2841f97da4445a018b8e0a70031fef3402b4f6e1f86ed14"
+      },
+      "seconds": 371
+    }
+  },
+  "verification": {
+    "windows_checked": 500,
+    "protected_hits": 0,
+    "examples": []
+  }
+}

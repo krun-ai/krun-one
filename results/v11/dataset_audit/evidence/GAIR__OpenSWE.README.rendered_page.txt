@@ -1,0 +1,138 @@
+
+GAIR/OpenSWE · Datasets at Hugging Face
+Hugging Face Models Datasets Spaces Buckets new Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware Learn Discord Forum GitHub Solutions Team & Enterprise Hugging Face PRO Enterprise Support Inference Providers Inference Endpoints Storage Buckets Log In Sign Up Datasets: GAIR / OpenSWE Like 27 Follow SII - GAIR 429 Modalities: Text Formats: json Languages: English Size: 10K - 100K ArXiv: arxiv: 2603.13023 arxiv: 2505.20411 arxiv: 2506.10954 Tags: text software-engineering agent pull-request code Synthetic + 5 Libraries: Datasets pandas Polars + 1 License: mixed-permissive-and-cc-by-4.0 Dataset card Data Studio Files Files and versions xet Community 5 By requesting access, you agree to the terms of the license and to cite the dataset in any resulting publications.</p>\n","classNames":"hf-sanitized hf-sanitized-oWHgFz4q8C2RZhoSpjLnr"},"customHeading":"Please provide your full legal name and organization details. Avoid using acronyms where possible. Failure to provide accurate information may result in access denial.","gated":"auto","isLoggedIn":false,"repoId":"GAIR/OpenSWE","repoType":"dataset","requiresPaidPlan":false}"> Please provide your full legal name and organization details. Avoid using acronyms where possible. Failure to provide accurate information may result in access denial. This repository is publicly accessible, but you have to accept the conditions to access its files and content . By requesting access, you agree to the terms of the license and to cite the dataset in any resulting publications.
+Log in or Sign Up to review the conditions and access this dataset content. Highlights News Performance Quick Start Acknowledgement License Citation
+OpenSWE: Efficient SWE Environment Synthesis at Scale
+OpenSWE is the largest fully transparent framework for SWE agent training in Python, comprising 45,320 executable Docker environments spanning over 12.8k repositories , with all Dockerfiles, evaluation scripts, and infrastructure fully open-sourced for reproducibility. OpenSWE is built through a multi-agent synthesis pipeline deployed across a 64-node distributed cluster, automating repository exploration, Dockerfile construction, evaluation script generation, and iterative test analysis. Beyond scale, we propose a quality-centric filtering pipeline that characterizes the inherent difficulty of each environment, filtering out instances that are either unsolvable or insufficiently challenging and retaining only those that maximize learning efficiency. With $891K spent on environment construction and an additional $576K on trajectory sampling and difficulty-aware curation, the project yields about 13,000 curated trajectories from roughly 9,000 quality-guaranteed environments .
+This repository contains the official implementation of the OpenSWE pipeline—an extensible SWE-bench–like dataset generation framework that supports custom data schemas, parallel multi-machine building, and full evaluation integration with SWE-agent / SWE-bench-fork (with provided patches).
+Highlights
+Unprecedented Scale with Full Transparency : We release 45,320 executable environments from 12.8k repositories at a construction cost of $891K, with complete infrastructure including all Dockerfiles, evaluation scripts, and the distributed synthesis pipeline, enabling reproducibility and community-driven improvements.
+Quality-Centric Filtering via Difficulty-Aware Curation : A filtering pipeline characterizes environment difficulty to filter out unsolvable and trivially simple instances (e.g., PR–Issue misalignment, triviality). With an additional $576K investment in trajectory sampling and curation, we obtain about 13,000 curated trajectories from roughly 9,000 high-quality environments.
+Strong Empirical Validation : OpenSWE-32B and OpenSWE-72B achieve 62.4% and 66.0% on SWE-bench Verified, establishing SOTA among SFT-based methods in the Qwen2.5 series. Models trained on OpenSWE consistently outperform SWE-rebench across all scales and scaffolds, with a log-linear data scaling trend showing no saturation, and SWE-focused training yields substantial out-of-domain improvements (e.g., up to 12 points on MATH-500, 5+ on science benchmarks) without degrading factual recall.
+News
+Paper : OpenSWE (daVinci-Env) introduces the largest fully transparent SWE environment synthesis framework, with multi-agent pipeline design and scaling/curation analysis.
+SOTA : OpenSWE-32B / OpenSWE-72B set new SOTA among Qwen2.5 SFT methods on SWE-bench Verified (62.4% / 66.0%).
+Performance
+Environment scale comparison
+Dataset
+# Repos
+# Images
+# Tasks
+Source
+R2E-Gym (Subset)
+10
+2.4k
+4.6k
+Synthetic
+SWE-gym
+11
+2.4k
+2.4k
+Real
+SWE-rebench
+3.5k
+21.3k
+21.3k
+Real
+SWE-rebench (filtered)
+3.3k
+18.8k
+18.8k
+Real
+Scale-SWE
+5.2k
+100k
+100k
+Real
+Scale-SWE (open-sourced)
+1.2k
+20.2k
+20.2k
+Real
+OpenSWE (ours)
+12.8k
+45.3k
+45.3k
+Real
+SWE-bench Verified (Pass@1)
+Model
+Backbone
+Scaffold
+Score
+SWE-Master-32B-RL
+Qwen2.5-Coder-32B-Inst.
+R2E-Gym
+61.4
+daVinci-Dev-32B
+Qwen2.5-32B-Base
+SWE-Agent
+56.1
+OpenSWE-32B (Ours)
+Qwen2.5-32B-Base
+OpenHands
+59.8
+OpenSWE-32B (Ours)
+Qwen2.5-32B-Base
+SWE-Agent
+62.4
+daVinci-Dev-72B
+Qwen2.5-72B-Base
+SWE-Agent
+58.5
+OpenSWE-72B (Ours)
+Qwen2.5-72B-Base
+OpenHands
+65.0
+OpenSWE-72B (Ours)
+Qwen2.5-72B-Base
+SWE-Agent
+66.0
+Impact of environment source (SWE-bench Verified Pass@1)
+Training Data
+SWE-Agent 32B
+SWE-Agent 72B
+CodeAct 32B
+CodeAct 72B
+SWE-rebench
+50.2%
+63.4%
+51.4%
+62.4%
+OpenSWE
+62.4%
+66.0%
+59.8%
+65.0%
+SWE-rebench + OpenSWE
+61.4%
+68.0%
+60.3%
+65.5%
+Training on OpenSWE alone yields large improvements over SWE-rebench across all model sizes and scaffolds; combining with SWE-rebench further improves 72B (e.g., 68.0% SWE-Agent). Data scaling analysis shows log-linear improvement with no saturation (see paper for curves). General capability evaluation shows gains on code (e.g., HumanEval +29), math (e.g., MATH-500 +12.2 for 72B), and science benchmarks without degrading factual recall.
+Quick Start
+We have fully open-sourced all repositories whose licenses allow redistribution, including those under MIT, Apache, GPL, and BSD licenses. For repositories that cannot be directly open-sourced, we provide the corresponding Dockerfile and evaluation scripts instead.
+In addition, we provide a filtered_ids.csv file, which lists the identifiers of environments that remain after applying our difficulty-aware filtering pipeline (i.e., unsolvable or trivial instances are removed); this file can be used to quickly subset the dataset to difficulty-filtered samples.
+During evaluation, SWEBench will only use these two components (the Dockerfile and the evaluation script) to assess your results .
+If you want to verify whether the environment you built is correct (i.e., the data in openswe_other.jsonl ), you should:
+Use the method provided in the daVinci-Dev pipeline .
+Obtain the corresponding gold patch for each task.
+Fill the retrieved gold patch into the dataset.
+This allows you to check whether your constructed environment can correctly reproduce the task.
+Acknowledgement
+OpenSWE is inspired by SWE-Rebench and SWE-Factory . We thank these teams for their open-source contributions.
+License
+This project is licensed under AGPL-3.0. See LICENSE for details.
+Citation
+If you find OpenSWE useful, please cite:
+@misc{fu2026davincienvopensweenvironment,
+title={daVinci-Env: Open SWE Environment Synthesis at Scale},
+author={Dayuan Fu and Shenyu Wu and Yunze Wu and Zerui Peng and Yaxing Huang and Jie Sun and Ji Zeng and Mohan Jiang and Lin Zhang and Yukun Li and Jiarui Hu and Liming Liu and Jinlong Hou and Pengfei Liu},
+year={2026},
+eprint={2603.13023},
+archivePrefix={arXiv},
+primaryClass={cs.SE},
+url={https://arxiv.org/abs/2603.13023},
+}
+Copy to bucket new Downloads last month 946 Total file size: 8.36 GB Papers for GAIR/OpenSWE daVinci-Env: Open SWE Environment Synthesis at Scale Paper • 2603.13023 • Published Mar 13 • 30 SWE-Factory: Your Automated Factory for Issue Resolution Training Data
+and Evaluation Benchmarks Paper • 2506.10954 • Published Jun 12, 2025 • 54 SWE-rebench: An Automated Pipeline for Task Collection and
+Decontaminated Evaluation of Software Engineering Agents Paper • 2505.20411 • Published May 26, 2025 • 97 System theme Company TOS Privacy About Careers Website Models Datasets Spaces Pricing Docs

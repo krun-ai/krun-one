@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KrunBench translation review</title>
+<style>
+  :root { --bg:#fbfaf7; --fg:#1c1b19; --muted:#6b6862; --card:#ffffff; --line:#e4e1da; --ok:#1d7a4a; --bad:#b42318;
+          --warn:#a15c07; --ins:#d7f5df; --del:#fbd9d6; --accent:#2f5bd3; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161513; --fg:#ece9e3; --muted:#a39f97; --card:#1f1e1b; --line:#34322e;
+          --ok:#4cc38a; --bad:#f07366; --warn:#e3a83b; --ins:#1d3b27; --del:#4a2320; --accent:#8aa8ff; } }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui, sans-serif; }
+  header { position:sticky; top:0; background:var(--bg); border-bottom:1px solid var(--line); padding:10px 16px; display:flex;
+           gap:12px; align-items:center; flex-wrap:wrap; z-index:2 }
+  header h1 { font-size:16px; margin:0 12px 0 0 }
+  main { max-width:980px; margin:0 auto; padding:16px }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:14px }
+  .meta { color:var(--muted); font-size:13px; display:flex; gap:12px; flex-wrap:wrap }
+  .pair { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0 }
+  @media (max-width:700px) { .pair { grid-template-columns:1fr } }
+  .box { border:1px solid var(--line); border-radius:8px; padding:10px; min-height:48px; white-space:pre-wrap }
+  .lbl { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px }
+  textarea { width:100%; min-height:64px; font:inherit; background:var(--bg); color:var(--fg); border:1px solid var(--line);
+             border-radius:8px; padding:8px }
+  .flags span { display:inline-block; font-size:12px; padding:1px 8px; border-radius:99px; background:var(--del); margin:2px 4px 2px 0 }
+  .issues label { display:inline-flex; gap:4px; align-items:center; margin:2px 12px 2px 0; font-size:14px }
+  .verdict button { font:inherit; padding:6px 14px; border-radius:8px; border:1px solid var(--line); background:var(--card);
+                    color:var(--fg); cursor:pointer; margin-right:8px }
+  .verdict button.on.approve { background:var(--ok); color:#fff; border-color:var(--ok) }
+  .verdict button.on.edit { background:var(--warn); color:#fff; border-color:var(--warn) }
+  .verdict button.on.reject { background:var(--bad); color:#fff; border-color:var(--bad) }
+  ins { background:var(--ins); text-decoration:none } del { background:var(--del) }
+  button.primary { background:var(--accent); color:#fff; border:0; border-radius:8px; padding:7px 14px; font:inherit; cursor:pointer }
+  input[type=text] { font:inherit; padding:6px 8px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--fg) }
+  .note { color:var(--muted); font-size:13px }
+</style>
+</head>
+<body>
+<header>
+  <h1>KrunBench v1 — revisão humana de traduções</h1>
+  <input type="file" id="file" accept=".jsonl">
+  <input type="text" id="reviewer" placeholder="revisor(a)" size="12">
+  <span id="progress" class="note"></span>
+  <button class="primary" id="export">Exportar decisões</button>
+</header>
+<main>
+  <p class="note">Dados <b>protegidos</b> (final_protected): uso local apenas; nunca publicar, nunca usar em treino. O rascunho
+  é tradução automática (Qwen3-8B) e as flags/notas do juiz (Granite) são só triagem — o veredito é humano.
+  Atalhos: <b>a</b> aprovar, <b>e</b> editar, <b>r</b> rejeitar, <b>j/k</b> próximo/anterior. O progresso fica salvo no navegador.</p>
+  <div id="list"></div>
+</main>
+<script>
+const ISSUES = ["meaning_changed","wrong_regional_variant","unnatural","untranslated_or_mixed","entity_or_number_error",
+                "label_leak","grammar_or_typo","other"];
+let items = [], cur = 0, batchName = "";
+const $ = s => document.querySelector(s);
+function store(){ try { localStorage.setItem("kbv1review:"+batchName, JSON.stringify(items.map(i=>i.human))); } catch(e){} }
+function restore(){ try { const s = JSON.parse(localStorage.getItem("kbv1review:"+batchName)||"null");
+  if (s && s.length===items.length) s.forEach((h,i)=>items[i].human=h); } catch(e){} }
+function wdiff(a,b){ // word-level LCS diff of draft vs corrected
+  const x=a.split(/(\s+)/), y=b.split(/(\s+)/), n=x.length, m=y.length, L=Array.from({length:n+1},()=>new Int32Array(m+1));
+  for(let i=n-1;i>=0;i--) for(let j=m-1;j>=0;j--) L[i][j]= x[i]===y[j]? L[i+1][j+1]+1 : Math.max(L[i+1][j],L[i][j+1]);
+  let i=0,j=0,o=""; const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  while(i<n&&j<m){ if(x[i]===y[j]){o+=esc(x[i]);i++;j++;} else if(L[i+1][j]>=L[i][j+1]){o+="<del>"+esc(x[i++])+"</del>";} else {o+="<ins>"+esc(y[j++])+"</ins>";} }
+  while(i<n) o+="<del>"+esc(x[i++])+"</del>"; while(j<m) o+="<ins>"+esc(y[j++])+"</ins>"; return o; }
+function render(){
+  const done = items.filter(i=>i.human.verdict).length;
+  $("#progress").textContent = items.length ? `${done}/${items.length} revisados — item ${cur+1}` : "";
+  const it = items[cur]; if(!it){ $("#list").innerHTML=""; return; }
+  const h = it.human, corrected = h.corrected ?? it.draft;
+  $("#list").innerHTML = `<div class="card">
+    <div class="meta"><span><b>${it.locale}</b></span><span>${it.source_dataset||""} · ${it.task||""}</span>
+      <span>gold: ${it.gold_label}</span><span>juiz: adequação ${it.judge?.adequacy??"?"} / fluência ${it.judge?.fluency??"?"}</span></div>
+    <div class="flags">${(it.auto_flags||[]).map(f=>`<span>${f}</span>`).join("")}</div>
+    <div class="pair"><div><div class="lbl">Fonte (EN)</div><div class="box">${it.source_text.replace(/</g,"&lt;")}</div></div>
+      <div><div class="lbl">Rascunho automático</div><div class="box">${(it.draft||"(sem rascunho)").replace(/</g,"&lt;")}</div></div></div>
+    <div class="lbl">Tradução final (edite se necessário)</div>
+    <textarea id="corr">${corrected.replace(/</g,"&lt;")}</textarea>
+    <div class="lbl" style="margin-top:8px">Diferença rascunho → final</div><div class="box" id="diff">${wdiff(it.draft||"", corrected)}</div>
+    <div class="lbl" style="margin-top:8px">Problemas</div>
+    <div class="issues">${ISSUES.map(c=>`<label><input type="checkbox" data-i="${c}" ${h.issues.includes(c)?"checked":""}>${c}</label>`).join("")}</div>
+    <div class="verdict" style="margin-top:12px">
+      <button class="approve ${h.verdict==="approve"?"on":""}" data-v="approve">Aprovar (a)</button>
+      <button class="edit ${h.verdict==="edit"?"on":""}" data-v="edit">Editado (e)</button>
+      <button class="reject ${h.verdict==="reject"?"on":""}" data-v="reject">Rejeitar (r)</button>
+      <button data-nav="-1">◀</button><button data-nav="1">▶</button></div></div>`;
+  $("#corr").oninput = e => { h.corrected = e.target.value; $("#diff").innerHTML = wdiff(it.draft||"", e.target.value); store(); };
+  document.querySelectorAll("[data-i]").forEach(c=>c.onchange=e=>{ const k=e.target.dataset.i;
+    h.issues = e.target.checked ? [...new Set([...h.issues,k])] : h.issues.filter(x=>x!==k); store(); });
+  document.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>setVerdict(b.dataset.v));
+  document.querySelectorAll("[data-nav]").forEach(b=>b.onclick=()=>go(+b.dataset.nav));
+}
+function setVerdict(v){ const h=items[cur].human; h.verdict=v; h.status="reviewed"; h.reviewer=$("#reviewer").value||null;
+  h.reviewed_at=new Date().toISOString(); if(v==="approve") h.corrected=items[cur].draft; store(); go(1); }
+function go(d){ cur=Math.max(0,Math.min(items.length-1,cur+d)); render(); }
+document.addEventListener("keydown",e=>{ if(e.target.tagName==="TEXTAREA"||e.target.tagName==="INPUT") return;
+  if(e.key==="a") setVerdict("approve"); else if(e.key==="e") setVerdict("edit"); else if(e.key==="r") setVerdict("reject");
+  else if(e.key==="j") go(1); else if(e.key==="k") go(-1); });
+$("#file").onchange = async e => { const f=e.target.files[0]; if(!f) return; batchName=f.name;
+  items=(await f.text()).split("\n").filter(Boolean).map(l=>JSON.parse(l)); restore(); cur=0; render(); };
+$("#export").onclick = () => { const blob=new Blob([items.map(i=>JSON.stringify(i)).join("\n")+"\n"],{type:"application/jsonl"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=batchName.replace(".jsonl","")+".reviewed.jsonl"; a.click(); };
+</script>
+</body>
+</html>

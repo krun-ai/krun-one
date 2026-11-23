@@ -1,0 +1,846 @@
+{
+  "encoder_candidates": [
+    {
+      "name": "K1-W1536-L22",
+      "growth_from_v1": "baseline",
+      "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)",
+      "spec": {
+        "base": {
+          "name": "K1-W1536-L22",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 1536,
+            "num_layers": 22,
+            "num_heads": 24,
+            "intermediate_size": 2304,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 393217536,
+        "encoder_body": 441255936,
+        "encoder_total": 834473472,
+        "decision_head": 37782528,
+        "decision_other": 7100931,
+        "decision_total": 44883459,
+        "total": 879356931,
+        "non_embedding": 486139395,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 879356931,
+      "hidden": 1536,
+      "layers": 22,
+      "heads": 24,
+      "head_dim": 64,
+      "ffn": 2304,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 0.977,
+        "512": 1.0,
+        "1024": 1.032
+      },
+      "flops_vs_v1": {
+        "128": 1.0,
+        "512": 1.0,
+        "1024": 1.0
+      },
+      "weights_gb_bf16": 1.76,
+      "weights_gb_fp32": 3.52,
+      "train_state_gb_adamw": 14.1
+    },
+    {
+      "name": "V11-A-W1536-L22-F8192",
+      "growth_from_v1": "exact",
+      "notes": "FFN only: stream, heads and depth unchanged",
+      "spec": {
+        "base": {
+          "name": "V11-A-W1536-L22-F8192",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 1536,
+            "num_layers": 22,
+            "num_heads": 24,
+            "intermediate_size": 8192,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "FFN only: stream, heads and depth unchanged"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 393217536,
+        "encoder_body": 1038157824,
+        "encoder_total": 1431375360,
+        "decision_head": 37782528,
+        "decision_other": 7100931,
+        "decision_total": 44883459,
+        "total": 1476258819,
+        "non_embedding": 1083041283,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 1476258819,
+      "hidden": 1536,
+      "layers": 22,
+      "heads": 24,
+      "head_dim": 64,
+      "ffn": 8192,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 2.171,
+        "512": 2.194,
+        "1024": 2.226
+      },
+      "flops_vs_v1": {
+        "128": 2.222,
+        "512": 2.193,
+        "1024": 2.157
+      },
+      "weights_gb_bf16": 2.95,
+      "weights_gb_fp32": 5.91,
+      "train_state_gb_adamw": 23.6
+    },
+    {
+      "name": "V11-B-W1536-L26-F6144",
+      "growth_from_v1": "exact",
+      "notes": "FFN + 4 appended layers",
+      "spec": {
+        "base": {
+          "name": "V11-B-W1536-L26-F6144",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 1536,
+            "num_layers": 26,
+            "num_heads": 24,
+            "intermediate_size": 6144,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "FFN + 4 appended layers"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 393217536,
+        "encoder_body": 981547008,
+        "encoder_total": 1374764544,
+        "decision_head": 37782528,
+        "decision_other": 7100931,
+        "decision_total": 44883459,
+        "total": 1419648003,
+        "non_embedding": 1026430467,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 1419648003,
+      "hidden": 1536,
+      "layers": 26,
+      "heads": 24,
+      "head_dim": 64,
+      "ffn": 6144,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 2.06,
+        "512": 2.087,
+        "1024": 2.121
+      },
+      "flops_vs_v1": {
+        "128": 2.11,
+        "512": 2.086,
+        "1024": 2.056
+      },
+      "weights_gb_bf16": 2.84,
+      "weights_gb_fp32": 5.68,
+      "train_state_gb_adamw": 22.7
+    },
+    {
+      "name": "V11-C-W1792-L24-F4096",
+      "growth_from_v1": "width",
+      "notes": "wider stream (x1.17), 28 heads, +2 layers",
+      "spec": {
+        "base": {
+          "name": "V11-C-W1792-L24-F4096",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 1792,
+            "num_layers": 24,
+            "num_heads": 28,
+            "intermediate_size": 4096,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "wider stream (x1.17), 28 heads, +2 layers"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 458753792,
+        "encoder_body": 836849664,
+        "encoder_total": 1295603456,
+        "decision_head": 51419648,
+        "decision_other": 9660675,
+        "decision_total": 61080323,
+        "total": 1356683779,
+        "non_embedding": 897929987,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 1356683779,
+      "hidden": 1792,
+      "layers": 24,
+      "heads": 28,
+      "head_dim": 64,
+      "ffn": 4096,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 1.8,
+        "512": 1.828,
+        "1024": 1.864
+      },
+      "flops_vs_v1": {
+        "128": 1.843,
+        "512": 1.827,
+        "1024": 1.807
+      },
+      "weights_gb_bf16": 2.71,
+      "weights_gb_fp32": 5.43,
+      "train_state_gb_adamw": 21.7
+    },
+    {
+      "name": "V11-D-W2048-L22-F3072",
+      "growth_from_v1": "width",
+      "notes": "wider stream (x1.33), 32 heads, v1 depth, v1 FFN ratio",
+      "spec": {
+        "base": {
+          "name": "V11-D-W2048-L22-F3072",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 2048,
+            "num_layers": 22,
+            "num_heads": 32,
+            "intermediate_size": 3072,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "wider stream (x1.33), 32 heads, v1 depth, v1 FFN ratio"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 524290048,
+        "encoder_body": 784424960,
+        "encoder_total": 1308715008,
+        "decision_head": 67153920,
+        "decision_other": 12613635,
+        "decision_total": 79767555,
+        "total": 1388482563,
+        "non_embedding": 864192515,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 1388482563,
+      "hidden": 2048,
+      "layers": 22,
+      "heads": 32,
+      "head_dim": 64,
+      "ffn": 3072,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 1.728,
+        "512": 1.76,
+        "1024": 1.802
+      },
+      "flops_vs_v1": {
+        "128": 1.769,
+        "512": 1.759,
+        "1024": 1.746
+      },
+      "weights_gb_bf16": 2.78,
+      "weights_gb_fp32": 5.55,
+      "train_state_gb_adamw": 22.2
+    },
+    {
+      "name": "V11-E-W2048-L22-F4096",
+      "growth_from_v1": "width",
+      "notes": "as D with a larger GLU FFN",
+      "spec": {
+        "base": {
+          "name": "V11-E-W2048-L22-F4096",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 2048,
+            "num_layers": 22,
+            "num_heads": 32,
+            "intermediate_size": 4096,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "as D with a larger GLU FFN"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 524290048,
+        "encoder_body": 922836992,
+        "encoder_total": 1447127040,
+        "decision_head": 67153920,
+        "decision_other": 12613635,
+        "decision_total": 79767555,
+        "total": 1526894595,
+        "non_embedding": 1002604547,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 1526894595,
+      "hidden": 2048,
+      "layers": 22,
+      "heads": 32,
+      "head_dim": 64,
+      "ffn": 4096,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 2.005,
+        "512": 2.036,
+        "1024": 2.078
+      },
+      "flops_vs_v1": {
+        "128": 2.053,
+        "512": 2.036,
+        "1024": 2.014
+      },
+      "weights_gb_bf16": 3.05,
+      "weights_gb_fp32": 6.11,
+      "train_state_gb_adamw": 24.4
+    },
+    {
+      "name": "V11-F-W2048-L24-F3072",
+      "growth_from_v1": "width",
+      "notes": "as D with +2 layers",
+      "spec": {
+        "base": {
+          "name": "V11-F-W2048-L24-F3072",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 2048,
+            "num_layers": 24,
+            "num_heads": 32,
+            "intermediate_size": 3072,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "as D with +2 layers"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 524290048,
+        "encoder_body": 855736320,
+        "encoder_total": 1380026368,
+        "decision_head": 67153920,
+        "decision_other": 12613635,
+        "decision_total": 79767555,
+        "total": 1459793923,
+        "non_embedding": 935503875,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 1459793923,
+      "hidden": 2048,
+      "layers": 24,
+      "heads": 32,
+      "head_dim": 64,
+      "ffn": 3072,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 1.873,
+        "512": 1.904,
+        "1024": 1.946
+      },
+      "flops_vs_v1": {
+        "128": 1.917,
+        "512": 1.904,
+        "1024": 1.886
+      },
+      "weights_gb_bf16": 2.92,
+      "weights_gb_fp32": 5.84,
+      "train_state_gb_adamw": 23.4
+    }
+  ],
+  "head_candidates": [
+    {
+      "name": "K1-W1536-L22",
+      "growth_from_v1": "baseline",
+      "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)",
+      "spec": {
+        "base": {
+          "name": "K1-W1536-L22",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 1536,
+            "num_layers": 22,
+            "num_heads": 24,
+            "intermediate_size": 2304,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 393217536,
+        "encoder_body": 441255936,
+        "encoder_total": 834473472,
+        "decision_head": 37782528,
+        "decision_other": 7100931,
+        "decision_total": 44883459,
+        "total": 879356931,
+        "non_embedding": 486139395,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 879356931,
+      "hidden": 1536,
+      "layers": 22,
+      "heads": 24,
+      "head_dim": 64,
+      "ffn": 2304,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 0.977,
+        "512": 1.0,
+        "1024": 1.032
+      },
+      "flops_vs_v1": {
+        "128": 1.0,
+        "512": 1.0,
+        "1024": 1.0
+      },
+      "weights_gb_bf16": 1.76,
+      "weights_gb_fp32": 3.52,
+      "train_state_gb_adamw": 14.1
+    },
+    {
+      "name": "V1+head-ffn4",
+      "growth_from_v1": "exact",
+      "notes": "wider head FFN",
+      "spec": {
+        "base": {
+          "name": "V1+head-ffn4",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 1536,
+            "num_layers": 22,
+            "num_heads": 24,
+            "intermediate_size": 2304,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 4,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "wider head FFN"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 393217536,
+        "encoder_body": 441255936,
+        "encoder_total": 834473472,
+        "decision_head": 56663040,
+        "decision_other": 7100931,
+        "decision_total": 63763971,
+        "total": 898237443,
+        "non_embedding": 505019907,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 898237443,
+      "hidden": 1536,
+      "layers": 22,
+      "heads": 24,
+      "head_dim": 64,
+      "ffn": 2304,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 4,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 1.014,
+        "512": 1.038,
+        "1024": 1.07
+      },
+      "flops_vs_v1": {
+        "128": 1.039,
+        "512": 1.038,
+        "1024": 1.037
+      },
+      "weights_gb_bf16": 1.8,
+      "weights_gb_fp32": 3.59,
+      "train_state_gb_adamw": 14.4
+    },
+    {
+      "name": "V1+head-L4",
+      "growth_from_v1": "exact",
+      "notes": "deeper head (4 full-sequence layers)",
+      "spec": {
+        "base": {
+          "name": "V1+head-L4",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 1536,
+            "num_layers": 22,
+            "num_heads": 24,
+            "intermediate_size": 2304,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 4,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "deeper head (4 full-sequence layers)"
+        },
+        "cand_layers": 0,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 393217536,
+        "encoder_body": 441255936,
+        "encoder_total": 834473472,
+        "decision_head": 75565056,
+        "decision_other": 7100931,
+        "decision_total": 82665987,
+        "total": 917139459,
+        "non_embedding": 523921923,
+        "candidate_interaction": 0
+      },
+      "params_instantiated": 917139459,
+      "hidden": 1536,
+      "layers": 22,
+      "heads": 24,
+      "head_dim": 64,
+      "ffn": 2304,
+      "vocab": 256000,
+      "head_layers": 4,
+      "head_ffn_mult": 2,
+      "cand_layers": 0,
+      "gflops_per_token": {
+        "128": 1.054,
+        "512": 1.082,
+        "1024": 1.12
+      },
+      "flops_vs_v1": {
+        "128": 1.079,
+        "512": 1.082,
+        "1024": 1.085
+      },
+      "weights_gb_bf16": 1.83,
+      "weights_gb_fp32": 3.67,
+      "train_state_gb_adamw": 14.7
+    },
+    {
+      "name": "K1-W1536-L22+ci2",
+      "growth_from_v1": "exact",
+      "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)",
+      "spec": {
+        "base": {
+          "name": "K1-W1536-L22",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 1536,
+            "num_layers": 22,
+            "num_heads": 24,
+            "intermediate_size": 2304,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)"
+        },
+        "cand_layers": 2,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 393217536,
+        "encoder_body": 441255936,
+        "encoder_total": 834473472,
+        "decision_head": 37782528,
+        "decision_other": 7100931,
+        "decision_total": 82665987,
+        "total": 917139459,
+        "non_embedding": 523921923,
+        "candidate_interaction": 37782528
+      },
+      "params_instantiated": 917139459,
+      "hidden": 1536,
+      "layers": 22,
+      "heads": 24,
+      "head_dim": 64,
+      "ffn": 2304,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 2,
+      "gflops_per_token": {
+        "128": 0.977,
+        "512": 1.0,
+        "1024": 1.032
+      },
+      "flops_vs_v1": {
+        "128": 1.0,
+        "512": 1.0,
+        "1024": 1.0
+      },
+      "weights_gb_bf16": 1.83,
+      "weights_gb_fp32": 3.67,
+      "train_state_gb_adamw": 14.7
+    },
+    {
+      "name": "K1-W1536-L22+ci4",
+      "growth_from_v1": "exact",
+      "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)",
+      "spec": {
+        "base": {
+          "name": "K1-W1536-L22",
+          "encoder": {
+            "vocab_size": 256000,
+            "hidden_size": 1536,
+            "num_layers": 22,
+            "num_heads": 24,
+            "intermediate_size": 2304,
+            "global_every": 3,
+            "local_window": 128,
+            "rope_theta_global": 160000.0,
+            "rope_theta_local": 160000.0,
+            "max_position": 8192,
+            "pad_token_id": 0,
+            "bos_token_id": 2,
+            "eos_token_id": 1,
+            "mask_token_id": 4
+          },
+          "decision": {
+            "head_layers": 2,
+            "head_ffn_mult": 2,
+            "n_qtypes": 4,
+            "scorer_outputs": 2,
+            "answerability_head": true
+          },
+          "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)"
+        },
+        "cand_layers": 4,
+        "cand_ffn_mult": 2
+      },
+      "params": {
+        "encoder_embeddings": 393217536,
+        "encoder_body": 441255936,
+        "encoder_total": 834473472,
+        "decision_head": 37782528,
+        "decision_other": 7100931,
+        "decision_total": 120448515,
+        "total": 954921987,
+        "non_embedding": 561704451,
+        "candidate_interaction": 75565056
+      },
+      "params_instantiated": 954921987,
+      "hidden": 1536,
+      "layers": 22,
+      "heads": 24,
+      "head_dim": 64,
+      "ffn": 2304,
+      "vocab": 256000,
+      "head_layers": 2,
+      "head_ffn_mult": 2,
+      "cand_layers": 4,
+      "gflops_per_token": {
+        "128": 0.977,
+        "512": 1.0,
+        "1024": 1.032
+      },
+      "flops_vs_v1": {
+        "128": 1.0,
+        "512": 1.0,
+        "1024": 1.0
+      },
+      "weights_gb_bf16": 1.91,
+      "weights_gb_fp32": 3.82,
+      "train_state_gb_adamw": 15.3
+    }
+  ]
+}

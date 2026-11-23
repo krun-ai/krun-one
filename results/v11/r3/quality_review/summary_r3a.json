@@ -1,0 +1,204 @@
+{
+ "model": "gpt-oss:120b-cloud",
+ "prompt_version": "r3-review-1",
+ "file": "data/v11/techbench/val_r3.jsonl",
+ "n": 539,
+ "agreement": 0.9573283858998145,
+ "by_slice": {
+  "authn/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "catalog/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "datastore/choice": {
+   "n": 14,
+   "agree": 13,
+   "error": 0
+  },
+  "hop_lookup/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "hop_lookup/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "hop_rules/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "hop_rules/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "mix_policy_totals/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "mix_policy_totals/noul": {
+   "n": 12,
+   "agree": 12,
+   "error": 0
+  },
+  "mix_sla_lookup/choice": {
+   "n": 14,
+   "agree": 13,
+   "error": 0
+  },
+  "mix_sla_lookup/noul": {
+   "n": 14,
+   "agree": 13,
+   "error": 0
+  },
+  "mix_window_budget/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "mix_window_budget/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_budget/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_budget/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_capacity/choice": {
+   "n": 9,
+   "agree": 0,
+   "error": 0
+  },
+  "num_capacity/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_capacity/score": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_errbudget/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_errbudget/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_errbudget/score": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_limits/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_limits/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "num_limits/score": {
+   "n": 14,
+   "agree": 3,
+   "error": 0
+  },
+  "pol_backlog/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "pol_backlog/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "pol_document/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "pol_document/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "pol_horizon/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "pol_horizon/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "structure/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "tmp_dates/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "tmp_dates/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "tmp_order/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "tmp_order/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "tmp_window/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "tmp_window/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "trd_priorities/choice": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  },
+  "trd_priorities/noul": {
+   "n": 14,
+   "agree": 14,
+   "error": 0
+  }
+ }
+}

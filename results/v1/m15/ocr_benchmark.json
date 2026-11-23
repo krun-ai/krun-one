@@ -1,0 +1,145 @@
+{
+ "n": {
+  "synthdoc": 300,
+  "screenshot": 300,
+  "cord": 37
+ },
+ "candidates": {
+  "rapidocr:v6": {
+   "name": "rapidocr:v6",
+   "params": null,
+   "load_s": 1.657020092010498,
+   "by_kind": {
+    "synthdoc": {
+     "cer": 0.023535121624040225,
+     "word_recall": 0.9668587572888531,
+     "p50_ms": 222.33446780592203
+    },
+    "screenshot": {
+     "cer": 0.2530691574591426,
+     "word_recall": 0.9983973544973545,
+     "p50_ms": 706.5078830346465
+    },
+    "cord": {
+     "p50_ms": 724.921815097332,
+     "chars_mean": 147.0
+    }
+   },
+   "page_p50_ms": 321.46142423152924,
+   "page_p95_ms": 763.175382092595,
+   "downstream_screenshot_acc": 0.9476744186046512,
+   "n_downstream": 172,
+   "peak_vram_mib": 1298,
+   "max_rss_mib": 8868,
+   "examples": {
+    "media/docs/doc006732.jpg": "da Rosa RodriguesS/A\nLadeira Moreira, 34, Nova Gameleira, 41277523 Mendonça de Go\nFATURA\nNº 362012\nData:06/09/2024\nCNPJ: 92.255.345/6275\nCliente: Yan Araújo\nDescrição\nQtd\nPreço\n1\nR$ 15,11\nSoluta eos\nTempora voluptate\n2\nR$14,50\nQuo accusamus\n5\nR$ 4,96\nIpsum excepturi\n2\nR$ 14,16\nAut maxime\n5\nR$ 4,17\nT",
+    "media/docs/doc002959.jpg": "Grupo Quintanilla S.L.\nCallejón de Venceslás Mercader 9 Puerta 3, Tarragona, 20245\nCONTRATO DE ALQUILER\nN.º276875 Fecha: 30/09/2022\nNIF:66.826.795/6095\nCliente: Augusto Feliu Pinto\nEstán causa tendrá reforma quizá paciente mismo misma.\nPosible práctica sur arriba cargo haciendo quien aun hace instit",
+    "media/screens/5d8407e959df3917.jpg": "Chat de suporte\nesta é uma canção do madredeus\nDigite uma mensagem",
+    "media/screens/1c2ea5db72ad888f.jpg": "Chat de suporte\nOlá\nme diz a hora em g. m. t. mais\ncinco\nDigite uma mensagem"
+   }
+  },
+  "rapidocr:v5-latin": {
+   "name": "rapidocr:v5-latin",
+   "params": null,
+   "load_s": 1.0106704235076904,
+   "by_kind": {
+    "synthdoc": {
+     "cer": 0.024059888945028904,
+     "word_recall": 0.9794289525544192,
+     "p50_ms": 127.05095764249563
+    },
+    "screenshot": {
+     "cer": 0.2638581677599561,
+     "word_recall": 0.9975601250601251,
+     "p50_ms": 98.62780384719372
+    },
+    "cord": {
+     "p50_ms": 161.0039323568344,
+     "chars_mean": 148.3783783783784
+    }
+   },
+   "page_p50_ms": 115.7094482332468,
+   "page_p95_ms": 150.4650656133888,
+   "downstream_screenshot_acc": 0.9534883720930233,
+   "n_downstream": 172,
+   "peak_vram_mib": 1333,
+   "max_rss_mib": 8868,
+   "examples": {
+    "media/docs/doc006732.jpg": "da Rosa Rodrigues S/A\nLadeira Moreira, 34, Nova Gameleira, 41277523 Mendonça de Go\nFATURA\nNº 362012 Data: 06/09/2024\nCNPJ: 92.255.345/6275\nCliente: Yan Araújo\nDescrição\nQtd\nPreço\nSoluta eos\n1\nR$ 15,11\nTempora voluptate\n2\nR$ 14,50\nQuo accusamus\n5\nR$ 4,96\nIpsum excepturi\n2\nR$ 14,16\nAut maxime\n5\nR$ 4,1",
+    "media/docs/doc002959.jpg": "Grupo Quintanilla S.L.\nCallejón de Venceslás Mercader 9 Puerta 3 , Tarragona, 20245\nCONTRATO DE ALQUILER\nN.º 276875 Fecha: 30/09/2022\nNIF: 66.826.795/6095\nCliente: Augusto Feliu Pinto\nEstán causa tendrá reforma quizá paciente mismo misma.\nPosible práctica sur arriba cargo haciendo quien aun hace ins",
+    "media/screens/5d8407e959df3917.jpg": "Chat de suporte\nesta é uma canção do madredeus\nDígite uma mensagem",
+    "media/screens/1c2ea5db72ad888f.jpg": "Chat\nde\nsuporte\nOlá\nme\ndiz a hora\nem g. m. t. mais\ncinco\nDigite\numa\n mensagem"
+   }
+  },
+  "doctr:db_mobilenet_v3_large+hub:Felix92/doctr-torch-parseq-multilingual-v1": {
+   "name": "doctr:db_mobilenet_v3_large+hub:Felix92/doctr-torch-parseq-multilingual-v1",
+   "params": 28079990,
+   "load_s": 0.9416794776916504,
+   "by_kind": {
+    "synthdoc": {
+     "cer": 0.02982547042286098,
+     "word_recall": 0.9647918880490314,
+     "p50_ms": 173.30537643283606
+    },
+    "screenshot": {
+     "cer": 0.254570957119191,
+     "word_recall": 0.9907172562903213,
+     "p50_ms": 143.23226362466812
+    },
+    "cord": {
+     "p50_ms": 177.24315635859966,
+     "chars_mean": 182.13513513513513
+    }
+   },
+   "page_p50_ms": 164.72119837999344,
+   "page_p95_ms": 228.33648212254047,
+   "downstream_screenshot_acc": 0.9593023255813954,
+   "n_downstream": 172,
+   "peak_vram_mib": 1405,
+   "max_rss_mib": 8868,
+   "examples": {
+    "media/docs/doc006732.jpg": "da Rosa Rodrigues S/A\nLadeira Moreira, 34, Nova Gameleira, 41277523 Mendonça de Go\nFATURA\nŃ9 362012\nData: 06/09/2024\nCNP]: 92.255.345/6275\nCliente: Yan Araújo\nDescrição\nQtd\nPreço\nSoluta eos\n1\nR$ 15,11\nTempora voluptate\n2\nR$ 14,50\nQuo accusamus\n5\nR$ 4,96\nIpsum excepturi\n2\nR$ 14,16\nAut maxime\n5\nR$ 4,1",
+    "media/docs/doc002959.jpg": "Grupo Quintanilla S.L.\nCallejón de Venceslás Mercader 9 Puerta 3, Tarragona, 20245\nCONTRATO DE ALQUILER\nN.9 276875\nFecha: 30/09/2022\nNIF: 66.826.795/6095\nCliente: Augusto Feliu Pinto\nEstán causa tendrá reforma quizá paciente mismo misma.\nPosible práctica sur arriba cargo haciendo quien aun hace inst",
+    "media/screens/5d8407e959df3917.jpg": "Chat de suporte\nesta é uma canção do madredeus\nDigite uma mensagem",
+    "media/screens/1c2ea5db72ad888f.jpg": "Chat de suporte\nOlá\nme diz a hora em g. m. t. mais\ncinco\nDigite uma mensagem"
+   }
+  },
+  "tesseract": {
+   "name": "tesseract:eng+por+spa+fra",
+   "params": null,
+   "load_s": 0.0013027191162109375,
+   "by_kind": {
+    "synthdoc": {
+     "cer": 0.025395123187884765,
+     "word_recall": 0.9520067980673237,
+     "p50_ms": 802.75406409055
+    },
+    "screenshot": {
+     "cer": 0.2707643505531183,
+     "word_recall": 0.8326128201262102,
+     "p50_ms": 514.1488760709763
+    },
+    "cord": {
+     "p50_ms": 850.0079810619354,
+     "chars_mean": 85.97297297297297
+    }
+   },
+   "page_p50_ms": 682.149164378643,
+   "page_p95_ms": 998.8891281187533,
+   "downstream_screenshot_acc": 0.8662790697674418,
+   "n_downstream": 172,
+   "peak_vram_mib": 1298,
+   "max_rss_mib": 8868,
+   "examples": {
+    "media/docs/doc006732.jpg": "da Rosa Rodrigues S/A\n\nLadeira Moreira, 34, Nova Gameleira, 41277523 Mendonça de Go\n\nFATURA\n\nNº 362012 Data: 06/09/2024\nCNPJ: 92.255.345/6275\n\nCliente: Yan Araújo\n\nDescrição Qtd Preço\nSoluta eos 1 R$ 15,11\nTempora voluptate 2 R$ 14,50\nQuo accusamus 5 R$ 4,96\nIpsum excepturi 2 R$ 14,16\nAut maxime 5 R",
+    "media/docs/doc002959.jpg": "Grupo Quintanilla S.L.\n\nCallejón de Venceslás Mercader 9 Puerta 3 , Tarragona, 20245\n\nCONTRATO DE ALQUILER\n\nN.º 276875 Fecha: 30/09/2022\nNIF: 66.826.795/6095\nCliente: Augusto Feliu Pinto\n\nEstán causa tendrá reforma quizá paciente mismo misma.\nPosible práctica sur arriba cargo haciendo quien aun hace",
+    "media/screens/5d8407e959df3917.jpg": "Digite uma mensagem",
+    "media/screens/1c2ea5db72ad888f.jpg": "Chat de suporte\n\nola\n\nme diz a hora em g. m. t. mais\n\ncinco\n\nDigite uma mensagem"
+   }
+  }
+ },
+ "oracle_downstream_gt_text": 1.0,
+ "empty_context_downstream": 0.42441860465116277,
+ "chosen": "rapidocr:v5-latin",
+ "rule_applied": "fast (<=150 ms) -> best downstream (1 pp tie) -> lower CER -> latency -> params"
+}

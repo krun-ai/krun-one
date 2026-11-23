@@ -1,0 +1,292 @@
+{
+ "n_public": 231,
+ "systems": {
+  "Jev 1.13.0 (TypeSafe AI)": {
+   "kind": "published",
+   "accuracy": {
+    "all": 0.8658008658008658,
+    "easy": 1.0,
+    "standard": 0.9861111111111112,
+    "hard": 0.7297297297297297,
+    "hard_families": {
+     "adversarial": 1.0,
+     "ambiguous": 0.8571428571428571,
+     "judge_hard": 0.7647058823529411,
+     "long_policy": 0.631578947368421,
+     "multi_hop": 0.8333333333333334,
+     "probability": 0.7,
+     "routing_hard": 1.0,
+     "temporal_numeric": 0.26666666666666666,
+     "tradeoff": 0.8333333333333334,
+     "trap": 1.0
+    }
+   }
+  },
+  "GPT-5.6 Luna (low reasoning effort)": {
+   "kind": "published",
+   "accuracy": {
+    "all": 0.974025974025974,
+    "easy": 1.0,
+    "standard": 0.9722222222222222,
+    "hard": 0.963963963963964,
+    "hard_families": {
+     "adversarial": 1.0,
+     "ambiguous": 1.0,
+     "judge_hard": 0.9411764705882353,
+     "long_policy": 1.0,
+     "multi_hop": 0.9444444444444444,
+     "probability": 0.9,
+     "routing_hard": 1.0,
+     "temporal_numeric": 0.9333333333333333,
+     "tradeoff": 1.0,
+     "trap": 1.0
+    }
+   }
+  },
+  "SemIf, formerly OpenJev (Qwen3.5-4B, TheoLeeCJ)": {
+   "kind": "published",
+   "accuracy": {
+    "all": 0.8095238095238095,
+    "easy": 1.0,
+    "standard": 0.9861111111111112,
+    "hard": 0.6126126126126126,
+    "hard_families": {
+     "adversarial": 0.6666666666666666,
+     "ambiguous": 0.7142857142857143,
+     "judge_hard": 0.7647058823529411,
+     "long_policy": 0.5263157894736842,
+     "multi_hop": 0.6666666666666666,
+     "probability": 0.4,
+     "routing_hard": 1.0,
+     "temporal_numeric": 0.2,
+     "tradeoff": 0.6666666666666666,
+     "trap": 1.0
+    }
+   }
+  },
+  "Laya (Convai Innovations, ModernBERT-large 421M)": {
+   "kind": "published",
+   "accuracy": {
+    "all": 0.5844155844155844,
+    "easy": 0.9583333333333334,
+    "standard": 0.6944444444444444,
+    "hard": 0.35135135135135137,
+    "hard_families": {
+     "adversarial": 0.6666666666666666,
+     "ambiguous": 0.14285714285714285,
+     "judge_hard": 0.4117647058823529,
+     "long_policy": 0.21052631578947367,
+     "multi_hop": 0.3333333333333333,
+     "probability": 0.5,
+     "routing_hard": 0.2,
+     "temporal_numeric": 0.3333333333333333,
+     "tradeoff": 1.0,
+     "trap": 0.0
+    }
+   }
+  },
+  "GLiNER2.5 multi (Fastino, 287M)": {
+   "kind": "published",
+   "accuracy": {
+    "all": 0.48917748917748916,
+    "easy": 0.9166666666666666,
+    "standard": 0.4444444444444444,
+    "hard": 0.3333333333333333,
+    "hard_families": {
+     "adversarial": 0.6666666666666666,
+     "ambiguous": 0.42857142857142855,
+     "judge_hard": 0.4117647058823529,
+     "long_policy": 0.3684210526315789,
+     "multi_hop": 0.2777777777777778,
+     "probability": 0.4,
+     "routing_hard": 0.0,
+     "temporal_numeric": 0.4,
+     "tradeoff": 0.16666666666666666,
+     "trap": 0.0
+    }
+   }
+  },
+  "open-jev-deberta-v3-large (local CPU)": {
+   "kind": "published",
+   "accuracy": {
+    "all": 0.5238095238095238,
+    "easy": 1.0,
+    "standard": 0.4305555555555556,
+    "hard": 0.3783783783783784,
+    "hard_families": {
+     "adversarial": 0.6666666666666666,
+     "ambiguous": 0.5714285714285714,
+     "judge_hard": 0.4117647058823529,
+     "long_policy": 0.3157894736842105,
+     "multi_hop": 0.4444444444444444,
+     "probability": 0.3,
+     "routing_hard": 0.2,
+     "temporal_numeric": 0.2,
+     "tradeoff": 0.5,
+     "trap": 0.375
+    }
+   }
+  },
+  "Krun v1_gpu": {
+   "kind": "krun",
+   "truncated_hard": 0.3963963963963964,
+   "ece": 0.17231524775250576,
+   "accuracy": {
+    "all": 0.5324675324675324,
+    "easy": 0.9166666666666666,
+    "standard": 0.625,
+    "hard": 0.3063063063063063,
+    "hard_families": {
+     "adversarial": 0.5,
+     "ambiguous": 0.2857142857142857,
+     "judge_hard": 0.47058823529411764,
+     "long_policy": 0.3157894736842105,
+     "multi_hop": 0.16666666666666666,
+     "probability": 0.4,
+     "routing_hard": 0.2,
+     "temporal_numeric": 0.2,
+     "tradeoff": 0.3333333333333333,
+     "trap": 0.25
+    }
+   }
+  },
+  "Krun r1_s1": {
+   "kind": "krun",
+   "truncated_hard": 0.3963963963963964,
+   "ece": 0.13746375612698492,
+   "accuracy": {
+    "all": 0.5497835497835498,
+    "easy": 0.9166666666666666,
+    "standard": 0.5694444444444444,
+    "hard": 0.3783783783783784,
+    "hard_families": {
+     "adversarial": 0.3333333333333333,
+     "ambiguous": 0.5714285714285714,
+     "judge_hard": 0.4117647058823529,
+     "long_policy": 0.47368421052631576,
+     "multi_hop": 0.2777777777777778,
+     "probability": 0.6,
+     "routing_hard": 0.2,
+     "temporal_numeric": 0.26666666666666666,
+     "tradeoff": 0.5,
+     "trap": 0.125
+    }
+   }
+  },
+  "Krun r1_s2": {
+   "kind": "krun",
+   "truncated_hard": 0.3963963963963964,
+   "ece": 0.10628520191609268,
+   "accuracy": {
+    "all": 0.5497835497835498,
+    "easy": 0.9166666666666666,
+    "standard": 0.5972222222222222,
+    "hard": 0.36036036036036034,
+    "hard_families": {
+     "adversarial": 0.3333333333333333,
+     "ambiguous": 0.5714285714285714,
+     "judge_hard": 0.4117647058823529,
+     "long_policy": 0.3684210526315789,
+     "multi_hop": 0.2222222222222222,
+     "probability": 0.6,
+     "routing_hard": 0.2,
+     "temporal_numeric": 0.26666666666666666,
+     "tradeoff": 0.6666666666666666,
+     "trap": 0.125
+    }
+   }
+  },
+  "Krun r2l4_s1": {
+   "kind": "krun",
+   "truncated_hard": 0.3963963963963964,
+   "ece": 0.17849614978908698,
+   "accuracy": {
+    "all": 0.5238095238095238,
+    "easy": 0.9166666666666666,
+    "standard": 0.5833333333333334,
+    "hard": 0.3153153153153153,
+    "hard_families": {
+     "adversarial": 0.5,
+     "ambiguous": 0.42857142857142855,
+     "judge_hard": 0.4117647058823529,
+     "long_policy": 0.42105263157894735,
+     "multi_hop": 0.16666666666666666,
+     "probability": 0.3,
+     "routing_hard": 0.4,
+     "temporal_numeric": 0.2,
+     "tradeoff": 0.5,
+     "trap": 0.0
+    }
+   }
+  },
+  "Krun r2l4_s2": {
+   "kind": "krun",
+   "truncated_hard": 0.3963963963963964,
+   "ece": 0.16651620770342687,
+   "accuracy": {
+    "all": 0.5238095238095238,
+    "easy": 0.9166666666666666,
+    "standard": 0.6111111111111112,
+    "hard": 0.2972972972972973,
+    "hard_families": {
+     "adversarial": 0.3333333333333333,
+     "ambiguous": 0.2857142857142857,
+     "judge_hard": 0.4117647058823529,
+     "long_policy": 0.3684210526315789,
+     "multi_hop": 0.2222222222222222,
+     "probability": 0.4,
+     "routing_hard": 0.2,
+     "temporal_numeric": 0.2,
+     "tradeoff": 0.5,
+     "trap": 0.0
+    }
+   }
+  },
+  "Krun r2l4na_s1": {
+   "kind": "krun",
+   "truncated_hard": 0.3963963963963964,
+   "ece": 0.1717072123631949,
+   "accuracy": {
+    "all": 0.5238095238095238,
+    "easy": 0.9166666666666666,
+    "standard": 0.5694444444444444,
+    "hard": 0.32432432432432434,
+    "hard_families": {
+     "adversarial": 0.5,
+     "ambiguous": 0.42857142857142855,
+     "judge_hard": 0.4117647058823529,
+     "long_policy": 0.42105263157894735,
+     "multi_hop": 0.16666666666666666,
+     "probability": 0.3,
+     "routing_hard": 0.6,
+     "temporal_numeric": 0.2,
+     "tradeoff": 0.5,
+     "trap": 0.0
+    }
+   }
+  },
+  "Krun r2l4na_s2": {
+   "kind": "krun",
+   "truncated_hard": 0.3963963963963964,
+   "ece": 0.16976995657598073,
+   "accuracy": {
+    "all": 0.5238095238095238,
+    "easy": 0.8958333333333334,
+    "standard": 0.625,
+    "hard": 0.2972972972972973,
+    "hard_families": {
+     "adversarial": 0.3333333333333333,
+     "ambiguous": 0.42857142857142855,
+     "judge_hard": 0.4117647058823529,
+     "long_policy": 0.3157894736842105,
+     "multi_hop": 0.16666666666666666,
+     "probability": 0.3,
+     "routing_hard": 0.4,
+     "temporal_numeric": 0.2,
+     "tradeoff": 0.6666666666666666,
+     "trap": 0.0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,75 @@
+# Krun One v1.1 — R0 capacity diagnosis. Registered 2026-09-30 BEFORE any probe forward on a GPU.
+# Nothing below may be changed after a result is seen. The frozen v1 (artifacts/krun-one-v1-text-final, sha 781e5c7b…)
+# is only READ; no v1 file is written. final_protected / KrunBench protected sets are not opened by R0.
+
+question: >
+  Does Krun One need more parameter capacity for technical decision-making, or can the current 879M representation
+  learn the capability with improved training?
+
+probe:
+  builder: scripts/v11/build_probe.py           # data/v11/probe/{probe,ltrain}.jsonl + manifest.json (sha256 inside)
+  truth: simulation / arithmetic (tetris, scheduling, routing, sizing) and explicit rule tables (techsel);
+         ties never become labels; a "partial" property never decides a techsel item
+  conditions:
+    raw: state + candidate actions -> decision
+    feat: state + candidate actions + the explicit, environment-computed outcome of each action -> decision
+    pairwise: state + gold + one negative (hardest / random), raw and feat, derived from the k=8 problems
+    multiway: k = 8 / 16 / 32 (scheduling and techsel stop at 16: see the builder)
+  rendering: public request shape; raw = option ids only, feat = id + description; task_type "tool" in both
+  metrics: [top-1, skill = (top1 - 1/k) / (1 - 1/k), pairwise accuracy, MRR, NDCG (graded by outcome), normalized entropy,
+            gold probability (and vs uniform), gold-vs-hardest-negative margin (logit, probability), ECE at the tool
+            temperature, abstention at the production tool threshold, selective accuracy, constraint-flip pairs,
+            none-of-the-above false acceptance + margin AUROC]
+  harness: scripts/v11/run_probe.py (fp32 weights, bf16 autocast = TextArtifact numerics) -> scripts/v11/analyze_probe.py
+
+zero_shot_rule:                 # the owner's rule, with thresholds fixed here; read per track (env, tech) at k = 8
+  poor: skill < 0.35
+  strong: skill >= 0.75
+  pairwise_weak: accuracy vs hardest negative < 0.70
+  outcomes:
+    Z1_representation_gap: raw poor AND feat strong
+      # the decision stack can compare when consequences are explicit -> stay 879M, improved objective first
+    Z2_no_zero_shot_skill: raw poor AND feat poor AND pairwise weak
+      # compatible with a capacity ceiling, but equally with "never trained on this kind of decision":
+      # NOT decidable without training -> resolved by learnability_diagnostic
+    Z3_mixed: anything else -> report per slice; resolved by learnability_diagnostic
+
+learnability_diagnostic:        # "R0-L". Added by engineering: Z2/Z3 cannot separate capacity from missing training.
+  status: diagnostic only — throwaway weights, never saved, never a v1.1 candidate, no replay (forgetting is NOT measured here)
+  script: scripts/v11/learnability.py
+  data: data/v11/probe/ltrain.jsonl (different seed; techsel: `messaging` category + 25% of requirement sets held out)
+  objective: unchanged v1 objective (configs/v1/finetune.yaml loss) — no new loss is tested in R0
+  budget: 2000 steps, <= 12288 padded tokens / step, lr_encoder 2e-5, lr_head 1e-4, warmup 5%, linear decay; same for every run
+  runs:
+    k1final_full: frozen v1 weights copied, everything trainable
+    k1final_head: encoder frozen (decision head + scorer only) = the R1 setting
+    k1final_head_L4: + 2 identity-initialized decision-head layers
+    k1final_head_ci2: + 2 candidate-interaction layers (krun_one.v11.model), encoder frozen
+    k1final_full_ci2: + 2 candidate-interaction layers, everything trainable
+    mmbert_small_full: 140M (42M body), MLM-only init
+    mmbert_base_full: 307M (110M body), MLM-only init            (2 seeds)
+    k1_0b_full: mmBERT-base HyperCloned x2 — the SAME function as mmbert-base at step 0 with 4.4x body parameters;
+                this pair is the controlled capacity comparison       (2 seeds)
+  evaluation: held-out probe, same harness and metrics as zero-shot; plus a 1,500-problem train-fit sample
+  reading:
+    comparative_capacity_sufficient: k1final_full reaches feat skill >= 0.90 at k=8 on a track
+    capacity_evidence:           # what would justify growing to ~1.5B
+      - underfit: k1final_full train-fit accuracy stays < 0.90 on a condition (the model cannot even fit it), OR
+      - scaling: on the conditions k1final_full does NOT solve (skill < 0.75), k1_0b_full beats mmbert_base_full by
+        >= 5 pp top-1 (mean of seeds, k=8) AND mmbert_base_full beats mmbert_small_full — i.e. parameters, with the
+        initial function held fixed, buy accuracy on the unsolved part
+    not_capacity:
+      - train-fit high and held-out low -> generalization / data, not parameters
+      - k1_0b_full ~= mmbert_base_full (< 2 pp) on the unsolved conditions -> width does not help; look at depth of
+        computation, objective and data instead
+    head_bottleneck: k1final_head_ci2 or k1final_head_L4 beats k1final_head by >= 5 pp top-1 (feat, k=8, mean over slices)
+
+recommendation_rule:
+  grow_to_1_5B: only if capacity_evidence holds AND it is not explained by the head (head_bottleneck) alone
+  otherwise: stay 879M -> R1 (frozen core: head / adapters / auxiliary heads, new objective, replay)
+
+architecture_study:             # measured in R0 because a GPU is up anyway; it does NOT start any 1.5B training
+  candidates: src/krun_one/v11/candidates.py (exact counts: scripts/v11/arch_budget.py)
+  latency: scripts/v11/latency_v11.py — random weights, RTX 4090, v1 shape re-measured in the same process
+  latency_gate_preferred: {typical_p50_ms: "<= 25-30", k128_p50_ms: "<= 60-70"}   # owner's initial suggestion
+  growth: function preservation verified numerically (scripts/v11/growth_verify.py) before any training

@@ -1,0 +1,158 @@
+# Krun One v1.1 — R1 / R2 round. Registered 2026-10-01 BEFORE any R1 / R2 training step and before KrunTechBench was
+# evaluated by any model. Nothing below may be changed after a result is seen; deviations are reported as deviations.
+# Fixed by the owner for this round: no growth to ~1.5B, no tokenizer / multimodal-tower / API / worker change, no
+# production deploy, no questionable-license data, no full fine-tune at the start. The frozen v1
+# (artifacts/krun-one-v1-text-final, sha 781e5c7b…) is only READ.
+
+questions:            # the round ends with an answer to each
+  - R1 vs R2: how much does unfreezing the encoder help?
+  - did technical decision accuracy, unseen combinations, constraint flips and hard-negative separation improve?
+  - Tetris: raw vs structured state vs explicit consequence
+  - did v1 regress; latency / VRAM impact; which candidate (if any) to promote; any evidence for > 879M
+
+data:
+  builder: "scripts/v11/build_corpus.py (manifest: data/v11/corpus/manifest.json)"
+  sources:            # configs/v11/sources.yaml — only APPROVED sources
+    swe_smith: SWE-bench/SWE-smith @ ea6d7173, allowlisted repositories only (data/v11/swe_smith_allowlist.json), split by repository
+    rule_tables: src/krun_one/v11/tables.py (14 tables, independently reviewed cell by cell; requirement sets split by hash)
+    simulators: src/krun_one/v11/sims.py (quorum, retry, rollout, batching, indexing, scheduling, routing, sizing; tetris in 3 views)
+    replay: data/kd1_r2/train.jsonl (the data v1 was trained on), sqrt-balanced strata
+  not_used: "Themis (EXCLUDED_PENDING_REVIEW), Nemotron-SFT-SWE-v2, software-strategist-v1, OpenSWE, Stack Overflow; Johin only as far as v1's own replay data already contains it"
+  mixture_target: {replay: 0.45, technical: 0.35, hard_negative: 0.10, ood: 0.10}    # actual shares: manifest.mixture
+  mixture_actual: {total_examples: 295805, replay: 0.450, technical: 0.263, hard_negative: 0.190, ood: 0.098}
+  mixture_note: >
+    The hard-negative share is above the 10% target and the plain technical share below 35% because "hard negative" is a
+    property of real items, not a separate source: 56k of the 163k technical examples have only near-substitute negatives
+    (SWE files of the same directory, all-same-table technology options, near-optimal simulator actions). The replay share
+    was set to the 45% target by sizing the replay sample (133,103 decisions).
+  tetris_cap: "<= 2% of the training examples (a probe, not the product); actual 6,000 = 2.0%"
+  renderings: raw (candidates only) and feat (candidate + explicit consequence); both train; raw is the headline in evaluation
+  evidence_weight: {A_execution_or_simulation: 1.0, rule_table: 0.7, B_parsed_diff: 0.7}
+
+benchmark:
+  protected: data/v11/techbench/protected.jsonl   # KrunTechBench v1 — never trained on, never used for selection
+  validation: data/v11/techbench/val.jsonl        # KrunTechVal — objective pilot, variant selection, mining decisions
+  tracks: [backend, database, distributed, cloud, api, security, devops, mlinfra, software_repair, state_action]
+  slices: [easy, hard, hard_negative, constraint_flip, unseen_combination, unseen_technology, large_k, ood, unseen_family]
+  protected_is_opened_for: "the v1 baseline, R1 main (both seeds), the selected R2 variant (both seeds); everything else is measured on val only"
+  known_limits: "EN only; rule tables reviewed by a model, not yet by a person"
+
+models:
+  init: "the frozen v1 weights (function-preserving: new modules are zero-initialized)"
+  adapter: {dim: 256, where: "residual bottleneck on the encoder output, before the type embedding and the head"}
+  aux_heads: "Q(state, action): 1 utility + 4 consequence outputs per candidate; V(state): 4 outputs; training only, dropped at export"
+  R1: {mode: head, trainable: [type_emb, decision head, scorer, answer head, adapter, aux heads], frozen: [entire encoder]}
+  R2: {mode: last_n, last_n: 2, trainable: "R1 set + encoder layers 20-21 + final norm"}
+  R2_last4: {mode: last_n, last_n: 4, run_only_if: "R2 leaves >= 5 pp between feat and raw macro top-1 on KrunTechVal (mean of seeds)"}
+  controls:
+    R2_noadapter: "R2 without the adapter: the exact v1 architecture, loadable by the unchanged runtime (2 seeds)"
+    R2_ci2: "R2 + 2 candidate-interaction layers (the only head variant kept from R0; 1 seed)"
+
+training:
+  optimizer: {lr_encoder: 2.0e-5, lr_head: 5.0e-5, lr_new: 2.0e-4, weight_decay: 0.01, warmup_ratio: 0.03, max_grad_norm: 1.0}
+  batching: {max_tokens: 16384, max_questions: 64}
+  epochs: 1                                   # one pass over the mixture; never extended
+  current_loss: "configs/v1/stage2.yaml loss (oe, w_apply 0.25) on every item, replay included"
+  objective_constants: {margin: 3.0, hard_negatives: 3, easy_neg_weight: 0.25}
+  objectives:                                 # weights are fixed here; the pilot decides only WHICH terms are on
+    O0: {}
+    O1: {l_pair: 0.5, l_margin: 0.5}
+    O2: {l_value: 0.25}
+    O3: {l_pair: 0.5, l_margin: 0.5, l_value: 0.25}
+    O4: {l_pair: 0.5, l_margin: 0.5, l_value: 0.25, l_kd: 1.0}     # + distillation of v1's own outputs on replay items
+  pilot_subset_seed: 20261007
+  pilot:
+    what: "O0..O4 on the R2 configuration, the same 25% subset of the corpus, one seed"
+    score: macro mean over tracks of KrunTechVal raw top-1 (answerable multi-way items)
+    constraint: KrunBench v1 val_fit choice accuracy within 1.0 pp of v1 (same harness)
+    rule: >
+      highest score among objectives meeting the constraint; objectives within 0.5 pp of the best count as tied and the
+      tie goes to the one with the smallest val_fit drop, then to the one with fewer terms (O0 < O1 < O2 < O3 < O4).
+      The chosen objective is used for every R1 / R2 run. No other hyper-parameter is tuned.
+  seeds: {s1: 20261001, s2: 20261002}
+  runs:
+    r1_s1 / r1_s2: R1
+    r2_s1 / r2_s2: R2 (last 2)
+    r2na_s1 / r2na_s2: R2_noadapter
+    r2ci_s1: R2_ci2
+    r2l4_s1 / r2l4_s2: R2_last4 (conditional)
+
+hard_negative_round:            # after the first R2 checkpoints
+  mine_on: data/v11/corpus/train_tech.jsonl (technical choice items), with the R2 checkpoint of the same seed
+  select: "wrong with top-1 probability >= 0.5, OR gold-vs-hardest logit margin < 1.0, OR normalized entropy > 0.5"
+  cap: 30,000 mined examples + an equal number of replay examples
+  continue: "one pass, the round's objective, every learning rate x 0.5; result = r2hn_s1 / r2hn_s2"
+  reported_as: a separate variant; it competes in the R2 variant selection like any other
+
+r2_variant_selection:           # on KrunTechVal only
+  candidates: "R2, R2_noadapter, R2_ci2, R2_last4 (if run), R2 + hard-negative round"
+  eligible: val_fit choice accuracy within 1.0 pp of v1 (mean of seeds)
+  rule: >
+    highest macro raw top-1 (mean of seeds); variants within 1.0 pp of the best are tied, and the tie goes to the
+    variant that keeps the v1 architecture (no adapter, no interaction block), then to fewer trainable encoder blocks.
+    A single-seed variant cannot be selected over a two-seed variant on a gain below 2 pp.
+  per_track_candidate: "for artifacts and the regression / multimodal suite, the seed with the higher KrunTechVal score"
+
+tetris_representation:
+  data: data/v11/tetris_representation/{train,test}.jsonl — the same states as views A (raw), B (structured state), C (explicit consequence)
+  measured_on: "v1, R1, R2 selected — on the test set, all three views"
+  dedicated_diagnostic: >
+    throwaway runs like R0-L (full fine-tune, 3,000 steps, v1's unchanged objective), one per view, trained on that view
+    only: diag_tetris_A / _B / _C. They isolate what the representation is missing; they are not candidates.
+  reading: {B_or_C_much_better_than_A: representation / state encoding is the bottleneck, all_similarly_poor: revisit architecture / objective}
+
+evaluation:
+  harness: scripts/v11/eval_v11.py (dumps) -> scripts/v11/techbench_report.py, scripts/v11/regression_v11.py (offline)
+  technical: [top1, macro top1 over tracks, pairwise gold-vs-hardest, hard-negative logit margin, constraint-flip both-correct / stuck,
+              unseen combination, unseen technology, large-k, ood false acceptance / AUROC, entropy, ECE, mrr, ndcg]
+  regression: >
+    KrunBench v1 V (val_fit for calibration, val_eval for the report), val_ml, val_tools_v2, ToolACE v0 val / holdout — the
+    registered v1 metrics (scripts/v1/kd1_evaluate.py, stage2_compare.preservation): multilingual, PT-BR, cross-language,
+    intent, tool, unseen tools, large-k / k128, OOD AUROC, false acceptance, selective coverage, AURC, permutation, score,
+    noul, multi, ECE. v1 is re-dumped on the same host. final_protected is not opened.
+  latency: "eval_v11.py --latency: typical, 8 tools, 4 questions, k = 8 / 32 / 128; p50 / p95; peak VRAM; v1 on the same host"
+  multimodal: "M1.5c val_eval dump with the candidate core swapped in vs the v1 core on the same host; registered M1.5c gates"
+  seeds_reported: mean, std and both individual seeds
+
+gates: configs/v11/promotion_gates.yaml       # registered in R0; amended below before any R1 / R2 result
+gate_amendments_2026_10_01:
+  unseen_combination_top1: {min_gain_pp: 10}  # KrunTechBench, raw, items tagged unseen_combination
+  benchmark_note: "the technical gates are computed on KrunTechBench v1 as built here (macro over tracks, raw rendering)"
+  seeds: "a gate holds only if it holds for the mean of the two seeds AND for each seed"
+  unseen_tools: >
+    KrunBench v1 V has no answerable unseen-tool item, so `unseen_tool_accuracy_drop_pp` is applied to the tool accuracy of
+    val_tools_v2 (the held-out tool V of v1's own sources); tools never trained are covered by the ToolACE v0 holdout gate
+    and by tool_unseen_fa_at_cov70. multi_unseen_tool_micro_f1 is reported.
+
+decision_tree:
+  R1_about_equal_R2: encoder adaptation did not matter -> investigate data / representation
+  R2_much_better_than_R1: encoder adaptation is key -> continue v1.1 around 879M
+  tetris_B_or_C_much_better_than_A: representation is the bottleneck -> state encoding / consequence supervision
+  tetris_all_poor: revisit architecture / objective; only then reopen model growth
+stop: "after R1 / R2, KrunTechBench, the Tetris diagnosis and the full regression. No new architecture, no larger model, no deploy."
+
+cost_estimate:                  # delivered before training; actuals in the reports
+  gpu: RTX 4090 Secure, US$ 0.74/h (two pods in parallel when it shortens wall-clock at the same total)
+  steps_per_run: "~7,000 (one pass over ~360k examples at ~16k padded tokens / step)"
+  hours: {pilot_5_runs: 1.0, r1_2_seeds: 1.0, r2_2_seeds: 1.2, controls_3_runs: 1.8, last4_if_run: 1.4, hard_negative_round: 0.6,
+          tetris_diagnostic: 1.0, evaluation_dumps: 1.5, multimodal_media_and_dumps: 2.0, setup_and_transfer: 1.0}
+  total_hours: "~12.5 GPU-hours"
+  usd: "~US$ 9-10 (upper bound US$ 14 if a host has to be replaced or a step rerun)"
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Deviations recorded AFTER results (2026-10-01). Nothing above was edited; the reports discuss each item.
+deviations:
+  - "tetris diagnostic: the first runs made one pass (661-1,000 steps) instead of the registered 3,000; A and B were rerun to ~3,000 steps (diag_tetris_A_3k / _B_3k); C had already reached 100% and was not rerun. Both points are reported."
+  - "R2_last4_noadapter (r2l4na_s1 / _s2): added after the variant selection was seen, because the selected R2_last4 carries the adapter and the registered tie-break prefers the v1 architecture. Post-registration; reported as such."
+  - "hard-negative round: 4,014 of 30,000 mined examples are Tetris (above the spirit of the <= 2% cap); the variant lost the selection."
+  - "swe_involved (noul) items had no label (6,000 training examples with a degenerate [1, 1] target; 120 protected items not scored). See data/v11/TECHNICAL_CORPUS_PLAN.md 8.1."
+  - "objective pilot: O0 / O2 / O3 are within single-seed noise of each other; O2 was chosen by the registered rule, not because it is shown to be better."
+  - "multimodal regression: the first media rebuild silently skipped the synthetic-speech clips (TTS env install failed) and the pod volume filled; clips for the validation splits were regenerated (4,840) and the raw download cache deleted. No weight was lost."
+  - "cost: see the reports; above the registered estimate (two pods kept alive for the conditional last-4 runs, the last-4 no-adapter addition and the multimodal rerun)."
+
+cost_actual:                    # 2026-10-01, both pods terminated, list-pods empty
+  pod_a: "krun-v11-r12-a 9p5l1zdoowf4ws, RTX 4090 Secure US-IL-1, 10.03 h, ~US$ 7.6"
+  pod_b: "krun-v11-r12-b yh7f75qmhgudl5, RTX 4090 Secure EUR-NO-1, 9.36 h, US$ 6.91 billed"
+  total: "19.4 GPU-hours, ~US$ 14.5 (estimate 12.5 GPU-hours / US$ 9-10, upper bound US$ 14)"
+  ollama_cloud_credits_usd: 3.8
+outcome: "no candidate promoted; no artifact created; see results/v11/KRUN_ONE_V11_R1_R2_COMPARISON.md"

@@ -1,0 +1,24 @@
+# Krun One v1 candidate vs Krun One v0.3 (production) — acceptance gates. Registered 2026-09-27 21:45 UTC, BEFORE any
+# result of the full fine-tune was seen. Evaluated by scripts/v1/kd1_report.py on the EVAL part of V
+# (KrunBench v1 val_eval + val_ml eval), same signals code path for both models (kd1_evaluate.py). final_protected unused.
+must_gain:                        # paired group-bootstrap delta (v1 - v0.3) on shared decisions; 95% CI lower bound > 0
+  - non_en                        # multilingual (all PT/ES/FR choice decisions)
+  - tool                          # tool routing
+  - cross_language
+  - hard                          # hard-negative decisions
+unseen_tool:                      # V has no ANSWERABLE unseen-tool choice decisions (KrunBench v1 val unseen-tool items are
+                                  # native-irrelevance choices + multi-call multi-label). Amended 2026-09-27 22:00 UTC,
+                                  # still before any v1 result was seen:
+  false_acceptance_rise_max_pp: 3.0   # choice decisions of the unseen_tool slice (both models)
+  multi_micro_f1_min: 0.5             # multi-label unseen-tool decisions (v1 only; v0.3 has no multi output)
+no_material_regression:
+  ood_auroc_margin_drop_max: 0.01
+  ood_false_acceptance_rise_max_pp: 3.0      # at each model's own fit-calibrated margin threshold (target 0.98)
+  ece_rise_max: 0.01
+  en_intent_accuracy_drop_max_pp: 0.5         # "Choice core": EN intent choice accuracy
+  latency_typical_max_ms: 50                  # RTX 4090, total p50, typical_1q / typical_4q workloads, bf16
+  latency_typical_max_ratio_vs_v03: 1.10
+verdict: >
+  CANDIDATE_ACCEPTED only if every must_gain CI excludes 0 on the positive side, the unseen_tool limits hold
+  and every no_material_regression limit holds. Otherwise CANDIDATE_REJECTED with the failing gates listed (the model is
+  still reported and kept as an artifact).

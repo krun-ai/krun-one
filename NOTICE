@@ -1,13 +1,43 @@
 Krun One
-Copyright 2026 Krun
 
-This repository contains code derived from Laya (Convai Innovations), licensed under the Apache License,
-Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0):
+This project contains code derived from:
 
-  * src/krun_one/model.py — DecisionModel, option rendering and build_sequence are ported from upstream Laya
-    rl_common.py and kept numerically identical (tests/test_laya_equivalence.py).
-  * Krun One weights are fine-tuned from the Laya checkpoint.
+* Laya (Convai Innovations), Apache License 2.0 — DecisionModel, option rendering and build_sequence
+  (src/krun_one/model.py, src/krun_one/primitives.py; generalized in src/krun_one/v1/model.py and
+  src/krun_one/v1/serialization.py).
 
-Upstream: https://huggingface.co/convaiinnovations/laya (revision 1c5edc17a7acd8701df6fc341c0d179f1c62c982)
+Designs adapted without copying code (credited for the ideas):
 
-Third-party datasets used for training/evaluation and their licenses are listed in README.md ("Data").
+* GLiNER2 / GLiNER2.5 (Fastino), Apache License 2.0 — runtime label markers scored by a shared MLP,
+  label augmentation (shuffle / drop / synthetic names), per-task temperature.
+* "Scaling Smart: Accelerating Large Language Model Pre-training with Small Model Initialization"
+  (Samragh et al., 2024; HyperCloning) — function-preserving width growth (src/krun_one/v1/growth.py).
+* ModernBERT (Answer.AI / LightOn, Apache License 2.0) and mmBERT (JHU CLSP) — encoder architecture, used through
+  Hugging Face transformers.
+
+Model weights and tokenizers used for Krun One v1:
+
+* jhu-clsp/mmBERT-small, jhu-clsp/mmBERT-base — MIT (model cards). The tokenizer is the Gemma 2 vocabulary
+  (tokenizer.model distributed by google/gemma_pytorch under Apache-2.0); owner decision and analysis in
+  docs/KRUN_ONE_V1_TOKENIZER_LICENSE.md (gate cleared 2026-09-26).
+* Multimodal towers (referenced, not redistributed in the weights repo): google/siglip2-base-patch16-naflex
+  (Apache-2.0), openai/whisper-small (MIT / Apache-2.0), RapidOCR + PaddleOCR PP-OCRv5 mobile ONNX (Apache-2.0).
+* Synthetic speech for training data: hexgrad/Kokoro-82M (Apache-2.0).
+
+Training data (full registry with revisions: configs/v1/sources.yaml, configs/v11/sources.yaml; audits in docs/):
+
+* Salesforce xLAM function-calling 60k — CC-BY-4.0 metadata; the official card states "This release is for research
+  purposes only in support of an academic paper". Used, together with derived sets (MadeAgents/xlam-irrelevance-7.5k,
+  nvidia/When2Call), by owner decision (docs/KRUN_XLAM_OFFICIAL_LICENSE_REAUDIT.md).
+* CC-BY-4.0: AmazonScience/massive, banking77 (+ c2d-usp/banking77-pt-br, translated with OpenAI models), Taskmaster
+  1-3, nvidia/HelpSteer2, ucberkeley-dlab/measuring-hate-speech, MInDS-14, FLEURS, CORD v2, COCO 2017 annotations
+  (CC BY 2.0 / no-known-copyright images only).
+* Apache-2.0: Team-ACE/ToolACE, NousResearch/hermes-function-calling-v1, gorilla-llm/APIBench (GPT-4-generated
+  instructions), Nanbeige/ToolMind (graph_syn subset), OpenAssistant oasst1/oasst2, Johin/function-calling-dataset.
+* MIT: multi3woz, MultiWOZ 2.2. CC0-1.0: google/civil_comments.
+* CDLA-Sharing-1.0: Bitext customer-support dataset. CDLA-Permissive-1.0: DocLayNet. ODbL-1.0 + DbCL-1.0: CREMA-D.
+  CC-BY-SA-4.0: SIB-200 topic labels.
+* ODC-By-1.0 (+ Common Crawl terms of use): FineWeb-Edu, FineWeb-2, FineWeb2-HQ, FinePDFs-Edu (continued MLM).
+* SWE-bench/SWE-smith (MIT) — v1.1 research only, allowlisted permissively-licensed repositories
+  (data/v11/swe_smith_allowlist.json).
+* Evaluation only, never trained on: JevBench public items (MIT), BFCL, HWU64, BoolQ, SST-5.

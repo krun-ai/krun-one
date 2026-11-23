@@ -1,0 +1,156 @@
+{
+ "apibench": {
+  "items": 15135,
+  "unique_queries": 15135,
+  "actions": {
+   "call": 15135
+  },
+  "single_call": 15135,
+  "multi_call": 0,
+  "unique_tools": 1005,
+  "unique_tool_descriptions": 1395,
+  "unique_gold_tools": 1005,
+  "native_candidates_per_item": 0.0,
+  "dropped": {
+   "duplicate_query": 2
+  },
+  "mt_jobs": 15000
+ },
+ "hermes": {
+  "items": 1029,
+  "unique_queries": 1029,
+  "actions": {
+   "call": 1029
+  },
+  "single_call": 493,
+  "multi_call": 536,
+  "unique_tools": 2433,
+  "unique_tool_descriptions": 2615,
+  "unique_gold_tools": 1809,
+  "native_candidates_per_item": 2.55,
+  "dropped": {
+   "gold_protected": 122,
+   "native_tools_removed": 35,
+   "duplicate_query": 1029
+  },
+  "mt_jobs": 216
+ },
+ "johin": {
+  "items": 4978,
+  "unique_queries": 4978,
+  "actions": {
+   "call": 4978
+  },
+  "single_call": 4954,
+  "multi_call": 24,
+  "unique_tools": 22,
+  "unique_tool_descriptions": 23,
+  "unique_gold_tools": 22,
+  "native_candidates_per_item": 4.01,
+  "dropped": {
+   "gold_protected": 2464,
+   "native_tools_removed": 4922,
+   "duplicate_query": 323
+  },
+  "mt_jobs": 0
+ },
+ "toolmind": {
+  "items": 27850,
+  "unique_queries": 18157,
+  "actions": {
+   "call": 27850
+  },
+  "single_call": 26667,
+  "multi_call": 1183,
+  "unique_tools": 6928,
+  "unique_tool_descriptions": 6919,
+  "unique_gold_tools": 5621,
+  "native_candidates_per_item": 3.31,
+  "dropped": {
+   "native_tools_removed": 61321,
+   "gold_protected": 29389
+  },
+  "mt_jobs": 18000
+ },
+ "when2call": {
+  "items": 9738,
+  "unique_queries": 9738,
+  "actions": {
+   "none": 3714,
+   "ask": 6024
+  },
+  "single_call": 0,
+  "multi_call": 0,
+  "unique_tools": 1795,
+  "unique_tool_descriptions": 1881,
+  "unique_gold_tools": 0,
+  "native_candidates_per_item": 1.54,
+  "dropped": {
+   "duplicate_query": 10233,
+   "native_tools_removed": 15578,
+   "no_tools_left": 3175,
+   "protected_query": 1,
+   "gold_protected": 853
+  },
+  "mt_jobs": 27000
+ },
+ "xlam": {
+  "items": 23941,
+  "unique_queries": 23941,
+  "actions": {
+   "call": 23941
+  },
+  "single_call": 18949,
+  "multi_call": 4992,
+  "unique_tools": 1921,
+  "unique_tool_descriptions": 2028,
+  "unique_gold_tools": 1727,
+  "native_candidates_per_item": 1.97,
+  "dropped": {
+   "gold_protected": 34843,
+   "native_tools_removed": 15919,
+   "duplicate_query": 1210,
+   "protected_query": 6
+  },
+  "mt_jobs": 60000
+ },
+ "xlam_irrelevance": {
+  "items": 2563,
+  "unique_queries": 2563,
+  "actions": {
+   "none": 2563
+  },
+  "single_call": 0,
+  "multi_call": 0,
+  "unique_tools": 1290,
+  "unique_tool_descriptions": 1344,
+  "unique_gold_tools": 0,
+  "native_candidates_per_item": 1.63,
+  "dropped": {
+   "duplicate_query": 2611,
+   "native_tools_removed": 3690,
+   "no_tools_left": 879,
+   "protected_query": 1
+  },
+  "mt_jobs": 0
+ },
+ "toolmind_loader": {
+  "dropped_glaive_function": 8538,
+  "no_tools": 1,
+  "conversations_read": 40000,
+  "conversations_total": 163180
+ },
+ "protected_registry": {
+  "tools_by_origin": {
+   "bfcl": 9314,
+   "krunbench_v1_unseen": 1695,
+   "v0_val_tools": 5638,
+   "v0_holdout_tools": 5438
+  },
+  "unique_names": 10128,
+  "unique_aliases": 9840,
+  "queries": 6236
+ },
+ "sha256_contexts": "76d525f776d6e49f58edeaa2e8ec8fbe81187ae46793cc56ef46c3a8eafc2b42",
+ "mt_jobs_total": 120216
+}

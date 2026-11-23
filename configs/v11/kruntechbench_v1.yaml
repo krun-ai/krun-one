@@ -1,0 +1,45 @@
+# KrunTechBench v1 — DESIGN (registered 2026-09-30; not built yet). Protected: never trained on, never used for
+# checkpoint selection, opened only for a registered promotion decision. A validation twin (KrunTechVal, disjoint
+# groups, same builders) is what training runs and selection look at.
+status: design
+schema: krun.decision.v1 (+ metadata.evidence, metadata.values, minimal_pair for flips)
+languages: {en: 0.70, pt-BR: 0.10, es: 0.10, fr: 0.10}     # instructions + state; technical terms stay as written
+tracks:
+  software_architecture: {source: rule tables + cited scenarios, evidence: rule | source}
+  backend: {source: rule tables + SWE-smith held-out repositories, evidence: rule | execution}
+  databases: {source: rule tables (property sheets with citations), evidence: rule}
+  distributed_systems: {source: rule tables + simulators (quorum / replication / partition outcomes), evidence: rule | simulation}
+  cloud_infra: {source: sizing / cost simulators, evidence: simulation}
+  networking_api: {source: routing simulator + protocol rule tables, evidence: simulation | rule}
+  security: {source: rule tables (mechanism -> property), evidence: rule}
+  devops: {source: rollout / dependency-order simulators, evidence: simulation}
+  ml_infrastructure: {source: capacity / batching / latency cost models, evidence: simulation}
+  code_strategy: {source: SWE-smith held-out repositories (file / function / test-group decisions), evidence: execution}
+  state_action_consequence: {source: Krun environments, one environment family NEVER generated for training, evidence: simulation}
+slices:                       # every item carries >= 1; all are mandatory in the report
+  easy: gold separated from the runner-up by the first decision factor
+  hard: separated only by a later factor / a small outcome gap
+  hard_negative: every negative is a near substitute (same category / same package / near-optimal action)
+  constraint_flip: pairs (context A -> X ; context A + one meaningful constraint -> Y), same candidates, same order
+  unseen_technology: technologies / repositories / environment family absent from every training source
+  large_candidate_set: k in {32, 64, 128}; items that span more than one serializer chunk are tagged `multi_chunk`
+  ood: no candidate is acceptable (answerable = false)
+  state_action: explicit state + actions with measured outcomes
+conditions: [raw, feature_assisted]      # feature-assisted is reported as a diagnostic, never mixed into the headline
+metrics:
+  headline: [top1, pairwise_gold_vs_hardest, hard_negative_margin_logit, constraint_flip_both_correct]
+  secondary: [mrr, ndcg_graded, normalized_entropy, gold_probability, ece, abstention_rate, selective_accuracy,
+              ood_false_acceptance, ood_auroc, flip_stuck_on_base_answer, permutation_consistency]
+  constraint_flip:
+    both_correct: base and flip both right
+    flip_sensitivity: P(flip right | base right)
+    stuck: the flip item is answered with the base winner (memorized technology preference)
+size_target: {total: 6000, per_track_min: 400, flip_pairs_min: 800, ood_min: 500, large_k_min: 500}
+quality_rules:
+  - ties never become labels; a "partial" property never decides an item
+  - every rule table row cites a primary source (official documentation); reviewed by a human before freezing
+  - SWE items: repository-level split; SWE-bench evaluation repositories excluded; labels from FAIL_TO_PASS
+  - a 200-item human audit before the freeze; items a reviewer disputes are dropped, not relabeled
+protection:
+  registry: hashes + repositories + environment family + requirement sets exported to the training builders' exclusion list
+  r0_probe_is_not_this_benchmark: data/v11/probe/probe.jsonl is a diagnostic; its generators are visible to training

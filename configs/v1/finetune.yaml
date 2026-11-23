@@ -1,0 +1,57 @@
+# Krun One v1 — full fine-tune of K1-W1536-L22 (879M) on Krun Decisions v1 (~1M). Registered 2026-09-27, before training.
+name: krun-one-v1-ft
+seed: 20260927
+spec: k1                                   # krun_one.v1.arch.SPECS["k1"] — architecture frozen (no changes this round)
+init:
+  encoder: runs/v1/mlm1b_import/k1_0b.tar  # milestone-0 = HyperClone(mmBERT-base) 0B (decision STOP_AT_1B / FINE-TUNE_FROM_0B)
+  encoder_sha256: 061160e3ff0a606b8ee4efd6ef657e5355af1bfff91048325745db5c0a987565
+  member: runs/v1/mlm/k1-continued-mlm-1b/milestone-0
+data:
+  train: data/kd1/train.jsonl
+  validation:                              # model selection / calibration: V only (final_protected is never read)
+    - data/krunbench_v1/val_fit.jsonl
+    - data/krunbench_v1/val_eval.jsonl
+    - data/kd1/val_ml.jsonl
+sequence:
+  max_len: 1024
+  head_max_len: 896
+  max_candidates_per_chunk: 64
+batching:                                  # dynamic token batching (padded-token budget)
+  max_tokens: 16384
+  max_questions: 64
+optimizer:                                 # AdamW, discriminative LRs (encoder low, decision stack higher)
+  lr_encoder: 1.0e-5                       # final value set by the LR smoke (lr_smoke below)
+  lr_head: 5.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  max_grad_norm: 1.0
+epochs: 1                                  # one pass over ~1M decisions with a progressive curriculum
+gradient_checkpointing: true
+curriculum:                                # item position keys ~ U(range) of its stage (training.curriculum_batches)
+  ranges:
+    D1: [0.00, 0.55]                       # core Choice / Tool / Noul / Score / Multi
+    D2: [0.20, 0.90]                       # hard negatives (k>=8), cross-language, translated schema, dialogue, typos
+    D3: [0.45, 1.00]                       # OOD / near-OOD, minimal pairs, synthetic adversarial, k=128, hard tool confusions
+checkpoint:
+  save_every: 1000000000                   # step-based saving off; time-based below bounds preemption loss
+  save_every_minutes: 30
+  keep_last: 1
+loss:                                      # the objective validated so far (A_margin); no loss redesign this round
+  unanswerable_mode: oe                    # choice: softmax CE; unanswerable: outlier exposure (public abstention = margin)
+  w_oe: 0.5
+  w_ans: 0.0
+  w_apply: 0.25                            # applicability sigmoid on choice (aux) — the multi-label output
+  w_multi: 1.0                             # multi: sigmoid BCE over candidates
+  w_rps: 0.0                               # score: CE baseline (RPS not reopened)
+  score_sigma: 0.0
+lr_smoke:                                  # at most one cheap bakeoff, same data order, registered rule
+  candidates:
+    - {lr_encoder: 5.0e-6, lr_head: 5.0e-5}
+    - {lr_encoder: 1.0e-5, lr_head: 5.0e-5}
+    - {lr_encoder: 2.0e-5, lr_head: 5.0e-5}   # probe setting (2e-5 / 1e-4 was used by the 0B/1B probe)
+  subset: 36000                            # decisions sampled uniformly from train (~600 steps), own full schedule
+  eval_subset: 3000                        # fixed sample of V "fit" decisions (KrunBench v1 val_fit + val_ml fit)
+  rule: >
+    Train each candidate on the same `subset` (1 epoch, same order, warmup 3%, linear decay) from the same init.
+    Score = mean of [choice accuracy (intent), tool accuracy, noul ROC-AUC, multi micro-F1] on `eval_subset`.
+    Highest score wins; ties (< 0.3 points) -> the lower encoder LR. Non-finite loss disqualifies a candidate.

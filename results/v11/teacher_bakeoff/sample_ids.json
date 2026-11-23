@@ -1,0 +1,2711 @@
+{
+ "seed": 20261010,
+ "source": "data/v11/techbench/val.jsonl",
+ "n": 240,
+ "ids": [
+  "ktv-0000862-raw",
+  "ktv-0000863-raw",
+  "ktv-0001389-raw",
+  "ktv-0001390-raw",
+  "ktv-0000838-raw",
+  "ktv-0000839-raw",
+  "ktv-0001387-raw",
+  "ktv-0001388-raw",
+  "ktv-0000866-raw",
+  "ktv-0000867-raw",
+  "ktv-0000320-raw",
+  "ktv-0000376-raw",
+  "ktv-0000879-raw",
+  "ktv-0000314-raw",
+  "ktv-0000378-raw",
+  "ktv-0000306-raw",
+  "ktv-0000372-raw",
+  "ktv-0000293-raw",
+  "ktv-0000354-raw",
+  "ktv-0000282-raw",
+  "ktv-0000332-raw",
+  "ktv-0001326-raw",
+  "ktv-0000287-raw",
+  "ktv-0000334-raw",
+  "ktv-0000181-raw",
+  "ktv-0000182-raw",
+  "ktv-0000185-raw",
+  "ktv-0000186-raw",
+  "ktv-0000187-raw",
+  "ktv-0000188-raw",
+  "ktv-0000195-raw",
+  "ktv-0000196-raw",
+  "ktv-0000249-raw",
+  "ktv-0000207-raw",
+  "ktv-0000251-raw",
+  "ktv-0000209-raw",
+  "ktv-0000262-raw",
+  "ktv-0000228-raw",
+  "ktv-0000219-raw",
+  "ktv-0000237-raw",
+  "ktv-0000226-raw",
+  "ktv-0000223-raw",
+  "ktv-0000233-raw",
+  "ktv-0000261-raw",
+  "ktv-0000243-raw",
+  "ktv-0000176-raw",
+  "ktv-0000244-raw",
+  "ktv-0000157-raw",
+  "ktv-0001517-raw",
+  "ktv-0001518-raw",
+  "ktv-0001525-raw",
+  "ktv-0001526-raw",
+  "ktv-0001531-raw",
+  "ktv-0001532-raw",
+  "ktv-0001523-raw",
+  "ktv-0001524-raw",
+  "ktv-0001574-raw",
+  "ktv-0001573-raw",
+  "ktv-0001564-raw",
+  "ktv-0001560-raw",
+  "ktv-0001477-raw",
+  "ktv-0001469-raw",
+  "ktv-0001472-raw",
+  "ktv-0001434-raw",
+  "ktv-0001436-raw",
+  "ktv-0001458-raw",
+  "ktv-0001468-raw",
+  "ktv-0001513-raw",
+  "ktv-0001454-raw",
+  "ktv-0001482-raw",
+  "ktv-0001455-raw",
+  "ktv-0001445-raw",
+  "ktv-0000063-raw",
+  "ktv-0000064-raw",
+  "ktv-0000057-raw",
+  "ktv-0000058-raw",
+  "ktv-0000053-raw",
+  "ktv-0000054-raw",
+  "ktv-0000055-raw",
+  "ktv-0000056-raw",
+  "ktv-0000074-raw",
+  "ktv-0000068-raw",
+  "ktv-0000071-raw",
+  "ktv-0000070-raw",
+  "ktv-0001106-raw",
+  "ktv-0001122-raw",
+  "ktv-0001113-raw",
+  "ktv-0001066-raw",
+  "ktv-0001077-raw",
+  "ktv-0001078-raw",
+  "ktv-0001101-raw",
+  "ktv-0001086-raw",
+  "ktv-0001140-raw",
+  "ktv-0001064-raw",
+  "ktv-0001109-raw",
+  "ktv-0001136-raw",
+  "ktv-0000504-raw",
+  "ktv-0000900-raw",
+  "ktv-0000516-raw",
+  "ktv-0000927-raw",
+  "ktv-0000526-raw",
+  "ktv-0000926-raw",
+  "ktv-0000520-raw",
+  "ktv-0000944-raw",
+  "ktv-0000532-raw",
+  "ktv-0000905-raw",
+  "ktv-0000489-raw",
+  "ktv-0000932-raw",
+  "ktv-0000491-raw",
+  "ktv-0000913-raw",
+  "ktv-0000505-raw",
+  "ktv-0000894-raw",
+  "ktv-0000530-raw",
+  "ktv-0000910-raw",
+  "ktv-0000525-raw",
+  "ktv-0000928-raw",
+  "ktv-0000508-raw",
+  "ktv-0000946-raw",
+  "ktv-0000494-raw",
+  "ktv-0000937-raw",
+  "ktv-0000733-raw",
+  "ktv-0000734-raw",
+  "ktv-0000715-raw",
+  "ktv-0000716-raw",
+  "ktv-0000701-raw",
+  "ktv-0000702-raw",
+  "ktv-0000725-raw",
+  "ktv-0000726-raw",
+  "ktv-0000713-raw",
+  "ktv-0000714-raw",
+  "ktv-0000746-raw",
+  "ktv-0000744-raw",
+  "ktv-0000745-raw",
+  "ktv-0000737-raw",
+  "ktv-0000125-raw",
+  "ktv-0000098-raw",
+  "ktv-0000112-raw",
+  "ktv-0000106-raw",
+  "ktv-0000101-raw",
+  "ktv-0000115-raw",
+  "ktv-0000129-raw",
+  "ktv-0000097-raw",
+  "ktv-0000084-raw",
+  "ktv-0000090-raw",
+  "ktv-0001018-raw",
+  "ktv-0001019-raw",
+  "ktv-0001016-raw",
+  "ktv-0001017-raw",
+  "ktv-0001014-raw",
+  "ktv-0001015-raw",
+  "ktv-0001030-raw",
+  "ktv-0001031-raw",
+  "ktv-0001057-raw",
+  "ktv-0000544-raw",
+  "ktv-0001050-raw",
+  "ktv-0000550-raw",
+  "ktv-0001055-raw",
+  "ktv-0000595-raw",
+  "ktv-0000561-raw",
+  "ktv-0000602-raw",
+  "ktv-0000556-raw",
+  "ktv-0000601-raw",
+  "ktv-0000594-raw",
+  "ktv-0000564-raw",
+  "ktv-0000555-raw",
+  "ktv-0000596-raw",
+  "ktv-0000597-raw",
+  "ktv-0000579-raw",
+  "ktv-0000476-raw",
+  "ktv-0000432-raw",
+  "ktv-0000471-raw",
+  "ktv-0000428-raw",
+  "ktv-0000474-raw",
+  "ktv-0000398-raw",
+  "ktv-0000444-raw",
+  "ktv-0000435-raw",
+  "ktv-0000468-raw",
+  "ktv-0000408-raw",
+  "ktv-0000445-raw",
+  "ktv-0000412-raw",
+  "ktv-0000487-raw",
+  "ktv-0000413-raw",
+  "ktv-0000483-raw",
+  "ktv-0000419-raw",
+  "ktv-0000441-raw",
+  "ktv-0000410-raw",
+  "ktv-0000443-raw",
+  "ktv-0000418-raw",
+  "ktv-0000453-raw",
+  "ktv-0000416-raw",
+  "ktv-0000470-raw",
+  "ktv-0000421-raw",
+  "ktv-0002459-feat",
+  "ktv-0002460-feat",
+  "ktv-0002462-feat",
+  "ktv-0002444-feat",
+  "ktv-0002428-feat",
+  "ktv-0001956-feat",
+  "ktv-0002314-feat",
+  "ktv-0002254-feat",
+  "ktv-0002159-feat",
+  "ktv-0001890-feat",
+  "ktv-0002302-feat",
+  "ktv-0002215-feat",
+  "ktv-0002112-feat",
+  "ktv-0002068-feat",
+  "ktv-0002329-feat",
+  "ktv-0002272-feat",
+  "ktv-0002129-feat",
+  "ktv-0001969-feat",
+  "ktv-0002330-feat",
+  "ktv-0002223-feat",
+  "ktv-0002130-feat",
+  "ktv-0001988-feat",
+  "ktv-0002328-feat",
+  "ktv-0002205-feat",
+  "ktv-0001245-raw",
+  "ktv-0001246-raw",
+  "ktv-0001241-raw",
+  "ktv-0001242-raw",
+  "ktv-0001249-raw",
+  "ktv-0001250-raw",
+  "ktv-0001243-raw",
+  "ktv-0001244-raw",
+  "ktv-0001283-raw",
+  "ktv-0001290-raw",
+  "ktv-0001288-raw",
+  "ktv-0001292-raw",
+  "ktv-0001705-raw",
+  "ktv-0001687-raw",
+  "ktv-0001619-raw",
+  "ktv-0001785-raw",
+  "ktv-0001661-raw",
+  "ktv-0001697-raw",
+  "ktv-0001711-raw",
+  "ktv-0001643-raw",
+  "ktv-0001641-raw",
+  "ktv-0001783-raw",
+  "ktv-0001647-raw",
+  "ktv-0001741-raw"
+ ],
+ "subset60_ids": [
+  "ktv-0000862-raw",
+  "ktv-0000863-raw",
+  "ktv-0000320-raw",
+  "ktv-0000372-raw",
+  "ktv-0001326-raw",
+  "ktv-0000287-raw",
+  "ktv-0000181-raw",
+  "ktv-0000182-raw",
+  "ktv-0000249-raw",
+  "ktv-0000262-raw",
+  "ktv-0000228-raw",
+  "ktv-0000176-raw",
+  "ktv-0001517-raw",
+  "ktv-0001518-raw",
+  "ktv-0001574-raw",
+  "ktv-0001477-raw",
+  "ktv-0001469-raw",
+  "ktv-0001472-raw",
+  "ktv-0000063-raw",
+  "ktv-0000064-raw",
+  "ktv-0000074-raw",
+  "ktv-0001106-raw",
+  "ktv-0001122-raw",
+  "ktv-0001113-raw",
+  "ktv-0000504-raw",
+  "ktv-0000900-raw",
+  "ktv-0000516-raw",
+  "ktv-0000927-raw",
+  "ktv-0000526-raw",
+  "ktv-0000926-raw",
+  "ktv-0000733-raw",
+  "ktv-0000734-raw",
+  "ktv-0000746-raw",
+  "ktv-0000125-raw",
+  "ktv-0000098-raw",
+  "ktv-0000112-raw",
+  "ktv-0001018-raw",
+  "ktv-0001019-raw",
+  "ktv-0001057-raw",
+  "ktv-0000595-raw",
+  "ktv-0000561-raw",
+  "ktv-0000602-raw",
+  "ktv-0000476-raw",
+  "ktv-0000398-raw",
+  "ktv-0000444-raw",
+  "ktv-0000435-raw",
+  "ktv-0000468-raw",
+  "ktv-0000408-raw",
+  "ktv-0002459-feat",
+  "ktv-0001956-feat",
+  "ktv-0002314-feat",
+  "ktv-0002254-feat",
+  "ktv-0002159-feat",
+  "ktv-0001890-feat",
+  "ktv-0001245-raw",
+  "ktv-0001246-raw",
+  "ktv-0001283-raw",
+  "ktv-0001705-raw",
+  "ktv-0001687-raw",
+  "ktv-0001619-raw"
+ ],
+ "meta": {
+  "ktv-0000862-raw": {
+   "track": "api",
+   "slice": "retry",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000862",
+    "role": "base",
+    "base_gold": "timeout 200 ms, 2 attempts, 200 ms backoff"
+   },
+   "render": "raw"
+  },
+  "ktv-0000863-raw": {
+   "track": "api",
+   "slice": "retry",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000862",
+    "role": "flip",
+    "base_gold": "timeout 200 ms, 2 attempts, 200 ms backoff"
+   },
+   "render": "raw"
+  },
+  "ktv-0001389-raw": {
+   "track": "api",
+   "slice": "routing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001389",
+    "role": "base",
+    "base_gold": "gru > jnb > nrt > iad"
+   },
+   "render": "raw"
+  },
+  "ktv-0001390-raw": {
+   "track": "api",
+   "slice": "routing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001389",
+    "role": "flip",
+    "base_gold": "gru > jnb > nrt > iad"
+   },
+   "render": "raw"
+  },
+  "ktv-0000838-raw": {
+   "track": "api",
+   "slice": "retry",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000838",
+    "role": "base",
+    "base_gold": "timeout 500 ms, 4 attempts, 200 ms backoff"
+   },
+   "render": "raw"
+  },
+  "ktv-0000839-raw": {
+   "track": "api",
+   "slice": "retry",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000838",
+    "role": "flip",
+    "base_gold": "timeout 500 ms, 4 attempts, 200 ms backoff"
+   },
+   "render": "raw"
+  },
+  "ktv-0001387-raw": {
+   "track": "api",
+   "slice": "routing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001387",
+    "role": "base",
+    "base_gold": "yyz > lhr > scl"
+   },
+   "render": "raw"
+  },
+  "ktv-0001388-raw": {
+   "track": "api",
+   "slice": "routing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001387",
+    "role": "flip",
+    "base_gold": "yyz > lhr > scl"
+   },
+   "render": "raw"
+  },
+  "ktv-0000866-raw": {
+   "track": "api",
+   "slice": "retry",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000866",
+    "role": "base",
+    "base_gold": "timeout 200 ms, 4 attempts, 0 ms backoff"
+   },
+   "render": "raw"
+  },
+  "ktv-0000867-raw": {
+   "track": "api",
+   "slice": "retry",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000866",
+    "role": "flip",
+    "base_gold": "timeout 200 ms, 4 attempts, 0 ms backoff"
+   },
+   "render": "raw"
+  },
+  "ktv-0000320-raw": {
+   "track": "api",
+   "slice": "apistyle",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000376-raw": {
+   "track": "api",
+   "slice": "netcomponent",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000879-raw": {
+   "track": "api",
+   "slice": "retry",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000314-raw": {
+   "track": "api",
+   "slice": "apistyle",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000378-raw": {
+   "track": "api",
+   "slice": "netcomponent",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 5,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000306-raw": {
+   "track": "api",
+   "slice": "apistyle",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000372-raw": {
+   "track": "api",
+   "slice": "netcomponent",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 5,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000293-raw": {
+   "track": "api",
+   "slice": "apistyle",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000354-raw": {
+   "track": "api",
+   "slice": "netcomponent",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 5,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000282-raw": {
+   "track": "api",
+   "slice": "apistyle",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000332-raw": {
+   "track": "api",
+   "slice": "netcomponent",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001326-raw": {
+   "track": "api",
+   "slice": "routing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000287-raw": {
+   "track": "api",
+   "slice": "apistyle",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000334-raw": {
+   "track": "api",
+   "slice": "netcomponent",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000181-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000181",
+    "role": "base",
+    "base_gold": "binary heap"
+   },
+   "render": "raw"
+  },
+  "ktv-0000182-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000181",
+    "role": "flip",
+    "base_gold": "binary heap"
+   },
+   "render": "raw"
+  },
+  "ktv-0000185-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000185",
+    "role": "base",
+    "base_gold": "binary heap"
+   },
+   "render": "raw"
+  },
+  "ktv-0000186-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000185",
+    "role": "flip",
+    "base_gold": "binary heap"
+   },
+   "render": "raw"
+  },
+  "ktv-0000187-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000187",
+    "role": "base",
+    "base_gold": "fifo queue"
+   },
+   "render": "raw"
+  },
+  "ktv-0000188-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000187",
+    "role": "flip",
+    "base_gold": "fifo queue"
+   },
+   "render": "raw"
+  },
+  "ktv-0000195-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 5,
+   "flip": {
+    "pair": "ktv-flip0000195",
+    "role": "base",
+    "base_gold": "hash table"
+   },
+   "render": "raw"
+  },
+  "ktv-0000196-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 5,
+   "flip": {
+    "pair": "ktv-flip0000195",
+    "role": "flip",
+    "base_gold": "hash table"
+   },
+   "render": "raw"
+  },
+  "ktv-0000249-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000207-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 7,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000251-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 5,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000209-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 6,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000262-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000228-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 6,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000219-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000237-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000226-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 7,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000223-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 7,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000233-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 6,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000261-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000243-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000176-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 5,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000244-raw": {
+   "track": "backend",
+   "slice": "scaling",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 5,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000157-raw": {
+   "track": "backend",
+   "slice": "structure",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001517-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001517",
+    "role": "base",
+    "base_gold": "16 vcpu, 32 gb ram, no gpu, 224 usd per month"
+   },
+   "render": "raw"
+  },
+  "ktv-0001518-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001517",
+    "role": "flip",
+    "base_gold": "16 vcpu, 32 gb ram, no gpu, 224 usd per month"
+   },
+   "render": "raw"
+  },
+  "ktv-0001525-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001525",
+    "role": "base",
+    "base_gold": "8 vcpu, 16 gb ram, no gpu, 102 usd per month"
+   },
+   "render": "raw"
+  },
+  "ktv-0001526-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001525",
+    "role": "flip",
+    "base_gold": "8 vcpu, 16 gb ram, no gpu, 102 usd per month"
+   },
+   "render": "raw"
+  },
+  "ktv-0001531-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001531",
+    "role": "base",
+    "base_gold": "8 vcpu, 16 gb ram, no gpu, 88 usd per month"
+   },
+   "render": "raw"
+  },
+  "ktv-0001532-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001531",
+    "role": "flip",
+    "base_gold": "8 vcpu, 16 gb ram, no gpu, 88 usd per month"
+   },
+   "render": "raw"
+  },
+  "ktv-0001523-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001523",
+    "role": "base",
+    "base_gold": "8 vcpu, 8 gb ram, no gpu, 76 usd per month"
+   },
+   "render": "raw"
+  },
+  "ktv-0001524-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001523",
+    "role": "flip",
+    "base_gold": "8 vcpu, 8 gb ram, no gpu, 76 usd per month"
+   },
+   "render": "raw"
+  },
+  "ktv-0001574-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001573-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001564-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001560-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001477-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001469-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001472-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001434-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001436-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001458-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001468-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001513-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 32,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001454-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001482-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001455-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001445-raw": {
+   "track": "cloud",
+   "slice": "sizing",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000063-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000063",
+    "role": "base",
+    "base_gold": "sqlite"
+   },
+   "render": "raw"
+  },
+  "ktv-0000064-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000063",
+    "role": "flip",
+    "base_gold": "sqlite"
+   },
+   "render": "raw"
+  },
+  "ktv-0000057-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000057",
+    "role": "base",
+    "base_gold": "sqlite"
+   },
+   "render": "raw"
+  },
+  "ktv-0000058-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000057",
+    "role": "flip",
+    "base_gold": "sqlite"
+   },
+   "render": "raw"
+  },
+  "ktv-0000053-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000053",
+    "role": "base",
+    "base_gold": "sqlite"
+   },
+   "render": "raw"
+  },
+  "ktv-0000054-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000053",
+    "role": "flip",
+    "base_gold": "sqlite"
+   },
+   "render": "raw"
+  },
+  "ktv-0000055-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000055",
+    "role": "base",
+    "base_gold": "sqlite"
+   },
+   "render": "raw"
+  },
+  "ktv-0000056-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": {
+    "pair": "ktv-flip0000055",
+    "role": "flip",
+    "base_gold": "sqlite"
+   },
+   "render": "raw"
+  },
+  "ktv-0000074-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000068-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000071-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000070-raw": {
+   "track": "database",
+   "slice": "datastore",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 5,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001106-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001122-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001113-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001066-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001077-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001078-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001101-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001086-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001140-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001064-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001109-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001136-raw": {
+   "track": "database",
+   "slice": "indexing",
+   "family": "simulator",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000504-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000900-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000516-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000927-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000526-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000926-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000520-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000944-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000532-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000905-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000489-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000932-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000491-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000913-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000505-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000894-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000530-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000910-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000525-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000928-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000508-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000946-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000494-raw": {
+   "track": "devops",
+   "slice": "deploystrategy",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000937-raw": {
+   "track": "devops",
+   "slice": "rollout",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000733-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000733",
+    "role": "base",
+    "base_gold": "read quorum 2, write quorum 6"
+   },
+   "render": "raw"
+  },
+  "ktv-0000734-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000733",
+    "role": "flip",
+    "base_gold": "read quorum 2, write quorum 6"
+   },
+   "render": "raw"
+  },
+  "ktv-0000715-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000715",
+    "role": "base",
+    "base_gold": "read quorum 6, write quorum 2"
+   },
+   "render": "raw"
+  },
+  "ktv-0000716-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000715",
+    "role": "flip",
+    "base_gold": "read quorum 6, write quorum 2"
+   },
+   "render": "raw"
+  },
+  "ktv-0000701-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000701",
+    "role": "base",
+    "base_gold": "read quorum 2, write quorum 4"
+   },
+   "render": "raw"
+  },
+  "ktv-0000702-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000701",
+    "role": "flip",
+    "base_gold": "read quorum 2, write quorum 4"
+   },
+   "render": "raw"
+  },
+  "ktv-0000725-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000725",
+    "role": "base",
+    "base_gold": "read quorum 4, write quorum 2"
+   },
+   "render": "raw"
+  },
+  "ktv-0000726-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000725",
+    "role": "flip",
+    "base_gold": "read quorum 4, write quorum 2"
+   },
+   "render": "raw"
+  },
+  "ktv-0000713-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000713",
+    "role": "base",
+    "base_gold": "read quorum 5, write quorum 3"
+   },
+   "render": "raw"
+  },
+  "ktv-0000714-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0000713",
+    "role": "flip",
+    "base_gold": "read quorum 5, write quorum 3"
+   },
+   "render": "raw"
+  },
+  "ktv-0000746-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000744-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000745-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000737-raw": {
+   "track": "distributed",
+   "slice": "quorum",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000125-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000098-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000112-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000106-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000101-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000115-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000129-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000097-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000084-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000090-raw": {
+   "track": "distributed",
+   "slice": "messaging",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001018-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001018",
+    "role": "base",
+    "base_gold": "batch size 12"
+   },
+   "render": "raw"
+  },
+  "ktv-0001019-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001018",
+    "role": "flip",
+    "base_gold": "batch size 12"
+   },
+   "render": "raw"
+  },
+  "ktv-0001016-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001016",
+    "role": "base",
+    "base_gold": "batch size 4"
+   },
+   "render": "raw"
+  },
+  "ktv-0001017-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001016",
+    "role": "flip",
+    "base_gold": "batch size 4"
+   },
+   "render": "raw"
+  },
+  "ktv-0001014-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001014",
+    "role": "base",
+    "base_gold": "batch size 8"
+   },
+   "render": "raw"
+  },
+  "ktv-0001015-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001014",
+    "role": "flip",
+    "base_gold": "batch size 8"
+   },
+   "render": "raw"
+  },
+  "ktv-0001030-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001030",
+    "role": "base",
+    "base_gold": "batch size 6"
+   },
+   "render": "raw"
+  },
+  "ktv-0001031-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001030",
+    "role": "flip",
+    "base_gold": "batch size 6"
+   },
+   "render": "raw"
+  },
+  "ktv-0001057-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000544-raw": {
+   "track": "mlinfra",
+   "slice": "mlserving",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001050-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000550-raw": {
+   "track": "mlinfra",
+   "slice": "mlserving",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001055-raw": {
+   "track": "mlinfra",
+   "slice": "batching",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000595-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000561-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000602-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000556-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000601-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000594-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000564-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000555-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000596-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000597-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000579-raw": {
+   "track": "mlinfra",
+   "slice": "vectorindex",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000476-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000432-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000471-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000428-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000474-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": false,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000398-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 5,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000444-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000435-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000468-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000408-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000445-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000412-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 3,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000487-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000413-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 7,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000483-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000419-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 6,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000441-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 6,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000410-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 7,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000443-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000418-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 7,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000453-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000416-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000470-raw": {
+   "track": "security",
+   "slice": "authn",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 6,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0000421-raw": {
+   "track": "security",
+   "slice": "security",
+   "family": "rule_table",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0002459-feat": {
+   "track": "software_repair",
+   "slice": "swe_file_ood",
+   "family": "swe",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002460-feat": {
+   "track": "software_repair",
+   "slice": "swe_file_ood",
+   "family": "swe",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002462-feat": {
+   "track": "software_repair",
+   "slice": "swe_file_ood",
+   "family": "swe",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002444-feat": {
+   "track": "software_repair",
+   "slice": "swe_file_ood",
+   "family": "swe",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002428-feat": {
+   "track": "software_repair",
+   "slice": "swe_file_ood",
+   "family": "swe",
+   "answerable": false,
+   "k": 3,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0001956-feat": {
+   "track": "software_repair",
+   "slice": "swe_file",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002314-feat": {
+   "track": "software_repair",
+   "slice": "swe_function",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002254-feat": {
+   "track": "software_repair",
+   "slice": "swe_subsystem",
+   "family": "swe",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002159-feat": {
+   "track": "software_repair",
+   "slice": "swe_tests",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0001890-feat": {
+   "track": "software_repair",
+   "slice": "swe_file",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002302-feat": {
+   "track": "software_repair",
+   "slice": "swe_function",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002215-feat": {
+   "track": "software_repair",
+   "slice": "swe_subsystem",
+   "family": "swe",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002112-feat": {
+   "track": "software_repair",
+   "slice": "swe_tests",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002068-feat": {
+   "track": "software_repair",
+   "slice": "swe_file",
+   "family": "swe",
+   "answerable": true,
+   "k": 18,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002329-feat": {
+   "track": "software_repair",
+   "slice": "swe_function",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002272-feat": {
+   "track": "software_repair",
+   "slice": "swe_subsystem",
+   "family": "swe",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002129-feat": {
+   "track": "software_repair",
+   "slice": "swe_tests",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0001969-feat": {
+   "track": "software_repair",
+   "slice": "swe_file",
+   "family": "swe",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002330-feat": {
+   "track": "software_repair",
+   "slice": "swe_function",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002223-feat": {
+   "track": "software_repair",
+   "slice": "swe_subsystem",
+   "family": "swe",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002130-feat": {
+   "track": "software_repair",
+   "slice": "swe_tests",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0001988-feat": {
+   "track": "software_repair",
+   "slice": "swe_file",
+   "family": "swe",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002328-feat": {
+   "track": "software_repair",
+   "slice": "swe_function",
+   "family": "swe",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0002205-feat": {
+   "track": "software_repair",
+   "slice": "swe_subsystem",
+   "family": "swe",
+   "answerable": true,
+   "k": 4,
+   "flip": null,
+   "render": "feat"
+  },
+  "ktv-0001245-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001245",
+    "role": "base",
+    "base_gold": "node 86"
+   },
+   "render": "raw"
+  },
+  "ktv-0001246-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001245",
+    "role": "flip",
+    "base_gold": "node 86"
+   },
+   "render": "raw"
+  },
+  "ktv-0001241-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001241",
+    "role": "base",
+    "base_gold": "node 69"
+   },
+   "render": "raw"
+  },
+  "ktv-0001242-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001241",
+    "role": "flip",
+    "base_gold": "node 69"
+   },
+   "render": "raw"
+  },
+  "ktv-0001249-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001249",
+    "role": "base",
+    "base_gold": "node 46"
+   },
+   "render": "raw"
+  },
+  "ktv-0001250-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001249",
+    "role": "flip",
+    "base_gold": "node 46"
+   },
+   "render": "raw"
+  },
+  "ktv-0001243-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001243",
+    "role": "base",
+    "base_gold": "node 31"
+   },
+   "render": "raw"
+  },
+  "ktv-0001244-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": true,
+   "k": 8,
+   "flip": {
+    "pair": "ktv-flip0001243",
+    "role": "flip",
+    "base_gold": "node 31"
+   },
+   "render": "raw"
+  },
+  "ktv-0001283-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001290-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001288-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001292-raw": {
+   "track": "state_action",
+   "slice": "scheduling",
+   "family": "simulator",
+   "answerable": false,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001705-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001687-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001619-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001785-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001661-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001697-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001711-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001643-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001641-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001783-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001647-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 8,
+   "flip": null,
+   "render": "raw"
+  },
+  "ktv-0001741-raw": {
+   "track": "state_action",
+   "slice": "tetris",
+   "family": "tetris",
+   "answerable": true,
+   "k": 16,
+   "flip": null,
+   "render": "raw"
+  }
+ }
+}

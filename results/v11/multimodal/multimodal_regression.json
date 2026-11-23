@@ -1,0 +1,240 @@
+{
+ "M1.5c registered": {
+  "values": {
+   "G1 doc visual-only": 0.6797215936641345,
+   "G1 layout": 0.38661710037174724,
+   "G2 screenshot": 0.991508817766166,
+   "G2 text-dep doc": 0.6722453347283011,
+   "G3 real speech": 0.8513008670630489,
+   "G3 minds intent": 0.896797153024911,
+   "G4 image": 0.648238617263688,
+   "G4b synthdoc": 0.960919540229885,
+   "G4b doclaynet": 0.9446693657219973,
+   "G4b cord": 1.0
+  },
+  "gates": {
+   "G1": true,
+   "G2": true,
+   "G3": true,
+   "G4": true,
+   "G4b": true
+  },
+  "by_modality_task_class": {
+   "audio/acoustic_only": 0.37285223367697595,
+   "audio/text_dependent": 0.9010452961672474,
+   "document/hybrid": 0.8095238095238095,
+   "document/text_dependent": 0.8185812931575643,
+   "document/visual_only": 0.6247240618101545,
+   "image/visual_only": 0.6576186131386861
+  }
+ },
+ "v1": {
+  "values": {
+   "G1 doc visual-only": 0.6871565379020527,
+   "G1 layout": 0.40148698884758366,
+   "G2 screenshot": 0.991508817766166,
+   "G2 text-dep doc": 0.6712704690880213,
+   "G3 real speech": 0.8513008670630489,
+   "G3 minds intent": 0.896797153024911,
+   "G4 image": 0.648238617263688,
+   "G4b synthdoc": 0.9620689655172414,
+   "G4b doclaynet": 0.9446693657219973,
+   "G4b cord": 1.0
+  },
+  "gates": {
+   "G1": true,
+   "G2": true,
+   "G3": true,
+   "G4": true,
+   "G4b": true
+  },
+  "by_modality_task_class": {
+   "audio/acoustic_only": 0.37285223367697595,
+   "audio/text_dependent": 0.9010452961672474,
+   "document/hybrid": 0.8091787439613527,
+   "document/text_dependent": 0.8185812931575643,
+   "document/visual_only": 0.6335540838852097,
+   "image/visual_only": 0.6576186131386861
+  }
+ },
+ "v1_wrapped": {
+  "values": {
+   "G1 doc visual-only": 0.6871565379020527,
+   "G1 layout": 0.40148698884758366,
+   "G2 screenshot": 0.991508817766166,
+   "G2 text-dep doc": 0.6712704690880213,
+   "G3 real speech": 0.8513008670630489,
+   "G3 minds intent": 0.896797153024911,
+   "G4 image": 0.648238617263688,
+   "G4b synthdoc": 0.9620689655172414,
+   "G4b doclaynet": 0.9446693657219973,
+   "G4b cord": 1.0
+  },
+  "gates": {
+   "G1": true,
+   "G2": true,
+   "G3": true,
+   "G4": true,
+   "G4b": true
+  },
+  "by_modality_task_class": {
+   "audio/acoustic_only": 0.37285223367697595,
+   "audio/text_dependent": 0.9010452961672474,
+   "document/hybrid": 0.8091787439613527,
+   "document/text_dependent": 0.8185812931575643,
+   "document/visual_only": 0.6335540838852097,
+   "image/visual_only": 0.6576186131386861
+  },
+  "delta_pp": {
+   "G1 doc visual-only": 0.0,
+   "G1 layout": 0.0,
+   "G2 screenshot": 0.0,
+   "G2 text-dep doc": 0.0,
+   "G3 real speech": 0.0,
+   "G3 minds intent": 0.0,
+   "G4 image": 0.0,
+   "G4b synthdoc": 0.0,
+   "G4b doclaynet": 0.0,
+   "G4b cord": 0.0
+  },
+  "worst_pp": 0.0,
+  "all_registered_gates": true,
+  "no_gate_lost_vs_same_host_v1": true,
+  "PASS": true
+ },
+ "r1_s1": {
+  "values": {
+   "G1 doc visual-only": 0.5080713593017617,
+   "G1 layout": 0.06505576208178439,
+   "G2 screenshot": 0.961463096015676,
+   "G2 text-dep doc": 0.6671643238890643,
+   "G3 real speech": 0.8099641403214292,
+   "G3 minds intent": 0.8718861209964412,
+   "G4 image": 0.5625990691628745,
+   "G4b synthdoc": 0.8057471264367816,
+   "G4b doclaynet": 0.815114709851552,
+   "G4b cord": 0.8194444444444444
+  },
+  "gates": {
+   "G1": false,
+   "G2": false,
+   "G3": false,
+   "G4": false,
+   "G4b": false
+  },
+  "by_modality_task_class": {
+   "audio/acoustic_only": 0.29896907216494845,
+   "audio/text_dependent": 0.8745644599303136,
+   "document/hybrid": 0.6145617667356797,
+   "document/text_dependent": 0.7865662272441933,
+   "document/visual_only": 0.4249448123620309,
+   "image/visual_only": 0.5702554744525548
+  },
+  "delta_pp": {
+   "G1 doc visual-only": -17.908517860029093,
+   "G1 layout": -33.64312267657993,
+   "G2 screenshot": -3.0045721750489918,
+   "G2 text-dep doc": -0.4106145198957023,
+   "G3 real speech": -4.13367267416197,
+   "G3 minds intent": -2.491103202846978,
+   "G4 image": -8.563954810081354,
+   "G4b synthdoc": -15.632183908045983,
+   "G4b doclaynet": -12.955465587044534,
+   "G4b cord": -18.055555555555557
+  },
+  "worst_pp": -33.64312267657993,
+  "all_registered_gates": false,
+  "no_gate_lost_vs_same_host_v1": false,
+  "PASS": false
+ },
+ "r2l4_s1": {
+  "values": {
+   "G1 doc visual-only": 0.5603281073218038,
+   "G1 layout": 0.18587360594795538,
+   "G2 screenshot": 0.976485956890921,
+   "G2 text-dep doc": 0.6729849666754197,
+   "G3 real speech": 0.8242426141596682,
+   "G3 minds intent": 0.8932384341637011,
+   "G4 image": 0.473341391519975,
+   "G4b synthdoc": 0.803448275862069,
+   "G4b doclaynet": 0.8879892037786775,
+   "G4b cord": 0.9861111111111112
+  },
+  "gates": {
+   "G1": false,
+   "G2": false,
+   "G3": false,
+   "G4": false,
+   "G4b": false
+  },
+  "by_modality_task_class": {
+   "audio/acoustic_only": 0.3024054982817869,
+   "audio/text_dependent": 0.8824622531939605,
+   "document/hybrid": 0.668391994478951,
+   "document/text_dependent": 0.7959824231010671,
+   "document/visual_only": 0.4900662251655629,
+   "image/visual_only": 0.49635036496350365
+  },
+  "delta_pp": {
+   "G1 doc visual-only": -12.682843058024885,
+   "G1 layout": -21.561338289962826,
+   "G2 screenshot": -1.5022860875244959,
+   "G2 text-dep doc": 0.17144975873983892,
+   "G3 real speech": -2.705825290338071,
+   "G3 minds intent": -0.3558718861209953,
+   "G4 image": -17.489722574371303,
+   "G4b synthdoc": -15.86206896551724,
+   "G4b doclaynet": -5.668016194331981,
+   "G4b cord": -1.388888888888884
+  },
+  "worst_pp": -21.561338289962826,
+  "all_registered_gates": false,
+  "no_gate_lost_vs_same_host_v1": false,
+  "PASS": false
+ },
+ "r2l4na_s1": {
+  "values": {
+   "G1 doc visual-only": 0.5746322935186682,
+   "G1 layout": 0.17100371747211895,
+   "G2 screenshot": 0.9738732854343566,
+   "G2 text-dep doc": 0.6655674257618778,
+   "G3 real speech": 0.8154480007411726,
+   "G3 minds intent": 0.8790035587188612,
+   "G4 image": 0.46545664341944715,
+   "G4b synthdoc": 0.7873563218390804,
+   "G4b doclaynet": 0.8798920377867746,
+   "G4b cord": 0.9305555555555556
+  },
+  "gates": {
+   "G1": false,
+   "G2": false,
+   "G3": false,
+   "G4": false,
+   "G4b": false
+  },
+  "by_modality_task_class": {
+   "audio/acoustic_only": 0.33676975945017185,
+   "audio/text_dependent": 0.8780487804878049,
+   "document/hybrid": 0.6331953071083506,
+   "document/text_dependent": 0.7925298179535468,
+   "document/visual_only": 0.4988962472406181,
+   "image/visual_only": 0.47969890510948904
+  },
+  "delta_pp": {
+   "G1 doc visual-only": -11.252424438338448,
+   "G1 layout": -23.04832713754647,
+   "G2 screenshot": -1.7635532331809367,
+   "G2 text-dep doc": -0.5703043326143575,
+   "G3 real speech": -3.585286632187623,
+   "G3 minds intent": -1.7793594306049876,
+   "G4 image": -18.27819738442409,
+   "G4b synthdoc": -17.471264367816097,
+   "G4b doclaynet": -6.477732793522273,
+   "G4b cord": -6.944444444444442
+  },
+  "worst_pp": -23.04832713754647,
+  "all_registered_gates": false,
+  "no_gate_lost_vs_same_host_v1": false,
+  "PASS": false
+ }
+}

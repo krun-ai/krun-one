@@ -1,0 +1,6 @@
+PREFLIGHT OK nvidia-smi: NVIDIA GeForce RTX 4090, 570.195.03, 24564 MiB
+PREFLIGHT OK cuda_available: NVIDIA GeForce RTX 4090 torch 2.8.0+cu128 cuda 12.8
+PREFLIGHT OK capability: (8, 9)
+PREFLIGHT OK tensor_op: bf16 rel err 0.0038
+PREFLIGHT OK tiny_model_forward: max |Δ| 5.96e-07
+PREFLIGHT OK tiny_backward: grad max |Δ| 3.73e-08

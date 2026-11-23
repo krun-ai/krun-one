@@ -1,0 +1,1045 @@
+openapi: 3.1.0
+info:
+  title: Krun API — multimodal DRAFT
+  description: 'Krun decision API (closed beta). Authenticate with `Authorization: Bearer krun_live_...`.
+
+
+    **DRAFT — not implemented.** Proposed backward-compatible extension for Krun One v1 multimodal input (docs/KRUN_ONE_V1_WORKER_INTEGRATION_CONTRACT.md).
+    All modalities are input-only: every answer is the existing structured decision. `context` keeps accepting a string. Media
+    is referenced by `asset_id` (the upload mechanism is future work and is not part of this draft). Video is unsupported.'
+  version: 1.1.0-multimodal-draft
+paths:
+  /health:
+    get:
+      tags:
+      - health
+      summary: 'Liveness: the process is up and serving HTTP.'
+      operationId: health
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+          description: 200 response.
+  /ready:
+    get:
+      tags:
+      - health
+      summary: 'Readiness: configuration was valid at startup (the server refuses to start otherwise) and PostgreSQL answers.
+
+        RunPod is deliberately not probed (it scales to zero; probing would cost money and cold starts).'
+      operationId: ready
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+          description: 200 response.
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+          description: 503 response.
+  /v1/decide:
+    post:
+      tags:
+      - decisions
+      operationId: decide
+      parameters:
+      - name: X-Request-ID
+        in: header
+        description: Optional client request id (1-128 chars of [A-Za-z0-9._:-]); echoed in the X-Request-ID response header
+        required: false
+        schema:
+          type:
+          - string
+          - 'null'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DecideRequest'
+            examples:
+              label_only_intent:
+                summary: Label-only intent (calibrated abstention)
+                value:
+                  context: I was charged twice for the same order
+                  questions:
+                    intent:
+                      type: choice
+                      options:
+                        transaction_charged_twice: ''
+                        card_arrival: ''
+                        lost_or_stolen_card: ''
+              mixed_primitives:
+                summary: Choice + noul + score in one call
+                value:
+                  context: Customer says this is the third time exports failed and wants a human immediately.
+                  questions:
+                    department:
+                      type: choice
+                      options:
+                        billing: ''
+                        support: ''
+                        sales: ''
+                    needs_human:
+                      type: noul
+                      instructions: Is the customer asking for human assistance?
+                    severity:
+                      type: score
+                      instructions: How severe is the reported issue?
+                      levels:
+                      - Minor issue
+                      - Feature degraded
+                      - Blocking issue
+              multiple_questions:
+                summary: Several questions answered in one call
+                value:
+                  context: Customer wants to return an item and asks about the refund.
+                  questions:
+                    department:
+                      type: choice
+                      options:
+                        shipping: Shipping and delivery issues
+                        returns: Returns and refunds
+                        billing: Billing and payment issues
+                    priority:
+                      type: choice
+                      options:
+                        low: Can wait
+                        normal: Normal priority
+                        high: Needs quick attention
+              noul_only:
+                summary: 'Noul: probability that a proposition holds'
+                value:
+                  context: Hi, I have been waiting for 20 minutes. Please let me talk to a real person.
+                  questions:
+                    needs_human:
+                      type: noul
+                      instructions: Is the customer asking to speak with a human?
+                      criteria:
+                        'true': Explicitly requests a person or human agent
+                        'false': Does not request human assistance
+              score_only:
+                summary: 'Score: rate on ordered levels'
+                value:
+                  context: 'Production is down: nobody can log in and there is no workaround.'
+                  questions:
+                    severity:
+                      type: score
+                      instructions: How severe is the reported issue?
+                      levels:
+                      - Cosmetic issue; no functionality affected
+                      - Feature degraded; workaround available
+                      - Critical functionality blocked; no workaround
+              single_question:
+                summary: One question (options with descriptions)
+                value:
+                  context: Customer wants to return an item.
+                  questions:
+                    department:
+                      type: choice
+                      options:
+                        shipping: Shipping and delivery issues
+                        returns: Returns and refunds
+                        billing: Billing and payment issues
+              tool_routing:
+                summary: Tool routing (advisory abstention)
+                value:
+                  context: Find my meetings tomorrow.
+                  questions:
+                    tool:
+                      type: choice
+                      task_type: tool
+                      options:
+                        calendar_search: Search calendar events
+                        send_email: Send an email
+        required: true
+      responses:
+        '200':
+          description: One answer per question, typed like its question (`choice`, `noul`, `score`). Request id in the `X-Request-ID`
+            header.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DecideResponse'
+              examples:
+                mixed_primitives:
+                  value:
+                    model: krun-one-v0.3
+                    answers:
+                      department:
+                        type: choice
+                        choice: support
+                        confidence: 0.91
+                        probabilities:
+                          billing: 0.03
+                          support: 0.94
+                          sales: 0.03
+                        abstain: false
+                        abstention_status: calibrated
+                      needs_human:
+                        type: noul
+                        noul: 0.94
+                      severity:
+                        type: score
+                        score: 1.62
+                        confidence: 0.72
+                        legend:
+                          '0': Minor issue
+                          '1': Feature degraded
+                          '2': Blocking issue
+                        probabilities:
+                          '0': 0.02
+                          '1': 0.34
+                          '2': 0.64
+                    usage:
+                      input_tokens: 131
+                noul_only:
+                  value:
+                    model: krun-one-v0.3
+                    answers:
+                      needs_human:
+                        type: noul
+                        noul: 0.973
+                    usage:
+                      input_tokens: 48
+                score_only:
+                  value:
+                    model: krun-one-v0.3
+                    answers:
+                      severity:
+                        type: score
+                        score: 1.926
+                        confidence: 0.92
+                        legend:
+                          '0': Cosmetic issue; no functionality affected
+                          '1': Feature degraded; workaround available
+                          '2': Critical functionality blocked; no workaround
+                        probabilities:
+                          '0': 0.004
+                          '1': 0.066
+                          '2': 0.93
+                    usage:
+                      input_tokens: 57
+                single_question:
+                  value:
+                    model: krun-one-v0
+                    answers:
+                      department:
+                        type: choice
+                        choice: returns
+                        confidence: 0.9788
+                        probabilities:
+                          shipping: 0.0056
+                          returns: 0.9866
+                          billing: 0.0078
+                        abstain: false
+                        abstention_status: advisory
+                    usage:
+                      input_tokens: 52
+                tool_routing:
+                  value:
+                    model: krun-one-v0
+                    answers:
+                      tool:
+                        type: choice
+                        choice: calendar_search
+                        confidence: 0.965866
+                        probabilities:
+                          calendar_search: 0.982933
+                          send_email: 0.017067
+                        abstain: false
+                        abstention_status: advisory
+                    usage:
+                      input_tokens: 41
+        '400':
+          description: INVALID_REQUEST / INVALID_OPTIONS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+              example:
+                error:
+                  code: INVALID_OPTIONS
+                  message: 'questions.department: 1 options given; between 2 and 64 are required'
+                  request_id: req_0b7f7c5e9a3d4a8c9f1e2d3c4b5a6978
+        '401':
+          description: UNAUTHORIZED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+        '413':
+          description: PAYLOAD_TOO_LARGE
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+        '429':
+          description: RATE_LIMITED / QUOTA_EXCEEDED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+        '502':
+          description: INFERENCE_FAILED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+        '503':
+          description: UPSTREAM_UNAVAILABLE
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+        '504':
+          description: UPSTREAM_TIMEOUT
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+      security:
+      - api_key: []
+  /v1/feedback:
+    post:
+      tags:
+      - feedback
+      operationId: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeedbackRequest'
+        required: true
+      responses:
+        '201':
+          description: Feedback stored
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeedbackResponse'
+        '400':
+          description: INVALID_REQUEST
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+        '401':
+          description: UNAUTHORIZED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+        '404':
+          description: 'NOT_FOUND: no decision with this request_id in this project'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+        '429':
+          description: RATE_LIMITED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+      security:
+      - api_key: []
+  /v1/models:
+    get:
+      tags:
+      - models
+      operationId: list
+      responses:
+        '200':
+          description: Available models
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelList'
+        '401':
+          description: UNAUTHORIZED
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorBody'
+      security:
+      - api_key: []
+components:
+  schemas:
+    AbstentionStatus:
+      type: string
+      enum:
+      - calibrated
+      - advisory
+    Answer:
+      oneOf:
+      - $ref: '#/components/schemas/ChoiceAnswer'
+      - $ref: '#/components/schemas/NoulAnswer'
+      - $ref: '#/components/schemas/ScoreAnswer'
+      - $ref: '#/components/schemas/MultiAnswer'
+      description: An answer, discriminated by `type` (same type as its question).
+      discriminator:
+        propertyName: type
+        mapping:
+          choice: '#/components/schemas/ChoiceAnswer'
+          noul: '#/components/schemas/NoulAnswer'
+          score: '#/components/schemas/ScoreAnswer'
+          multi: '#/components/schemas/MultiAnswer'
+    ChoiceAnswer:
+      type: object
+      description: Answer to a `choice` question.
+      required:
+      - type
+      - confidence
+      - probabilities
+      - abstain
+      - abstention_status
+      properties:
+        type:
+          type: string
+          enum:
+          - choice
+        choice:
+          type:
+          - string
+          - 'null'
+          description: Selected option id, or `null` when the model abstains (the best guess is still visible in `probabilities`).
+        confidence:
+          type: number
+          format: double
+          description: 'Abstention score (KRUN-005): top-1 minus top-2 calibrated probability, in [0, 1].'
+        probabilities:
+          type: object
+          description: Calibrated probability per option id, in request order.
+          additionalProperties:
+            type: number
+            format: double
+          propertyNames:
+            type: string
+        abstain:
+          type: boolean
+          description: True when `confidence` is below the abstention threshold.
+        abstention_status:
+          $ref: '#/components/schemas/AbstentionStatus'
+          description: '`calibrated` only for intent questions with label-only options; `advisory` otherwise (tool routing,
+            intents
+
+            with descriptions): abstention is then a hint, not a validated guarantee.'
+    ChoiceQuestion:
+      type: object
+      description: Pick one of the given options.
+      required:
+      - type
+      - options
+      properties:
+        type:
+          type: string
+          enum:
+          - choice
+        options:
+          type: object
+          description: 'Option id → description (2–64 options). Ids are returned as-is in `choice` and `probabilities`. Use
+            `""`
+
+            (or `null`) for label-only options.'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+          propertyNames:
+            type: string
+        task_type:
+          oneOf:
+          - $ref: '#/components/schemas/TaskType'
+            description: '`intent` (default) or `tool` (tool/function routing). Selects the model''s instructions and the
+              abstention
+
+              status: tool routing is always `advisory`.'
+          - type: 'null'
+      additionalProperties: false
+    DecideRequest:
+      type: object
+      required:
+      - context
+      - questions
+      properties:
+        context:
+          oneOf:
+          - $ref: '#/components/schemas/ContextString'
+          - type: array
+            minItems: 1
+            maxItems: 16
+            items:
+              $ref: '#/components/schemas/ContentPart'
+          description: Either the legacy text (unchanged) or an ordered list of content parts. Text parts are concatenated;
+            at least one part is required.
+        questions:
+          type: object
+          description: 'Question id → question (1–16). Question ids (1–100 characters) are returned as keys of `answers`.
+            Questions of
+
+            different types can be mixed in one request.'
+          additionalProperties:
+            $ref: '#/components/schemas/Question'
+          propertyNames:
+            type: string
+        model:
+          type:
+          - string
+          - 'null'
+          description: Optional model id (see `GET /v1/models`); defaults to the current model.
+      additionalProperties: false
+    DecideResponse:
+      type: object
+      description: Decision response. The request id is returned in the `X-Request-ID` header.
+      required:
+      - model
+      - answers
+      - usage
+      properties:
+        model:
+          type: string
+        answers:
+          type: object
+          description: Question id → answer, in request order.
+          additionalProperties:
+            $ref: '#/components/schemas/Answer'
+          propertyNames:
+            type: string
+        usage:
+          $ref: '#/components/schemas/Usage'
+    ErrorBody:
+      type: object
+      required:
+      - error
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorDetail'
+    ErrorCode:
+      type: string
+      enum:
+      - INVALID_REQUEST
+      - INVALID_OPTIONS
+      - PAYLOAD_TOO_LARGE
+      - UNAUTHORIZED
+      - FORBIDDEN
+      - SIGNUP_RESTRICTED
+      - NOT_FOUND
+      - CONFLICT
+      - INSUFFICIENT_CREDITS
+      - RATE_LIMITED
+      - QUOTA_EXCEEDED
+      - UPSTREAM_TIMEOUT
+      - UPSTREAM_UNAVAILABLE
+      - INFERENCE_FAILED
+      - INTERNAL_ERROR
+      - UNSUPPORTED_MODALITY
+      - UNSUPPORTED_MIME_TYPE
+      - ASSET_NOT_FOUND
+      - ASSET_TOO_LARGE
+      - TOO_MANY_IMAGES
+      - TOO_MANY_DOCUMENTS
+      - TOO_MANY_AUDIO
+      - DOCUMENT_TOO_MANY_PAGES
+      - AUDIO_TOO_LONG
+      - DECODE_FAILED
+      - OCR_FAILED
+      - ASR_FAILED
+      - VISION_FAILED
+      - MULTIMODAL_INFERENCE_FAILED
+      description: 'DRAFT additions: UNSUPPORTED_MODALITY, UNSUPPORTED_MIME_TYPE, ASSET_NOT_FOUND, ASSET_TOO_LARGE, TOO_MANY_IMAGES,
+        TOO_MANY_DOCUMENTS, TOO_MANY_AUDIO, DOCUMENT_TOO_MANY_PAGES, AUDIO_TOO_LONG, DECODE_FAILED, OCR_FAILED, ASR_FAILED,
+        VISION_FAILED, MULTIMODAL_INFERENCE_FAILED'
+    ErrorDetail:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          $ref: '#/components/schemas/ErrorCode'
+          description: Stable machine-readable code.
+        message:
+          type: string
+        request_id:
+          type:
+          - string
+          - 'null'
+          example: req_0b7f7c5e9a3d4a8c9f1e2d3c4b5a6978
+    ExpectedAnswer:
+      oneOf:
+      - type: object
+        description: The option id that should have been chosen (1–200 characters).
+        required:
+        - value
+        - type
+        properties:
+          value:
+            type: string
+            description: The option id that should have been chosen (1–200 characters).
+          type:
+            type: string
+            enum:
+            - choice
+      - type: object
+        description: Whether the proposition actually holds.
+        required:
+        - value
+        - type
+        properties:
+          value:
+            type: boolean
+            description: Whether the proposition actually holds.
+          type:
+            type: string
+            enum:
+            - noul
+      - type: object
+        description: The correct level index (0 = first level).
+        required:
+        - value
+        - type
+        properties:
+          value:
+            type: integer
+            format: int32
+            description: The correct level index (0 = first level).
+            minimum: 0
+          type:
+            type: string
+            enum:
+            - score
+      description: The answer that should have been given, typed like the question (KRUN-011).
+    FeedbackRequest:
+      type: object
+      required:
+      - request_id
+      - question_id
+      - correct
+      properties:
+        request_id:
+          type: string
+          description: '`X-Request-ID` of a `/v1/decide` call made by the same project.'
+        question_id:
+          type: string
+          description: 'Key of the answer being reviewed (the question id from the request). Always required, also for single-question
+
+            requests, so every feedback row names exactly one answer.'
+        correct:
+          type: boolean
+          description: Whether the decision was right.
+        expected:
+          oneOf:
+          - $ref: '#/components/schemas/ExpectedAnswer'
+            description: 'The correct answer, typed like the question: `{"type": "choice", "value": "billing"}`,
+
+              `{"type": "noul", "value": true}` or `{"type": "score", "value": 2}`.'
+          - type: 'null'
+        expected_decision:
+          type:
+          - string
+          - 'null'
+          description: 'Choice only, kept for compatibility: the option id that should have been chosen (≤ 200 characters).
+            Same as
+
+            `expected: {"type": "choice", "value": ...}`; if both are sent they must agree.'
+        metadata:
+          type:
+          - object
+          - 'null'
+          description: Optional JSON object (≤ 8 KiB serialized). Do not put personal data here.
+      additionalProperties: false
+      example:
+        request_id: req_0b7f7c5e9a3d4a8c9f1e2d3c4b5a6978
+        question_id: needs_human
+        correct: false
+        expected:
+          type: noul
+          value: true
+    FeedbackResponse:
+      type: object
+      required:
+      - id
+      - object
+      - request_id
+      - question_id
+      - created_at
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+          description: Always `feedback`.
+        request_id:
+          type: string
+        question_id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+    HealthStatus:
+      type: object
+      required:
+      - status
+      properties:
+        status:
+          type: string
+          example: ok
+        database:
+          type:
+          - string
+          - 'null'
+    Model:
+      type: object
+      required:
+      - id
+      - object
+      - status
+      properties:
+        id:
+          type: string
+          example: krun-one-v0
+        object:
+          type: string
+          description: Always `model`.
+        status:
+          type: string
+          example: available
+    ModelList:
+      type: object
+      required:
+      - object
+      - data
+      properties:
+        object:
+          type: string
+          description: Always `list`.
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+    NoulAnswer:
+      type: object
+      description: Answer to a `noul` question.
+      required:
+      - type
+      - noul
+      properties:
+        type:
+          type: string
+          enum:
+          - noul
+        noul:
+          type: number
+          format: double
+          description: Probability that the proposition holds, in [0, 1] (0 = clearly false, 0.5 = uncertain, 1 = clearly
+            true).
+    NoulCriteria:
+      type: object
+      description: Optional texts describing when a `noul` proposition is true / false (either may be omitted).
+      properties:
+        'true':
+          type:
+          - string
+          - 'null'
+          description: What makes the proposition true (1–500 characters).
+        'false':
+          type:
+          - string
+          - 'null'
+          description: What makes the proposition false (1–500 characters).
+      additionalProperties: false
+    NoulQuestion:
+      type: object
+      description: Probability that a yes/no proposition about the context holds.
+      required:
+      - type
+      - instructions
+      properties:
+        type:
+          type: string
+          enum:
+          - noul
+        instructions:
+          type: string
+          description: 'The proposition, phrased as a yes/no question (1–1,000 characters), e.g. "Is the customer asking to
+            speak
+
+            with a human?".'
+        criteria:
+          oneOf:
+          - $ref: '#/components/schemas/NoulCriteria'
+            description: Optional description of what counts as true / false.
+          - type: 'null'
+      additionalProperties: false
+    Question:
+      oneOf:
+      - $ref: '#/components/schemas/ChoiceQuestion'
+      - $ref: '#/components/schemas/NoulQuestion'
+      - $ref: '#/components/schemas/ScoreQuestion'
+      - $ref: '#/components/schemas/MultiQuestion'
+      description: A question, discriminated by `type`.
+      discriminator:
+        propertyName: type
+        mapping:
+          choice: '#/components/schemas/ChoiceQuestion'
+          noul: '#/components/schemas/NoulQuestion'
+          score: '#/components/schemas/ScoreQuestion'
+          multi: '#/components/schemas/MultiQuestion'
+    ScoreAnswer:
+      type: object
+      description: Answer to a `score` question.
+      required:
+      - type
+      - score
+      - confidence
+      - legend
+      - probabilities
+      properties:
+        type:
+          type: string
+          enum:
+          - score
+        score:
+          type: number
+          format: double
+          description: Expected level Σ index × probability, in [0, levels − 1] (not the most likely level).
+        confidence:
+          type: number
+          format: double
+          description: 'Concentration of the distribution, in [0, 1]: 1 − variance / maximum variance of the level index.
+            1 = all
+
+            probability on one level; 0 = split between the lowest and the highest level.'
+        legend:
+          type: object
+          description: Level index ("0", "1", ...) → the level text from the request.
+          additionalProperties:
+            type: string
+          propertyNames:
+            type: string
+        probabilities:
+          type: object
+          description: Level index → calibrated probability, in level order.
+          additionalProperties:
+            type: number
+            format: double
+          propertyNames:
+            type: string
+    ScoreQuestion:
+      type: object
+      description: 'Rate the context on ORDERED levels. Level order is semantic: index 0 is the lowest level.'
+      required:
+      - type
+      - instructions
+      - levels
+      properties:
+        type:
+          type: string
+          enum:
+          - score
+        instructions:
+          type: string
+          description: What to rate (1–1,000 characters), e.g. "How severe is the reported issue?".
+        levels:
+          type: array
+          items:
+            type: string
+          description: '2–16 level descriptions, lowest first (1–500 characters each). Prefer descriptive levels
+
+            ("Blocking issue; no workaround") over bare numbers.'
+      additionalProperties: false
+    TaskType:
+      type: string
+      enum:
+      - intent
+      - tool
+    Usage:
+      type: object
+      properties:
+        input_tokens:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Input tokens processed by the model (Krun One tokenizer, summed over the questions — each question
+            is scored
+
+            as its own sequence). `null` only if the backend did not report it.'
+          minimum: 0
+    ContextString:
+      type: string
+      description: The text to decide on (1–8,000 characters).
+      minLength: 1
+      maxLength: 8000
+    TextPart:
+      type: object
+      required:
+      - type
+      - text
+      additionalProperties: false
+      properties:
+        id: &id001
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+          description: Optional caller-chosen id of the part (echoed only in errors).
+        type:
+          type: string
+          enum:
+          - text
+        text:
+          type: string
+          minLength: 1
+          maxLength: 8000
+    ImagePart:
+      type: object
+      required:
+      - type
+      - asset_id
+      additionalProperties: false
+      description: PNG / JPEG / WebP, max 10 MB. Up to 4 images per request.
+      properties:
+        id: *id001
+        type:
+          type: string
+          enum:
+          - image
+        asset_id: &id002
+          type: string
+          pattern: ^asset_[A-Za-z0-9_-]{8,64}$
+          description: Opaque id of an uploaded asset (future asset mechanism, e.g. `POST /v1/assets`). The asset carries
+            its MIME type and size; the API resolves it before inference. Remote URLs are NOT accepted in this contract (asset_id
+            is canonical; URL ingestion is a possible future extension).
+    DocumentPart:
+      type: object
+      required:
+      - type
+      - asset_id
+      additionalProperties: false
+      description: PDF / DOCX / plain text / Markdown / HTML, or a page image (PNG / JPEG / WebP); max 25 MB, max 20 pages.
+        Documents with a text layer are read as text (no OCR); scans / photos / screenshots go through OCR + vision (at most
+        4 rendered pages). Up to 2 documents per request.
+      properties:
+        id: *id001
+        type:
+          type: string
+          enum:
+          - document
+        asset_id: *id002
+    AudioPart:
+      type: object
+      required:
+      - type
+      - asset_id
+      additionalProperties: false
+      description: 'WAV / FLAC / MP3 / OGG, max 10 MB, max 30 s (<= 20 s recommended: longer speech may be transcribed only
+        partially). One audio part per request.'
+      properties:
+        id: *id001
+        type:
+          type: string
+          enum:
+          - audio
+        asset_id: *id002
+    ContentPart:
+      oneOf:
+      - $ref: '#/components/schemas/TextPart'
+      - $ref: '#/components/schemas/ImagePart'
+      - $ref: '#/components/schemas/DocumentPart'
+      - $ref: '#/components/schemas/AudioPart'
+      description: One piece of evidence. The modality is evidence; the question type is the decision.
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/TextPart'
+          image: '#/components/schemas/ImagePart'
+          document: '#/components/schemas/DocumentPart'
+          audio: '#/components/schemas/AudioPart'
+    MultiQuestion:
+      type: object
+      required:
+      - type
+      - options
+      additionalProperties: false
+      description: Select every option that applies (independent per-option decisions). Extension.
+      properties:
+        type:
+          type: string
+          enum:
+          - multi
+        options:
+          type: object
+          description: 'Option id → description (2–64 options). Ids are returned as-is in `choice` and `probabilities`. Use
+            `""`
+
+            (or `null`) for label-only options.'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+          propertyNames:
+            type: string
+        instructions:
+          type:
+          - string
+          - 'null'
+          maxLength: 1000
+    MultiAnswer:
+      type: object
+      required:
+      - type
+      - values
+      - probabilities
+      description: Answer to a `multi` question.
+      properties:
+        type:
+          type: string
+          enum:
+          - multi
+        values:
+          type: array
+          items:
+            type: string
+          description: Selected option ids, in request order (may be empty).
+        probabilities:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          propertyNames:
+            type: string
+          description: Per-option applicability in [0, 1] (independent, not a distribution).
+  securitySchemes:
+    api_key:
+      type: http
+      scheme: bearer
+      bearerFormat: krun_live_...
+tags:
+- name: decisions
+  description: 'Decide on a context with typed questions: choice, noul, score'
+- name: feedback
+  description: Report whether a decision was correct
+- name: models
+  description: Available models
+- name: health
+  description: Liveness and readiness
+x-krun-draft:
+  status: draft
+  implemented: false
+  source: krun-api-app/openapi.json (unchanged, read-only)
+  normalized_in_draft_only:
+    missing_response_descriptions_added:
+    - GET /health 200
+    - GET /ready 200
+    - GET /ready 503
+    note: the source spec is not valid OpenAPI 3.1 because of these; fix in krun-api-app
+  future:
+  - asset upload (e.g. POST /v1/assets) — not specified here
+  - optional remote URL parts

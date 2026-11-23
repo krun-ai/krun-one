@@ -178,6 +178,11 @@ def build_noul_tools(cfg, stats):
     v0 = PROJECT / cfg["krun_one_v0_dir"]
     seed = cfg["seed"]
     out = defaultdict(list)
+    # Seen = anywhere in the choice training file, as gold OR distractor, exactly or by equivalent description
+    # (krun_one.v1.tools). Fixes the v0.3 bug: the flag was read from `metadata.unseen_tool`, a key the choice data
+    # never writes (it writes `tool_seen`, about the gold), so the noul unseen-tool slice was always empty.
+    from krun_one.v1.tools import TrainToolIndex  # noqa: PLC0415
+    tool_index = TrainToolIndex().add_v0_decisions(read_jsonl(v0 / "train.jsonl"))
     for split, f in (("train", "train.jsonl"), ("val", "val_tools.jsonl"), ("test", "holdout_tools.jsonl")):
         seen = set()
         for d in read_jsonl(v0 / f):
@@ -198,7 +203,9 @@ def build_noul_tools(cfg, stats):
                 return rec(split, "noul", p["dataset"], suite, d["context"], TOOL_INS.format(name=name, desc=desc.get(name) or ""),
                            target, p["group_id"], {**pv, "tool": name}, criteria=TOOL_CRITERIA if use_crit else None,
                            metadata={"proposition_id": f"tool:{name}", "kind": suite,
-                                     "unseen_tool": bool(d["metadata"].get("unseen_tool"))}, id_suffix=f"/{name}")
+                                     "tool_status": tool_index.status(name, desc.get(name)),
+                                     "unseen_tool": tool_index.is_unseen(name, desc.get(name)),
+                                     "gold_tool_seen": d["metadata"].get("tool_seen")}, id_suffix=f"/{name}")
 
             if d["answer"]:
                 out[split].append(mk("positive", d["answer"], 1))

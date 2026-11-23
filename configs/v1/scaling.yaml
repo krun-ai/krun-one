@@ -1,0 +1,32 @@
+# NOT APPROVED (owner decision 2026-09-26: no scaling experiment; budget). Superseded by configs/v1/continued_mlm_budget.yaml.
+# HyperCloning continued-MLM scaling experiment (G1 pilot). PREPARED, NOT RUN.
+# Blocked until docs/KRUN_ONE_V1_TOKENIZER_LICENSE.md clears the Gemma/mmBERT vocabulary for our use.
+name: k1-hyperclone-scaling
+seed: 20260926
+init: runs/v1/grow/k1_w1536_l22_t0          # scripts/v1/grow_encoder.py output (mmBERT-base x2, exact function)
+corpus: data/v1_mlm                          # scripts/v1/prepare_mlm_corpus.py output
+mixture: {en: 0.32, pt: 0.26, es: 0.22, fr: 0.20}   # pt = pt-BR + pt-PT web text; no code source approved yet
+sequence_length: 1024
+mask_rate: 0.15                              # mmBERT used 30% -> 15% -> 5%; continued training starts at 15%
+batch_sequences: 256                         # 262,144 tokens / optimizer step (grad accumulation as needed)
+micro_batch: 32
+optimizer: {lr: 2.0e-4, weight_decay: 0.01, betas: [0.9, 0.98], eps: 1.0e-6, max_grad_norm: 1.0}
+schedule: {warmup_tokens: 50_000_000, decay_fraction: 0.1}   # WSD; decay applies to the planned end only
+# Stage 1 (run now once unblocked); stage 2 only if the gain between 1B and 5B is still "strong" (rule below).
+milestones_stage1: [0, 100_000_000, 500_000_000, 1_000_000_000, 5_000_000_000]
+milestones_stage2: [10_000_000_000, 25_000_000_000, 50_000_000_000, 100_000_000_000]
+checkpoint: {save_every_tokens: 250_000_000, keep_last: 1}   # resume checkpoints; milestone weights are kept forever
+eval:
+  heldout_sequences_per_language: 512        # fixed windows + fixed masks, comparable across milestones
+  downstream: >
+    For every milestone: fine-tune the grown encoder + v1 decision stack on data/v1_proxy/train.jsonl with the
+    bakeoff-selected loss (1 epoch, fixed recipe: lr_encoder 2e-5, lr_head 1e-4, same seed), then
+    scripts/v1/answerability_bakeoff.py-style analysis on data/v1_proxy/validation.jsonl: choice accuracy
+    (intent/tool, per language EN/PT/ES/FR), cross-language routing (fr/pt/es context -> EN labels/tools),
+    hard negatives (difficulty=hard), unseen tools, noul AUROC, score MAE/Spearman, OOD false acceptance @0.98.
+  references: [mmBERT-base (768, not grown) with the same fine-tune recipe, grown @ 0 tokens]
+saturation_rule: >
+  Stage 2 runs only if, from 1B to 5B tokens, EITHER mean held-out MLM loss over EN/PT/ES/FR drops by >= 2%
+  relative OR the downstream mean choice accuracy rises by >= 0.5 pp OR macro OOD false acceptance falls by >= 1 pp.
+  Otherwise the curve is considered saturated for Krun purposes and the checkpoint at the knee is used for G2.
+  The same rule is applied between consecutive stage-2 milestones; stop at the first milestone that fails it.

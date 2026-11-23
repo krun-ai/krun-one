@@ -1,0 +1,66 @@
+{
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "dtype": "bf16",
+ "iters": 50,
+ "text_only": {
+  "typical_1q_k4_ctx48": {
+   "frozen_artifact_p50_ms": 19.524327013641596,
+   "with_m1_loaded_p50_ms": 19.56536853685975,
+   "delta_pct": 0.21020710823722588,
+   "answers_identical": true
+  },
+  "typical_4q_mixed_ctx96": {
+   "frozen_artifact_p50_ms": 21.948851412162185,
+   "with_m1_loaded_p50_ms": 22.103037452325225,
+   "delta_pct": 0.7024788553518624,
+   "answers_identical": true
+  },
+  "k_32_tools_ctx64": {
+   "frozen_artifact_p50_ms": 18.497760873287916,
+   "with_m1_loaded_p50_ms": 18.483275780454278,
+   "delta_pct": -0.07830727693401984,
+   "answers_identical": true
+  },
+  "k_128_tools_ctx64": {
+   "frozen_artifact_p50_ms": 48.11169090680778,
+   "with_m1_loaded_p50_ms": 48.0859347153455,
+   "delta_pct": -0.05353416389410892,
+   "answers_identical": true
+  }
+ },
+ "multimodal": {
+  "image": {
+   "preprocess_cpu_ms_p50": 4.185130819678307,
+   "tower_ms_p50": 8.237113012000918,
+   "projection_fusion_ms_p50": 0.9079768788069487,
+   "krun_decision_ms_p50": 19.037919817492366,
+   "total_ms_p50": 32.47504448518157,
+   "total_ms_p95": 34.62582647334784
+  },
+  "document": {
+   "preprocess_cpu_ms_p50": 13.609779998660088,
+   "tower_ms_p50": 8.509487146511674,
+   "projection_fusion_ms_p50": 0.8849459700286388,
+   "krun_decision_ms_p50": 18.905205186456442,
+   "total_ms_p50": 41.868372820317745,
+   "total_ms_p95": 44.990981998853385
+  },
+  "audio_5s": {
+   "preprocess_cpu_ms_p50": 5.151070654392242,
+   "tower_ms_p50": 8.4847966209054,
+   "projection_fusion_ms_p50": 1.0292860679328442,
+   "krun_decision_ms_p50": 19.04910057783127,
+   "total_ms_p50": 72.13667989708483,
+   "total_ms_p95": 96.5407015522942
+  },
+  "audio_15s": {
+   "preprocess_cpu_ms_p50": 7.828108035027981,
+   "tower_ms_p50": 8.70439875870943,
+   "projection_fusion_ms_p50": 1.023286022245884,
+   "krun_decision_ms_p50": 18.7234990298748,
+   "total_ms_p50": 69.47482260875404,
+   "total_ms_p95": 88.64012544509023
+  }
+ },
+ "G4_pass": true
+}

@@ -1,0 +1,129 @@
+{
+  "rule": "Train each candidate on the same `subset` (1 epoch, same order, warmup 3%, linear decay) from the same init. Score = mean of [choice accuracy (intent), tool accuracy, noul ROC-AUC, multi micro-F1] on `eval_subset`. Highest score wins; ties (< 0.3 points) -> the lower encoder LR. Non-finite loss disqualifies a candidate.\n",
+  "results": [
+    {
+      "lr_encoder": 5e-06,
+      "lr_head": 5e-05,
+      "score": 78.99611408954101,
+      "final_loss_mean_last10": 0.8949256618533816,
+      "seconds": 637.1,
+      "eval": {
+        "lr_smoke_eval_fit": {
+          "n": 3000,
+          "choice_accuracy": 0.9080707811825637,
+          "choice_ece": 0.08459985255551944,
+          "choice_accuracy_by_lang": {
+            "en-US": 0.8992,
+            "es-419": 0.8765,
+            "es-ES": 0.9068,
+            "fr-FR": 0.9008,
+            "pt-BR": 0.913,
+            "pt-PT": 0.9769
+          },
+          "choice_accuracy_by_family": {
+            "intent": 0.9007,
+            "tool": 0.9375
+          },
+          "ood_auroc": {
+            "margin": 0.8794148706599694,
+            "top1": 0.8688656461491842,
+            "null_softmax": 0.8407175456156623,
+            "ans_head": 0.5209965197109248,
+            "max_apply": 0.8959320103949531
+          },
+          "noul_auroc": 0.6489583333333333,
+          "noul_accuracy": 0.625,
+          "score_mae": 1.1163401600718499,
+          "score_spearman": 0.3302031503279293,
+          "multi_micro_f1": 0.672686230248307,
+          "multi_empty_set_rate_on_unanswerable": NaN,
+          "signals": 3000
+        }
+      }
+    },
+    {
+      "lr_encoder": 1e-05,
+      "lr_head": 5e-05,
+      "score": 84.61036670235546,
+      "final_loss_mean_last10": 0.8140263426197427,
+      "seconds": 617.5,
+      "eval": {
+        "lr_smoke_eval_fit": {
+          "n": 3000,
+          "choice_accuracy": 0.9227449287872248,
+          "choice_ece": 0.06099856913694287,
+          "choice_accuracy_by_lang": {
+            "en-US": 0.9074,
+            "es-419": 0.8827,
+            "es-ES": 0.928,
+            "fr-FR": 0.9229,
+            "pt-BR": 0.9348,
+            "pt-PT": 0.9954
+          },
+          "choice_accuracy_by_family": {
+            "intent": 0.9158,
+            "tool": 0.9504
+          },
+          "ood_auroc": {
+            "margin": 0.9094840173004344,
+            "top1": 0.8993278175189855,
+            "null_softmax": 0.8534642191388351,
+            "ans_head": 0.5259699354447699,
+            "max_apply": 0.9202251627654983
+          },
+          "noul_auroc": 0.76875,
+          "noul_accuracy": 0.625,
+          "score_mae": 1.1155990782380103,
+          "score_spearman": 0.4226796873691737,
+          "multi_micro_f1": 0.7494646680942184,
+          "multi_empty_set_rate_on_unanswerable": NaN,
+          "signals": 3000
+        }
+      }
+    },
+    {
+      "lr_encoder": 2e-05,
+      "lr_head": 5e-05,
+      "score": 88.64240168539325,
+      "final_loss_mean_last10": 0.7759515459888748,
+      "seconds": 606.4,
+      "eval": {
+        "lr_smoke_eval_fit": {
+          "n": 3000,
+          "choice_accuracy": 0.9343979283556323,
+          "choice_ece": 0.06432269225487897,
+          "choice_accuracy_by_lang": {
+            "en-US": 0.9259,
+            "es-419": 0.9012,
+            "es-ES": 0.9322,
+            "fr-FR": 0.9366,
+            "pt-BR": 0.9429,
+            "pt-PT": 0.9815
+          },
+          "choice_accuracy_by_family": {
+            "intent": 0.9261,
+            "tool": 0.9677
+          },
+          "ood_auroc": {
+            "margin": 0.928518168210911,
+            "top1": 0.9161911495973333,
+            "null_softmax": 0.9143509123132444,
+            "ans_head": 0.4850466946436606,
+            "max_apply": 0.9378166925316118
+          },
+          "noul_auroc": 0.96875,
+          "noul_accuracy": 0.6875,
+          "score_mae": 0.9981298960745335,
+          "score_spearman": 0.5147631254219326,
+          "multi_micro_f1": 0.6831460674157304,
+          "multi_empty_set_rate_on_unanswerable": NaN,
+          "signals": 3000
+        }
+      }
+    }
+  ],
+  "choice": {
+    "lr_encoder": 2e-05,
+    "lr_head": 5e-05
+  }
+}

@@ -1,0 +1,138 @@
+{
+ "tag": "diag_tetris_A",
+ "args": {
+  "tag": "diag_tetris_A",
+  "track": "diag",
+  "mode": "last_n",
+  "last_n": 22,
+  "objective": "O0",
+  "adapter_dim": 0,
+  "cand_layers": 0,
+  "seed": 20261001,
+  "config": "/workspace/krun/experiments/krun_one/configs/v11/r1_r2_protocol.yaml",
+  "tech": "data/v11/tetris_representation/train_A.jsonl",
+  "replay": "none",
+  "teacher": "data/v11/corpus/teacher_replay.jsonl.gz",
+  "subset_frac": 1.0,
+  "init_ckpt": null,
+  "max_steps": 3000,
+  "epochs": 1,
+  "max_tokens": 12288,
+  "grad_ckpt": true,
+  "lr_scale": 1.0,
+  "export_v1": false,
+  "device": null
+ },
+ "objective": {},
+ "spec": {
+  "base": {
+   "name": "K1-W1536-L22",
+   "encoder": {
+    "vocab_size": 256000,
+    "hidden_size": 1536,
+    "num_layers": 22,
+    "num_heads": 24,
+    "intermediate_size": 2304,
+    "global_every": 3,
+    "local_window": 128,
+    "rope_theta_global": 160000.0,
+    "rope_theta_local": 160000.0,
+    "max_position": 8192,
+    "pad_token_id": 0,
+    "bos_token_id": 2,
+    "eos_token_id": 1,
+    "mask_token_id": 4
+   },
+   "decision": {
+    "head_layers": 2,
+    "head_ffn_mult": 2,
+    "n_qtypes": 4,
+    "scorer_outputs": 2,
+    "answerability_head": true
+   },
+   "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)"
+  },
+  "cand_layers": 0,
+  "cand_ffn_mult": 2,
+  "adapter_dim": 0,
+  "aux_q": 0,
+  "aux_v": 0
+ },
+ "params_total": 879356931,
+ "params_trainable": {
+  "encoder": 441255936,
+  "head": 44883459,
+  "new": 0
+ },
+ "items": 20000,
+ "steps": 661,
+ "config_sha256": "ac3b918c8f2dc865d313395f76585730e0704908e69d2081fb81a61194e8d1a8",
+ "train_seconds": 490.0,
+ "log": [
+  {
+   "step": 100,
+   "current": 2.2108,
+   "loss": 2.2108,
+   "acc_tech": 0.171,
+   "acc_replay": 0.0,
+   "seconds": 73.4,
+   "peak_vram_mib": 11238
+  },
+  {
+   "step": 200,
+   "current": 2.256,
+   "loss": 2.256,
+   "acc_tech": 0.1802,
+   "acc_replay": 0.0,
+   "seconds": 146.6,
+   "peak_vram_mib": 11238
+  },
+  {
+   "step": 300,
+   "current": 2.2319,
+   "loss": 2.2319,
+   "acc_tech": 0.1879,
+   "acc_replay": 0.0,
+   "seconds": 219.6,
+   "peak_vram_mib": 11238
+  },
+  {
+   "step": 400,
+   "current": 2.2509,
+   "loss": 2.2509,
+   "acc_tech": 0.1945,
+   "acc_replay": 0.0,
+   "seconds": 292.7,
+   "peak_vram_mib": 11241
+  },
+  {
+   "step": 500,
+   "current": 2.2295,
+   "loss": 2.2295,
+   "acc_tech": 0.1818,
+   "acc_replay": 0.0,
+   "seconds": 365.2,
+   "peak_vram_mib": 11241
+  },
+  {
+   "step": 600,
+   "current": 2.216,
+   "loss": 2.216,
+   "acc_tech": 0.1877,
+   "acc_replay": 0.0,
+   "seconds": 438.2,
+   "peak_vram_mib": 11241
+  },
+  {
+   "step": 661,
+   "current": 2.1917,
+   "loss": 2.1917,
+   "acc_tech": 0.1977,
+   "acc_replay": 0.0,
+   "seconds": 483.1,
+   "peak_vram_mib": 11241
+  }
+ ],
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "model_sha256": "b7776fbcaa7a3f780db341436b6d88a0b89f8c405e0ca97b87d15525239ba161"
+}

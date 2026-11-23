@@ -1,0 +1,269 @@
+{
+  "spec": "K1-W1536-L22",
+  "device": "NVIDIA L40S",
+  "torch": "2.14.0+cu130",
+  "cuda": "13.0",
+  "price_per_hour": 1.09,
+  "mlm": [
+    {
+      "oom": false,
+      "step_s": 0.2156905010342598,
+      "tokens_per_s": 18990.173328724388,
+      "peak_vram_gib": 17.628058910369873,
+      "trainable_params": 837090304,
+      "micro_batch": 4,
+      "grad_ckpt": false,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.3986083706840873,
+      "tokens_per_s": 20551.50017532492,
+      "peak_vram_gib": 24.229197025299072,
+      "trainable_params": 837090304,
+      "micro_batch": 8,
+      "grad_ckpt": false,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.9553994061425328,
+      "tokens_per_s": 17148.848842340318,
+      "peak_vram_gib": 37.305160999298096,
+      "trainable_params": 837090304,
+      "micro_batch": 16,
+      "grad_ckpt": false,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": true,
+      "micro_batch": 32,
+      "grad_ckpt": false,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.2559722256846726,
+      "tokens_per_s": 16001.73608306155,
+      "peak_vram_gib": 14.054290771484375,
+      "trainable_params": 837090304,
+      "micro_batch": 4,
+      "grad_ckpt": true,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.49324612878262997,
+      "tokens_per_s": 16608.34119513213,
+      "peak_vram_gib": 15.227334022521973,
+      "trainable_params": 837090304,
+      "micro_batch": 8,
+      "grad_ckpt": true,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 1.0344528630375862,
+      "tokens_per_s": 15838.32437941128,
+      "peak_vram_gib": 19.577600955963135,
+      "trainable_params": 837090304,
+      "micro_batch": 16,
+      "grad_ckpt": true,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 2.283296155743301,
+      "tokens_per_s": 14351.182573306069,
+      "peak_vram_gib": 29.094170093536377,
+      "trainable_params": 837090304,
+      "micro_batch": 32,
+      "grad_ckpt": true,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.17645456176251173,
+      "tokens_per_s": 23212.774773784324,
+      "peak_vram_gib": 14.691252708435059,
+      "trainable_params": 443874304,
+      "micro_batch": 4,
+      "grad_ckpt": false,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.3559824749827385,
+      "tokens_per_s": 23012.368798203417,
+      "peak_vram_gib": 21.29741382598877,
+      "trainable_params": 443874304,
+      "micro_batch": 8,
+      "grad_ckpt": false,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.8256471077911556,
+      "tokens_per_s": 19843.82897413876,
+      "peak_vram_gib": 34.369317054748535,
+      "trainable_params": 443874304,
+      "micro_batch": 16,
+      "grad_ckpt": false,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": true,
+      "micro_batch": 32,
+      "grad_ckpt": false,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.2166745071299374,
+      "tokens_per_s": 18903.93131271171,
+      "peak_vram_gib": 10.267289161682129,
+      "trainable_params": 443874304,
+      "micro_batch": 4,
+      "grad_ckpt": true,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.4513667058199644,
+      "tokens_per_s": 18149.322700083078,
+      "peak_vram_gib": 12.39003324508667,
+      "trainable_params": 443874304,
+      "micro_batch": 8,
+      "grad_ckpt": true,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.9901160090230405,
+      "tokens_per_s": 16547.555893138513,
+      "peak_vram_gib": 16.640780448913574,
+      "trainable_params": 443874304,
+      "micro_batch": 16,
+      "grad_ckpt": true,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 2.0970545690506697,
+      "tokens_per_s": 15625.725950867352,
+      "peak_vram_gib": 26.14914608001709,
+      "trainable_params": 443874304,
+      "micro_batch": 32,
+      "grad_ckpt": true,
+      "freeze_embeddings": true
+    }
+  ],
+  "decision": [
+    {
+      "oom": false,
+      "step_s": 0.7227529119700193,
+      "padded_tokens_per_s": 22668.88134057027,
+      "real_tokens_per_s": 15829.752894132354,
+      "questions_per_s": 88.55031773660262,
+      "peak_vram_gib": 31.678929805755615,
+      "sequences": 64,
+      "seq_len": 256,
+      "grad_ckpt": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.7442657221108675,
+      "padded_tokens_per_s": 22013.643129408294,
+      "real_tokens_per_s": 14879.094483341518,
+      "questions_per_s": 42.995396737125574,
+      "peak_vram_gib": 31.857910633087158,
+      "sequences": 32,
+      "seq_len": 512,
+      "grad_ckpt": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.7927856771275401,
+      "padded_tokens_per_s": 20666.367307950506,
+      "real_tokens_per_s": 14441.481891401692,
+      "questions_per_s": 20.181999324170416,
+      "peak_vram_gib": 32.20863151550293,
+      "sequences": 16,
+      "seq_len": 1024,
+      "grad_ckpt": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.9527727416716516,
+      "padded_tokens_per_s": 17196.12587914099,
+      "real_tokens_per_s": 12008.110118606692,
+      "questions_per_s": 67.17236671539449,
+      "peak_vram_gib": 13.79129409790039,
+      "sequences": 64,
+      "seq_len": 256,
+      "grad_ckpt": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.9792911279946566,
+      "padded_tokens_per_s": 16730.469144094397,
+      "real_tokens_per_s": 11308.179644879234,
+      "questions_per_s": 32.67669754705937,
+      "peak_vram_gib": 13.795958518981934,
+      "sequences": 32,
+      "seq_len": 512,
+      "grad_ckpt": true
+    },
+    {
+      "oom": false,
+      "step_s": 1.0412558880634606,
+      "padded_tokens_per_s": 15734.844996143212,
+      "real_tokens_per_s": 10995.375998586647,
+      "questions_per_s": 15.366059566546106,
+      "peak_vram_gib": 13.817089557647705,
+      "sequences": 16,
+      "seq_len": 1024,
+      "grad_ckpt": true
+    }
+  ],
+  "transformers": "5.17.0",
+  "summary": {
+    "mlm_best_full": {
+      "oom": false,
+      "step_s": 0.3986083706840873,
+      "tokens_per_s": 20551.50017532492,
+      "peak_vram_gib": 24.229197025299072,
+      "trainable_params": 837090304,
+      "micro_batch": 8,
+      "grad_ckpt": false,
+      "freeze_embeddings": false
+    },
+    "mlm_best_frozen_emb": {
+      "oom": false,
+      "step_s": 0.17645456176251173,
+      "tokens_per_s": 23212.774773784324,
+      "peak_vram_gib": 14.691252708435059,
+      "trainable_params": 443874304,
+      "micro_batch": 4,
+      "grad_ckpt": false,
+      "freeze_embeddings": true
+    },
+    "decision_best": {
+      "oom": false,
+      "step_s": 0.7227529119700193,
+      "padded_tokens_per_s": 22668.88134057027,
+      "real_tokens_per_s": 15829.752894132354,
+      "questions_per_s": 88.55031773660262,
+      "peak_vram_gib": 31.678929805755615,
+      "sequences": 64,
+      "seq_len": 256,
+      "grad_ckpt": false
+    },
+    "usd_per_1B_tokens_mlm_full": 14.732636313397052,
+    "hours_per_1B_tokens_mlm_full": 13.516180104033992,
+    "usd_per_1B_tokens_mlm_frozen_emb": 13.04358400615355,
+    "hours_per_1B_tokens_mlm_frozen_emb": 11.966590831333532,
+    "usd_per_1B_tokens_decision": 19.12713229339221,
+    "hours_per_1B_tokens_decision": 17.547827792102947
+  }
+}

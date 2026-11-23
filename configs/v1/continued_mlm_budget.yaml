@@ -1,0 +1,22 @@
+# Single budgeted continued-MLM run (replaces the scaling experiment, which the owner did NOT approve).
+# PREPARED, NOT RUN. Hardware chosen by measured $/token: 1x RTX 4090 (community $0.34/h; ~19.9k tok/s full
+# fine-tuning, micro-batch 4, no gradient checkpointing, 17.6 GiB peak) -> ~$4.7 and ~14 h per 1B tokens.
+# The same script (scripts/v1/continued_mlm.py) is used; the extra milestones only SAVE weights (no downstream runs).
+name: k1-continued-mlm-1b
+seed: 20260926
+init: runs/v1/grow/k1_w1536_l22_t0_noise    # HyperCloned mmBERT-base + 1e-3 symmetry-breaking noise (= probe baseline 0B)
+corpus: data/v1_mlm
+mixture: {en: 0.35, pt: 0.25, es: 0.20, fr: 0.20}      # owner decision 2026-09-26
+sequence_length: 1024
+mask_rate: 0.15
+batch_sequences: 256                         # 262,144 tokens / optimizer step via 64 x micro-batch 4
+micro_batch: 2   # 4 fits a 24 GiB Community 4090 but thrashes the allocator on a 22 GiB Secure 4090 (14.2k vs 19.2k tok/s); same math
+optimizer: {lr: 1.0e-4, weight_decay: 0.01, betas: [0.9, 0.98], eps: 1.0e-6, max_grad_norm: 1.0}
+schedule: {warmup_tokens: 20_000_000, decay_fraction: 0.2}
+milestones_stage1: [0, 250_000_000, 500_000_000, 800_000_000, 1_000_000_000]   # 800M = pre-decay branch point for 3B
+checkpoint: {save_every_tokens: 100_000_000, keep_last: 3}
+# 100M tokens = ~1.4 h of 4090 (~$0.47) or ~2.6 h of 3090 (~$0.58) max compute lost per interruption; a resume
+# checkpoint is ~10 GB, so 10 saves per 1B (~1 min I/O each, ~1%). keep_last 3 ends with 800M (pre-decay branch point
+# for +2B), 900M and 1B. Raw dataset downloads are deleted after the corpus is verified, which pays for the third one.
+eval:
+  heldout_sequences_per_language: 256

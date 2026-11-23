@@ -1,0 +1,10 @@
+{
+  "rows": 15548,
+  "seconds": 70.4,
+  "device": "cuda",
+  "torch": "2.14.0+cu126",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "model": "krun-one-v1-text-final",
+  "artifact_first_sha256": "8c620de795870c88734b94297f02d562487b2907add7305d414f456d5b806db0",
+  "n_problems": 7774
+}

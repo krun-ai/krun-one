@@ -1,0 +1,345 @@
+{
+ "tag": "diag_tetris_B_3k",
+ "args": {
+  "tag": "diag_tetris_B_3k",
+  "track": "diag",
+  "mode": "last_n",
+  "last_n": 22,
+  "objective": "O0",
+  "adapter_dim": 0,
+  "cand_layers": 0,
+  "seed": 20261001,
+  "config": "/workspace/krun/experiments/krun_one/configs/v11/r1_r2_protocol.yaml",
+  "tech": "data/v11/tetris_representation/train_B.jsonl",
+  "replay": "none",
+  "teacher": "data/v11/corpus/teacher_replay.jsonl.gz",
+  "subset_frac": 1.0,
+  "init_ckpt": null,
+  "max_steps": 3000,
+  "epochs": 4,
+  "max_tokens": 12288,
+  "grad_ckpt": true,
+  "lr_scale": 1.0,
+  "export_v1": false,
+  "device": null
+ },
+ "objective": {},
+ "spec": {
+  "base": {
+   "name": "K1-W1536-L22",
+   "encoder": {
+    "vocab_size": 256000,
+    "hidden_size": 1536,
+    "num_layers": 22,
+    "num_heads": 24,
+    "intermediate_size": 2304,
+    "global_every": 3,
+    "local_window": 128,
+    "rope_theta_global": 160000.0,
+    "rope_theta_local": 160000.0,
+    "max_position": 8192,
+    "pad_token_id": 0,
+    "bos_token_id": 2,
+    "eos_token_id": 1,
+    "mask_token_id": 4
+   },
+   "decision": {
+    "head_layers": 2,
+    "head_ffn_mult": 2,
+    "n_qtypes": 4,
+    "scorer_outputs": 2,
+    "answerability_head": true
+   },
+   "notes": "mmBERT-base x2 width (HyperCloning-compatible: every weight is an exact 2x tiling of mmBERT-base)"
+  },
+  "cand_layers": 0,
+  "cand_ffn_mult": 2,
+  "adapter_dim": 0,
+  "aux_q": 0,
+  "aux_v": 0
+ },
+ "params_total": 879356931,
+ "params_trainable": {
+  "encoder": 441255936,
+  "head": 44883459,
+  "new": 0
+ },
+ "items": 20000,
+ "steps": 3000,
+ "config_sha256": "ac3b918c8f2dc865d313395f76585730e0704908e69d2081fb81a61194e8d1a8",
+ "train_seconds": 2227.4,
+ "log": [
+  {
+   "step": 100,
+   "current": 2.2549,
+   "loss": 2.2549,
+   "acc_tech": 0.1743,
+   "acc_replay": 0.0,
+   "seconds": 74.3,
+   "peak_vram_mib": 11252
+  },
+  {
+   "step": 200,
+   "current": 2.132,
+   "loss": 2.132,
+   "acc_tech": 0.2278,
+   "acc_replay": 0.0,
+   "seconds": 148.4,
+   "peak_vram_mib": 11252
+  },
+  {
+   "step": 300,
+   "current": 2.1022,
+   "loss": 2.1022,
+   "acc_tech": 0.2795,
+   "acc_replay": 0.0,
+   "seconds": 222.4,
+   "peak_vram_mib": 11255
+  },
+  {
+   "step": 400,
+   "current": 2.0672,
+   "loss": 2.0672,
+   "acc_tech": 0.2801,
+   "acc_replay": 0.0,
+   "seconds": 296.3,
+   "peak_vram_mib": 11255
+  },
+  {
+   "step": 500,
+   "current": 2.0218,
+   "loss": 2.0218,
+   "acc_tech": 0.2857,
+   "acc_replay": 0.0,
+   "seconds": 370.7,
+   "peak_vram_mib": 11259
+  },
+  {
+   "step": 600,
+   "current": 2.0384,
+   "loss": 2.0384,
+   "acc_tech": 0.2771,
+   "acc_replay": 0.0,
+   "seconds": 444.0,
+   "peak_vram_mib": 11259
+  },
+  {
+   "step": 700,
+   "current": 2.0299,
+   "loss": 2.0299,
+   "acc_tech": 0.2917,
+   "acc_replay": 0.0,
+   "seconds": 518.5,
+   "peak_vram_mib": 11259
+  },
+  {
+   "step": 800,
+   "current": 1.985,
+   "loss": 1.985,
+   "acc_tech": 0.3115,
+   "acc_replay": 0.0,
+   "seconds": 592.5,
+   "peak_vram_mib": 11259
+  },
+  {
+   "step": 900,
+   "current": 1.9477,
+   "loss": 1.9477,
+   "acc_tech": 0.3189,
+   "acc_replay": 0.0,
+   "seconds": 666.7,
+   "peak_vram_mib": 11259
+  },
+  {
+   "step": 1000,
+   "current": 1.9449,
+   "loss": 1.9449,
+   "acc_tech": 0.3232,
+   "acc_replay": 0.0,
+   "seconds": 740.8,
+   "peak_vram_mib": 11259
+  },
+  {
+   "step": 1100,
+   "current": 1.9192,
+   "loss": 1.9192,
+   "acc_tech": 0.3133,
+   "acc_replay": 0.0,
+   "seconds": 814.9,
+   "peak_vram_mib": 11261
+  },
+  {
+   "step": 1200,
+   "current": 1.8408,
+   "loss": 1.8408,
+   "acc_tech": 0.3281,
+   "acc_replay": 0.0,
+   "seconds": 888.0,
+   "peak_vram_mib": 11261
+  },
+  {
+   "step": 1300,
+   "current": 1.8636,
+   "loss": 1.8636,
+   "acc_tech": 0.3256,
+   "acc_replay": 0.0,
+   "seconds": 961.7,
+   "peak_vram_mib": 11261
+  },
+  {
+   "step": 1400,
+   "current": 1.8853,
+   "loss": 1.8853,
+   "acc_tech": 0.3124,
+   "acc_replay": 0.0,
+   "seconds": 1036.0,
+   "peak_vram_mib": 11261
+  },
+  {
+   "step": 1500,
+   "current": 1.8966,
+   "loss": 1.8966,
+   "acc_tech": 0.3192,
+   "acc_replay": 0.0,
+   "seconds": 1110.2,
+   "peak_vram_mib": 11261
+  },
+  {
+   "step": 1600,
+   "current": 1.9005,
+   "loss": 1.9005,
+   "acc_tech": 0.3185,
+   "acc_replay": 0.0,
+   "seconds": 1184.2,
+   "peak_vram_mib": 11261
+  },
+  {
+   "step": 1700,
+   "current": 1.7562,
+   "loss": 1.7562,
+   "acc_tech": 0.379,
+   "acc_replay": 0.0,
+   "seconds": 1258.5,
+   "peak_vram_mib": 11261
+  },
+  {
+   "step": 1800,
+   "current": 1.7825,
+   "loss": 1.7825,
+   "acc_tech": 0.3738,
+   "acc_replay": 0.0,
+   "seconds": 1332.7,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 1900,
+   "current": 1.8359,
+   "loss": 1.8359,
+   "acc_tech": 0.3242,
+   "acc_replay": 0.0,
+   "seconds": 1406.7,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2000,
+   "current": 1.8017,
+   "loss": 1.8017,
+   "acc_tech": 0.3624,
+   "acc_replay": 0.0,
+   "seconds": 1480.6,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2100,
+   "current": 1.7247,
+   "loss": 1.7247,
+   "acc_tech": 0.3797,
+   "acc_replay": 0.0,
+   "seconds": 1554.9,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2200,
+   "current": 1.7915,
+   "loss": 1.7915,
+   "acc_tech": 0.3595,
+   "acc_replay": 0.0,
+   "seconds": 1629.0,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2300,
+   "current": 1.7245,
+   "loss": 1.7245,
+   "acc_tech": 0.3762,
+   "acc_replay": 0.0,
+   "seconds": 1702.6,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2400,
+   "current": 1.7625,
+   "loss": 1.7625,
+   "acc_tech": 0.3647,
+   "acc_replay": 0.0,
+   "seconds": 1777.1,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2500,
+   "current": 1.6502,
+   "loss": 1.6502,
+   "acc_tech": 0.4042,
+   "acc_replay": 0.0,
+   "seconds": 1850.3,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2600,
+   "current": 1.6305,
+   "loss": 1.6305,
+   "acc_tech": 0.414,
+   "acc_replay": 0.0,
+   "seconds": 1924.3,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2700,
+   "current": 1.6022,
+   "loss": 1.6022,
+   "acc_tech": 0.4331,
+   "acc_replay": 0.0,
+   "seconds": 1998.0,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2800,
+   "current": 1.6869,
+   "loss": 1.6869,
+   "acc_tech": 0.3932,
+   "acc_replay": 0.0,
+   "seconds": 2071.7,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 2900,
+   "current": 1.7147,
+   "loss": 1.7147,
+   "acc_tech": 0.3852,
+   "acc_replay": 0.0,
+   "seconds": 2146.1,
+   "peak_vram_mib": 11262
+  },
+  {
+   "step": 3000,
+   "current": 1.5805,
+   "loss": 1.5805,
+   "acc_tech": 0.4364,
+   "acc_replay": 0.0,
+   "seconds": 2220.5,
+   "peak_vram_mib": 11262
+  }
+ ],
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "model_sha256": "3115c891736a172b6f131f418f23575a3bca6ee7db8e3c7998e893c666e59233"
+}

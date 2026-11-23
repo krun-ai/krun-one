@@ -1,0 +1,5 @@
+qwen3_4b: n=240 acc=0.308 valid=1.000 wall=374s
+[?2026h[?25l[1G[K[?25h[?2026l[?25l[2K[1G[?25hqwen3_8b: n=60 acc=0.517 valid=1.000 wall=222s
+qwen3_8b: n=239 acc=0.527 valid=1.000 wall=602s
+[?2026h[?25l[1G[K[?25h[?2026l[?25l[2K[1G[?25hgpt-oss_20b: n=38 acc=0.763 valid=0.974 wall=912s
+[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G[K[?25h[?2026l[?25l[2K[1G[?25hLOCAL_DONE

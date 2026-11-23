@@ -1,0 +1,21 @@
+{
+  "device": "cpu",
+  "dtype": "fp32",
+  "load_seconds_incl_sha_verification": 78.69228307303274,
+  "gpu": null,
+  "torch": "2.14.0+cu126",
+  "api_cases": 16,
+  "api_vs_reference_cpu_fp32": {
+    "decisions_identical": true,
+    "max_abs_prob_or_value_diff": 0.0,
+    "differences": []
+  },
+  "api_repeat_identical": true,
+  "v_sample": {
+    "n": 384,
+    "token_ids_identical": true,
+    "artifact_vs_original_path_max_abs_logit_diff": 0.0,
+    "argmax_agreement": 1.0
+  },
+  "PASS": true
+}

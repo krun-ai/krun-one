@@ -1,0 +1,27 @@
+# Krun One v1 multimodal configuration. EVERYTHING DISABLED BY DEFAULT: with this file (or no file) the model is the
+# text model, with zero extra parameters, no towers loaded and no extra tokens. See docs/KRUN_ONE_V1_MULTIMODAL_SPEC.md.
+multimodal:
+  vision:
+    enabled: false
+    model: null            # e.g. "hf-vision:google/siglip2-base-patch16-384@<rev>" once a tower is chosen
+    projector_dim: 1536    # must equal the K1 hidden size
+    tokens: 32             # learned-query pooled tokens per request (latency control)
+    image_size: 384
+  document:
+    enabled: false
+    text_fast_path: true   # extractable PDF/DOCX/HTML/text -> Krun text path (no vision tower)
+    visual_fallback: true  # scans, receipts, invoices, forms, screenshots -> shared vision tower
+    min_chars: 200         # per page; less extracted text than this => visual route
+    max_pages: 4
+  audio:
+    enabled: false
+    model: null            # e.g. "hf-speech:<multilingual speech encoder>@<rev>" once chosen (encoder only)
+    projector_dim: 1536
+    tokens: 32
+    sample_rate: 16000
+    max_seconds: 30
+    asr: null              # optional transcript provider (future); transcript joins the text path
+  fusion:
+    type: lightweight      # projector + learned-query pooler + modality embedding -> existing decision head
+    pooler_heads: 8
+    share_document_adapter: true   # visual documents reuse the image projector/pooler (one perception block)

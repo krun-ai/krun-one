@@ -1,0 +1,119 @@
+{
+ "seeds": [
+  "r3r_s1",
+  "r3r_s2"
+ ],
+ "candidate": "r3r_s1",
+ "multimodal_run": "r3r_s1_m20260932_e3",
+ "gates": {
+  "kruntechbench_v1_macro": {
+   "values": [
+    0.6288220086231913,
+    0.6160884336378081
+   ],
+   "mean": 0.6224552211304997,
+   "need": ">= 0.617",
+   "pass": true
+  },
+  "unseen_combination": {
+   "values": [
+    0.5828282828282828,
+    0.597979797979798
+   ],
+   "mean": 0.5904040404040404,
+   "r2": 0.6116161616161616,
+   "need": "mean >= R2 + 10 pp, each seed >= R2 + 5 pp",
+   "pass": false
+  },
+  "constraint_flips_both": {
+   "values": [
+    0.4965034965034965,
+    0.44405594405594406
+   ],
+   "mean": 0.4702797202797203,
+   "r2": 0.4825174825174825,
+   "need": "mean >= R2 + 5 pp",
+   "pass": false
+  },
+  "stuck_rate": {
+   "values": [
+    0.20098039215686275,
+    0.21666666666666667
+   ],
+   "mean": 0.2088235294117647,
+   "r2": 0.18715846994535518,
+   "need": "mean <= R2 - 5 pp",
+   "pass": false
+  },
+  "hard_negative_margin": {
+   "values": [
+    4.080989983789313,
+    4.186157018029555
+   ],
+   "mean": 4.133573500909434,
+   "r2": 4.285679110144244,
+   "need": "mean >= R2 - 0.3 logit",
+   "pass": true
+  },
+  "text_preservation": {
+   "values": [
+    "19/19",
+    "19/19"
+   ],
+   "need": "19 / 19 on every seed",
+   "k128_pp": [
+    -0.8042895442359255,
+    -1.072386058981234
+   ],
+   "pass": true
+  },
+  "multimodal": {
+   "values": {
+    "G1": true,
+    "G2": true,
+    "G3": false,
+    "G4": false,
+    "G4b": false
+   },
+   "passed": 2,
+   "old_fusion_passed": 0,
+   "need": "5 / 5",
+   "pass": false
+  },
+  "jevbench": {
+   "candidate": {
+    "n": 231,
+    "delta": 0.004329004329004329,
+    "ci95": [
+     -0.04339826839826836,
+     0.05627705627705628
+    ],
+    "gained": 18,
+    "lost": 17
+   },
+   "other_seeds_delta": [
+    0.030303030303030304
+   ],
+   "need": "candidate CI excludes 0 (above) AND the other seed above v1",
+   "pass": false
+  },
+  "latency_vram": {
+   "values": {
+    "r3r_s1": {
+     "typical_p50_ms": -1.08,
+     "k128_p50_ms": -0.3240000000000052,
+     "vram_mib": 0
+    },
+    "r3r_s2": {
+     "typical_p50_ms": -0.15500000000000114,
+     "k128_p50_ms": -0.21399999999999864,
+     "vram_mib": 0
+    }
+   },
+   "need": "typical within 1 ms, k128 within 2 ms, VRAM within 50 MiB of the same-host v1",
+   "pass": true,
+   "note": "one-sided (not slower); a candidate measured FASTER than v1 by more than the band is host noise, reported as such"
+  }
+ },
+ "ALL_PASS": false
+}

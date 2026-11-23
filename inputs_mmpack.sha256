@@ -1,0 +1,4 @@
+781e5c7b7006da630d6b77693de26bd886839b0f8f96673774f9ace136dc18b6  artifacts/krun-one-v1-text-final/model.safetensors
+14cc3b20886825fd0039a7f0ca0b4ad4802ac02165fab9b6d54175d1d7d27f0a  artifacts/krun-one-v1-multimodal-candidate/SHA256SUMS
+8fb9ac49db362711711e7dc356e60b7ee6a615be5a4106859271b166a43b41cf  artifacts/krun-one-v1-multimodal-candidate/fusion/m15c_step_001169.safetensors
+296647f5958b7f06c35f84e7fedc37fcffabbda6316110f937eb578aa19e1cfc  tests/fixtures/multimodal/expected_cpu.json

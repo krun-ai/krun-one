@@ -1,0 +1,4089 @@
+{
+"ckpt": "runs/v11/r2/r2l4na_s2",
+"device": "cuda",
+"rows": [
+{
+"id": "easy-intent-00",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "track_order",
+"correct": true,
+"confidence": 0.6952747196745463,
+"probs": {
+"track_order": 0.69527,
+"cancel_order": 0.07811,
+"change_address": 0.07811,
+"report_damage": 0.0735,
+"billing_question": 0.07501
+},
+"tokens": 100,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-01",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "cancel_order",
+"correct": true,
+"confidence": 0.9995249243696891,
+"probs": {
+"track_order": 0.00014,
+"cancel_order": 0.99952,
+"change_address": 0.00012,
+"report_damage": 0.00011,
+"billing_question": 0.00011
+},
+"tokens": 100,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-02",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "change_address",
+"correct": true,
+"confidence": 0.9958122002922599,
+"probs": {
+"track_order": 0.001,
+"cancel_order": 0.0013,
+"change_address": 0.99581,
+"report_damage": 0.00098,
+"billing_question": 0.0009
+},
+"tokens": 102,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-03",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "report_damage",
+"correct": true,
+"confidence": 0.9998811912630929,
+"probs": {
+"track_order": 3e-05,
+"cancel_order": 3e-05,
+"change_address": 3e-05,
+"report_damage": 0.99988,
+"billing_question": 3e-05
+},
+"tokens": 91,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-04",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "billing_question",
+"correct": true,
+"confidence": 0.7374251972652596,
+"probs": {
+"track_order": 0.06432,
+"cancel_order": 0.06564,
+"change_address": 0.06698,
+"report_damage": 0.06564,
+"billing_question": 0.73743
+},
+"tokens": 96,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-05",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "track_order",
+"correct": true,
+"confidence": 0.9903333700954231,
+"probs": {
+"track_order": 0.99033,
+"cancel_order": 0.00253,
+"change_address": 0.00247,
+"report_damage": 0.00247,
+"billing_question": 0.00219
+},
+"tokens": 95,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-06",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "set_alarm",
+"correct": true,
+"confidence": 0.9996262991910482,
+"probs": {
+"set_alarm": 0.99963,
+"play_music": 9e-05,
+"weather": 9e-05,
+"send_message": 9e-05,
+"turn_off_lights": 0.00011
+},
+"tokens": 87,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-07",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "play_music",
+"correct": true,
+"confidence": 0.9999767257632359,
+"probs": {
+"set_alarm": 1e-05,
+"play_music": 0.99998,
+"weather": 0.0,
+"send_message": 1e-05,
+"turn_off_lights": 1e-05
+},
+"tokens": 80,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-08",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "weather",
+"correct": true,
+"confidence": 0.9992763003899211,
+"probs": {
+"set_alarm": 0.00017,
+"play_music": 0.00018,
+"weather": 0.99928,
+"send_message": 0.00017,
+"turn_off_lights": 0.0002
+},
+"tokens": 82,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-09",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "send_message",
+"correct": true,
+"confidence": 0.9995524067693081,
+"probs": {
+"set_alarm": 0.00015,
+"play_music": 0.00011,
+"weather": 8e-05,
+"send_message": 0.99955,
+"turn_off_lights": 0.0001
+},
+"tokens": 86,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-10",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "turn_off_lights",
+"correct": true,
+"confidence": 0.9989055103228331,
+"probs": {
+"set_alarm": 0.00029,
+"play_music": 0.00026,
+"weather": 0.00027,
+"send_message": 0.00027,
+"turn_off_lights": 0.99891
+},
+"tokens": 83,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-intent-11",
+"tier": "easy",
+"family": "intent",
+"type": "choice",
+"predicted": "set_alarm",
+"correct": true,
+"confidence": 0.9999121346525098,
+"probs": {
+"set_alarm": 0.99991,
+"play_music": 2e-05,
+"weather": 2e-05,
+"send_message": 2e-05,
+"turn_off_lights": 2e-05
+},
+"tokens": 83,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-00",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.7320820897271644,
+"probs": {
+"yes": 0.73208,
+"no": 0.26792
+},
+"tokens": 64,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-01",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8767227110345758,
+"probs": {
+"yes": 0.87672,
+"no": 0.12328
+},
+"tokens": 62,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-02",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.8902002111905877,
+"probs": {
+"yes": 0.8902,
+"no": 0.1098
+},
+"tokens": 70,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-03",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8063382510479311,
+"probs": {
+"yes": 0.80634,
+"no": 0.19366
+},
+"tokens": 73,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-04",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.8094612327468353,
+"probs": {
+"yes": 0.80946,
+"no": 0.19054
+},
+"tokens": 60,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-05",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "no",
+"correct": true,
+"confidence": 0.8103977762507777,
+"probs": {
+"yes": 0.1896,
+"no": 0.8104
+},
+"tokens": 61,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-06",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.9335861317084645,
+"probs": {
+"yes": 0.93359,
+"no": 0.06641
+},
+"tokens": 83,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-07",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8959197577236576,
+"probs": {
+"yes": 0.89592,
+"no": 0.10408
+},
+"tokens": 58,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-08",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.9806827954611681,
+"probs": {
+"yes": 0.98068,
+"no": 0.01932
+},
+"tokens": 56,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-09",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8889128791175366,
+"probs": {
+"yes": 0.88891,
+"no": 0.11109
+},
+"tokens": 56,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-10",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.90814639453682,
+"probs": {
+"yes": 0.90815,
+"no": 0.09185
+},
+"tokens": 63,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-fact-11",
+"tier": "easy",
+"family": "fact",
+"type": "noul",
+"predicted": "no",
+"correct": true,
+"confidence": 0.8649384775578245,
+"probs": {
+"yes": 0.13506,
+"no": 0.86494
+},
+"tokens": 64,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-00",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "paypal",
+"correct": true,
+"confidence": 0.8883737032235549,
+"probs": {
+"credit_card": 0.06202,
+"paypal": 0.88837,
+"bank_transfer": 0.01582,
+"cash": 0.03379
+},
+"tokens": 53,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-01",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "cash",
+"correct": true,
+"confidence": 0.9952848301662501,
+"probs": {
+"credit_card": 0.00147,
+"paypal": 0.00197,
+"bank_transfer": 0.00128,
+"cash": 0.99528
+},
+"tokens": 56,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-02",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "bank_transfer",
+"correct": true,
+"confidence": 0.9933028839340937,
+"probs": {
+"credit_card": 0.00162,
+"paypal": 0.00224,
+"bank_transfer": 0.9933,
+"cash": 0.00283
+},
+"tokens": 56,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-03",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "high",
+"correct": true,
+"confidence": 0.6161162822481567,
+"probs": {
+"low": 0.19434,
+"medium": 0.16362,
+"high": 0.61612,
+"urgent": 0.02593
+},
+"tokens": 53,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-04",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "low",
+"correct": true,
+"confidence": 0.8990450532663332,
+"probs": {
+"low": 0.89905,
+"medium": 0.04529,
+"high": 0.03552,
+"urgent": 0.02015
+},
+"tokens": 52,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-05",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "low",
+"correct": false,
+"confidence": 0.39366090160496603,
+"probs": {
+"low": 0.39366,
+"medium": 0.1852,
+"high": 0.11393,
+"urgent": 0.3072
+},
+"tokens": 52,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-06",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "M",
+"correct": true,
+"confidence": 0.8596533195867736,
+"probs": {
+"S": 0.04319,
+"M": 0.85965,
+"L": 0.05396,
+"XL": 0.04319
+},
+"tokens": 46,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-07",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "XL",
+"correct": true,
+"confidence": 0.8145363991843119,
+"probs": {
+"S": 0.02642,
+"M": 0.04898,
+"L": 0.11007,
+"XL": 0.81454
+},
+"tokens": 44,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-08",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "thursday",
+"correct": true,
+"confidence": 0.942501789034991,
+"probs": {
+"monday": 0.00905,
+"tuesday": 0.01563,
+"wednesday": 0.0232,
+"thursday": 0.9425,
+"friday": 0.00962
+},
+"tokens": 49,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-09",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "monday",
+"correct": true,
+"confidence": 0.9238162755729945,
+"probs": {
+"monday": 0.92382,
+"tuesday": 0.01895,
+"wednesday": 0.01857,
+"thursday": 0.02118,
+"friday": 0.01748
+},
+"tokens": 51,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-10",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "friday",
+"correct": true,
+"confidence": 0.9041384776558329,
+"probs": {
+"monday": 0.02438,
+"tuesday": 0.0153,
+"wednesday": 0.02073,
+"thursday": 0.03545,
+"friday": 0.90414
+},
+"tokens": 46,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-extraction-11",
+"tier": "easy",
+"family": "extraction",
+"type": "choice",
+"predicted": "credit_card",
+"correct": true,
+"confidence": 0.9603165194512002,
+"probs": {
+"credit_card": 0.96032,
+"paypal": 0.00913,
+"bank_transfer": 0.00808,
+"cash": 0.02247
+},
+"tokens": 59,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-00",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "get_weather",
+"correct": true,
+"confidence": 0.9994499467935705,
+"probs": {
+"get_weather": 0.99945,
+"send_email": 0.00014,
+"create_calendar_event": 0.00014,
+"convert_currency": 0.00013,
+"translate_text": 0.00014
+},
+"tokens": 91,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-01",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "send_email",
+"correct": true,
+"confidence": 0.9974354699680901,
+"probs": {
+"get_weather": 0.00062,
+"send_email": 0.99744,
+"create_calendar_event": 0.00082,
+"convert_currency": 0.00047,
+"translate_text": 0.00066
+},
+"tokens": 92,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-02",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "create_calendar_event",
+"correct": true,
+"confidence": 0.9998218431853473,
+"probs": {
+"get_weather": 4e-05,
+"send_email": 6e-05,
+"create_calendar_event": 0.99982,
+"convert_currency": 4e-05,
+"translate_text": 4e-05
+},
+"tokens": 94,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-03",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "convert_currency",
+"correct": true,
+"confidence": 0.9991787174477723,
+"probs": {
+"get_weather": 0.00022,
+"send_email": 0.0002,
+"create_calendar_event": 0.00019,
+"convert_currency": 0.99918,
+"translate_text": 0.00021
+},
+"tokens": 92,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-04",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "translate_text",
+"correct": true,
+"confidence": 0.9897070330575648,
+"probs": {
+"get_weather": 0.00258,
+"send_email": 0.00297,
+"create_calendar_event": 0.00238,
+"convert_currency": 0.00238,
+"translate_text": 0.98971
+},
+"tokens": 88,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-05",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "create_calendar_event",
+"correct": true,
+"confidence": 0.9996289606582472,
+"probs": {
+"get_weather": 9e-05,
+"send_email": 0.00012,
+"create_calendar_event": 0.99963,
+"convert_currency": 8e-05,
+"translate_text": 9e-05
+},
+"tokens": 94,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-06",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "search_flights",
+"correct": true,
+"confidence": 0.9966530185223006,
+"probs": {
+"search_flights": 0.99665,
+"book_restaurant": 0.00092,
+"set_reminder": 0.0008,
+"get_stock_price": 0.00077,
+"call_taxi": 0.00085
+},
+"tokens": 93,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-07",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "book_restaurant",
+"correct": true,
+"confidence": 0.9967387335630848,
+"probs": {
+"search_flights": 0.00085,
+"book_restaurant": 0.99674,
+"set_reminder": 0.00085,
+"get_stock_price": 0.00074,
+"call_taxi": 0.00082
+},
+"tokens": 94,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-08",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "set_reminder",
+"correct": true,
+"confidence": 0.9993321623436596,
+"probs": {
+"search_flights": 0.00016,
+"book_restaurant": 0.0002,
+"set_reminder": 0.99933,
+"get_stock_price": 0.00015,
+"call_taxi": 0.00016
+},
+"tokens": 91,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-09",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "get_stock_price",
+"correct": true,
+"confidence": 0.9933729538220784,
+"probs": {
+"search_flights": 0.00169,
+"book_restaurant": 0.00172,
+"set_reminder": 0.00162,
+"get_stock_price": 0.99337,
+"call_taxi": 0.00159
+},
+"tokens": 90,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-10",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "call_taxi",
+"correct": true,
+"confidence": 0.9183619631415003,
+"probs": {
+"search_flights": 0.019,
+"book_restaurant": 0.02233,
+"set_reminder": 0.02279,
+"get_stock_price": 0.01752,
+"call_taxi": 0.91836
+},
+"tokens": 89,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "easy-tool_selection-11",
+"tier": "easy",
+"family": "tool_selection",
+"type": "choice",
+"predicted": "set_reminder",
+"correct": true,
+"confidence": 0.9998097670480877,
+"probs": {
+"search_flights": 5e-05,
+"book_restaurant": 5e-05,
+"set_reminder": 0.99981,
+"get_stock_price": 5e-05,
+"call_taxi": 5e-05
+},
+"tokens": 91,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-01-0",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": true,
+"confidence": 0.7590497181794048,
+"probs": {
+"yes": 0.24095,
+"no": 0.75905
+},
+"tokens": 84,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-01-1",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": true,
+"confidence": 0.8973079045133521,
+"probs": {
+"yes": 0.10269,
+"no": 0.89731
+},
+"tokens": 87,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-02-0",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": false,
+"confidence": 0.6349739779674952,
+"probs": {
+"yes": 0.36503,
+"no": 0.63497
+},
+"tokens": 73,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-02-1",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": false,
+"confidence": 0.6623725638795118,
+"probs": {
+"yes": 0.33763,
+"no": 0.66237
+},
+"tokens": 72,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-03-0",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": false,
+"confidence": 0.5895760987801913,
+"probs": {
+"yes": 0.41042,
+"no": 0.58958
+},
+"tokens": 74,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-03-1",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": false,
+"confidence": 0.7094878209471543,
+"probs": {
+"yes": 0.29051,
+"no": 0.70949
+},
+"tokens": 74,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-04-0",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": true,
+"confidence": 0.9282933026482204,
+"probs": {
+"yes": 0.07171,
+"no": 0.92829
+},
+"tokens": 81,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-04-1",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": true,
+"confidence": 0.6673775786666059,
+"probs": {
+"yes": 0.33262,
+"no": 0.66738
+},
+"tokens": 77,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-05-0",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": true,
+"confidence": 0.6535261471113027,
+"probs": {
+"yes": 0.34647,
+"no": 0.65353
+},
+"tokens": 85,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-05-1",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": true,
+"confidence": 0.7156221071998791,
+"probs": {
+"yes": 0.28438,
+"no": 0.71562
+},
+"tokens": 77,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-06-0",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": false,
+"confidence": 0.7495975999184008,
+"probs": {
+"yes": 0.2504,
+"no": 0.7496
+},
+"tokens": 86,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-policy-06-1",
+"tier": "standard",
+"family": "policy",
+"type": "noul",
+"predicted": "no",
+"correct": false,
+"confidence": 0.9543475575669901,
+"probs": {
+"yes": 0.04565,
+"no": 0.95435
+},
+"tokens": 78,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-01-0",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "refund",
+"correct": true,
+"confidence": 0.32149245265338283,
+"probs": {
+"cancel": 0.28472,
+"refund": 0.32149,
+"status": 0.1145,
+"change_address": 0.12416,
+"other": 0.15512
+},
+"tokens": 74,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-01-1",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "cancel",
+"correct": false,
+"confidence": 0.776249835723357,
+"probs": {
+"cancel": 0.77625,
+"refund": 0.11995,
+"status": 0.02146,
+"change_address": 0.02328,
+"other": 0.05906
+},
+"tokens": 75,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-02-0",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "change_address",
+"correct": false,
+"confidence": 0.6796718045616144,
+"probs": {
+"cancel": 0.03263,
+"refund": 0.0333,
+"status": 0.19572,
+"change_address": 0.67967,
+"other": 0.05869
+},
+"tokens": 75,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-02-1",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "change_address",
+"correct": false,
+"confidence": 0.5668362165146557,
+"probs": {
+"cancel": 0.02248,
+"refund": 0.02203,
+"status": 0.32159,
+"change_address": 0.56684,
+"other": 0.06707
+},
+"tokens": 74,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-03-0",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "other",
+"correct": false,
+"confidence": 0.3937938195898308,
+"probs": {
+"cancel": 0.12934,
+"refund": 0.11689,
+"status": 0.22798,
+"change_address": 0.13199,
+"other": 0.39379
+},
+"tokens": 76,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-03-1",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "change_address",
+"correct": true,
+"confidence": 0.9949825965486887,
+"probs": {
+"cancel": 0.00089,
+"refund": 0.00087,
+"status": 0.00108,
+"change_address": 0.99498,
+"other": 0.00218
+},
+"tokens": 74,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-04-0",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "cancel",
+"correct": true,
+"confidence": 0.974646669151193,
+"probs": {
+"cancel": 0.97465,
+"refund": 0.0089,
+"status": 0.00337,
+"change_address": 0.00304,
+"other": 0.01005
+},
+"tokens": 78,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-04-1",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "cancel",
+"correct": true,
+"confidence": 0.9737150895984384,
+"probs": {
+"cancel": 0.97372,
+"refund": 0.00636,
+"status": 0.00376,
+"change_address": 0.004,
+"other": 0.01216
+},
+"tokens": 74,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-05-0",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "refund",
+"correct": false,
+"confidence": 0.9948519122448135,
+"probs": {
+"cancel": 0.00122,
+"refund": 0.99485,
+"status": 0.00113,
+"change_address": 0.00096,
+"other": 0.00184
+},
+"tokens": 74,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-05-1",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "refund",
+"correct": false,
+"confidence": 0.9924696512426041,
+"probs": {
+"cancel": 0.00169,
+"refund": 0.99247,
+"status": 0.00165,
+"change_address": 0.00127,
+"other": 0.00292
+},
+"tokens": 73,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-06-0",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "status",
+"correct": true,
+"confidence": 0.9140584419856495,
+"probs": {
+"cancel": 0.03214,
+"refund": 0.01899,
+"status": 0.91406,
+"change_address": 0.01293,
+"other": 0.02188
+},
+"tokens": 72,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-intent-06-1",
+"tier": "standard",
+"family": "intent",
+"type": "choice",
+"predicted": "status",
+"correct": true,
+"confidence": 0.9214073059521057,
+"probs": {
+"cancel": 0.02756,
+"refund": 0.01801,
+"status": 0.92141,
+"change_address": 0.01226,
+"other": 0.02076
+},
+"tokens": 77,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-01-0",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "0",
+"correct": true,
+"confidence": 0.7336016698434115,
+"probs": {
+"0": 0.7336,
+"1": 0.17961,
+"2": 0.06438,
+"3": 0.02242
+},
+"tokens": 88,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-01-1",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "0",
+"correct": true,
+"confidence": 0.8383030262490316,
+"probs": {
+"0": 0.8383,
+"1": 0.09911,
+"2": 0.04608,
+"3": 0.01651
+},
+"tokens": 90,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-02-0",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "0",
+"correct": false,
+"confidence": 0.6842498506521731,
+"probs": {
+"0": 0.68425,
+"1": 0.25612,
+"2": 0.04252,
+"3": 0.01711
+},
+"tokens": 92,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-02-1",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "0",
+"correct": false,
+"confidence": 0.48829561614355366,
+"probs": {
+"0": 0.4883,
+"1": 0.37645,
+"2": 0.10106,
+"3": 0.03419
+},
+"tokens": 93,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-03-0",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "2",
+"correct": true,
+"confidence": 0.3916642126360667,
+"probs": {
+"0": 0.32546,
+"1": 0.24643,
+"2": 0.39166,
+"3": 0.03645
+},
+"tokens": 89,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-03-1",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "0",
+"correct": false,
+"confidence": 0.4631020631560107,
+"probs": {
+"0": 0.4631,
+"1": 0.19742,
+"2": 0.29803,
+"3": 0.04145
+},
+"tokens": 91,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-04-0",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "3",
+"correct": true,
+"confidence": 0.42469976264652015,
+"probs": {
+"0": 0.23611,
+"1": 0.1525,
+"2": 0.18669,
+"3": 0.4247
+},
+"tokens": 90,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-04-1",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "0",
+"correct": false,
+"confidence": 0.5599685344029125,
+"probs": {
+"0": 0.55997,
+"1": 0.15334,
+"2": 0.17591,
+"3": 0.11078
+},
+"tokens": 90,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-05-0",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "0",
+"correct": true,
+"confidence": 0.42248526836159755,
+"probs": {
+"0": 0.42249,
+"1": 0.19349,
+"2": 0.27819,
+"3": 0.10583
+},
+"tokens": 94,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-05-1",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "0",
+"correct": true,
+"confidence": 0.5683619971951557,
+"probs": {
+"0": 0.56836,
+"1": 0.22418,
+"2": 0.1818,
+"3": 0.02566
+},
+"tokens": 93,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-06-0",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "2",
+"correct": true,
+"confidence": 0.43387464409735066,
+"probs": {
+"0": 0.32438,
+"1": 0.21333,
+"2": 0.43387,
+"3": 0.02841
+},
+"tokens": 95,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-ordinal-06-1",
+"tier": "standard",
+"family": "ordinal",
+"type": "score",
+"predicted": "2",
+"correct": true,
+"confidence": 0.7704816576559815,
+"probs": {
+"0": 0.13751,
+"1": 0.07742,
+"2": 0.77048,
+"3": 0.01459
+},
+"tokens": 101,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-01-0",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "pickup",
+"correct": true,
+"confidence": 0.5070121053705213,
+"probs": {
+"courier": 0.38688,
+"pickup": 0.50701,
+"post": 0.0485,
+"unknown": 0.05761
+},
+"tokens": 64,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-01-1",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "pickup",
+"correct": true,
+"confidence": 0.46580737040777626,
+"probs": {
+"courier": 0.42044,
+"pickup": 0.46581,
+"post": 0.05143,
+"unknown": 0.06233
+},
+"tokens": 66,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-02-0",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "post",
+"correct": false,
+"confidence": 0.4997178118944365,
+"probs": {
+"courier": 0.04448,
+"pickup": 0.05177,
+"post": 0.49972,
+"unknown": 0.40403
+},
+"tokens": 67,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-02-1",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "unknown",
+"correct": true,
+"confidence": 0.590870385491687,
+"probs": {
+"courier": 0.10154,
+"pickup": 0.02643,
+"post": 0.28116,
+"unknown": 0.59087
+},
+"tokens": 66,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-03-0",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "courier",
+"correct": true,
+"confidence": 0.867386356738368,
+"probs": {
+"courier": 0.86739,
+"pickup": 0.08806,
+"post": 0.01592,
+"unknown": 0.02863
+},
+"tokens": 70,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-03-1",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "courier",
+"correct": true,
+"confidence": 0.8650063925650858,
+"probs": {
+"courier": 0.86501,
+"pickup": 0.06548,
+"post": 0.02262,
+"unknown": 0.04689
+},
+"tokens": 69,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-04-0",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "post",
+"correct": true,
+"confidence": 0.8486141070869733,
+"probs": {
+"courier": 0.05422,
+"pickup": 0.07126,
+"post": 0.84861,
+"unknown": 0.0259
+},
+"tokens": 66,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-04-1",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "post",
+"correct": true,
+"confidence": 0.718336142523683,
+"probs": {
+"courier": 0.14058,
+"pickup": 0.06449,
+"post": 0.71834,
+"unknown": 0.07659
+},
+"tokens": 64,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-05-0",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "courier",
+"correct": false,
+"confidence": 0.6212018184762986,
+"probs": {
+"courier": 0.6212,
+"pickup": 0.03651,
+"post": 0.18185,
+"unknown": 0.16044
+},
+"tokens": 67,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-05-1",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "courier",
+"correct": false,
+"confidence": 0.7988021552680579,
+"probs": {
+"courier": 0.7988,
+"pickup": 0.04034,
+"post": 0.07555,
+"unknown": 0.08531
+},
+"tokens": 63,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-06-0",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "courier",
+"correct": true,
+"confidence": 0.4949068890070595,
+"probs": {
+"courier": 0.49491,
+"pickup": 0.03667,
+"post": 0.25343,
+"unknown": 0.215
+},
+"tokens": 67,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-extraction-06-1",
+"tier": "standard",
+"family": "extraction",
+"type": "choice",
+"predicted": "courier",
+"correct": true,
+"confidence": 0.7884963195451956,
+"probs": {
+"courier": 0.7885,
+"pickup": 0.05167,
+"post": 0.07668,
+"unknown": 0.08315
+},
+"tokens": 65,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-01-0",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6030932273883375,
+"probs": {
+"yes": 0.60309,
+"no": 0.39691
+},
+"tokens": 66,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-01-1",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.5373682560484727,
+"probs": {
+"yes": 0.53737,
+"no": 0.46263
+},
+"tokens": 62,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-02-0",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.7503873244477357,
+"probs": {
+"yes": 0.75039,
+"no": 0.24961
+},
+"tokens": 64,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-02-1",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8627367455679302,
+"probs": {
+"yes": 0.86274,
+"no": 0.13726
+},
+"tokens": 64,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-03-0",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8069222017641823,
+"probs": {
+"yes": 0.80692,
+"no": 0.19308
+},
+"tokens": 66,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-03-1",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.6644624892833607,
+"probs": {
+"yes": 0.66446,
+"no": 0.33554
+},
+"tokens": 70,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-04-0",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6144611880013319,
+"probs": {
+"yes": 0.61446,
+"no": 0.38554
+},
+"tokens": 70,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-04-1",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6611155509239317,
+"probs": {
+"yes": 0.66112,
+"no": 0.33888
+},
+"tokens": 67,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-05-0",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8488865613831915,
+"probs": {
+"yes": 0.84889,
+"no": 0.15111
+},
+"tokens": 59,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-05-1",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8666783411058222,
+"probs": {
+"yes": 0.86668,
+"no": 0.13332
+},
+"tokens": 60,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-06-0",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6702799094526011,
+"probs": {
+"yes": 0.67028,
+"no": 0.32972
+},
+"tokens": 77,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-adequacy-06-1",
+"tier": "standard",
+"family": "adequacy",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.824363065049736,
+"probs": {
+"yes": 0.82436,
+"no": 0.17564
+},
+"tokens": 76,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-01-0",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "math",
+"correct": true,
+"confidence": 0.718461240764257,
+"probs": {
+"math": 0.71846,
+"coding": 0.05721,
+"coding_agent": 0.05721,
+"document": 0.05721,
+"tools": 0.05384,
+"general": 0.05606
+},
+"tokens": 106,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-01-1",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "math",
+"correct": true,
+"confidence": 0.8503934058318957,
+"probs": {
+"math": 0.85039,
+"coding": 0.03689,
+"coding_agent": 0.03202,
+"document": 0.02779,
+"tools": 0.02511,
+"general": 0.02779
+},
+"tokens": 101,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-02-0",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "coding",
+"correct": true,
+"confidence": 0.21883322318429194,
+"probs": {
+"math": 0.14598,
+"coding": 0.21883,
+"coding_agent": 0.17873,
+"document": 0.15512,
+"tools": 0.14305,
+"general": 0.15829
+},
+"tokens": 106,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-02-1",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "coding",
+"correct": true,
+"confidence": 0.7625378054637789,
+"probs": {
+"math": 0.05772,
+"coding": 0.76254,
+"coding_agent": 0.05432,
+"document": 0.03773,
+"tools": 0.03551,
+"general": 0.05217
+},
+"tokens": 101,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-03-0",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "coding_agent",
+"correct": true,
+"confidence": 0.9290339464955987,
+"probs": {
+"math": 0.0107,
+"coding": 0.03428,
+"coding_agent": 0.92903,
+"document": 0.00774,
+"tools": 0.00857,
+"general": 0.00967
+},
+"tokens": 106,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-03-1",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "coding_agent",
+"correct": true,
+"confidence": 0.970866982968446,
+"probs": {
+"math": 0.00562,
+"coding": 0.00904,
+"coding_agent": 0.97087,
+"document": 0.00441,
+"tools": 0.00488,
+"general": 0.00518
+},
+"tokens": 108,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-04-0",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "document",
+"correct": true,
+"confidence": 0.23712581039033404,
+"probs": {
+"math": 0.1519,
+"coding": 0.1519,
+"coding_agent": 0.15501,
+"document": 0.23713,
+"tools": 0.14588,
+"general": 0.15818
+},
+"tokens": 102,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-04-1",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "document",
+"correct": true,
+"confidence": 0.2208616522616382,
+"probs": {
+"math": 0.14438,
+"coding": 0.14733,
+"coding_agent": 0.15034,
+"document": 0.22086,
+"tools": 0.14148,
+"general": 0.1956
+},
+"tokens": 101,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-05-0",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "general",
+"correct": false,
+"confidence": 0.17407469236324752,
+"probs": {
+"math": 0.16054,
+"coding": 0.16382,
+"coding_agent": 0.16717,
+"document": 0.17059,
+"tools": 0.16382,
+"general": 0.17407
+},
+"tokens": 103,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-05-1",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "general",
+"correct": false,
+"confidence": 0.1735051080313614,
+"probs": {
+"math": 0.16328,
+"coding": 0.16328,
+"coding_agent": 0.17003,
+"document": 0.16662,
+"tools": 0.16328,
+"general": 0.17351
+},
+"tokens": 103,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-06-0",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "general",
+"correct": true,
+"confidence": 0.17177274241926116,
+"probs": {
+"math": 0.16496,
+"coding": 0.16496,
+"coding_agent": 0.16833,
+"document": 0.16833,
+"tools": 0.16165,
+"general": 0.17177
+},
+"tokens": 101,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "original-routing-06-1",
+"tier": "standard",
+"family": "routing",
+"type": "choice",
+"predicted": "general",
+"correct": true,
+"confidence": 0.17349349939410216,
+"probs": {
+"math": 0.16327,
+"coding": 0.16661,
+"coding_agent": 0.17002,
+"document": 0.16661,
+"tools": 0.16,
+"general": 0.17349
+},
+"tokens": 101,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-a-long_policy-01",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "pay_full_estimate_less_deductible",
+"correct": false,
+"confidence": 0.2446879791809736,
+"probs": {
+"deny_vacancy_exclusion": 0.2081,
+"deny_repeated_seepage": 0.19985,
+"pay_subject_to_10000_sublimit": 0.19985,
+"pay_subject_to_15000_sublimit": 0.14751,
+"pay_full_estimate_less_deductible": 0.24469
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-long_policy-04",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "budget_holder",
+"correct": false,
+"confidence": 0.2642276954067653,
+"probs": {
+"budget_holder": 0.26423,
+"department_head": 0.21363,
+"vp_and_finance_director": 0.25893,
+"cfo": 0.11178,
+"executive_committee": 0.15143
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-long_policy-08",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "not_covered",
+"correct": false,
+"confidence": 0.30672968474904594,
+"probs": {
+"full_repair_no_charge": 0.25824,
+"parts_covered_labour_charged": 0.25564,
+"pro_rata_replacement_credit": 0.17938,
+"not_covered": 0.30673
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-long_policy-09",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "shipment_prohibited",
+"correct": false,
+"confidence": 0.3059429679143082,
+"probs": {
+"no_license_required": 0.19401,
+"license_exception_lvs": 0.22355,
+"license_required": 0.27649,
+"shipment_prohibited": 0.30594
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-long_policy-11",
+"tier": "hard",
+"family": "long_policy",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.589802557717777,
+"probs": {
+"yes": 0.5898,
+"no": 0.4102
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-long_policy-13",
+"tier": "hard",
+"family": "long_policy",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6462858583062199,
+"probs": {
+"yes": 0.64629,
+"no": 0.35371
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-long_policy-17",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "security_incident_response",
+"correct": false,
+"confidence": 0.2720011517940325,
+"probs": {
+"security_incident_response": 0.272,
+"no_page_ticket_only": 0.20281,
+"database_oncall": 0.24832,
+"vendor_support": 0.10611,
+"platform_oncall": 0.17075
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-long_policy-19",
+"tier": "hard",
+"family": "long_policy",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.6669619145955632,
+"probs": {
+"yes": 0.66696,
+"no": 0.33304
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-probability-03",
+"tier": "hard",
+"family": "probability",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.5879898279346794,
+"probs": {
+"yes": 0.58799,
+"no": 0.41201
+},
+"tokens": 400,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-a-probability-04",
+"tier": "hard",
+"family": "probability",
+"type": "choice",
+"predicted": "on_time",
+"correct": true,
+"confidence": 0.715134665259489,
+"probs": {
+"early": 0.20078,
+"on_time": 0.71513,
+"late": 0.08408
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-probability-07",
+"tier": "hard",
+"family": "probability",
+"type": "choice",
+"predicted": "resolved_first_contact",
+"correct": false,
+"confidence": 0.8511586474624535,
+"probs": {
+"resolved_first_contact": 0.85116,
+"escalated": 0.06766,
+"reopened": 0.08118
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-probability-08",
+"tier": "hard",
+"family": "probability",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.630297293240255,
+"probs": {
+"yes": 0.6303,
+"no": 0.3697
+},
+"tokens": 357,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-a-temporal_numeric-03",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "noul",
+"predicted": "no",
+"correct": false,
+"confidence": 0.570656287632571,
+"probs": {
+"yes": 0.42934,
+"no": 0.57066
+},
+"tokens": 462,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-a-temporal_numeric-06",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.5701975964198042,
+"probs": {
+"yes": 0.5702,
+"no": 0.4298
+},
+"tokens": 484,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-a-temporal_numeric-07",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "sep_24",
+"correct": false,
+"confidence": 0.8417136162357289,
+"probs": {
+"sep_24": 0.84171,
+"sep_25": 0.0501,
+"sep_26": 0.04437,
+"sep_27": 0.02901,
+"sep_28": 0.0348
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-a-temporal_numeric-09",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.6113524106445665,
+"probs": {
+"yes": 0.61135,
+"no": 0.38865
+},
+"tokens": 485,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-a-temporal_numeric-12",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "score",
+"predicted": "1",
+"correct": true,
+"confidence": 0.43222366890642877,
+"probs": {
+"0": 0.1552,
+"1": 0.43222,
+"2": 0.28425,
+"3": 0.12833
+},
+"tokens": 562,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-ambiguous-02",
+"tier": "hard",
+"family": "ambiguous",
+"type": "choice",
+"predicted": "real_incident",
+"correct": true,
+"confidence": 0.44399089195456043,
+"probs": {
+"cannot_determine": 0.1822,
+"real_incident": 0.44399,
+"false_positive": 0.37381
+},
+"tokens": 523,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-ambiguous-03",
+"tier": "hard",
+"family": "ambiguous",
+"type": "choice",
+"predicted": "insufficient_information",
+"correct": false,
+"confidence": 0.4389324235966557,
+"probs": {
+"within_limitation": 0.38094,
+"time_barred": 0.18013,
+"insufficient_information": 0.43893
+},
+"tokens": 454,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-ambiguous-07",
+"tier": "hard",
+"family": "ambiguous",
+"type": "choice",
+"predicted": "within_policy",
+"correct": true,
+"confidence": 0.40771871088088846,
+"probs": {
+"within_policy": 0.40772,
+"over_limit": 0.26924,
+"insufficient_information": 0.32304
+},
+"tokens": 531,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-ambiguous-09",
+"tier": "hard",
+"family": "ambiguous",
+"type": "choice",
+"predicted": "legitimate",
+"correct": true,
+"confidence": 0.5386418805746427,
+"probs": {
+"legitimate": 0.53864,
+"compromised": 0.27898,
+"inconclusive": 0.18237
+},
+"tokens": 615,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-ambiguous-10",
+"tier": "hard",
+"family": "ambiguous",
+"type": "choice",
+"predicted": "send_to_alex_moreno",
+"correct": false,
+"confidence": 0.4035095009435211,
+"probs": {
+"ask_user_which_alex": 0.34318,
+"send_to_alex_moreno": 0.40351,
+"send_to_alexandra_lind": 0.25331
+},
+"tokens": 396,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-ambiguous-11",
+"tier": "hard",
+"family": "ambiguous",
+"type": "choice",
+"predicted": "grade_correct",
+"correct": false,
+"confidence": 0.6312516445896089,
+"probs": {
+"grade_correct": 0.63125,
+"grade_should_be_higher": 0.19463,
+"cannot_determine": 0.17412
+},
+"tokens": 424,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-ambiguous-13",
+"tier": "hard",
+"family": "ambiguous",
+"type": "choice",
+"predicted": "split_50_50",
+"correct": false,
+"confidence": 0.4041313744707357,
+"probs": {
+"cannot_determine": 0.28358,
+"charge_platform_team": 0.16088,
+"charge_data_team": 0.15141,
+"split_50_50": 0.40413
+},
+"tokens": 689,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-multi_hop-03",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "tier4_board",
+"correct": false,
+"confidence": 0.3669591553369594,
+"probs": {
+"tier1_team_lead": 0.16329,
+"tier2_department_head": 0.17004,
+"tier3_cfo": 0.29971,
+"tier4_board": 0.36696
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-b-multi_hop-04",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "no_page_ticket_only",
+"correct": false,
+"confidence": 0.31745561067346245,
+"probs": {
+"no_page_ticket_only": 0.31746,
+"ana": 0.10968,
+"bjorn": 0.18755,
+"chen": 0.1579,
+"dmitri": 0.11774,
+"esra": 0.10968
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-b-multi_hop-05",
+"tier": "hard",
+"family": "multi_hop",
+"type": "score",
+"predicted": "1",
+"correct": false,
+"confidence": 0.2618786640659597,
+"probs": {
+"0": 0.10944,
+"1": 0.26188,
+"2": 0.1885,
+"3": 0.20857,
+"4": 0.23161
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-b-multi_hop-07",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "credit_20_percent",
+"correct": true,
+"confidence": 0.3586787456492281,
+"probs": {
+"no_credit": 0.11545,
+"credit_10_percent": 0.23447,
+"credit_20_percent": 0.35868,
+"credit_25_percent": 0.14571,
+"credit_50_percent": 0.0455,
+"credit_full_month": 0.1002
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-b-multi_hop-08",
+"tier": "hard",
+"family": "multi_hop",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.583447647862874,
+"probs": {
+"yes": 0.58345,
+"no": 0.41655
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-b-probability-01",
+"tier": "hard",
+"family": "probability",
+"type": "choice",
+"predicted": "customer_wins",
+"correct": false,
+"confidence": 0.5997052670148676,
+"probs": {
+"customer_wins": 0.59971,
+"merchant_wins": 0.27789,
+"customer_withdraws": 0.12241
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-b-probability-02",
+"tier": "hard",
+"family": "probability",
+"type": "choice",
+"predicted": "bad_push",
+"correct": false,
+"confidence": 0.5149250817116786,
+"probs": {
+"bad_push": 0.51493,
+"upstream_provider": 0.35768,
+"database_hardware": 0.12739
+},
+"tokens": 767,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-probability-03",
+"tier": "hard",
+"family": "probability",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.7507377791410036,
+"probs": {
+"yes": 0.75074,
+"no": 0.24926
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-b-probability-04",
+"tier": "hard",
+"family": "probability",
+"type": "choice",
+"predicted": "no_show",
+"correct": false,
+"confidence": 0.8111580580632857,
+"probs": {
+"no_show": 0.81116,
+"late_cancellation": 0.07556,
+"attended": 0.11328
+},
+"tokens": 750,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-probability-06",
+"tier": "hard",
+"family": "probability",
+"type": "choice",
+"predicted": "modified",
+"correct": false,
+"confidence": 0.5515770622888937,
+"probs": {
+"overturned": 0.12584,
+"modified": 0.55158,
+"upheld": 0.32258
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-b-tradeoff-01",
+"tier": "hard",
+"family": "tradeoff",
+"type": "choice",
+"predicted": "escalate_to_engineering",
+"correct": true,
+"confidence": 0.39150110833615537,
+"probs": {
+"escalate_to_security": 0.15744,
+"page_oncall": 0.13664,
+"escalate_to_engineering": 0.3915,
+"process_refund": 0.13664,
+"send_kb_article": 0.17777
+},
+"tokens": 838,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-tradeoff-03",
+"tier": "hard",
+"family": "tradeoff",
+"type": "choice",
+"predicted": "order_c",
+"correct": false,
+"confidence": 0.693217070518202,
+"probs": {
+"order_a": 0.07074,
+"order_b": 0.16386,
+"order_c": 0.69322,
+"order_d": 0.07218
+},
+"tokens": 714,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-tradeoff-06",
+"tier": "hard",
+"family": "tradeoff",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.5261826733859326,
+"probs": {
+"yes": 0.52618,
+"no": 0.47382
+},
+"tokens": 773,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-tradeoff-07",
+"tier": "hard",
+"family": "tradeoff",
+"type": "choice",
+"predicted": "p1_fix_7d",
+"correct": false,
+"confidence": 0.474420685077076,
+"probs": {
+"out_of_scope": 0.06592,
+"p3_backlog": 0.10934,
+"p2_fix_30d": 0.24948,
+"p1_fix_7d": 0.47442,
+"p0_fix_24h": 0.10084
+},
+"tokens": 699,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-tradeoff-08",
+"tier": "hard",
+"family": "tradeoff",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.5916128513667219,
+"probs": {
+"yes": 0.59161,
+"no": 0.40839
+},
+"tokens": 580,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-b-tradeoff-12",
+"tier": "hard",
+"family": "tradeoff",
+"type": "choice",
+"predicted": "refund_now",
+"correct": true,
+"confidence": 0.21705885104762096,
+"probs": {
+"wait_for_inspection": 0.20427,
+"refund_now": 0.21706,
+"offer_store_credit": 0.17373,
+"escalate_to_fraud_team": 0.21271,
+"deny_refund": 0.19223
+},
+"tokens": 557,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-c-long_policy-02",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "erase_all",
+"correct": false,
+"confidence": 0.5745335682955094,
+"probs": {
+"erase_all": 0.57453,
+"restrict_all_pending_legal_hold": 0.13376,
+"erase_but_retain_transaction_records": 0.15728,
+"reject_unverified_request": 0.06653,
+"erase_marketing_only": 0.06789
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-c-long_policy-03",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "eur_150",
+"correct": false,
+"confidence": 0.38834517029585097,
+"probs": {
+"eur_0": 0.0702,
+"eur_150": 0.38835,
+"eur_200": 0.32041,
+"eur_300": 0.1107,
+"eur_400": 0.07847,
+"eur_600": 0.03188
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-c-long_policy-04",
+"tier": "hard",
+"family": "long_policy",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.7265158200754948,
+"probs": {
+"yes": 0.72652,
+"no": 0.27348
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-c-long_policy-05",
+"tier": "hard",
+"family": "long_policy",
+"type": "score",
+"predicted": "1",
+"correct": true,
+"confidence": 0.36426488991459205,
+"probs": {
+"0": 0.20361,
+"1": 0.36426,
+"2": 0.25938,
+"3": 0.17275
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-c-long_policy-08",
+"tier": "hard",
+"family": "long_policy",
+"type": "score",
+"predicted": "2",
+"correct": false,
+"confidence": 0.3136404446285862,
+"probs": {
+"0": 0.09316,
+"1": 0.30142,
+"2": 0.31364,
+"3": 0.29178
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-c-long_policy-10",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "full_credit",
+"correct": false,
+"confidence": 0.5993969915986009,
+"probs": {
+"full_credit": 0.5994,
+"credit_minus_restocking_fee": 0.18341,
+"repair_or_replace_only": 0.0885,
+"reject_return": 0.1287
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-c-long_policy-11",
+"tier": "hard",
+"family": "long_policy",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.6210912139130291,
+"probs": {
+"yes": 0.62109,
+"no": 0.37891
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-c-probability-03",
+"tier": "hard",
+"family": "probability",
+"type": "choice",
+"predicted": "ortega_seal_works",
+"correct": false,
+"confidence": 0.40993043965127035,
+"probs": {
+"halvorsen_polymer": 0.26527,
+"ortega_seal_works": 0.40993,
+"kuznets_technik": 0.3248
+},
+"tokens": 513,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-c-temporal_numeric-02",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6415647072106133,
+"probs": {
+"yes": 0.64156,
+"no": 0.35844
+},
+"tokens": 918,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-c-temporal_numeric-03",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "eur_617_00",
+"correct": false,
+"confidence": 0.31744163470484854,
+"probs": {
+"eur_692_00": 0.16112,
+"eur_617_00": 0.31744,
+"eur_688_00": 0.14859,
+"eur_693_90": 0.12637,
+"eur_812_00": 0.24647
+},
+"tokens": 828,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-c-temporal_numeric-04",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "usd_2222_50",
+"correct": false,
+"confidence": 0.32348895154748464,
+"probs": {
+"usd_2222_50": 0.32349,
+"usd_2303_01": 0.16925,
+"usd_2303_33": 0.19502,
+"usd_2335_00": 0.15928,
+"usd_2340_00": 0.15296
+},
+"tokens": 739,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-opus-c-temporal_numeric-06",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "none_declined",
+"correct": false,
+"confidence": 0.3712608831510236,
+"probs": {
+"sep_15_office_chair": 0.13023,
+"sep_16_taxi": 0.04278,
+"sep_17_parking": 0.06677,
+"sep_18_book_set": 0.28681,
+"sep_21_client_dinner": 0.10215,
+"none_declined": 0.37126
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-c-temporal_numeric-08",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "eur_532_01",
+"correct": false,
+"confidence": 0.2065228877344476,
+"probs": {
+"eur_506_06": 0.19435,
+"eur_498_81": 0.20238,
+"eur_513_69": 0.19435,
+"eur_497_40": 0.20238,
+"eur_532_01": 0.20652
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-opus-c-temporal_numeric-12",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "covered",
+"correct": false,
+"confidence": 0.6825438757489848,
+"probs": {
+"covered": 0.68254,
+"expired_24_month_term": 0.19654,
+"expired_30_month_cap": 0.12091
+},
+"tokens": 792,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-adversarial-01",
+"tier": "hard",
+"family": "adversarial",
+"type": "choice",
+"predicted": "grant_access",
+"correct": false,
+"confidence": 0.3223424744835685,
+"probs": {
+"grant_access": 0.32234,
+"deny_missing_approval": 0.27976,
+"deny_inactive_user": 0.18288,
+"grant_owner_exception": 0.21503
+},
+"tokens": 267,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-adversarial-06",
+"tier": "hard",
+"family": "adversarial",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.6250478001278745,
+"probs": {
+"yes": 0.62505,
+"no": 0.37495
+},
+"tokens": 214,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-adversarial-07",
+"tier": "hard",
+"family": "adversarial",
+"type": "choice",
+"predicted": "delete_now",
+"correct": false,
+"confidence": 0.5937956557309291,
+"probs": {
+"retain_until_2031": 0.14107,
+"delete_now": 0.5938,
+"retain_indefinitely": 0.14991,
+"needs_signature_review": 0.11522
+},
+"tokens": 266,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-adversarial-08",
+"tier": "hard",
+"family": "adversarial",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.5891230670687548,
+"probs": {
+"yes": 0.58912,
+"no": 0.41088
+},
+"tokens": 193,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-adversarial-09",
+"tier": "hard",
+"family": "adversarial",
+"type": "score",
+"predicted": "1",
+"correct": false,
+"confidence": 0.34945734335630657,
+"probs": {
+"0": 0.23613,
+"1": 0.34946,
+"2": 0.2173,
+"3": 0.19711
+},
+"tokens": 205,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-adversarial-11",
+"tier": "hard",
+"family": "adversarial",
+"type": "choice",
+"predicted": "standard_research",
+"correct": true,
+"confidence": 0.5536114019838078,
+"probs": {
+"standard_research": 0.55361,
+"ethics_review": 0.25653,
+"major_grants": 0.08774,
+"manual_hold": 0.10212
+},
+"tokens": 270,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-multi_hop-01",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "accept_s2_dusk",
+"correct": true,
+"confidence": 0.9079767882091154,
+"probs": {
+"reject_tier": 0.02997,
+"accept_s2_dusk": 0.90798,
+"reject_cutoff": 0.03384,
+"reroute_s3": 0.02821
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-a-multi_hop-02",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "heron_q2",
+"correct": false,
+"confidence": 0.804067096733744,
+"probs": {
+"heron_q2": 0.80407,
+"insufficient_information": 0.06978,
+"security_primary": 0.0618,
+"executive_bridge": 0.06435
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-a-multi_hop-05",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "pay_manager_approved",
+"correct": false,
+"confidence": 0.46571887263043593,
+"probs": {
+"pay_manager_approved": 0.46572,
+"require_finance_board": 0.16254,
+"reject_category": 0.19902,
+"require_director": 0.17272
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-a-multi_hop-07",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "admit",
+"correct": true,
+"confidence": 0.46361382600468803,
+"probs": {
+"manual_equivalency": 0.21922,
+"deny_score": 0.19025,
+"admit": 0.46361,
+"deny_prerequisite": 0.12691
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-a-multi_hop-08",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "insufficient_log",
+"correct": false,
+"confidence": 0.26871487180211684,
+"probs": {
+"safety_shutdown": 0.21507,
+"local_maintenance": 0.25288,
+"insufficient_log": 0.26871,
+"central_engineering": 0.26333
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-a-multi_hop-09",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "confirm_l3",
+"correct": false,
+"confidence": 0.4192397683333107,
+"probs": {
+"confirm_l3": 0.41924,
+"require_steward": 0.20643,
+"switch_l4": 0.17204,
+"reject_capacity": 0.20229
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-a-multi_hop-10",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "deny_sensitive",
+"correct": false,
+"confidence": 0.2940146504601147,
+"probs": {
+"deny_sensitive": 0.29401,
+"needs_field_review": 0.27115,
+"reduce_to_30_days": 0.20423,
+"approve_45_days": 0.23061
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-a-multi_hop-12",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "covered_recurrence",
+"correct": false,
+"confidence": 0.5223223268803574,
+"probs": {
+"wrong_issue_class": 0.17156,
+"expired": 0.17156,
+"covered_recurrence": 0.52232,
+"needs_authentication": 0.13456
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-a-trap-02",
+"tier": "hard",
+"family": "trap",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.5679597642679806,
+"probs": {
+"yes": 0.56796,
+"no": 0.43204
+},
+"tokens": 263,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-trap-04",
+"tier": "hard",
+"family": "trap",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.5785489737975648,
+"probs": {
+"yes": 0.57855,
+"no": 0.42145
+},
+"tokens": 172,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-trap-05",
+"tier": "hard",
+"family": "trap",
+"type": "score",
+"predicted": "2",
+"correct": false,
+"confidence": 0.38413882008854017,
+"probs": {
+"0": 0.11493,
+"1": 0.18143,
+"2": 0.38414,
+"3": 0.3195
+},
+"tokens": 316,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-trap-06",
+"tier": "hard",
+"family": "trap",
+"type": "choice",
+"predicted": "await_internal_metrics",
+"correct": false,
+"confidence": 0.30758620935075803,
+"probs": {
+"close_confirmed": 0.21803,
+"keep_open_unresolved": 0.21803,
+"close_agent_verified": 0.25636,
+"await_internal_metrics": 0.30759
+},
+"tokens": 324,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-trap-08",
+"tier": "hard",
+"family": "trap",
+"type": "choice",
+"predicted": "on_time",
+"correct": false,
+"confidence": 0.6451841138601906,
+"probs": {
+"on_time": 0.64518,
+"late": 0.11841,
+"indeterminate": 0.14352,
+"canceled": 0.09288
+},
+"tokens": 246,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-trap-10",
+"tier": "hard",
+"family": "trap",
+"type": "choice",
+"predicted": "ready_two_reviews",
+"correct": false,
+"confidence": 0.8348116645135689,
+"probs": {
+"ready_one_review": 0.06115,
+"ready_two_reviews": 0.83481,
+"blocked_second_review": 0.05307,
+"blocked_failed_test": 0.05097
+},
+"tokens": 178,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-trap-13",
+"tier": "hard",
+"family": "trap",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8385223949070498,
+"probs": {
+"yes": 0.83852,
+"no": 0.16148
+},
+"tokens": 180,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-a-trap-15",
+"tier": "hard",
+"family": "trap",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.7087155620713179,
+"probs": {
+"yes": 0.70872,
+"no": 0.29128
+},
+"tokens": 281,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-judge_hard-01",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6602762766149145,
+"probs": {
+"yes": 0.66028,
+"no": 0.33972
+},
+"tokens": 264,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-judge_hard-02",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.6505532273522479,
+"probs": {
+"yes": 0.65055,
+"no": 0.34945
+},
+"tokens": 184,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-judge_hard-05",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.7569895952189206,
+"probs": {
+"yes": 0.75699,
+"no": 0.24301
+},
+"tokens": 271,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-judge_hard-08",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.7159077298947899,
+"probs": {
+"yes": 0.71591,
+"no": 0.28409
+},
+"tokens": 184,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-judge_hard-10",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.6466067307881592,
+"probs": {
+"yes": 0.64661,
+"no": 0.35339
+},
+"tokens": 205,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-judge_hard-14",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.5243155458584818,
+"probs": {
+"yes": 0.52432,
+"no": 0.47568
+},
+"tokens": 225,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-judge_hard-15",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6765578839833433,
+"probs": {
+"yes": 0.67656,
+"no": 0.32344
+},
+"tokens": 176,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-judge_hard-18",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.7542242165768405,
+"probs": {
+"yes": 0.75422,
+"no": 0.24578
+},
+"tokens": 147,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-long_policy-01",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "reject_entire_claim",
+"correct": true,
+"confidence": 0.26538069807172215,
+"probs": {
+"approve_all": 0.25485,
+"approve_meals_only": 0.23503,
+"approve_lodging_only": 0.24474,
+"reject_entire_claim": 0.26538
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-b-long_policy-02",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "privacy_and_security",
+"correct": false,
+"confidence": 0.26987802885607937,
+"probs": {
+"analytics_owner_only": 0.26447,
+"privacy_only": 0.21168,
+"privacy_and_security": 0.26988,
+"deny_current_export": 0.25398
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-b-long_policy-05",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "delete_profile_omar_april_and_table",
+"correct": true,
+"confidence": 0.26400483852068435,
+"probs": {
+"delete_everything": 0.23381,
+"delete_profile_omar_april_and_table": 0.264,
+"delete_only_profile": 0.25871,
+"delete_nothing": 0.24347
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-b-long_policy-06",
+"tier": "hard",
+"family": "long_policy",
+"type": "choice",
+"predicted": "harbor_neighbors",
+"correct": false,
+"confidence": 0.3743138346197126,
+"probs": {
+"harbor_neighbors": 0.37431,
+"east_ward": 0.17521,
+"river_arts": 0.18245,
+"no_award": 0.26803
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-b-routing_hard-01",
+"tier": "hard",
+"family": "routing_hard",
+"type": "choice",
+"predicted": "office_file_repair",
+"correct": true,
+"confidence": 0.30389157442986553,
+"probs": {
+"spreadsheet_formula": 0.26642,
+"office_file_repair": 0.30389,
+"data_pipeline": 0.14516,
+"desktop_support": 0.105,
+"finance_review": 0.17953
+},
+"tokens": 279,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-routing_hard-02",
+"tier": "hard",
+"family": "routing_hard",
+"type": "choice",
+"predicted": "payment_disputes",
+"correct": false,
+"confidence": 0.28502391614796546,
+"probs": {
+"payment_disputes": 0.28502,
+"ledger_reconciliation": 0.2765,
+"mobile_app": 0.14614,
+"customer_support": 0.14913,
+"fraud_review": 0.14321
+},
+"tokens": 255,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-routing_hard-03",
+"tier": "hard",
+"family": "routing_hard",
+"type": "choice",
+"predicted": "api_platform",
+"correct": false,
+"confidence": 0.6841464422148048,
+"probs": {
+"authoritative_dns": 0.08044,
+"network_dns": 0.07269,
+"tls_certificates": 0.08547,
+"api_platform": 0.68415,
+"endpoint_devices": 0.07725
+},
+"tokens": 260,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-routing_hard-07",
+"tier": "hard",
+"family": "routing_hard",
+"type": "choice",
+"predicted": "release_notarization",
+"correct": true,
+"confidence": 0.4345102170171812,
+"probs": {
+"code_signing": 0.17831,
+"release_notarization": 0.43451,
+"macos_runtime": 0.13986,
+"ci_infrastructure": 0.15952,
+"endpoint_security": 0.0878
+},
+"tokens": 237,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-routing_hard-09",
+"tier": "hard",
+"family": "routing_hard",
+"type": "choice",
+"predicted": "git_client",
+"correct": false,
+"confidence": 0.6244827956260085,
+"probs": {
+"vpn_network": 0.13007,
+"source_access": 0.12118,
+"git_client": 0.62448,
+"repository_admin": 0.0615,
+"identity_login": 0.06276
+},
+"tokens": 252,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-temporal_numeric-01",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "within_window",
+"correct": false,
+"confidence": 0.5471895520176703,
+"probs": {
+"before_open": 0.22914,
+"within_window": 0.54719,
+"late_by_under_2h": 0.10618,
+"late_by_2h_or_more": 0.11749
+},
+"tokens": 261,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-temporal_numeric-02",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "exactly_equal",
+"correct": false,
+"confidence": 0.8451838872922585,
+"probs": {
+"at_least_100gb_below": 0.04361,
+"under_100gb_below": 0.0445,
+"exactly_equal": 0.84518,
+"over_limit": 0.06671
+},
+"tokens": 272,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-temporal_numeric-03",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "6_credits",
+"correct": false,
+"confidence": 0.7878671819405174,
+"probs": {
+"6_credits": 0.78787,
+"9_credits": 0.09405,
+"12_credits": 0.05904,
+"15_credits": 0.05904
+},
+"tokens": 204,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-b-temporal_numeric-04",
+"tier": "hard",
+"family": "temporal_numeric",
+"type": "choice",
+"predicted": "pass",
+"correct": true,
+"confidence": 0.4959275057666295,
+"probs": {
+"pass": 0.49593,
+"narrow_fail": 0.23929,
+"clear_fail": 0.26478
+},
+"tokens": 215,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-judge_hard-03",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.6934184387124235,
+"probs": {
+"yes": 0.69342,
+"no": 0.30658
+},
+"tokens": 398,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-judge_hard-05",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6060020680288258,
+"probs": {
+"yes": 0.606,
+"no": 0.394
+},
+"tokens": 327,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-judge_hard-07",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.644572317769744,
+"probs": {
+"yes": 0.64457,
+"no": 0.35543
+},
+"tokens": 297,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-judge_hard-08",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.8095333999550038,
+"probs": {
+"yes": 0.80953,
+"no": 0.19047
+},
+"tokens": 295,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-judge_hard-09",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6307333825306205,
+"probs": {
+"yes": 0.63073,
+"no": 0.36927
+},
+"tokens": 321,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-judge_hard-10",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.6488491273854795,
+"probs": {
+"yes": 0.64885,
+"no": 0.35115
+},
+"tokens": 347,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-judge_hard-11",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.7065856301979724,
+"probs": {
+"yes": 0.70659,
+"no": 0.29341
+},
+"tokens": 328,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-judge_hard-13",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": false,
+"confidence": 0.6813521495367526,
+"probs": {
+"yes": 0.68135,
+"no": 0.31865
+},
+"tokens": 311,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-judge_hard-15",
+"tier": "hard",
+"family": "judge_hard",
+"type": "noul",
+"predicted": "yes",
+"correct": true,
+"confidence": 0.8302463113894861,
+"probs": {
+"yes": 0.83025,
+"no": 0.16975
+},
+"tokens": 263,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-multi_hop-07",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "release_draw",
+"correct": false,
+"confidence": 0.6180702844360423,
+"probs": {
+"reject_draw": 0.17979,
+"release_draw": 0.61807,
+"partial_release": 0.06943,
+"programme_review": 0.13271
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-c-multi_hop-09",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "terminate_oakmere",
+"correct": false,
+"confidence": 0.3297810349175481,
+"probs": {
+"bus_substitution": 0.27209,
+"call_fen_cross": 0.189,
+"pass_fen_cross": 0.20913,
+"terminate_oakmere": 0.32978
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-c-multi_hop-11",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "coverage_confirmed",
+"correct": false,
+"confidence": 0.7139751919833744,
+"probs": {
+"documentation_needed": 0.09971,
+"coverage_confirmed": 0.71398,
+"coverage_excluded": 0.10812,
+"adjuster_referral": 0.0782
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+},
+{
+"id": "hard-sol-c-multi_hop-12",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "supervised_delivery",
+"correct": false,
+"confidence": 0.49770718288677196,
+"probs": {
+"digital_copy_only": 0.18646,
+"conservation_hold": 0.23534,
+"deny_request": 0.08049,
+"supervised_delivery": 0.49771
+},
+"tokens": 515,
+"chunks": 1,
+"truncated": false
+},
+{
+"id": "hard-sol-c-multi_hop-13",
+"tier": "hard",
+"family": "multi_hop",
+"type": "choice",
+"predicted": "engineering_review",
+"correct": false,
+"confidence": 0.5269452001856102,
+"probs": {
+"scrap_lot": 0.12268,
+"normal_release": 0.22518,
+"rework": 0.12519,
+"engineering_review": 0.52695
+},
+"tokens": 1024,
+"chunks": 1,
+"truncated": true
+}
+]
+}

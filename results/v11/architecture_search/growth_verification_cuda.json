@@ -1,0 +1,366 @@
+{
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.14.0+cu126",
+  "n_questions": 400,
+  "v1_sha256": "8c620de795870c88734b94297f02d562487b2907add7305d414f456d5b806db0",
+  "candidates": {
+    "V11-A-W1536-L22-F8192": {
+      "route": "exact: FFN columns zero / identity blocks",
+      "params": 1476258819,
+      "build_seconds": 133.5,
+      "report": {
+        "expanded": [
+          "layers.*.mlp.Wi (4608, 1536) -> (16384, 1536) (old rows kept per GLU half, new rows random)",
+          "layers.*.mlp.Wo (1536, 2304) -> (1536, 8192) (new columns zero)"
+        ],
+        "new_identity_blocks": []
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 2.3484230041503906e-05,
+        "max_abs_dlogit_apply": 2.7418136596679688e-05,
+        "max_abs_d_null": 1.049041748046875e-05,
+        "max_abs_d_ans": 9.5367431640625e-07,
+        "max_abs_dp": 5.930662155151367e-06,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 1.1313509276078548e-06
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.1597900390625,
+        "max_abs_dlogit_apply": 0.1875,
+        "max_abs_d_null": 0.109375,
+        "max_abs_d_ans": 0.00390625,
+        "max_abs_dp": 0.03380119800567627,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.007706947159022093
+      }
+    },
+    "V11-B-W1536-L26-F6144": {
+      "route": "exact: FFN columns zero / identity blocks",
+      "params": 1419648003,
+      "build_seconds": 126.7,
+      "report": {
+        "expanded": [
+          "layers.*.mlp.Wi (4608, 1536) -> (12288, 1536) (old rows kept per GLU half, new rows random)",
+          "layers.*.mlp.Wo (1536, 2304) -> (1536, 6144) (new columns zero)"
+        ],
+        "new_identity_blocks": [
+          "encoder.layers.22 (sliding_attention)",
+          "encoder.layers.23 (sliding_attention)",
+          "encoder.layers.24 (full_attention)",
+          "encoder.layers.25 (sliding_attention)"
+        ]
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 2.0384788513183594e-05,
+        "max_abs_dlogit_apply": 2.6106834411621094e-05,
+        "max_abs_d_null": 6.9141387939453125e-06,
+        "max_abs_d_ans": 8.344650268554688e-07,
+        "max_abs_dp": 5.841255187988281e-06,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 1.0918313364527421e-06
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.171875,
+        "max_abs_dlogit_apply": 0.2109375,
+        "max_abs_d_null": 0.125,
+        "max_abs_d_ans": 0.0048828125,
+        "max_abs_dp": 0.03380119800567627,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.012823925353586674
+      }
+    },
+    "V11-C-W1792-L24-F4096": {
+      "route": "width: centered stream + carriers + appended identity layers",
+      "params": 1356683779,
+      "build_seconds": 277.8,
+      "report": {
+        "n": 1536,
+        "N": 1792,
+        "pads": 256,
+        "carriers_layer0_mean": 2,
+        "absorbers": 2,
+        "carriers_final_norm_mean": 252,
+        "lambda": 0.001,
+        "kappa": 0.01,
+        "norm_eps_encoder": 8.571428571428573e-06,
+        "embedding_ln_gain": 1.1870114425719154,
+        "old_heads": 24,
+        "new_heads": 28,
+        "ffn": [
+          2304,
+          4096
+        ],
+        "note": "LayerNorm eps values are module attributes set by this function (eps * n/N); a serving spec for a width-grown model must carry them",
+        "depth": [
+          "encoder.layers.22 (sliding_attention)",
+          "encoder.layers.23 (sliding_attention)"
+        ]
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 0.008913397789001465,
+        "max_abs_dlogit_apply": 0.006829738616943359,
+        "max_abs_d_null": 0.001854538917541504,
+        "max_abs_d_ans": 0.00021281838417053223,
+        "max_abs_dp": 0.0017309188842773438,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0006673418101854622
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.21875,
+        "max_abs_dlogit_apply": 0.1875,
+        "max_abs_d_null": 0.125,
+        "max_abs_d_ans": 0.00390625,
+        "max_abs_dp": 0.04477405548095703,
+        "argmax_agreement": 0.985,
+        "mean_abs_dlogit_rank": 0.021998615935444832
+      }
+    },
+    "V11-D-W2048-L22-F3072": {
+      "route": "width: centered stream + carriers",
+      "params": 1388482563,
+      "build_seconds": 160.6,
+      "report": {
+        "n": 1536,
+        "N": 2048,
+        "pads": 512,
+        "carriers_layer0_mean": 2,
+        "absorbers": 2,
+        "carriers_final_norm_mean": 508,
+        "lambda": 0.001,
+        "kappa": 0.01,
+        "norm_eps_encoder": 7.500000000000001e-06,
+        "embedding_ln_gain": 1.110506251641442,
+        "old_heads": 24,
+        "new_heads": 32,
+        "ffn": [
+          2304,
+          3072
+        ],
+        "note": "LayerNorm eps values are module attributes set by this function (eps * n/N); a serving spec for a width-grown model must carry them"
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 0.017908573150634766,
+        "max_abs_dlogit_apply": 0.01369386911392212,
+        "max_abs_d_null": 0.003802955150604248,
+        "max_abs_d_ans": 0.0003276318311691284,
+        "max_abs_dp": 0.003472656011581421,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0013443208299577236
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.1734619140625,
+        "max_abs_dlogit_apply": 0.25,
+        "max_abs_d_null": 0.125,
+        "max_abs_d_ans": 0.0048828125,
+        "max_abs_dp": 0.04113954305648804,
+        "argmax_agreement": 0.98,
+        "mean_abs_dlogit_rank": 0.02148258127272129
+      }
+    },
+    "V11-E-W2048-L22-F4096": {
+      "route": "width: centered stream + carriers",
+      "params": 1526894595,
+      "build_seconds": 171.1,
+      "report": {
+        "n": 1536,
+        "N": 2048,
+        "pads": 512,
+        "carriers_layer0_mean": 2,
+        "absorbers": 2,
+        "carriers_final_norm_mean": 508,
+        "lambda": 0.001,
+        "kappa": 0.01,
+        "norm_eps_encoder": 7.500000000000001e-06,
+        "embedding_ln_gain": 1.110506251641442,
+        "old_heads": 24,
+        "new_heads": 32,
+        "ffn": [
+          2304,
+          4096
+        ],
+        "note": "LayerNorm eps values are module attributes set by this function (eps * n/N); a serving spec for a width-grown model must carry them"
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 0.017908573150634766,
+        "max_abs_dlogit_apply": 0.01369386911392212,
+        "max_abs_d_null": 0.003802955150604248,
+        "max_abs_d_ans": 0.0003276318311691284,
+        "max_abs_dp": 0.003472656011581421,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0013443231582641602
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.203125,
+        "max_abs_dlogit_apply": 0.25,
+        "max_abs_d_null": 0.125,
+        "max_abs_d_ans": 0.0048828125,
+        "max_abs_dp": 0.04113954305648804,
+        "argmax_agreement": 0.9825,
+        "mean_abs_dlogit_rank": 0.021992340683937073
+      }
+    },
+    "V11-F-W2048-L24-F3072": {
+      "route": "width: centered stream + carriers + appended identity layers",
+      "params": 1459793923,
+      "build_seconds": 286.4,
+      "report": {
+        "n": 1536,
+        "N": 2048,
+        "pads": 512,
+        "carriers_layer0_mean": 2,
+        "absorbers": 2,
+        "carriers_final_norm_mean": 508,
+        "lambda": 0.001,
+        "kappa": 0.01,
+        "norm_eps_encoder": 7.500000000000001e-06,
+        "embedding_ln_gain": 1.110506251641442,
+        "old_heads": 24,
+        "new_heads": 32,
+        "ffn": [
+          2304,
+          3072
+        ],
+        "note": "LayerNorm eps values are module attributes set by this function (eps * n/N); a serving spec for a width-grown model must carry them",
+        "depth": [
+          "encoder.layers.22 (sliding_attention)",
+          "encoder.layers.23 (sliding_attention)"
+        ]
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 0.017908573150634766,
+        "max_abs_dlogit_apply": 0.01369386911392212,
+        "max_abs_d_null": 0.003802955150604248,
+        "max_abs_d_ans": 0.0003276318311691284,
+        "max_abs_dp": 0.003472656011581421,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0013443208299577236
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.1734619140625,
+        "max_abs_dlogit_apply": 0.25,
+        "max_abs_d_null": 0.125,
+        "max_abs_d_ans": 0.0048828125,
+        "max_abs_dp": 0.04113954305648804,
+        "argmax_agreement": 0.98,
+        "mean_abs_dlogit_rank": 0.02148258127272129
+      }
+    },
+    "V1+head-ffn4": {
+      "route": "exact: FFN columns zero / identity blocks",
+      "params": 898237443,
+      "build_seconds": 81.2,
+      "report": {
+        "expanded": [
+          "head.layers.*.linear1/linear2 FFN 3072 -> 6144 (new columns zero)"
+        ],
+        "new_identity_blocks": []
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 1.9073486328125e-06,
+        "max_abs_dlogit_apply": 2.86102294921875e-06,
+        "max_abs_d_null": 9.5367431640625e-07,
+        "max_abs_d_ans": 1.6391277313232422e-07,
+        "max_abs_dp": 2.086162567138672e-07,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 1.881306559425866e-07
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.03125,
+        "max_abs_dlogit_apply": 0.0625,
+        "max_abs_d_null": 0.015625,
+        "max_abs_d_ans": 0.0029296875,
+        "max_abs_dp": 0.0077890753746032715,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0005742645007558167
+      }
+    },
+    "V1+head-L4": {
+      "route": "exact: FFN columns zero / identity blocks",
+      "params": 917139459,
+      "build_seconds": 81.4,
+      "report": {
+        "expanded": [],
+        "new_identity_blocks": [
+          "head.layers.2",
+          "head.layers.3"
+        ]
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 0.0,
+        "max_abs_dlogit_apply": 0.0,
+        "max_abs_d_null": 0.0,
+        "max_abs_d_ans": 0.0,
+        "max_abs_dp": 0.0,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.0,
+        "max_abs_dlogit_apply": 0.0,
+        "max_abs_d_null": 0.0,
+        "max_abs_d_ans": 0.0,
+        "max_abs_dp": 0.0,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0
+      }
+    },
+    "K1-W1536-L22+ci2": {
+      "route": "identity-initialized candidate-interaction layers",
+      "params": 917139459,
+      "build_seconds": 84.5,
+      "report": {},
+      "fp32": {
+        "max_abs_dlogit_rank": 0.0,
+        "max_abs_dlogit_apply": 0.0,
+        "max_abs_d_null": 0.0,
+        "max_abs_d_ans": 0.0,
+        "max_abs_dp": 0.0,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.0,
+        "max_abs_dlogit_apply": 0.0,
+        "max_abs_d_null": 0.0,
+        "max_abs_d_ans": 0.0,
+        "max_abs_dp": 0.0,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0
+      }
+    },
+    "K1-W1536-L22+ci4": {
+      "route": "identity-initialized candidate-interaction layers",
+      "params": 954921987,
+      "build_seconds": 81.1,
+      "report": {},
+      "fp32": {
+        "max_abs_dlogit_rank": 0.0,
+        "max_abs_dlogit_apply": 0.0,
+        "max_abs_d_null": 0.0,
+        "max_abs_d_ans": 0.0,
+        "max_abs_dp": 0.0,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0
+      },
+      "bf16_autocast": {
+        "max_abs_dlogit_rank": 0.0,
+        "max_abs_dlogit_apply": 0.0,
+        "max_abs_d_null": 0.0,
+        "max_abs_d_ans": 0.0,
+        "max_abs_dp": 0.0,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0
+      }
+    }
+  },
+  "v1_bf16_vs_fp32": {
+    "max_abs_dlogit_rank": 0.17101001739501953,
+    "max_abs_dlogit_apply": 0.2592921257019043,
+    "max_abs_d_null": 0.15389394760131836,
+    "max_abs_d_ans": 0.0047903358936309814,
+    "max_abs_dp": 0.04795217514038086,
+    "argmax_agreement": 0.9875,
+    "mean_abs_dlogit_rank": 0.022640662267804146
+  }
+}

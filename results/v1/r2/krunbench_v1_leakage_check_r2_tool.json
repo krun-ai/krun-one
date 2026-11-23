@@ -1,0 +1,9 @@
+{
+  "training_side_files": [
+    "data/kd1_r2/train.jsonl"
+  ],
+  "n_training_side": 1329462,
+  "n_protected": 11715,
+  "violations": {},
+  "LEAKAGE": 0
+}

@@ -1,0 +1,20 @@
+{
+ "core_digest_A": "ee11d492d86e1c0bfb0e9e65c7f431834af7ac89d3ce6dd714bf1bd818330ce8",
+ "core_digest_B": "ee11d492d86e1c0bfb0e9e65c7f431834af7ac89d3ce6dd714bf1bd818330ce8",
+ "core_digest_equal": true,
+ "signals_sha_A": {
+  "val_fit": "8833a3a4dab815f8440efc9ddf951691fdc3b09321359200ce845785d4aa6727",
+  "val_eval": "7fa73fe103b4db7862b9a34fd08e0da0f99b76b34361efaf3e6c57eddcade26f",
+  "val_ml": "c81f226e888e2b8d3e31d238ccc92e65ac3f69e19a0b08f7bb596e07881af352",
+  "val_tools_v2": "1d7c75df3399f08b29b7a600505b6e795d24624f632fdd15dbcf392b1278c5b1"
+ },
+ "signals_sha_B": {
+  "val_fit": "8833a3a4dab815f8440efc9ddf951691fdc3b09321359200ce845785d4aa6727",
+  "val_eval": "7fa73fe103b4db7862b9a34fd08e0da0f99b76b34361efaf3e6c57eddcade26f",
+  "val_ml": "c81f226e888e2b8d3e31d238ccc92e65ac3f69e19a0b08f7bb596e07881af352",
+  "val_tools_v2": "1d7c75df3399f08b29b7a600505b6e795d24624f632fdd15dbcf392b1278c5b1"
+ },
+ "signals_bitwise_identical": true,
+ "requires_grad_core_params_in_B": true,
+ "PASS": true
+}

@@ -1,0 +1,533 @@
+{
+ "n": 231,
+ "truncated_share": 0.19047619047619047,
+ "truncated_share_hard": 0.3963963963963964,
+ "median_lost_tokens_when_truncated": 1467.5,
+ "systems": {
+  "Jev 1.13.0": {
+   "all 231": 0.8658008658008658,
+   "easy": 1.0,
+   "standard": 0.9861111111111112,
+   "hard": 0.7297297297297297,
+   "0-512": 0.9345238095238095,
+   "513-1024": 0.6842105263157895,
+   "1025-2048": 0.42857142857142855,
+   "2049-4096": 0.7297297297297297,
+   "<= 1024": 0.9090909090909091,
+   "> 1024": 0.6818181818181818,
+   "hard <= 1024": 0.7611940298507462,
+   "hard > 1024": 0.6818181818181818,
+   "type choice": 0.8848920863309353,
+   "type noul": 0.8513513513513513,
+   "type score": 0.7777777777777778,
+   "hard family adversarial": 1.0,
+   "hard family ambiguous": 0.8571428571428571,
+   "hard family judge_hard": 0.7647058823529411,
+   "hard family long_policy": 0.631578947368421,
+   "hard family multi_hop": 0.8333333333333334,
+   "hard family probability": 0.7,
+   "hard family routing_hard": 1.0,
+   "hard family temporal_numeric": 0.26666666666666666,
+   "hard family tradeoff": 0.8333333333333334,
+   "hard family trap": 1.0,
+   "capability long_policy": 0.631578947368421,
+   "capability multi_hop": 0.8333333333333334,
+   "capability numeric + temporal": 0.26666666666666666,
+   "capability tradeoff": 0.8333333333333334,
+   "capability not targeted (judgment, traps, ambiguity, probability, routing)": 0.8490566037735849,
+   "lost 1-1000 tokens": 0.42857142857142855,
+   "lost 1001-2000 tokens": 0.8461538461538461,
+   "lost > 2000 tokens": 0.45454545454545453
+  },
+  "GPT-5.6 Luna": {
+   "all 231": 0.974025974025974,
+   "easy": 1.0,
+   "standard": 0.9722222222222222,
+   "hard": 0.963963963963964,
+   "0-512": 0.9761904761904762,
+   "513-1024": 0.9473684210526315,
+   "1025-2048": 1.0,
+   "2049-4096": 0.972972972972973,
+   "<= 1024": 0.9732620320855615,
+   "> 1024": 0.9772727272727273,
+   "hard <= 1024": 0.9552238805970149,
+   "hard > 1024": 0.9772727272727273,
+   "type choice": 0.9856115107913669,
+   "type noul": 0.9459459459459459,
+   "type score": 1.0,
+   "hard family adversarial": 1.0,
+   "hard family ambiguous": 1.0,
+   "hard family judge_hard": 0.9411764705882353,
+   "hard family long_policy": 1.0,
+   "hard family multi_hop": 0.9444444444444444,
+   "hard family probability": 0.9,
+   "hard family routing_hard": 1.0,
+   "hard family temporal_numeric": 0.9333333333333333,
+   "hard family tradeoff": 1.0,
+   "hard family trap": 1.0,
+   "capability long_policy": 1.0,
+   "capability multi_hop": 0.9444444444444444,
+   "capability numeric + temporal": 0.9333333333333333,
+   "capability tradeoff": 1.0,
+   "capability not targeted (judgment, traps, ambiguity, probability, routing)": 0.9622641509433962,
+   "lost 1-1000 tokens": 1.0,
+   "lost 1001-2000 tokens": 0.9615384615384616,
+   "lost > 2000 tokens": 1.0
+  },
+  "Laya 421M": {
+   "all 231": 0.5844155844155844,
+   "easy": 0.9583333333333334,
+   "standard": 0.6944444444444444,
+   "hard": 0.35135135135135137,
+   "0-512": 0.6607142857142857,
+   "513-1024": 0.42105263157894735,
+   "1025-2048": 0.7142857142857143,
+   "2049-4096": 0.2972972972972973,
+   "<= 1024": 0.6363636363636364,
+   "> 1024": 0.36363636363636365,
+   "hard <= 1024": 0.34328358208955223,
+   "hard > 1024": 0.36363636363636365,
+   "type choice": 0.5683453237410072,
+   "type noul": 0.581081081081081,
+   "type score": 0.7222222222222222,
+   "hard family adversarial": 0.6666666666666666,
+   "hard family ambiguous": 0.14285714285714285,
+   "hard family judge_hard": 0.4117647058823529,
+   "hard family long_policy": 0.21052631578947367,
+   "hard family multi_hop": 0.3333333333333333,
+   "hard family probability": 0.5,
+   "hard family routing_hard": 0.2,
+   "hard family temporal_numeric": 0.3333333333333333,
+   "hard family tradeoff": 1.0,
+   "hard family trap": 0.0,
+   "capability long_policy": 0.21052631578947367,
+   "capability multi_hop": 0.3333333333333333,
+   "capability numeric + temporal": 0.3333333333333333,
+   "capability tradeoff": 1.0,
+   "capability not targeted (judgment, traps, ambiguity, probability, routing)": 0.33962264150943394,
+   "lost 1-1000 tokens": 0.7142857142857143,
+   "lost 1001-2000 tokens": 0.34615384615384615,
+   "lost > 2000 tokens": 0.18181818181818182
+  },
+  "Krun v1_r3host": {
+   "all 231": 0.5324675324675324,
+   "easy": 0.9166666666666666,
+   "standard": 0.625,
+   "hard": 0.3063063063063063,
+   "0-512": 0.625,
+   "513-1024": 0.3157894736842105,
+   "1025-2048": 0.2857142857142857,
+   "2049-4096": 0.2702702702702703,
+   "<= 1024": 0.5935828877005348,
+   "> 1024": 0.2727272727272727,
+   "hard <= 1024": 0.3283582089552239,
+   "hard > 1024": 0.2727272727272727,
+   "type choice": 0.5539568345323741,
+   "type noul": 0.5135135135135135,
+   "type score": 0.4444444444444444,
+   "hard family adversarial": 0.5,
+   "hard family ambiguous": 0.2857142857142857,
+   "hard family judge_hard": 0.47058823529411764,
+   "hard family long_policy": 0.3157894736842105,
+   "hard family multi_hop": 0.16666666666666666,
+   "hard family probability": 0.4,
+   "hard family routing_hard": 0.2,
+   "hard family temporal_numeric": 0.2,
+   "hard family tradeoff": 0.3333333333333333,
+   "hard family trap": 0.25,
+   "capability long_policy": 0.3157894736842105,
+   "capability multi_hop": 0.16666666666666666,
+   "capability numeric + temporal": 0.2,
+   "capability tradeoff": 0.3333333333333333,
+   "capability not targeted (judgment, traps, ambiguity, probability, routing)": 0.37735849056603776,
+   "lost 1-1000 tokens": 0.2857142857142857,
+   "lost 1001-2000 tokens": 0.3076923076923077,
+   "lost > 2000 tokens": 0.18181818181818182
+  },
+  "Krun r2l4na_s1": {
+   "all 231": 0.5238095238095238,
+   "easy": 0.9166666666666666,
+   "standard": 0.5694444444444444,
+   "hard": 0.32432432432432434,
+   "0-512": 0.6011904761904762,
+   "513-1024": 0.3684210526315789,
+   "1025-2048": 0.2857142857142857,
+   "2049-4096": 0.2972972972972973,
+   "<= 1024": 0.5775401069518716,
+   "> 1024": 0.29545454545454547,
+   "hard <= 1024": 0.34328358208955223,
+   "hard > 1024": 0.29545454545454547,
+   "type choice": 0.539568345323741,
+   "type noul": 0.4864864864864865,
+   "type score": 0.5555555555555556,
+   "hard family adversarial": 0.5,
+   "hard family ambiguous": 0.42857142857142855,
+   "hard family judge_hard": 0.4117647058823529,
+   "hard family long_policy": 0.42105263157894735,
+   "hard family multi_hop": 0.16666666666666666,
+   "hard family probability": 0.3,
+   "hard family routing_hard": 0.6,
+   "hard family temporal_numeric": 0.2,
+   "hard family tradeoff": 0.5,
+   "hard family trap": 0.0,
+   "capability long_policy": 0.42105263157894735,
+   "capability multi_hop": 0.16666666666666666,
+   "capability numeric + temporal": 0.2,
+   "capability tradeoff": 0.5,
+   "capability not targeted (judgment, traps, ambiguity, probability, routing)": 0.3584905660377358,
+   "lost 1-1000 tokens": 0.2857142857142857,
+   "lost 1001-2000 tokens": 0.3076923076923077,
+   "lost > 2000 tokens": 0.2727272727272727
+  },
+  "Krun r2l4na_s2": {
+   "all 231": 0.5238095238095238,
+   "easy": 0.8958333333333334,
+   "standard": 0.625,
+   "hard": 0.2972972972972973,
+   "0-512": 0.6011904761904762,
+   "513-1024": 0.47368421052631576,
+   "1025-2048": 0.2857142857142857,
+   "2049-4096": 0.24324324324324326,
+   "<= 1024": 0.5882352941176471,
+   "> 1024": 0.25,
+   "hard <= 1024": 0.3283582089552239,
+   "hard > 1024": 0.25,
+   "type choice": 0.539568345323741,
+   "type noul": 0.4864864864864865,
+   "type score": 0.5555555555555556,
+   "hard family adversarial": 0.3333333333333333,
+   "hard family ambiguous": 0.42857142857142855,
+   "hard family judge_hard": 0.4117647058823529,
+   "hard family long_policy": 0.3157894736842105,
+   "hard family multi_hop": 0.16666666666666666,
+   "hard family probability": 0.3,
+   "hard family routing_hard": 0.4,
+   "hard family temporal_numeric": 0.2,
+   "hard family tradeoff": 0.6666666666666666,
+   "hard family trap": 0.0,
+   "capability long_policy": 0.3157894736842105,
+   "capability multi_hop": 0.16666666666666666,
+   "capability numeric + temporal": 0.2,
+   "capability tradeoff": 0.6666666666666666,
+   "capability not targeted (judgment, traps, ambiguity, probability, routing)": 0.32075471698113206,
+   "lost 1-1000 tokens": 0.2857142857142857,
+   "lost 1001-2000 tokens": 0.23076923076923078,
+   "lost > 2000 tokens": 0.2727272727272727
+  },
+  "Krun r3r_s1": {
+   "all 231": 0.5367965367965368,
+   "easy": 0.8958333333333334,
+   "standard": 0.5972222222222222,
+   "hard": 0.34234234234234234,
+   "0-512": 0.6071428571428571,
+   "513-1024": 0.42105263157894735,
+   "1025-2048": 0.42857142857142855,
+   "2049-4096": 0.2972972972972973,
+   "<= 1024": 0.5882352941176471,
+   "> 1024": 0.3181818181818182,
+   "hard <= 1024": 0.3582089552238806,
+   "hard > 1024": 0.3181818181818182,
+   "type choice": 0.5539568345323741,
+   "type noul": 0.4864864864864865,
+   "type score": 0.6111111111111112,
+   "hard family adversarial": 0.5,
+   "hard family ambiguous": 0.14285714285714285,
+   "hard family judge_hard": 0.4117647058823529,
+   "hard family long_policy": 0.3684210526315789,
+   "hard family multi_hop": 0.16666666666666666,
+   "hard family probability": 0.5,
+   "hard family routing_hard": 0.6,
+   "hard family temporal_numeric": 0.3333333333333333,
+   "hard family tradeoff": 0.6666666666666666,
+   "hard family trap": 0.0,
+   "capability long_policy": 0.3684210526315789,
+   "capability multi_hop": 0.16666666666666666,
+   "capability numeric + temporal": 0.3333333333333333,
+   "capability tradeoff": 0.6666666666666666,
+   "capability not targeted (judgment, traps, ambiguity, probability, routing)": 0.3584905660377358,
+   "lost 1-1000 tokens": 0.42857142857142855,
+   "lost 1001-2000 tokens": 0.3076923076923077,
+   "lost > 2000 tokens": 0.2727272727272727
+  },
+  "Krun r3r_s2": {
+   "all 231": 0.5627705627705628,
+   "easy": 0.9166666666666666,
+   "standard": 0.6388888888888888,
+   "hard": 0.36036036036036034,
+   "0-512": 0.6369047619047619,
+   "513-1024": 0.3684210526315789,
+   "1025-2048": 0.5714285714285714,
+   "2049-4096": 0.32432432432432434,
+   "<= 1024": 0.6096256684491979,
+   "> 1024": 0.36363636363636365,
+   "hard <= 1024": 0.3582089552238806,
+   "hard > 1024": 0.36363636363636365,
+   "type choice": 0.5827338129496403,
+   "type noul": 0.5135135135135135,
+   "type score": 0.6111111111111112,
+   "hard family adversarial": 0.3333333333333333,
+   "hard family ambiguous": 0.2857142857142857,
+   "hard family judge_hard": 0.4117647058823529,
+   "hard family long_policy": 0.3684210526315789,
+   "hard family multi_hop": 0.2777777777777778,
+   "hard family probability": 0.5,
+   "hard family routing_hard": 0.8,
+   "hard family temporal_numeric": 0.3333333333333333,
+   "hard family tradeoff": 0.5,
+   "hard family trap": 0.0,
+   "capability long_policy": 0.3684210526315789,
+   "capability multi_hop": 0.2777777777777778,
+   "capability numeric + temporal": 0.3333333333333333,
+   "capability tradeoff": 0.5,
+   "capability not targeted (judgment, traps, ambiguity, probability, routing)": 0.37735849056603776,
+   "lost 1-1000 tokens": 0.5714285714285714,
+   "lost 1001-2000 tokens": 0.3076923076923077,
+   "lost > 2000 tokens": 0.36363636363636365
+  }
+ },
+ "n_per_cut": {
+  "all 231": 231,
+  "easy": 48,
+  "standard": 72,
+  "hard": 111,
+  "0-512": 168,
+  "513-1024": 19,
+  "1025-2048": 7,
+  "2049-4096": 37,
+  "<= 1024": 187,
+  "> 1024": 44,
+  "hard <= 1024": 67,
+  "hard > 1024": 44,
+  "type choice": 139,
+  "type noul": 74,
+  "type score": 18,
+  "hard family adversarial": 6,
+  "hard family ambiguous": 7,
+  "hard family judge_hard": 17,
+  "hard family long_policy": 19,
+  "hard family multi_hop": 18,
+  "hard family probability": 10,
+  "hard family routing_hard": 5,
+  "hard family temporal_numeric": 15,
+  "hard family tradeoff": 6,
+  "hard family trap": 8,
+  "capability long_policy": 19,
+  "capability multi_hop": 18,
+  "capability numeric + temporal": 15,
+  "capability tradeoff": 6,
+  "capability not targeted (judgment, traps, ambiguity, probability, routing)": 53,
+  "lost 1-1000 tokens": 7,
+  "lost 1001-2000 tokens": 26,
+  "lost > 2000 tokens": 11
+ },
+ "paired_vs_baseline": {
+  "r2l4na_s1": {
+   "all 231": {
+    "n": 231,
+    "delta": -0.008658008658008658,
+    "ci95": [
+     -0.05194805194805195,
+     0.03463203463203463
+    ],
+    "gained": 11,
+    "lost": 13
+   },
+   "hard": {
+    "n": 111,
+    "delta": 0.018018018018018018,
+    "ci95": [
+     -0.04504504504504504,
+     0.09009009009009009
+    ],
+    "gained": 9,
+    "lost": 7
+   },
+   "<= 1024": {
+    "n": 187,
+    "delta": -0.016042780748663103,
+    "ci95": [
+     -0.058823529411764705,
+     0.026737967914438502
+    ],
+    "gained": 7,
+    "lost": 10
+   },
+   "> 1024": {
+    "n": 44,
+    "delta": 0.022727272727272728,
+    "ci95": [
+     -0.09090909090909091,
+     0.13636363636363635
+    ],
+    "gained": 4,
+    "lost": 3
+   },
+   "hard <= 1024": {
+    "n": 67,
+    "delta": 0.014925373134328358,
+    "ci95": [
+     -0.07462686567164178,
+     0.1044776119402985
+    ],
+    "gained": 5,
+    "lost": 4
+   }
+  },
+  "r2l4na_s2": {
+   "all 231": {
+    "n": 231,
+    "delta": -0.008658008658008658,
+    "ci95": [
+     -0.047619047619047616,
+     0.030303030303030304
+    ],
+    "gained": 9,
+    "lost": 11
+   },
+   "hard": {
+    "n": 111,
+    "delta": -0.009009009009009009,
+    "ci95": [
+     -0.07207207207207207,
+     0.06306306306306306
+    ],
+    "gained": 7,
+    "lost": 8
+   },
+   "<= 1024": {
+    "n": 187,
+    "delta": -0.0053475935828877,
+    "ci95": [
+     -0.0427807486631016,
+     0.03208556149732621
+    ],
+    "gained": 6,
+    "lost": 7
+   },
+   "> 1024": {
+    "n": 44,
+    "delta": -0.022727272727272728,
+    "ci95": [
+     -0.13636363636363635,
+     0.09090909090909091
+    ],
+    "gained": 3,
+    "lost": 4
+   },
+   "hard <= 1024": {
+    "n": 67,
+    "delta": 0.0,
+    "ci95": [
+     -0.08955223880597014,
+     0.08955223880597014
+    ],
+    "gained": 4,
+    "lost": 4
+   }
+  },
+  "r3r_s1": {
+   "all 231": {
+    "n": 231,
+    "delta": 0.004329004329004329,
+    "ci95": [
+     -0.04339826839826836,
+     0.05627705627705628
+    ],
+    "gained": 18,
+    "lost": 17
+   },
+   "hard": {
+    "n": 111,
+    "delta": 0.036036036036036036,
+    "ci95": [
+     -0.04504504504504504,
+     0.11711711711711711
+    ],
+    "gained": 13,
+    "lost": 9
+   },
+   "<= 1024": {
+    "n": 187,
+    "delta": -0.0053475935828877,
+    "ci95": [
+     -0.058823529411764705,
+     0.0481283422459893
+    ],
+    "gained": 13,
+    "lost": 14
+   },
+   "> 1024": {
+    "n": 44,
+    "delta": 0.045454545454545456,
+    "ci95": [
+     -0.09090909090909091,
+     0.18181818181818182
+    ],
+    "gained": 5,
+    "lost": 3
+   },
+   "hard <= 1024": {
+    "n": 67,
+    "delta": 0.029850746268656716,
+    "ci95": [
+     -0.07462686567164178,
+     0.13432835820895522
+    ],
+    "gained": 8,
+    "lost": 6
+   }
+  },
+  "r3r_s2": {
+   "all 231": {
+    "n": 231,
+    "delta": 0.030303030303030304,
+    "ci95": [
+     -0.017316017316017316,
+     0.07792207792207792
+    ],
+    "gained": 20,
+    "lost": 13
+   },
+   "hard": {
+    "n": 111,
+    "delta": 0.05405405405405406,
+    "ci95": [
+     -0.036036036036036036,
+     0.13513513513513514
+    ],
+    "gained": 15,
+    "lost": 9
+   },
+   "<= 1024": {
+    "n": 187,
+    "delta": 0.016042780748663103,
+    "ci95": [
+     -0.03208556149732621,
+     0.06417112299465241
+    ],
+    "gained": 11,
+    "lost": 8
+   },
+   "> 1024": {
+    "n": 44,
+    "delta": 0.09090909090909091,
+    "ci95": [
+     -0.06818181818181818,
+     0.25
+    ],
+    "gained": 9,
+    "lost": 5
+   },
+   "hard <= 1024": {
+    "n": 67,
+    "delta": 0.029850746268656716,
+    "ci95": [
+     -0.05970149253731343,
+     0.11940298507462686
+    ],
+    "gained": 6,
+    "lost": 4
+   }
+  }
+ }
+}

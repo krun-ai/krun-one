@@ -1,0 +1,108 @@
+{
+  "massive_revision": "ed58ac423a2f4121720918bf5301577edce4ffd3",
+  "n_parallel_utterances": 2974,
+  "n_tool_descriptions": 3000,
+  "tokenizers": {
+    "modernbert (krun-one-v0.3)": {
+      "vocab_size": 50368,
+      "mask": "[MASK]",
+      "cls": "[CLS]",
+      "sep": "[SEP]",
+      "by_locale": {
+        "en-US": {
+          "tokens_mean": 7.601882985877606,
+          "tokens_p95": 14.0,
+          "tokens_per_word": 1.1144082417311578,
+          "chars_per_token": 4.546399504600141
+        },
+        "pt-PT": {
+          "tokens_mean": 12.53093476798924,
+          "tokens_p95": 23.0,
+          "tokens_per_word": 1.769983376870102,
+          "chars_per_token": 3.034293074301661
+        },
+        "es-ES": {
+          "tokens_mean": 12.246469401479489,
+          "tokens_p95": 23.0,
+          "tokens_per_word": 1.7234183504471678,
+          "chars_per_token": 3.195793635539936
+        },
+        "fr-FR": {
+          "tokens_mean": 13.484196368527236,
+          "tokens_p95": 25.0,
+          "tokens_per_word": 1.8274699234414875,
+          "chars_per_token": 3.1372749488803553
+        }
+      },
+      "tool_description": {
+        "tokens_mean": 20.988666666666667,
+        "tokens_p95": 34.0,
+        "share_over_48": 0.011
+      },
+      "leading_space_probe": {
+        "with_space": [
+          "Ġcancel",
+          "Ġsubscription"
+        ],
+        "without_space": [
+          "cancel",
+          "Ġsubscription"
+        ]
+      }
+    },
+    "gemma2-256k (mmBERT)": {
+      "vocab_size": 256000,
+      "mask": "<mask>",
+      "cls": "<bos>",
+      "sep": "<eos>",
+      "by_locale": {
+        "en-US": {
+          "tokens_mean": 7.2740416946872894,
+          "tokens_p95": 14.0,
+          "tokens_per_word": 1.0663479075269877,
+          "chars_per_token": 4.7513058752831325
+        },
+        "pt-PT": {
+          "tokens_mean": 8.262609280430397,
+          "tokens_p95": 16.0,
+          "tokens_per_word": 1.1670862028021847,
+          "chars_per_token": 4.6017580271029175
+        },
+        "es-ES": {
+          "tokens_mean": 7.977471418964358,
+          "tokens_p95": 15.0,
+          "tokens_per_word": 1.122651776841906,
+          "chars_per_token": 4.905964172813488
+        },
+        "fr-FR": {
+          "tokens_mean": 9.588433086751849,
+          "tokens_p95": 18.0,
+          "tokens_per_word": 1.2994896099161501,
+          "chars_per_token": 4.411944171693085
+        }
+      },
+      "tool_description": {
+        "tokens_mean": 18.985666666666667,
+        "tokens_p95": 32.0,
+        "share_over_48": 0.009333333333333334
+      },
+      "leading_space_probe": {
+        "with_space": [
+          "▁cancel",
+          "▁subscription"
+        ],
+        "without_space": [
+          "▁cancel",
+          "▁subscription"
+        ]
+      }
+    }
+  },
+  "ratio_gemma_over_modernbert": {
+    "en-US": 0.9568736730360934,
+    "pt-PT": 0.6593769286500121,
+    "es-ES": 0.6514099008813596,
+    "fr-FR": 0.7110867288414542,
+    "tool_description": 0.9045675443890353
+  }
+}

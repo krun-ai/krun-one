@@ -1,0 +1,233 @@
+{
+  "repo_id": "nvidia/Nemotron-SFT-SWE-v2",
+  "exists": true,
+  "revision": "bd151f3f2d89c4804dda0083d912bd9f6a0a9fb7",
+  "last_modified": "2026-03-11T01:12:11.000Z",
+  "last_modified_brt": "2026-03-10 22:12:11 BRT",
+  "created_at": "2026-03-08T16:29:43.000Z",
+  "gated": false,
+  "downloads": 3208,
+  "likes": 14,
+  "license_field": [
+    "cc-by-4.0",
+    "apache-2.0",
+    "mit",
+    "bsd-3-clause",
+    "bsd-2-clause"
+  ],
+  "repo_total_bytes": 18083658824,
+  "license_quotes": [
+    {
+      "quote": "license:\n- cc-by-4.0\n- apache-2.0\n- mit\n- bsd-3-clause\n- bsd-2-clause",
+      "source_url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md"
+    },
+    {
+      "quote": "This dataset is ready for commercial use.",
+      "source_url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md"
+    },
+    {
+      "quote": "## License/Terms of Use: \nThis dataset is licensed under Creative Commons Attribution 4.0 International (CC-BY 4.0).  \nAdditional Information: Apache 2.0 License; MIT License; BSD-3 License; BSD-2 License.",
+      "source_url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md"
+    },
+    {
+      "quote": "When downloaded or used in accordance with our terms of service, developers should work with their internal developer teams to ensure this dataset meets requirements for the relevant industry and use case and addresses unforeseen product misuse.",
+      "source_url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md"
+    },
+    {
+      "quote": "Per-row column `license` exists; value \"cc-by-4.0\" in all 10 sampled rows of the agentless split.",
+      "source_url": "https://datasets-server.huggingface.co/first-rows?dataset=nvidia/Nemotron-SFT-SWE-v2&config=default&split=agentless"
+    },
+    {
+      "quote": "No LICENSE/NOTICE file in repo (tree = .gitattributes, .gitignore, README.md, data/agentless.jsonl, data/swe.jsonl). No \"research only\"/\"non-commercial\" wording anywhere in the card.",
+      "source_url": "https://huggingface.co/api/datasets/nvidia/Nemotron-SFT-SWE-v2/tree/main?recursive=1"
+    }
+  ],
+  "provenance": {
+    "text": "Fully LLM-synthesized responses over prompts built from existing SWE datasets. Two subsets = two SPLITS of config \"default\": split `agentless` (data/agentless.jsonl, 209,976) and split `openhands_swe` (data/swe.jsonl, 46,278).",
+    "quotes": [
+      {
+        "quote": "This subset comprises ~46k agent trajectories collected using the OpenHands framework. The trajectories were synthesized using state-of-the-art Qwen3-Coder-480B-A35B-Instruct and specifically curated for supervised fine-tuning (SFT), aiming to improve model performance on SWE-Bench style tasks. The issue statements are sourced from SWE-Gym and R2E-Gym-Subset (prompts are used to generate problem statements using Qwen3-Coder-480B-A35B-Instruct).",
+        "source_url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md"
+      },
+      {
+        "quote": "Agentless SWE is supervised fine-tuning data for agentless software engineering sub-tasks in a SWE-Bench style setting: code localization, code repair, and test generation. Each example is formatted with task-specific outputs such as a ranked file list for localization, patch edits for repair, and reproduction plus unit tests for test generation.",
+        "source_url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md"
+      },
+      {
+        "quote": "SFT dataset generation: DeepSeek-R1-0528 produces multiple candidate outputs per prompt (8 responses for SWE-Bench-Train / SWE-reBench / SWE-Smith and 4 responses for SWE-Fixer-Train). Prompts include the task specification and issue or problem statement. For repair prompts also include the relevant code files.",
+        "source_url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md"
+      },
+      {
+        "quote": "**Data Collection Method** Hybrid: Automated, Synthetic  **Labeling Method** Hybrid: Automated, Synthetic",
+        "source_url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md"
+      },
+      {
+        "quote": "| agentless_swe | 209,976 | | openhands_swe | 46,278 | | Total | 256,254 | ... Total Data Storage: ~17GB",
+        "source_url": "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md"
+      },
+      {
+        "quote": "(linked Nemotron-Cascade paper, agentless data) To ensure high-quality training data, we validate all generated responses against ground truth annotations. ... For the localization task, we retain only those samples that include all buggy code files required to address the issue (i.e., recall equals 1.0). For repair tasks, we measure the similarity between the generated and ground-truth patches using Unidiff ... at least 4 out of 8 sampled responses exceeding the 0.5 similarity threshold ... For test code generation, we retain only the trajectories that can be successfully parsed and executed as reproduction tests without any syntax error.",
+        "source_url": "https://arxiv.org/html/2512.13607 (Section 3.3)"
+      }
+    ]
+  },
+  "upstream_sources": [
+    {
+      "name": "SWE-Gym (issue statements, agentic subset)",
+      "hf": "SWE-Gym/SWE-Gym",
+      "license_field": "mit",
+      "note": "paper: \"These repositories are separate from those used in SWE-Bench to avoid contamination.\" 2,438 instances / 11 repos"
+    },
+    {
+      "name": "R2E-Gym-Subset (agentic subset)",
+      "hf": "R2E-Gym/R2E-Gym-Subset",
+      "license_field": "apache-2.0",
+      "note": "paper: \"We decontaminate this set by removing repositories overlapping with SWE-Bench test-set repositories, obtaining 4578 problems (referred to as R2E-Gym-Subset)\""
+    },
+    {
+      "name": "SWE-Bench-Train (agentless)",
+      "hf": "princeton-nlp/SWE-bench / SWE-bench/SWE-bench (train split)",
+      "license_field": null
+    },
+    {
+      "name": "SWE-reBench (agentless)",
+      "hf": "nebius/SWE-rebench",
+      "license_field": "cc-by-4.0"
+    },
+    {
+      "name": "SWE-Smith (agentless)",
+      "hf": "SWE-bench/SWE-smith",
+      "license_field": "mit",
+      "note": "see SWE-smith evidence: includes pallets/flask"
+    },
+    {
+      "name": "SWE-Fixer-Train (agentless)",
+      "hf": "internlm/SWE-Fixer-Train-110K",
+      "license_field": "mit"
+    },
+    {
+      "name": "underlying GitHub repositories of all of the above",
+      "license": "card only lists \"Apache 2.0 License; MIT License; BSD-3 License; BSD-2 License\" as additional information; no per-row repo licence column was seen (per-row `license` = cc-by-4.0)"
+    }
+  ],
+  "generation_models": [
+    {
+      "role": "agentic trajectories + problem-statement rewriting (openhands_swe split)",
+      "model": "Qwen3-Coder-480B-A35B-Instruct",
+      "provider": "Alibaba/Qwen open-weight model; hosting not stated",
+      "scaffold": "OpenHands"
+    },
+    {
+      "role": "agentless responses (localization / repair / test generation), incl. reasoning_content",
+      "model": "DeepSeek-R1-0528",
+      "provider": "DeepSeek open-weight model; hosting not stated"
+    }
+  ],
+  "contamination_notes": "Derived from SWE-bench-STYLE training sets, incl. the SWE-bench *train* split (SWE-Bench-Train), SWE-Gym, R2E-Gym-Subset, SWE-reBench, SWE-Smith, SWE-Fixer-Train. The DATASET CARD says nothing about exclusion of SWE-bench test repos or dedup against SWE-bench Verified. The linked Nemotron-Cascade paper (which describes an agentless SFT set built from the same 4 sources with DeepSeek-R1-0528) says: \"To prevent evaluation data contamination, we implement a comprehensive deduplication process against SWE-bench Verified. Specifically, we exclude all instances originating from repositories present in the evaluation dataset. Additionally, we perform deduplication across training data from different sources ... matching both repository names and base commit identifiers\". That this filter was applied to the v2 release is INFERRED, not stated on the card (paper sizes 127K repair + 92K localization + 31K testgen = 250K do not match the card's 209,976). For the agentic split, upstream papers state SWE-Gym and R2E-Gym-Subset repos do not overlap SWE-bench test repos. Risk points: SWE-reBench (3.5k repos), SWE-Fixer-Train and SWE-Smith (contains pallets/flask) could contribute SWE-bench-repo instances if the exclusion was not applied. Sampled agentless rows reference pandas (x3) and mesonbuild/meson issues - none of the 12 SWE-bench repos.",
+  "configs_splits": [
+    {
+      "config": "default",
+      "split": "agentless",
+      "rows": "209,976 (card; datasets-server /size failed for this dataset)",
+      "file": "data/agentless.jsonl",
+      "file_bytes": 6733030079
+    },
+    {
+      "config": "default",
+      "split": "openhands_swe",
+      "rows": "46,278 (card)",
+      "file": "data/swe.jsonl",
+      "file_bytes": 11350621642
+    }
+  ],
+  "size_bytes": 18083658824,
+  "schema": [
+    {
+      "name": "messages",
+      "type": "list<json>",
+      "meaning": "agentless split: [user, assistant]; assistant has `content` (final answer) and `reasoning_content` (DeepSeek-R1 chain of thought, ~15k chars in sample). openhands_swe split: per the first-rows CastError the raw file has `messages: list<string>` (JSON-encoded turns)."
+    },
+    {
+      "name": "uuid",
+      "type": "string",
+      "meaning": "row id."
+    },
+    {
+      "name": "license",
+      "type": "string",
+      "meaning": "per-row licence tag; \"cc-by-4.0\" in all sampled rows."
+    },
+    {
+      "name": "used_in",
+      "type": "list<string>",
+      "meaning": "internal tag of NVIDIA training mixes; [\"super_v3\"] in all sampled rows."
+    },
+    {
+      "name": "(openhands_swe only) metadata",
+      "type": "struct<uuid, alt_id, alt_id_sources: list<string>, turn_token_count: list<struct<reasoning,content>>, all_turns_token_count: struct<reasoning,content,all>>",
+      "meaning": "trajectory metadata; alt_id / alt_id_sources probably map back to the upstream instance id (NOT inspected)."
+    },
+    {
+      "name": "(openhands_swe only) tools",
+      "type": "list<struct<type, function{name, description, parameters}>>",
+      "meaning": "OpenHands tool definitions (str_replace_editor-style params: command, old_str, new_str, insert_line, view_range ...)."
+    },
+    {
+      "name": "(openhands_swe only) filter_reason / processing_info / match_contexts / matched_categories",
+      "type": "null / struct<stages, loop_detection{method, repetition_ratio, suffix_words, threshold}> / null / null",
+      "meaning": "post-processing metadata (loop-detection filter)."
+    }
+  ],
+  "example_row_summary": [
+    "agentless row 0 (localization): user=\"Please look through a given GitHub issue and repository structure and provide a list of files that one would need to edit or look at to solve the issue. ### GitHub Problem Description ### [ISSUE] **Title:** Preserve key order when using `.loc` on MultiIndex DataFra...\" (8.5k chars); assistant.content = ranked file list in a code block (pandas/core/indexing.py, pandas/core/indexes/multi.py, ...) + explanation; assistant.reasoning_content = 14.8k chars.",
+    "agentless row 3 (test generation): user=\"We are currently solving the following issue within our repository. Here is the issue text: --- BEGIN ISSUE --- Python 3.6 regression for as_system() on cmake subproject dependency objects ... Meson 0.54.3 ...\" ; assistant.content = a Python reproduction test.",
+    "No row-level field for task type (localization/repair/testgen), source dataset, repo, instance_id, or a success/verified flag was seen in the agentless schema - task type must be inferred from the prompt template.",
+    "openhands_swe split: /first-rows returns HTTP 500 CastError (\"column names don't match\") so no rows could be inspected."
+  ],
+  "surprises": [
+    "license field is a LIST of 5 licences (cc-by-4.0 + apache-2.0/mit/bsd-3/bsd-2); card explicitly states \"This dataset is ready for commercial use.\" - no NVIDIA custom/non-commercial licence on this one.",
+    "Repo size is 18.08 GB (6.73 GB agentless + 11.35 GB openhands), card says ~17GB. Claimed counts (~46k + ~210k = ~256k) match the card exactly: 46,278 + 209,976 = 256,254.",
+    "The two splits have DIFFERENT schemas, which breaks datasets-server (/info and /size fail for config default; /first-rows 500 for openhands_swe). `datasets.load_dataset` will likely fail for the openhands split without custom features.",
+    "\"Outcomes execution-verified?\": card is SILENT. For agentless, the linked paper describes filtering by similarity to the ground-truth patch (Unidiff >= 0.5), localization recall = 1.0, and testgen \"parsed and executed ... without any syntax error\" - i.e. NOT verified by running the repo test-suite against the generated patch. For OpenHands trajectories nothing is stated about resolved/unresolved filtering.",
+    "Upstream nebius/SWE-rebench is cc-by-4.0 (attribution) and princeton-nlp/SWE-bench has no license field."
+  ],
+  "unverified": [
+    "Whether openhands_swe trajectories were filtered to successful (tests-passing) runs; no success flag visible.",
+    "Row counts per split (datasets-server /size failed; counts are from the card only).",
+    "Whether the SWE-bench-Verified repo exclusion described in the Nemotron-Cascade paper was applied to this v2 release.",
+    "Composition of agentless split by task (localization/repair/testgen) and by source dataset.",
+    "Whether GPL/LGPL repository code is embedded in prompts (repair prompts include full code files) - card lists only Apache/MIT/BSD as additional licences, but SWE-Smith and SWE-reBench include GPL/LGPL repos.",
+    "Where Qwen3-Coder / DeepSeek-R1 inference was hosted."
+  ],
+  "urls_consulted": [
+    "https://huggingface.co/api/datasets/nvidia/Nemotron-SFT-SWE-v2",
+    "https://huggingface.co/datasets/nvidia/Nemotron-SFT-SWE-v2/raw/main/README.md",
+    "https://huggingface.co/api/datasets/nvidia/Nemotron-SFT-SWE-v2/tree/main?recursive=1",
+    "https://datasets-server.huggingface.co/info?dataset=nvidia/Nemotron-SFT-SWE-v2",
+    "https://datasets-server.huggingface.co/splits?dataset=nvidia/Nemotron-SFT-SWE-v2",
+    "https://datasets-server.huggingface.co/size?dataset=nvidia/Nemotron-SFT-SWE-v2",
+    "https://datasets-server.huggingface.co/first-rows?dataset=nvidia/Nemotron-SFT-SWE-v2&config=default&split=agentless",
+    "https://datasets-server.huggingface.co/first-rows?dataset=nvidia/Nemotron-SFT-SWE-v2&config=default&split=openhands_swe",
+    "https://arxiv.org/abs/2512.13607",
+    "https://arxiv.org/html/2512.13607",
+    "https://arxiv.org/html/2412.21139",
+    "https://arxiv.org/html/2504.07164",
+    "https://huggingface.co/api/datasets/SWE-Gym/SWE-Gym",
+    "https://huggingface.co/api/datasets/R2E-Gym/R2E-Gym-Subset",
+    "https://huggingface.co/api/datasets/nebius/SWE-rebench",
+    "https://huggingface.co/api/datasets/internlm/SWE-Fixer-Train-110K",
+    "https://huggingface.co/api/datasets/princeton-nlp/SWE-bench",
+    "https://huggingface.co/api/datasets/nvidia/Nemotron-Cascade-SFT-SWE",
+    "https://huggingface.co/datasets/SWE-Gym/SWE-Gym/raw/main/README.md",
+    "https://huggingface.co/datasets/R2E-Gym/R2E-Gym-Subset/raw/main/README.md"
+  ],
+  "audit_meta": {
+    "collected_on": "2026-09-30 (BRT)",
+    "method": "Hub API + raw card + tree listing + datasets-server info/splits/size/first-rows + linked papers/GitHub; NO data files downloaded; machine not logged in to HF",
+    "extra_local_files": [
+      "nvidia__Nemotron-SFT-SWE-v2.README.md",
+      "nvidia__Nemotron-SFT-SWE-v2.api.json",
+      "nvidia__Nemotron-SFT-SWE-v2.tree.json"
+    ]
+  }
+}

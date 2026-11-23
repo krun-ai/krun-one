@@ -1,0 +1,306 @@
+{
+ "n": 184790,
+ "used": 140496,
+ "by": {
+  "train/coco/choice": {
+   "n": 18068,
+   "teacher_acc": 0.8393845472658844,
+   "used": 15166
+  },
+  "train/coco/multi": {
+   "n": 9168,
+   "teacher_acc": 0.3723821989528796,
+   "used": 3414
+  },
+  "train/coco/noul": {
+   "n": 13199,
+   "teacher_acc": 0.7857413440412152,
+   "used": 10371
+  },
+  "train/coco/score": {
+   "n": 7855,
+   "teacher_acc": 0.6357733927434754,
+   "used": 4994
+  },
+  "train/doclaynet/choice": {
+   "n": 6525,
+   "teacher_acc": 0.622375478927203,
+   "used": 4061
+  },
+  "train/doclaynet/multi": {
+   "n": 4571,
+   "teacher_acc": 0.1774228833953183,
+   "used": 811
+  },
+  "train/kd1_screen/choice": {
+   "n": 21336,
+   "teacher_acc": 0.73964191976003,
+   "used": 21336
+  },
+  "train/kd1_screen/multi": {
+   "n": 3491,
+   "teacher_acc": 0.9750787739902607,
+   "used": 3491
+  },
+  "train/kd1_screen/noul": {
+   "n": 4730,
+   "teacher_acc": 0.9780126849894292,
+   "used": 4730
+  },
+  "train/kd1_screen/score": {
+   "n": 1144,
+   "teacher_acc": 0.5804195804195804,
+   "used": 1144
+  },
+  "train/kd1_tts/choice": {
+   "n": 21336,
+   "teacher_acc": 0.73964191976003,
+   "used": 21336
+  },
+  "train/kd1_tts/multi": {
+   "n": 3491,
+   "teacher_acc": 0.9750787739902607,
+   "used": 3491
+  },
+  "train/kd1_tts/noul": {
+   "n": 4730,
+   "teacher_acc": 0.9780126849894292,
+   "used": 4730
+  },
+  "train/kd1_tts/score": {
+   "n": 1144,
+   "teacher_acc": 0.5804195804195804,
+   "used": 1144
+  },
+  "train/minds14/choice": {
+   "n": 2661,
+   "teacher_acc": 0.9289740698985344,
+   "used": 2661
+  },
+  "train/minds14/noul": {
+   "n": 2661,
+   "teacher_acc": 0.9105599398722285,
+   "used": 2661
+  },
+  "train/synthdoc/choice": {
+   "n": 9559,
+   "teacher_acc": 0.636991317083377,
+   "used": 6089
+  },
+  "train/synthdoc/multi": {
+   "n": 9601,
+   "teacher_acc": 0.12488282470575982,
+   "used": 1199
+  },
+  "train/synthdoc/noul": {
+   "n": 9548,
+   "teacher_acc": 0.782258064516129,
+   "used": 7469
+  },
+  "train/synthdoc/score": {
+   "n": 4922,
+   "teacher_acc": 0.19869971556277935,
+   "used": 978
+  },
+  "val_eval/coco/choice": {
+   "n": 1654,
+   "teacher_acc": 0.837968561064087,
+   "used": 1386
+  },
+  "val_eval/coco/multi": {
+   "n": 829,
+   "teacher_acc": 0.38721351025331724,
+   "used": 321
+  },
+  "val_eval/coco/noul": {
+   "n": 1204,
+   "teacher_acc": 0.782392026578073,
+   "used": 942
+  },
+  "val_eval/coco/score": {
+   "n": 761,
+   "teacher_acc": 0.6465177398160316,
+   "used": 492
+  },
+  "val_eval/doclaynet/choice": {
+   "n": 738,
+   "teacher_acc": 0.7181571815718157,
+   "used": 530
+  },
+  "val_eval/doclaynet/multi": {
+   "n": 535,
+   "teacher_acc": 0.205607476635514,
+   "used": 110
+  },
+  "val_eval/kd1_screen/choice": {
+   "n": 2018,
+   "teacher_acc": 0.7566897918731417,
+   "used": 2018
+  },
+  "val_eval/kd1_screen/multi": {
+   "n": 339,
+   "teacher_acc": 0.9587020648967551,
+   "used": 339
+  },
+  "val_eval/kd1_screen/noul": {
+   "n": 479,
+   "teacher_acc": 0.9749478079331941,
+   "used": 479
+  },
+  "val_eval/kd1_screen/score": {
+   "n": 88,
+   "teacher_acc": 0.5227272727272727,
+   "used": 88
+  },
+  "val_eval/kd1_tts/choice": {
+   "n": 2018,
+   "teacher_acc": 0.7566897918731417,
+   "used": 2018
+  },
+  "val_eval/kd1_tts/multi": {
+   "n": 339,
+   "teacher_acc": 0.9587020648967551,
+   "used": 339
+  },
+  "val_eval/kd1_tts/noul": {
+   "n": 479,
+   "teacher_acc": 0.9749478079331941,
+   "used": 479
+  },
+  "val_eval/kd1_tts/score": {
+   "n": 88,
+   "teacher_acc": 0.5227272727272727,
+   "used": 88
+  },
+  "val_eval/minds14/choice": {
+   "n": 281,
+   "teacher_acc": 0.9039145907473309,
+   "used": 281
+  },
+  "val_eval/minds14/noul": {
+   "n": 281,
+   "teacher_acc": 0.8825622775800712,
+   "used": 281
+  },
+  "val_eval/synthdoc/choice": {
+   "n": 870,
+   "teacher_acc": 0.6402298850574712,
+   "used": 557
+  },
+  "val_eval/synthdoc/multi": {
+   "n": 866,
+   "teacher_acc": 0.13625866050808313,
+   "used": 118
+  },
+  "val_eval/synthdoc/noul": {
+   "n": 863,
+   "teacher_acc": 0.7821552723059096,
+   "used": 675
+  },
+  "val_eval/synthdoc/score": {
+   "n": 461,
+   "teacher_acc": 0.19739696312364424,
+   "used": 91
+  },
+  "val_fit/coco/choice": {
+   "n": 1201,
+   "teacher_acc": 0.8526228143213989,
+   "used": 1024
+  },
+  "val_fit/coco/multi": {
+   "n": 578,
+   "teacher_acc": 0.3788927335640138,
+   "used": 219
+  },
+  "val_fit/coco/noul": {
+   "n": 830,
+   "teacher_acc": 0.7795180722891566,
+   "used": 647
+  },
+  "val_fit/coco/score": {
+   "n": 520,
+   "teacher_acc": 0.6480769230769231,
+   "used": 337
+  },
+  "val_fit/doclaynet/choice": {
+   "n": 317,
+   "teacher_acc": 0.6908517350157729,
+   "used": 219
+  },
+  "val_fit/doclaynet/multi": {
+   "n": 217,
+   "teacher_acc": 0.22580645161290322,
+   "used": 49
+  },
+  "val_fit/kd1_screen/choice": {
+   "n": 1321,
+   "teacher_acc": 0.7509462528387585,
+   "used": 1321
+  },
+  "val_fit/kd1_screen/multi": {
+   "n": 217,
+   "teacher_acc": 0.9907834101382489,
+   "used": 217
+  },
+  "val_fit/kd1_screen/noul": {
+   "n": 308,
+   "teacher_acc": 0.9707792207792207,
+   "used": 308
+  },
+  "val_fit/kd1_screen/score": {
+   "n": 71,
+   "teacher_acc": 0.6619718309859155,
+   "used": 71
+  },
+  "val_fit/kd1_tts/choice": {
+   "n": 1321,
+   "teacher_acc": 0.7509462528387585,
+   "used": 1321
+  },
+  "val_fit/kd1_tts/multi": {
+   "n": 217,
+   "teacher_acc": 0.9907834101382489,
+   "used": 217
+  },
+  "val_fit/kd1_tts/noul": {
+   "n": 308,
+   "teacher_acc": 0.9707792207792207,
+   "used": 308
+  },
+  "val_fit/kd1_tts/score": {
+   "n": 71,
+   "teacher_acc": 0.6619718309859155,
+   "used": 71
+  },
+  "val_fit/minds14/choice": {
+   "n": 158,
+   "teacher_acc": 0.9240506329113924,
+   "used": 158
+  },
+  "val_fit/minds14/noul": {
+   "n": 158,
+   "teacher_acc": 0.9050632911392406,
+   "used": 158
+  },
+  "val_fit/synthdoc/choice": {
+   "n": 584,
+   "teacher_acc": 0.6113013698630136,
+   "used": 357
+  },
+  "val_fit/synthdoc/multi": {
+   "n": 582,
+   "teacher_acc": 0.10996563573883161,
+   "used": 64
+  },
+  "val_fit/synthdoc/noul": {
+   "n": 588,
+   "teacher_acc": 0.782312925170068,
+   "used": 460
+  },
+  "val_fit/synthdoc/score": {
+   "n": 292,
+   "teacher_acc": 0.21232876712328766,
+   "used": 62
+  }
+ }
+}

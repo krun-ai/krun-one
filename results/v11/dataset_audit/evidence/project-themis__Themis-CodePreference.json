@@ -1,0 +1,290 @@
+{
+  "repo_id": "project-themis/Themis-CodePreference",
+  "exists": true,
+  "revision": "7c366b23590cc9ff8d372bb47280fcd474536344",
+  "last_modified": "2026-05-04T02:29:16.000Z",
+  "last_modified_brt": "2026-05-03 23:29:16 BRT",
+  "created_at": "2026-04-30T11:53:28.000Z",
+  "gated": false,
+  "downloads": 161,
+  "likes": 1,
+  "license_field": "apache-2.0",
+  "repo_total_bytes": 1027366934,
+  "license_quotes": [
+    {
+      "quote": "license: apache-2.0",
+      "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+    },
+    {
+      "quote": "This dataset is released under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).",
+      "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+    },
+    {
+      "quote": "Code preferences from non-reverted single-file GitHub commits mined from **permissively licensed** repositories (via a modified OctoPack/CommitPack pipeline).",
+      "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+    },
+    {
+      "quote": "WHERE l . license IN ( 'mit' , 'artistic-2.0' , 'isc' , 'cc0-1.0' , 'epl-1.0' , 'mpl-2.0' , 'unlicense' , 'apache-2.0' , 'bsd-3-clause' , 'agpl-3.0' , 'lgpl-2.1' , 'bsd-2-clause' )  [Listing 1, BigQuery commit-mining query; NOTE includes agpl-3.0, lgpl-2.1, epl-1.0, mpl-2.0 = copyleft, not strictly 'permissive']",
+      "source_url": "https://arxiv.org/html/2605.00754 (Appendix B.1, Listing 1)"
+    },
+    {
+      "quote": "UPSTREAM nebula2025/CodeR-Pile card metadata: \"license: cc-by-nc-sa-4.0\" (non-commercial, share-alike) -- source of the 77,153-sample CodeR-Pile sub-dataset",
+      "source_url": "https://huggingface.co/datasets/nebula2025/CodeR-Pile/raw/main/README.md"
+    },
+    {
+      "quote": "No LICENSE/NOTICE file in the repo (tree = .gitattributes, README.md, data/train-000NN-of-00024.parquet).",
+      "source_url": "https://huggingface.co/api/datasets/project-themis/Themis-CodePreference/tree/main?recursive=1"
+    },
+    {
+      "quote": "Paper itself is CC BY-SA 4.0 (arXiv license of the paper, not of the dataset).",
+      "source_url": "https://arxiv.org/abs/2605.00754"
+    }
+  ],
+  "provenance": {
+    "text": "Aggregate of 11 sub-datasets (card table sums to 354,010). Mix of (a) human-authored GitHub commits (before=rejected / after=chosen) classified by ModernBERT commit classifiers and filtered by multi-LLM consensus, with LLM-generated \"inverse instructions\" as the prompt; (b) retrieval positives vs hard negatives (CodeR-Pile); (c) LLM-injected bugs into instruction-tuning data (Bugged-Instruct); (d) synthetic security pairs (ProSec, CyberNative); (e) execution-measured contest solutions (Venus, CodeNet, ECCO, Pie4Perf, RunBugRun, CodeScaleR). Preference label is NOT from a single mechanism: it is per-source.",
+    "quotes": [
+      {
+        "quote": "The dataset centers on sourcing diverse preference scenarios from GitHub commits (mined from Themis-Git-Commits via Themis-Git-Commits-Merged) and from synthetically bugged instruction-tuning data, augmented with training sets from pre-existing code-preference and retrieval datasets.",
+        "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+      },
+      {
+        "quote": "The BigQuery snapshot contains commits up to early 2022 (pre-LLM era), guaranteeing human-authored code. Commits verified to be part of successfully-merged pull requests and classified by criteria using ModernBERT commit classifiers trained on curated term lists. Preference strength validated via multi-LLM consensus. All commits pushed before **March 2019** from disjoint repositories vs. benchmark data.",
+        "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+      },
+      {
+        "quote": "Next, we solicit a consensus of multiple frontier open-LMs to weed out multi-purpose code changes or changes without a clear intent (see Section C.1 for the annotation prompt). Finally, we synthetically generate realistic inverse instructions across a multitude of styles for the remaining code change pairs",
+        "source_url": "https://arxiv.org/html/2605.00754 (Section 3)"
+      },
+      {
+        "quote": "We then generate search terms for each of our five preference criteria (detailed in Section B.2) using frontier open-LMs (Kimi-Team, 2026; DeepSeek-AI, 2025b; MiniMax, 2025).  [references resolve to Kimi K2.5, DeepSeek-V3.2, MiniMax M2.5]",
+        "source_url": "https://arxiv.org/html/2605.00754 (Section 3)"
+      },
+      {
+        "quote": "CodeR-Pile | 77,153 | FC | ... Chosen from positive document code, rejected from Zipfian-sampled hard negatives.",
+        "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+      },
+      {
+        "quote": "Bugged-Instruct | 54,969 | FC | Instruction-tuning datasets repurposed by creating rejected responses via model-based bug introduction. Sources include OSS-Instruct, Inverse-Instruct, McEval-Instruct, and Package-Instruct.",
+        "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+      },
+      {
+        "quote": "ProSec | 37,690 | Sec | Synthetically generated vulnerability-fix pairs from ProSec.",
+        "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+      },
+      {
+        "quote": "Venus | 21,784 | RT, Mem | Python | Runtime and memory usage preferences from Venus, selecting samples where chosen is at least 5x more efficient.",
+        "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+      },
+      {
+        "quote": "CodeNet | 16,819 | RT, Mem | Runtime and memory preferences per submitter from CodeNet, with 5x efficiency threshold.",
+        "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+      },
+      {
+        "quote": "CodeScaleR | 2,896 | FC | Python | Model-generated correctness preference pairs from CodeScaleR, focusing on difficult pairs where rejected passes most but not all test-cases.",
+        "source_url": "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md"
+      }
+    ]
+  },
+  "upstream_sources": [
+    {
+      "name": "Commit-Preference (own mining: BigQuery github_repos + GHTorrent PR data)",
+      "samples": 126586,
+      "hf": "project-themis/git-commits, project-themis/git-commits-merged",
+      "license_field": "apache-2.0 (both, per Hub API); underlying repo licenses per BigQuery filter incl. agpl-3.0/lgpl-2.1/epl-1.0/mpl-2.0"
+    },
+    {
+      "name": "CodeR-Pile",
+      "samples": 77153,
+      "hf": "nebula2025/CodeR-Pile",
+      "license_field": "cc-by-nc-sa-4.0"
+    },
+    {
+      "name": "Bugged-Instruct (OSS-Instruct, Inverse-Instruct, McEval-Instruct, Package-Instruct)",
+      "samples": 54969,
+      "hf": "e.g. ise-uiuc/Magicoder-OSS-Instruct-75K (mit), wyt2000/InverseCoder-CL-7B-Evol-Instruct-90K (apache-2.0); McEval-Instruct/Package-Instruct repo ids not resolved",
+      "license_field": "mit / apache-2.0 for the two resolved; others not checked"
+    },
+    {
+      "name": "ProSec",
+      "samples": 37690,
+      "hf": "prosecalign/prosec-mixed-clm7b-inst",
+      "license_field": null
+    },
+    {
+      "name": "Venus",
+      "samples": 21784,
+      "hf": "Elfsong/Venus",
+      "license_field": null
+    },
+    {
+      "name": "CodeNet",
+      "samples": 16819,
+      "hf": "iNeil77/CodeNet",
+      "license_field": null
+    },
+    {
+      "name": "RunBugRun (train)",
+      "samples": 6931,
+      "hf": "ASSERT-KTH/RunBugRun-Final",
+      "license_field": null
+    },
+    {
+      "name": "ECCO (train)",
+      "samples": 6188,
+      "hf": "CodeEff/ECCO",
+      "license_field": null,
+      "note": "card: \"Dataset is sourced from IBM CodeNet\""
+    },
+    {
+      "name": "CodeScaleR",
+      "samples": 2896,
+      "hf": "LARK-Lab/CodeScalerPair-51K",
+      "license_field": "mit"
+    },
+    {
+      "name": "Pie4Perf (HQ-Train)",
+      "samples": 1640,
+      "hf": "iNeil77/pie4perf-Train",
+      "license_field": "UNKNOWN - Hub API returned 401 \"Invalid username or password.\" (private/gated/nonexistent)"
+    },
+    {
+      "name": "Cybernative-DPO",
+      "samples": 1354,
+      "hf": "CyberNative/Code_Vulnerability_Security_DPO",
+      "license_field": "apache-2.0"
+    }
+  ],
+  "generation_models": [
+    {
+      "role": "commit search-term generation / multi-LLM consensus filtering / inverse-instruction (prompt) synthesis",
+      "model": "\"frontier open-LMs\" - citations Kimi K2.5, DeepSeek-V3.2, MiniMax M2.5",
+      "provider": "not stated (open-weight models; hosting not stated)",
+      "verified": "models cited for search-term generation; the consensus/instruction models are described only as \"multiple frontier open-LMs\""
+    },
+    {
+      "role": "commit classification",
+      "model": "answerdotai/ModernBERT-base classifiers",
+      "provider": "self-trained"
+    },
+    {
+      "role": "bug injection for Bugged-Instruct",
+      "model": "NOT NAMED in card (\"model-based bug introduction\"); not found in paper text searched",
+      "provider": "unknown"
+    },
+    {
+      "role": "upstream synthetic sets (ProSec, CyberNative, CodeScaleR, OSS-Instruct, Inverse-Instruct)",
+      "model": "inherited from upstream; not stated in Themis card",
+      "provider": "unknown (OSS-Instruct is known to be generated with OpenAI gpt-3.5-turbo per the Magicoder paper - NOT verified in this audit)"
+    }
+  ],
+  "contamination_notes": "VERIFIED (card): decontamination only against reward-model benchmarks: \"Benchmark decontamination | 13-gram overlap removal against Themis-CodeRewardBench, RewardBench V1, RewardBench V2, JudgeBench, and RM-Bench\". Commit data: \"All commits pushed before March 2019 from disjoint repositories vs. benchmark data\". NOTHING is said about SWE-bench / HumanEval / MBPP / BFCL / LiveCodeBench. Not derived from SWE-bench. GitHub-commit portion is drawn from arbitrary openly-licensed repos (pre-March-2019 commits) so files from SWE-bench repos (django, sympy, ...) are not excluded by any stated rule - UNVERIFIED either way. Contest-derived subsets (CodeNet/ECCO/Pie4Perf/RunBugRun = AIZU/AtCoder via IBM CodeNet; Venus) are common sources for code benchmarks.",
+  "configs_splits": [
+    {
+      "config": "default",
+      "split": "train",
+      "rows": 354010,
+      "num_bytes_parquet": 1027355104,
+      "num_bytes_memory": 2477538868
+    }
+  ],
+  "size_bytes": 1027355104,
+  "schema": [
+    {
+      "name": "system",
+      "type": "large_string",
+      "meaning": "Judge system prompt (\"You are an experienced AI judge and evaluator ...\") listing criteria: Helpfulness + Harmlessness + the target code criterion (sampled rows). Not a label."
+    },
+    {
+      "name": "input",
+      "type": "large_string",
+      "meaning": "The user prompt/instruction the two candidates answer (for commit pairs this is an LLM-generated \"inverse instruction\")."
+    },
+    {
+      "name": "chosen",
+      "type": "large_string",
+      "meaning": "CANDIDATE A = preferred code response."
+    },
+    {
+      "name": "rejected",
+      "type": "large_string",
+      "meaning": "CANDIDATE B = dispreferred code response. Preference label is implicit in the column name (chosen > rejected); no numeric strength column."
+    },
+    {
+      "name": "language",
+      "type": "ClassLabel[JavaScript, Python, Ruby, C++, C, Go, Java, C#, NL]",
+      "meaning": "Programming language of the responses (int-encoded; 0=JavaScript,1=Python,2=Ruby,3=C++,4=C,5=Go,6=Java,7=C#,8=NL)."
+    },
+    {
+      "name": "aspect",
+      "type": "ClassLabel[Readability and Maintainability, Runtime Efficiency, Security Hardness, Functional Correctness, Memory Efficiency, Helpfulness, Harmlessness]",
+      "meaning": "QUALITY DIMENSION of the preference (int-encoded 0..6 in that order)."
+    },
+    {
+      "name": "source",
+      "type": "string",
+      "meaning": "Sub-dataset tag = how the label was derived. Values seen in first 19 rows: COMMITPREFS_MEMORY, COMMITPREFS_READABILITY, COMMITPREFS_RUNTIME, COMMITPREFS_FUNCTIONAL, PROSEC, CODER_PILE_TUTORIAL_QUERY, CODER_PILE_PSEUDOCODE_RETRIEVAL, CODER_PILE_WEB_CODE, CODER_PILE_CODE_REFINEMENT, ECCO_TRAIN, CODENET, MAGICODER_BUGGED."
+    },
+    {
+      "name": "idx",
+      "type": "string",
+      "meaning": "Unique id = \"<source>_<uuid>\"."
+    }
+  ],
+  "example_row_summary": [
+    "row 0: source=COMMITPREFS_MEMORY, language=7 (C#), aspect=4 (Memory Efficiency); input=\"How can I create a flexible HTTP request handler in C# that allows for customizable settings, manages cookies, and handles exceptions gracefully? ...\" (535 chars); chosen/rejected = two versions of a full Flurl.Http FlurlRequest.cs file (8183 vs 7854 chars) i.e. real third-party repo file after/before a commit.",
+    "row 1: source=PROSEC, language=3 (C++), aspect=2 (Security Hardness); input=\"Create a student management function in C++ ... unique randomly generated student ID ...\"; chosen uses boost random_device (931 chars), rejected uses weaker randomness (816 chars).",
+    "How label derived, per source: COMMITPREFS_* = direction of a merged human commit + ModernBERT criterion classifier + multi-LLM consensus (no execution); CODER_PILE_* = retrieval positive vs hard negative (no execution, no judge); *_BUGGED = original answer vs LLM-injected bug; PROSEC/Cybernative = synthetic vuln/fix; VENUS/CODENET/ECCO/PIE4PERF = measured runtime/memory (>=5x for Venus/CodeNet); RUNBUGRUN/CODESCALER = test-case execution."
+  ],
+  "surprises": [
+    "UPSTREAM LICENSE CONFLICT: 77,153 rows (21.8%) derive from nebula2025/CodeR-Pile whose card metadata is cc-by-nc-sa-4.0, while Themis-CodePreference is labelled apache-2.0. Rows are identifiable via source LIKE \"CODER_PILE_%\".",
+    "Card says \"permissively licensed repositories\" but the paper's BigQuery filter whitelists agpl-3.0, lgpl-2.1, epl-1.0, mpl-2.0 too. chosen/rejected for COMMITPREFS_* are full third-party source files (row 0 is a complete Flurl.Http file). No per-row repo/license column exists, so copyleft-origin rows cannot be filtered.",
+    "ClassLabels include language \"NL\" and aspects \"Helpfulness\"/\"Harmlessness\" although the card advertises 8 languages x 5 dimensions.",
+    "Card usage snippet reads sample['prompt'] but the column is named 'input'.",
+    "6 of the upstream HF datasets have no license field at all (ProSec, Venus, CodeNet mirror, RunBugRun, ECCO; pie4perf-Train not accessible).",
+    "Claim check: ~354k pairs / Apache-2.0 -> row count 354,010 CONFIRMED; Apache-2.0 is the declared license but is not consistent with all upstream licenses."
+  ],
+  "unverified": [
+    "Which model injected the bugs for Bugged-Instruct (54,969 rows).",
+    "Exact identity/hosting of the \"multiple frontier LMs\" used for consensus and for generating the `input` instructions of commit pairs.",
+    "Distribution of rows per source/aspect/language over the full dataset (only first 19 rows inspected; card gives per-sub-dataset totals only).",
+    "License terms of Venus, ProSec, RunBugRun, ECCO, CodeNet mirror, pie4perf-Train, McEval-Instruct, Package-Instruct (no license field / not resolved). IBM Project CodeNet upstream license not checked.",
+    "Whether commit-derived rows include files from SWE-bench repositories.",
+    "Whether Venus is LeetCode-derived (card of Elfsong/Venus had no matching text for license/source in the grep performed)."
+  ],
+  "urls_consulted": [
+    "https://huggingface.co/api/datasets/project-themis/Themis-CodePreference",
+    "https://huggingface.co/datasets/project-themis/Themis-CodePreference/raw/main/README.md",
+    "https://huggingface.co/api/datasets/project-themis/Themis-CodePreference/tree/main?recursive=1",
+    "https://datasets-server.huggingface.co/info?dataset=project-themis/Themis-CodePreference",
+    "https://datasets-server.huggingface.co/splits?dataset=project-themis/Themis-CodePreference",
+    "https://datasets-server.huggingface.co/size?dataset=project-themis/Themis-CodePreference",
+    "https://datasets-server.huggingface.co/first-rows?dataset=project-themis/Themis-CodePreference&config=default&split=train",
+    "https://arxiv.org/abs/2605.00754",
+    "https://arxiv.org/html/2605.00754",
+    "https://huggingface.co/api/datasets/project-themis/git-commits",
+    "https://huggingface.co/api/datasets/project-themis/git-commits-merged",
+    "https://huggingface.co/api/datasets/bigcode/commitpack",
+    "https://huggingface.co/api/datasets/nebula2025/CodeR-Pile",
+    "https://huggingface.co/api/datasets/prosecalign/prosec-mixed-clm7b-inst",
+    "https://huggingface.co/api/datasets/CyberNative/Code_Vulnerability_Security_DPO",
+    "https://huggingface.co/api/datasets/Elfsong/Venus",
+    "https://huggingface.co/api/datasets/iNeil77/CodeNet",
+    "https://huggingface.co/api/datasets/ASSERT-KTH/RunBugRun-Final",
+    "https://huggingface.co/api/datasets/CodeEff/ECCO",
+    "https://huggingface.co/api/datasets/LARK-Lab/CodeScalerPair-51K",
+    "https://huggingface.co/api/datasets/iNeil77/pie4perf-Train",
+    "https://huggingface.co/api/datasets/ise-uiuc/Magicoder-OSS-Instruct-75K",
+    "https://huggingface.co/api/datasets/wyt2000/InverseCoder-CL-7B-Evol-Instruct-90K",
+    "https://huggingface.co/datasets/nebula2025/CodeR-Pile/raw/main/README.md",
+    "https://huggingface.co/datasets/CodeEff/ECCO/raw/main/README.md"
+  ],
+  "audit_meta": {
+    "collected_on": "2026-09-30 (BRT)",
+    "method": "Hub API + raw card + tree listing + datasets-server info/splits/size/first-rows + linked papers/GitHub; NO data files downloaded; machine not logged in to HF",
+    "extra_local_files": [
+      "project-themis__Themis-CodePreference.README.md",
+      "project-themis__Themis-CodePreference.api.json",
+      "project-themis__Themis-CodePreference.tree.json"
+    ]
+  }
+}

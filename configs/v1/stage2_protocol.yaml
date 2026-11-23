@@ -1,0 +1,83 @@
+# Krun One v1 — Stage 2 (tool-focused continuation of the v1-tool candidate).
+# Registered 2026-09-28 BEFORE the Stage 2 dataset build and BEFORE any Stage 2 training step. Nothing below may be
+# changed after a Stage 2 result is seen. The R2 protocol (configs/v1/r2_protocol.yaml) and the round-1 gates are not
+# changed. final_protected is never opened.
+
+start_point:
+  artifact: artifacts/krun-one-v1-tool-candidate/model.safetensors   # sha256 c52475ab… (verified on the pod)
+  architecture: K1-W1536-L22 frozen (tokenizer, layers, heads, FFN, attention pattern, serialization, decision head)
+  not_allowed: [k1_0b restart, 1B MLM checkpoint]
+
+training:
+  lr_encoder: 1.0e-5            # no LR sweep
+  lr_head: 5.0e-5
+  steps_target: ~6000          # one pass over the Stage 2 mixture; never extended automatically
+  mixture: {tool: 0.70, replay: 0.30}   # controlled by explicit per-phase counts (see the build manifest)
+  curriculum:                  # position ranges of the single-epoch ordering (fraction of training)
+    S2P1: [0.00, 0.40]         # tool core + replay
+    S2P2: [0.40, 0.75]         # hard negatives, near-duplicate, description-dependent, cross-language, unseen schemas
+    S2P3: [0.75, 1.00]         # small-k hard, tool OOD, none-applicable, unseen-tool-like, adversarial confusion
+    S2R:  [0.00, 1.00]         # replay, uniform over the whole run (keeps the 70/30 ratio in every phase)
+  xlam: "low weight (supplementary: schema diversity / large-k); share and unique tools recorded in the manifest"
+  milestone_checkpoints: [0.25, 0.50, 0.75, 1.00]   # weights kept; pruned only after evaluation
+  forward_numerics: unchanged from R2 (bf16 autocast, scorer output cast to fp32)
+
+evaluation:
+  harness: identical to R2 (kd1_evaluate / r2_compare / regression_toolace_v0, bf16 autocast)
+  diagnostic_only: >
+    fp32-scorer re-scoring (scorer MLP run outside autocast) of v1-tool and the selected Stage 2 checkpoint on the
+    ToolACE sets. Motivation, measured BEFORE this registration: on the ToolACE holdout 90/416 answerable v1-tool
+    decisions sit at the rejection floor (max logit < -4) and 18 failures are ties within bf16 resolution. Reported
+    separately; never used by a gate or by checkpoint selection.
+  toolace_breakdown:            # ToolACE items of KrunBench v0 (runs/v1/ft/regression_toolace_v0/records.jsonl)
+    full: holdout_tools, 416 answerable decisions
+    clean_subset: holdout_tools with v0 negative strategy in {random, native+random}          # 135
+    legacy_xlam_negative_subset: holdout_tools with strategy in {hard_v1, native+hard_v1}   # 281, v0-pool (mostly xLAM) distractors
+    native_negatives: strategy starts with "native"   # 272
+    random_negatives: strategy == random               # 39
+    by_k: {k2: k<=2, k4: 3-4, k8: 5-8, k16plus: k>=16}
+    small_k: k < 16                                    # 276
+  baselines_measured_before_registration:   # holdout accuracy (%), same records, same harness
+    v0.3:    {full: 91.8, clean: 96.3, legacy: 89.7, k2: 97.3, k4: 90.0, k8: 98.6, k16plus: 87.1, small_k: 94.2}
+    v1-tool: {full: 87.3, clean: 94.8, legacy: 83.6, k2: 80.0, k4: 89.2, k8: 88.7, k16plus: 88.6, small_k: 86.6}
+  ood: "prospective protocol of r2_protocol.yaml (coverages 50/60/70/80/90%, thresholds from fit only, reported on
+       V eval - selective accuracy, OOD FA, tool FA, unseen-tool FA, AURC)"
+  public_abstention: top1 - top2 margin (NULL / answerability head / fusion calibrator stay closed)
+
+checkpoint_selection:           # among the milestone checkpoints; holdout NEVER used for selection
+  primary: ToolACE v0 val_tools accuracy (445 answerable, protected, never trained), small-k (k<16) accuracy as tie-break
+  eligible_only_if: all preservation gates hold on V FIT (the same gates below, computed on the fit part)
+  tie: within 0.5 pp on val_tools -> the higher val_tools small-k accuracy; then the earlier checkpoint
+  reported_for_every_checkpoint: holdout breakdown, V eval metrics (transparency; not a selection input)
+
+gates:                          # evaluated on the selected checkpoint only
+  G1_toolace_full: holdout_tools accuracy >= 0.918 (>= 382 / 416)
+  G1_alternative:               # used only if G1 fails; ALL must hold
+    - holdout_tools accuracy >= 0.908 (>= 378 / 416; "slightly below" = at most 1 pp)
+    - clean_subset accuracy > 0.963 (v0.3)
+    - k16plus accuracy > 0.871 (v0.3)
+    - tool unseen-tool FA at 70% coverage <= 0.05 and tool AURC < v0.3 tool AURC (OOD much better than v0.3)
+    - every multilingual preservation gate holds
+  G2_small_k: holdout small_k (k<16) accuracy >= 0.922 (v0.3 94.2 - 2 pp)
+  preservation_vs_v1_tool:      # V eval, paired where possible; limits are "no material regression"
+    native_non_en_accuracy_drop_pp: 1.0
+    pt_br_accuracy_drop_pp: 1.0
+    cross_language_accuracy_drop_pp: 1.0
+    intent_accuracy_drop_pp: 1.0
+    permutation_consistency_drop_pp: 1.0
+    ece_rise: 0.010             # and ECE <= 0.05
+    ood_auroc_drop: 0.010
+    aurc_rise: 0.005
+    tool_unseen_fa_at_cov70_max: 0.05
+    tool_ood_fa_at_cov70_max: 0.05
+    score_mae_rise: 0.03
+    score_spearman_drop: 0.01
+    noul_auroc_drop: 0.010
+    multi_micro_f1_drop_pp: 1.0
+    latency_128_tools_p50_ms_max: 50     # RTX 4090 bf16, same harness
+    latency_typical_p50_ms_max: 20
+
+freeze_rule:
+  FREEZE_TEXTUAL_BASE: (G1 or G1_alternative) and G2_small_k and all preservation gates
+  if_true: next phase = multimodal M1 (not started by this round)
+  if_false: FREEZE_TEXTUAL_BASE = false + focused diagnosis; final_protected stays closed

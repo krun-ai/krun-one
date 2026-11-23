@@ -1,0 +1,4343 @@
+{
+  "target_selective_accuracy": 0.98,
+  "variants": {
+    "A_margin": {
+      "20260926": {
+        "temperature": {
+          "intent": 1.1544537482886397,
+          "tool": 1.1011367696801249
+        },
+        "model": {
+          "accuracy_intent": 0.8966521106259098,
+          "accuracy_tool": 0.9350152905198776,
+          "ece": 0.012287539229995982,
+          "nll": 0.2733687846065375,
+          "permutation_consistency": 0.9612403100775194,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "margin": {
+            "coverage": 0.6178225205070843,
+            "selective_accuracy": 0.9838420107719928,
+            "auroc": 0.9582465478670061,
+            "aurc": 0.0527216264775192,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.03896103896103896,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.019417475728155338,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.024096385542168676,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.6921017402945113,
+                "selective_risk": 0.011605415860735047,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.6025994486018117,
+                "selective_risk": 0.00849673202614376,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.5010752688172043,
+                "selective_risk": 0.008583690987124415,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.425531914893617,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.702048417132216,
+                "fa": 0.023404255319148935
+              },
+              "es-ES": {
+                "coverage": 0.5299684542586751,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.49504950495049505,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.4774193548387097,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.027491633410454325,
+            "tau": {
+              "intent": 0.969171160038993,
+              "tool": 0.9200729570142994
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.5805369127516778,
+            "selective_accuracy": 0.9821656050955414,
+            "auroc": 0.9673634049357261,
+            "aurc": 0.05347912161191889,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.032467532467532464,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.019417475728155338,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.024096385542168676,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.7001338688085676,
+                "selective_risk": 0.01147227533460804,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.5643954312721544,
+                "selective_risk": 0.010467550593161179,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.4268817204301075,
+                "selective_risk": 0.010075566750629705,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.3617021276595745,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.6883923029174426,
+                "fa": 0.02127659574468085
+              },
+              "es-ES": {
+                "coverage": 0.47318611987381703,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.40264026402640263,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.4032258064516129,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.02532713124595216,
+            "tau": {
+              "intent": 0.9519350030981865,
+              "tool": 0.9421670790753064
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                1.7766,
+                -0.3591,
+                1.1476,
+                -0.2836,
+                0.1053
+              ],
+              "intercept": 1.5012922037079384
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9253886783637874,
+          "score_mae": 0.6702797799227759,
+          "score_spearman": 0.7301873581422758,
+          "multi_micro_f1": 0.8186459489456159
+        }
+      },
+      "20260927": {
+        "temperature": {
+          "intent": 1.2393085554096253,
+          "tool": 1.1274801422356246
+        },
+        "model": {
+          "accuracy_intent": 0.901018922852984,
+          "accuracy_tool": 0.9396024464831805,
+          "ece": 0.015898094044860187,
+          "nll": 0.2727879337362671,
+          "permutation_consistency": 0.9534883720930233,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "margin": {
+            "coverage": 0.6323639075316928,
+            "selective_accuracy": 0.9859566998244588,
+            "auroc": 0.9570350578219127,
+            "aurc": 0.05185021008263123,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.05194805194805195,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.014563106796116505,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.012048192771084338,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.6171352074966533,
+                "selective_risk": 0.006507592190889366,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.6211106734935014,
+                "selective_risk": 0.0069752694990488084,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.6129032258064516,
+                "selective_risk": 0.007017543859649145,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.48936170212765956,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.6561142147734327,
+                "fa": 0.01702127659574468
+              },
+              "es-ES": {
+                "coverage": 0.6309148264984227,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.6402640264026402,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.567741935483871,
+                "fa": 0.046511627906976744
+              }
+            },
+            "macro_fa": 0.026186450505084266,
+            "tau": {
+              "intent": 0.935556296550055,
+              "tool": 0.9646552748425044
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.5451155853840418,
+            "selective_accuracy": 0.9837288135593221,
+            "auroc": 0.9663436026546418,
+            "aurc": 0.05183770149296269,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.045454545454545456,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.014563106796116505,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.018072289156626505,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.5448460508701473,
+                "selective_risk": 0.012285012285012331,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.538400945254037,
+                "selective_risk": 0.008046817849305055,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.4978494623655914,
+                "selective_risk": 0.006479481641468721,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.40425531914893614,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.5847299813780261,
+                "fa": 0.019148936170212766
+              },
+              "es-ES": {
+                "coverage": 0.5236593059936908,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.5214521452145214,
+                "fa": 0.037037037037037035
+              },
+              "pt-PT": {
+                "coverage": 0.4483870967741935,
+                "fa": 0.046511627906976744
+              }
+            },
+            "macro_fa": 0.026029980469096155,
+            "tau": {
+              "intent": 0.9392800092879263,
+              "tool": 0.9571645669194212
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                1.4312,
+                -0.2093,
+                1.3707,
+                -0.3143,
+                0.1148
+              ],
+              "intercept": 1.4852354241887566
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9301748079318937,
+          "score_mae": 0.664687314550113,
+          "score_spearman": 0.7339045489769416,
+          "multi_micro_f1": 0.8115044247787611
+        }
+      },
+      "20260928": {
+        "temperature": {
+          "intent": 1.1544537482886397,
+          "tool": 1.1544537482886397
+        },
+        "model": {
+          "accuracy_intent": 0.9024745269286754,
+          "accuracy_tool": 0.9388379204892966,
+          "ece": 0.013560547521027033,
+          "nll": 0.2737631064669335,
+          "permutation_consistency": 0.9844961240310077,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "margin": {
+            "coverage": 0.6700223713646533,
+            "selective_accuracy": 0.9801324503311258,
+            "auroc": 0.9626132886373572,
+            "aurc": 0.05143567427821867,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.05844155844155844,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.014563106796116505,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.018072289156626505,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.6947791164658634,
+                "selective_risk": 0.011560693641618491,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.6612839700669555,
+                "selective_risk": 0.012507444907683185,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.6118279569892473,
+                "selective_risk": 0.01405975395430581,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.5673758865248227,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.7126008690254501,
+                "fa": 0.02127659574468085
+              },
+              "es-ES": {
+                "coverage": 0.6466876971608833,
+                "fa": 0.022222222222222223
+              },
+              "fr-FR": {
+                "coverage": 0.6072607260726073,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.5806451612903226,
+                "fa": 0.023255813953488372
+              }
+            },
+            "macro_fa": 0.03035898479810048,
+            "tau": {
+              "intent": 0.9223524568806523,
+              "tool": 0.947311619877727
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.6849366144668159,
+            "selective_accuracy": 0.9773584905660377,
+            "auroc": 0.9711135890261092,
+            "aurc": 0.05135570026927646,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.008928571428571428,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.07142857142857142,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.014563106796116505,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.018072289156626505,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.749665327978581,
+                "selective_risk": 0.014285714285714235,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.677432059866089,
+                "selective_risk": 0.013953488372092981,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.5967741935483871,
+                "selective_risk": 0.014414414414414378,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.5531914893617021,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.7473618870266915,
+                "fa": 0.023404255319148935
+              },
+              "es-ES": {
+                "coverage": 0.6435331230283912,
+                "fa": 0.022222222222222223
+              },
+              "fr-FR": {
+                "coverage": 0.594059405940594,
+                "fa": 0.09259259259259259
+              },
+              "pt-PT": {
+                "coverage": 0.5516129032258065,
+                "fa": 0.023255813953488372
+              }
+            },
+            "macro_fa": 0.03468798912710481,
+            "tau": {
+              "intent": 0.9257271220990458,
+              "tool": 0.9459910807354434
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                1.5537,
+                -0.4236,
+                1.5105,
+                -0.349,
+                0.1823
+              ],
+              "intercept": 1.5389517410495972
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9303915334302325,
+          "score_mae": 0.6629393659844063,
+          "score_spearman": 0.7328862735887571,
+          "multi_micro_f1": 0.8116769095697981
+        }
+      }
+    },
+    "B_null": {
+      "20260926": {
+        "temperature": {
+          "intent": 1.2993158038800574,
+          "tool": 1.2993158038800574
+        },
+        "model": {
+          "accuracy_intent": 0.9053857350800583,
+          "accuracy_tool": 0.9296636085626911,
+          "ece": 0.012475858144848332,
+          "nll": 0.2671322511328007,
+          "permutation_consistency": 0.9302325581395349,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "null_softmax": {
+            "coverage": 0.0070842654735272185,
+            "selective_accuracy": 0.9473684210526315,
+            "auroc": 0.8988554837895268,
+            "aurc": 0.11579709974881236,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.0,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.008032128514056224,
+                "selective_risk": 0.0,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.007483261126427727,
+                "selective_risk": 0.052631578947368474,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.008602150537634409,
+                "selective_risk": 0.125,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.0,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.006828057107386716,
+                "fa": 0.0
+              },
+              "es-ES": {
+                "coverage": 0.0031545741324921135,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.0165016501650165,
+                "fa": 0.0
+              },
+              "pt-PT": {
+                "coverage": 0.0064516129032258064,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.0,
+            "tau": {
+              "intent": 0.9997680291133574,
+              "tool": 0.996648955775832
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.42132736763609246,
+            "selective_accuracy": 0.9816272965879265,
+            "auroc": 0.901153399301976,
+            "aurc": 0.06541544219251803,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.05844155844155844,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.018072289156626505,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.3172690763052209,
+                "selective_risk": 0.00421940928270037,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.4143363528948405,
+                "selective_risk": 0.0076045627376425395,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.5043010752688172,
+                "selective_risk": 0.010660980810234588,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.3475177304964539,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.37988826815642457,
+                "fa": 0.019148936170212766
+              },
+              "es-ES": {
+                "coverage": 0.5583596214511041,
+                "fa": 0.044444444444444446
+              },
+              "fr-FR": {
+                "coverage": 0.46204620462046203,
+                "fa": 0.037037037037037035
+              },
+              "pt-PT": {
+                "coverage": 0.49032258064516127,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.027122738843407924,
+            "tau": {
+              "intent": 0.9229679694415334,
+              "tool": 0.9295058482069808
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                0.3206,
+                -0.0849,
+                1.6647,
+                -0.3215,
+                -0.3065
+              ],
+              "intercept": 1.3257478643772518
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9272126764950166,
+          "score_mae": 0.6735343414071249,
+          "score_spearman": 0.7285584966232114,
+          "multi_micro_f1": 0.816509645580978
+        }
+      },
+      "20260927": {
+        "temperature": {
+          "intent": 1.3948182803464642,
+          "tool": 1.3622285998457235
+        },
+        "model": {
+          "accuracy_intent": 0.8930131004366813,
+          "accuracy_tool": 0.9220183486238532,
+          "ece": 0.011734907263797879,
+          "nll": 0.26788459685787674,
+          "permutation_consistency": 0.9767441860465116,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "null_softmax": {
+            "coverage": 0.10775540641312453,
+            "selective_accuracy": 0.9653979238754326,
+            "auroc": 0.9591804413026352,
+            "aurc": 0.09451159954911034,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.0,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.03346720214190094,
+                "selective_risk": 0.0,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.11382434029145333,
+                "selective_risk": 0.03460207612456745,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.1817204301075269,
+                "selective_risk": 0.029585798816568087,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.1702127659574468,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.0595903165735568,
+                "fa": 0.0
+              },
+              "es-ES": {
+                "coverage": 0.17350157728706625,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.18151815181518152,
+                "fa": 0.0
+              },
+              "pt-PT": {
+                "coverage": 0.19032258064516128,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.0,
+            "tau": {
+              "intent": 0.9897190314144768,
+              "tool": 0.9998541418629889
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.3635346756152125,
+            "selective_accuracy": 0.9908163265306122,
+            "auroc": 0.9036102753992131,
+            "aurc": 0.0660385369705864,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.012987012987012988,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.009708737864077669,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.006024096385542169,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.34404283801874164,
+                "selective_risk": 0.0038910505836575737,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.35289484048838127,
+                "selective_risk": 0.004464285714285698,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.36666666666666664,
+                "selective_risk": 0.0058651026392961825,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.24113475177304963,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.37243947858473,
+                "fa": 0.010638297872340425
+              },
+              "es-ES": {
+                "coverage": 0.39747634069400634,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.3564356435643564,
+                "fa": 0.0
+              },
+              "pt-PT": {
+                "coverage": 0.34516129032258064,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.009573282412210943,
+            "tau": {
+              "intent": 0.9444489914186669,
+              "tool": 0.9339716646988299
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                0.7699,
+                -0.498,
+                1.7792,
+                -0.2387,
+                -0.282
+              ],
+              "intercept": 1.295431546529588
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9262309229651163,
+          "score_mae": 0.668183630093094,
+          "score_spearman": 0.7308549460134444,
+          "multi_micro_f1": 0.8061109862952146
+        }
+      },
+      "20260928": {
+        "temperature": {
+          "intent": 1.2393085554096253,
+          "tool": 1.3304003714209311
+        },
+        "model": {
+          "accuracy_intent": 0.8995633187772926,
+          "accuracy_tool": 0.9388379204892966,
+          "ece": 0.009558872789006674,
+          "nll": 0.25439138572278225,
+          "permutation_consistency": 0.9302325581395349,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "null_softmax": {
+            "coverage": 0.08165548098434004,
+            "selective_accuracy": 0.9545454545454546,
+            "auroc": 0.9530627964439582,
+            "aurc": 0.08243252759697849,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.0,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.10040160642570281,
+                "selective_risk": 0.053333333333333344,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.08428515163450177,
+                "selective_risk": 0.04205607476635509,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.053763440860215055,
+                "selective_risk": 0.040000000000000036,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.15602836879432624,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.09124767225325885,
+                "fa": 0.002127659574468085
+              },
+              "es-ES": {
+                "coverage": 0.0473186119873817,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.066006600660066,
+                "fa": 0.0
+              },
+              "pt-PT": {
+                "coverage": 0.04838709677419355,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.0016181229773462782,
+            "tau": {
+              "intent": 0.9931480330772923,
+              "tool": 0.9958920922261809
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.3724832214765101,
+            "selective_accuracy": 0.9900596421471173,
+            "auroc": 0.9138690772571819,
+            "aurc": 0.06026353498246817,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.008928571428571428,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.01948051948051948,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.012048192771084338,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.37215528781793844,
+                "selective_risk": 0.003597122302158251,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.36234738085860574,
+                "selective_risk": 0.003260869565217428,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.36236559139784946,
+                "selective_risk": 0.0029673590504450953,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.2765957446808511,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.3867163252638113,
+                "fa": 0.010638297872340425
+              },
+              "es-ES": {
+                "coverage": 0.4353312302839117,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.32673267326732675,
+                "fa": 0.037037037037037035
+              },
+              "pt-PT": {
+                "coverage": 0.3225806451612903,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.012127693727880884,
+            "tau": {
+              "intent": 0.9435956054823713,
+              "tool": 0.9341439979364248
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                1.4907,
+                -1.0787,
+                1.7745,
+                -0.2689,
+                -0.2882
+              ],
+              "intercept": 1.2878409732092175
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9268369757059801,
+          "score_mae": 0.6600074801542447,
+          "score_spearman": 0.7342035226236797,
+          "multi_micro_f1": 0.803742481621742
+        }
+      }
+    },
+    "C_ans_head": {
+      "20260926": {
+        "temperature": {
+          "intent": 1.2689575217191038,
+          "tool": 1.2103523319131841
+        },
+        "model": {
+          "accuracy_intent": 0.9032023289665211,
+          "accuracy_tool": 0.9281345565749235,
+          "ece": 0.0057403265315192535,
+          "nll": 0.26450866836075104,
+          "permutation_consistency": 0.9844961240310077,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "ans_head": {
+            "coverage": 0.273303504847129,
+            "selective_accuracy": 0.9687924016282226,
+            "auroc": 0.9777642193749576,
+            "aurc": 0.07995450337057976,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.025974025974025976,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.15127175368139223,
+                "selective_risk": 0.07079646017699115,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.2855454903505317,
+                "selective_risk": 0.026206896551724146,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.37311827956989246,
+                "selective_risk": 0.008645533141210415,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.2765957446808511,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.2153941651148355,
+                "fa": 0.00425531914893617
+              },
+              "es-ES": {
+                "coverage": 0.3943217665615142,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.39933993399339934,
+                "fa": 0.037037037037037035
+              },
+              "pt-PT": {
+                "coverage": 0.3258064516129032,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.008658008658008658,
+            "tau": {
+              "intent": 0.9985896415033819,
+              "tool": 0.9992445943672705
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.3493661446681581,
+            "selective_accuracy": 0.9915164369034994,
+            "auroc": 0.9059327362960781,
+            "aurc": 0.06516288332745523,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.025974025974025976,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.006024096385542169,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.3078982597054886,
+                "selective_risk": 0.008695652173912993,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.34107916502560065,
+                "selective_risk": 0.002309468822170868,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.36129032258064514,
+                "selective_risk": 0.0,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.2695035460992908,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.3494723774053383,
+                "fa": 0.00851063829787234
+              },
+              "es-ES": {
+                "coverage": 0.4037854889589905,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.3432343234323432,
+                "fa": 0.037037037037037035
+              },
+              "pt-PT": {
+                "coverage": 0.33548387096774196,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.012284163763868991,
+            "tau": {
+              "intent": 0.9421821480347575,
+              "tool": 0.923414129452001
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                1.4467,
+                -0.8939,
+                1.5165,
+                -0.1813,
+                -0.3136
+              ],
+              "intercept": 1.2672265931431501
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.932179843230897,
+          "score_mae": 0.6806647611940745,
+          "score_spearman": 0.7248259114227577,
+          "multi_micro_f1": 0.8171517440568763
+        }
+      },
+      "20260927": {
+        "temperature": {
+          "intent": 1.3304003714209311,
+          "tool": 1.3304003714209311
+        },
+        "model": {
+          "accuracy_intent": 0.9017467248908297,
+          "accuracy_tool": 0.9304281345565749,
+          "ece": 0.013380253733458719,
+          "nll": 0.271170233437149,
+          "permutation_consistency": 0.9767441860465116,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "ans_head": {
+            "coverage": 0.226696495152871,
+            "selective_accuracy": 0.9704918032786886,
+            "auroc": 0.9775193499447145,
+            "aurc": 0.07524414298227147,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.012987012987012988,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.11914323962516733,
+                "selective_risk": 0.0674157303370787,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.23867664434816857,
+                "selective_risk": 0.02640264026402639,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.3032258064516129,
+                "selective_risk": 0.021276595744680882,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.4326241134751773,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.16449410304158907,
+                "fa": 0.0
+              },
+              "es-ES": {
+                "coverage": 0.3186119873817035,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.2871287128712871,
+                "fa": 0.037037037037037035
+              },
+              "pt-PT": {
+                "coverage": 0.3032258064516129,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.004329004329004329,
+            "tau": {
+              "intent": 0.9987156918798661,
+              "tool": 0.999620015485248
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.3706189410887398,
+            "selective_accuracy": 0.9860557768924303,
+            "auroc": 0.927356181579741,
+            "aurc": 0.06030238926184938,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.05194805194805195,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.006024096385542169,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.31860776439089694,
+                "selective_risk": 0.004201680672268893,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.3627412367073651,
+                "selective_risk": 0.004343105320304019,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.3774193548387097,
+                "selective_risk": 0.005698005698005715,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.3191489361702128,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.3711980136561142,
+                "fa": 0.01276595744680851
+              },
+              "es-ES": {
+                "coverage": 0.4227129337539432,
+                "fa": 0.022222222222222223
+              },
+              "fr-FR": {
+                "coverage": 0.36633663366336633,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.3419354838709677,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.020942172421877653,
+            "tau": {
+              "intent": 0.9413229716768049,
+              "tool": 0.9476892446190157
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                1.0741,
+                -0.5918,
+                1.8346,
+                -0.2754,
+                -0.156
+              ],
+              "intercept": 1.2525254351857154
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9274235620847177,
+          "score_mae": 0.6702446323828073,
+          "score_spearman": 0.7335818410352037,
+          "multi_micro_f1": 0.8151909913888276
+        }
+      },
+      "20260928": {
+        "temperature": {
+          "intent": 1.2393085554096253,
+          "tool": 1.2393085554096253
+        },
+        "model": {
+          "accuracy_intent": 0.8951965065502183,
+          "accuracy_tool": 0.9388379204892966,
+          "ece": 0.007489372849601742,
+          "nll": 0.265832549190588,
+          "permutation_consistency": 0.9534883720930233,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "ans_head": {
+            "coverage": 0.3680089485458613,
+            "selective_accuracy": 0.9707955689828801,
+            "auroc": 0.9815699227872335,
+            "aurc": 0.0726671641732105,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.03896103896103896,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.23293172690763053,
+                "selective_risk": 0.028735632183908066,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.3851910200866483,
+                "selective_risk": 0.023517382413087984,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.48494623655913977,
+                "selective_risk": 0.019955654101995512,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.4397163120567376,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.2942271880819367,
+                "fa": 0.006382978723404255
+              },
+              "es-ES": {
+                "coverage": 0.5299684542586751,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.5082508250825083,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.4161290322580645,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.012987012987012986,
+            "tau": {
+              "intent": 0.9969246301499518,
+              "tool": 0.9991169541522155
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.3907531692766592,
+            "selective_accuracy": 0.9867674858223062,
+            "auroc": 0.9107220083267294,
+            "aurc": 0.0625425437583663,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.03896103896103896,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.009708737864077669,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.012048192771084338,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.3293172690763052,
+                "selective_risk": 0.004065040650406471,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.38440330838912956,
+                "selective_risk": 0.004098360655737654,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.43010752688172044,
+                "selective_risk": 0.0024999999999999467,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.3404255319148936,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.37243947858473,
+                "fa": 0.01276595744680851
+              },
+              "es-ES": {
+                "coverage": 0.4921135646687697,
+                "fa": 0.022222222222222223
+              },
+              "fr-FR": {
+                "coverage": 0.39603960396039606,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.4,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.020239323198733655,
+            "tau": {
+              "intent": 0.9379605568267393,
+              "tool": 0.9310957687722077
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                0.491,
+                -0.3597,
+                1.8571,
+                -0.3707,
+                -0.3497
+              ],
+              "intercept": 1.3506934289872965
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9258928571428572,
+          "score_mae": 0.6645762327926932,
+          "score_spearman": 0.7310056607014976,
+          "multi_micro_f1": 0.8024384736960939
+        }
+      }
+    },
+    "D_apply": {
+      "20260926": {
+        "temperature": {
+          "intent": 1.2689575217191038,
+          "tool": 1.1820726654174316
+        },
+        "model": {
+          "accuracy_intent": 0.901018922852984,
+          "accuracy_tool": 0.9327217125382263,
+          "ece": 0.00821931966413899,
+          "nll": 0.2669277454404674,
+          "permutation_consistency": 0.937984496124031,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "max_apply": {
+            "coverage": 0.4854586129753915,
+            "selective_accuracy": 0.982496194824962,
+            "auroc": 0.9585159626816651,
+            "aurc": 0.05583931069080556,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.032467532467532464,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.019417475728155338,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.018072289156626505,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.5796519410977242,
+                "selective_risk": 0.0161662817551963,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.4742024419062623,
+                "selective_risk": 0.00913621262458475,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.36236559139784946,
+                "selective_risk": 0.0029673590504450953,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.28368794326241137,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.5741775294847921,
+                "fa": 0.019148936170212766
+              },
+              "es-ES": {
+                "coverage": 0.40063091482649843,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.3696369636963696,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.3161290322580645,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.0233190991174381,
+            "tau": {
+              "intent": 0.994269753485008,
+              "tool": 0.9883127420043056
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.3788217747949292,
+            "selective_accuracy": 0.9824732229795521,
+            "auroc": 0.9049672845090573,
+            "aurc": 0.06575984766007285,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.05194805194805195,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.012048192771084338,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.3373493975903614,
+                "selective_risk": 0.007936507936507908,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.37101220953131153,
+                "selective_risk": 0.007430997876857748,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.4150537634408602,
+                "selective_risk": 0.005181347150259086,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.28368794326241137,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.36623215394165115,
+                "fa": 0.01702127659574468
+              },
+              "es-ES": {
+                "coverage": 0.4668769716088328,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.38943894389438943,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.3870967741935484,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.022950204550391706,
+            "tau": {
+              "intent": 0.932191981777627,
+              "tool": 0.9340962009052568
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                0.977,
+                -0.6331,
+                1.793,
+                -0.2487,
+                -0.2267
+              ],
+              "intercept": 1.2685933176326456
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9276681893687707,
+          "score_mae": 0.6802535526652355,
+          "score_spearman": 0.7234144531278994,
+          "multi_micro_f1": 0.8188214599824098
+        }
+      },
+      "20260927": {
+        "temperature": {
+          "intent": 1.3622285998457235,
+          "tool": 1.3304003714209311
+        },
+        "model": {
+          "accuracy_intent": 0.895924308588064,
+          "accuracy_tool": 0.9319571865443425,
+          "ece": 0.011519029844537343,
+          "nll": 0.27254425009718125,
+          "permutation_consistency": 0.9534883720930233,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "max_apply": {
+            "coverage": 0.42953020134228187,
+            "selective_accuracy": 0.9922077922077922,
+            "auroc": 0.9661016552939719,
+            "aurc": 0.0545682506802997,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.012987012987012988,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.006024096385542169,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.45917001338688085,
+                "selective_risk": 0.008746355685131157,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.417093343836156,
+                "selective_risk": 0.005665722379603388,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.3720430107526882,
+                "selective_risk": 0.0028901734104046506,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.2695035460992908,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.4767225325884544,
+                "fa": 0.002127659574468085
+              },
+              "es-ES": {
+                "coverage": 0.39747634069400634,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.36303630363036304,
+                "fa": 0.037037037037037035
+              },
+              "pt-PT": {
+                "coverage": 0.3548387096774194,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.006337036457518386,
+            "tau": {
+              "intent": 0.9939024378074247,
+              "tool": 0.9955316157335089
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.32401193139448176,
+            "selective_accuracy": 0.9863169897377423,
+            "auroc": 0.9192702306564838,
+            "aurc": 0.06150695762795474,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.032467532467532464,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.012048192771084338,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.3092369477911647,
+                "selective_risk": 0.0043290043290042934,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.31193383221740845,
+                "selective_risk": 0.005050505050505083,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.3301075268817204,
+                "selective_risk": 0.0032573289902280145,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.2695035460992908,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.32526381129733084,
+                "fa": 0.010638297872340425
+              },
+              "es-ES": {
+                "coverage": 0.3659305993690852,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.2871287128712871,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.33548387096774196,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.016456698056885214,
+            "tau": {
+              "intent": 0.940138707631274,
+              "tool": 0.944271426356968
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                0.6283,
+                -0.4208,
+                2.0014,
+                -0.1915,
+                -0.1598
+              ],
+              "intercept": 1.259320560195698
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9310592296511628,
+          "score_mae": 0.6772485706146341,
+          "score_spearman": 0.7272515914664482,
+          "multi_micro_f1": 0.7992871463577634
+        }
+      },
+      "20260928": {
+        "temperature": {
+          "intent": 1.2393085554096253,
+          "tool": 1.1820726654174316
+        },
+        "model": {
+          "accuracy_intent": 0.9017467248908297,
+          "accuracy_tool": 0.9342507645259939,
+          "ece": 0.011867090645315713,
+          "nll": 0.26089404703877556,
+          "permutation_consistency": 0.9612403100775194,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "max_apply": {
+            "coverage": 0.5600298284862043,
+            "selective_accuracy": 0.9814937210839392,
+            "auroc": 0.9626600417505301,
+            "aurc": 0.05460509136567249,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.03896103896103896,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.024096385542168676,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.5649263721552878,
+                "selective_risk": 0.009478672985781977,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.5537613233556519,
+                "selective_risk": 0.012091038406827903,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.5365591397849462,
+                "selective_risk": 0.01603206412825653,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.40425531914893614,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.5872129112352577,
+                "fa": 0.01702127659574468
+              },
+              "es-ES": {
+                "coverage": 0.5678233438485805,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.5181518151815182,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.5225806451612903,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.022637264478415492,
+            "tau": {
+              "intent": 0.9796676466573412,
+              "tool": 0.9830850867332734
+            }
+          },
+          "E_softmax": {
+            "coverage": 0.4000745712155108,
+            "selective_accuracy": 0.9834254143646409,
+            "auroc": 0.9168928348516406,
+            "aurc": 0.06104504908870357,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.008928571428571428,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.06493506493506493,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.006024096385542169,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.3279785809906292,
+                "selective_risk": 0.004081632653061273,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.3938558487593541,
+                "selective_risk": 0.0050000000000000044,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.44516129032258067,
+                "selective_risk": 0.004830917874396157,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.41134751773049644,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.37306021104903786,
+                "fa": 0.014893617021276596
+              },
+              "es-ES": {
+                "coverage": 0.4952681388012618,
+                "fa": 0.022222222222222223
+              },
+              "fr-FR": {
+                "coverage": 0.41254125412541254,
+                "fa": 0.07407407407407407
+              },
+              "pt-PT": {
+                "coverage": 0.4258064516129032,
+                "fa": 0.023255813953488372
+              }
+            },
+            "macro_fa": 0.025271176750881977,
+            "tau": {
+              "intent": 0.9329074145960822,
+              "tool": 0.9472615992077853
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                0.0299,
+                0.1244,
+                2.0954,
+                -0.3331,
+                -0.239
+              ],
+              "intercept": 1.3195682527401222
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9221248183139535,
+          "score_mae": 0.6646965806001565,
+          "score_spearman": 0.7298560590876431,
+          "multi_micro_f1": 0.7980206927575348
+        }
+      }
+    },
+    "J_joint": {
+      "20260926": {
+        "temperature": {
+          "intent": 1.2993158038800574,
+          "tool": 1.1820726654174316
+        },
+        "model": {
+          "accuracy_intent": 0.901018922852984,
+          "accuracy_tool": 0.922782874617737,
+          "ece": 0.008676533859834766,
+          "nll": 0.2805806815458976,
+          "permutation_consistency": 0.9457364341085271,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "margin": {
+            "coverage": 0.3325876211782252,
+            "selective_accuracy": 0.9866518353726362,
+            "auroc": 0.8917455041037545,
+            "aurc": 0.06612981399371591,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.025974025974025976,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.012048192771084338,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.2570281124497992,
+                "selective_risk": 0.00520833333333337,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.3111461205198897,
+                "selective_risk": 0.006329113924050667,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.3956989247311828,
+                "selective_risk": 0.005434782608695676,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.2624113475177305,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.3022967101179392,
+                "fa": 0.01276595744680851
+              },
+              "es-ES": {
+                "coverage": 0.4416403785488959,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.36633663366336633,
+                "fa": 0.018518518518518517
+              },
+              "pt-PT": {
+                "coverage": 0.3774193548387097,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.01429219589238305,
+            "tau": {
+              "intent": 0.9678270464835259,
+              "tool": 0.9983151881298385
+            }
+          },
+          "null_softmax": {
+            "coverage": 0.2870991797166294,
+            "selective_accuracy": 0.9766536964980544,
+            "auroc": 0.9754259793023968,
+            "aurc": 0.071935275027161,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.006493506493506494,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.24899598393574296,
+                "selective_risk": 0.048387096774193505,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.2965734541157936,
+                "selective_risk": 0.02257636122177953,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.3225806451612903,
+                "selective_risk": 0.01666666666666672,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.22695035460992907,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.2718808193668529,
+                "fa": 0.0
+              },
+              "es-ES": {
+                "coverage": 0.3438485804416404,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.34983498349834985,
+                "fa": 0.018518518518518517
+              },
+              "pt-PT": {
+                "coverage": 0.27419354838709675,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.0021645021645021645,
+            "tau": {
+              "intent": 0.981599501680353,
+              "tool": 0.99017786162918
+            }
+          },
+          "ans_head": {
+            "coverage": 0.4097688292319165,
+            "selective_accuracy": 0.9764065335753176,
+            "auroc": 0.9775760380944366,
+            "aurc": 0.06585025903014533,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.012987012987012988,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.3908969210174029,
+                "selective_risk": 0.03424657534246578,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.41551792044111857,
+                "selective_risk": 0.02180094786729858,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.40860215053763443,
+                "selective_risk": 0.013157894736842146,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.2907801418439716,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.4208566108007449,
+                "fa": 0.00425531914893617
+              },
+              "es-ES": {
+                "coverage": 0.43217665615141954,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.43564356435643564,
+                "fa": 0.018518518518518517
+              },
+              "pt-PT": {
+                "coverage": 0.3580645161290323,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.005947127306350608,
+            "tau": {
+              "intent": 0.9987156918798661,
+              "tool": 0.9986749775827868
+            }
+          },
+          "max_apply": {
+            "coverage": 0.4489187173750932,
+            "selective_accuracy": 0.9859851607584501,
+            "auroc": 0.963383546176881,
+            "aurc": 0.05607727407428651,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.01948051948051948,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.014563106796116505,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.018072289156626505,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.5220883534136547,
+                "selective_risk": 0.01538461538461533,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.43796770382040173,
+                "selective_risk": 0.007194244604316502,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.3548387096774194,
+                "selective_risk": 0.00303030303030305,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.2624113475177305,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.5195530726256983,
+                "fa": 0.01702127659574468
+              },
+              "es-ES": {
+                "coverage": 0.3943217665615142,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.36303630363036304,
+                "fa": 0.018518518518518517
+              },
+              "pt-PT": {
+                "coverage": 0.3064516129032258,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.017371971811087496,
+            "tau": {
+              "intent": 0.9911526449170697,
+              "tool": 0.983596967483837
+            }
+          },
+          "E": {
+            "coverage": 0.5193885160328113,
+            "selective_accuracy": 0.9792857142857143,
+            "auroc": 0.9717786520609941,
+            "aurc": 0.05592736333510583,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.012987012987012988,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.009708737864077669,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.018072289156626505,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.6907630522088354,
+                "selective_risk": 0.023255813953488413,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.5124064592359197,
+                "selective_risk": 0.016910069177555775,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.3311827956989247,
+                "selective_risk": 0.00649350649350644,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.1773049645390071,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.6579764121663563,
+                "fa": 0.01276595744680851
+              },
+              "es-ES": {
+                "coverage": 0.3911671924290221,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.3234323432343234,
+                "fa": 0.018518518518518517
+              },
+              "pt-PT": {
+                "coverage": 0.27741935483870966,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.013589346669239055,
+            "tau": {
+              "intent": 0.9625534056429902,
+              "tool": 0.9216270178567156
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "p_null",
+                "ans_logit",
+                "apply_logit",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                0.4348,
+                0.3663,
+                0.1504,
+                0.532,
+                2.5262,
+                0.082,
+                -0.2701,
+                0.1238
+              ],
+              "intercept": 1.4197914583154594
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9321882786544851,
+          "score_mae": 0.681468706570263,
+          "score_spearman": 0.7249912845297253,
+          "multi_micro_f1": 0.8266488413547237
+        }
+      },
+      "20260927": {
+        "temperature": {
+          "intent": 1.2689575217191038,
+          "tool": 1.3304003714209311
+        },
+        "model": {
+          "accuracy_intent": 0.901018922852984,
+          "accuracy_tool": 0.9296636085626911,
+          "ece": 0.009362712124670979,
+          "nll": 0.26274323013881695,
+          "permutation_consistency": 0.9612403100775194,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "margin": {
+            "coverage": 0.4444444444444444,
+            "selective_accuracy": 0.9817275747508306,
+            "auroc": 0.899666650303077,
+            "aurc": 0.06246292902086589,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.06493506493506493,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.006024096385542169,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.2918340026773762,
+                "selective_risk": 0.0,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.43284757778653016,
+                "selective_risk": 0.009099181073703333,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.5741935483870968,
+                "selective_risk": 0.009363295880149836,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.46099290780141844,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.3680943513345748,
+                "fa": 0.014893617021276596
+              },
+              "es-ES": {
+                "coverage": 0.5930599369085173,
+                "fa": 0.044444444444444446
+              },
+              "fr-FR": {
+                "coverage": 0.5808580858085809,
+                "fa": 0.037037037037037035
+              },
+              "pt-PT": {
+                "coverage": 0.5483870967741935,
+                "fa": 0.023255813953488372
+              }
+            },
+            "macro_fa": 0.025271176750881977,
+            "tau": {
+              "intent": 0.9422896123270791,
+              "tool": 0.997299492354858
+            }
+          },
+          "null_softmax": {
+            "coverage": 0.025727069351230425,
+            "selective_accuracy": 0.9855072463768116,
+            "auroc": 0.8932129674434697,
+            "aurc": 0.10956117671528362,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.0,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.0535475234270415,
+                "selective_risk": 0.025000000000000022,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.02205592753052383,
+                "selective_risk": 0.017857142857142905,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.0032258064516129032,
+                "selective_risk": 0.0,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.0,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.040968342644320296,
+                "fa": 0.0
+              },
+              "es-ES": {
+                "coverage": 0.006309148264984227,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.0033003300330033004,
+                "fa": 0.0
+              },
+              "pt-PT": {
+                "coverage": 0.0,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.0,
+            "tau": {
+              "intent": 0.9981090417712785,
+              "tool": 0.9971686032154683
+            }
+          },
+          "ans_head": {
+            "coverage": 0.3579418344519016,
+            "selective_accuracy": 0.9709241952232607,
+            "auroc": 0.9787775931029807,
+            "aurc": 0.07125782279966192,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.01948051948051948,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.17938420348058903,
+                "selective_risk": 0.02238805970149249,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.37258763292634894,
+                "selective_risk": 0.026427061310782207,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.5086021505376344,
+                "selective_risk": 0.025369978858350906,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.5106382978723404,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.2576039726877716,
+                "fa": 0.002127659574468085
+              },
+              "es-ES": {
+                "coverage": 0.5078864353312302,
+                "fa": 0.022222222222222223
+              },
+              "fr-FR": {
+                "coverage": 0.5313531353135313,
+                "fa": 0.018518518518518517
+              },
+              "pt-PT": {
+                "coverage": 0.4870967741935484,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.006493506493506493,
+            "tau": {
+              "intent": 0.9967269350293284,
+              "tool": 0.9991959140643708
+            }
+          },
+          "max_apply": {
+            "coverage": 0.44034302759134974,
+            "selective_accuracy": 0.9806397306397306,
+            "auroc": 0.9642157515913591,
+            "aurc": 0.05758521431055674,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.032467532467532464,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.006024096385542169,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.4190093708165997,
+                "selective_risk": 0.012779552715655007,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.43442300118156757,
+                "selective_risk": 0.01450589301903904,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.4344086021505376,
+                "selective_risk": 0.00990099009900991,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.3333333333333333,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.45313469894475483,
+                "fa": 0.00851063829787234
+              },
+              "es-ES": {
+                "coverage": 0.47318611987381703,
+                "fa": 0.022222222222222223
+              },
+              "fr-FR": {
+                "coverage": 0.4389438943894389,
+                "fa": 0.018518518518518517
+              },
+              "pt-PT": {
+                "coverage": 0.3903225806451613,
+                "fa": 0.023255813953488372
+              }
+            },
+            "macro_fa": 0.014448665928371157,
+            "tau": {
+              "intent": 0.9817358113013995,
+              "tool": 0.9939024378074247
+            }
+          },
+          "E": {
+            "coverage": 0.5991797166293811,
+            "selective_accuracy": 0.9777503090234858,
+            "auroc": 0.9722637156101632,
+            "aurc": 0.05555032877939158,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.05194805194805195,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.012048192771084338,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.5863453815261044,
+                "selective_risk": 0.01598173515981738,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.5970854667191808,
+                "selective_risk": 0.01649076517150394,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.5666666666666667,
+                "selective_risk": 0.015180265654648917,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.48936170212765956,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.62756052141527,
+                "fa": 0.014893617021276596
+              },
+              "es-ES": {
+                "coverage": 0.5899053627760252,
+                "fa": 0.022222222222222223
+              },
+              "fr-FR": {
+                "coverage": 0.5841584158415841,
+                "fa": 0.037037037037037035
+              },
+              "pt-PT": {
+                "coverage": 0.5258064516129032,
+                "fa": 0.023255813953488372
+              }
+            },
+            "macro_fa": 0.022950204550391706,
+            "tau": {
+              "intent": 0.9390653546991556,
+              "tool": 0.9494134741158068
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "p_null",
+                "ans_logit",
+                "apply_logit",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                -0.1691,
+                0.4368,
+                0.6142,
+                0.2757,
+                1.6368,
+                0.6177,
+                -0.3987,
+                -0.1077
+              ],
+              "intercept": 1.5959008901582135
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9262172965116279,
+          "score_mae": 0.670755527299107,
+          "score_spearman": 0.73336989760579,
+          "multi_micro_f1": 0.8133393017009848
+        }
+      },
+      "20260928": {
+        "temperature": {
+          "intent": 1.2993158038800574,
+          "tool": 1.2689575217191038
+        },
+        "model": {
+          "accuracy_intent": 0.901018922852984,
+          "accuracy_tool": 0.9311926605504587,
+          "ece": 0.014666251819251684,
+          "nll": 0.2658797216222883,
+          "permutation_consistency": 0.9534883720930233,
+          "permutation_groups": 129
+        },
+        "signals": {
+          "margin": {
+            "coverage": 0.412751677852349,
+            "selective_accuracy": 0.9830205540661304,
+            "auroc": 0.8927594622456922,
+            "aurc": 0.0627613845177552,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.05844155844155844,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.009708737864077669,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.006024096385542169,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.3092369477911647,
+                "selective_risk": 0.0,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.39503741630563216,
+                "selective_risk": 0.006979062811565351,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.4924731182795699,
+                "selective_risk": 0.008733624454148492,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.4326241134751773,
+                "fa": 0.038461538461538464
+              },
+              "en-US": {
+                "coverage": 0.3649906890130354,
+                "fa": 0.014893617021276596
+              },
+              "es-ES": {
+                "coverage": 0.5394321766561514,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.4521452145214521,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.4838709677419355,
+                "fa": 0.023255813953488372
+              }
+            },
+            "macro_fa": 0.024724797563726097,
+            "tau": {
+              "intent": 0.9426498374336482,
+              "tool": 0.9959232918025326
+            }
+          },
+          "null_softmax": {
+            "coverage": 0.20954511558538405,
+            "selective_accuracy": 0.9626998223801065,
+            "auroc": 0.9790072677714428,
+            "aurc": 0.07915323890305687,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.006493506493506494,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.1459170013386881,
+                "selective_risk": 0.04587155963302747,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.2178022843639228,
+                "selective_risk": 0.03616636528028938,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.24301075268817204,
+                "selective_risk": 0.030973451327433676,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.425531914893617,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.1713221601489758,
+                "fa": 0.0
+              },
+              "es-ES": {
+                "coverage": 0.24290220820189273,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.24752475247524752,
+                "fa": 0.018518518518518517
+              },
+              "pt-PT": {
+                "coverage": 0.23870967741935484,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.0021645021645021645,
+            "tau": {
+              "intent": 0.9988100527774714,
+              "tool": 0.9998197064131289
+            }
+          },
+          "ans_head": {
+            "coverage": 0.2117822520507084,
+            "selective_accuracy": 0.968365553602812,
+            "auroc": 0.9799546027271091,
+            "aurc": 0.0737269113097097,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.006493506493506494,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.0,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.13119143239625167,
+                "selective_risk": 0.04081632653061229,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.22252855454903506,
+                "selective_risk": 0.030088495575221197,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.24516129032258063,
+                "selective_risk": 0.02631578947368418,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.375886524822695,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.17815021725636251,
+                "fa": 0.002127659574468085
+              },
+              "es-ES": {
+                "coverage": 0.25236593059936907,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.2607260726072607,
+                "fa": 0.0
+              },
+              "pt-PT": {
+                "coverage": 0.22258064516129034,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.0021645021645021645,
+            "tau": {
+              "intent": 0.9983515170581486,
+              "tool": 0.9991169541522155
+            }
+          },
+          "max_apply": {
+            "coverage": 0.5559284116331096,
+            "selective_accuracy": 0.9799866577718479,
+            "auroc": 0.9674563267481573,
+            "aurc": 0.056319269416985875,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.032467532467532464,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.012048192771084338,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.5555555555555556,
+                "selective_risk": 0.01927710843373498,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.5435210712879086,
+                "selective_risk": 0.01594202898550723,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.524731182795699,
+                "selective_risk": 0.012295081967213073,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.3900709219858156,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.5884543761638734,
+                "fa": 0.010638297872340425
+              },
+              "es-ES": {
+                "coverage": 0.5741324921135647,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.504950495049505,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.4935483870967742,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.016456698056885214,
+            "tau": {
+              "intent": 0.9744346615182661,
+              "tool": 0.9711289528664935
+            }
+          },
+          "E": {
+            "coverage": 0.6286353467561522,
+            "selective_accuracy": 0.9793632075471698,
+            "auroc": 0.9734798809665739,
+            "aurc": 0.05251959746018992,
+            "false_acceptance": {
+              "cross_task": {
+                "fa": 0.0,
+                "n": 112
+              },
+              "intent_near_ood": {
+                "fa": 0.03896103896103896,
+                "n": 154
+              },
+              "tool_gold_removed": {
+                "fa": 0.0048543689320388345,
+                "n": 206
+              },
+              "tool_irrelevance": {
+                "fa": 0.018072289156626505,
+                "n": 166
+              }
+            },
+            "answerable_buckets": {
+              "unseen_tool": {
+                "coverage": 0.7309236947791165,
+                "selective_risk": 0.023809523809523836,
+                "n": 747
+              },
+              "hard": {
+                "coverage": 0.6171721150059079,
+                "selective_risk": 0.01595405232929159,
+                "n": 2539
+              },
+              "cross_language": {
+                "coverage": 0.5161290322580645,
+                "selective_risk": 0.01041666666666663,
+                "n": 930
+              }
+            },
+            "by_lang": {
+              "en": {
+                "coverage": 0.36879432624113473,
+                "fa": 0.0
+              },
+              "en-US": {
+                "coverage": 0.7163252638112974,
+                "fa": 0.014893617021276596
+              },
+              "es-ES": {
+                "coverage": 0.5678233438485805,
+                "fa": 0.0
+              },
+              "fr-FR": {
+                "coverage": 0.4884488448844885,
+                "fa": 0.05555555555555555
+              },
+              "pt-PT": {
+                "coverage": 0.49032258064516127,
+                "fa": 0.0
+              }
+            },
+            "macro_fa": 0.020629232349901435,
+            "tau": {
+              "intent": 0.939578408970669,
+              "tool": 0.921414283954265
+            },
+            "calibrator": {
+              "features": [
+                "top1",
+                "margin",
+                "negent",
+                "p_null",
+                "ans_logit",
+                "apply_logit",
+                "log_k",
+                "is_tool"
+              ],
+              "coef": [
+                0.0435,
+                0.4684,
+                0.4506,
+                -0.2955,
+                1.2058,
+                0.6748,
+                -0.4274,
+                0.0517
+              ],
+              "intercept": 1.3501585499622255
+            }
+          }
+        },
+        "other_primitives": {
+          "noul_auroc": 0.9258474356312293,
+          "score_mae": 0.6683532767392928,
+          "score_spearman": 0.7280512585796617,
+          "multi_micro_f1": 0.8137254901960784
+        }
+      }
+    }
+  },
+  "summary": {
+    "rows": {
+      "A margin (baseline)": {
+        "variant": "A_margin",
+        "signal": "margin",
+        "seeds": 3,
+        "macro_fa": [
+          0.027491633410454325,
+          0.026186450505084266,
+          0.03035898479810048
+        ],
+        "fa_tool_irrelevance": [
+          0.024096385542168676,
+          0.012048192771084338,
+          0.018072289156626505
+        ],
+        "fa_tool_gold_removed": [
+          0.019417475728155338,
+          0.014563106796116505,
+          0.014563106796116505
+        ],
+        "fa_intent_near_ood": [
+          0.03896103896103896,
+          0.05194805194805195,
+          0.05844155844155844
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage": [
+          0.6178225205070843,
+          0.6323639075316928,
+          0.6700223713646533
+        ],
+        "auroc": [
+          0.9582465478670061,
+          0.9570350578219127,
+          0.9626132886373572
+        ],
+        "aurc": [
+          0.0527216264775192,
+          0.05185021008263123,
+          0.05143567427821867
+        ],
+        "unseen_tool_risk": [
+          0.011605415860735047,
+          0.006507592190889366,
+          0.011560693641618491
+        ],
+        "hard_risk": [
+          0.00849673202614376,
+          0.0069752694990488084,
+          0.012507444907683185
+        ],
+        "acc_intent": [
+          0.8966521106259098,
+          0.901018922852984,
+          0.9024745269286754
+        ],
+        "acc_tool": [
+          0.9350152905198776,
+          0.9396024464831805,
+          0.9388379204892966
+        ],
+        "ece": [
+          0.012287539229995982,
+          0.015898094044860187,
+          0.013560547521027033
+        ],
+        "nll": [
+          0.2733687846065375,
+          0.2727879337362671,
+          0.2737631064669335
+        ],
+        "perm": [
+          0.9612403100775194,
+          0.9534883720930233,
+          0.9844961240310077
+        ]
+      },
+      "E[A] softmax-only fusion": {
+        "variant": "A_margin",
+        "signal": "E_softmax",
+        "seeds": 3,
+        "macro_fa": [
+          0.02532713124595216,
+          0.026029980469096155,
+          0.03468798912710481
+        ],
+        "fa_tool_irrelevance": [
+          0.024096385542168676,
+          0.018072289156626505,
+          0.018072289156626505
+        ],
+        "fa_tool_gold_removed": [
+          0.019417475728155338,
+          0.014563106796116505,
+          0.014563106796116505
+        ],
+        "fa_intent_near_ood": [
+          0.032467532467532464,
+          0.045454545454545456,
+          0.07142857142857142
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.008928571428571428
+        ],
+        "coverage": [
+          0.5805369127516778,
+          0.5451155853840418,
+          0.6849366144668159
+        ],
+        "auroc": [
+          0.9673634049357261,
+          0.9663436026546418,
+          0.9711135890261092
+        ],
+        "aurc": [
+          0.05347912161191889,
+          0.05183770149296269,
+          0.05135570026927646
+        ],
+        "unseen_tool_risk": [
+          0.01147227533460804,
+          0.012285012285012331,
+          0.014285714285714235
+        ],
+        "hard_risk": [
+          0.010467550593161179,
+          0.008046817849305055,
+          0.013953488372092981
+        ],
+        "acc_intent": [
+          0.8966521106259098,
+          0.901018922852984,
+          0.9024745269286754
+        ],
+        "acc_tool": [
+          0.9350152905198776,
+          0.9396024464831805,
+          0.9388379204892966
+        ],
+        "ece": [
+          0.012287539229995982,
+          0.015898094044860187,
+          0.013560547521027033
+        ],
+        "nll": [
+          0.2733687846065375,
+          0.2727879337362671,
+          0.2737631064669335
+        ],
+        "perm": [
+          0.9612403100775194,
+          0.9534883720930233,
+          0.9844961240310077
+        ]
+      },
+      "B [NULL] in softmax": {
+        "variant": "B_null",
+        "signal": "null_softmax",
+        "seeds": 3,
+        "macro_fa": [
+          0.0,
+          0.0,
+          0.0016181229773462782
+        ],
+        "fa_tool_irrelevance": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fa_tool_gold_removed": [
+          0.0,
+          0.0,
+          0.0048543689320388345
+        ],
+        "fa_intent_near_ood": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage": [
+          0.0070842654735272185,
+          0.10775540641312453,
+          0.08165548098434004
+        ],
+        "auroc": [
+          0.8988554837895268,
+          0.9591804413026352,
+          0.9530627964439582
+        ],
+        "aurc": [
+          0.11579709974881236,
+          0.09451159954911034,
+          0.08243252759697849
+        ],
+        "unseen_tool_risk": [
+          0.0,
+          0.0,
+          0.053333333333333344
+        ],
+        "hard_risk": [
+          0.052631578947368474,
+          0.03460207612456745,
+          0.04205607476635509
+        ],
+        "acc_intent": [
+          0.9053857350800583,
+          0.8930131004366813,
+          0.8995633187772926
+        ],
+        "acc_tool": [
+          0.9296636085626911,
+          0.9220183486238532,
+          0.9388379204892966
+        ],
+        "ece": [
+          0.012475858144848332,
+          0.011734907263797879,
+          0.009558872789006674
+        ],
+        "nll": [
+          0.2671322511328007,
+          0.26788459685787674,
+          0.25439138572278225
+        ],
+        "perm": [
+          0.9302325581395349,
+          0.9767441860465116,
+          0.9302325581395349
+        ]
+      },
+      "C answerability head": {
+        "variant": "C_ans_head",
+        "signal": "ans_head",
+        "seeds": 3,
+        "macro_fa": [
+          0.008658008658008658,
+          0.004329004329004329,
+          0.012987012987012986
+        ],
+        "fa_tool_irrelevance": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fa_tool_gold_removed": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fa_intent_near_ood": [
+          0.025974025974025976,
+          0.012987012987012988,
+          0.03896103896103896
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage": [
+          0.273303504847129,
+          0.226696495152871,
+          0.3680089485458613
+        ],
+        "auroc": [
+          0.9777642193749576,
+          0.9775193499447145,
+          0.9815699227872335
+        ],
+        "aurc": [
+          0.07995450337057976,
+          0.07524414298227147,
+          0.0726671641732105
+        ],
+        "unseen_tool_risk": [
+          0.07079646017699115,
+          0.0674157303370787,
+          0.028735632183908066
+        ],
+        "hard_risk": [
+          0.026206896551724146,
+          0.02640264026402639,
+          0.023517382413087984
+        ],
+        "acc_intent": [
+          0.9032023289665211,
+          0.9017467248908297,
+          0.8951965065502183
+        ],
+        "acc_tool": [
+          0.9281345565749235,
+          0.9304281345565749,
+          0.9388379204892966
+        ],
+        "ece": [
+          0.0057403265315192535,
+          0.013380253733458719,
+          0.007489372849601742
+        ],
+        "nll": [
+          0.26450866836075104,
+          0.271170233437149,
+          0.265832549190588
+        ],
+        "perm": [
+          0.9844961240310077,
+          0.9767441860465116,
+          0.9534883720930233
+        ]
+      },
+      "D max applicability": {
+        "variant": "D_apply",
+        "signal": "max_apply",
+        "seeds": 3,
+        "macro_fa": [
+          0.0233190991174381,
+          0.006337036457518386,
+          0.022637264478415492
+        ],
+        "fa_tool_irrelevance": [
+          0.018072289156626505,
+          0.006024096385542169,
+          0.024096385542168676
+        ],
+        "fa_tool_gold_removed": [
+          0.019417475728155338,
+          0.0,
+          0.0048543689320388345
+        ],
+        "fa_intent_near_ood": [
+          0.032467532467532464,
+          0.012987012987012988,
+          0.03896103896103896
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage": [
+          0.4854586129753915,
+          0.42953020134228187,
+          0.5600298284862043
+        ],
+        "auroc": [
+          0.9585159626816651,
+          0.9661016552939719,
+          0.9626600417505301
+        ],
+        "aurc": [
+          0.05583931069080556,
+          0.0545682506802997,
+          0.05460509136567249
+        ],
+        "unseen_tool_risk": [
+          0.0161662817551963,
+          0.008746355685131157,
+          0.009478672985781977
+        ],
+        "hard_risk": [
+          0.00913621262458475,
+          0.005665722379603388,
+          0.012091038406827903
+        ],
+        "acc_intent": [
+          0.901018922852984,
+          0.895924308588064,
+          0.9017467248908297
+        ],
+        "acc_tool": [
+          0.9327217125382263,
+          0.9319571865443425,
+          0.9342507645259939
+        ],
+        "ece": [
+          0.00821931966413899,
+          0.011519029844537343,
+          0.011867090645315713
+        ],
+        "nll": [
+          0.2669277454404674,
+          0.27254425009718125,
+          0.26089404703877556
+        ],
+        "perm": [
+          0.937984496124031,
+          0.9534883720930233,
+          0.9612403100775194
+        ]
+      },
+      "J margin": {
+        "variant": "J_joint",
+        "signal": "margin",
+        "seeds": 3,
+        "macro_fa": [
+          0.01429219589238305,
+          0.025271176750881977,
+          0.024724797563726097
+        ],
+        "fa_tool_irrelevance": [
+          0.012048192771084338,
+          0.006024096385542169,
+          0.006024096385542169
+        ],
+        "fa_tool_gold_removed": [
+          0.0048543689320388345,
+          0.0048543689320388345,
+          0.009708737864077669
+        ],
+        "fa_intent_near_ood": [
+          0.025974025974025976,
+          0.06493506493506493,
+          0.05844155844155844
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage": [
+          0.3325876211782252,
+          0.4444444444444444,
+          0.412751677852349
+        ],
+        "auroc": [
+          0.8917455041037545,
+          0.899666650303077,
+          0.8927594622456922
+        ],
+        "aurc": [
+          0.06612981399371591,
+          0.06246292902086589,
+          0.0627613845177552
+        ],
+        "unseen_tool_risk": [
+          0.00520833333333337,
+          0.0,
+          0.0
+        ],
+        "hard_risk": [
+          0.006329113924050667,
+          0.009099181073703333,
+          0.006979062811565351
+        ],
+        "acc_intent": [
+          0.901018922852984,
+          0.901018922852984,
+          0.901018922852984
+        ],
+        "acc_tool": [
+          0.922782874617737,
+          0.9296636085626911,
+          0.9311926605504587
+        ],
+        "ece": [
+          0.008676533859834766,
+          0.009362712124670979,
+          0.014666251819251684
+        ],
+        "nll": [
+          0.2805806815458976,
+          0.26274323013881695,
+          0.2658797216222883
+        ],
+        "perm": [
+          0.9457364341085271,
+          0.9612403100775194,
+          0.9534883720930233
+        ]
+      },
+      "J p_null": {
+        "variant": "J_joint",
+        "signal": "null_softmax",
+        "seeds": 3,
+        "macro_fa": [
+          0.0021645021645021645,
+          0.0,
+          0.0021645021645021645
+        ],
+        "fa_tool_irrelevance": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fa_tool_gold_removed": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fa_intent_near_ood": [
+          0.006493506493506494,
+          0.0,
+          0.006493506493506494
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage": [
+          0.2870991797166294,
+          0.025727069351230425,
+          0.20954511558538405
+        ],
+        "auroc": [
+          0.9754259793023968,
+          0.8932129674434697,
+          0.9790072677714428
+        ],
+        "aurc": [
+          0.071935275027161,
+          0.10956117671528362,
+          0.07915323890305687
+        ],
+        "unseen_tool_risk": [
+          0.048387096774193505,
+          0.025000000000000022,
+          0.04587155963302747
+        ],
+        "hard_risk": [
+          0.02257636122177953,
+          0.017857142857142905,
+          0.03616636528028938
+        ],
+        "acc_intent": [
+          0.901018922852984,
+          0.901018922852984,
+          0.901018922852984
+        ],
+        "acc_tool": [
+          0.922782874617737,
+          0.9296636085626911,
+          0.9311926605504587
+        ],
+        "ece": [
+          0.008676533859834766,
+          0.009362712124670979,
+          0.014666251819251684
+        ],
+        "nll": [
+          0.2805806815458976,
+          0.26274323013881695,
+          0.2658797216222883
+        ],
+        "perm": [
+          0.9457364341085271,
+          0.9612403100775194,
+          0.9534883720930233
+        ]
+      },
+      "J ans head": {
+        "variant": "J_joint",
+        "signal": "ans_head",
+        "seeds": 3,
+        "macro_fa": [
+          0.005947127306350608,
+          0.006493506493506493,
+          0.0021645021645021645
+        ],
+        "fa_tool_irrelevance": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fa_tool_gold_removed": [
+          0.0048543689320388345,
+          0.0,
+          0.0
+        ],
+        "fa_intent_near_ood": [
+          0.012987012987012988,
+          0.01948051948051948,
+          0.006493506493506494
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage": [
+          0.4097688292319165,
+          0.3579418344519016,
+          0.2117822520507084
+        ],
+        "auroc": [
+          0.9775760380944366,
+          0.9787775931029807,
+          0.9799546027271091
+        ],
+        "aurc": [
+          0.06585025903014533,
+          0.07125782279966192,
+          0.0737269113097097
+        ],
+        "unseen_tool_risk": [
+          0.03424657534246578,
+          0.02238805970149249,
+          0.04081632653061229
+        ],
+        "hard_risk": [
+          0.02180094786729858,
+          0.026427061310782207,
+          0.030088495575221197
+        ],
+        "acc_intent": [
+          0.901018922852984,
+          0.901018922852984,
+          0.901018922852984
+        ],
+        "acc_tool": [
+          0.922782874617737,
+          0.9296636085626911,
+          0.9311926605504587
+        ],
+        "ece": [
+          0.008676533859834766,
+          0.009362712124670979,
+          0.014666251819251684
+        ],
+        "nll": [
+          0.2805806815458976,
+          0.26274323013881695,
+          0.2658797216222883
+        ],
+        "perm": [
+          0.9457364341085271,
+          0.9612403100775194,
+          0.9534883720930233
+        ]
+      },
+      "J max apply": {
+        "variant": "J_joint",
+        "signal": "max_apply",
+        "seeds": 3,
+        "macro_fa": [
+          0.017371971811087496,
+          0.014448665928371157,
+          0.016456698056885214
+        ],
+        "fa_tool_irrelevance": [
+          0.018072289156626505,
+          0.006024096385542169,
+          0.012048192771084338
+        ],
+        "fa_tool_gold_removed": [
+          0.014563106796116505,
+          0.0048543689320388345,
+          0.0048543689320388345
+        ],
+        "fa_intent_near_ood": [
+          0.01948051948051948,
+          0.032467532467532464,
+          0.032467532467532464
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage": [
+          0.4489187173750932,
+          0.44034302759134974,
+          0.5559284116331096
+        ],
+        "auroc": [
+          0.963383546176881,
+          0.9642157515913591,
+          0.9674563267481573
+        ],
+        "aurc": [
+          0.05607727407428651,
+          0.05758521431055674,
+          0.056319269416985875
+        ],
+        "unseen_tool_risk": [
+          0.01538461538461533,
+          0.012779552715655007,
+          0.01927710843373498
+        ],
+        "hard_risk": [
+          0.007194244604316502,
+          0.01450589301903904,
+          0.01594202898550723
+        ],
+        "acc_intent": [
+          0.901018922852984,
+          0.901018922852984,
+          0.901018922852984
+        ],
+        "acc_tool": [
+          0.922782874617737,
+          0.9296636085626911,
+          0.9311926605504587
+        ],
+        "ece": [
+          0.008676533859834766,
+          0.009362712124670979,
+          0.014666251819251684
+        ],
+        "nll": [
+          0.2805806815458976,
+          0.26274323013881695,
+          0.2658797216222883
+        ],
+        "perm": [
+          0.9457364341085271,
+          0.9612403100775194,
+          0.9534883720930233
+        ]
+      },
+      "E fusion (on J)": {
+        "variant": "J_joint",
+        "signal": "E",
+        "seeds": 3,
+        "macro_fa": [
+          0.013589346669239055,
+          0.022950204550391706,
+          0.020629232349901435
+        ],
+        "fa_tool_irrelevance": [
+          0.018072289156626505,
+          0.012048192771084338,
+          0.018072289156626505
+        ],
+        "fa_tool_gold_removed": [
+          0.009708737864077669,
+          0.0048543689320388345,
+          0.0048543689320388345
+        ],
+        "fa_intent_near_ood": [
+          0.012987012987012988,
+          0.05194805194805195,
+          0.03896103896103896
+        ],
+        "fa_cross_task": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coverage": [
+          0.5193885160328113,
+          0.5991797166293811,
+          0.6286353467561522
+        ],
+        "auroc": [
+          0.9717786520609941,
+          0.9722637156101632,
+          0.9734798809665739
+        ],
+        "aurc": [
+          0.05592736333510583,
+          0.05555032877939158,
+          0.05251959746018992
+        ],
+        "unseen_tool_risk": [
+          0.023255813953488413,
+          0.01598173515981738,
+          0.023809523809523836
+        ],
+        "hard_risk": [
+          0.016910069177555775,
+          0.01649076517150394,
+          0.01595405232929159
+        ],
+        "acc_intent": [
+          0.901018922852984,
+          0.901018922852984,
+          0.901018922852984
+        ],
+        "acc_tool": [
+          0.922782874617737,
+          0.9296636085626911,
+          0.9311926605504587
+        ],
+        "ece": [
+          0.008676533859834766,
+          0.009362712124670979,
+          0.014666251819251684
+        ],
+        "nll": [
+          0.2805806815458976,
+          0.26274323013881695,
+          0.2658797216222883
+        ],
+        "perm": [
+          0.9457364341085271,
+          0.9612403100775194,
+          0.9534883720930233
+        ]
+      }
+    },
+    "decision": {
+      "winner": null,
+      "candidates": {
+        "E[A] softmax-only fusion": {
+          "gates": {
+            "intent_acc": true,
+            "tool_acc": true,
+            "perm": true,
+            "ece": true,
+            "nll": true,
+            "coverage": false
+          },
+          "all_gates": false,
+          "delta_macro_fa": -0.0006693440428380167,
+          "delta_rel": -0.023894599838513286,
+          "better_every_seed": false,
+          "bootstrap_ci_A_minus_X": [
+            -0.004193281089520079,
+            0.0034618963326071162
+          ],
+          "clear_win": false
+        },
+        "B [NULL] in softmax": {
+          "gates": {
+            "intent_acc": true,
+            "tool_acc": false,
+            "perm": false,
+            "ece": true,
+            "nll": true,
+            "coverage": false
+          },
+          "all_gates": false,
+          "delta_macro_fa": 0.0274729819120976,
+          "delta_rel": 0.9807451282854699,
+          "better_every_seed": true,
+          "bootstrap_ci_A_minus_X": [
+            0.014289868481648657,
+            0.043178400080959425
+          ],
+          "clear_win": false
+        },
+        "C answerability head": {
+          "gates": {
+            "intent_acc": true,
+            "tool_acc": false,
+            "perm": true,
+            "ece": true,
+            "nll": true,
+            "coverage": false
+          },
+          "all_gates": false,
+          "delta_macro_fa": 0.019354347579871034,
+          "delta_rel": 0.6909217994914376,
+          "better_every_seed": true,
+          "bootstrap_ci_A_minus_X": [
+            0.009604274652526158,
+            0.03044842287933475
+          ],
+          "clear_win": false
+        },
+        "D max applicability": {
+          "gates": {
+            "intent_acc": true,
+            "tool_acc": true,
+            "perm": false,
+            "ece": true,
+            "nll": true,
+            "coverage": false
+          },
+          "all_gates": false,
+          "delta_macro_fa": 0.010581222886755698,
+          "delta_rel": 0.37773412550163293,
+          "better_every_seed": true,
+          "bootstrap_ci_A_minus_X": [
+            0.002484145117278076,
+            0.02006265273639308
+          ],
+          "clear_win": false
+        },
+        "J margin": {
+          "gates": {
+            "intent_acc": true,
+            "tool_acc": false,
+            "perm": false,
+            "ece": true,
+            "nll": true,
+            "coverage": false
+          },
+          "all_gates": false,
+          "delta_macro_fa": 0.00658296616888265,
+          "delta_rel": 0.2350022294797479,
+          "better_every_seed": true,
+          "bootstrap_ci_A_minus_X": [
+            -0.0021872068869817,
+            0.015962763864198006
+          ],
+          "clear_win": false
+        },
+        "J p_null": {
+          "gates": {
+            "intent_acc": true,
+            "tool_acc": false,
+            "perm": false,
+            "ece": true,
+            "nll": true,
+            "coverage": false
+          },
+          "all_gates": false,
+          "delta_macro_fa": 0.026569354794878246,
+          "delta_rel": 0.9484869665819062,
+          "better_every_seed": true,
+          "bootstrap_ci_A_minus_X": [
+            0.013911066934480703,
+            0.04145740771414704
+          ],
+          "clear_win": false
+        },
+        "J ans head": {
+          "gates": {
+            "intent_acc": true,
+            "tool_acc": false,
+            "perm": false,
+            "ece": true,
+            "nll": true,
+            "coverage": false
+          },
+          "all_gates": false,
+          "delta_macro_fa": 0.023143977583093268,
+          "delta_rel": 0.8262060280311886,
+          "better_every_seed": true,
+          "bootstrap_ci_A_minus_X": [
+            0.012176198579859746,
+            0.035834680451236285
+          ],
+          "clear_win": false
+        },
+        "J max apply": {
+          "gates": {
+            "intent_acc": true,
+            "tool_acc": false,
+            "perm": false,
+            "ece": true,
+            "nll": true,
+            "coverage": false
+          },
+          "all_gates": false,
+          "delta_macro_fa": 0.011919910972431735,
+          "delta_rel": 0.42552332517865965,
+          "better_every_seed": true,
+          "bootstrap_ci_A_minus_X": [
+            0.0047660086850041,
+            0.02034880619463723
+          ],
+          "clear_win": false
+        },
+        "E fusion (on J)": {
+          "gates": {
+            "intent_acc": true,
+            "tool_acc": false,
+            "perm": false,
+            "ece": true,
+            "nll": true,
+            "coverage": false
+          },
+          "all_gates": false,
+          "delta_macro_fa": 0.008956095048035625,
+          "delta_rel": 0.3197194470890225,
+          "better_every_seed": true,
+          "bootstrap_ci_A_minus_X": [
+            0.0015716102444652575,
+            0.017386890356157047
+          ],
+          "clear_win": false
+        }
+      }
+    },
+    "matched_coverage": {
+      "A_margin:margin": {
+        "macro_fa_at_A_coverage": [
+          0.027491633410454325,
+          0.026186450505084266,
+          0.03035898479810048
+        ]
+      },
+      "A_margin:E_softmax": {
+        "macro_fa_at_A_coverage": [
+          0.03398513990396082,
+          0.03236701692661454,
+          0.033069866149758535
+        ]
+      },
+      "B_null:null_softmax": {
+        "macro_fa_at_A_coverage": [
+          0.0799625180839358,
+          0.04822138130127368,
+          0.049136655055475965
+        ]
+      },
+      "B_null:E_softmax": {
+        "macro_fa_at_A_coverage": [
+          0.08999558946921211,
+          0.0852417360780912,
+          0.06570526210250154
+        ]
+      },
+      "C_ans_head:ans_head": {
+        "macro_fa_at_A_coverage": [
+          0.022950204550391706,
+          0.029443711043898202,
+          0.01661316809287332
+        ]
+      },
+      "C_ans_head:E_softmax": {
+        "macro_fa_at_A_coverage": [
+          0.08931375483018951,
+          0.0738379061574757,
+          0.0861570098322935
+        ]
+      },
+      "D_apply:max_apply": {
+        "macro_fa_at_A_coverage": [
+          0.031664167703470546,
+          0.03236701692661454,
+          0.037242400442774756
+        ]
+      },
+      "D_apply:E_softmax": {
+        "macro_fa_at_A_coverage": [
+          0.09674354966201966,
+          0.07321455789112825,
+          0.09590777686461392
+        ]
+      },
+      "J_joint:margin": {
+        "macro_fa_at_A_coverage": [
+          0.07741950021748828,
+          0.07032619191936071,
+          0.0732915269703198
+        ]
+      },
+      "J_joint:null_softmax": {
+        "macro_fa_at_A_coverage": [
+          0.020472762313913324,
+          0.14504696379769486,
+          0.027279208879396038
+        ]
+      },
+      "J_joint:ans_head": {
+        "macro_fa_at_A_coverage": [
+          0.022637264478415492,
+          0.016456698056885214,
+          0.01877767025737549
+        ]
+      },
+      "J_joint:max_apply": {
+        "macro_fa_at_A_coverage": [
+          0.03351572979599649,
+          0.032679956998590755,
+          0.03398513990396082
+        ]
+      },
+      "J_joint:E": {
+        "macro_fa_at_A_coverage": [
+          0.02224735532724771,
+          0.022950204550391706,
+          0.023106674586379813
+        ]
+      }
+    }
+  }
+}

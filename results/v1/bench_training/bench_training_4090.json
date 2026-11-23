@@ -1,0 +1,216 @@
+{
+  "spec": "K1-W1536-L22",
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch": "2.14.0+cu130",
+  "cuda": "13.0",
+  "price_per_hour": 0.74,
+  "mlm": [
+    {
+      "oom": false,
+      "step_s": 0.20570678170770407,
+      "tokens_per_s": 19911.83745132987,
+      "peak_vram_gib": 17.628058910369873,
+      "trainable_params": 837090304,
+      "micro_batch": 4,
+      "grad_ckpt": false,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": true,
+      "micro_batch": 8,
+      "grad_ckpt": false,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.245420902967453,
+      "tokens_per_s": 16689.694930114405,
+      "peak_vram_gib": 14.055267333984375,
+      "trainable_params": 837090304,
+      "micro_batch": 4,
+      "grad_ckpt": true,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.47673241421580315,
+      "tokens_per_s": 17183.64381300852,
+      "peak_vram_gib": 15.225380897521973,
+      "trainable_params": 837090304,
+      "micro_batch": 8,
+      "grad_ckpt": true,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 1.0615552831441164,
+      "tokens_per_s": 15433.958325254469,
+      "peak_vram_gib": 19.577600955963135,
+      "trainable_params": 837090304,
+      "micro_batch": 16,
+      "grad_ckpt": true,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": true,
+      "micro_batch": 32,
+      "grad_ckpt": true,
+      "freeze_embeddings": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.17563740722835064,
+      "tokens_per_s": 23320.772406271557,
+      "peak_vram_gib": 14.68740177154541,
+      "trainable_params": 443874304,
+      "micro_batch": 4,
+      "grad_ckpt": false,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.35161274624988437,
+      "tokens_per_s": 23298.3590252957,
+      "peak_vram_gib": 21.29643726348877,
+      "trainable_params": 443874304,
+      "micro_batch": 8,
+      "grad_ckpt": false,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": true,
+      "micro_batch": 16,
+      "grad_ckpt": false,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.21637962572276592,
+      "tokens_per_s": 18929.693525063936,
+      "peak_vram_gib": 10.267045021057129,
+      "trainable_params": 443874304,
+      "micro_batch": 4,
+      "grad_ckpt": true,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.4439202821813524,
+      "tokens_per_s": 18453.763724752196,
+      "peak_vram_gib": 12.38588285446167,
+      "trainable_params": 443874304,
+      "micro_batch": 8,
+      "grad_ckpt": true,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.990412896964699,
+      "tokens_per_s": 16542.59556818349,
+      "peak_vram_gib": 16.640780448913574,
+      "trainable_params": 443874304,
+      "micro_batch": 16,
+      "grad_ckpt": true,
+      "freeze_embeddings": true
+    },
+    {
+      "oom": true,
+      "micro_batch": 32,
+      "grad_ckpt": true,
+      "freeze_embeddings": true
+    }
+  ],
+  "decision": [
+    {
+      "oom": true,
+      "sequences": 64,
+      "seq_len": 256,
+      "grad_ckpt": false
+    },
+    {
+      "oom": true,
+      "sequences": 32,
+      "seq_len": 512,
+      "grad_ckpt": false
+    },
+    {
+      "oom": true,
+      "sequences": 16,
+      "seq_len": 1024,
+      "grad_ckpt": false
+    },
+    {
+      "oom": false,
+      "step_s": 0.8550387867726386,
+      "padded_tokens_per_s": 19161.703835497035,
+      "real_tokens_per_s": 13380.679539912206,
+      "questions_per_s": 74.8504056074103,
+      "peak_vram_gib": 13.73221206665039,
+      "sequences": 64,
+      "seq_len": 256,
+      "grad_ckpt": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.8855645009316504,
+      "padded_tokens_per_s": 18501.19328717824,
+      "real_tokens_per_s": 12505.01797254711,
+      "questions_per_s": 36.13514313902,
+      "peak_vram_gib": 13.764952659606934,
+      "sequences": 32,
+      "seq_len": 512,
+      "grad_ckpt": true
+    },
+    {
+      "oom": false,
+      "step_s": 0.9498598491773009,
+      "padded_tokens_per_s": 17248.860465247184,
+      "real_tokens_per_s": 12053.35714517914,
+      "questions_per_s": 16.844590298092953,
+      "peak_vram_gib": 13.785839557647705,
+      "sequences": 16,
+      "seq_len": 1024,
+      "grad_ckpt": true
+    }
+  ],
+  "transformers": "5.17.0",
+  "summary": {
+    "mlm_best_full": {
+      "oom": false,
+      "step_s": 0.20570678170770407,
+      "tokens_per_s": 19911.83745132987,
+      "peak_vram_gib": 17.628058910369873,
+      "trainable_params": 837090304,
+      "micro_batch": 4,
+      "grad_ckpt": false,
+      "freeze_embeddings": false
+    },
+    "mlm_best_frozen_emb": {
+      "oom": false,
+      "step_s": 0.17563740722835064,
+      "tokens_per_s": 23320.772406271557,
+      "peak_vram_gib": 14.68740177154541,
+      "trainable_params": 443874304,
+      "micro_batch": 4,
+      "grad_ckpt": false,
+      "freeze_embeddings": true
+    },
+    "decision_best": {
+      "oom": false,
+      "step_s": 0.8550387867726386,
+      "padded_tokens_per_s": 19161.703835497035,
+      "real_tokens_per_s": 13380.679539912206,
+      "questions_per_s": 74.8504056074103,
+      "peak_vram_gib": 13.73221206665039,
+      "sequences": 64,
+      "seq_len": 256,
+      "grad_ckpt": true
+    },
+    "usd_per_1B_tokens_mlm_full": 10.323284129754029,
+    "hours_per_1B_tokens_mlm_full": 13.950383959127066,
+    "usd_per_1B_tokens_mlm_frozen_emb": 8.81426875467797,
+    "hours_per_1B_tokens_mlm_frozen_emb": 11.911173992808067,
+    "usd_per_1B_tokens_decision": 15.362116321702468,
+    "hours_per_1B_tokens_decision": 20.75961665094928
+  }
+}

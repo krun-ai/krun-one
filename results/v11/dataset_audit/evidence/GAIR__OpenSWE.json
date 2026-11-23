@@ -1,0 +1,270 @@
+{
+  "repo_id": "GAIR/OpenSWE",
+  "exists": true,
+  "revision": "a8db93af5335df2c8baac0cd1ff367e4d475d3d7",
+  "last_modified": "2026-03-17T09:51:46.000Z",
+  "last_modified_brt": "2026-03-17 06:51:46 BRT",
+  "created_at": "2026-03-15T11:39:28.000Z",
+  "gated": "auto",
+  "downloads": 946,
+  "likes": 27,
+  "license_field": "other",
+  "repo_total_bytes": 8363565195,
+  "license_field_detail": {
+    "license": "other",
+    "license_name": "mixed-permissive-and-cc-by-4.0",
+    "license_link": "LICENSE"
+  },
+  "gating_detail": {
+    "gated": "auto",
+    "extra_gated_prompt": "By requesting access, you agree to the terms of the license and to cite the dataset in any resulting publications.",
+    "extra_gated_fields": {
+      "First Name": "text",
+      "Last Name": "text",
+      "Organization": "text",
+      "Country": "country",
+      "Job Title": {
+        "type": "select",
+        "options": [
+          "Student",
+          "Researcher",
+          "AI Developer/Engineer",
+          "Data Scientist",
+          "Reporter",
+          "Other"
+        ]
+      },
+      "Intended Use": {
+        "type": "select",
+        "options": [
+          "Research",
+          "Commercial",
+          "Education",
+          "Other"
+        ]
+      },
+      "geo": "ip_location",
+      "I agree to cite this dataset": "checkbox",
+      "I accept the license terms": "checkbox"
+    },
+    "access_test": "not logged in: raw README.md -> HTTP 401; raw LICENSE -> HTTP 401; datasets-server /info,/splits,/size -> HTTP 401 (\"The dataset does not exist, or is not accessible without authentication (private or gated)\"). Hub API metadata and tree listing -> HTTP 200. Rendered card is visible on the public dataset web page."
+  },
+  "license_quotes": [
+    {
+      "quote": "license: other / license_name: mixed-permissive-and-cc-by-4.0 / license_link: LICENSE",
+      "source_url": "https://huggingface.co/api/datasets/GAIR/OpenSWE"
+    },
+    {
+      "quote": "LICENSE file in the HF repo has size 0 bytes (tree listing: {\"path\":\"LICENSE\",\"size\":0}); content itself not readable (401).",
+      "source_url": "https://huggingface.co/api/datasets/GAIR/OpenSWE/tree/main?recursive=1"
+    },
+    {
+      "quote": "By requesting access, you agree to the terms of the license and to cite the dataset in any resulting publications.",
+      "source_url": "https://huggingface.co/datasets/GAIR/OpenSWE"
+    },
+    {
+      "quote": "License\nThis project is licensed under AGPL-3.0. See LICENSE for details.",
+      "source_url": "https://huggingface.co/datasets/GAIR/OpenSWE (rendered dataset card, section \"License\")"
+    },
+    {
+      "quote": "We have fully open-sourced all repositories whose licenses allow redistribution, including those under MIT, Apache, GPL, and BSD licenses. For repositories that cannot be directly open-sourced, we provide the corresponding Dockerfile and evaluation scripts instead.",
+      "source_url": "https://huggingface.co/datasets/GAIR/OpenSWE (rendered dataset card, section \"Quick Start\")"
+    },
+    {
+      "quote": "This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).\n\nThe source code within the `/app` directory is derived from https://github.com/DeepSoftwareAnalytics/swe-factory repository and is subject to the following original licensing terms provided by the author: ... The source code within this repository are dual licenced. You may choose to use it under the terms of GNU Affero General Public License ... for non-commercial purposes, or you can obtain a commercial license for commercial use. ... By using this project, you agree to abide by the AGPL-3.0 terms for open-source and non-commercial use. If you intend to use this software for commercial purposes, you MUST obtain a separate license for the components within the `/app` directory from the original author.",
+      "source_url": "https://raw.githubusercontent.com/GAIR-NLP/OpenSWE/main/LICENSE (GitHub code repo GAIR-NLP/OpenSWE - applies to the pipeline code; whether it applies to the HF data is exactly what is unclear)"
+    },
+    {
+      "quote": "HF discussion #5 \"LIcense\" (opened 2026-09-21, status open, no maintainer reply): \"I've noticed that the HF entry has contradictory information regarding the dataset license. Could you maybe clarify what is the intended license for this dataset?\"",
+      "source_url": "https://huggingface.co/datasets/GAIR/OpenSWE/discussions/5"
+    }
+  ],
+  "provenance": {
+    "text": "Real GitHub PR-derived SWE tasks (SWE-bench-style: issue + gold patch + test patch) from Python repos, with LLM-built Docker environments and eval scripts; plus LLM agent trajectories. Pipeline code derived from SWE-Factory; inspired by SWE-rebench.",
+    "quotes": [
+      {
+        "quote": "OpenSWE is the largest fully transparent framework for SWE agent training in Python, comprising 45,320 executable Docker environments spanning over 12.8k repositories, with all Dockerfiles, evaluation scripts, and infrastructure fully open-sourced for reproducibility.",
+        "source_url": "https://huggingface.co/datasets/GAIR/OpenSWE"
+      },
+      {
+        "quote": "With $891K spent on environment construction and an additional $576K on trajectory sampling and difficulty-aware curation, the project yields about 13,000 curated trajectories from roughly 9,000 quality-guaranteed environments.",
+        "source_url": "https://huggingface.co/datasets/GAIR/OpenSWE"
+      },
+      {
+        "quote": "To improve the representativeness of our dataset, we retain only repositories with at least five GitHub stars ... We constrain the dataset to PRs from repositories whose primary programming language is Python ... each PR is required to have at least one associated issue with an issue description ... we require non-empty patches to non-test code",
+        "source_url": "https://arxiv.org/html/2603.13023 (Section 3.2 GitHub PR Filtering; NOTE: no license filter and no SWE-bench-repo exclusion among the four stages)"
+      },
+      {
+        "quote": "This infrastructure enables the simultaneous processing of an extensive corpus of approximately 572,114 GitHub PRs ... We use Deepseek-v3.2 as the construction model.",
+        "source_url": "https://arxiv.org/html/2603.13023"
+      },
+      {
+        "quote": "To construct our training data, we used the GLM-4.7 model to sample the trajectory from the entire OpenSWE and SWE-rebench (filtered) datasets four times under the OpenHands or SWE-Agent (temperature 1.0, 200k context, and 300 steps). We then collected all trajectories that were correct in one or two of the four attempts under the same instance. ... We also remove all data that contains 'git pull' in the bash action to avoid reward hacking.",
+        "source_url": "https://arxiv.org/html/2603.13023 (Section 5)"
+      },
+      {
+        "quote": "`openswe_oss.jsonl`: We have fully open-sourced all repositories whose licenses allow redistribution, including MIT, Apache, GPL, and BSD licenses. `openswe_other.jsonl`: For repositories that cannot be directly open-sourced, we provide the corresponding Dockerfile and evaluation scripts instead.",
+        "source_url": "https://raw.githubusercontent.com/GAIR-NLP/OpenSWE/main/README.md"
+      },
+      {
+        "quote": "OpenSWE is inspired by SWE-Rebench and SWE-Factory. We thank these teams for their open-source contributions.",
+        "source_url": "https://huggingface.co/datasets/GAIR/OpenSWE"
+      }
+    ]
+  },
+  "upstream_sources": [
+    {
+      "name": "~12.8k GitHub Python repositories (>=5 stars), 572,114 candidate PRs -> 45,320 environments",
+      "license": "per-repo; card says MIT/Apache/GPL/BSD repos are in openswe_oss.jsonl, others (non-redistributable) in openswe_other.jsonl without gold patch"
+    },
+    {
+      "name": "SWE-Factory (pipeline code under /app)",
+      "license": "dual: AGPL-3.0 for non-commercial, commercial licence required"
+    },
+    {
+      "name": "SWE-rebench (filtered) - trajectories are sampled from OpenSWE AND SWE-rebench",
+      "license": "nebius/SWE-rebench cc-by-4.0 (plausible origin of the \"cc-by-4.0\" in license_name - INFERRED)"
+    }
+  ],
+  "generation_models": [
+    {
+      "role": "environment construction (Dockerfile + eval script synthesis, multi-agent)",
+      "model": "DeepSeek-V3.2 (\"Deepseek-v3.2\")",
+      "provider": "not stated"
+    },
+    {
+      "role": "trajectories (openswe_traj.jsonl)",
+      "model": "GLM-4.7",
+      "provider": "Zhipu/Z.ai (hosting not stated)",
+      "scaffold": "paper: OpenHands or SWE-Agent; HF discussion #3 reports all released trajectories are SWE-Agent"
+    }
+  ],
+  "contamination_notes": "HIGH UNCERTAINTY. Neither the card nor the paper states any exclusion of SWE-bench / SWE-bench Verified / Multi-SWE-bench repositories or instances (grep of the paper for exclud*/overlap/contaminat*/dedup*/held-out in relation to SWE-bench returned nothing; the 4 PR filters are stars>=5, Python, linked issue, non-test code change). The GitHub README's own schema example uses `psf/requests` as the example repo name (requests is a SWE-bench test repo). HF discussion #4 cites instance `pandas-dev__pandas-17888` in filtered_ids.csv. With 12.8k Python repos selected by star count, inclusion of the 12 SWE-bench repos (django, sympy, scikit-learn, ...) and even identical PR instances is plausible and NOT ruled out by any statement - UNVERIFIED (data gated). The project reports SWE-bench Verified scores for models trained on it. Separate quality issue (discussion #4, 2026-05-28): \"A subset of eval_scripts apply the golden patch before grading — verifiers pass without any agent fix\".",
+  "configs_splits": [
+    {
+      "config": "openswe_oss",
+      "file": "openswe_oss.jsonl",
+      "file_bytes": 3250152211,
+      "rows": "unknown (gated)"
+    },
+    {
+      "config": "openswe_other",
+      "file": "openswe_other.jsonl",
+      "file_bytes": 240702167,
+      "rows": "unknown (gated)"
+    },
+    {
+      "config": "(no config declared)",
+      "file": "openswe_traj.jsonl",
+      "file_bytes": 4868162699,
+      "rows": "unknown (gated); paper: ~13,000 curated trajectories"
+    },
+    {
+      "config": "(aux)",
+      "file": "filtered_ids.csv",
+      "file_bytes": 237071,
+      "rows": "unknown; ids surviving difficulty-aware filtering (~9,000 envs per paper)"
+    }
+  ],
+  "size_bytes": 8363565195,
+  "schema": [
+    {
+      "name": "NOTE",
+      "type": "-",
+      "meaning": "Schema could NOT be read from the Hub (gated; datasets-server 401). Fields below are from the GitHub README \"Build Your Own Dataset\" schema table, i.e. the expected sample format, not a verified dump of the HF files."
+    },
+    {
+      "name": "instance_id",
+      "type": "str",
+      "meaning": "Unique identifier for the sample."
+    },
+    {
+      "name": "repo",
+      "type": "str",
+      "meaning": "Full GitHub repo name (e.g., `psf/requests`)."
+    },
+    {
+      "name": "base_commit",
+      "type": "str",
+      "meaning": "SHA of the commit immediately before the PR's first change."
+    },
+    {
+      "name": "end_commit",
+      "type": "str",
+      "meaning": "SHA of the final commit in the PR."
+    },
+    {
+      "name": "problem_statement",
+      "type": "str",
+      "meaning": "Issue description or problem to solve."
+    },
+    {
+      "name": "patch",
+      "type": "str",
+      "meaning": "Diff of changes to functional (non-test) code (gold patch; absent/empty for openswe_other per card)."
+    },
+    {
+      "name": "test_patch",
+      "type": "str",
+      "meaning": "Diff of changes to the test suite."
+    },
+    {
+      "name": "language",
+      "type": "str",
+      "meaning": "Primary programming language of the repo."
+    },
+    {
+      "name": "(HF release extras, inferred from card text)",
+      "type": "-",
+      "meaning": "Dockerfile and evaluation script (eval_script) per instance; trajectories file with agent messages."
+    }
+  ],
+  "example_row_summary": [
+    "No rows inspected: dataset is gated (\"auto\" approval with a form: First Name, Last Name, Organization, Country, Job Title, Intended Use [Research|Commercial|Education|Other], ip_location, \"I agree to cite this dataset\", \"I accept the license terms\"). Machine is not logged in -> 401."
+  ],
+  "surprises": [
+    "THREE mutually inconsistent licence statements: (1) metadata license_name \"mixed-permissive-and-cc-by-4.0\"; (2) card body \"This project is licensed under AGPL-3.0. See LICENSE for details.\"; (3) the LICENSE file in the HF repo is EMPTY (0 bytes). A user raised this on 2026-09-21 (discussion #5), unanswered.",
+    "The GitHub code LICENSE explicitly says commercial use of the SWE-Factory-derived /app components requires a separate commercial licence (AGPL \"for non-commercial purposes\").",
+    "Card states GPL-licensed repositories are included in openswe_oss.jsonl (\"MIT, Apache, GPL, and BSD\").",
+    "Access form requires legal name + organisation + intended use (incl. \"Commercial\" option) and acceptance of \"the license terms\" which are undefined (empty LICENSE).",
+    "Claims check: 45k+ envs / 12k+ repos / gated / mixed licensing -> card: 45,320 envs, 12.8k repos, gated=auto, license \"other\" CONFIRMED. Repo size 8.36 GB. arXiv paper title is \"daVinci-Env: Open SWE Environment Synthesis at Scale\".",
+    "Known defect report: some eval_scripts apply the gold patch before grading (discussion #4), i.e. \"executable verification\" is unreliable for a subset.",
+    "No stated SWE-bench decontamination at all."
+  ],
+  "unverified": [
+    "Actual licence that governs the data (contradictory statements; empty LICENSE).",
+    "Row counts and real column schema of openswe_oss.jsonl / openswe_other.jsonl / openswe_traj.jsonl.",
+    "Whether the 12 SWE-bench test repos (or SWE-bench instance PRs) are present - cannot check `repo` column while gated; nothing in card/paper excludes them.",
+    "Per-instance repo licence metadata (is there a licence column? unknown).",
+    "Whether trajectories include SWE-rebench-derived instances (paper says sampled from both).",
+    "Raw README.md could not be saved (401) - the file <owner>__<name>.README.md contains the 401 body; the rendered card text scraped from the public HTML page is saved as GAIR__OpenSWE.README.rendered_page.txt."
+  ],
+  "urls_consulted": [
+    "https://huggingface.co/api/datasets/GAIR/OpenSWE",
+    "https://huggingface.co/datasets/GAIR/OpenSWE/raw/main/README.md (401)",
+    "https://huggingface.co/datasets/GAIR/OpenSWE/raw/main/LICENSE (401)",
+    "https://huggingface.co/api/datasets/GAIR/OpenSWE/tree/main?recursive=1",
+    "https://datasets-server.huggingface.co/info?dataset=GAIR/OpenSWE (401)",
+    "https://datasets-server.huggingface.co/splits?dataset=GAIR/OpenSWE (401)",
+    "https://datasets-server.huggingface.co/size?dataset=GAIR/OpenSWE (401)",
+    "https://huggingface.co/datasets/GAIR/OpenSWE",
+    "https://huggingface.co/api/datasets/GAIR/OpenSWE/discussions",
+    "https://huggingface.co/api/datasets/GAIR/OpenSWE/discussions/5",
+    "https://huggingface.co/api/datasets/GAIR/OpenSWE/discussions/4",
+    "https://huggingface.co/api/datasets/GAIR/OpenSWE/discussions/3",
+    "https://arxiv.org/abs/2603.13023",
+    "https://arxiv.org/html/2603.13023",
+    "https://api.github.com/repos/GAIR-NLP/OpenSWE",
+    "https://raw.githubusercontent.com/GAIR-NLP/OpenSWE/main/LICENSE",
+    "https://raw.githubusercontent.com/GAIR-NLP/OpenSWE/main/README.md"
+  ],
+  "audit_meta": {
+    "collected_on": "2026-09-30 (BRT)",
+    "method": "Hub API + raw card + tree listing + datasets-server info/splits/size/first-rows + linked papers/GitHub; NO data files downloaded; machine not logged in to HF",
+    "extra_local_files": [
+      "GAIR__OpenSWE.README.md",
+      "GAIR__OpenSWE.api.json",
+      "GAIR__OpenSWE.tree.json"
+    ]
+  }
+}

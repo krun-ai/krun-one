@@ -1,0 +1,41 @@
+{
+ "cuda": true,
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "text_forward_argmax": 0,
+ "vision_forward": [
+  2,
+  256,
+  768
+ ],
+ "audio_encoder": [
+  2,
+  1500,
+  768
+ ],
+ "asr_decode": "Is there a way to see my money's source?",
+ "ocr_smoke": "Fatura\ntotal\nR$\n123,45",
+ "fusion_forward_alpha": [
+  1.0,
+  1.0
+ ],
+ "backward_only_trainable": true,
+ "gate": false,
+ "core_digest_unchanged": true,
+ "trainable_params": {
+  "image_adapter": 13042176,
+  "audio_adapter": 13042176,
+  "modality_emb": 7680,
+  "head_lora": 589824,
+  "total": 26681856,
+  "gates": 0,
+  "total_m15": 26681856
+ },
+ "frozen_params": {
+  "text_core": 879356931,
+  "siglip2_vision": 92930304,
+  "whisper_small_total": 241734912,
+  "whisper_encoder": 88154112,
+  "ocr": null
+ },
+ "PASS": true
+}

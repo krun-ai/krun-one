@@ -1,0 +1,64 @@
+{
+ "gates": {
+  "toolace_holdout (>=91.8% or CI lb > -1pp)": {
+   "value": 0.8725961538461539,
+   "paired_vs_v03": {
+    "delta": -0.04567307692307692,
+    "ci95": [
+     -0.08588048855905998,
+     -0.004715879033680128
+    ],
+    "n": 416
+   },
+   "pass": false
+  },
+  "native_non_en_drop_vs_cand1 <= 1pp": {
+   "delta": {
+    "delta": -0.0013951866062085804,
+    "ci95": [
+     -0.004564686934945162,
+     0.0017446679885155737
+    ],
+    "n": 2867
+   },
+   "pass": true
+  },
+  "cross_language_drop_vs_cand1 <= 1pp": {
+   "delta": {
+    "delta": -0.00022456770716370987,
+    "ci95": [
+     -0.005182865923777457,
+     0.004320381731424673
+    ],
+    "n": 4453
+   },
+   "pass": true
+  },
+  "k64_128_drop_vs_cand1 <= 1.5pp": {
+   "cand1": 0.9473705503800282,
+   "tool": 0.937989869511978,
+   "pass": true
+  },
+  "unseen_tool_fa_cov70 <= cand1": {
+   "cand1": 0.0847457627118644,
+   "tool": 0.01694915254237288,
+   "pass": true
+  },
+  "ece <= 0.05": {
+   "value": 0.03231841951980035,
+   "pass": true
+  },
+  "permutation >= 0.96": {
+   "value": 0.9754901960784313,
+   "pass": true
+  },
+  "latency_128_tools_p50 <= 50ms": {
+   "value": 42.167,
+   "pass": true
+  }
+ },
+ "verdict": "NOT_FROZEN",
+ "failing": [
+  "toolace_holdout (>=91.8% or CI lb > -1pp)"
+ ]
+}

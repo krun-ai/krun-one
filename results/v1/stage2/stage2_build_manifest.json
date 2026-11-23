@@ -1,0 +1,439 @@
+{
+ "seed": 20260929,
+ "n": 199475,
+ "source_file": "data/kd1_r2/train.jsonl",
+ "source_sha256": "d7668d3badd55e198498f09ac83af9068374bdde61b70aede3702da7fd1a8bf7",
+ "tool_share": 0.6992104273718511,
+ "replay_share": 0.30078957262814887,
+ "by_phase": {
+  "S2P1": 55473,
+  "S2R": 60000,
+  "S2P2": 49048,
+  "S2P3": 34954
+ },
+ "by_phase_tool": {
+  "S2P1": 55473,
+  "S2P2": 49048,
+  "S2P3": 34954
+ },
+ "by_source": {
+  "multiwoz": 5040,
+  "apibench": 15324,
+  "toolace": 49047,
+  "when2call": 13650,
+  "xlam": 14718,
+  "intent_as_function": 15539,
+  "toolmind": 18569,
+  "bitext": 479,
+  "xlam_irrelevance": 731,
+  "toolace_pool": 1437,
+  "hermes": 1495,
+  "banking77": 330,
+  "johin": 1810,
+  "clinc150": 664,
+  "snips": 177,
+  "massive": 462,
+  "None": 3
+ },
+ "by_k_tool_choice": {
+  "2": 29747,
+  "3": 14642,
+  "4": 30636,
+  "5": 4847,
+  "6": 3706,
+  "7": 3929,
+  "8": 11632,
+  "9": 1783,
+  "10": 1434,
+  "11": 1029,
+  "12": 733,
+  "13": 830,
+  "14": 1177,
+  "15": 1478,
+  "16": 8345,
+  "17": 555,
+  "18": 529,
+  "19": 463,
+  "20": 359,
+  "21": 236,
+  "22": 141,
+  "23": 106,
+  "24": 101,
+  "25": 108,
+  "26": 140,
+  "27": 162,
+  "28": 310,
+  "29": 336,
+  "30": 432,
+  "31": 398,
+  "32": 4436,
+  "33": 197,
+  "34": 226,
+  "35": 200,
+  "36": 166,
+  "37": 162,
+  "38": 106,
+  "39": 71,
+  "40": 63,
+  "41": 38,
+  "42": 29,
+  "43": 47,
+  "44": 12,
+  "45": 4,
+  "46": 11,
+  "47": 7,
+  "48": 5,
+  "49": 9,
+  "50": 8,
+  "51": 12,
+  "52": 12,
+  "53": 9,
+  "54": 16,
+  "55": 27,
+  "56": 31,
+  "57": 49,
+  "58": 100,
+  "59": 134,
+  "60": 147,
+  "61": 102,
+  "62": 83,
+  "63": 58,
+  "64": 2584,
+  "65": 33,
+  "66": 27,
+  "67": 30,
+  "68": 31,
+  "69": 26,
+  "70": 19,
+  "71": 24,
+  "72": 13,
+  "73": 17,
+  "74": 13,
+  "75": 8,
+  "76": 14,
+  "77": 6,
+  "78": 3,
+  "79": 4,
+  "80": 5,
+  "81": 3,
+  "82": 1,
+  "83": 1,
+  "84": 1,
+  "118": 32,
+  "119": 47,
+  "120": 38,
+  "121": 21,
+  "122": 2,
+  "123": 1,
+  "126": 1,
+  "128": 477
+ },
+ "derived": {
+  "native+random": 9372,
+  "s2_small_gold": 14445,
+  "native": 8322,
+  "native+hard_v2": 14589,
+  "hard_v2": 13001,
+  "fixed": 6840,
+  "random": 5907,
+  "s2_none_small": 4286,
+  "s2_small_query": 8889
+ },
+ "by_language": {
+  "fr-FR": 30630,
+  "en-US": 98940,
+  "es-419": 27569,
+  "pt-BR": 35120,
+  "es-ES": 3484,
+  "pt-PT": 3336,
+  "en": 395,
+  "fr": 1
+ },
+ "cross_language": 100330,
+ "xlam": {
+  "source": "Salesforce/xlam-function-calling-60k (argilla re-host, origin xLAM) + xlam-irrelevance-7.5k",
+  "revision": "as pinned in data/kd1_tools_v2/manifest.json",
+  "license_note": "CC-BY-4.0 dataset card + 'research purposes only' note; owner decision approved_by_owner (docs/KRUN_XLAM_OFFICIAL_LICENSE_REAUDIT.md)",
+  "decisions": 15449,
+  "share_of_total": 0.07744830179220454,
+  "share_of_tool_block": 0.11076537013801757,
+  "unique_tool_names": 11747,
+  "unique_tool_names_only_in_xlam": 0,
+  "unseen_split_influence": "none: every xLAM tool matching the protected registry (incl. the ToolACE v0 val/holdout distractors and KrunBench v1 unseen tools) is excluded"
+ },
+ "protected_sanitize": {
+  "dropped_decisions": 61128,
+  "decisions_with_protected_negatives_removed": 60932,
+  "protected_negatives_removed": 516474
+ },
+ "fill": {
+  "S2P1|action/when2call": {
+   "want": 3810,
+   "got": 3810,
+   "available": 15373
+  },
+  "S2P1|action/xlam": {
+   "want": 952,
+   "got": 952,
+   "available": 9392
+  },
+  "S2P1|multi/multiwoz": {
+   "want": 95,
+   "got": 14,
+   "available": 168,
+   "topup_from": "multi/toolace",
+   "topup_got": 0
+  },
+  "S2P1|multi/toolace": {
+   "want": 1429,
+   "got": 984,
+   "available": 3706,
+   "topup_from": "multi/toolace",
+   "topup_got": 0
+  },
+  "S2P1|multi/toolmind": {
+   "want": 952,
+   "got": 952,
+   "available": 2096
+  },
+  "S2P1|multi/xlam": {
+   "want": 952,
+   "got": 952,
+   "available": 11496
+  },
+  "S2P1|noul/multiwoz": {
+   "want": 952,
+   "got": 952,
+   "available": 5000
+  },
+  "S2P1|noul/toolace": {
+   "want": 1429,
+   "got": 1429,
+   "available": 2614
+  },
+  "S2P1|noul/when2call": {
+   "want": 2857,
+   "got": 2857,
+   "available": 12403
+  },
+  "S2P1|noul/xlam": {
+   "want": 952,
+   "got": 952,
+   "available": 6519
+  },
+  "S2P1|ood/toolace": {
+   "want": 1905,
+   "got": 1905,
+   "available": 34968
+  },
+  "S2P2|der_small4/any_xl": {
+   "want": 5714,
+   "got": 5714,
+   "available": 174292
+  },
+  "S2P2|route_hard/apibench": {
+   "want": 5714,
+   "got": 5714,
+   "available": 36356
+  },
+  "S2P2|route_hard/hermes": {
+   "want": 762,
+   "got": 762,
+   "available": 1277
+  },
+  "S2P2|route_hard/intent_as_function": {
+   "want": 5714,
+   "got": 5714,
+   "available": 38031
+  },
+  "S2P2|route_hard/johin": {
+   "want": 762,
+   "got": 762,
+   "available": 2147
+  },
+  "S2P2|route_hard/multiwoz": {
+   "want": 1905,
+   "got": 1905,
+   "available": 23522
+  },
+  "S2P2|route_hard/toolace": {
+   "want": 14286,
+   "got": 14286,
+   "available": 102931
+  },
+  "S2P2|route_hard/toolmind": {
+   "want": 6667,
+   "got": 6667,
+   "available": 34057
+  },
+  "S2P2|route_hard/when2call": {
+   "want": 1429,
+   "got": 1429,
+   "available": 3715
+  },
+  "S2P2|route_hard/xlam": {
+   "want": 3333,
+   "got": 3333,
+   "available": 51174
+  },
+  "S2P3|adv_k2/any": {
+   "want": 2571,
+   "got": 2571,
+   "available": 15211
+  },
+  "S2P3|der_ood/any": {
+   "want": 4286,
+   "got": 4286,
+   "available": 111979
+  },
+  "S2P3|der_small/apibench": {
+   "want": 2381,
+   "got": 2381,
+   "available": 29305
+  },
+  "S2P3|der_small/hermes": {
+   "want": 381,
+   "got": 381,
+   "available": 1249
+  },
+  "S2P3|der_small/intent_as_function": {
+   "want": 1905,
+   "got": 1905,
+   "available": 83261
+  },
+  "S2P3|der_small/johin": {
+   "want": 286,
+   "got": 286,
+   "available": 2121
+  },
+  "S2P3|der_small/toolace": {
+   "want": 7619,
+   "got": 7619,
+   "available": 107706
+  },
+  "S2P3|der_small/toolmind": {
+   "want": 2857,
+   "got": 2857,
+   "available": 37592
+  },
+  "S2P3|der_small/when2call": {
+   "want": 762,
+   "got": 762,
+   "available": 3668
+  },
+  "S2P3|der_small/xlam": {
+   "want": 1429,
+   "got": 1429,
+   "available": 52505
+  },
+  "S2P3|ood_irr/when2call": {
+   "want": 1905,
+   "got": 1905,
+   "available": 5949
+  },
+  "S2P3|ood_native/any": {
+   "want": 2857,
+   "got": 2857,
+   "available": 12981
+  },
+  "S2P3|ood_removed/any": {
+   "want": 3810,
+   "got": 3810,
+   "available": 96083
+  },
+  "S2P3|typo/any": {
+   "want": 1905,
+   "got": 1905,
+   "available": 17170
+  },
+  "S2P1|ood/any": {
+   "want": 2667,
+   "got": 2667,
+   "available": 135782
+  },
+  "S2P1|route_core/apibench": {
+   "want": 4762,
+   "got": 4762,
+   "available": 9644
+  },
+  "S2P1|route_core/hermes": {
+   "want": 571,
+   "got": 344,
+   "available": 515,
+   "topup_from": "route_core/toolace",
+   "topup_got": 227
+  },
+  "S2P1|route_core/intent_as_function": {
+   "want": 4762,
+   "got": 4762,
+   "available": 99388
+  },
+  "S2P1|route_core/johin": {
+   "want": 762,
+   "got": 762,
+   "available": 853
+  },
+  "S2P1|route_core/multiwoz": {
+   "want": 2857,
+   "got": 580,
+   "available": 2047,
+   "topup_from": "route_core/toolace",
+   "topup_got": 2277
+  },
+  "S2P1|route_core/toolace": {
+   "want": 13333,
+   "got": 13333,
+   "available": 50866
+  },
+  "S2P1|route_core/toolmind": {
+   "want": 5714,
+   "got": 5714,
+   "available": 18175
+  },
+  "S2P1|route_core/when2call": {
+   "want": 1429,
+   "got": 1244,
+   "available": 1559,
+   "topup_from": "route_core/toolace",
+   "topup_got": 185
+  },
+  "S2P1|route_core/xlam": {
+   "want": 2857,
+   "got": 2857,
+   "available": 23612
+  },
+  "S2P2|ood/any": {
+   "want": 2762,
+   "got": 2762,
+   "available": 135782
+  },
+  "S2R|replay/choice_intent": {
+   "want": 28571,
+   "got": 28571,
+   "available": 282980
+  },
+  "S2R|replay/intent_ood": {
+   "want": 9524,
+   "got": 9524,
+   "available": 107710
+  },
+  "S2R|replay/multi": {
+   "want": 6667,
+   "got": 6667,
+   "available": 62000
+  },
+  "S2R|replay/noul": {
+   "want": 7619,
+   "got": 7619,
+   "available": 92240
+  },
+  "S2R|replay/score": {
+   "want": 7619,
+   "got": 7619,
+   "available": 79998
+  }
+ },
+ "leakage": {},
+ "protected_tool_violations": {},
+ "sha256": "9aad201845d4683f6db3a0621602e578ac9ec79800878db3f5f9ce48c5d37e0f"
+}

@@ -1,0 +1,100 @@
+{
+  "device": "cpu",
+  "gpu": null,
+  "torch": "2.14.0+cu126",
+  "n_questions": 12,
+  "v1_sha256": "8c620de795870c88734b94297f02d562487b2907add7305d414f456d5b806db0",
+  "candidates": {
+    "V11-A-W1536-L22-F8192": {
+      "route": "exact: FFN columns zero / identity blocks",
+      "params": 1476258819,
+      "build_seconds": 99.0,
+      "report": {
+        "expanded": [
+          "layers.*.mlp.Wi (4608, 1536) -> (16384, 1536) (old rows kept per GLU half, new rows random)",
+          "layers.*.mlp.Wo (1536, 2304) -> (1536, 8192) (new columns zero)"
+        ],
+        "new_identity_blocks": []
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 0.0,
+        "max_abs_dlogit_apply": 0.0,
+        "max_abs_d_null": 0.0,
+        "max_abs_d_ans": 0.0,
+        "max_abs_dp": 0.0,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0
+      }
+    },
+    "V1+head-L4": {
+      "route": "exact: FFN columns zero / identity blocks",
+      "params": 917139459,
+      "build_seconds": 57.7,
+      "report": {
+        "expanded": [],
+        "new_identity_blocks": [
+          "head.layers.2",
+          "head.layers.3"
+        ]
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 0.0,
+        "max_abs_dlogit_apply": 0.0,
+        "max_abs_d_null": 0.0,
+        "max_abs_d_ans": 0.0,
+        "max_abs_dp": 0.0,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0
+      }
+    },
+    "K1-W1536-L22+ci2": {
+      "route": "identity-initialized candidate-interaction layers",
+      "params": 917139459,
+      "build_seconds": 60.7,
+      "report": {},
+      "fp32": {
+        "max_abs_dlogit_rank": 0.0,
+        "max_abs_dlogit_apply": 0.0,
+        "max_abs_d_null": 0.0,
+        "max_abs_d_ans": 0.0,
+        "max_abs_dp": 0.0,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0
+      }
+    },
+    "V11-D-W2048-L22-F3072": {
+      "route": "width: centered stream + carriers",
+      "params": 1388482563,
+      "build_seconds": 106.5,
+      "report": {
+        "n": 1536,
+        "N": 2048,
+        "pads": 512,
+        "carriers_layer0_mean": 2,
+        "absorbers": 2,
+        "carriers_final_norm_mean": 508,
+        "lambda": 0.001,
+        "kappa": 0.01,
+        "norm_eps_encoder": 7.500000000000001e-06,
+        "embedding_ln_gain": 1.110506251641442,
+        "old_heads": 24,
+        "new_heads": 32,
+        "ffn": [
+          2304,
+          3072
+        ],
+        "note": "LayerNorm eps values are module attributes set by this function (eps * n/N); a serving spec for a width-grown model must carry them"
+      },
+      "fp32": {
+        "max_abs_dlogit_rank": 0.0035158395767211914,
+        "max_abs_dlogit_apply": 0.003969669342041016,
+        "max_abs_d_null": 0.002007722854614258,
+        "max_abs_d_ans": 0.00014300644397735596,
+        "max_abs_dp": 0.0008252561092376709,
+        "argmax_agreement": 1.0,
+        "mean_abs_dlogit_rank": 0.0014852160820737481
+      }
+    }
+  },
+  "note": "laptop CPU, fp32, 12 probe questions; exact routes are bitwise identical"
+}

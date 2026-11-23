@@ -1,0 +1,11 @@
+{
+  "source": "jhu-clsp/mmBERT-base",
+  "source_dir": "/workspace/hfcache/models--jhu-clsp--mmBERT-base/snapshots/c5955035435e2bf121cde7f3c8863ef52ff35d82",
+  "noise_std": 0.001,
+  "seed": 20260926,
+  "params_source": 307786240,
+  "params_grown": 837090304,
+  "max_abs_logit_diff": 0.9483003616333008,
+  "max_abs_hidden_diff": 0.026409149169921875,
+  "top1_agreement": 1.0
+}

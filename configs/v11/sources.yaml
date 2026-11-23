@@ -1,0 +1,76 @@
+# Krun Technical Decision Corpus v1 — source registry (v1.1). Verdicts: data/v11/DATASET_AUDIT.md (audited 2026-09-30,
+# evidence in results/v11/dataset_audit/evidence/). A builder must refuse every source whose status is not APPROVED.
+sources:
+  swe_smith:
+    hf_id: SWE-bench/SWE-smith
+    revision: ea6d7173829c7ec8fa16c22055699ff2e9188091
+    license: MIT (card metadata)
+    status: APPROVED
+    tier: A
+    allowlist: data/v11/swe_smith_allowlist.json    # 180 repositories; denylist: data/v11/swe_smith_denylist.json (42)
+    mandatory_filters:
+      - drop SWE-bench eval repositories (astropy, django, flask, matplotlib, pylint, pytest, requests, scikit-learn, seaborn, sphinx, sympy, xarray)
+      - drop GPL / LGPL / "Other"-licensed repositories unless cleared by the owner
+      - split by repository (KrunTechBench repositories never in training)
+      - use the execution-verified decision (file / module / test group), not the diff text, as the target
+  themis_code_preference:
+    hf_id: project-themis/Themis-CodePreference
+    revision: 7c366b23590cc9ff8d372bb47280fcd474536344
+    license: Apache-2.0 (card) — upstream sources differ
+    status: EXCLUDED_PENDING_REVIEW     # owner decision 2026-10-01: not used in R1 / R2, not downloaded
+    sub_sources:
+      CodeR-Pile: {status: REJECTED, reason: "upstream cc-by-nc-sa-4.0 (non-commercial)"}
+      Commit-Preference: {status: REVIEW_REQUIRED, reason: "third-party repo files; agpl/lgpl/epl/mpl in the mining filter; no per-row license"}
+      measured_or_tested: {members: [Venus, CodeNet, ECCO, Pie4Perf, RunBugRun, CodeScaleR], status: REVIEW_REQUIRED, tier: A,
+                           reason: "upstream licenses not stated on the mirrors; best candidates once read"}
+      synthetic: {members: [Bugged-Instruct, ProSec, Cybernative-DPO], status: REVIEW_REQUIRED, tier: D}
+  nemotron_sft_swe_v2:
+    hf_id: nvidia/Nemotron-SFT-SWE-v2
+    revision: bd151f3f2d89c4804dda0083d912bd9f6a0a9fb7
+    license: CC-BY-4.0 (+ Apache-2.0 / MIT / BSD), "ready for commercial use"
+    status: REVIEW_REQUIRED
+    tier: C
+    reason: "no repo / instance columns; SWE-bench Verified exclusion not stated on the card; outcomes not execution-verified"
+  software_strategist_v1:
+    hf_id: jtregunna/software-strategist-v1
+    revision: 7391ecae65a406100d1bb031216e94542991d9e2
+    license: MIT
+    status: REVIEW_REQUIRED
+    tier: D
+    reason: "synthetic; generating model / provider not stated; when_to_use / anti_patterns exist only in entries/*.json"
+  johin_function_calling:
+    hf_id: Johin/function-calling-dataset
+    revision: ef3f5c4ce7cbf80b55f017fdb8695226cfad0976
+    license: Apache-2.0 (card)
+    status: REVIEW_REQUIRED
+    v1_status: approved_with_notice      # configs/v1/sources.yaml — unchanged; replay only, no new use
+    reason: "generated with Gemini 2.0 Flash (provider terms on competing models); 30 functions"
+  openswe:
+    hf_id: GAIR/OpenSWE
+    revision: a8db93af5335df2c8baac0cd1ff367e4d475d3d7
+    license: contradictory (metadata mixed-permissive-and-cc-by-4.0; card AGPL-3.0; empty LICENSE)
+    status: REVIEW_REQUIRED
+    engineering_recommendation: REJECTED
+  stack_overflow:
+    status: EXCLUDED_UNTIL_REVIEWED
+  krun_environments:
+    path: src/krun_one/v11/envs.py
+    license: own
+    status: APPROVED
+    tier: A
+    note: "truth by simulation / arithmetic / explicit rule tables"
+  jevbench_public:
+    url: https://github.com/fstandhartinger/jevbench   # bb05a335, MIT
+    path: data/v11/external/jevbench
+    status: EVAL_ONLY          # a public benchmark other decision models are ranked on — never a training source
+    note: "231 public decisions (easy / standard / hard) + published per-task outcomes; held-out half not public"
+    r3_rule: "no item, paraphrase, mutation, counterfactual, hard negative, label or published answer may enter any builder; data/v11/r3/manifest.json records an 8-gram overlap check (must be 0)"
+  krun_capability_curriculum:         # R3
+    path: src/krun_one/v11/capability.py
+    license: own
+    status: APPROVED
+    tier: A
+    note: "numeric, temporal, multi-hop, long-policy, trade-off, mixed; scenarios / entities / rules written for the module; labels computed (arithmetic, calendar, graph walk, rule interpreter)"
+  ollama_models:                      # R3: reviewer role only
+    status: REVIEWER_ONLY
+    note: "scripts/v11/ollama_review.py — disagreement with a computed label sends a person to the generator; no model-written or model-labelled training example. Provenance per reviewed item in results/v11/r3/quality_review/"

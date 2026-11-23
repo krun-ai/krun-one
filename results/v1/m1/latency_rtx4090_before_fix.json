@@ -1,0 +1,66 @@
+{
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "dtype": "bf16",
+ "iters": 50,
+ "text_only": {
+  "typical_1q_k4_ctx48": {
+   "frozen_artifact_p50_ms": 17.720250645652413,
+   "with_m1_loaded_p50_ms": 17.65083335340023,
+   "delta_pct": -0.3917399005257005,
+   "answers_identical": true
+  },
+  "typical_4q_mixed_ctx96": {
+   "frozen_artifact_p50_ms": 20.52123472094536,
+   "with_m1_loaded_p50_ms": 20.351434592157602,
+   "delta_pct": -0.8274362195879292,
+   "answers_identical": true
+  },
+  "k_32_tools_ctx64": {
+   "frozen_artifact_p50_ms": 18.476363038644195,
+   "with_m1_loaded_p50_ms": 18.55854573659599,
+   "delta_pct": 0.4447991078109004,
+   "answers_identical": true
+  },
+  "k_128_tools_ctx64": {
+   "frozen_artifact_p50_ms": 47.53954941406846,
+   "with_m1_loaded_p50_ms": 47.42920584976673,
+   "delta_pct": -0.23210898223001708,
+   "answers_identical": true
+  }
+ },
+ "multimodal": {
+  "image": {
+   "preprocess_cpu_ms_p50": 4.034882411360741,
+   "tower_ms_p50": 7.868498098105192,
+   "projection_fusion_ms_p50": 0.8490551263093948,
+   "krun_decision_ms_p50": 17.785332864150405,
+   "total_ms_p50": 30.559493927285075,
+   "total_ms_p95": 34.05135977081954
+  },
+  "document": {
+   "preprocess_cpu_ms_p50": 13.376497896388173,
+   "tower_ms_p50": 8.423097897320986,
+   "projection_fusion_ms_p50": 0.8730760309845209,
+   "krun_decision_ms_p50": 17.82545493915677,
+   "total_ms_p50": 40.50359106622636,
+   "total_ms_p95": 42.680825921706855
+  },
+  "audio_5s": {
+   "preprocess_cpu_ms_p50": 5.176757462322712,
+   "tower_ms_p50": 7.950356230139732,
+   "projection_fusion_ms_p50": 0.950029119849205,
+   "krun_decision_ms_p50": 18.19399301894009,
+   "total_ms_p50": 84.82882636599243,
+   "total_ms_p95": 102.1401229314506
+  },
+  "audio_15s": {
+   "preprocess_cpu_ms_p50": 8.53792647831142,
+   "tower_ms_p50": 8.587042801082134,
+   "projection_fusion_ms_p50": 1.0070553980767727,
+   "krun_decision_ms_p50": 18.786408472806215,
+   "total_ms_p50": 70.9213549271226,
+   "total_ms_p95": 100.92488480731845
+  }
+ },
+ "G4_pass": true
+}

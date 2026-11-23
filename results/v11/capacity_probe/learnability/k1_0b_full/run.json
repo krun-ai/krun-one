@@ -1,0 +1,815 @@
+{
+ "tag": "k1_0b_full",
+ "args": {
+  "init": "k1-0b",
+  "train": "full",
+  "tag": "k1_0b_full",
+  "steps": 2000,
+  "max_tokens": 12288,
+  "max_questions": 32,
+  "lr_encoder": 2e-05,
+  "lr_head": 0.0001,
+  "head_extra": 0,
+  "head_ffn_mult": 0,
+  "cand_layers": 0,
+  "seed": 20260930,
+  "smoke": false
+ },
+ "spec": {
+  "name": "mmbert-base-x2",
+  "encoder": {
+   "vocab_size": 256000,
+   "hidden_size": 1536,
+   "num_layers": 22,
+   "num_heads": 24,
+   "intermediate_size": 2304,
+   "global_every": 3,
+   "local_window": 128,
+   "rope_theta_global": 160000.0,
+   "rope_theta_local": 160000.0,
+   "max_position": 8192,
+   "pad_token_id": 0,
+   "bos_token_id": 2,
+   "eos_token_id": 1,
+   "mask_token_id": 4
+  },
+  "decision": {
+   "head_layers": 2,
+   "head_ffn_mult": 2,
+   "n_qtypes": 4,
+   "scorer_outputs": 2,
+   "answerability_head": true
+  },
+  "notes": ""
+ },
+ "params_total": 879356931,
+ "params_non_embedding": 486140931,
+ "params_trainable": 879356931,
+ "train_examples": 62400,
+ "loss": "v1 finetune.yaml loss (oe, w_apply 0.25)",
+ "train_seconds": 1243.4,
+ "log": [
+  {
+   "step": 50,
+   "loss": 2.5054293966293333,
+   "train_acc": 0.1776,
+   "seconds": 31.3,
+   "by": {
+    "routing/feat": 0.465,
+    "routing/raw": 0.338,
+    "scheduling/feat": 0.132,
+    "scheduling/raw": 0.121,
+    "sizing/feat": 0.078,
+    "sizing/raw": 0.093,
+    "techsel/feat": 0.174,
+    "techsel/raw": 0.087,
+    "tetris/feat": 0.104,
+    "tetris/raw": 0.128
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 100,
+   "loss": 2.0490172469615935,
+   "train_acc": 0.3659090909090909,
+   "seconds": 61.9,
+   "by": {
+    "routing/feat": 0.669,
+    "routing/raw": 0.477,
+    "scheduling/feat": 0.439,
+    "scheduling/raw": 0.104,
+    "sizing/feat": 0.443,
+    "sizing/raw": 0.179,
+    "techsel/feat": 0.155,
+    "techsel/raw": 0.21,
+    "tetris/feat": 0.674,
+    "tetris/raw": 0.069
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 150,
+   "loss": 1.537658970952034,
+   "train_acc": 0.49162011173184356,
+   "seconds": 92.6,
+   "by": {
+    "routing/feat": 0.926,
+    "routing/raw": 0.58,
+    "scheduling/feat": 0.775,
+    "scheduling/raw": 0.105,
+    "sizing/feat": 0.79,
+    "sizing/raw": 0.232,
+    "techsel/feat": 0.092,
+    "techsel/raw": 0.169,
+    "tetris/feat": 0.898,
+    "tetris/raw": 0.144
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 200,
+   "loss": 1.3605065969750285,
+   "train_acc": 0.5501945525291829,
+   "seconds": 123.2,
+   "by": {
+    "routing/feat": 0.936,
+    "routing/raw": 0.54,
+    "scheduling/feat": 0.92,
+    "scheduling/raw": 0.284,
+    "sizing/feat": 0.861,
+    "sizing/raw": 0.244,
+    "techsel/feat": 0.188,
+    "techsel/raw": 0.13,
+    "tetris/feat": 0.956,
+    "tetris/raw": 0.078
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 250,
+   "loss": 0.8952628598804586,
+   "train_acc": 0.6859567901234568,
+   "seconds": 153.9,
+   "by": {
+    "routing/feat": 0.97,
+    "routing/raw": 0.583,
+    "scheduling/feat": 0.956,
+    "scheduling/raw": 0.286,
+    "sizing/feat": 0.974,
+    "sizing/raw": 0.381,
+    "techsel/feat": 0.2,
+    "techsel/raw": 0.148,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.111
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 300,
+   "loss": 0.9881475735001731,
+   "train_acc": 0.6620180475799836,
+   "seconds": 186.5,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.635,
+    "scheduling/feat": 0.985,
+    "scheduling/raw": 0.553,
+    "sizing/feat": 0.93,
+    "sizing/raw": 0.484,
+    "techsel/feat": 0.603,
+    "techsel/raw": 0.217,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.208
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 350,
+   "loss": 0.9562322868173943,
+   "train_acc": 0.679098679098679,
+   "seconds": 217.9,
+   "by": {
+    "routing/feat": 0.979,
+    "routing/raw": 0.617,
+    "scheduling/feat": 0.972,
+    "scheduling/raw": 0.407,
+    "sizing/feat": 0.945,
+    "sizing/raw": 0.603,
+    "techsel/feat": 0.797,
+    "techsel/raw": 0.482,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.112
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 400,
+   "loss": 0.6306465666851727,
+   "train_acc": 0.7890625,
+   "seconds": 249.9,
+   "by": {
+    "routing/feat": 0.989,
+    "routing/raw": 0.728,
+    "scheduling/feat": 0.989,
+    "scheduling/raw": 0.562,
+    "sizing/feat": 0.986,
+    "sizing/raw": 0.796,
+    "techsel/feat": 0.846,
+    "techsel/raw": 0.562,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.15
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 450,
+   "loss": 0.7626785129441123,
+   "train_acc": 0.7598078462770216,
+   "seconds": 279.8,
+   "by": {
+    "routing/feat": 0.984,
+    "routing/raw": 0.683,
+    "scheduling/feat": 0.992,
+    "scheduling/raw": 0.486,
+    "sizing/feat": 0.994,
+    "sizing/raw": 0.862,
+    "techsel/feat": 0.852,
+    "techsel/raw": 0.435,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.048
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 500,
+   "loss": 0.7523780017721583,
+   "train_acc": 0.7485250737463127,
+   "seconds": 307.9,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.743,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.517,
+    "sizing/feat": 0.988,
+    "sizing/raw": 0.882,
+    "techsel/feat": 0.843,
+    "techsel/raw": 0.52,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.156
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 550,
+   "loss": 0.4685335557724284,
+   "train_acc": 0.8722910216718266,
+   "seconds": 339.7,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.735,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.457,
+    "sizing/feat": 0.993,
+    "sizing/raw": 0.883,
+    "techsel/feat": 0.982,
+    "techsel/raw": 0.805,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.077
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 600,
+   "loss": 0.6758377643373388,
+   "train_acc": 0.7838063439065108,
+   "seconds": 371.0,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.733,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.608,
+    "sizing/feat": 0.994,
+    "sizing/raw": 0.935,
+    "techsel/feat": 0.897,
+    "techsel/raw": 0.753,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.168
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 650,
+   "loss": 0.626019688959932,
+   "train_acc": 0.803125,
+   "seconds": 402.7,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.711,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.653,
+    "sizing/feat": 0.984,
+    "sizing/raw": 0.899,
+    "techsel/feat": 0.986,
+    "techsel/raw": 0.933,
+    "tetris/feat": 0.988,
+    "tetris/raw": 0.126
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 700,
+   "loss": 0.5729952985854471,
+   "train_acc": 0.8290598290598291,
+   "seconds": 433.7,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.77,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.654,
+    "sizing/feat": 0.983,
+    "sizing/raw": 0.934,
+    "techsel/feat": 0.965,
+    "techsel/raw": 0.862,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.067
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 750,
+   "loss": 0.5373860431098728,
+   "train_acc": 0.8207547169811321,
+   "seconds": 465.0,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.727,
+    "scheduling/feat": 0.985,
+    "scheduling/raw": 0.772,
+    "sizing/feat": 0.994,
+    "sizing/raw": 0.938,
+    "techsel/feat": 0.965,
+    "techsel/raw": 0.764,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.138
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 800,
+   "loss": 0.4902467971059377,
+   "train_acc": 0.8400315208825847,
+   "seconds": 496.8,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.771,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.728,
+    "sizing/feat": 0.994,
+    "sizing/raw": 0.988,
+    "techsel/feat": 0.973,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.071
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 850,
+   "loss": 0.560804457928316,
+   "train_acc": 0.8297872340425532,
+   "seconds": 527.8,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.739,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.776,
+    "sizing/feat": 0.994,
+    "sizing/raw": 0.956,
+    "techsel/feat": 1.0,
+    "techsel/raw": 0.933,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.146
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 900,
+   "loss": 0.40215460855666607,
+   "train_acc": 0.8784099766173032,
+   "seconds": 559.0,
+   "by": {
+    "routing/feat": 0.994,
+    "routing/raw": 0.712,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.757,
+    "sizing/feat": 1.0,
+    "sizing/raw": 0.986,
+    "techsel/feat": 1.0,
+    "techsel/raw": 0.906,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.132
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 950,
+   "loss": 0.3405928359096106,
+   "train_acc": 0.8963607594936709,
+   "seconds": 588.8,
+   "by": {
+    "routing/feat": 0.994,
+    "routing/raw": 0.671,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.825,
+    "sizing/feat": 1.0,
+    "sizing/raw": 0.973,
+    "techsel/feat": 1.0,
+    "techsel/raw": 0.964,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.207
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1000,
+   "loss": 0.3726443327319248,
+   "train_acc": 0.8850931677018633,
+   "seconds": 620.0,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.736,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.844,
+    "sizing/feat": 1.0,
+    "sizing/raw": 0.984,
+    "techsel/feat": 1.0,
+    "techsel/raw": 0.957,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.102
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1050,
+   "loss": 0.6074158486736451,
+   "train_acc": 0.8204724409448819,
+   "seconds": 651.9,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.768,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.811,
+    "sizing/feat": 0.989,
+    "sizing/raw": 0.991,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.112
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1100,
+   "loss": 0.42797612108184696,
+   "train_acc": 0.8568129330254042,
+   "seconds": 681.8,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.78,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.785,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 0.974,
+    "techsel/raw": 0.908,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.157
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1150,
+   "loss": 0.4011917964065924,
+   "train_acc": 0.8592,
+   "seconds": 712.6,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.793,
+    "scheduling/feat": 0.994,
+    "scheduling/raw": 0.804,
+    "sizing/feat": 1.0,
+    "sizing/raw": 0.985,
+    "techsel/feat": 1.0,
+    "techsel/raw": 0.924,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.195
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1200,
+   "loss": 0.41820802023222314,
+   "train_acc": 0.856353591160221,
+   "seconds": 743.7,
+   "by": {
+    "routing/feat": 0.994,
+    "routing/raw": 0.888,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.842,
+    "sizing/feat": 1.0,
+    "sizing/raw": 0.991,
+    "techsel/feat": 1.0,
+    "techsel/raw": 0.952,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.079
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1250,
+   "loss": 0.3903627768950446,
+   "train_acc": 0.8724082934609251,
+   "seconds": 776.2,
+   "by": {
+    "routing/feat": 0.995,
+    "routing/raw": 0.755,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.835,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.143
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1300,
+   "loss": 0.42059411884258224,
+   "train_acc": 0.875515251442704,
+   "seconds": 808.0,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.87,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.846,
+    "sizing/feat": 0.99,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.125
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1350,
+   "loss": 0.44726650415786934,
+   "train_acc": 0.868362004487659,
+   "seconds": 837.7,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.849,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.87,
+    "sizing/feat": 1.0,
+    "sizing/raw": 0.993,
+    "techsel/feat": 1.0,
+    "techsel/raw": 0.974,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.093
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1400,
+   "loss": 0.43467325453049854,
+   "train_acc": 0.8497959183673469,
+   "seconds": 870.0,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.883,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.821,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.164
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1450,
+   "loss": 0.4812579972890035,
+   "train_acc": 0.8406026962727994,
+   "seconds": 900.3,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.804,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.817,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.086
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1500,
+   "loss": 0.25922768789895145,
+   "train_acc": 0.9088803088803089,
+   "seconds": 931.8,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.869,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.876,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.155
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1550,
+   "loss": 0.2943779390536474,
+   "train_acc": 0.9219629927594529,
+   "seconds": 963.5,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.897,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.86,
+    "sizing/feat": 0.991,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.16
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1600,
+   "loss": 0.4405318476766388,
+   "train_acc": 0.87109375,
+   "seconds": 994.1,
+   "by": {
+    "routing/feat": 0.994,
+    "routing/raw": 0.781,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.926,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.086
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1650,
+   "loss": 0.3081038379918073,
+   "train_acc": 0.8969991889699919,
+   "seconds": 1024.6,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.843,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.931,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.208
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1700,
+   "loss": 0.39726399085086084,
+   "train_acc": 0.8719467061435974,
+   "seconds": 1056.3,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.871,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.915,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.166
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1750,
+   "loss": 0.355276315653532,
+   "train_acc": 0.8952755905511811,
+   "seconds": 1087.6,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.864,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.933,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.146
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1800,
+   "loss": 0.3727984021341308,
+   "train_acc": 0.8870568837592745,
+   "seconds": 1119.9,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.874,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.853,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.134
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1850,
+   "loss": 0.37180479378851944,
+   "train_acc": 0.8554595443833464,
+   "seconds": 1150.9,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.834,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.873,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.127
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1900,
+   "loss": 0.33864151148347443,
+   "train_acc": 0.886983632112237,
+   "seconds": 1181.7,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.885,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.821,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.109
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 1950,
+   "loss": 0.330654284630491,
+   "train_acc": 0.89453125,
+   "seconds": 1213.1,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.847,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.856,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.144
+   },
+   "peak_vram_mib": 16650
+  },
+  {
+   "step": 2000,
+   "loss": 0.27841943283493037,
+   "train_acc": 0.9137792103142627,
+   "seconds": 1243.4,
+   "by": {
+    "routing/feat": 1.0,
+    "routing/raw": 0.857,
+    "scheduling/feat": 1.0,
+    "scheduling/raw": 0.932,
+    "sizing/feat": 1.0,
+    "sizing/raw": 1.0,
+    "techsel/feat": 1.0,
+    "techsel/raw": 1.0,
+    "tetris/feat": 1.0,
+    "tetris/raw": 0.144
+   },
+   "peak_vram_mib": 16650
+  }
+ ],
+ "total_seconds": 1332.5,
+ "gpu": "NVIDIA GeForce RTX 4090"
+}

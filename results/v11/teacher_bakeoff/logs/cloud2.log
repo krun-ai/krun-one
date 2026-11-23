@@ -1,0 +1,11 @@
+kimi-k3_cloud: n=240 acc=0.742 valid=1.000 wall=1s
+deepseek-v4-pro_cloud: n=240 acc=0.642 valid=1.000 wall=3s
+deepseek-v4.1-flash_cloud: n=240 acc=0.708 valid=0.950 wall=1s
+glm-5.3_cloud__think: n=240 acc=0.804 valid=0.838 wall=605s
+kimi-k3_cloud__think: n=60 acc=0.900 valid=0.933 wall=170s
+gpt-oss_120b-cloud__think_high: n=60 acc=0.833 valid=0.883 wall=148s
+kimi-k3_cloud__latprobe: n=8 acc=0.750 valid=1.000 wall=13s
+deepseek-v4-pro_cloud__latprobe: n=8 acc=0.750 valid=1.000 wall=5s
+deepseek-v4.1-flash_cloud__latprobe: n=8 acc=0.750 valid=1.000 wall=4s
+gpt-oss_120b-cloud__latprobe: n=8 acc=0.875 valid=1.000 wall=10s
+CLOUD2_DONE
